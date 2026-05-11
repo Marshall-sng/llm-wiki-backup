@@ -13,7 +13,8 @@
     "settings": "Settings",
     "switchProject": "Switch Project",
     "updateAvailable": "Update available",
-    "updateAvailableSuffix": " · update"
+    "updateAvailableSuffix": " · update",
+    "drafts": "Drafts"
   },
   "updateBanner": {
     "message": "Version {{version}} is available",
@@ -56,7 +57,8 @@
     "saved": "Saved!",
     "writeToWiki": "Write to Wiki",
     "emptyHint": "Ask a question or start an ingest to begin.",
-    "sources": "Sources"
+    "sources": "Sources",
+    "setAsDraft": "Set as Draft"
   },
   "search": {
     "title": "Search",
@@ -280,5 +282,23 @@
     "minutesAgo": "{{count}} min ago",
     "hoursAgo": "{{count}} h ago",
     "daysAgo": "{{count}} d ago"
+  },
+  "drafts": {
+    "title": "Drafts",
+    "count": "{{count}} drafts",
+    "emptyTitle": "No drafts yet",
+    "emptyHint": "Hover an assistant reply and choose “Set as Draft” to keep an editable copy here.",
+    "titleLabel": "Draft title",
+    "contentLabel": "Draft content",
+    "contentPlaceholder": "Edit this draft before turning it into a wiki page...",
+    "references": "References",
+    "noReferences": "No references captured for this draft.",
+    "source": "Source",
+    "fromChat": "Created from an assistant reply",
+    "created": "Created",
+    "updated": "Updated",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this draft?",
+    "referenceCount": "{{count}} refs"
   }
 }

@@ -1,10 +1,19 @@
 import { useReviewStore } from "@/stores/review-store"
 import { useChatStore } from "@/stores/chat-store"
+import { useDraftStore } from "@/stores/draft-store"
 import { useWikiStore } from "@/stores/wiki-store"
 import { saveReviewItems, saveChatHistory } from "./persist"
+import { saveDrafts } from "./draft-persist"
 
 let reviewTimer: ReturnType<typeof setTimeout> | null = null
 let chatTimer: ReturnType<typeof setTimeout> | null = null
+let draftTimer: ReturnType<typeof setTimeout> | null = null
+let handledDraftRevision = 0
+
+export function clearDraftAutoSaveTimer(): void {
+  if (draftTimer) clearTimeout(draftTimer)
+  draftTimer = null
+}
 
 export function setupAutoSave(): void {
   // Auto-save review items (debounced 1s)
@@ -28,5 +37,26 @@ export function setupAutoSave(): void {
         saveChatHistory(project.path, state.conversations, state.messages).catch(() => {})
       }
     }, 2000)
+  })
+
+  useDraftStore.subscribe((state) => {
+    if (state.lastChange.revision === handledDraftRevision) return
+    if (state.lastChange.persist === "none") return
+
+    handledDraftRevision = state.lastChange.revision
+    clearDraftAutoSaveTimer()
+
+    const project = useWikiStore.getState().project
+    if (!project) return
+
+    const projectPath = project.path
+    const delay = state.lastChange.persist === "immediate" ? 0 : 1200
+
+    draftTimer = setTimeout(() => {
+      const currentProject = useWikiStore.getState().project
+      if (!currentProject || currentProject.path !== projectPath) return
+      saveDrafts(projectPath, useDraftStore.getState().drafts).catch(() => {})
+      draftTimer = null
+    }, delay)
   })
 }

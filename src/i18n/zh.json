@@ -13,7 +13,8 @@
     "settings": "设置",
     "switchProject": "切换项目",
     "updateAvailable": "有可用更新",
-    "updateAvailableSuffix": " · 有更新"
+    "updateAvailableSuffix": " · 有更新",
+    "drafts": "底稿"
   },
   "updateBanner": {
     "message": "新版本 {{version}} 已发布",
@@ -56,7 +57,8 @@
     "saved": "已保存！",
     "writeToWiki": "写入 Wiki",
     "emptyHint": "提问或开始提取资料。",
-    "sources": "来源"
+    "sources": "来源",
+    "setAsDraft": "设为底稿"
   },
   "search": {
     "title": "搜索",
@@ -280,5 +282,23 @@
     "minutesAgo": "{{count}} 分钟前",
     "hoursAgo": "{{count}} 小时前",
     "daysAgo": "{{count}} 天前"
+  },
+  "drafts": {
+    "title": "底稿",
+    "count": "{{count}} 条底稿",
+    "emptyTitle": "还没有底稿",
+    "emptyHint": "把鼠标移到助手回复上，点击“设为底稿”，这里会保存一份可编辑内容。",
+    "titleLabel": "底稿标题",
+    "contentLabel": "底稿内容",
+    "contentPlaceholder": "在写入 Wiki 前先整理这份底稿...",
+    "references": "引用资料",
+    "noReferences": "这份底稿没有捕获到引用资料。",
+    "source": "来源",
+    "fromChat": "来自助手回复",
+    "created": "创建时间",
+    "updated": "更新时间",
+    "delete": "删除",
+    "deleteConfirm": "确定删除这份底稿吗？",
+    "referenceCount": "{{count}} 条引用"
   }
 }

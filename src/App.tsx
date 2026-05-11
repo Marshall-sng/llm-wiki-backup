@@ -4,9 +4,11 @@ import i18n from "@/i18n"
 import { useWikiStore } from "@/stores/wiki-store"
 import { useReviewStore } from "@/stores/review-store"
 import { useChatStore } from "@/stores/chat-store"
+import { useDraftStore } from "@/stores/draft-store"
 import { listDirectory, openProject } from "@/commands/fs"
 import { getLastProject, getRecentProjects, saveLastProject, loadLlmConfig, loadLanguage, loadSearchApiConfig, loadWebAccessConfig, loadEmbeddingConfig, loadMultimodalConfig, loadOutputLanguage, loadProviderConfigs, loadActivePresetId, loadProxyConfig } from "@/lib/project-store"
 import { loadReviewItems, loadChatHistory } from "@/lib/persist"
+import { loadDrafts } from "@/lib/draft-persist"
 import { setupAutoSave } from "@/lib/auto-save"
 import { startClipWatcher } from "@/lib/clip-watcher"
 import { AppLayout } from "@/components/layout/app-layout"
@@ -322,6 +324,13 @@ function App() {
           useChatStore.getState().setActiveConversation(sorted[0].id)
         }
       }
+    } catch {
+      // ignore, start fresh
+    }
+    // Load persisted drafts
+    try {
+      const savedDrafts = await loadDrafts(proj.path)
+      useDraftStore.getState().setDrafts(savedDrafts, { silent: true })
     } catch {
       // ignore, start fresh
     }

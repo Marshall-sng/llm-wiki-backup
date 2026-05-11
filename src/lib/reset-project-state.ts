@@ -12,6 +12,8 @@ import { useChatStore } from "@/stores/chat-store"
 import { useReviewStore } from "@/stores/review-store"
 import { useActivityStore } from "@/stores/activity-store"
 import { useResearchStore } from "@/stores/research-store"
+import { useDraftStore } from "@/stores/draft-store"
+import { clearDraftAutoSaveTimer } from "@/lib/auto-save"
 
 export async function resetProjectState(): Promise<void> {
   // Zustand stores — clear all per-project data (synchronous)
@@ -37,6 +39,9 @@ export async function resetProjectState(): Promise<void> {
     tasks: [],
     panelOpen: false,
   })
+
+  clearDraftAutoSaveTimer()
+  useDraftStore.getState().clearDrafts({ silent: true })
 
   // Module-level caches — load in parallel and clear each, surfacing any
   // failure instead of swallowing it.
