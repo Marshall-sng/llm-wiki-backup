@@ -65,8 +65,9 @@
     "draftProcessingSource": "来源底稿：{{title}}",
     "draftProcessingNoOverwriteHint": "原底稿不会被自动覆盖，满意后请点击“保存为新底稿”。",
     "activeTemplateBannerTitle": "当前模板：{{title}}",
-    "activeTemplateHint": "模板已绑定到当前项目。本阶段仅保存绑定状态，不会自动影响普通 Chat 生成。",
-    "clearActiveTemplate": "清除模板"
+    "activeTemplateHint": "模板已绑定到当前项目。普通 Chat 不会自动受模板影响；进入底稿 AI 加工时会显式使用当前模板。",
+    "clearActiveTemplate": "清除模板",
+    "draftProcessingTemplate": "使用模板：{{title}}"
   },
   "search": {
     "title": "搜索",
@@ -340,7 +341,14 @@
     "restoredFromVersion": "由历史版本恢复生成",
     "parentVersion": "父版本",
     "parentVersionHash": "父版本哈希",
-    "restoredAt": "恢复时间"
+    "restoredAt": "恢复时间",
+    "processingConversationTitle": "加工：{{title}}",
+    "templateProcessingConversationTitle": "模板加工：{{title}}",
+    "processingTemplateActive": "当前模板：{{title}}",
+    "processingTemplateActiveHint": "本次底稿加工会携带该模板快照，并尽量遵循模板结构、语气、长度和引用规则。",
+    "processingTemplateNone": "未选择当前模板",
+    "processingTemplateNoneHint": "本次将按普通底稿加工执行，不会自动套用模板。",
+    "createTemplateProcessingConversation": "按模板新建加工会话"
   },
   "templates": {
     "title": "模板库",

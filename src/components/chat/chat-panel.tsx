@@ -541,6 +541,13 @@ export function ChatPanel() {
                     <div className="mt-1">
                       {t("chat.draftProcessingSource", { title: activeConversation.draftContext.draftTitle })}
                     </div>
+                    {activeConversation.draftContext.templateSnapshot && (
+                      <div className="mt-1">
+                        {t("chat.draftProcessingTemplate", {
+                          title: activeConversation.draftContext.templateSnapshot.title,
+                        })}
+                      </div>
+                    )}
                     <div className="mt-1">{t("chat.draftProcessingNoOverwriteHint")}</div>
                   </div>
                 )}

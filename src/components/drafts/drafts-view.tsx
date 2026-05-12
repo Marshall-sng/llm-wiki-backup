@@ -8,7 +8,8 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { useDraftStore } from "@/stores/draft-store"
 import { useChatStore, type DraftProcessingContext } from "@/stores/chat-store"
 import { useWikiStore } from "@/stores/wiki-store"
-import { buildDraftProcessingPrompt } from "@/lib/draft-processing"
+import { useTemplateStore } from "@/stores/template-store"
+import { buildDraftProcessingPrompt, buildDraftTemplateSnapshot } from "@/lib/draft-processing"
 import { compareDraftText } from "@/lib/draft-versioning"
 
 function formatDate(ts: number): string {
@@ -30,12 +31,15 @@ export function DraftsView() {
   const createConversation = useChatStore((s) => s.createConversation)
   const enqueueDraftProcessingRequest = useChatStore((s) => s.enqueueDraftProcessingRequest)
   const setActiveView = useWikiStore((s) => s.setActiveView)
+  const templates = useTemplateStore((s) => s.templates)
+  const activeTemplateId = useTemplateStore((s) => s.activeTemplateId)
 
   const sortedDrafts = useMemo(
     () => [...drafts].sort((a, b) => b.updatedAt - a.updatedAt),
     [drafts],
   )
   const selectedDraft = drafts.find((draft) => draft.id === selectedDraftId) ?? null
+  const activeTemplate = templates.find((template) => template.id === activeTemplateId) ?? null
   const selectedVersion = selectedDraft?.versions.find((version) => version.id === selectedVersionId) ?? null
   const versionComparison = useMemo(() => (
     selectedDraft && selectedVersion
@@ -58,6 +62,7 @@ export function DraftsView() {
     if (!selectedDraft) return
     const instruction = processingInstruction.trim()
     if (!instruction) return
+    const templateSnapshot = activeTemplate ? buildDraftTemplateSnapshot(activeTemplate) : undefined
 
     const draftContext: DraftProcessingContext = {
       draftId: selectedDraft.id,
@@ -66,16 +71,19 @@ export function DraftsView() {
       instruction,
       references: [...selectedDraft.references],
       startedAt: Date.now(),
+      templateSnapshot,
     }
     const conversationId = createConversation({
-      title: `加工：${selectedDraft.title}`,
+      title: templateSnapshot
+        ? t("drafts.templateProcessingConversationTitle", { title: selectedDraft.title })
+        : t("drafts.processingConversationTitle", { title: selectedDraft.title }),
       kind: "draft-processing",
       draftContext,
     })
     enqueueDraftProcessingRequest({
       id: `draft_processing_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
       conversationId,
-      prompt: buildDraftProcessingPrompt(selectedDraft, instruction),
+      prompt: buildDraftProcessingPrompt(selectedDraft, instruction, templateSnapshot),
     })
     setProcessingInstruction("")
     setActiveView("wiki")
@@ -196,6 +204,23 @@ export function DraftsView() {
                     placeholder={t("drafts.processingInstructionPlaceholder")}
                     className="min-h-24 w-full resize-none rounded-md border border-input bg-background p-2 text-xs leading-relaxed outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40"
                   />
+                  <div className={`mt-2 rounded-md border p-2 text-[11px] leading-relaxed ${
+                    activeTemplate
+                      ? "border-primary/20 bg-primary/5 text-muted-foreground"
+                      : "bg-muted/20 text-muted-foreground"
+                  }`}
+                  >
+                    <div className="font-medium text-foreground">
+                      {activeTemplate
+                        ? t("drafts.processingTemplateActive", { title: activeTemplate.title })
+                        : t("drafts.processingTemplateNone")}
+                    </div>
+                    <div className="mt-0.5">
+                      {activeTemplate
+                        ? t("drafts.processingTemplateActiveHint")
+                        : t("drafts.processingTemplateNoneHint")}
+                    </div>
+                  </div>
                   <Button
                     type="button"
                     size="sm"
@@ -203,7 +228,9 @@ export function DraftsView() {
                     disabled={!canStartProcessing}
                     onClick={handleStartProcessing}
                   >
-                    {t("drafts.createProcessingConversation")}
+                    {activeTemplate
+                      ? t("drafts.createTemplateProcessingConversation")
+                      : t("drafts.createProcessingConversation")}
                   </Button>
                   <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
                     {t("drafts.processingNoOverwriteHint")}

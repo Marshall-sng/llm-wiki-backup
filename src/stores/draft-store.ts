@@ -16,6 +16,8 @@ export interface DraftDerivationMeta {
   parentContentHash: string
   instruction: string
   processingConversationId: string
+  templateId?: string
+  templateTitle?: string
 }
 
 export interface DraftRestorationMeta {
@@ -154,6 +156,20 @@ function normalizeRestoration(raw: Partial<DraftRestorationMeta> | undefined): D
   }
 }
 
+function normalizeDerivation(raw: Partial<DraftDerivationMeta> | undefined): DraftDerivationMeta | undefined {
+  if (!raw) return undefined
+  const derivation: DraftDerivationMeta = {
+    parentDraftId: raw.parentDraftId ?? "",
+    parentDraftTitle: raw.parentDraftTitle ?? "",
+    parentContentHash: raw.parentContentHash ?? "",
+    instruction: raw.instruction ?? "",
+    processingConversationId: raw.processingConversationId ?? "",
+  }
+  if (typeof raw.templateId === "string") derivation.templateId = raw.templateId
+  if (typeof raw.templateTitle === "string") derivation.templateTitle = raw.templateTitle
+  return derivation
+}
+
 function normalizeDraft(record: DraftRecord): DraftRecord {
   const content = record.content ?? ""
   const source = record.source ?? {
@@ -175,15 +191,7 @@ function normalizeDraft(record: DraftRecord): DraftRecord {
       messageTimestamp: typeof source.messageTimestamp === "number" ? source.messageTimestamp : Date.now(),
       contentHash: source.contentHash || hashDraftContent(content),
     },
-    derivation: record.derivation
-      ? {
-          parentDraftId: record.derivation.parentDraftId ?? "",
-          parentDraftTitle: record.derivation.parentDraftTitle ?? "",
-          parentContentHash: record.derivation.parentContentHash ?? "",
-          instruction: record.derivation.instruction ?? "",
-          processingConversationId: record.derivation.processingConversationId ?? "",
-        }
-      : undefined,
+    derivation: normalizeDerivation(record.derivation),
     versions: Array.isArray(record.versions)
       ? record.versions.map((version) => normalizeDraftVersion(version))
       : [],

@@ -65,8 +65,9 @@
     "draftProcessingSource": "Source draft: {{title}}",
     "draftProcessingNoOverwriteHint": "The original draft will not be overwritten automatically. Save the result as a new draft when satisfied.",
     "activeTemplateBannerTitle": "Current template: {{title}}",
-    "activeTemplateHint": "The template is bound to this project. In this phase it is saved only and does not change normal Chat generation.",
-    "clearActiveTemplate": "Clear template"
+    "activeTemplateHint": "The template is bound to this project. Normal Chat is not affected automatically; draft AI processing will use the current template explicitly.",
+    "clearActiveTemplate": "Clear template",
+    "draftProcessingTemplate": "Template used: {{title}}"
   },
   "search": {
     "title": "Search",
@@ -340,7 +341,14 @@
     "restoredFromVersion": "Restored from a historical version",
     "parentVersion": "Parent version",
     "parentVersionHash": "Parent version hash",
-    "restoredAt": "Restored at"
+    "restoredAt": "Restored at",
+    "processingConversationTitle": "Process: {{title}}",
+    "templateProcessingConversationTitle": "Template process: {{title}}",
+    "processingTemplateActive": "Current template: {{title}}",
+    "processingTemplateActiveHint": "This draft-processing session will carry a template snapshot and try to follow its structure, tone, length, and citation rules.",
+    "processingTemplateNone": "No current template selected",
+    "processingTemplateNoneHint": "This will run normal draft processing without applying a template automatically.",
+    "createTemplateProcessingConversation": "Create Template Processing Session"
   },
   "templates": {
     "title": "Template Library",

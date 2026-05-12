@@ -15,6 +15,20 @@ export interface DraftProcessingContext {
   instruction: string
   references: MessageReference[]
   startedAt: number
+  templateSnapshot?: DraftProcessingTemplateSnapshot
+}
+
+export interface DraftProcessingTemplateSnapshot {
+  id: string
+  title: string
+  description: string
+  intent: string
+  requiredSections: string[]
+  sectionOrder: string[]
+  tone: string
+  lengthLimit: string
+  citationPolicy: string
+  capturedAt: number
 }
 
 export interface Conversation {
