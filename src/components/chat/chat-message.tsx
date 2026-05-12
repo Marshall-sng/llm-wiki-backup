@@ -7,7 +7,7 @@ import "katex/dist/katex.min.css"
 import {
   Bot, User, FileText, BookmarkPlus, ChevronDown, ChevronRight, RefreshCw, Copy, Check,
   Users, Lightbulb, BookOpen, HelpCircle, GitMerge, BarChart3, Layout, Globe,
-  Image as ImageIcon, NotebookPen,
+  AlertTriangle, Image as ImageIcon, NotebookPen,
 } from "lucide-react"
 import { useWikiStore } from "@/stores/wiki-store"
 import { useDraftStore } from "@/stores/draft-store"
@@ -18,6 +18,7 @@ import type { DisplayMessage } from "@/stores/chat-store"
 import type { FileNode } from "@/types/wiki"
 import { useTranslation } from "react-i18next"
 import { buildDraftDerivation } from "@/lib/draft-processing"
+import { evaluateDraftDiffGuard } from "@/lib/draft-diff-guard"
 
 import { convertLatexToUnicode } from "@/lib/latex-to-unicode"
 import { normalizePath, getFileName } from "@/lib/path-utils"
@@ -106,6 +107,7 @@ export function ChatMessage({ message, isLastAssistant, onRegenerate }: ChatMess
           )}
         </div>
         {isAssistant && <CitedReferencesPanel content={message.content} savedReferences={message.references} />}
+        {isAssistant && <DraftDiffGuardNotice message={message} />}
         {isAssistant && hovered && (
           <div className="flex items-center gap-1">
             <CopyButton content={message.content} />
@@ -123,6 +125,47 @@ export function ChatMessage({ message, isLastAssistant, onRegenerate }: ChatMess
             )}
           </div>
         )}
+      </div>
+    </div>
+  )
+}
+
+function DraftDiffGuardNotice({ message }: { message: DisplayMessage }) {
+  const drafts = useDraftStore((s) => s.drafts)
+  const conversation = useChatStore((s) =>
+    s.conversations.find((conv) => conv.id === message.conversationId),
+  )
+  const draftContext = conversation?.kind === "draft-processing" ? conversation.draftContext : undefined
+
+  const guard = useMemo(() => {
+    if (!draftContext) return null
+    const parentDraft = drafts.find((draft) => draft.id === draftContext.draftId)
+    if (!parentDraft) return null
+    const result = evaluateDraftDiffGuard({
+      parentContent: parentDraft.content,
+      candidateContent: message.content,
+      instruction: draftContext.instruction,
+    })
+    return result.shouldWarn ? result : null
+  }, [draftContext, drafts, message.content])
+
+  if (!guard) return null
+
+  const changedPercent = Math.round(guard.comparison.changedRatio * 100)
+
+  return (
+    <div className="rounded-md border border-amber-500/30 bg-amber-50/70 px-2.5 py-2 text-xs text-amber-900 dark:border-amber-500/40 dark:bg-amber-950/25 dark:text-amber-200">
+      <div className="mb-1 flex items-center gap-1.5 font-medium">
+        <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
+        <span>可能改动过大</span>
+      </div>
+      <p className="leading-relaxed">
+        本次要求像是局部修改，但 AI 结果变化较多。保存后会成为新底稿，不会覆盖原底稿。
+      </p>
+      <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-amber-800/80 dark:text-amber-200/80">
+        <span>变化比例：{changedPercent}%</span>
+        <span>新增行：{guard.comparison.addedLines}</span>
+        <span>删除行：{guard.comparison.removedLines}</span>
       </div>
     </div>
   )
