@@ -1,5 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from "react"
 import { BookOpen, Plus, Trash2, MessageSquare } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { ChatMessage, StreamingMessage, useSourceFiles } from "./chat-message"
 import { ChatInput } from "./chat-input"
@@ -14,6 +15,7 @@ import { normalizePath, getFileName, getRelativePath } from "@/lib/path-utils"
 import { getOutputLanguage, buildLanguageReminder } from "@/lib/output-language"
 import { isGreeting } from "@/lib/greeting-detector"
 import { computeContextBudget } from "@/lib/context-budget"
+import { buildDraftProcessingSystemPrompt } from "@/lib/draft-processing"
 
 // Store the page mapping from the last query so SourceFilesBar can show which pages were cited
 export let lastQueryPages: { title: string; path: string }[] = []
@@ -119,8 +121,10 @@ function ConversationSidebar() {
 }
 
 export function ChatPanel() {
+  const { t } = useTranslation()
   useSourceFiles() // Keep source file cache warm
   const activeConversationId = useChatStore((s) => s.activeConversationId)
+  const conversations = useChatStore((s) => s.conversations)
   const isStreaming = useChatStore((s) => s.isStreaming)
   const streamingContent = useChatStore((s) => s.streamingContent)
   const mode = useChatStore((s) => s.mode)
@@ -131,12 +135,17 @@ export function ChatPanel() {
   const createConversation = useChatStore((s) => s.createConversation)
   const removeLastAssistantMessage = useChatStore((s) => s.removeLastAssistantMessage)
   const maxHistoryMessages = useChatStore((s) => s.maxHistoryMessages)
+  const pendingDraftProcessingRequest = useChatStore((s) => s.pendingDraftProcessingRequest)
+  const consumeDraftProcessingRequest = useChatStore((s) => s.consumeDraftProcessingRequest)
 
   // Derive active messages via selector to re-render on message changes
   const allMessages = useChatStore((s) => s.messages)
   const activeMessages = activeConversationId
     ? allMessages.filter((m) => m.conversationId === activeConversationId)
     : []
+  const activeConversation = activeConversationId
+    ? conversations.find((conversation) => conversation.id === activeConversationId) ?? null
+    : null
 
   const project = useWikiStore((s) => s.project)
   const llmConfig = useWikiStore((s) => s.llmConfig)
@@ -165,7 +174,9 @@ export function ChatPanel() {
       addMessage("user", text)
       setStreaming(true)
 
-      // Build system prompt with wiki context using graph-enhanced retrieval
+      // Build system prompt. Draft-processing conversations deliberately skip
+      // normal wiki retrieval so the draft text/instruction cannot pollute or
+      // be polluted by unrelated wiki pages.
       const systemMessages: LLMMessage[] = []
       let queryRefs: { title: string; path: string }[] = []
       let langReminder: string | undefined
@@ -174,7 +185,15 @@ export function ChatPanel() {
       // wiki pages the user clearly didn't ask about. Short-circuit with a
       // minimal system prompt and let the model reply conversationally.
       const greetingOnly = isGreeting(text)
-      if (project && greetingOnly) {
+      const conversation = useChatStore.getState().conversations.find((c) => c.id === convId)
+      if (conversation?.kind === "draft-processing" && conversation.draftContext) {
+        systemMessages.push({
+          role: "system",
+          content: buildDraftProcessingSystemPrompt(conversation.draftContext),
+        })
+        queryRefs = [...conversation.draftContext.references]
+        lastQueryPages = [...queryRefs]
+      } else if (project && greetingOnly) {
         const outLang = getOutputLanguage(text)
         systemMessages.push({
           role: "system",
@@ -426,6 +445,22 @@ export function ChatPanel() {
     [llmConfig, addMessage, setStreaming, appendStreamToken, finalizeStream, createConversation, maxHistoryMessages],
   )
 
+  useEffect(() => {
+    if (!pendingDraftProcessingRequest || isStreaming) return
+    if (pendingDraftProcessingRequest.conversationId !== activeConversationId) return
+
+    const request = consumeDraftProcessingRequest(pendingDraftProcessingRequest.id)
+    if (request) {
+      void handleSend(request.prompt)
+    }
+  }, [
+    activeConversationId,
+    consumeDraftProcessingRequest,
+    handleSend,
+    isStreaming,
+    pendingDraftProcessingRequest,
+  ])
+
   const handleStop = useCallback(() => {
     abortRef.current?.abort()
     abortRef.current = null
@@ -495,6 +530,15 @@ export function ChatPanel() {
               className="flex-1 overflow-y-auto px-3 py-2"
             >
               <div className="flex flex-col gap-3">
+                {activeConversation?.kind === "draft-processing" && activeConversation.draftContext && (
+                  <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 text-xs text-muted-foreground">
+                    <div className="font-semibold text-foreground">{t("chat.draftProcessingBannerTitle")}</div>
+                    <div className="mt-1">
+                      {t("chat.draftProcessingSource", { title: activeConversation.draftContext.draftTitle })}
+                    </div>
+                    <div className="mt-1">{t("chat.draftProcessingNoOverwriteHint")}</div>
+                  </div>
+                )}
                 {activeMessages.map((msg, idx) => {
                   // Check if this is the last assistant message
                   const isLastAssistant = msg.role === "assistant" &&

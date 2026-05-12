@@ -11,11 +11,13 @@ import {
 } from "lucide-react"
 import { useWikiStore } from "@/stores/wiki-store"
 import { useDraftStore } from "@/stores/draft-store"
+import { useChatStore } from "@/stores/chat-store"
 import { readFile, writeFile, listDirectory } from "@/commands/fs"
 import { lastQueryPages } from "@/components/chat/chat-panel"
 import type { DisplayMessage } from "@/stores/chat-store"
 import type { FileNode } from "@/types/wiki"
 import { useTranslation } from "react-i18next"
+import { buildDraftDerivation } from "@/lib/draft-processing"
 
 import { convertLatexToUnicode } from "@/lib/latex-to-unicode"
 import { normalizePath, getFileName } from "@/lib/path-utils"
@@ -130,21 +132,34 @@ function SetAsDraftButton({ message }: { message: DisplayMessage }) {
   const { t } = useTranslation()
   const createDraftFromMessage = useDraftStore((s) => s.createDraftFromMessage)
   const setActiveView = useWikiStore((s) => s.setActiveView)
+  const conversation = useChatStore((s) =>
+    s.conversations.find((conv) => conv.id === message.conversationId),
+  )
+  const draftContext = conversation?.kind === "draft-processing" ? conversation.draftContext : undefined
+  const label = draftContext ? t("chat.saveAsNewDraft") : t("chat.setAsDraft")
 
   const handleCreateDraft = useCallback(() => {
-    createDraftFromMessage(message)
+    createDraftFromMessage(
+      message,
+      draftContext
+        ? {
+            derivation: buildDraftDerivation(draftContext, message),
+            forceNew: true,
+          }
+        : undefined,
+    )
     setActiveView("drafts")
-  }, [createDraftFromMessage, message, setActiveView])
+  }, [createDraftFromMessage, draftContext, message, setActiveView])
 
   return (
     <button
       type="button"
       onClick={handleCreateDraft}
       className="inline-flex items-center gap-1 rounded px-2 py-0.5 text-[11px] text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-      title={t("chat.setAsDraft")}
+      title={label}
     >
       <NotebookPen className="h-3 w-3" />
-      {t("chat.setAsDraft")}
+      {label}
     </button>
   )
 }

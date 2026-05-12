@@ -1,11 +1,14 @@
-﻿import { useEffect, useMemo } from "react"
-import { FileText, Trash2, MessageSquare, Hash } from "lucide-react"
+import { useEffect, useMemo, useState } from "react"
+import { FileText, Trash2, MessageSquare, Hash, Sparkles } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useDraftStore } from "@/stores/draft-store"
+import { useChatStore, type DraftProcessingContext } from "@/stores/chat-store"
+import { useWikiStore } from "@/stores/wiki-store"
+import { buildDraftProcessingPrompt } from "@/lib/draft-processing"
 
 function formatDate(ts: number): string {
   if (!Number.isFinite(ts)) return ""
@@ -14,23 +17,55 @@ function formatDate(ts: number): string {
 
 export function DraftsView() {
   const { t } = useTranslation()
+  const [processingInstruction, setProcessingInstruction] = useState("")
   const drafts = useDraftStore((s) => s.drafts)
   const selectedDraftId = useDraftStore((s) => s.selectedDraftId)
   const selectDraft = useDraftStore((s) => s.selectDraft)
   const updateDraft = useDraftStore((s) => s.updateDraft)
   const deleteDraft = useDraftStore((s) => s.deleteDraft)
+  const createConversation = useChatStore((s) => s.createConversation)
+  const enqueueDraftProcessingRequest = useChatStore((s) => s.enqueueDraftProcessingRequest)
+  const setActiveView = useWikiStore((s) => s.setActiveView)
 
   const sortedDrafts = useMemo(
     () => [...drafts].sort((a, b) => b.updatedAt - a.updatedAt),
     [drafts],
   )
   const selectedDraft = drafts.find((draft) => draft.id === selectedDraftId) ?? null
+  const canStartProcessing = processingInstruction.trim().length > 0
 
   useEffect(() => {
     if (!selectedDraft && sortedDrafts[0]) {
       selectDraft(sortedDrafts[0].id)
     }
   }, [selectDraft, selectedDraft, sortedDrafts])
+
+  const handleStartProcessing = () => {
+    if (!selectedDraft) return
+    const instruction = processingInstruction.trim()
+    if (!instruction) return
+
+    const draftContext: DraftProcessingContext = {
+      draftId: selectedDraft.id,
+      draftTitle: selectedDraft.title,
+      parentContentHash: selectedDraft.source.contentHash,
+      instruction,
+      references: [...selectedDraft.references],
+      startedAt: Date.now(),
+    }
+    const conversationId = createConversation({
+      title: `加工：${selectedDraft.title}`,
+      kind: "draft-processing",
+      draftContext,
+    })
+    enqueueDraftProcessingRequest({
+      id: `draft_processing_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+      conversationId,
+      prompt: buildDraftProcessingPrompt(selectedDraft, instruction),
+    })
+    setProcessingInstruction("")
+    setActiveView("wiki")
+  }
 
   if (drafts.length === 0) {
     return (
@@ -106,8 +141,8 @@ export function DraftsView() {
               </Button>
             </div>
 
-            <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_18rem]">
-              <div className="flex min-w-0 flex-col p-4">
+            <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_18rem] overflow-hidden">
+              <div className="flex min-h-0 min-w-0 flex-col p-4">
                 <Label htmlFor="draft-content" className="mb-2 text-xs text-muted-foreground">
                   {t("drafts.contentLabel")}
                 </Label>
@@ -116,11 +151,40 @@ export function DraftsView() {
                   value={selectedDraft.content}
                   onChange={(event) => updateDraft(selectedDraft.id, { content: event.target.value })}
                   placeholder={t("drafts.contentPlaceholder")}
-                  className="min-h-0 flex-1 resize-none rounded-lg border border-input bg-background p-3 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                  className="min-h-0 flex-1 resize-none overflow-y-auto rounded-lg border border-input bg-background p-3 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
                 />
               </div>
 
-              <aside className="border-l bg-muted/10 p-4">
+              <aside className="overflow-y-auto border-l bg-muted/10 p-4">
+                <section className="mb-5 rounded-lg border bg-background/70 p-3">
+                  <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    {t("drafts.aiProcessingTitle")}
+                  </h2>
+                  <Label htmlFor="draft-processing-instruction" className="mb-1.5 text-xs text-muted-foreground">
+                    {t("drafts.processingInstructionLabel")}
+                  </Label>
+                  <textarea
+                    id="draft-processing-instruction"
+                    value={processingInstruction}
+                    onChange={(event) => setProcessingInstruction(event.target.value)}
+                    placeholder={t("drafts.processingInstructionPlaceholder")}
+                    className="min-h-24 w-full resize-none rounded-md border border-input bg-background p-2 text-xs leading-relaxed outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40"
+                  />
+                  <Button
+                    type="button"
+                    size="sm"
+                    className="mt-2 w-full"
+                    disabled={!canStartProcessing}
+                    onClick={handleStartProcessing}
+                  >
+                    {t("drafts.createProcessingConversation")}
+                  </Button>
+                  <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
+                    {t("drafts.processingNoOverwriteHint")}
+                  </p>
+                </section>
+
                 <section>
                   <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     <FileText className="h-3.5 w-3.5" />
@@ -153,6 +217,17 @@ export function DraftsView() {
                     {selectedDraft.source.contentHash}
                   </div>
                 </section>
+
+                {selectedDraft.derivation && (
+                  <section className="mt-5 space-y-2 text-xs text-muted-foreground">
+                    <h2 className="flex items-center gap-1.5 font-semibold uppercase tracking-wide">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      {t("drafts.derivedFromDraft")}
+                    </h2>
+                    <div>{t("drafts.parentDraft")}: {selectedDraft.derivation.parentDraftTitle}</div>
+                    <div>{t("drafts.processingInstruction")}: {selectedDraft.derivation.instruction}</div>
+                  </section>
+                )}
               </aside>
             </div>
           </>

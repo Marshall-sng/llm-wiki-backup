@@ -9,12 +9,21 @@ export interface DraftSourceMeta {
   contentHash: string
 }
 
+export interface DraftDerivationMeta {
+  parentDraftId: string
+  parentDraftTitle: string
+  parentContentHash: string
+  instruction: string
+  processingConversationId: string
+}
+
 export interface DraftRecord {
   id: string
   title: string
   content: string
   references: MessageReference[]
   source: DraftSourceMeta
+  derivation?: DraftDerivationMeta
   createdAt: number
   updatedAt: number
 }
@@ -30,12 +39,17 @@ interface HydrateOptions {
   silent?: boolean
 }
 
+interface CreateDraftFromMessageOptions {
+  derivation?: DraftDerivationMeta
+  forceNew?: boolean
+}
+
 interface DraftState {
   drafts: DraftRecord[]
   selectedDraftId: string | null
   lastChange: DraftChangeMarker
 
-  createDraftFromMessage: (message: DisplayMessage) => DraftRecord
+  createDraftFromMessage: (message: DisplayMessage, options?: CreateDraftFromMessageOptions) => DraftRecord
   updateDraft: (id: string, updates: Partial<Pick<DraftRecord, "title" | "content" | "references">>) => void
   deleteDraft: (id: string) => void
   selectDraft: (id: string | null) => void
@@ -102,6 +116,15 @@ function normalizeDraft(record: DraftRecord): DraftRecord {
       messageTimestamp: typeof source.messageTimestamp === "number" ? source.messageTimestamp : Date.now(),
       contentHash: source.contentHash || hashDraftContent(content),
     },
+    derivation: record.derivation
+      ? {
+          parentDraftId: record.derivation.parentDraftId ?? "",
+          parentDraftTitle: record.derivation.parentDraftTitle ?? "",
+          parentContentHash: record.derivation.parentContentHash ?? "",
+          instruction: record.derivation.instruction ?? "",
+          processingConversationId: record.derivation.processingConversationId ?? "",
+        }
+      : undefined,
     createdAt: typeof record.createdAt === "number" ? record.createdAt : Date.now(),
     updatedAt: typeof record.updatedAt === "number" ? record.updatedAt : Date.now(),
   }
@@ -112,13 +135,16 @@ export const useDraftStore = create<DraftState>((set, get) => ({
   selectedDraftId: null,
   lastChange: { revision: 0, persist: "none" },
 
-  createDraftFromMessage: (message) => {
+  createDraftFromMessage: (message, options) => {
     const content = cleanDraftContent(message.content)
     const contentHash = hashDraftContent(content)
-    const existing = get().drafts.find((draft) => (
-      draft.source.messageId === message.id &&
-      draft.source.conversationId === message.conversationId
-    ) || draft.source.contentHash === contentHash)
+    const shouldDeduplicate = !options?.forceNew && !options?.derivation
+    const existing = shouldDeduplicate
+      ? get().drafts.find((draft) => (
+        draft.source.messageId === message.id &&
+        draft.source.conversationId === message.conversationId
+      ) || draft.source.contentHash === contentHash)
+      : undefined
 
     if (existing) {
       set({ selectedDraftId: existing.id })
@@ -138,6 +164,7 @@ export const useDraftStore = create<DraftState>((set, get) => ({
         messageTimestamp: message.timestamp,
         contentHash,
       },
+      derivation: options?.derivation,
       createdAt: now,
       updatedAt: now,
     }

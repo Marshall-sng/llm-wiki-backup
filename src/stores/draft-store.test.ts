@@ -56,6 +56,40 @@ describe("draft-store", () => {
     expect(useDraftStore.getState().drafts).toHaveLength(1)
   })
 
+  it("attaches derivation metadata when creating a processed draft", () => {
+    const derivation = {
+      parentDraftId: "draft-parent",
+      parentDraftTitle: "Parent Draft",
+      parentContentHash: "parent-hash",
+      instruction: "只改风险提醒",
+      processingConversationId: "conv-processing",
+    }
+
+    const draft = useDraftStore.getState().createDraftFromMessage(makeMessage(), { derivation })
+
+    expect(draft.derivation).toEqual(derivation)
+  })
+
+  it("forceNew creates a new draft even when content hash matches an existing draft", () => {
+    const first = useDraftStore.getState().createDraftFromMessage(makeMessage())
+    const derivation = {
+      parentDraftId: first.id,
+      parentDraftTitle: first.title,
+      parentContentHash: first.source.contentHash,
+      instruction: "保存为新底稿",
+      processingConversationId: "conv-processing",
+    }
+
+    const second = useDraftStore.getState().createDraftFromMessage(makeMessage(), {
+      derivation,
+      forceNew: true,
+    })
+
+    expect(second.id).not.toBe(first.id)
+    expect(second.derivation).toEqual(derivation)
+    expect(useDraftStore.getState().drafts).toHaveLength(2)
+  })
+
   it("updates title/content and refreshes the content hash", () => {
     const draft = useDraftStore.getState().createDraftFromMessage(makeMessage())
     useDraftStore.getState().updateDraft(draft.id, { title: "Edited", content: "Edited content" })
@@ -79,6 +113,13 @@ describe("draft-store", () => {
   })
 
   it("hydrates silently without triggering persistence", () => {
+    const derivation = {
+      parentDraftId: "draft-parent",
+      parentDraftTitle: "Parent",
+      parentContentHash: "hash-parent",
+      instruction: "加工要求",
+      processingConversationId: "conv-processing",
+    }
     const draft: DraftRecord = {
       id: "draft-existing",
       title: "Existing",
@@ -91,6 +132,7 @@ describe("draft-store", () => {
         messageTimestamp: 1,
         contentHash: "abc",
       },
+      derivation,
       createdAt: 1,
       updatedAt: 2,
     }
@@ -98,6 +140,7 @@ describe("draft-store", () => {
     useDraftStore.getState().setDrafts([draft], { silent: true })
 
     expect(useDraftStore.getState().drafts).toEqual([draft])
+    expect(useDraftStore.getState().drafts[0].derivation).toEqual(derivation)
     expect(useDraftStore.getState().selectedDraftId).toBe(draft.id)
     expect(useDraftStore.getState().lastChange.persist).toBe("none")
   })

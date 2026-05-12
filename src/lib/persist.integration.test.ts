@@ -142,6 +142,32 @@ describe("chat persistence — round-trip (new format)", () => {
     expect(loaded.messages).toHaveLength(2)
   })
 
+  it("round-trips draft-processing conversation metadata without pending runtime requests", async () => {
+    const convs: Conversation[] = [
+      {
+        ...makeConv("c1", "加工：测试底稿"),
+        kind: "draft-processing",
+        draftContext: {
+          draftId: "draft-1",
+          draftTitle: "测试底稿",
+          parentContentHash: "hash-parent",
+          instruction: "只改风险提醒",
+          references: [{ title: "资料 A", path: "wiki/a.md" }],
+          startedAt: 123,
+        },
+      },
+    ]
+    await saveChatHistory(tmp.path, convs, [makeMsg("m1", "c1", "prompt")])
+
+    const raw = await readFileRaw(`${tmp.path}/.llm-wiki/conversations.json`)
+    const loaded = await loadChatHistory(tmp.path)
+
+    expect(loaded.conversations).toEqual(convs)
+    expect(raw).toContain("\"draft-processing\"")
+    expect(raw).toContain("\"draftContext\"")
+    expect(raw).not.toContain("pendingDraftProcessingRequest")
+  })
+
   it("caps each conversation's persisted messages at 100 (oldest dropped)", async () => {
     const convs = [makeConv("c1")]
     const msgs = Array.from({ length: 150 }, (_, i) =>

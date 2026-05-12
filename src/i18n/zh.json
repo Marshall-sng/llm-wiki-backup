@@ -58,7 +58,11 @@
     "writeToWiki": "写入 Wiki",
     "emptyHint": "提问或开始提取资料。",
     "sources": "来源",
-    "setAsDraft": "设为底稿"
+    "setAsDraft": "设为底稿",
+    "saveAsNewDraft": "保存为新底稿",
+    "draftProcessingBannerTitle": "底稿加工会话",
+    "draftProcessingSource": "来源底稿：{{title}}",
+    "draftProcessingNoOverwriteHint": "原底稿不会被自动覆盖，满意后请点击“保存为新底稿”。"
   },
   "search": {
     "title": "搜索",
@@ -304,6 +308,14 @@
     "updated": "更新时间",
     "delete": "删除",
     "deleteConfirm": "确定删除这份底稿吗？",
-    "referenceCount": "{{count}} 条引用"
+    "referenceCount": "{{count}} 条引用",
+    "aiProcessingTitle": "AI 加工底稿",
+    "processingInstructionLabel": "修改要求",
+    "processingInstructionPlaceholder": "例如：只改风险提醒部分，正文不要缩短；改成正式汇报口吻。",
+    "createProcessingConversation": "新建加工会话",
+    "processingNoOverwriteHint": "原底稿不会被自动覆盖。AI 结果会先出现在 Chat 中，你确认后再保存为新底稿。",
+    "derivedFromDraft": "由底稿加工生成",
+    "parentDraft": "父底稿",
+    "processingInstruction": "加工要求"
   }
 }

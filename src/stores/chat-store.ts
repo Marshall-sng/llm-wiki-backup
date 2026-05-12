@@ -1,16 +1,41 @@
 import { create } from "zustand"
 import type { ChatMessage } from "@/lib/llm-client"
 
+export interface MessageReference {
+  title: string
+  path: string
+}
+
+export type ConversationKind = "normal" | "draft-processing"
+
+export interface DraftProcessingContext {
+  draftId: string
+  draftTitle: string
+  parentContentHash: string
+  instruction: string
+  references: MessageReference[]
+  startedAt: number
+}
+
 export interface Conversation {
   id: string
   title: string
   createdAt: number
   updatedAt: number
+  kind?: ConversationKind
+  draftContext?: DraftProcessingContext
 }
 
-export interface MessageReference {
-  title: string
-  path: string
+export interface CreateConversationOptions {
+  title?: string
+  kind?: ConversationKind
+  draftContext?: DraftProcessingContext
+}
+
+export interface PendingDraftProcessingRequest {
+  id: string
+  conversationId: string
+  prompt: string
 }
 
 export interface DisplayMessage {
@@ -31,9 +56,10 @@ interface ChatState {
   mode: "chat" | "ingest"
   ingestSource: string | null
   maxHistoryMessages: number
+  pendingDraftProcessingRequest: PendingDraftProcessingRequest | null
 
   // Conversation management
-  createConversation: () => string
+  createConversation: (options?: CreateConversationOptions) => string
   deleteConversation: (id: string) => void
   setActiveConversation: (id: string | null) => void
   renameConversation: (id: string, title: string) => void
@@ -50,6 +76,8 @@ interface ChatState {
   clearMessages: () => void
   setMaxHistoryMessages: (n: number) => void
   removeLastAssistantMessage: () => void  // for regenerate: remove last assistant reply
+  enqueueDraftProcessingRequest: (request: PendingDraftProcessingRequest) => void
+  consumeDraftProcessingRequest: (id: string) => PendingDraftProcessingRequest | null
 
   // Helpers
   getActiveMessages: () => DisplayMessage[]
@@ -66,6 +94,14 @@ function generateConversationId(): string {
   return `conv_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`
 }
 
+export function normalizeConversation(conversation: Conversation): Conversation {
+  return {
+    ...conversation,
+    kind: conversation.kind ?? "normal",
+    draftContext: conversation.kind === "draft-processing" ? conversation.draftContext : undefined,
+  }
+}
+
 export const useChatStore = create<ChatState>((set, get) => ({
   conversations: [],
   activeConversationId: null,
@@ -75,15 +111,18 @@ export const useChatStore = create<ChatState>((set, get) => ({
   mode: "chat",
   ingestSource: null,
   maxHistoryMessages: 10,
+  pendingDraftProcessingRequest: null,
 
-  createConversation: () => {
+  createConversation: (options) => {
     const id = generateConversationId()
     const now = Date.now()
     const newConversation: Conversation = {
       id,
-      title: "New Conversation",
+      title: options?.title ?? "New Conversation",
       createdAt: now,
       updatedAt: now,
+      kind: options?.kind ?? "normal",
+      draftContext: options?.draftContext,
     }
     set((state) => ({
       conversations: [newConversation, ...state.conversations],
@@ -132,8 +171,9 @@ export const useChatStore = create<ChatState>((set, get) => ({
       const convMessages = state.messages.filter(
         (m) => m.conversationId === activeConversationId && m.role === "user"
       )
+      const activeConversation = conversations.find((c) => c.id === activeConversationId)
       const updatedConversations =
-        role === "user" && convMessages.length === 0
+        role === "user" && convMessages.length === 0 && activeConversation?.kind !== "draft-processing"
           ? conversations.map((c) =>
               c.id === activeConversationId
                 ? { ...c, title: content.slice(0, 50), updatedAt: Date.now() }
@@ -153,7 +193,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
 
   setMessages: (messages) => set({ messages }),
 
-  setConversations: (conversations) => set({ conversations }),
+  setConversations: (conversations) => set({ conversations: conversations.map(normalizeConversation) }),
 
   setStreaming: (isStreaming) => set({ isStreaming }),
 
@@ -219,6 +259,15 @@ export const useChatStore = create<ChatState>((set, get) => ({
         messages: state.messages.filter((m) => m.id !== msgToRemove.id),
       }
     }),
+
+  enqueueDraftProcessingRequest: (pendingDraftProcessingRequest) => set({ pendingDraftProcessingRequest }),
+
+  consumeDraftProcessingRequest: (id) => {
+    const request = get().pendingDraftProcessingRequest
+    if (!request || request.id !== id) return null
+    set({ pendingDraftProcessingRequest: null })
+    return request
+  },
 
   getActiveMessages: () => {
     const { messages, activeConversationId } = get()
