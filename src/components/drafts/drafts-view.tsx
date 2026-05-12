@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import { FileText, Trash2, MessageSquare, Hash, Sparkles } from "lucide-react"
+import { FileText, Trash2, MessageSquare, Hash, Sparkles, History, RotateCcw } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,6 +9,7 @@ import { useDraftStore } from "@/stores/draft-store"
 import { useChatStore, type DraftProcessingContext } from "@/stores/chat-store"
 import { useWikiStore } from "@/stores/wiki-store"
 import { buildDraftProcessingPrompt } from "@/lib/draft-processing"
+import { compareDraftText } from "@/lib/draft-versioning"
 
 function formatDate(ts: number): string {
   if (!Number.isFinite(ts)) return ""
@@ -18,11 +19,14 @@ function formatDate(ts: number): string {
 export function DraftsView() {
   const { t } = useTranslation()
   const [processingInstruction, setProcessingInstruction] = useState("")
+  const [selectedVersionId, setSelectedVersionId] = useState<string | null>(null)
   const drafts = useDraftStore((s) => s.drafts)
   const selectedDraftId = useDraftStore((s) => s.selectedDraftId)
   const selectDraft = useDraftStore((s) => s.selectDraft)
   const updateDraft = useDraftStore((s) => s.updateDraft)
   const deleteDraft = useDraftStore((s) => s.deleteDraft)
+  const createVersionSnapshot = useDraftStore((s) => s.createVersionSnapshot)
+  const restoreVersionAsDraft = useDraftStore((s) => s.restoreVersionAsDraft)
   const createConversation = useChatStore((s) => s.createConversation)
   const enqueueDraftProcessingRequest = useChatStore((s) => s.enqueueDraftProcessingRequest)
   const setActiveView = useWikiStore((s) => s.setActiveView)
@@ -32,6 +36,12 @@ export function DraftsView() {
     [drafts],
   )
   const selectedDraft = drafts.find((draft) => draft.id === selectedDraftId) ?? null
+  const selectedVersion = selectedDraft?.versions.find((version) => version.id === selectedVersionId) ?? null
+  const versionComparison = useMemo(() => (
+    selectedDraft && selectedVersion
+      ? compareDraftText(selectedDraft.content, selectedVersion.content)
+      : null
+  ), [selectedDraft?.id, selectedDraft?.content, selectedVersion?.id, selectedVersion?.content])
   const canStartProcessing = processingInstruction.trim().length > 0
 
   useEffect(() => {
@@ -39,6 +49,10 @@ export function DraftsView() {
       selectDraft(sortedDrafts[0].id)
     }
   }, [selectDraft, selectedDraft, sortedDrafts])
+
+  useEffect(() => {
+    setSelectedVersionId(null)
+  }, [selectedDraftId])
 
   const handleStartProcessing = () => {
     if (!selectedDraft) return
@@ -65,6 +79,17 @@ export function DraftsView() {
     })
     setProcessingInstruction("")
     setActiveView("wiki")
+  }
+
+  const handleCreateVersionSnapshot = () => {
+    if (!selectedDraft) return
+    const snapshot = createVersionSnapshot(selectedDraft.id)
+    if (snapshot) setSelectedVersionId(snapshot.id)
+  }
+
+  const handleRestoreVersion = () => {
+    if (!selectedDraft || !selectedVersion) return
+    restoreVersionAsDraft(selectedDraft.id, selectedVersion.id)
   }
 
   if (drafts.length === 0) {
@@ -185,6 +210,77 @@ export function DraftsView() {
                   </p>
                 </section>
 
+                <section className="mb-5 rounded-lg border bg-background/70 p-3">
+                  <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <History className="h-3.5 w-3.5" />
+                    {t("drafts.versionHistory")}
+                  </h2>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    className="w-full"
+                    onClick={handleCreateVersionSnapshot}
+                  >
+                    {t("drafts.createVersionSnapshot")}
+                  </Button>
+                  {selectedDraft.versions.length > 0 ? (
+                    <div className="mt-2 space-y-1.5">
+                      {selectedDraft.versions.map((version) => (
+                        <button
+                          key={version.id}
+                          type="button"
+                          onClick={() => setSelectedVersionId(version.id)}
+                          className={`w-full rounded-md border p-2 text-left text-xs transition-colors ${
+                            selectedVersionId === version.id
+                              ? "border-primary/40 bg-primary/10 text-foreground"
+                              : "border-border bg-background/70 text-muted-foreground hover:bg-accent/50"
+                          }`}
+                        >
+                          <div className="font-medium text-foreground">{formatDate(version.createdAt)}</div>
+                          <div className="mt-0.5 break-all text-[10px]">
+                            {t(`drafts.versionReason.${version.reason}`)} · {version.contentHash}
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-xs text-muted-foreground">{t("drafts.noVersions")}</p>
+                  )}
+                  {selectedVersion && versionComparison && (
+                    <div className="mt-3 space-y-2 rounded-md border bg-muted/20 p-2 text-xs text-muted-foreground">
+                      <div className="font-medium text-foreground">{t("drafts.versionCompare")}</div>
+                      {versionComparison.tooLarge ? (
+                        <p>{t("drafts.versionCompareTooLarge", {
+                          current: versionComparison.totalCurrentLines,
+                          version: versionComparison.totalVersionLines,
+                        })}</p>
+                      ) : (
+                        <div className="grid grid-cols-2 gap-1 text-[11px]">
+                          <span>{t("drafts.addedLines")}: {versionComparison.addedLines}</span>
+                          <span>{t("drafts.removedLines")}: {versionComparison.removedLines}</span>
+                          <span>{t("drafts.unchangedLines")}: {versionComparison.unchangedLines}</span>
+                          <span>{t("drafts.changedRatio")}: {Math.round(versionComparison.changedRatio * 100)}%</span>
+                        </div>
+                      )}
+                      <div>
+                        <div className="mb-1 font-medium text-foreground">{t("drafts.versionPreview")}</div>
+                        <pre className="max-h-32 overflow-y-auto whitespace-pre-wrap rounded bg-background p-2 text-[11px] leading-relaxed">{selectedVersion.content}</pre>
+                      </div>
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="outline"
+                        className="w-full gap-1"
+                        onClick={handleRestoreVersion}
+                      >
+                        <RotateCcw className="h-3.5 w-3.5" />
+                        {t("drafts.restoreVersionAsDraft")}
+                      </Button>
+                    </div>
+                  )}
+                </section>
+
                 <section>
                   <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     <FileText className="h-3.5 w-3.5" />
@@ -209,7 +305,17 @@ export function DraftsView() {
                     <MessageSquare className="h-3.5 w-3.5" />
                     {t("drafts.source")}
                   </h2>
-                  <div>{t("drafts.fromChat")}</div>
+                  {selectedDraft.restoration ? (
+                    <>
+                      <div className="font-medium text-foreground">{t("drafts.restoredFromVersion")}</div>
+                      <div>{t("drafts.parentDraft")}: {selectedDraft.restoration.parentDraftTitle}</div>
+                      <div className="break-all">{t("drafts.parentVersion")}: {selectedDraft.restoration.parentVersionId}</div>
+                      <div className="break-all">{t("drafts.parentVersionHash")}: {selectedDraft.restoration.parentContentHash}</div>
+                      <div>{t("drafts.restoredAt")}: {formatDate(selectedDraft.restoration.restoredAt)}</div>
+                    </>
+                  ) : (
+                    <div>{t("drafts.fromChat")}</div>
+                  )}
                   <div>{t("drafts.created")}: {formatDate(selectedDraft.createdAt)}</div>
                   <div>{t("drafts.updated")}: {formatDate(selectedDraft.updatedAt)}</div>
                   <div className="flex items-center gap-1 break-all">

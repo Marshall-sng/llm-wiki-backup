@@ -15,6 +15,7 @@ const draft: DraftRecord = {
     messageTimestamp: 1,
     contentHash: "hash-parent",
   },
+  versions: [],
   createdAt: 1,
   updatedAt: 1,
 }

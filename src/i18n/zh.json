@@ -316,6 +316,26 @@
     "processingNoOverwriteHint": "原底稿不会被自动覆盖。AI 结果会先出现在 Chat 中，你确认后再保存为新底稿。",
     "derivedFromDraft": "由底稿加工生成",
     "parentDraft": "父底稿",
-    "processingInstruction": "加工要求"
+    "processingInstruction": "加工要求",
+    "versionHistory": "版本历史",
+    "createVersionSnapshot": "创建版本快照",
+    "noVersions": "还没有版本快照。",
+    "versionReason": {
+      "manual-snapshot": "手动快照",
+      "restore": "恢复",
+      "ai-processing": "AI 加工"
+    },
+    "versionCompare": "基础对比",
+    "versionCompareTooLarge": "内容过长，已跳过详细对比（当前 {{current}} 行，版本 {{version}} 行）。",
+    "addedLines": "新增行",
+    "removedLines": "删除行",
+    "unchangedLines": "未变行",
+    "changedRatio": "变化比例",
+    "versionPreview": "历史版本预览",
+    "restoreVersionAsDraft": "恢复为新底稿",
+    "restoredFromVersion": "由历史版本恢复生成",
+    "parentVersion": "父版本",
+    "parentVersionHash": "父版本哈希",
+    "restoredAt": "恢复时间"
   }
 }

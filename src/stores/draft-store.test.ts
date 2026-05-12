@@ -1,4 +1,4 @@
-﻿import { describe, expect, it, beforeEach, afterEach, vi } from "vitest"
+import { describe, expect, it, beforeEach, afterEach, vi } from "vitest"
 import { useDraftStore, cleanDraftContent, hashDraftContent, type DraftRecord } from "./draft-store"
 import type { DisplayMessage } from "./chat-store"
 
@@ -43,6 +43,7 @@ describe("draft-store", () => {
       messageTimestamp: 123,
       contentHash: hashDraftContent(draft.content),
     })
+    expect(draft.versions).toEqual([])
     expect(useDraftStore.getState().selectedDraftId).toBe(draft.id)
     expect(useDraftStore.getState().lastChange.persist).toBe("immediate")
   })
@@ -133,6 +134,7 @@ describe("draft-store", () => {
         contentHash: "abc",
       },
       derivation,
+      versions: [],
       createdAt: 1,
       updatedAt: 2,
     }
@@ -143,6 +145,139 @@ describe("draft-store", () => {
     expect(useDraftStore.getState().drafts[0].derivation).toEqual(derivation)
     expect(useDraftStore.getState().selectedDraftId).toBe(draft.id)
     expect(useDraftStore.getState().lastChange.persist).toBe("none")
+  })
+
+  it("normalizes legacy drafts to an empty versions array", () => {
+    const legacy = {
+      id: "draft-legacy",
+      title: "Legacy",
+      content: "Legacy body",
+      references: [],
+      source: {
+        kind: "chat-assistant" as const,
+        conversationId: "conv",
+        messageId: "msg",
+        messageTimestamp: 1,
+        contentHash: "abc",
+      },
+      createdAt: 1,
+      updatedAt: 2,
+    } as unknown as DraftRecord
+
+    useDraftStore.getState().setDrafts([legacy], { silent: true })
+
+    expect(useDraftStore.getState().drafts[0].versions).toEqual([])
+    expect(useDraftStore.getState().drafts[0].restoration).toBeUndefined()
+  })
+
+  it("creates version snapshots newest-first and persists immediately", () => {
+    const draft = useDraftStore.getState().createDraftFromMessage(makeMessage())
+    vi.setSystemTime(1_700_000_000_100)
+    const snapshot = useDraftStore.getState().createVersionSnapshot(draft.id, { note: "before edit" })
+
+    const updated = useDraftStore.getState().drafts[0]
+    expect(snapshot).toMatchObject({
+      title: draft.title,
+      content: draft.content,
+      contentHash: draft.source.contentHash,
+      reason: "manual-snapshot",
+      note: "before edit",
+      parentDraftId: draft.id,
+    })
+    expect(updated.versions[0]).toBe(snapshot)
+    expect(updated.updatedAt).toBe(1_700_000_000_100)
+    expect(useDraftStore.getState().lastChange.persist).toBe("immediate")
+  })
+
+  it("does not auto-create snapshots on update", () => {
+    const draft = useDraftStore.getState().createDraftFromMessage(makeMessage())
+    useDraftStore.getState().updateDraft(draft.id, { content: "Edited" })
+
+    expect(useDraftStore.getState().drafts[0].versions).toEqual([])
+  })
+
+  it("returns null when snapshot or restore targets are missing", () => {
+    expect(useDraftStore.getState().createVersionSnapshot("missing")).toBeNull()
+    expect(useDraftStore.getState().restoreVersionAsDraft("missing", "missing-version")).toBeNull()
+  })
+
+  it("restores a version as a new selected draft without overwriting the parent", () => {
+    const parent = useDraftStore.getState().createDraftFromMessage(makeMessage({ content: "Original" }))
+    const snapshot = useDraftStore.getState().createVersionSnapshot(parent.id)
+    expect(snapshot).not.toBeNull()
+    useDraftStore.getState().updateDraft(parent.id, { content: "Edited" })
+    vi.setSystemTime(1_700_000_000_200)
+
+    const restored = useDraftStore.getState().restoreVersionAsDraft(parent.id, snapshot!.id)
+
+    expect(restored).not.toBeNull()
+    expect(restored!.id).not.toBe(parent.id)
+    expect(restored!.content).toBe("Original")
+    expect(restored!.references).toEqual(parent.references)
+    expect(restored!.references).not.toBe(parent.references)
+    expect(restored!.source).toMatchObject({
+      conversationId: parent.source.conversationId,
+      messageId: parent.source.messageId,
+      contentHash: hashDraftContent("Original"),
+    })
+    expect(restored!.versions).toEqual([])
+    expect(restored!.restoration).toEqual({
+      parentDraftId: parent.id,
+      parentDraftTitle: parent.title,
+      parentVersionId: snapshot!.id,
+      parentContentHash: snapshot!.contentHash,
+      restoredAt: 1_700_000_000_200,
+    })
+    expect(useDraftStore.getState().selectedDraftId).toBe(restored!.id)
+    expect(useDraftStore.getState().drafts.find((item) => item.id === parent.id)?.content).toBe("Edited")
+    expect(useDraftStore.getState().lastChange.persist).toBe("immediate")
+  })
+
+  it("hydrates and normalizes versions and restoration metadata", () => {
+    const draft = {
+      id: "draft-with-version",
+      title: "Current",
+      content: "Current body",
+      references: [],
+      source: {
+        kind: "chat-assistant" as const,
+        conversationId: "conv",
+        messageId: "msg",
+        messageTimestamp: 1,
+        contentHash: "current-hash",
+      },
+      versions: [
+        {
+          id: "version-1",
+          title: "Old",
+          content: "Old body",
+          references: [{ title: "Ref", path: "wiki/ref.md" }],
+          contentHash: "old-hash",
+          createdAt: 3,
+          reason: "restore" as const,
+        },
+      ],
+      restoration: {
+        parentDraftId: "parent",
+        parentDraftTitle: "Parent",
+        parentVersionId: "version-parent",
+        parentContentHash: "parent-hash",
+        restoredAt: 4,
+      },
+      createdAt: 1,
+      updatedAt: 2,
+    } satisfies DraftRecord
+
+    useDraftStore.getState().setDrafts([draft], { silent: true })
+
+    expect(useDraftStore.getState().drafts[0].versions).toHaveLength(1)
+    expect(useDraftStore.getState().drafts[0].versions[0]).toMatchObject({
+      id: "version-1",
+      title: "Old",
+      references: [{ title: "Ref", path: "wiki/ref.md" }],
+      reason: "restore",
+    })
+    expect(useDraftStore.getState().drafts[0].restoration).toEqual(draft.restoration)
   })
 })
 
