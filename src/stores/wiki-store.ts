@@ -27,7 +27,7 @@ interface LlmConfig {
   reasoning?: ReasoningConfig
 }
 
-export type SearchProvider = "tavily" | "serpapi" | "none"
+export type SearchProvider = "tavily" | "serpapi" | "searxng" | "none"
 export type SerpApiEngine =
   | "google"
   | "google_news"
@@ -39,10 +39,24 @@ export type SerpApiEngine =
   | "google_videos"
   | "youtube"
   | string
+export type SearXngCategory =
+  | "general"
+  | "news"
+  | "science"
+  | "it"
+  | "images"
+  | "videos"
+  | "files"
+  | "map"
+  | "music"
+  | "social media"
+  | string
 
 export interface SearchProviderOverride {
   apiKey?: string
   serpApiEngine?: SerpApiEngine
+  searXngUrl?: string
+  searXngCategories?: SearXngCategory[]
 }
 
 export type SearchProviderConfigs = Partial<Record<Exclude<SearchProvider, "none">, SearchProviderOverride>>
@@ -51,6 +65,8 @@ interface SearchApiConfig {
   provider: SearchProvider
   apiKey: string
   serpApiEngine?: SerpApiEngine
+  searXngUrl?: string
+  searXngCategories?: SearXngCategory[]
   providerConfigs?: SearchProviderConfigs
 }
 
@@ -265,6 +281,8 @@ export const useWikiStore = create<WikiState>((set) => ({
     provider: "none",
     apiKey: "",
     serpApiEngine: "google",
+    searXngUrl: "",
+    searXngCategories: ["general"],
     providerConfigs: {},
   },
   webAccessConfig: DEFAULT_WEB_ACCESS_CONFIG,

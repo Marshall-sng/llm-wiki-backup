@@ -1,5 +1,6 @@
-import { useState } from "react"
+﻿import { useState } from "react"
 import { ChevronDown, ChevronRight } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { startWebAccessProxy } from "@/commands/web-access"
@@ -10,7 +11,7 @@ import {
   type SearchProviderOverride,
   type WebAccessConfig,
 } from "@/stores/wiki-store"
-import { SERPAPI_ENGINE_OPTIONS, resolveSearchConfig } from "@/lib/web-search"
+import { SEARXNG_CATEGORY_OPTIONS, SERPAPI_ENGINE_OPTIONS, resolveSearchConfig } from "@/lib/web-search"
 import { healthCheckWebAccess, normalizeDomainList, normalizeWebAccessConfig } from "@/lib/web-access"
 
 const SEARCH_PROVIDERS = [
@@ -19,18 +20,28 @@ const SEARCH_PROVIDERS = [
     label: "Tavily",
     hint: "用于深度研究的通用网页搜索。",
     keyPlaceholder: "输入 Tavily API Key（tavily.com）",
+    needsApiKey: true,
   },
   {
     id: "serpapi",
     label: "SerpApi",
     hint: "支持 Google、Bing、DuckDuckGo、Scholar、新闻、图片、视频、YouTube 等搜索源。",
     keyPlaceholder: "输入 SerpApi API Key（serpapi.com）",
+    needsApiKey: true,
+  },
+  {
+    id: "searxng",
+    label: "SearXNG",
+    hint: "通过自托管 SearXNG JSON API 进行元搜索。",
+    urlPlaceholder: "https://search.example.com",
+    needsApiKey: false,
   },
 ] as const
 
-const DEFAULT_PROXY_SCRIPT_PLACEHOLDER = "%USERPROFILE%\.agents\skills\web-access\scripts\check-deps.mjs"
+const DEFAULT_PROXY_SCRIPT_PLACEHOLDER = "%USERPROFILE%\\.agents\\skills\\web-access\\scripts\\check-deps.mjs"
 
 export function WebSearchSection() {
+  const { t } = useTranslation()
   const searchApiConfig = useWikiStore((s) => s.searchApiConfig)
   const setSearchApiConfig = useWikiStore((s) => s.setSearchApiConfig)
   const webAccessConfig = useWikiStore((s) => s.webAccessConfig)
@@ -110,9 +121,9 @@ export function WebSearchSection() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-semibold">网页搜索（深度研究）</h2>
+        <h2 className="text-xl font-semibold">{t("settings.sections.webSearch.title")}（深度研究）</h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          搜索提供商负责“发现 URL”；WebAccess 负责在允许时打开搜索结果页面并保存可引用的网页原文。
+          搜索提供商负责发现 URL；WebAccess 可在允许时打开搜索结果页面并保存可引用的网页原文。
         </p>
       </div>
 
@@ -120,7 +131,9 @@ export function WebSearchSection() {
         {SEARCH_PROVIDERS.map((provider) => {
           const override = resolvedConfig.providerConfigs?.[provider.id]
           const isActive = resolvedConfig.provider === provider.id
-          const hasConfig = !!override?.apiKey
+          const hasConfig = provider.id === "searxng"
+            ? !!override?.searXngUrl
+            : !!override?.apiKey
           const isExpanded = !!expanded[provider.id]
           return (
             <div
@@ -165,40 +178,46 @@ export function WebSearchSection() {
                   </div>
                 </button>
 
-                <button
-                  type="button"
-                  onClick={() => toggleActive(provider.id)}
-                  className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border transition-colors ${
-                    isActive
-                      ? "border-primary bg-primary"
-                      : "border-muted-foreground/30 bg-muted-foreground/20 hover:bg-muted-foreground/30"
-                  }`}
-                  aria-label={isActive ? "停用" : "启用"}
-                >
-                  <span
-                    className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm ring-1 ring-black/10 transition-transform ${
-                      isActive ? "translate-x-4" : "translate-x-0.5"
-                    }`}
-                  />
-                </button>
+                <Toggle checked={isActive} onChange={() => toggleActive(provider.id)} label={isActive ? "停用" : "启用"} />
               </div>
 
               {isExpanded && (
                 <div className="space-y-4 border-t bg-background/50 px-4 py-3">
-                  <div className="space-y-2">
-                    <Label>API Key</Label>
-                    <Input
-                      type="password"
-                      value={override?.apiKey ?? ""}
-                      onChange={(e) => updateProvider(provider.id, { apiKey: e.target.value })}
-                      placeholder={provider.keyPlaceholder}
-                    />
-                  </div>
+                  {provider.needsApiKey ? (
+                    <div className="space-y-2">
+                      <Label>API Key</Label>
+                      <Input
+                        type="password"
+                        value={override?.apiKey ?? ""}
+                        onChange={(e) => updateProvider(provider.id, { apiKey: e.target.value })}
+                        placeholder={provider.keyPlaceholder}
+                      />
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      <Label>Instance URL</Label>
+                      <Input
+                        value={override?.searXngUrl ?? resolvedConfig.searXngUrl ?? ""}
+                        onChange={(e) => updateProvider("searxng", { searXngUrl: e.target.value })}
+                        placeholder={provider.urlPlaceholder}
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        SearXNG 实例必须允许 JSON 搜索响应（format=json）。
+                      </p>
+                    </div>
+                  )}
 
                   {provider.id === "serpapi" && (
                     <SerpApiEnginePicker
                       value={override?.serpApiEngine ?? resolvedConfig.serpApiEngine ?? "google"}
                       onChange={(serpApiEngine) => updateProvider("serpapi", { serpApiEngine })}
+                    />
+                  )}
+
+                  {provider.id === "searxng" && (
+                    <SearXngCategoryPicker
+                      value={override?.searXngCategories ?? resolvedConfig.searXngCategories ?? ["general"]}
+                      onChange={(searXngCategories) => updateProvider("searxng", { searXngCategories })}
                     />
                   )}
                 </div>
@@ -218,6 +237,49 @@ export function WebSearchSection() {
         onHealthCheck={checkWebAccessHealth}
         onStartProxy={startLocalWebAccessProxy}
       />
+    </div>
+  )
+}
+
+function SearXngCategoryPicker({
+  value,
+  onChange,
+}: {
+  value: string[]
+  onChange: (value: string[]) => void
+}) {
+  const selected = value.length > 0 ? value : ["general"]
+
+  function toggle(category: string) {
+    const next = selected.includes(category)
+      ? selected.filter((item) => item !== category)
+      : [...selected, category]
+    onChange(next.length > 0 ? next : ["general"])
+  }
+
+  return (
+    <div className="space-y-2">
+      <Label>搜索分类</Label>
+      <div className="flex flex-wrap gap-1.5">
+        {SEARXNG_CATEGORY_OPTIONS.map((category) => (
+          <button
+            key={category.value}
+            type="button"
+            onClick={() => toggle(category.value)}
+            className={`rounded-md border px-2.5 py-1 text-xs transition-colors ${
+              selected.includes(category.value)
+                ? "border-primary bg-primary text-primary-foreground"
+                : "border-border hover:bg-accent"
+            }`}
+            title={category.hint}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
+      <p className="text-xs text-muted-foreground">
+        分类会作为 SearXNG 的 <code>categories</code> 参数发送。
+      </p>
     </div>
   )
 }
@@ -251,7 +313,7 @@ function WebAccessCard({
             {saved && <span className="text-[10px] text-emerald-600">已保存</span>}
           </div>
           <p className="mt-1 text-xs text-muted-foreground">
-            深度研究仍先用 Tavily/SerpApi 搜索；开启后，系统会只读打开搜索结果页面，抽取正文并保存到 raw/sources/web。
+            深度研究仍先用 Tavily/SerpApi/SearXNG 搜索；开启后，系统会只读打开搜索结果页面，抽取正文并保存到 raw/sources/web。
           </p>
         </div>
         <Toggle checked={config.enabled} onChange={(enabled) => onPatch({ enabled })} label={config.enabled ? "停用" : "启用"} />

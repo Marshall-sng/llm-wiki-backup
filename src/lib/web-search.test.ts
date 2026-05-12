@@ -85,15 +85,78 @@ describe("webSearch", () => {
     ])
   })
 
+  it("calls SearXNG JSON search with the configured instance and categories", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse({
+      results: [
+        {
+          title: "SearXNG result",
+          url: "https://docs.example/page",
+          content: "Result content",
+          engine: "duckduckgo",
+        },
+      ],
+    }))
+
+    const out = await webSearch(
+      "local search",
+      {
+        provider: "searxng",
+        apiKey: "",
+        providerConfigs: {
+          searxng: {
+            searXngUrl: "https://search.example.com",
+            searXngCategories: ["general", "news"],
+          },
+        },
+      },
+      3,
+    )
+    const [url, init] = fetchMock.mock.calls[0]
+    const parsed = new URL(String(url))
+
+    expect(parsed.origin + parsed.pathname).toBe("https://search.example.com/search")
+    expect(parsed.searchParams.get("q")).toBe("local search")
+    expect(parsed.searchParams.get("format")).toBe("json")
+    expect(parsed.searchParams.get("categories")).toBe("general,news")
+    expect(init).toEqual(expect.objectContaining({ method: "GET" }))
+    expect(out).toEqual([
+      { title: "SearXNG result", url: "https://docs.example/page", snippet: "Result content", source: "docs.example" },
+    ])
+  })
+
+  it("preserves SearXNG subpath instances when building the search endpoint", async () => {
+    fetchMock.mockResolvedValueOnce(jsonResponse({ results: [] }))
+
+    await webSearch(
+      "subpath",
+      {
+        provider: "searxng",
+        apiKey: "",
+        providerConfigs: {
+          searxng: { searXngUrl: "http://localhost:8080/searx/" },
+        },
+      },
+      5,
+    )
+    const parsed = new URL(String(fetchMock.mock.calls[0][0]))
+
+    expect(parsed.origin + parsed.pathname).toBe("http://localhost:8080/searx/search")
+    expect(parsed.searchParams.get("categories")).toBe("general")
+  })
+
   it("surfaces SerpApi JSON errors", async () => {
     fetchMock.mockResolvedValueOnce(jsonResponse({ error: "Invalid API key" }))
 
     await expect(webSearch("x", { provider: "serpapi", apiKey: "bad" }, 5))
-      .rejects.toThrow("SerpApi 搜索失败：Invalid API key")
+      .rejects.toThrow("SerpApi search failed: Invalid API key")
   })
 
   it("requires a configured search provider and key", async () => {
     await expect(webSearch("x", { provider: "none", apiKey: "" }, 5))
-      .rejects.toThrow("Tavily 或 SerpApi API Key")
+      .rejects.toThrow("Select a search provider")
+    await expect(webSearch("x", { provider: "serpapi", apiKey: "" }, 5))
+      .rejects.toThrow("Tavily or SerpApi API key")
+    await expect(webSearch("x", { provider: "searxng", apiKey: "" }, 5))
+      .rejects.toThrow("SearXNG instance URL")
   })
 })

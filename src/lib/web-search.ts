@@ -1,4 +1,10 @@
-import type { SearchApiConfig, SearchProvider, SearchProviderConfigs, SerpApiEngine } from "@/stores/wiki-store"
+import type {
+  SearchApiConfig,
+  SearchProvider,
+  SearchProviderConfigs,
+  SearXngCategory,
+  SerpApiEngine,
+} from "@/stores/wiki-store"
 import { getHttpFetch, isFetchNetworkError } from "@/lib/tauri-fetch"
 
 export interface WebSearchResult {
@@ -9,21 +15,49 @@ export interface WebSearchResult {
 }
 
 export const SERPAPI_ENGINE_OPTIONS: { value: SerpApiEngine; label: string; hint: string }[] = [
-  { value: "google", label: "Google 网页", hint: "SerpApi Google Search API 自然搜索结果" },
-  { value: "google_news", label: "Google 新闻", hint: "新闻搜索结果" },
-  { value: "google_scholar", label: "Google 学术", hint: "学术论文和引用" },
-  { value: "google_patents", label: "Google 专利", hint: "专利搜索结果" },
-  { value: "bing", label: "Bing", hint: "Bing 自然搜索结果" },
-  { value: "duckduckgo", label: "DuckDuckGo", hint: "DuckDuckGo 自然搜索结果" },
-  { value: "google_images", label: "Google 图片", hint: "图片搜索结果" },
-  { value: "google_videos", label: "Google 视频", hint: "视频搜索结果" },
-  { value: "youtube", label: "YouTube", hint: "YouTube 视频结果" },
+  { value: "google", label: "Google Web", hint: "SerpApi Google Search API organic results" },
+  { value: "google_news", label: "Google News", hint: "News-focused results" },
+  { value: "google_scholar", label: "Google Scholar", hint: "Academic papers and citations" },
+  { value: "google_patents", label: "Google Patents", hint: "Patent search results" },
+  { value: "bing", label: "Bing", hint: "Bing organic results" },
+  { value: "duckduckgo", label: "DuckDuckGo", hint: "DuckDuckGo organic results" },
+  { value: "google_images", label: "Google Images", hint: "Image search results" },
+  { value: "google_videos", label: "Google Videos", hint: "Video search results" },
+  { value: "youtube", label: "YouTube", hint: "YouTube video results" },
+]
+
+export const SEARXNG_CATEGORY_OPTIONS: { value: SearXngCategory; label: string; hint: string }[] = [
+  { value: "general", label: "General", hint: "Default web results" },
+  { value: "news", label: "News", hint: "News engines" },
+  { value: "science", label: "Science", hint: "Academic and science-focused engines" },
+  { value: "it", label: "IT", hint: "Developer and technology engines" },
+  { value: "images", label: "Images", hint: "Image search results" },
+  { value: "videos", label: "Videos", hint: "Video search results" },
+  { value: "files", label: "Files", hint: "File and document search" },
+  { value: "map", label: "Map", hint: "Map and location results" },
+  { value: "music", label: "Music", hint: "Music engines" },
+  { value: "social media", label: "Social", hint: "Social media engines" },
 ]
 
 export function resolveSearchConfig(config: SearchApiConfig): SearchApiConfig {
   const providerConfigs: SearchProviderConfigs = config.providerConfigs ?? {
     ...(config.provider !== "none" && config.apiKey
-      ? { [config.provider]: { apiKey: config.apiKey, serpApiEngine: config.serpApiEngine } }
+      ? {
+          [config.provider]: {
+            apiKey: config.apiKey,
+            serpApiEngine: config.serpApiEngine,
+            searXngUrl: config.searXngUrl,
+            searXngCategories: config.searXngCategories,
+          },
+        }
+      : {}),
+    ...(config.provider === "searxng" && config.searXngUrl
+      ? {
+          searxng: {
+            searXngUrl: config.searXngUrl,
+            searXngCategories: config.searXngCategories,
+          },
+        }
       : {}),
   }
 
@@ -34,6 +68,8 @@ export function resolveSearchConfig(config: SearchApiConfig): SearchApiConfig {
       provider: "none",
       apiKey: "",
       serpApiEngine: config.serpApiEngine ?? providerConfigs.serpapi?.serpApiEngine ?? "google",
+      searXngUrl: config.searXngUrl ?? providerConfigs.searxng?.searXngUrl ?? "",
+      searXngCategories: config.searXngCategories ?? providerConfigs.searxng?.searXngCategories ?? ["general"],
       providerConfigs,
     }
   }
@@ -44,6 +80,8 @@ export function resolveSearchConfig(config: SearchApiConfig): SearchApiConfig {
     provider: activeProvider,
     apiKey: activeOverride?.apiKey ?? config.apiKey ?? "",
     serpApiEngine: activeOverride?.serpApiEngine ?? config.serpApiEngine ?? "google",
+    searXngUrl: activeOverride?.searXngUrl ?? config.searXngUrl ?? "",
+    searXngCategories: activeOverride?.searXngCategories ?? config.searXngCategories ?? ["general"],
     providerConfigs,
   }
 }
@@ -54,8 +92,14 @@ export async function webSearch(
   maxResults: number = 10,
 ): Promise<WebSearchResult[]> {
   const resolved = resolveSearchConfig(config)
-  if (resolved.provider === "none" || !resolved.apiKey) {
-    throw new Error("尚未配置网页搜索。请在设置中添加 Tavily 或 SerpApi API Key。")
+  if (resolved.provider === "none") {
+    throw new Error("Web search not configured. Select a search provider in Settings.")
+  }
+  if ((resolved.provider === "tavily" || resolved.provider === "serpapi") && !resolved.apiKey) {
+    throw new Error("Web search not configured. Add a Tavily or SerpApi API key in Settings.")
+  }
+  if (resolved.provider === "searxng" && !resolved.searXngUrl?.trim()) {
+    throw new Error("Web search not configured. Add a SearXNG instance URL in Settings.")
   }
 
   switch (resolved.provider) {
@@ -63,8 +107,89 @@ export async function webSearch(
       return tavilySearch(query, resolved.apiKey, maxResults)
     case "serpapi":
       return serpApiSearch(query, resolved.apiKey, maxResults, resolved.serpApiEngine ?? "google")
+    case "searxng":
+      return searXngSearch(query, resolved.searXngUrl ?? "", maxResults, resolved.searXngCategories ?? ["general"])
     default:
       throw new Error(`Unknown search provider: ${resolved.provider}`)
+  }
+}
+
+function searXngSearchUrl(instanceUrl: string): URL {
+  const trimmed = instanceUrl.trim()
+  const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`
+  const url = new URL(withProtocol)
+  const path = url.pathname.replace(/\/+$/, "")
+  url.pathname = path.endsWith("/search") || path === "/search"
+    ? path
+    : `${path}/search`
+  url.search = ""
+  url.hash = ""
+  return url
+}
+
+async function searXngSearch(
+  query: string,
+  instanceUrl: string,
+  maxResults: number,
+  categories: SearXngCategory[],
+): Promise<WebSearchResult[]> {
+  let endpoint: URL
+  try {
+    endpoint = searXngSearchUrl(instanceUrl)
+  } catch {
+    throw new Error("Invalid SearXNG instance URL. Use a valid http(s) URL, for example https://search.example.com.")
+  }
+
+  endpoint.searchParams.set("q", query)
+  endpoint.searchParams.set("format", "json")
+  endpoint.searchParams.set("categories", (categories.length > 0 ? categories : ["general"]).join(","))
+
+  const httpFetch = await getHttpFetch()
+  let response: Response
+  try {
+    response = await httpFetch(endpoint.toString(), {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    })
+  } catch (err) {
+    if (isFetchNetworkError(err)) {
+      throw new Error(
+        "Network error reaching the SearXNG instance. Check the instance URL and whether JSON search is enabled.",
+      )
+    }
+    throw err
+  }
+
+  if (!response.ok) {
+    const errorText = await response.text().catch(() => "Unknown error")
+    throw new Error(`SearXNG search failed (${response.status}): ${errorText}`)
+  }
+
+  const data = await response.json()
+  return normalizeSearXngResults(data, maxResults)
+}
+
+function normalizeSearXngResults(data: { results?: unknown[] }, maxResults: number): WebSearchResult[] {
+  return (data.results ?? [])
+    .slice(0, maxResults)
+    .map((item) => normalizeSearXngResult(item))
+    .filter((item) => item.url.length > 0)
+}
+
+function normalizeSearXngResult(item: unknown): WebSearchResult {
+  const r = item as {
+    title?: string
+    url?: string
+    content?: string
+    engine?: string
+    category?: string
+  }
+  const url = r.url ?? ""
+  return {
+    title: r.title ?? "Untitled",
+    url,
+    snippet: r.content ?? "",
+    source: hostnameFromUrl(url) || r.engine || r.category || "",
   }
 }
 
@@ -101,21 +226,21 @@ async function tavilySearch(
   } catch (err) {
     if (isFetchNetworkError(err)) {
       throw new Error(
-        "连接 api.tavily.com 时发生网络错误。请检查网络连接以及 Tavily API Key 是否仍然有效。",
+        "Network error reaching api.tavily.com. Check your connectivity and whether the Tavily API key is still valid.",
       )
     }
     throw err
   }
 
   if (!response.ok) {
-    const errorText = await response.text().catch(() => "未知错误")
-    throw new Error(`Tavily 搜索失败（${response.status}）：${errorText}`)
+    const errorText = await response.text().catch(() => "Unknown error")
+    throw new Error(`Tavily search failed (${response.status}): ${errorText}`)
   }
 
   const data = await response.json()
 
   return (data.results ?? []).map((r: { title: string; url: string; content: string }) => ({
-    title: r.title ?? "无标题",
+    title: r.title ?? "Untitled",
     url: r.url ?? "",
     snippet: r.content ?? "",
     source: hostnameFromUrl(r.url ?? ""),
@@ -145,20 +270,20 @@ async function serpApiSearch(
   } catch (err) {
     if (isFetchNetworkError(err)) {
       throw new Error(
-        "连接 serpapi.com 时发生网络错误。请检查网络连接以及 SerpApi API Key 是否仍然有效。",
+        "Network error reaching serpapi.com. Check your connectivity and whether the SerpApi API key is still valid.",
       )
     }
     throw err
   }
 
   if (!response.ok) {
-    const errorText = await response.text().catch(() => "未知错误")
-    throw new Error(`SerpApi 搜索失败（${response.status}）：${errorText}`)
+    const errorText = await response.text().catch(() => "Unknown error")
+    throw new Error(`SerpApi search failed (${response.status}): ${errorText}`)
   }
 
   const data = await response.json()
   if (typeof data.error === "string" && data.error.trim()) {
-    throw new Error(`SerpApi 搜索失败：${data.error}`)
+    throw new Error(`SerpApi search failed: ${data.error}`)
   }
 
   return normalizeSerpApiResults(data, maxResults)
@@ -201,7 +326,7 @@ function normalizeSerpApiResult(item: unknown): WebSearchResult {
   }
   const url = r.link ?? r.url ?? r.original ?? r.thumbnail ?? ""
   return {
-    title: r.title ?? "无标题",
+    title: r.title ?? "Untitled",
     url,
     snippet: r.snippet ?? r.summary ?? r.description ?? "",
     source: hostnameFromUrl(url) || r.source || r.displayed_link || "",
