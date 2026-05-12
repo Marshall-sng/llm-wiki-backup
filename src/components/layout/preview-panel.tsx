@@ -42,9 +42,14 @@ export function PreviewPanel() {
       })
       .catch((err) => {
         lastLoadedRef.current = ""
+        if (isMissingFileError(err)) {
+          setSelectedFile(null)
+          setFileContent("")
+          return
+        }
         setFileContent(`Error loading file: ${err}`)
       })
-  }, [selectedFile, setFileContent])
+  }, [selectedFile, setFileContent, setSelectedFile])
 
   const handleSave = useCallback(
     (markdown: string) => {
@@ -115,4 +120,9 @@ export function PreviewPanel() {
       </div>
     </div>
   )
+}
+
+function isMissingFileError(err: unknown): boolean {
+  const message = String(err)
+  return /notfound|not found|no such file|os error 2|系统找不到指定的文件/i.test(message)
 }

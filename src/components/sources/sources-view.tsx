@@ -27,6 +27,7 @@ export function SourcesView() {
   const setSelectedFile = useWikiStore((s) => s.setSelectedFile)
   const setFileContent = useWikiStore((s) => s.setFileContent)
   const setFileTree = useWikiStore((s) => s.setFileTree)
+  const dataVersion = useWikiStore((s) => s.dataVersion)
   const llmConfig = useWikiStore((s) => s.llmConfig)
   const [sources, setSources] = useState<FileNode[]>([])
   const [importing, setImporting] = useState(false)
@@ -69,7 +70,7 @@ export function SourcesView() {
 
   useEffect(() => {
     loadSources()
-  }, [loadSources])
+  }, [loadSources, dataVersion])
 
   async function handleImport() {
     if (!project) return

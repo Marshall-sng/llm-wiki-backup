@@ -7,7 +7,7 @@ import {
 } from "@/commands/file-sync"
 import { useFileSyncStore } from "@/stores/file-sync-store"
 import { useWikiStore } from "@/stores/wiki-store"
-import { getFileStem, normalizePath } from "@/lib/path-utils"
+import { getFileStem, isAbsolutePath, normalizePath } from "@/lib/path-utils"
 import type { WikiProject } from "@/types/wiki"
 import type { FileChangeTask } from "@/commands/file-sync"
 import {
@@ -107,7 +107,11 @@ async function processFileChangeBatch(
   paths: string[],
   tasks: FileChangeTask[],
 ): Promise<void> {
-  await cleanupDeletedFiles(project, tasks)
+  clearSelectedFileForDeletedPaths(project, tasks
+    .filter((task) => task.projectId === project.id && task.kind === "deleted")
+    .map((task) => task.path))
+  const cleanup = await cleanupDeletedFiles(project, tasks)
+  clearSelectedFileForDeletedPaths(project, cleanup.deletedWikiPaths)
   await enqueueRawSourceChanges(project, tasks)
   await refreshAfterFileChanges(project, paths)
 }
@@ -115,6 +119,7 @@ async function processFileChangeBatch(
 async function refreshAfterFileChanges(project: WikiProject, relativePaths: string[]): Promise<void> {
   const pp = normalizePath(project.path)
   const store = useWikiStore.getState()
+  const changedRelPaths = new Set(relativePaths.map((path) => toProjectRelativePath(project, path)))
   try {
     const tree = await listDirectory(pp)
     useWikiStore.getState().setFileTree(tree)
@@ -127,8 +132,8 @@ async function refreshAfterFileChanges(project: WikiProject, relativePaths: stri
   const selected = store.selectedFile ? normalizePath(store.selectedFile) : null
   if (!selected) return
 
-  const selectedRel = selected.startsWith(`${pp}/`) ? selected.slice(pp.length + 1) : selected
-  if (!relativePaths.includes(selectedRel)) return
+  const selectedRel = toProjectRelativePath(project, selected)
+  if (!changedRelPaths.has(selectedRel)) return
 
   try {
     const content = await readFile(selected)
@@ -161,23 +166,32 @@ function isIngestableRawSource(relativePath: string): boolean {
   return isIngestableSourcePath(path)
 }
 
-async function cleanupDeletedFiles(project: WikiProject, tasks: FileChangeTask[]): Promise<void> {
+async function cleanupDeletedFiles(
+  project: WikiProject,
+  tasks: FileChangeTask[],
+): Promise<{ deletedWikiPaths: string[] }> {
   const deleted = tasks
     .filter((task) => task.projectId === project.id && task.kind === "deleted")
-    .map((task) => normalizePath(task.path))
+    .map((task) => toProjectRelativePath(project, task.path))
 
-  if (deleted.length === 0) return
+  if (deleted.length === 0) return { deletedWikiPaths: [] }
 
   const rawSources = deleted.filter(isRawSourcePathForCascade)
   const wikiPages = deleted.filter(isWikiPageForCascade)
 
   let deletedWikiSlugs = new Set<string>()
+  let deletedWikiPaths: string[] = []
   if (rawSources.length > 0) {
     try {
-      const result = await deleteSourceFiles(project.path, rawSources, {
-        fileAlreadyDeleted: true,
-        logReason: rawSources.length === 1 ? "external delete" : "external batch delete",
-      })
+      const result = await deleteSourceFiles(
+        project.path,
+        rawSources.map((path) => toProjectAbsolutePath(project, path)),
+        {
+          fileAlreadyDeleted: true,
+          logReason: rawSources.length === 1 ? "external delete" : "external batch delete",
+        },
+      )
+      deletedWikiPaths = result.deletedWikiPaths
       deletedWikiSlugs = new Set(result.deletedWikiPaths.map((path) => getFileStem(path)))
     } catch (err) {
       console.error("[file-sync] failed to clean deleted raw sources:", err)
@@ -192,6 +206,40 @@ async function cleanupDeletedFiles(project: WikiProject, tasks: FileChangeTask[]
       console.error("[file-sync] failed to clean deleted wiki pages:", err)
     }
   }
+
+  return { deletedWikiPaths }
+}
+
+function clearSelectedFileForDeletedPaths(project: WikiProject, paths: string[]): void {
+  if (paths.length === 0) return
+  const store = useWikiStore.getState()
+  const selected = store.selectedFile ? normalizePath(store.selectedFile) : null
+  if (!selected) return
+
+  const selectedRel = toProjectRelativePath(project, selected)
+  const matchesDeletedPath = paths.some((path) => {
+    const deletedRel = toProjectRelativePath(project, path)
+    return selectedRel === deletedRel || selectedRel.startsWith(`${deletedRel}/`)
+  })
+
+  if (!matchesDeletedPath) return
+  store.setSelectedFile(null)
+  store.setFileContent("")
+  store.setPendingScrollImageSrc(null)
+}
+
+function toProjectRelativePath(project: WikiProject, path: string): string {
+  const pp = normalizePath(project.path).replace(/\/+$/, "")
+  const normalized = normalizePath(path)
+  return normalized.toLowerCase().startsWith(`${pp.toLowerCase()}/`)
+    ? normalized.slice(pp.length + 1)
+    : normalized
+}
+
+function toProjectAbsolutePath(project: WikiProject, path: string): string {
+  const normalized = normalizePath(path)
+  if (isAbsolutePath(normalized)) return normalized
+  return `${normalizePath(project.path).replace(/\/+$/, "")}/${normalized}`
 }
 
 function isRawSourcePathForCascade(relativePath: string): boolean {

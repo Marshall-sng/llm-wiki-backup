@@ -302,6 +302,49 @@ describe("project file sync", () => {
     })
   })
 
+  it("clears a selected raw source and its converted cache when the file is externally deleted", async () => {
+    vi.useFakeTimers()
+    const { startProjectFileSync } = await import("@/lib/project-file-sync")
+    const { useWikiStore } = await import("@/stores/wiki-store")
+
+    const project = { id: "A", name: "A", path: "/tmp/a" }
+    useWikiStore.getState().setProject(project)
+    useWikiStore.getState().setSelectedFile("/tmp/a/raw/sources/report.pdf")
+    useWikiStore.getState().setFileContent("old preview")
+    useWikiStore.getState().setPendingScrollImageSrc("media/report.png")
+
+    void startProjectFileSync(project)
+    await vi.waitFor(() => {
+      expect(mocks.listen).toHaveBeenCalledTimes(2)
+    })
+
+    mocks.emit("file-sync://changed", {
+      projectId: "A",
+      tasks: [
+        {
+          id: "t1",
+          projectId: "A",
+          path: "raw/sources/report.pdf",
+          kind: "deleted",
+          status: "done",
+          createdAt: 1,
+          updatedAt: 1,
+          retryCount: 0,
+          needsRerun: false,
+        },
+      ],
+    })
+
+    await vi.advanceTimersByTimeAsync(250)
+
+    expect(useWikiStore.getState().selectedFile).toBeNull()
+    expect(useWikiStore.getState().fileContent).toBe("")
+    expect(useWikiStore.getState().pendingScrollImageSrc).toBeNull()
+    await vi.waitFor(() => {
+      expect(mocks.deleteFile).toHaveBeenCalledWith("/tmp/a/.llm-wiki/converted/report.pdf.md")
+    })
+  })
+
   it("cascades delete for wiki pages whose only source was externally deleted", async () => {
     vi.useFakeTimers()
     const { startProjectFileSync } = await import("@/lib/project-file-sync")
