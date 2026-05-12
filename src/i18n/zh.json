@@ -239,6 +239,11 @@
           "notDuplicates": "不是重复",
           "merged": "已合并",
           "skipped": "已标记为不重复"
+        },
+        "fileSync": {
+          "title": "监控项目文件夹的外部变化",
+          "description": "当文件在应用外发生变化时，自动刷新文件树；raw/sources 下新增或修改的可提取文件会加入提取队列。",
+          "noProject": "打开项目后才能修改这个项目级设置。"
         }
       },
       "changelog": {

@@ -239,6 +239,11 @@
           "notDuplicates": "Not duplicates",
           "merged": "Merged",
           "skipped": "Marked not duplicates"
+        },
+        "fileSync": {
+          "title": "Monitor project folder for external changes",
+          "description": "Automatically refresh the file tree when files change outside the app. New or modified ingestable files under raw/sources are added to the ingest queue.",
+          "noProject": "Open a project to change this project-level setting."
         }
       },
       "changelog": {

@@ -226,19 +226,19 @@ export function MaintenanceSection({ draft, setDraft }: Props) {
           <div className="space-y-1">
             <span className="text-sm font-semibold">
               {t("settings.sections.maintenance.fileSync.title", {
-                defaultValue: "Monitor project folder for external changes",
+                defaultValue: "监控项目文件夹的外部变化",
               })}
             </span>
             <p className="text-xs leading-relaxed text-muted-foreground">
               {t("settings.sections.maintenance.fileSync.description", {
                 defaultValue:
-                  "Automatically refresh the file tree when files change outside the app. New or modified ingestable files under raw/sources are added to the ingest queue.",
+                  "当文件在应用外发生变化时，自动刷新文件树；raw/sources 下新增或修改的可提取文件会加入提取队列。",
               })}
             </p>
             {!projectReady && (
               <p className="text-xs text-muted-foreground">
                 {t("settings.sections.maintenance.fileSync.noProject", {
-                  defaultValue: "Open a project to change this project-level setting.",
+                  defaultValue: "打开项目后才能修改这个项目级设置。",
                 })}
               </p>
             )}
