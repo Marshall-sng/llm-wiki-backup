@@ -348,7 +348,17 @@
     "processingTemplateActiveHint": "This draft-processing session will carry a template snapshot and try to follow its structure, tone, length, and citation rules.",
     "processingTemplateNone": "No current template selected",
     "processingTemplateNoneHint": "This will run normal draft processing without applying a template automatically.",
-    "createTemplateProcessingConversation": "Create Template Processing Session"
+    "createTemplateProcessingConversation": "Create Template Processing Session",
+    "templateMatchReport": "Basic template match report",
+    "templateMatchTemplate": "Current template: {{title}}",
+    "templateMatchSummary": "{{pass}} passed, {{warning}} warnings, {{missing}} missing, {{manual}} manual checks.",
+    "templateMatchNonBlockingHint": "This report is a basic static check and does not block saving or processing; manual review is still required before formal export.",
+    "templateMatchSeverity": {
+      "pass": "Pass",
+      "warning": "Warning",
+      "missing": "Missing",
+      "manual": "Manual"
+    }
   },
   "templates": {
     "title": "Template Library",

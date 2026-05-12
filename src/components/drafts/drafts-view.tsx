@@ -11,10 +11,24 @@ import { useWikiStore } from "@/stores/wiki-store"
 import { useTemplateStore } from "@/stores/template-store"
 import { buildDraftProcessingPrompt, buildDraftTemplateSnapshot } from "@/lib/draft-processing"
 import { compareDraftText } from "@/lib/draft-versioning"
+import { buildTemplateMatchReport, type TemplateMatchSeverity } from "@/lib/template-match"
 
 function formatDate(ts: number): string {
   if (!Number.isFinite(ts)) return ""
   return new Date(ts).toLocaleString()
+}
+
+function templateMatchSeverityClass(severity: TemplateMatchSeverity): string {
+  switch (severity) {
+    case "pass":
+      return "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
+    case "missing":
+      return "border-destructive/30 bg-destructive/10 text-destructive"
+    case "warning":
+      return "border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300"
+    case "manual":
+      return "border-blue-500/30 bg-blue-500/10 text-blue-700 dark:text-blue-300"
+  }
 }
 
 export function DraftsView() {
@@ -46,6 +60,11 @@ export function DraftsView() {
       ? compareDraftText(selectedDraft.content, selectedVersion.content)
       : null
   ), [selectedDraft?.id, selectedDraft?.content, selectedVersion?.id, selectedVersion?.content])
+  const templateMatchReport = useMemo(() => (
+    selectedDraft && activeTemplate
+      ? buildTemplateMatchReport(selectedDraft, activeTemplate)
+      : null
+  ), [activeTemplate, selectedDraft])
   const canStartProcessing = processingInstruction.trim().length > 0
 
   useEffect(() => {
@@ -236,6 +255,38 @@ export function DraftsView() {
                     {t("drafts.processingNoOverwriteHint")}
                   </p>
                 </section>
+
+                {templateMatchReport && (
+                  <section className="mb-5 rounded-lg border bg-background/70 p-3">
+                    <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      {t("drafts.templateMatchReport")}
+                    </h2>
+                    <div className="mb-2 rounded-md bg-muted/30 p-2 text-[11px] leading-relaxed text-muted-foreground">
+                      <div className="font-medium text-foreground">
+                        {t("drafts.templateMatchTemplate", { title: templateMatchReport.templateTitle })}
+                      </div>
+                      <div className="mt-0.5">
+                        {t("drafts.templateMatchSummary", templateMatchReport.summary)}
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
+                      {templateMatchReport.items.map((item) => (
+                        <div
+                          key={item.id}
+                          className={`rounded-md border p-2 text-[11px] leading-relaxed ${templateMatchSeverityClass(item.severity)}`}
+                        >
+                          <div className="font-medium">
+                            {t(`drafts.templateMatchSeverity.${item.severity}`)} · {item.title}
+                          </div>
+                          <div className="mt-0.5 opacity-90">{item.detail}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
+                      {t("drafts.templateMatchNonBlockingHint")}
+                    </p>
+                  </section>
+                )}
 
                 <section className="mb-5 rounded-lg border bg-background/70 p-3">
                   <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">

@@ -348,7 +348,17 @@
     "processingTemplateActiveHint": "本次底稿加工会携带该模板快照，并尽量遵循模板结构、语气、长度和引用规则。",
     "processingTemplateNone": "未选择当前模板",
     "processingTemplateNoneHint": "本次将按普通底稿加工执行，不会自动套用模板。",
-    "createTemplateProcessingConversation": "按模板新建加工会话"
+    "createTemplateProcessingConversation": "按模板新建加工会话",
+    "templateMatchReport": "基础模板匹配报告",
+    "templateMatchTemplate": "当前模板：{{title}}",
+    "templateMatchSummary": "通过 {{pass}} 项，提醒 {{warning}} 项，缺失 {{missing}} 项，人工确认 {{manual}} 项。",
+    "templateMatchNonBlockingHint": "该报告只做基础静态检查，不会阻断保存或加工；正式导出前仍需人工复核。",
+    "templateMatchSeverity": {
+      "pass": "通过",
+      "warning": "提醒",
+      "missing": "缺失",
+      "manual": "人工确认"
+    }
   },
   "templates": {
     "title": "模板库",
