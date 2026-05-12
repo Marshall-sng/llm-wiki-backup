@@ -14,7 +14,8 @@
     "switchProject": "Switch Project",
     "updateAvailable": "Update available",
     "updateAvailableSuffix": " · update",
-    "drafts": "Drafts"
+    "drafts": "Drafts",
+    "templates": "Templates"
   },
   "updateBanner": {
     "message": "Version {{version}} is available",
@@ -62,7 +63,10 @@
     "saveAsNewDraft": "Save as New Draft",
     "draftProcessingBannerTitle": "Draft processing session",
     "draftProcessingSource": "Source draft: {{title}}",
-    "draftProcessingNoOverwriteHint": "The original draft will not be overwritten automatically. Save the result as a new draft when satisfied."
+    "draftProcessingNoOverwriteHint": "The original draft will not be overwritten automatically. Save the result as a new draft when satisfied.",
+    "activeTemplateBannerTitle": "Current template: {{title}}",
+    "activeTemplateHint": "The template is bound to this project. In this phase it is saved only and does not change normal Chat generation.",
+    "clearActiveTemplate": "Clear template"
   },
   "search": {
     "title": "Search",
@@ -337,5 +341,35 @@
     "parentVersion": "Parent version",
     "parentVersionHash": "Parent version hash",
     "restoredAt": "Restored at"
+  },
+  "templates": {
+    "title": "Template Library",
+    "count": "{{count}} templates",
+    "emptyTitle": "No templates yet",
+    "emptyHint": "Create a template to record the draft structure, tone, length, and citation rules.",
+    "create": "New Template",
+    "defaultTitle": "Untitled Template",
+    "currentTemplate": "Current template",
+    "titleLabel": "Template title",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Explain which material or workflow this template fits.",
+    "intentLabel": "Writing goal",
+    "intentPlaceholder": "Example: formal briefing, policy interpretation, project background.",
+    "requiredSectionsLabel": "Required sections",
+    "sectionOrderLabel": "Section order",
+    "linesPlaceholder": "Enter one item per line.",
+    "toneLabel": "Tone",
+    "tonePlaceholder": "Example: formal, cautious, for government and enterprise readers.",
+    "lengthLimitLabel": "Length requirement",
+    "lengthLimitPlaceholder": "Example: at least 3,000 Chinese characters, or no more than 3 paragraphs per section.",
+    "citationPolicyLabel": "Citation policy",
+    "citationPolicyPlaceholder": "Example: keep existing citations; new facts must have sources; never invent references.",
+    "setCurrent": "Set Current",
+    "clearCurrent": "Clear Current",
+    "delete": "Delete",
+    "deleteAgain": "Click Again to Delete",
+    "scopeTitle": "Phase scope",
+    "scopeHint": "The template library only saves templates and binds the current template. It does not change Chat prompts, produce match reports, or export files.",
+    "noSelection": "Select a template."
   }
 }

@@ -14,7 +14,8 @@
     "switchProject": "切换项目",
     "updateAvailable": "有可用更新",
     "updateAvailableSuffix": " · 有更新",
-    "drafts": "底稿"
+    "drafts": "底稿",
+    "templates": "模板"
   },
   "updateBanner": {
     "message": "新版本 {{version}} 已发布",
@@ -62,7 +63,10 @@
     "saveAsNewDraft": "保存为新底稿",
     "draftProcessingBannerTitle": "底稿加工会话",
     "draftProcessingSource": "来源底稿：{{title}}",
-    "draftProcessingNoOverwriteHint": "原底稿不会被自动覆盖，满意后请点击“保存为新底稿”。"
+    "draftProcessingNoOverwriteHint": "原底稿不会被自动覆盖，满意后请点击“保存为新底稿”。",
+    "activeTemplateBannerTitle": "当前模板：{{title}}",
+    "activeTemplateHint": "模板已绑定到当前项目。本阶段仅保存绑定状态，不会自动影响普通 Chat 生成。",
+    "clearActiveTemplate": "清除模板"
   },
   "search": {
     "title": "搜索",
@@ -337,5 +341,35 @@
     "parentVersion": "父版本",
     "parentVersionHash": "父版本哈希",
     "restoredAt": "恢复时间"
+  },
+  "templates": {
+    "title": "模板库",
+    "count": "{{count}} 个模板",
+    "emptyTitle": "还没有模板",
+    "emptyHint": "先创建一个模板，用来记录底稿应遵循的结构、语气、长度和引用规则。",
+    "create": "新建模板",
+    "defaultTitle": "未命名模板",
+    "currentTemplate": "当前模板",
+    "titleLabel": "模板标题",
+    "descriptionLabel": "模板说明",
+    "descriptionPlaceholder": "说明这个模板适合什么材料或工作场景。",
+    "intentLabel": "写作目标",
+    "intentPlaceholder": "例如：形成正式汇报材料、政策解读、项目背景说明。",
+    "requiredSectionsLabel": "必备章节",
+    "sectionOrderLabel": "章节顺序",
+    "linesPlaceholder": "每行填写一项。",
+    "toneLabel": "语气要求",
+    "tonePlaceholder": "例如：正式、审慎、面向政企读者。",
+    "lengthLimitLabel": "长度要求",
+    "lengthLimitPlaceholder": "例如：正文不少于 3000 字，或每节控制在 3 段以内。",
+    "citationPolicyLabel": "引用规则",
+    "citationPolicyPlaceholder": "例如：保留原文引用标记；新增事实必须有来源；不得虚构出处。",
+    "setCurrent": "设为当前模板",
+    "clearCurrent": "清除当前模板",
+    "delete": "删除",
+    "deleteAgain": "再次点击删除",
+    "scopeTitle": "当前阶段说明",
+    "scopeHint": "模板库只负责保存模板并绑定当前模板，不会改写 Chat 提示词，也不会生成匹配报告或导出文件。",
+    "noSelection": "请选择一个模板。"
   }
 }

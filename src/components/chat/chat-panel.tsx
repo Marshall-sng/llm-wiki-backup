@@ -6,6 +6,7 @@ import { ChatMessage, StreamingMessage, useSourceFiles } from "./chat-message"
 import { ChatInput } from "./chat-input"
 import { useChatStore, chatMessagesToLLM } from "@/stores/chat-store"
 import { useWikiStore } from "@/stores/wiki-store"
+import { useTemplateStore } from "@/stores/template-store"
 import { streamChat, type ChatMessage as LLMMessage } from "@/lib/llm-client"
 import { executeIngestWrites } from "@/lib/ingest"
 import { listDirectory, readFile, deleteFile } from "@/commands/fs"
@@ -137,6 +138,9 @@ export function ChatPanel() {
   const maxHistoryMessages = useChatStore((s) => s.maxHistoryMessages)
   const pendingDraftProcessingRequest = useChatStore((s) => s.pendingDraftProcessingRequest)
   const consumeDraftProcessingRequest = useChatStore((s) => s.consumeDraftProcessingRequest)
+  const templates = useTemplateStore((s) => s.templates)
+  const activeTemplateId = useTemplateStore((s) => s.activeTemplateId)
+  const setActiveTemplate = useTemplateStore((s) => s.setActiveTemplate)
 
   // Derive active messages via selector to re-render on message changes
   const allMessages = useChatStore((s) => s.messages)
@@ -146,6 +150,7 @@ export function ChatPanel() {
   const activeConversation = activeConversationId
     ? conversations.find((conversation) => conversation.id === activeConversationId) ?? null
     : null
+  const activeTemplate = templates.find((template) => template.id === activeTemplateId) ?? null
 
   const project = useWikiStore((s) => s.project)
   const llmConfig = useWikiStore((s) => s.llmConfig)
@@ -537,6 +542,27 @@ export function ChatPanel() {
                       {t("chat.draftProcessingSource", { title: activeConversation.draftContext.draftTitle })}
                     </div>
                     <div className="mt-1">{t("chat.draftProcessingNoOverwriteHint")}</div>
+                  </div>
+                )}
+                {activeTemplate && (
+                  <div className="rounded-lg border border-amber-500/30 bg-amber-50/70 p-3 text-xs text-muted-foreground dark:bg-amber-950/20">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="font-semibold text-foreground">
+                          {t("chat.activeTemplateBannerTitle", { title: activeTemplate.title })}
+                        </div>
+                        <div className="mt-1">{t("chat.activeTemplateHint")}</div>
+                      </div>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="xs"
+                        className="shrink-0"
+                        onClick={() => setActiveTemplate(null)}
+                      >
+                        {t("chat.clearActiveTemplate")}
+                      </Button>
+                    </div>
                   </div>
                 )}
                 {activeMessages.map((msg, idx) => {

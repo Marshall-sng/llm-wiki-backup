@@ -7,6 +7,7 @@ import { LintView } from "@/components/lint/lint-view"
 import { SearchView } from "@/components/search/search-view"
 import { GraphView } from "@/components/graph/graph-view"
 import { DraftsView } from "@/components/drafts/drafts-view"
+import { TemplatesView } from "@/components/templates/templates-view"
 
 export function ContentArea() {
   const activeView = useWikiStore((s) => s.activeView)
@@ -20,6 +21,8 @@ export function ContentArea() {
       return <ReviewView />
     case "drafts":
       return <DraftsView />
+    case "templates":
+      return <TemplatesView />
     case "lint":
       return <LintView />
     case "search":
