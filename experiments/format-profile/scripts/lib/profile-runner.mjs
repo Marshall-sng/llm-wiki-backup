@@ -110,7 +110,7 @@ function capabilityFor(format, probe, phaseName) {
 export function formatProbeSummary(format, probe) {
   if (!probe) return "无探测结果";
   if (format === "docx") {
-    return `段落 ${probe.structure.paragraphs}、表格 ${probe.structure.tables}、样式 ${probe.style.styleCount}、字体线索 ${probe.style.fonts.length}`;
+    return `段落 ${probe.structure.paragraphs}、候选标题 ${probe.structure.headingCandidates?.length ?? 0}、表格 ${probe.structure.tables}、样式 ${probe.style.styleCount}、字体线索 ${probe.style.fonts.length}`;
   }
   if (format === "xlsx") {
     return `工作表 ${probe.structure.sheetCount}、共享字符串 ${probe.style.sharedStringCount}、字体 ${probe.style.fontCount}、填充 ${probe.style.fillCount}`;
@@ -160,9 +160,23 @@ function buildStructureProfile(format, probe, confidence, evidence) {
   if (format === "docx") {
     return {
       confidence,
-      sections: probe.structure.headingStyleRefs.map((styleId) => ({ kind: "heading-style-ref", styleId })),
+      sections: (probe.structure.headingCandidates ?? []).map((heading) => ({
+        kind: "heading-candidate",
+        index: heading.index,
+        text: heading.text,
+        styleId: heading.styleId,
+        styleName: heading.styleName,
+        outlineLevel: heading.outlineLevel,
+        numberingId: heading.numberingId,
+        numberingLevel: heading.numberingLevel
+      })),
       tables: Array.from({ length: Math.min(probe.structure.tables, 20) }, (_, index) => ({ index: index + 1, source: "word/document.xml" })),
       counts: { paragraphs: probe.structure.paragraphs, runs: probe.structure.runs, tables: probe.structure.tables },
+      sectionPattern: probe.structure.sectionPattern,
+      headingStyleRefs: probe.structure.headingStyleRefs,
+      paragraphStyleUsage: probe.structure.paragraphStyleUsage,
+      numberingUsage: probe.structure.numberingUsage,
+      paragraphSamples: probe.structure.paragraphSamples,
       textSample: probe.structure.textSample,
       evidence
     };
@@ -218,8 +232,15 @@ function buildStyleProfile(format, probe, confidence, evidence) {
   if (format === "docx") {
     return {
       confidence,
-      layout: {},
-      typography: { fonts: probe.style.fonts, styleCount: probe.style.styleCount, styleIds: probe.style.styleIds },
+      layout: { page: probe.style.page },
+      typography: {
+        fonts: probe.style.fonts,
+        fontUsage: probe.style.fontUsage,
+        fontSizeUsageHalfPoints: probe.style.fontSizeUsageHalfPoints,
+        styleCount: probe.style.styleCount,
+        styleIds: probe.style.styleIds,
+        styles: probe.style.styles
+      },
       colors: {},
       formatSpecific: {
         extractionStage: "basic_probe",
@@ -539,9 +560,11 @@ function extractMetrics(format, probe) {
   if (format === "docx") {
     return {
       paragraphs: probe.structure.paragraphs,
+      headingCandidateCount: probe.structure.headingCandidates?.length ?? 0,
       tables: probe.structure.tables,
       styleCount: probe.style.styleCount,
       fontCount: probe.style.fonts.length,
+      paragraphStyleUsageCount: probe.structure.paragraphStyleUsage?.length ?? 0,
       textSampleCount: probe.structure.textSample.length
     };
   }
@@ -578,6 +601,7 @@ function assessProbeRisks(format, metrics) {
     if ((metrics.paragraphs ?? 0) > 1000) risks.push("long-docx-structure");
     if ((metrics.tables ?? 0) > 20) risks.push("table-heavy-docx");
     if ((metrics.styleCount ?? 0) <= 4) risks.push("sparse-docx-style-definitions");
+    if ((metrics.headingCandidateCount ?? 0) === 0) risks.push("docx-no-heading-candidates");
   }
   if (format === "xlsx") {
     if ((metrics.sharedStringCount ?? 0) === 0) risks.push("xlsx-inline-or-empty-shared-strings");

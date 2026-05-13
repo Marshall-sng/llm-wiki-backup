@@ -95,6 +95,23 @@ runtime/format-profile/reports/phase2-report.md
 
 Phase 2 用于观察全样本成功率、分格式风险和低置信度队列。
 
+## Phase 3：DOCX 深化方向
+
+Phase 3 先深化 DOCX，因为它最接近正式底稿/公文/方案类文本。
+
+当前 DOCX 深化字段包括：
+
+- 候选标题 `headingCandidates`
+- 章节模式 `sectionPattern`
+- 段落样式使用频率 `paragraphStyleUsage`
+- 编号使用频率 `numberingUsage`
+- 段落样本 `paragraphSamples`
+- style 定义摘要
+- 字体与字号使用线索
+- 页面尺寸和页边距 twips 线索
+
+这些字段仍然是“写作约束画像”，不是高保真 DOCX 导出模板。
+
 ## 能力原则
 
 四类格式共用统一画像协议，但允许分格式降级：

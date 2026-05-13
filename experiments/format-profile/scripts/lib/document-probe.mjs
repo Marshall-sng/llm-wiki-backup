@@ -38,6 +38,120 @@ function countMatches(text, pattern) {
   return matchAll(text, pattern).length;
 }
 
+function decodeXmlEntities(value) {
+  return value
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, "\"")
+    .replace(/&apos;/g, "'");
+}
+
+function getAttribute(fragment, name) {
+  const escaped = name.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+  return fragment.match(new RegExp(`${escaped}="([^"]+)"`))?.[1] ?? null;
+}
+
+function extractTagBlocks(xml, tagName) {
+  const escaped = tagName.replace(":", "\\:");
+  return matchAll(xml, new RegExp(`<${escaped}\\b[\\s\\S]*?<\\/${escaped}>`, "g")).map((match) => match[0]);
+}
+
+function extractParagraphText(paragraphXml) {
+  return matchAll(paragraphXml, /<w:t(?:\s[^>]*)?>([\s\S]*?)<\/w:t>/g)
+    .map((match) => decodeXmlEntities(match[1]))
+    .join("")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractDocxParagraphs(documentXml) {
+  return extractTagBlocks(documentXml, "w:p").map((paragraphXml, index) => {
+    const text = extractParagraphText(paragraphXml);
+    return {
+      index: index + 1,
+      text,
+      styleId: paragraphXml.match(/<w:pStyle[^>]*w:val="([^"]+)"/)?.[1] ?? null,
+      numberingId: paragraphXml.match(/<w:numId[^>]*w:val="([^"]+)"/)?.[1] ?? null,
+      numberingLevel: paragraphXml.match(/<w:ilvl[^>]*w:val="([^"]+)"/)?.[1] ?? null,
+      runCount: countMatches(paragraphXml, /<w:r[\s>]/g),
+      hasBold: /<w:b\b/.test(paragraphXml),
+      hasItalic: /<w:i\b/.test(paragraphXml),
+      hasUnderline: /<w:u\b/.test(paragraphXml),
+      fontSizesHalfPoints: unique(matchAll(paragraphXml, /<w:sz[^>]*w:val="([^"]+)"/g).map((match) => match[1])),
+      fonts: unique(matchAll(paragraphXml, /w:(?:ascii|hAnsi|eastAsia)="([^"]+)"/g).map((match) => match[1]))
+    };
+  });
+}
+
+function parseDocxStyles(stylesXml) {
+  return extractTagBlocks(stylesXml, "w:style").map((styleXml) => {
+    const header = styleXml.match(/<w:style\b[^>]*>/)?.[0] ?? "";
+    const styleId = getAttribute(header, "w:styleId");
+    return {
+      styleId,
+      type: getAttribute(header, "w:type"),
+      name: styleXml.match(/<w:name[^>]*w:val="([^"]+)"/)?.[1] ?? styleId,
+      basedOn: styleXml.match(/<w:basedOn[^>]*w:val="([^"]+)"/)?.[1] ?? null,
+      next: styleXml.match(/<w:next[^>]*w:val="([^"]+)"/)?.[1] ?? null,
+      outlineLevel: styleXml.match(/<w:outlineLvl[^>]*w:val="([^"]+)"/)?.[1] ?? null,
+      fonts: unique(matchAll(styleXml, /w:(?:ascii|hAnsi|eastAsia)="([^"]+)"/g).map((match) => match[1])),
+      fontSizesHalfPoints: unique(matchAll(styleXml, /<w:sz[^>]*w:val="([^"]+)"/g).map((match) => match[1])),
+      hasBold: /<w:b\b/.test(styleXml),
+      hasItalic: /<w:i\b/.test(styleXml)
+    };
+  }).filter((style) => style.styleId);
+}
+
+function summarizeTop(values, limit = 12) {
+  const counts = new Map();
+  for (const value of values.filter(Boolean)) counts.set(value, (counts.get(value) ?? 0) + 1);
+  return Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])))
+    .slice(0, limit)
+    .map(([value, count]) => ({ value, count }));
+}
+
+function inferDocxHeadingCandidates(paragraphRecords, styleRecords) {
+  const styleById = new Map(styleRecords.map((style) => [style.styleId, style]));
+  return paragraphRecords
+    .filter((paragraph) => paragraph.text)
+    .filter((paragraph) => {
+      const style = paragraph.styleId ? styleById.get(paragraph.styleId) : null;
+      return Boolean(
+        style?.outlineLevel != null
+        || /heading|title|subtitle|标题|题目/i.test(paragraph.styleId ?? "")
+        || /heading|title|subtitle|标题|题目/i.test(style?.name ?? "")
+        || /^[一二三四五六七八九十]+[、.．]/.test(paragraph.text)
+        || /^\d+(?:\.\d+){0,3}[、.．\s]/.test(paragraph.text)
+      );
+    })
+    .slice(0, 80)
+    .map((paragraph) => {
+      const style = paragraph.styleId ? styleById.get(paragraph.styleId) : null;
+      return {
+        index: paragraph.index,
+        text: paragraph.text.slice(0, 120),
+        styleId: paragraph.styleId,
+        styleName: style?.name ?? null,
+        outlineLevel: style?.outlineLevel ?? paragraph.numberingLevel ?? null,
+        numberingId: paragraph.numberingId,
+        numberingLevel: paragraph.numberingLevel
+      };
+    });
+}
+
+function inferDocxSectionPattern(headingCandidates) {
+  if (headingCandidates.length === 0) return "unknown";
+  const chineseNumbered = headingCandidates.filter((item) => /^[一二三四五六七八九十]+[、.．]/.test(item.text)).length;
+  const decimalNumbered = headingCandidates.filter((item) => /^\d+(?:\.\d+){0,3}[、.．\s]/.test(item.text)).length;
+  const styleBased = headingCandidates.filter((item) => item.styleId && /heading|title|标题/i.test(item.styleId)).length;
+  if (chineseNumbered >= Math.max(2, headingCandidates.length * 0.3)) return "chinese-numbered-sections";
+  if (decimalNumbered >= Math.max(2, headingCandidates.length * 0.3)) return "decimal-numbered-sections";
+  if (styleBased > 0) return "style-based-headings";
+  return "mixed-or-implicit";
+}
+
 function findEndOfCentralDirectory(buffer) {
   const minOffset = Math.max(0, buffer.length - 0xffff - 22);
   for (let offset = buffer.length - 22; offset >= minOffset; offset -= 1) {
@@ -125,20 +239,23 @@ function probeDocx(zip) {
   const numberingXml = zip.readText("word/numbering.xml") ?? "";
   const contentTypesXml = zip.readText("[Content_Types].xml") ?? "";
   const relationships = zip.names().filter((name) => name.endsWith(".rels")).length;
-  const paragraphs = countMatches(documentXml, /<w:p[\s>]/g);
+  const paragraphRecords = extractDocxParagraphs(documentXml);
+  const styleRecords = parseDocxStyles(stylesXml);
+  const headingCandidates = inferDocxHeadingCandidates(paragraphRecords, styleRecords);
+  const paragraphs = paragraphRecords.length;
   const tables = countMatches(documentXml, /<w:tbl[\s>]/g);
   const runs = countMatches(documentXml, /<w:r[\s>]/g);
   const headings = matchAll(documentXml, /<w:pStyle[^>]*w:val="([^"]+)"/g)
     .map((match) => match[1])
     .filter((value) => /heading|title|标题|Heading/i.test(value));
-  const styleIds = unique(matchAll(stylesXml, /<w:style[^>]*w:styleId="([^"]+)"/g).map((match) => match[1]));
+  const styleIds = styleRecords.map((style) => style.styleId);
   const fonts = unique([
     ...matchAll(stylesXml, /w:(?:ascii|hAnsi|eastAsia)="([^"]+)"/g).map((match) => match[1]),
     ...matchAll(documentXml, /w:(?:ascii|hAnsi|eastAsia)="([^"]+)"/g).map((match) => match[1])
   ]).slice(0, 20);
-  const texts = matchAll(documentXml, /<w:t(?:\s[^>]*)?>([\s\S]*?)<\/w:t>/g)
-    .map((match) => stripXmlTags(match[1]))
-    .filter(Boolean);
+  const texts = paragraphRecords.map((paragraph) => paragraph.text).filter(Boolean);
+  const pageSize = documentXml.match(/<w:pgSz[^>]*>/)?.[0] ?? "";
+  const pageMargins = documentXml.match(/<w:pgMar[^>]*>/)?.[0] ?? "";
 
   return {
     kind: "office_zip",
@@ -152,13 +269,34 @@ function probeDocx(zip) {
       runs,
       tables,
       headingStyleRefs: unique(headings).slice(0, 20),
+      headingCandidates,
+      sectionPattern: inferDocxSectionPattern(headingCandidates),
+      paragraphStyleUsage: summarizeTop(paragraphRecords.map((paragraph) => paragraph.styleId), 20),
+      numberingUsage: summarizeTop(paragraphRecords.map((paragraph) => paragraph.numberingId), 12),
+      paragraphSamples: paragraphRecords.filter((paragraph) => paragraph.text).slice(0, 20),
       textSample: texts.slice(0, 12)
     },
     style: {
       hasStyles: Boolean(stylesXml),
       styleCount: styleIds.length,
       styleIds: styleIds.slice(0, 30),
+      styles: styleRecords.slice(0, 60),
       fonts,
+      fontUsage: summarizeTop(paragraphRecords.flatMap((paragraph) => paragraph.fonts), 20),
+      fontSizeUsageHalfPoints: summarizeTop(paragraphRecords.flatMap((paragraph) => paragraph.fontSizesHalfPoints), 20),
+      page: {
+        widthTwips: pageSize ? getAttribute(pageSize, "w:w") : null,
+        heightTwips: pageSize ? getAttribute(pageSize, "w:h") : null,
+        orientation: pageSize ? getAttribute(pageSize, "w:orient") : null,
+        marginsTwips: pageMargins
+          ? {
+              top: getAttribute(pageMargins, "w:top"),
+              right: getAttribute(pageMargins, "w:right"),
+              bottom: getAttribute(pageMargins, "w:bottom"),
+              left: getAttribute(pageMargins, "w:left")
+            }
+          : null
+      },
       numberingDefinitions: countMatches(numberingXml, /<w:num\b/g)
     }
   };
