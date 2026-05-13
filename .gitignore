@@ -29,6 +29,10 @@ AGENTS.md
 # Benchmark and test data (local only)
 tests/
 
+# Local runtime artifacts and user-supplied files
+runtime/
+experiments/format-profile/outputs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -55,3 +59,4 @@ pnpm-debug.log*
 .omx/*
 !.omx/plans/
 !.omx/plans/*.md
+!.omx/plans/**
