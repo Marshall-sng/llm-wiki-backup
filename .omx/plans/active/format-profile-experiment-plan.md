@@ -2,7 +2,30 @@
 
 更新时间：2026-05-13  
 分支：`experiment/format-profile-backend`  
-状态：active
+状态：completed / ready for productization planning
+
+## 0. 实验成果
+
+实验已完成并记录：
+
+```text
+.omx/plans/requirements/format-profile-experiment-outcome.md
+experiments/format-profile/reports/phase6-productization-decision.md
+```
+
+最终验证结果：
+
+```text
+Phase 0: 5/5 valid
+Phase 1: 5/5 valid
+Phase 2: 35/35 valid
+```
+
+结论：
+
+> FormatProfile 路线成立，应作为模板能力的下一代产品主线。
+
+本文件保留为实验计划与停止条件记录。后续执行应新建产品化 ralplan，而不是继续扩大本实验计划。
 
 ## 1. 目标
 
@@ -106,4 +129,3 @@ runtime/format-profile/manifests/sample-inventory.json
 产生一份实验报告；
 明确下一步是否产品化、如何产品化。
 ```
-

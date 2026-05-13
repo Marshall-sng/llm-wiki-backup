@@ -3,6 +3,7 @@
 更新时间：2026-05-13  
 状态：当前进度锚点  
 原始需求基线：`.omx/plans/requirements/pkm-migration-original.md`
+实验成果记录：`.omx/plans/requirements/format-profile-experiment-outcome.md`
 
 ## 1. 用途
 
@@ -37,8 +38,8 @@
 | --- | --- | --- | --- | --- | --- |
 | 6.1 Draft / 底稿 / 版本 / Diff Guard | 部分完成 | 底稿、版本历史、基础提示已完成；完整 diff guard 不继续加深 | 轻微 | 保留现有能力作为底稿工作区基础 | 历史计划 v11/v12/v13 归档 |
 | 6.2 Template Library / 当前模板绑定 | 基础完成但产品方向重定义 | 手工模板库已实现，但真实用户更需要上传成品文件自动学习 | 明显 | 升级为 FormatProfile / Format Library，手工模板作为兼容层 | v14 归档；FormatProfile 实验接管 |
-| 6.3 Template-aware Generation | 部分完成但需重做抽象 | 当前是手工模板文字约束；不够代表真实格式 | 明显 | 改为 profileSnapshot + generationInstruction + FormatBinding | 实验需验证两种生成路径 |
-| 6.4 Template Match Report | 基础完成但不作为继续加深重点 | 静态匹配报告价值有限，必须基于真实 profile 才有意义 | 明显 | 后续改为 profile-driven diagnostics / match review | v16 归档；实验只做基础诊断 |
+| 6.3 Template-aware Generation | 实验验证完成，待产品化 | 当前是手工模板文字约束；不够代表真实格式 | 明显 | 改为 profileSnapshot + generationInstruction + FormatBinding | FormatProfile 实验 35/35 通过；待迁回主线 |
+| 6.4 Template Match Report | 实验验证完成，待产品化 | 静态匹配报告价值有限，必须基于真实 profile 才有意义 | 明显 | 后续改为 profile-driven diagnostics / match review | Phase 2 风险队列与 diagnostics 已验证 |
 | 6.5 Formal Output Export Pipeline | 延后 | 导出依赖稳定 profile，不应先做 | 无实质偏移 | DOCX 导出后置；PPTX/XLSX/PDF 分格式评估 | 本次实验不做导出 |
 | 6.6 Output Audit / Provenance | 延后并轻量保留 | 审计应先体现在 diagnostics 和 profileSnapshot | 轻微 | 本次实验生成 diagnostics；完整 provenance 后置 | 每个样本有诊断产物 |
 | 6.7 Long Document Project | 延后 | 长文能力仍重要，但不是当前最高收益 | 无 | 等格式画像和底稿生成稳定后再规划 | 暂不进入实验边界 |
@@ -80,3 +81,21 @@
 诊断信息诚实地说明适用范围和失败原因。
 ```
 
+## 7. 实验完成记录
+
+截至 2026-05-13，FormatProfile 后端实验已完成：
+
+```text
+Phase 0: 5/5 valid
+Phase 1: 5/5 valid
+Phase 2: 35/35 valid
+```
+
+完整成果记录：
+
+```text
+.omx/plans/requirements/format-profile-experiment-outcome.md
+experiments/format-profile/reports/phase6-productization-decision.md
+```
+
+后续锚点从“证明路线是否成立”切换为“如何安全产品化”。
