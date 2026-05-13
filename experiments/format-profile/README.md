@@ -68,6 +68,33 @@ runtime/format-profile/reports/
 
 Phase 1 仍不做高保真样式还原、LLM 行文风格提炼、前端交互或导出。
 
+## Phase 2 批量验证
+
+Phase 2 使用本地样本清单批量生成临时 case，并对全部样本运行 Phase 1 的基础探测。
+
+输入清单：
+
+```text
+runtime/format-profile/manifests/sample-inventory.json
+```
+
+运行：
+
+```powershell
+node experiments/format-profile/scripts/run-phase2.mjs
+```
+
+输出：
+
+```text
+runtime/format-profile/manifests/phase2-generated-cases.json
+runtime/format-profile/outputs/phase2/<caseId>/
+runtime/format-profile/reports/phase2-report.json
+runtime/format-profile/reports/phase2-report.md
+```
+
+Phase 2 用于观察全样本成功率、分格式风险和低置信度队列。
+
 ## 能力原则
 
 四类格式共用统一画像协议，但允许分格式降级：
