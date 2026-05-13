@@ -382,6 +382,7 @@ function buildInstruction(caseData, profile, binding) {
   const overrides = Object.entries(binding.overrides)
     .map(([key, value]) => `- ${key}: ${value}`)
     .join("\n") || "- 无";
+  const profileGuidance = buildProfileGuidance(profile);
   return `# Generation Instruction: ${caseData.caseId}
 
 ## 任务
@@ -412,10 +413,84 @@ ${overrides}
 3. 如果格式画像与用户材料冲突，保留用户事实，并在 diagnostics 中说明冲突。
 4. 对 DOCX，优先生成正式文稿结构；对 XLSX，优先生成表格化分析；对 PPTX，优先生成逐页汇报底稿；对 PDF，仅作为参考成品。
 
+## 画像约束
+
+${profileGuidance}
+
 ## 能力边界
 
 ${profile.diagnostics.map((item) => `- [${item.severity}] ${item.code}: ${item.message}`).join("\n")}
 `;
+}
+
+function buildProfileGuidance(profile) {
+  if (profile.source.fileType === "docx") return buildDocxGuidance(profile);
+  if (profile.source.fileType === "xlsx") {
+    return [
+      "- 将该格式视为表格/指标表达参考，而不是普通长文皮肤。",
+      `- 工作表线索：${profile.structureProfile.sections.map((sheet) => sheet.name).filter(Boolean).slice(0, 8).join("、") || "未识别"}`,
+      "- 输出底稿时优先组织为指标分组、字段口径、结论摘要和补充说明。"
+    ].join("\n");
+  }
+  if (profile.source.fileType === "pptx") {
+    return [
+      "- 将该格式视为逐页汇报结构参考，而不是普通长文皮肤。",
+      `- 页数线索：${profile.structureProfile.slideCount ?? 0} 页；版式线索：${profile.structureProfile.layoutCount ?? 0} 个。`,
+      "- 输出底稿时优先按“页标题—核心观点—讲述要点”组织。"
+    ].join("\n");
+  }
+  return [
+    "- 将 PDF 作为成品参考，不承诺还原原始版式。",
+    `- 页面线索：${profile.structureProfile.pageCount ?? 0} 页；文本层线索：${profile.structureProfile.textOperatorCount ?? 0}。`,
+    "- 若 PDF 图片密集或字体线索不足，生成时只参考文体与结构，不复制排版。"
+  ].join("\n");
+}
+
+function buildDocxGuidance(profile) {
+  const sections = profile.structureProfile.sections ?? [];
+  const styleUsage = profile.structureProfile.paragraphStyleUsage ?? [];
+  const numberingUsage = profile.structureProfile.numberingUsage ?? [];
+  const typography = profile.styleProfile.typography ?? {};
+  const page = profile.styleProfile.layout?.page ?? {};
+  const headingLines = sections.slice(0, 12).map((section, index) => {
+    const prefix = section.outlineLevel != null ? `level ${section.outlineLevel}` : "candidate";
+    return `  ${index + 1}. (${prefix}) ${section.text}`;
+  });
+  const styleLines = styleUsage.slice(0, 8).map((item) => `  - ${item.value}: ${item.count}`).join("\n") || "  - 未识别段落样式频率";
+  const fontLines = (typography.fontUsage ?? []).slice(0, 8).map((item) => `  - ${item.value}: ${item.count}`).join("\n") || "  - 未识别字体频率";
+  const sizeLines = (typography.fontSizeUsageHalfPoints ?? []).slice(0, 8).map((item) => `  - ${item.value} half-points: ${item.count}`).join("\n") || "  - 未识别字号频率";
+  const numberingLine = numberingUsage.length > 0
+    ? numberingUsage.slice(0, 6).map((item) => `${item.value}(${item.count})`).join("、")
+    : "未识别显式编号定义";
+  const pageLine = page?.widthTwips
+    ? `- 页面线索：${page.widthTwips}×${page.heightTwips} twips；页边距 ${JSON.stringify(page.marginsTwips ?? {})}。`
+    : "- 页面线索：未识别页面尺寸或页边距。";
+  const sectionPolicy = profile.structureProfile.sectionPattern === "chinese-numbered-sections"
+    ? "- 结构策略：优先使用中文序号/条目化章节，但不要机械复制原文标题。"
+    : profile.structureProfile.sectionPattern === "decimal-numbered-sections"
+      ? "- 结构策略：优先使用数字分级标题。"
+      : profile.structureProfile.sectionPattern === "style-based-headings"
+        ? "- 结构策略：优先使用样式化标题层级。"
+        : "- 结构策略：标题层级证据混合或不足，生成时保持清晰分节并标注低置信度。";
+
+  return [
+    "- DOCX 用作正式文稿/制度材料写作约束，不是导出版式承诺。",
+    `- 章节模式：${profile.structureProfile.sectionPattern ?? "unknown"}。`,
+    sectionPolicy,
+    `- 候选标题数量：${sections.length}；生成时把它们当作结构风格证据，不要逐字复用。`,
+    "- 候选标题样例：",
+    headingLines.length > 0 ? headingLines.join("\n") : "  - 未识别候选标题",
+    "- 段落样式使用频率：",
+    styleLines,
+    `- 编号线索：${numberingLine}。`,
+    "- 字体线索：",
+    fontLines,
+    "- 字号线索：",
+    sizeLines,
+    pageLine,
+    "- 生成策略：先确定用户材料需要的章节，再套用上述结构/语气/层级线索；不要为了匹配样式而编造事实。",
+    "- 适配策略：已有底稿与候选标题冲突时，优先保留事实内容，再重组为更接近目标文体的章节。"
+  ].join("\n");
 }
 
 function buildDraft(caseData, profile) {
