@@ -136,6 +136,14 @@ Phase 5 在不调用 LLM 的前提下生成 `draft-output.md`：
 
 这些 draft 是可重复的规则化模拟结果，用来验证 instruction/profile 是否足以驱动后续真实生成器。
 
+## Phase 6：产品化决策
+
+Phase 6 总结实验结论，并提出迁回主线的最小产品化范围：
+
+```text
+experiments/format-profile/reports/phase6-productization-decision.md
+```
+
 ## 能力原则
 
 四类格式共用统一画像协议，但允许分格式降级：
