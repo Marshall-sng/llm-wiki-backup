@@ -123,6 +123,19 @@ Phase 4 将已提取的确定性证据转成 `generation-instruction.md` 中的�
 
 Phase 4 仍不调用 LLM；它只验证 profile 是否能被稳定转译为后续生成器可消费的写作约束。
 
+## Phase 5：离线底稿模拟
+
+Phase 5 在不调用 LLM 的前提下生成 `draft-output.md`：
+
+- `generate_from_profile`：验证“先选格式画像，再生成底稿”的结构路径。
+- `adapt_draft_to_profile`：验证“已有底稿适配格式画像”的结构路径。
+- DOCX 输出正式文稿章节骨架。
+- XLSX 输出指标/表格化分析骨架。
+- PPTX 输出逐页汇报骨架。
+- PDF 输出参考边界和低保真提醒。
+
+这些 draft 是可重复的规则化模拟结果，用来验证 instruction/profile 是否足以驱动后续真实生成器。
+
 ## 能力原则
 
 四类格式共用统一画像协议，但允许分格式降级：

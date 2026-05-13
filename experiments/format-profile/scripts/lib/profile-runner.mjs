@@ -494,55 +494,205 @@ function buildDocxGuidance(profile) {
 }
 
 function buildDraft(caseData, profile) {
+  return buildOfflineDraft(caseData, profile);
+}
+
+function buildOfflineDraft(caseData, profile) {
+  if (profile.source.fileType === "docx") return buildDocxOfflineDraft(caseData, profile);
+  if (profile.source.fileType === "xlsx") return buildXlsxOfflineDraft(caseData, profile);
+  if (profile.source.fileType === "pptx") return buildPptxOfflineDraft(caseData, profile);
+  return buildPdfOfflineDraft(caseData, profile);
+}
+
+function materialsBlock(caseData) {
+  return (caseData.task.materials ?? []).map((item) => `- ${item}`).join("\n") || "- 无额外材料";
+}
+
+function baseDraftHeader(caseData, profile) {
+  return `# ${caseData.task.title}
+
+> 离线模拟底稿：使用 FormatProfile 和 FormatBinding 规则生成，用于验证结构路径；未调用真实 LLM。
+
+## 绑定信息
+
+- 模式：${caseData.mode}
+- 来源格式：${profile.source.fileType}
+- 推断用途：${profile.documentKind.label}
+- 画像置信度：${profile.capabilities.confidence}
+- 探测摘要：${formatProbeSummary(profile.source.fileType, profile.rawProbeFacts)}
+`;
+}
+
+function selectDocxDraftSections(profile) {
+  const pattern = profile.structureProfile.sectionPattern;
+  const candidates = (profile.structureProfile.sections ?? []).map((section) => section.text).filter(Boolean);
+  if (pattern === "chinese-numbered-sections") {
+    return ["一、背景与依据", "二、总体目标", "三、主要内容", "四、实施路径", "五、保障措施"];
+  }
+  if (pattern === "decimal-numbered-sections") {
+    return ["1. 背景与目标", "2. 结构设计", "3. 关键任务", "4. 实施安排", "5. 风险与保障"];
+  }
+  if (candidates.length > 0) {
+    return candidates.slice(0, 5).map((text, index) => {
+      const cleaned = text.replace(/\s+/g, " ").slice(0, 28);
+      return `${index + 1}. ${cleaned}`;
+    });
+  }
+  return ["一、背景", "二、目标", "三、内容", "四、安排", "五、说明"];
+}
+
+function buildDocxOfflineDraft(caseData, profile) {
   const materialLines = (caseData.task.materials ?? []).map((item) => `- ${item}`).join("\n") || "- 无额外材料";
   const summary = formatProbeSummary(profile.source.fileType, profile.rawProbeFacts);
-  if (caseData.mode === "adapt_draft_to_profile") {
-    return `# ${caseData.task.title}
+  const sections = selectDocxDraftSections(profile);
+  const styleUsage = (profile.structureProfile.paragraphStyleUsage ?? []).slice(0, 3).map((item) => item.value).join("、") || "未识别";
+  const fontUsage = (profile.styleProfile.typography?.fontUsage ?? []).slice(0, 3).map((item) => item.value).join("、") || "未识别";
+  const sectionBlocks = sections.map((section, index) => `${section}
 
-> 探测底稿：已使用真实文件基础探测结果，但尚未接入真实 LLM 生成。
+本节应围绕“${caseData.task.userGoal}”展开，吸收用户材料中的事实信息，并保持正式、结构化表达。${index === 0 ? "先交代背景、依据和问题来源。" : index === sections.length - 1 ? "最后收束为保障、风险或后续安排。" : "中间章节应说明任务、流程、措施或成效。"}
+`).join("\n");
+  if (caseData.mode === "adapt_draft_to_profile") {
+    return `${baseDraftHeader(caseData, profile)}
 
 ## 原始底稿
 
 ${caseData.task.existingDraft}
 
-## 适配目标
+## 适配目标与格式线索
 
-- 参考格式：${profile.documentKind.label}
-- 文件类型：${profile.source.fileType}
 - 探测摘要：${summary}
+- 章节模式：${profile.structureProfile.sectionPattern ?? "unknown"}
+- 常见段落样式：${styleUsage}
+- 常见字体线索：${fontUsage}
 - 适配重点：结构、语气、表达方式，而非高保真还原源文件。
 
 ## 材料约束
 
 ${materialLines}
 
-## 下一步生成器应完成
+## 离线模拟改写结构
 
-在保留事实的前提下，按当前 FormatBinding 重组标题、段落和表达风格，并输出结构冲突诊断。
+${sectionBlocks}
+
+## 模拟器诊断
+
+- 已验证已有底稿可进入 FormatBinding 适配路径。
+- 当前为规则化结构模拟，真实生成器后续应补足语义展开和事实一致性检查。
 `;
   }
-  return `# ${caseData.task.title}
-
-> 探测底稿：已使用真实文件基础探测结果，但尚未接入真实 LLM 生成。
+  return `${baseDraftHeader(caseData, profile)}
 
 ## 生成目标
 
 ${caseData.task.userGoal}
 
-## 参考格式
+## DOCX 格式线索
 
-- 类型：${profile.source.fileType}
-- 推断用途：${profile.documentKind.label}
-- 当前置信度：${profile.capabilities.confidence}
 - 探测摘要：${summary}
+- 章节模式：${profile.structureProfile.sectionPattern ?? "unknown"}
+- 常见段落样式：${styleUsage}
+- 常见字体线索：${fontUsage}
 
 ## 材料约束
 
 ${materialLines}
 
-## 下一步生成器应完成
+## 离线模拟底稿结构
 
-按当前 FormatBinding 生成正式底稿，并根据格式类型选择文章、表格化分析或逐页汇报结构。
+${sectionBlocks}
+
+## 模拟器诊断
+
+- 已验证先选格式画像再生成底稿路径。
+- 当前为规则化结构模拟，真实生成器后续应补足语义展开和事实一致性检查。
+`;
+}
+
+function buildXlsxOfflineDraft(caseData, profile) {
+  const sheets = profile.structureProfile.sections ?? [];
+  const sheetLines = sheets.slice(0, 8).map((sheet, index) => `| ${index + 1} | ${sheet.name ?? sheet.path ?? "未命名工作表"} | 指标分组/口径/备注 |`).join("\n");
+  return `${baseDraftHeader(caseData, profile)}
+
+## 生成目标
+
+${caseData.task.userGoal}
+
+## 表格化结构模拟
+
+| 序号 | 工作表/区域线索 | 建议底稿用途 |
+| ---: | --- | --- |
+${sheetLines || "| 1 | 未识别 | 指标说明 |"}
+
+## 指标分析底稿骨架
+
+### 一、指标概览
+
+围绕用户目标列出核心指标、统计口径和当前状态。
+
+### 二、分组说明
+
+根据工作表或区域线索，把内容拆分为指标组、数据来源、计算方式和解释口径。
+
+### 三、结论摘要
+
+输出面向管理层的简短结论，避免写成长篇制度材料。
+
+## 材料约束
+
+${materialsBlock(caseData)}
+`;
+}
+
+function buildPptxOfflineDraft(caseData, profile) {
+  const slides = profile.structureProfile.sections ?? [];
+  const selected = slides.slice(0, 8);
+  const slideBlocks = selected.map((slide, index) => `### 第 ${index + 1} 页：${slide.textSample?.[0] ?? "页面主题"}
+
+- 核心观点：围绕用户目标提炼一个页面级观点。
+- 讲述要点：结合材料说明背景、结构、功能或价值。
+- 版式线索：shape ${slide.shapeCount ?? 0}，picture ${slide.pictureCount ?? 0}，table ${slide.tableCount ?? 0}。
+`).join("\n");
+  return `${baseDraftHeader(caseData, profile)}
+
+## 生成目标
+
+${caseData.task.userGoal}
+
+## 逐页汇报模拟
+
+${slideBlocks || "### 第 1 页：汇报概览\n\n- 核心观点：围绕用户目标提炼汇报主题。\n- 讲述要点：补充背景、内容和价值。\n"}
+
+## 材料约束
+
+${materialsBlock(caseData)}
+
+## 模拟器诊断
+
+- PPTX 路径输出逐页内容草稿，不输出 PPTX 文件。
+`;
+}
+
+function buildPdfOfflineDraft(caseData, profile) {
+  return `${baseDraftHeader(caseData, profile)}
+
+${caseData.mode === "adapt_draft_to_profile" ? `## 原始底稿\n\n${caseData.task.existingDraft}\n` : `## 生成目标\n\n${caseData.task.userGoal}\n`}
+## PDF 参考路径模拟
+
+### 一、参考边界
+
+该 PDF 仅作为成品风格参考。当前识别到 ${profile.structureProfile.pageCount ?? 0} 个页对象、${profile.structureProfile.textOperatorCount ?? 0} 个文本操作符、${profile.structureProfile.imageCount ?? 0} 个图片线索。
+
+### 二、底稿组织建议
+
+保留用户事实，参考 PDF 的成品表达方式组织为简介、结构、功能、价值和后续安排。
+
+### 三、低保真提醒
+
+不复制 PDF 排版；如图片密集或字体线索不足，应降低格式遵循置信度。
+
+## 材料约束
+
+${materialsBlock(caseData)}
 `;
 }
 
