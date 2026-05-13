@@ -40,6 +40,34 @@ runtime/format-profile/reports/
 └─ phase0-report.md
 ```
 
+## Phase 1 验证
+
+Phase 1 接入真实基础探测：
+
+- DOCX / XLSX / PPTX：读取 Office ZIP 中央目录并解析关键 XML。
+- PDF：读取字节级对象线索，判断页对象、文本层、图片和扫描倾向。
+
+```powershell
+node experiments/format-profile/scripts/run-phase1.mjs
+```
+
+运行后输出：
+
+```text
+runtime/format-profile/outputs/phase1/<caseId>/
+├─ profile.json
+├─ binding.json
+├─ generation-instruction.md
+├─ draft-output.md
+└─ diagnostics.json
+
+runtime/format-profile/reports/
+├─ phase1-report.json
+└─ phase1-report.md
+```
+
+Phase 1 仍不做高保真样式还原、LLM 行文风格提炼、前端交互或导出。
+
 ## 能力原则
 
 四类格式共用统一画像协议，但允许分格式降级：
