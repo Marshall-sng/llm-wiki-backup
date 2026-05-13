@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "format-profile-case.v0",
+  "caseId": "docx_generate",
+  "mode": "generate_from_profile",
+  "source": {
+    "path": "runtime/format-profile/samples/downloaded/docx/docx_web_01_formatted_report.docx",
+    "expectedFormat": "docx"
+  },
+  "task": {
+    "title": "按报告类 DOCX 格式生成底稿",
+    "userGoal": "围绕云南省数据流通利用基础设施平台，生成一份正式说明材料底稿。",
+    "materials": [
+      "平台定位为省级数据流通核心基础设施。",
+      "重点说明背景、平台架构、功能点、目的与意义。",
+      "语言应正式、清晰，适合作为汇报或说明材料。"
+    ]
+  },
+  "overrides": {
+    "tone": "正式、克制、面向管理层",
+    "length": "约 1200 字",
+    "structure": "保留清晰分级标题"
+  },
+  "expected": {
+    "mustProduce": [
+      "profile.json",
+      "binding.json",
+      "generation-instruction.md",
+      "draft-output.md",
+      "diagnostics.json"
+    ]
+  }
+}

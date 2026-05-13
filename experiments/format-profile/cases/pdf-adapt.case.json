@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "format-profile-case.v0",
+  "caseId": "pdf_adapt",
+  "mode": "adapt_draft_to_profile",
+  "source": {
+    "path": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+    "expectedFormat": "pdf"
+  },
+  "task": {
+    "title": "参考 PDF 成品风格适配已有底稿",
+    "userGoal": "参考平台介绍 PDF 的表达方式，把已有文字调整为更适合宣传介绍材料的底稿。",
+    "existingDraft": "平台由省级区域节点、业务节点、连接器、门户和产品超市等组成，面向数据接入主体提供注册认证、资源登记、产品登记和产品上架等能力。",
+    "materials": [
+      "保留基础设施定位。",
+      "语言可比制度文本更面向外部介绍。"
+    ]
+  },
+  "overrides": {
+    "tone": "宣传介绍、清晰易懂",
+    "length": "控制在 800 字以内"
+  },
+  "expected": {
+    "formatBoundary": "PDF 只作为参考成品，不承诺高保真还原。"
+  }
+}

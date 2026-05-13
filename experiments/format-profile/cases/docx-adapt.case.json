@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "format-profile-case.v0",
+  "caseId": "docx_adapt",
+  "mode": "adapt_draft_to_profile",
+  "source": {
+    "path": "runtime/format-profile/samples/local/docx/docx_local_04_project_mgmt_云数综办〔2024〕4号关于印发《云南省大数据有限公司项目管理办法（暂行）》的通知.docx",
+    "expectedFormat": "docx"
+  },
+  "task": {
+    "title": "将已有底稿适配为制度/办法类 DOCX 风格",
+    "userGoal": "把已有平台介绍底稿调整为更接近制度性说明材料的结构和语气。",
+    "existingDraft": "云南省数据流通利用基础设施平台用于支撑数据资源登记、数据产品上架、需求发布和后续数据交易流通。平台需要兼顾国家规范、省级节点审核和业务节点接入，为各类主体提供安全合规的数据流通环境。",
+    "materials": [
+      "不要丢失平台建设背景。",
+      "突出职责边界、流程规范和安全要求。"
+    ]
+  },
+  "overrides": {
+    "tone": "制度化、规范化",
+    "structure": "增加适用范围、职责、流程、监督四类段落"
+  },
+  "expected": {
+    "mustDiagnose": [
+      "已有底稿和目标格式之间的结构差异"
+    ]
+  }
+}

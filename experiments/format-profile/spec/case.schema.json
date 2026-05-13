@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-wiki.local/experiments/format-profile/case.schema.json",
+  "title": "FormatProfileExperimentCase",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "caseId",
+    "mode",
+    "source",
+    "task"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "format-profile-case.v0"
+    },
+    "caseId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "mode": {
+      "enum": [
+        "generate_from_profile",
+        "adapt_draft_to_profile"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "path"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "expectedFormat": {
+          "enum": [
+            "docx",
+            "xlsx",
+            "pptx",
+            "pdf"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "title",
+        "userGoal"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "userGoal": {
+          "type": "string"
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "existingDraft": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "overrides": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

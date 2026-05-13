@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "format-profile-case.v0",
+  "caseId": "xlsx_generate",
+  "mode": "generate_from_profile",
+  "source": {
+    "path": "runtime/format-profile/samples/downloaded/xlsx/xlsx_web_08_Sales_Performance_Dashboard.xlsx",
+    "expectedFormat": "xlsx"
+  },
+  "task": {
+    "title": "按仪表盘类 XLSX 结构生成表格化分析底稿",
+    "userGoal": "根据销售绩效仪表盘类样式，生成一份数据平台运营指标分析底稿。",
+    "materials": [
+      "指标包括注册主体数、数据资源登记数、数据产品上架数、需求发布数和审核通过率。",
+      "输出应偏表格化、指标化，不强行写成长篇文章。"
+    ]
+  },
+  "overrides": {
+    "tone": "分析型、指标导向",
+    "structure": "优先输出指标分组、解释口径和结论摘要"
+  },
+  "expected": {
+    "formatBoundary": "XLSX 用于表格结构参考，不承诺生成 Excel 文件。"
+  }
+}

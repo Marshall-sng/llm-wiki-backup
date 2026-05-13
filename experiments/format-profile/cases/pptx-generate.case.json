@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "format-profile-case.v0",
+  "caseId": "pptx_generate",
+  "mode": "generate_from_profile",
+  "source": {
+    "path": "runtime/format-profile/samples/github/pptx/pptx_github_04_品牌宣传商务风通用模板.pptx",
+    "expectedFormat": "pptx"
+  },
+  "task": {
+    "title": "按商务 PPT 风格生成逐页汇报底稿",
+    "userGoal": "生成一份关于云南省数据流通利用基础设施平台的汇报提纲和逐页内容草稿。",
+    "materials": [
+      "需要覆盖建设背景、总体架构、核心功能、试运行情况和价值意义。",
+      "每页应有标题、核心观点和简短讲述要点。"
+    ]
+  },
+  "overrides": {
+    "tone": "商务汇报、重点突出",
+    "structure": "按幻灯片页组织，不写成长篇正文"
+  },
+  "expected": {
+    "formatBoundary": "PPTX 用于汇报结构与版式参考，不承诺生成 PPTX 文件。"
+  }
+}

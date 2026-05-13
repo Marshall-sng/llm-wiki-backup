@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-wiki.local/experiments/format-profile/format-profile.schema.json",
+  "title": "FormatProfile",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "profileId",
+    "source",
+    "documentKind",
+    "capabilities",
+    "structureProfile",
+    "styleProfile",
+    "writingProfile",
+    "diagnostics"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "format-profile.v0"
+    },
+    "profileId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "path",
+        "fileName",
+        "fileType",
+        "sha256",
+        "byteSize"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileType": {
+          "enum": [
+            "docx",
+            "xlsx",
+            "pptx",
+            "pdf"
+          ]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "byteSize": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "documentKind": {
+      "$ref": "#/$defs/inferredBlock"
+    },
+    "capabilities": {
+      "type": "object",
+      "required": [
+        "canGuideGeneration",
+        "canGuideAdaptation",
+        "canGuideExport",
+        "confidence"
+      ],
+      "properties": {
+        "canGuideGeneration": {
+          "type": "boolean"
+        },
+        "canGuideAdaptation": {
+          "type": "boolean"
+        },
+        "canGuideExport": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "structureProfile": {
+      "type": "object",
+      "required": [
+        "confidence",
+        "sections",
+        "tables",
+        "evidence"
+      ],
+      "properties": {
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "tables": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      },
+      "additionalProperties": true
+    },
+    "styleProfile": {
+      "type": "object",
+      "required": [
+        "confidence",
+        "layout",
+        "typography",
+        "colors",
+        "formatSpecific",
+        "evidence"
+      ],
+      "properties": {
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "layout": {
+          "type": "object"
+        },
+        "typography": {
+          "type": "object"
+        },
+        "colors": {
+          "type": "object"
+        },
+        "formatSpecific": {
+          "type": "object"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      },
+      "additionalProperties": true
+    },
+    "writingProfile": {
+      "type": "object",
+      "required": [
+        "confidence",
+        "tone",
+        "genre",
+        "constraints",
+        "evidence"
+      ],
+      "properties": {
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "tone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "genre": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      },
+      "additionalProperties": true
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "$ref": "diagnostics.schema.json#/$defs/diagnostic"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "description"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "inferredBlock": {
+      "type": "object",
+      "required": [
+        "label",
+        "confidence",
+        "evidence"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
