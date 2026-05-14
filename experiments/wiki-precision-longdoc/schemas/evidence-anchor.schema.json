@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceAnchor experiment schema",
+  "type": "object",
+  "required": [
+    "anchorId",
+    "sourceId",
+    "format",
+    "anchorType",
+    "locator"
+  ],
+  "properties": {
+    "anchorId": {
+      "type": "string"
+    },
+    "sourceId": {
+      "type": "string"
+    },
+    "format": {
+      "enum": [
+        "text",
+        "markdown",
+        "xlsx",
+        "pdf",
+        "docx",
+        "pptx",
+        "web"
+      ]
+    },
+    "anchorType": {
+      "type": "string"
+    },
+    "locator": {
+      "type": "object"
+    },
+    "snippet": {
+      "type": "string"
+    },
+    "contentHash": {
+      "type": "string"
+    },
+    "resolverHints": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

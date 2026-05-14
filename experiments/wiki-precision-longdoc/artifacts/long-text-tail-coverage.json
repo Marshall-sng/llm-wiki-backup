@@ -1,0 +1,17 @@
+{
+  "textChars": 82552,
+  "target": "TAIL_ENTITY_最终章节关键实体",
+  "naiveFirst50000ContainsTail": false,
+  "chunkCount": 15,
+  "chunkedContainsTail": true,
+  "tailHitChunks": [
+    {
+      "chunkIndex": 14,
+      "charStart": 79793,
+      "charEnd": 82552,
+      "containsTail": true,
+      "headingHint": "最终章节"
+    }
+  ],
+  "status": "passed"
+}

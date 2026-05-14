@@ -1,0 +1,9 @@
+{
+  "E1_excel_status": "passed",
+  "E2_long_text_status": "passed",
+  "E3_anchor_status": "passed",
+  "E4_retrieval_status": "passed",
+  "E5_wiki_audit_status": "issues_found",
+  "E6_longdoc_status": "passed",
+  "artifactDir": "D:\\llm_wiki\\experiments\\wiki-precision-longdoc\\artifacts"
+}

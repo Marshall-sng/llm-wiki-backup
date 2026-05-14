@@ -1,0 +1,50 @@
+{
+  "runId": "longdoc-experiment-001",
+  "singleResponseAllowed": false,
+  "workflow": [
+    "outline",
+    "section_plan",
+    "per_section_evidence_pack",
+    "section_draft",
+    "merge",
+    "lint_review",
+    "export"
+  ],
+  "sections": [
+    {
+      "sectionId": "sec-001",
+      "title": "试点企业总体情况",
+      "targetChars": 3000,
+      "evidenceRefs": [
+        "anch:source-first-batch-enterprises-xlsx:table:956137f66ccb",
+        "anch:source-first-batch-enterprises-xlsx:table:fd19cbd6eaa1",
+        "anch:source-first-batch-enterprises-xlsx:table:11b77b2c8f38",
+        "anch:source-first-batch-enterprises-xlsx:table:d8c9b730e3ab"
+      ],
+      "status": "planned"
+    },
+    {
+      "sectionId": "sec-002",
+      "title": "重点行业与项目分布",
+      "targetChars": 3500,
+      "evidenceRefs": [
+        "anch:source-first-batch-enterprises-xlsx:table:9bd0269ca69b",
+        "anch:source-first-batch-enterprises-xlsx:table:6494226a11f3",
+        "anch:source-first-batch-enterprises-xlsx:table:20065c97ac4c",
+        "anch:source-first-batch-enterprises-xlsx:table:f470ea555c91"
+      ],
+      "status": "planned"
+    },
+    {
+      "sectionId": "sec-003",
+      "title": "长文本尾部证据覆盖示例",
+      "targetChars": 2500,
+      "evidenceRefs": [
+        "anch:synthetic-long-text:chunk:tail"
+      ],
+      "status": "planned"
+    }
+  ],
+  "mergePolicy": "all_sections_require_evidence_refs_before_merge",
+  "status": "passed"
+}

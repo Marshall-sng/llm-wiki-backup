@@ -1,0 +1,65 @@
+{
+  "schemaPath": "experiments/wiki-precision-longdoc/schemas/evidence-anchor.schema.json",
+  "samples": [
+    {
+      "anchorId": "anch:source-first-batch-enterprises-xlsx:table:956137f66ccb",
+      "sourceId": "source-first-batch-enterprises-xlsx",
+      "format": "xlsx",
+      "anchorType": "table-row",
+      "locator": {
+        "sheet": "第一批名单",
+        "row": 3
+      },
+      "snippet": "云南省贵金属新材料控股集团股份有限公司"
+    },
+    {
+      "anchorId": "anch:synthetic-long-text:chunk:tail",
+      "sourceId": "synthetic-long-text",
+      "format": "text",
+      "anchorType": "text-range",
+      "locator": {
+        "chunkIndex": 14,
+        "charStart": 79793,
+        "charEnd": 82552
+      },
+      "snippet": "TAIL_ENTITY_最终章节关键实体"
+    },
+    {
+      "anchorId": "anch:sample-pdf:p12:block3",
+      "sourceId": "sample-pdf",
+      "format": "pdf",
+      "anchorType": "page-block",
+      "locator": {
+        "page": 12,
+        "block": 3,
+        "bbox": [
+          0.1,
+          0.2,
+          0.8,
+          0.35
+        ]
+      }
+    },
+    {
+      "anchorId": "anch:sample-docx:p42",
+      "sourceId": "sample-docx",
+      "format": "docx",
+      "anchorType": "paragraph",
+      "locator": {
+        "paragraphIndex": 42,
+        "style": "Heading 2"
+      }
+    },
+    {
+      "anchorId": "anch:sample-pptx:s3:shape7",
+      "sourceId": "sample-pptx",
+      "format": "pptx",
+      "anchorType": "slide-shape",
+      "locator": {
+        "slide": 3,
+        "shapeId": "shape7"
+      }
+    }
+  ],
+  "status": "passed"
+}

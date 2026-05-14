@@ -1,0 +1,50 @@
+{
+  "queries": [
+    {
+      "query": "云南白药 联系人",
+      "status": "answered_with_anchors",
+      "hits": [
+        {
+          "score": 1,
+          "anchor": {
+            "anchorId": "anch:source-first-batch-enterprises-xlsx:table:11b77b2c8f38",
+            "sourceId": "source-first-batch-enterprises-xlsx",
+            "format": "xlsx",
+            "anchorType": "table-row",
+            "locator": {
+              "sheet": "第一批名单",
+              "row": 5
+            }
+          },
+          "snippet": "enterprise-row 第一批名单 5 3 云南白药集团股份有限公司 ['中医药行业雷公大模型', '中医药行业高质量数据集', '中医药行业雷公大模型数据标注范式', '三七卫星遥感产量预测与采购价格预测高质量数据集', '中医药行业高质量数据集建设与领域应用试点', '中医药行业雷公大模型数据标注范式', '中医药行业高质量数据集建设与领域应用试点'] ['孟得力', '杨映辉'] ['18611001103', '15368080553'] ['数据要素x2024"
+        },
+        {
+          "score": 1,
+          "anchor": {
+            "anchorId": "anch:source-first-batch-enterprises-xlsx:table:20065c97ac4c",
+            "sourceId": "source-first-batch-enterprises-xlsx",
+            "format": "xlsx",
+            "anchorType": "table-row",
+            "locator": {
+              "sheet": "高质量数据集试点单位",
+              "row": 3
+            }
+          },
+          "snippet": "dataset-pilot-row 高质量数据集试点单位 3 23 中医药行业高质量数据集建设与领域应用试点 云南白药集团股份有限公司 行业高质量数据集 昆明 45658 46357 云南省“十大云药”是经官方遴选的最具代表性道地药材，聚焦云南特有且主产、种植规模产量占比高、品质优势突出、市场认可的中药材，构建高质量数据集。首先，建设一套中药材数据管理服务平台，具备数据采集、存储、标准化、标注和对外服务等能力。其次，围绕特色中药材基于文本数据、图像数据等多模态行业数据，建设4"
+        }
+      ],
+      "coverage": {
+        "searchedRows": 22
+      }
+    },
+    {
+      "query": "火星矿产权属审批时限",
+      "status": "insufficient_evidence",
+      "hits": [],
+      "coverage": {
+        "searchedRows": 22
+      }
+    }
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,177 @@
+{
+  "sourceSerials": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "6",
+    "7",
+    "8",
+    "5",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "18",
+    "15",
+    "16",
+    "17"
+  ],
+  "wikiFirstRows": [
+    {
+      "displaySerial": "1",
+      "enterprise": "云南省贵金属新材料控股集团股份有限公司"
+    },
+    {
+      "displaySerial": "2",
+      "enterprise": "云南电网有限责任公司"
+    },
+    {
+      "displaySerial": "3",
+      "enterprise": "云南白药集团股份有限公司"
+    },
+    {
+      "displaySerial": "4",
+      "enterprise": "中国科学院昆明动物研究所"
+    },
+    {
+      "displaySerial": "5",
+      "enterprise": "普洱思茅农场集团有限公司"
+    },
+    {
+      "displaySerial": "6",
+      "enterprise": "云南省广播电视台"
+    },
+    {
+      "displaySerial": "7",
+      "enterprise": "昆明国际花卉拍卖交易中心有限公司"
+    },
+    {
+      "displaySerial": "8",
+      "enterprise": "云南瑞和锦程实业股份有限公司"
+    },
+    {
+      "displaySerial": "9",
+      "enterprise": "科大讯飞"
+    },
+    {
+      "displaySerial": "10",
+      "enterprise": "云南省交通投资建设集团有限公司"
+    },
+    {
+      "displaySerial": "11",
+      "enterprise": "云南省融资信用征信服务有限公司"
+    },
+    {
+      "displaySerial": "12",
+      "enterprise": "云南省低空经济产投资有限公司"
+    },
+    {
+      "displaySerial": "13",
+      "enterprise": "云南省腾云信息产业有限公司"
+    },
+    {
+      "displaySerial": "14",
+      "enterprise": "云南省科学技术研究院"
+    },
+    {
+      "displaySerial": "15",
+      "enterprise": "筑龙招投标有限公司"
+    },
+    {
+      "displaySerial": "16",
+      "enterprise": "云南山海遊旅游集团有限公司"
+    },
+    {
+      "displaySerial": "17",
+      "enterprise": "昆明斗南农产品拍卖有限公司"
+    },
+    {
+      "displaySerial": "18",
+      "enterprise": "云南省农业科学院、新华网股份有限公司"
+    }
+  ],
+  "pilotProjectIds": [
+    "12",
+    "23",
+    "24",
+    "39"
+  ],
+  "entityPageStemCount": 73,
+  "reviewItems": [
+    {
+      "kind": "possible_omission_or_rewrite",
+      "severity": "action_required",
+      "title": "Wiki source page rewrote original serial order",
+      "evidence": {
+        "sourceSerials": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "7",
+          "8",
+          "5",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "18",
+          "15",
+          "16",
+          "17"
+        ],
+        "wikiDisplaySerials": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
+        ]
+      }
+    },
+    {
+      "kind": "field_loss",
+      "severity": "warning",
+      "title": "Pilot project id 23 not preserved as table id in wiki source"
+    },
+    {
+      "kind": "field_loss",
+      "severity": "warning",
+      "title": "Pilot project id 24 not preserved as table id in wiki source"
+    },
+    {
+      "kind": "field_loss",
+      "severity": "warning",
+      "title": "Pilot project id 39 not preserved as table id in wiki source"
+    },
+    {
+      "kind": "field_loss",
+      "severity": "action_required",
+      "title": "Wiki summary dropped contact/phone columns from core table",
+      "evidence": {
+        "structuredRowsWithContacts": 16,
+        "structuredRowsWithPhones": 16
+      }
+    }
+  ],
+  "status": "issues_found"
+}
