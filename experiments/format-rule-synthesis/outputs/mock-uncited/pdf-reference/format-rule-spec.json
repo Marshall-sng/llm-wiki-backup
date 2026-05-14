@@ -1,0 +1,372 @@
+{
+  "caseId": "pdf-reference",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Guarantee high-fidelity export and exact visual recreation."
+  ],
+  "rationale": "LLM-style synthesis converts existing evidence into explicit normative formatting constraints with attributes.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0004"
+          ],
+          "name": "pageBox",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0004"
+          ],
+          "name": "marginSignal",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes pageBox, marginSignal explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "missing.evidence.0001"
+      ],
+      "id": "pdf-page-1",
+      "normType": "page",
+      "rule": "page uses evidence-bound page constraints.",
+      "source": "llm-inferred",
+      "target": "page"
+    },
+    {
+      "attributes": [],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes textLayer, readingOrder explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely"
+      ],
+      "id": "pdf-text-layer-2",
+      "normType": "hierarchy",
+      "rule": "text-layer uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "text-layer"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "layoutZone",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "readingOrder",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes layoutZone, readingOrder explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely"
+      ],
+      "id": "pdf-reference-use-3",
+      "normType": "hierarchy",
+      "rule": "reference-use uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "reference-use"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0004"
+          ],
+          "name": "fontRef",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0004"
+          ],
+          "name": "font",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes fontRef, font explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0004"
+      ],
+      "id": "pdf-font-ref-4",
+      "normType": "typography",
+      "rule": "font-ref uses evidence-bound typography constraints.",
+      "source": "llm-inferred",
+      "target": "font-ref"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "tableSignature",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "listSignature",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes tableSignature, listSignature explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely"
+      ],
+      "id": "pdf-reference-use-5",
+      "normType": "table",
+      "rule": "reference-use uses evidence-bound table constraints.",
+      "source": "llm-inferred",
+      "target": "reference-use"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "imageDensity",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "layoutZone",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes imageDensity, layoutZone explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely"
+      ],
+      "id": "pdf-image-density-6",
+      "normType": "density",
+      "rule": "image-density uses evidence-bound density constraints.",
+      "source": "llm-inferred",
+      "target": "image-density"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "scanRisk",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "confidencePolicy",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes scanRisk, confidencePolicy explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely"
+      ],
+      "id": "pdf-scan-risk-7",
+      "normType": "boundary",
+      "rule": "scan-risk uses evidence-bound boundary constraints.",
+      "source": "llm-inferred",
+      "target": "scan-risk"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely",
+            "profile.style.0001"
+          ],
+          "name": "exportPromise",
+          "value": "forbidden"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely",
+            "profile.style.0001"
+          ],
+          "name": "visualReplication",
+          "value": "forbidden"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The synthesized rule makes exportPromise, visualReplication explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely",
+        "profile.style.0001"
+      ],
+      "id": "pdf-boundary-8",
+      "normType": "boundary",
+      "rule": "boundary uses evidence-bound boundary constraints.",
+      "source": "standard-default",
+      "target": "boundary"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0004"
+          ],
+          "name": "marginSignal",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0004"
+          ],
+          "name": "pageBox",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes marginSignal, pageBox explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0004"
+      ],
+      "id": "pdf-page-9",
+      "normType": "spacing",
+      "rule": "page uses evidence-bound spacing constraints.",
+      "source": "llm-inferred",
+      "target": "page"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "listSignature",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "raw.pdf.fact.textOperatorCount",
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.scanLikely"
+          ],
+          "name": "readingOrder",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes listSignature, readingOrder explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely"
+      ],
+      "id": "pdf-reference-use-10",
+      "normType": "numbering",
+      "rule": "reference-use uses evidence-bound numbering constraints.",
+      "source": "llm-inferred",
+      "target": "reference-use"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "pdf",
+  "synthesisMode": "mock-uncited"
+}

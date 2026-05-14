@@ -1,0 +1,160 @@
+{
+  "caseId": "xlsx-metrics",
+  "confidence": "medium",
+  "contentLeakagePolicy": {
+    "includeRawEvidenceDump": false,
+    "includeSourceBodyText": false,
+    "promptMayIncludeEvidenceIds": false
+  },
+  "documentIntent": "表格/指标分析",
+  "globalBoundaries": [
+    "来源事实优先于格式约束；不得根据格式画像虚构组织、金额、条款、结论或引用。",
+    "FormatSpec 只约束结构、表达、排版和诊断，不承诺导出文件。",
+    "FormatSpec 不承诺视觉还原；证据不足的字段必须降级为建议或诊断。",
+    "默认数据范围为 evidence-only；draft prompt 不展示 raw evidence 正文或证据转储。"
+  ],
+  "rules": [
+    {
+      "confidence": "medium",
+      "detail": "检测到工作表区域线索 A1:C29；输出应围绕表格结构和指标口径，而不是改写成长文。",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-workbook-1",
+      "rule": "以工作簿/工作表为最高组织单元。",
+      "source": "detected",
+      "target": "workbook"
+    },
+    {
+      "confidence": "medium",
+      "detail": "不根据工作表名推断不存在的业务主题；主题必须来自用户任务或底稿。",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-sheet-1",
+      "rule": "工作表命名只作为定位线索。",
+      "source": "detected",
+      "target": "sheet"
+    },
+    {
+      "confidence": "medium",
+      "detail": "当只有区域维度证据时，默认按首行/前若干行可能为标题或表头处理，并在诊断中提示需确认。",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-table-region-1",
+      "rule": "区分标题区、表头区、数据区和备注/合计区。",
+      "source": "inferred",
+      "target": "table-region"
+    },
+    {
+      "confidence": "medium",
+      "detail": "生成表格说明时应优先解释字段关系、单位和统计口径，不擅自改列名。",
+      "id": "xlsx-header-1",
+      "rule": "表头应短、字段化、同列口径一致。",
+      "source": "standard-default",
+      "target": "header"
+    },
+    {
+      "confidence": "high",
+      "detail": "不得把单元格事实打散为无序段落；观察结论应能追溯到行/列维度。",
+      "id": "xlsx-data-region-1",
+      "rule": "数据区保持行列关系。",
+      "source": "standard-default",
+      "target": "data-region"
+    },
+    {
+      "confidence": "medium",
+      "detail": "检测到字体数 4、填充数 3、边框数 5。",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-style-1",
+      "rule": "单元格样式统计作为复杂度线索。",
+      "source": "detected",
+      "target": "style"
+    },
+    {
+      "confidence": "high",
+      "detail": "颜色、边框、填充只能提示层级或强调可能性；不能自动推断风险等级、状态或结论。",
+      "id": "xlsx-style-2",
+      "rule": "样式差异不能自动解释为业务含义。",
+      "source": "standard-default",
+      "target": "style"
+    },
+    {
+      "confidence": "high",
+      "detail": "若探测不到公式明细，只能提示“公式证据不足”；不得自动计算、补齐或重写指标。",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-formula-1",
+      "rule": "公式和合计必须保持事实边界。",
+      "source": "inferred",
+      "target": "formula"
+    },
+    {
+      "confidence": "high",
+      "detail": "生成说明时要显式保留用户给出的单位和口径；未知单位不得补造。",
+      "id": "xlsx-number-format-1",
+      "rule": "金额、比例、日期、数量必须保留单位。",
+      "source": "standard-default",
+      "target": "number-format"
+    },
+    {
+      "confidence": "medium",
+      "detail": "百分比、金额和日期的格式应在底稿中统一说明；不输出伪 Excel 公式。",
+      "id": "xlsx-number-format-2",
+      "rule": "数字格式优先服务可读性。",
+      "source": "standard-default",
+      "target": "number-format"
+    },
+    {
+      "confidence": "high",
+      "detail": "可生成指标说明、口径解释、观察要点；不承诺生成或导出电子表格文件。",
+      "id": "xlsx-boundary-1",
+      "rule": "XLSX 画像只指导表格类底稿。",
+      "source": "standard-default",
+      "target": "boundary"
+    },
+    {
+      "confidence": "medium",
+      "detail": "共享字符串数量 65 只说明文本规模，不说明业务重要性。",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-boundary-2",
+      "rule": "不把样式统计转成业务事实。",
+      "source": "detected",
+      "target": "boundary"
+    }
+  ],
+  "schemaVersion": "format-spec.v0",
+  "sourceFileType": "xlsx",
+  "typeSpecific": {
+    "xlsx": {
+      "outputMode": "table-interpretation-and-metric-notes",
+      "styleComplexity": {
+        "borderCount": 5,
+        "fillCount": 3,
+        "fontCount": 4
+      },
+      "workbook": {
+        "sharedStringCount": 65,
+        "sheetDimension": "A1:C29"
+      }
+    }
+  }
+}

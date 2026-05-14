@@ -62,3 +62,384 @@
 后续：评分器稳定后，可以引入轻量 autoresearch 式循环。  
 不做：当前不引入外部 autoresearch 代码。
 
+## Decision 006：当前版本完全放弃手动输入模板
+
+日期：2026-05-13
+
+原方案：手工模板库降级为兼容基础，作为已完成能力保留，但不作为下一阶段主线。  
+新判断：继续保留“手动输入模板”会让产品路线产生误导，使用户以为需要自己描述结构、语气、约束和版式；这与当前更高价值的“上传成品文件 → 自动提炼 FormatProfile”路线冲突。  
+决策：当前版本中完全放弃手动输入模板功能，不再作为兼容层、入口或待完善能力推进。  
+影响：后续产品化围绕 FormatProfile / FormatBinding / 成品文件学习展开；已有手工模板相关实现若仍存在，应视为历史遗留或可删除对象，而不是产品承诺。  
+取代：本决策取代 Decision 002 中“手工模板库保留为已完成基础能力”的表述。  
+不做：当前版本不设计、不维护、不暴露手动输入模板流程。
+
+
+## Decision 007：四格式 FormatProfile 产品化通过，下一阶段转向语义精炼
+
+日期：2026-05-13
+
+背景：DOCX / XLSX / PPTX / PDF 已经通过统一导入入口、后端确定性 probe、FormatProfile、profileSnapshot、generationInstruction 和 diagnostics 链路接回主线。用户实测 DOCX 已出现段落、候选标题、表格、样式、字体、字号和页面线索。
+
+判断：当前版本已经满足“四格式进入统一产品化管线”的目标，但生成的画像属于确定性探测结果，结构线索和样式线索仍偏机械。例如正文条款可能被当作标题，章/条可能粘连，字体列表中存在默认西文字体或语言属性噪声。
+
+决策：本轮四格式确定性探测产品化判定通过。后续重点不再是证明四格式能否进入管线，而是增加 FormatProfile Semantic Refinement / LLM Enrichment：在 raw probe 之后进行结构筛选、样式语义化、画像压缩和 generationInstruction 精炼。
+
+影响：后续验收标准从“是否能导入并生成画像”升级为“画像是否可读、可控、可用于写作”。置信度需要区分 probe evidence confidence 与 semantic refinement confidence。
+
+不做：不因当前机械画像而回退四格式产品化；不恢复手动输入模板；不提前承诺导出或高保真复刻。
+
+参考记录：`.omx/plans/requirements/format-profile-productization-acceptance-and-semantic-refinement.md`
+
+## Decision 008（2026-05-13）: LLM 语义精炼先以实验 harness 验证，不直接接入产品链路
+
+**Decision**: 建立 `experiments/format-profile-semantic-refinement/`，以 closed schema + evidence catalog + evaluator + fallback 验证语义精炼可行性；当前版本不把 LLM 接入桌面端 FormatProfile 产品链路。
+
+**Constraint**: 用户已确认四格式确定性探测通过，但 LLM 未接入导致画像机械；为避免 LLM 幻觉和越权生成，必须先证明可拒绝、可回退、可审计。
+
+**Rejected**: 直接在 UI/Store 中调用 LLM 生成 generationInstruction。原因：会绕过 evidence refs、hash parity、fallback 和禁词边界，风险过高。
+
+**Confidence**: high
+
+**Tested**: `disabled` 4/4 fallback；`mock-pass` 4/4 refined；5 个失败模式均 fallback；13 项 hash/overlay 断言通过。
+
+**Directive**: 后续产品接入必须通过 feature flag 和 adapter 层引入真实 LLM；不得复用 mock refiner 作为产品逻辑。
+
+## Decision 009（2026-05-13）: 真实 LLM 先通过 harness provider 验证，产品接入仍延后
+
+**Decision**: 在实验 harness 中新增真实 LLM provider，并使用 `codex-cli` 通道完成四格式真实测试；产品 UI/Store 仍不接入 LLM。
+
+**Constraint**: MiniMax HTTP 通道当前 429 usage limit，DeepSeek key invalid，StepFun quota exceeded，本地 Ollama 不可用；需要一个可审计且不写产品链路的真实模型通道。
+
+**Rejected**: 因 HTTP provider 额度失败而直接跳过真实测试。原因：本机 `codex-cli` 已可作为真实 LLM 通道验证 overlay/evaluator/fallback 合同。
+
+**Confidence**: high
+
+**Tested**: `real-llm` via `codex-cli:gpt-5.3-codex-spark`，DOCX/XLSX/PPTX/PDF 4/4 refined，evaluator pass；`real_llm_refined=4/4 failed=[]`。
+
+**Directive**: 后续产品化只能复用 harness 的合同与测试，不得把 `codex-cli` 实验 provider 作为默认产品 provider。
+
+## Decision 010（2026-05-13）: snippets/fulltext 进入产品化前必须先做 DataScope 对照实验
+
+**Decision**: 在 `experiments/format-profile-semantic-refinement` 继续做 DataScope Comparison Experiment，比较 `evidence-only`、`evidence-plus-snippets`、`evidence-plus-fulltext`；暂不进入产品开发。
+
+**Constraint**: Evidence 可能机械或不准确，但发送片段/全文涉及隐私、token 成本、泄漏风险和 evaluator 合同变化，必须先用实验验证收益与边界。
+
+**Rejected**: 直接把“允许发送全文”做成产品选项。原因：尚未验证 snippets/fulltext 相比 evidence-only 的真实收益，也未验证授权、redaction、leak scan、sourceContext evidenceRefs 和 fallback 的完整安全闭环。
+
+**Confidence**: high
+
+**Tested**: 计划已完成 ralplan consensus：Architect 先 REVISE，修订后 Critic APPROVE。计划文件：`.omx/plans/format-profile-datascope-comparison.md`。
+
+**Directive**: 执行前必须保留/fixture 旧 `outputs/mock-pass` baseline；实现仅限实验 harness；不得修改桌面端产品链路。
+
+## Decision 011（2026-05-13）: DataScope 对照实验通过安全门槛，但 snippets/fulltext 暂不应作为默认产品能力
+
+**Decision**: DataScope 实验实现并验证通过；后续产品化默认仍应采用 `evidence-only`，`snippets/fulltext` 只可作为显式授权的高级/补救模式候选。
+
+**Constraint**: 当前四个 golden cases 上，`evidence-plus-snippets` 和 `evidence-plus-fulltext` 没有提升 qualityScore；虽然 sourceContextCoverage 在部分格式上提高，但不足以证明默认发送片段/全文的收益大于隐私/成本风险。
+
+**Rejected**: 在下一阶段产品接入中默认启用 snippets/fulltext。原因：实验未证明质量收益；更高数据范围应继续由用户显式授权并保留安全提示。
+
+**Confidence**: high
+
+**Tested**: mock gates、regression、leak scan、failure modes、real-LLM 3 scopes × 4 cases；`real_llm_datascope_refined=12/12`。
+
+**Directive**: 若产品接入，第一版默认 evidence-only；rich scopes 必须有独立授权、可见数据范围、leak/redaction、fallback 和审计记录。
+
+
+## Decision 012：2026-05-13：样式高保真提取先以确定性 StyleFacts 实验通过，LLM 只能做证据绑定的解释层
+
+**Decision**: 新增并通过 `experiments/format-profile-style-extraction/` 实验；DOCX/XLSX 进入 primary golden，PPTX/PDF 进入 baseline diagnostics。后续产品化应把确定性 `styleFacts` 作为事实源，LLM 只允许生成引用 evidence 的解释/诊断 overlay，不能生成或覆盖样式事实。
+
+**Constraint**: 用户最关心字体、字号、排版等高保真样式解析；但“高保真”必须限定为 fixture-backed deterministic parser fidelity，不承诺视觉复刻、导出还原或 LLM 推断事实。
+
+**Rejected**: 让 LLM 直接参与解析并写入字体、排版、颜色、边距等事实字段。原因：会破坏 evidence 可审计性，且 evidence 若机械/不准时，LLM 更容易放大错误；正确路径是 deterministic parser 产出事实，LLM 只解释并引用 evidence。
+
+**Confidence**: high
+
+**Tested**: deterministic 4 cases；mock-pass 4 cases；mock-hallucination / mock-overwrite-facts / mock-unknown-evidence 均 fail-closed；`verify-style-extraction.mjs` PASS（11 outputs）；`npm run typecheck` PASS；`npm run test:mocks` PASS（83 files / 1127 tests）。
+
+**Directive**: 下一阶段如产品化，不得把 overlay 合并进事实层；必须先设计 `styleFacts -> FormatProfile` 映射、UI 展示边界和失败降级策略。
+
+## Decision 013（2026-05-14）：StyleFacts 产品化设计必须回到 FormatBinding / Draft / Audit 闭环，而不是只做样式 UI
+
+**Decision**: 下一阶段产品化设计以 `deterministic StyleFacts → FormatProfileRecord → FormatBinding/ProfileSnapshot → UI 摘要/证据折叠 → generationInstruction` 为最小闭环；同时为 Match Report、Formal Export、Output Audit、LLM overlay 和 rich data scopes 预留字段与边界，但不在本阶段伪完成这些后置能力。
+
+**Constraint**: 完整复读 `.omx/plans` 后确认，原始迁移需求的核心不是样式美化，而是正式材料闭环：Draft/版本、格式/模板约束、匹配报告、导出、审计和来源追踪。StyleFacts 实验只解决了“样式事实可审计提取”，不能替代这些上层闭环。
+
+**Rejected**: 仅新增一个 StyleFacts UI 面板并宣称完成产品化。原因：会漏掉 FormatBinding、两条用户路径、Draft version、未来 Match Report/Audit、DataScope 授权和 LLM renderer/evaluator 合同。
+
+**Confidence**: high
+
+**Tested**: 本决策为计划/需求修正，已基于 `.omx/plans` 全量 Markdown 复读和现有实验记录；尚未进入实现测试。
+
+**Directive**: 进入代码前必须先对齐 PRD/test spec；第一版默认 evidence-only、deterministic facts-only；不得默认发送 snippets/fulltext，不得让 LLM 写事实，不得恢复手动输入模板，不得承诺导出或视觉复刻。
+
+## Decision 014（2026-05-14）：确定性 StyleFacts 产品化闭环通过，LLM 接入进入下一阶段设计
+
+**Decision**: Phase A 已将实验验证过的确定性 StyleFacts 产品化到桌面端主链路：`probe -> StyleFactsEnvelope -> FormatProfileRecord -> profileSnapshot -> draft-processing prompt -> UI/evidence diagnostics`。旧的松散样式摘要路径由 StyleFacts 派生结果替代；本阶段关闭后，下一阶段才能通过 ralplan 设计 LLM 语义 overlay。
+
+**Constraint**: 当前版本已经完全放弃手动输入模板；样式事实必须来自确定性 parser evidence，LLM 不能生成或覆盖字体、字号、页边距、颜色、排版等事实；默认数据范围必须保持 `evidence-only`。
+
+**Rejected**: 在 Phase A 中一并接入真实 LLM、snippets/fulltext、导出复刻或高保真视觉承诺。原因：这些都属于 Phase B/后续授权链路，需要 renderer/evaluator/fallback/audit 合同后才能进入产品。
+
+**Confidence**: high
+
+**Tested**: `npx tsc --noEmit --pretty false` PASS；`npm run typecheck` PASS；`npm run test:mocks` PASS（84 files / 1137 tests）；目标 StyleFacts/Profile/Draft/i18n 测试 PASS（5 files / 31 tests）；`npm run build` PASS；边界关键词守卫 PASS（无 Phase B/rich scope/高保真承诺泄漏）。
+
+**Directive**: 后续 LLM 产品接入必须以 StyleFacts 为事实源，只能生成证据绑定的 semantic overlay；不得把 overlay 合并进事实层；不得默认发送 snippets/fulltext；不得恢复手动输入模板；不得承诺导出或视觉复刻。
+
+## Decision 015（2026-05-14）：Phase B LLM 接入方案通过，进入 evidence-only semantic overlay 实现
+
+**Decision**: LLM 接入采用 evidence-only semantic overlay 产品方案：LLM 只能解释 deterministic StyleFacts/evidence，输出 closed-schema overlay；产品 renderer/evaluator/fallback/audit 负责最终 instruction、验收、降级和可追踪记录。方案已通过 Architect 与 Critic 审查，可以进入实现。
+
+**Constraint**: 不恢复手动输入模板；不让 LLM 创建/覆盖 StyleFacts；不默认发送 snippets/fulltext；不承诺导出、视觉复刻或高保真还原；Phase B 不引入通用 `profileVersion`，stale key 使用 `profileId + updatedAt + profileSnapshotHash + styleFactsSha256`。
+
+**Rejected**: 直接让 LLM 改写 `FormatProfileRecord` 或 `generationInstruction`；默认启用 snippets/fulltext；只做前端 UI 解释层。原因：这些路径会破坏事实边界、隐私默认值、renderer ownership 或主链路复用。
+
+**Confidence**: high
+
+**Tested**: 本决策为设计审查结果；Architect REVISE 后 APPROVE，Critic APPROVE。实现测试尚未执行。
+
+**Directive**: 实现必须先构建 allowlisted `EvidenceOnlyOverlayInput` 和 overlay evaluator/renderer/provider wrapper；provider payload 不得接收完整 `FormatProfileRecord`；任何 rejected/failed/stale/running-recovery 都必须 deterministic fallback。
+
+## Decision 016（2026-05-14）：Phase B evidence-only LLM semantic overlay 已产品化，默认仍保持确定性降级
+
+**Decision**: LLM 接入已以产品 semantic overlay 方式实现：模型调用通过现有 LLM provider 配置触发，输入为 allowlisted `EvidenceOnlyOverlayInput`，输出必须通过 closed schema 与 evaluator，最终由 renderer 合成摘要和 generationInstruction。StyleFacts 事实层不被 LLM 写入或覆盖。
+
+**Constraint**: 默认数据范围保持 `evidence-only`；snippets/fulltext 未进入默认产品流；provider payload 不接收完整 `FormatProfileRecord`；失败、拒绝、过期、重启中断都回退到 Phase A deterministic profile。
+
+**Rejected**: 将真实 LLM 输出直接作为最终 `generationInstruction`；持久化 raw overlay JSON 为主指令；把 snippets/fulltext 默认发送给 provider；恢复手动输入模板。
+
+**Confidence**: high for mock/product-contract validation; medium for real-provider runtime until desktop smoke test with configured model is executed.
+
+**Tested**: Targeted tests PASS（5 files / 30 tests）；`npm run typecheck` PASS；`npm run test:mocks` PASS（85 files / 1143 tests）；`npm run build` PASS。
+
+**Directive**: 后续若开启 snippets/fulltext，必须另起授权/脱敏/泄漏扫描/审计方案；不得绕过 `EvidenceOnlyOverlayInput`、evaluator 或 renderer；真实 provider 问题只允许影响 overlay 状态，不得阻塞确定性格式画像使用。
+
+
+## Decision 017（2026-05-14）：新增 FormatSpec 中间层实验，替代冗余原文型画像约束
+
+**Decision**: 在 StyleFacts / SemanticOverlay 与 draft prompt 之间引入 `FormatSpec` 概念层，并先通过实验验证四格式可行性。`FormatSpec` 只输出详细格式规则，不输出来源正文内容；后续产品化时应直接替代当前冗余画像约束 prompt。
+
+**Constraint**: 用户指出当前画像约束过于机械、冗余，且包含来源格式画像中的原文内容，导致底稿加工被来源主题污染；格式约束应像 GB/T 9704-2012 式规范一样细到标题层级、编号、字体、字号、缩进、对齐、行距等，同时扩展到 XLSX/PPTX/PDF。
+
+**Rejected**: 继续把 raw structure lines、候选标题原文、StyleFacts 摘要、diagnostics 和 semantic overlay 全量拼接进 draft prompt。原因：这会让 prompt 变长但不更清晰，并把“来源文件写了什么”误当成“目标底稿怎么排”。
+
+**Confidence**: high for experiment feasibility; medium for product integration until draft-processing replacement and UI/audit design完成。
+
+**Tested**: `node experiments/format-spec/scripts/run-format-spec.mjs` PASS；DOCX 17 rules、XLSX 12 rules、PPTX 12 rules、PDF 8 rules；4/4 evaluator pass；产物包含 `format-spec.json`、`format-spec.md`、`draft-prompt.md`、`evaluation.json`。
+
+**Directive**: 后续产品接入必须让 draft-processing 消费 `FormatSpec` renderer 输出，不得继续默认注入来源正文/候选标题长文本；默认仍为 evidence-only；不得恢复手动输入模板；不得承诺导出或视觉还原。
+
+### Ralplan 补审最终验收补充（2026-05-14）
+
+Critic 首轮结论为 ITERATE，阻断点为 summary-level provenance 和 Decision 017 记录不完整。现已补齐：
+
+- `experiments/format-spec/reports/independent-evaluator-summary.json` 增加 top-level `provenance`。
+- 每个 summary case 记录 inputPath、inputSha256、caseSha256、formatSpecSha256、formatSpecMarkdownSha256、draftPromptSha256。
+- 每个 `outputs/*/evaluation.json` 记录 per-case provenance，且补充 `formatSpecMarkdownSha256`。
+- 独立 evaluator happy path：4/4 pass。
+- negative self-tests：5/5 pass。
+
+本结论仍限定为：`FormatSpec` 四格式实验可行性通过，不代表产品化完成，不代表 schema 冻结；产品接入必须另行设计 draft-processing replacement、UI preview/audit 和回归测试。
+
+### Ralplan 最终复审结论（2026-05-14）
+
+补做 ralplan 共识流程已完成：
+
+- Planner：REVISE_BEFORE_REVIEW，要求补独立 evaluator、负例、泄漏检测、schema/enum、provenance。
+- Architect round 1：APPROVE，要求 Critic 关注 summary-level provenance 与实验/产品边界。
+- Critic round 1：ITERATE，要求补 summary-level provenance 和 Decision 017 最终验收记录。
+- Architect round 2：APPROVE。
+- Critic round 2：APPROVE。
+
+最终批准边界：
+
+- 只批准 `FormatSpec` 四格式实验可行性与 evaluator/provenance 记录闭环。
+- 不批准直接产品化接入。
+- 不视为 `format-spec.v0` schema 冻结。
+- 不承诺导出、视觉还原、UI 主链路接入或 draft-processing 已替换。
+- 默认仍为 evidence-only；不恢复手动模板；不默认发送 snippets/fulltext；不注入来源正文或 raw evidence dump。
+
+最终验证证据：
+
+```powershell
+node experiments/format-spec/scripts/run-format-spec.mjs
+node experiments/format-spec/scripts/evaluate-format-spec.mjs
+npm run typecheck
+```
+
+结果：happy path 4/4 pass；negative self-tests 5/5 pass；typecheck PASS。
+
+## Decision 018（2026-05-14）：FormatSpec 产品化接入必须替代旧画像 prompt，并先落 PRD/test-spec
+
+**Decision**: 下一阶段产品化接入采用 `FormatSpec core module + draft snapshot renderer output` 方案。`src/lib/format-spec.ts` 将成为唯一画像 prompt renderer；draft-processing 只消费 `snapshot.formatSpec.promptBlock`，且只在 system prompt 插入一次。旧 `generationInstruction` 保留为 legacy metadata，但不参与新 draft-processing 主链路。
+
+**Constraint**: Decision 017 只批准实验可行性，不批准直接产品化接入；当前产品代码仍存在 user/system 双画像注入、StyleFacts/semanticOverlay/generationInstruction 冗余拼接，以及 `src/lib/format-profile.ts` 依赖 store 类型的问题。
+
+**Rejected**: 直接把实验脚本输出叠加到现有 `generationInstruction` 或当前 `formatProfileSnapshot()` 拼接逻辑。原因：会把旧冗余搬家，不能解决来源内容污染和双注入问题。
+
+**Confidence**: high for design direction after Planner -> Architect REVISE -> Planner revision -> Architect APPROVE -> Critic APPROVE; medium for implementation until tests pass.
+
+**Tested**: 本决策为产品化设计审查记录，尚未实现；已落 PRD/test-spec：`.omx/plans/prd-format-spec-productization-phaseC.md`、`.omx/plans/test-spec-format-spec-productization-phaseC.md`。
+
+**Directive**: 实现前必须遵守 PRD/test-spec：类型边界下移到 `src/lib/format-profile-types.ts`；区分 `sourceProfileHash` 与 `formatSpecHash`；FormatSpec block 只能 system prompt 注入一次；user prompt 不得包含画像块；不得恢复手动模板、不得默认 snippets/fulltext、不得承诺导出或视觉还原。
+
+
+## Decision 019（2026-05-14）：FormatSpec 产品化接入完成，旧画像约束 prompt 被替代
+
+**Decision**: Phase C 已将 FormatSpec 产品化接入 draft-processing 主链路。`src/lib/format-spec.ts` 成为唯一画像 prompt renderer；`buildFormatProfileSnapshot()` 物化 `sourceProfileHash`、`formatSpecHash` 与 `formatSpec.promptBlock`；draft-processing 只在 system prompt 注入一次 FormatSpec，user prompt 不再携带画像块或 legacy generationInstruction。
+
+**Constraint**: 该变更必须满足 Decision 017/018 的边界：不注入来源格式文件正文、不恢复手动输入模板、不默认 snippets/fulltext、不承诺导出、不承诺视觉还原/高保真复刻；LLM/semantic overlay 只能作为解释层，不能创建或覆盖 StyleFacts。
+
+**Rejected**: 继续在旧 `generationInstruction` 上追加实验输出，或在 user prompt 中继续拼接 StyleFacts、semanticOverlay、诊断和来源结构线索。原因：这会保留冗余和来源内容污染，不能解决用户指出的“画像约束过于机械且包含原文内容”的核心问题。
+
+**Confidence**: high for prompt-contract/product integration after full mock/build verification; medium for future real-model behavior because不同模型仍可能需要额外 prompt tuning。
+
+**Tested**: `node experiments/format-spec/scripts/run-format-spec.mjs` PASS（4/4）；`node experiments/format-spec/scripts/evaluate-format-spec.mjs` PASS（happy path 4/4，negative self-tests 5/5）；`npm run typecheck` PASS；`npm run test:mocks` PASS（86 files / 1152 tests）；`npm run build` PASS。
+
+**Directive**: 后续若继续优化，应围绕 FormatSpec renderer 迭代规则粒度和 UI/audit 展示；不得重新启用旧画像拼接路径，不得让 draft-processing 直接消费 raw structure/source text/StyleFacts dump，不得绕过 evidence-only 边界。
+
+
+## Decision 020（2026-05-14）：FormatSpec 用户侧冒烟基本通过，严格不改正文保护先记录不实现
+
+**Decision**: 用户通过桌面端将一次“按照新的格式画像排版生成”的结果保存为底稿后确认，Chat 展示形态与存为底稿后的 Markdown 形态不同；以保存后的 Markdown 结果判断，本轮 FormatSpec 主链路基本通过用户侧冒烟：标题、一级标题、子标题、表格和列表结构保留良好，且未再出现来源格式画像正文污染或内部 StyleFacts/智能解释/诊断约束外露。
+
+**Constraint**: 当前仍存在一个后续可优化点：当用户明确要求“不修改正文/只排版”时，模型可能去掉 wiki 双链 `[[...]]` 或调整导语与标题顺序。用户明确要求：可以记录，但先不修改代码。
+
+**Rejected**: 立即修改 draft-processing 或 FormatSpec 以加入“严格不改正文”模式。原因：当前主目标已经基本达成，且需要先观察更多样例，避免过早把局部现象固化成复杂规则。
+
+**Confidence**: high for current FormatSpec prompt-contract replacement and saved-draft smoke result; medium for strict no-body-change behavior until a dedicated protected-formatting mode is designed and tested.
+
+**Tested**: 用户提供保存为底稿后的 Markdown 结果；结果显示表格、列表、标题层级均保留，且无来源画像正文污染。此前自动验证仍保持：FormatSpec experiment 4/4、independent evaluator 4/4 + negative 5/5、typecheck、test:mocks、build PASS。
+
+**Directive**: 近期不要为此直接改代码；后续若进入 Phase D，可把“严格不改正文/只排版”作为独立任务意图或保护模式设计，重点保护 wiki 双链、引用标记、表格、列表、段落顺序和事实表达。
+
+
+## Decision 021（2026-05-14）：Phase D 先做 FormatSpec 可视化/审计/预览
+
+**Decision**: Phase D 下一步采用 Option A：先做 FormatSpec Visibility / Audit / Preview，而不是立即实现“严格不改正文/只排版保护模式”或真实模型回归样例集。计划文件为 `.omx/plans/prd-format-spec-phaseD-visibility-audit.md`。
+
+**Constraint**: FormatSpec 当前已进入 prompt 主链路但用户不可见；下一步必须让用户能审计“模型实际收到的格式约束”。同时继续保持 evidence-only、不默认发送 snippets/fulltext、不恢复手动输入模板、不承诺导出或视觉高保真、不让 LLM 创建/覆盖 StyleFacts。
+
+**Rejected**: 立即实现严格不改正文保护。原因：用户明确要求该点先记录不修改；且该模式涉及 wiki 双链、表格、列表、段落顺序和排版优化边界，需要另起 ralplan。也暂不优先做真实模型回归，因为缺少可视化审计层时回归结果难以产品化落地。
+
+**Confidence**: high after ralplan review. Architect fallback review approved with adjustment：完整 promptBlock 不作为默认 UI 主视图，只作为二级审计文本。Critic 首轮 ITERATE 要求澄清审计字段 source-of-truth；已修订为扩展 `FormatSpecSnapshot` 结构化 audit fields，Critic 复审 APPROVE。
+
+**Tested**: 本决策为计划审查结果，未改代码。代码事实通过只读检索确认：`format-spec.ts` 生成 snapshot；`draft-processing.ts` system prompt 消费；`drafts-view.tsx` 生成 snapshot/user prompt；`chat-panel.tsx` 生成 system prompt并显示格式画像标签；`format-profiles-view.tsx` 目前展示 StyleFacts/旧 generationInstruction 但未展示 FormatSpec。
+
+**Directive**: D-1 实现时必须扩展 `FormatSpecSnapshot` 为 UI 审计 source-of-truth，UI 不得解析 `promptBlock` 或手工重建规则。完整 `promptBlock` 仅可作为默认折叠的审计文本，不代表导出或视觉复刻承诺。D-2 严格不改正文保护仍不得混入 D-1。
+
+
+## Decision 022（2026-05-14）：Phase D-1 FormatSpec 可视化/审计/预览已产品化
+
+**Decision**: Phase D-1 已实现。FormatSpec 不再只是内部 prompt contract；格式画像详情页与 draft-processing 会话现在都能展示结构化 FormatSpec 审计信息。`FormatSpecSnapshot` 被扩展为审计 source-of-truth，UI 消费结构化字段而不是解析 `promptBlock`。
+
+**Constraint**: 继续保持 evidence-only；不默认发送 snippets/fulltext；不恢复手动输入模板；不承诺导出 DOCX/XLSX/PPTX/PDF；不承诺视觉还原或高保真复刻；不允许 LLM 创建/覆盖 StyleFacts。完整 `promptBlock` 只作为默认折叠的审计文本。
+
+**Rejected**: 让 UI 解析 `promptBlock` 或手工重建规则。原因：这会造成 UI 与 renderer/source-of-truth 分叉，破坏 Critic 要求的审计一致性。
+
+**Confidence**: high after targeted tests, full mock suite, typecheck, and build.
+
+**Tested**: `npx vitest run src/lib/format-spec.test.ts src/lib/draft-processing.test.ts --reporter=verbose` PASS（15 tests）；`npm run typecheck` PASS；`npm run test:mocks` PASS（86 files / 1153 tests）；`npm run build` PASS。
+
+**Directive**: 后续 D-2 严格不改正文/只排版保护必须另起 ralplan，不得混入当前审计 UI；任何后续 UI 都必须继续消费结构化 FormatSpec snapshot/view，不得解析 promptBlock 作为数据源。
+
+## Decision 023（2026-05-14）：FormatSpec 审计视图必须兼容旧持久化快照
+
+**Decision**: Phase D-1 的 `buildFormatSpecAuditView()` 必须把结构化审计字段视为可迁移字段，而不是假定所有历史会话/草稿都已拥有 `rules`、`boundaries`、`summaryLines` 等新字段。旧快照缺字段时，审计视图使用安全默认值降级显示，不能让页面崩溃。
+
+**Constraint**: 用户手动测试触发 `snapshot.rules is not iterable`，说明桌面端可能读取到 Phase D-1 前保存的旧 `formatSpec` 快照。该问题不应要求用户清空历史数据或重建画像。
+
+**Rejected**: 强制迁移/删除旧会话或要求用户重新生成格式画像。原因：这会破坏已有草稿上下文，并把产品兼容责任转嫁给用户。
+
+**Confidence**: high。
+
+**Tested**: `npm run typecheck` PASS；`npx vitest run src/lib/format-spec.test.ts src/lib/draft-processing.test.ts --reporter=verbose` PASS（2 files / 16 tests），包含旧快照缺少结构化审计字段的回归用例；`npm run build` PASS。
+
+**Directive**: 后续扩展 `FormatSpecSnapshot` 时，UI view helper 必须对历史持久化字段做兼容兜底；新增结构化字段不能直接假定存在。
+
+## Decision 024（2026-05-14）：FormatSpec 细粒度升级转向 LLM 规则归纳，而不是继续堆确定性采集规则
+
+**Decision**: 下一阶段产品化采用 `LLM FormatRuleSpec Synthesis`：确定性解析继续负责事实/evidence，LLM 负责把 evidence 推理成 GB/T-like 的细粒度、可执行格式规则；最终仍由 evaluator/renderer 控制进入 FormatSpec。
+
+**Constraint**: 用户明确指出继续增加死规则存在边际效用递减；当前已采集足够 StyleFacts/StructureFacts，需要把证据交给 LLM 做规范归纳。
+
+**Rejected**: 继续通过更多硬编码采集器追逐一级标题、二级标题、缩进、字号等所有变体。原因：规则越堆越脆弱，仍不能形成可执行规范体系。
+
+**Confidence**: high after experiment and real Codex CLI smoke.
+
+**Tested**: `node experiments/format-rule-synthesis/scripts/evaluate-format-rule-synthesis.mjs` PASS（mock-llm 4/4，negative 4/4 fail）；`FORMAT_RULE_CODEX_MODEL=gpt-5.5 node experiments/format-rule-synthesis/scripts/run-format-rule-synthesis.mjs --mode real-llm --allow-external-llm` PASS（4/4）。
+
+**Directive**: 产品化时 LLM 输出只能作为规则归纳层；不得创建/覆盖 StyleFacts；未知 evidenceRef 必须 fail/fallback；不得承诺导出、视觉还原或高保真复刻。
+
+## Decision 025（2026-05-14）：产品化复用 semantic overlay 承载 FormatRuleSpec，不新建事实层
+
+**Decision**: 将 `formatRuleSynthesis` 并入现有 LLM semantic overlay schema。FormatSpec renderer 只消费 evaluator accepted 的规则；若 overlay 缺失、失败、拒绝或过期，继续使用确定性 FormatSpec fallback。
+
+**Constraint**: 必须保持 StyleFacts 事实层确定性，避免新开一条 provider/state 链路造成重复 UI、重复 fallback 和重复审计。
+
+**Rejected**: 新建独立 FormatRule provider/store 状态。原因：会重复已有 semantic overlay 的 provider、audit、fallback 机制，并增加用户理解成本。
+
+**Confidence**: high。
+
+**Tested**: targeted tests 3 files / 26 tests PASS；`npm run typecheck` PASS；`npm run test:mocks` PASS（86 files / 1156 tests）；`npm run build` PASS。
+
+**Directive**: 后续优化应围绕 overlay prompt/evaluator 和 FormatSpec audit 展示推进；不得让 LLM 修改 StyleFacts，不得绕过 accepted overlay 直接进入 draft-processing。
+
+
+
+## Decision 026（2026-05-14）：FormatRule source 采用输入兼容、输出规范化
+
+**Decision**: `formatRuleSynthesis.source` 对模型常见同义输出做白名单归一化：`inferred` / `model-inferred` / `ai-inferred` 归一为 `llm-inferred`，`evidence-based` / `from-evidence` 归一为 `detected`，`default` / `fallback` 归一为 `standard-default`；归一后进入产品内部的值仍只允许 `llm-inferred`、`detected`、`standard-default`。
+
+**Constraint**: 用户真实模型测试显示，模型已经生成了可用的格式规则，但使用了 `source: inferred` 这类自然命名，导致 evaluator 以“format rule source is invalid”拒绝。该问题属于 schema 输入兼容性，不属于 evidence 校验失败或模型无能力。
+
+**Rejected**: 直接放宽为任意字符串。原因：会削弱 closed schema 和审计一致性；未知 source 仍应 rejected/fallback。
+
+**Confidence**: high。
+
+**Tested**: `npx vitest run src/lib/format-profile-semantic-overlay.test.ts src/lib/format-spec.test.ts src/lib/draft-processing.test.ts --reporter=verbose` PASS（3 files / 26 tests）；`npm run typecheck` PASS；`npm run test:mocks` PASS（86 files / 1156 tests）；`npm run build` PASS。
+
+**Directive**: 后续只能补充明确映射的同义词；不得把 `source` 改成自由文本，不得放松 evidenceRefs、禁词、未知字段或 StyleFacts 事实边界校验。
+
+
+## Decision 027（2026-05-14）：格式约束进入 evidence-based 可编辑草案模式
+
+**Decision**: FormatRuleSpec 从 strict overlay 阻断式校验调整为“硬门禁 + 软字段归一 + 用户可编辑采用”。LLM 可以基于 deterministic evidence 合理推理 GB/T-like 细粒度规则；`source` 等内部 provenance 字段缺失或未知时由系统补齐/归一，不再导致整份 overlay rejected。用户编辑后的 FormatSpec promptBlock 优先进入 draft-processing。
+
+**Constraint**: 用户明确指出根本需求是更快获得可执行格式规范，而不是更严格 JSON；允许 LLM 在 evidence base 上做合理推理，但必须提供用户可编辑机制来纠偏。
+
+**Rejected**: 继续把 `source` 当模型必填硬字段。原因：`source` 是系统管线 provenance，不是文档事实，也不是用户关心的格式规则内容。
+
+**Confidence**: high after experiment and product validation.
+
+**Tested**: `node experiments/editable-format-constraints/scripts/run-editable-format-constraints.mjs` PASS（4/4）；targeted tests 4 files / 33 tests PASS；`npm run typecheck` PASS；`npm run test:mocks` PASS（86 files / 1159 tests）；`npm run build` PASS。
+
+**Directive**: 后续可改进为结构化规则编辑器，但不得回退到 source/id 等软元数据硬拒绝；硬门禁仍必须覆盖 unknown evidenceRef、forbidden raw fields、StyleFacts overwrite 和导出/复刻/高保真承诺。
+
+## Decision 028 — Draft output contract for format-constrained rewrites (2026-05-14)
+
+Status: accepted
+
+Decision: Treat draft-processing output as a saveable document body, not a chat answer. Add a general draft output contract and structure-role constraints before FormatSpec-specific rules.
+
+Rationale:
+- Manual testing showed the model could apply FormatSpec rules but still prepend chat-style explanation text or downgrade the document title role.
+- The root cause is not a missing phrase blacklist; it is ambiguity between chat response and saveable draft content.
+- A generic contract is reusable across DOCX-style drafts, Markdown wiki drafts, PPT/XLSX explanatory text, reports, plans, notices, and formal documents.
+
+Rules captured:
+- Output only the complete revised draft body; no confirmation, greeting, explanation, analysis, revision notes, preface, or closing remarks.
+- Output starts at the document title or first body paragraph.
+- Markdown is only a storage expression; the model must map document-title, section-title, subsection-title, paragraph, ordered-list, unordered-list, and table roles before choosing markers.
+- “Do not modify正文” means do not alter facts, references, or semantics; pure formatting changes remain allowed.
+
+Verification:
+- `npx vitest run src/lib/draft-processing.test.ts src/lib/format-spec.test.ts --reporter=verbose` PASS, 20 tests.
+- `npm run typecheck` PASS.
+- `npm run build` PASS.
+
+Boundary:
+- This is prompt-contract/product behavior, not a guarantee of DOCX export fidelity or visual restoration.

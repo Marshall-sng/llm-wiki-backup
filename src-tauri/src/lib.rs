@@ -1,4 +1,4 @@
-mod clip_server;
+﻿mod clip_server;
 mod commands;
 mod panic_guard;
 mod proxy;
@@ -90,6 +90,7 @@ pub fn run() {
             commands::fs::file_exists,
             commands::fs::file_modified_ms,
             commands::fs::read_file_as_base64,
+            commands::format_probe::probe_format_profile,
             commands::project::create_project,
             commands::project::open_project,
             commands::project::open_project_folder,
@@ -166,3 +167,5 @@ pub fn run() {
             let _ = (app, event); // suppress unused warnings on non-macOS
         });
 }
+
+

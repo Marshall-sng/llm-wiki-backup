@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "format-profile-evaluator-report.v0",
+  "caseId": "pptx-briefing",
+  "verdict": "pass",
+  "ruleResults": [
+    {
+      "code": "schema.closed",
+      "pass": true,
+      "message": "Overlay matches closed harness schema"
+    },
+    {
+      "code": "evidence.ref.exists",
+      "pass": true,
+      "message": "All 11 evidence references exist"
+    },
+    {
+      "code": "boundary.forbidden_terms",
+      "pass": true,
+      "message": "No forbidden template/export promises found"
+    },
+    {
+      "code": "renderer.max_chars",
+      "pass": true,
+      "message": "Rendered instruction stays within case budget",
+      "length": 506
+    },
+    {
+      "code": "metrics.quality_threshold",
+      "pass": true,
+      "message": "Quality score 0.994 >= 0.7"
+    }
+  ],
+  "metrics": {
+    "structureNoiseScore": 1,
+    "instructionCompressionScore": 1,
+    "evidenceCoverageScore": 1,
+    "boundarySafetyScore": 0.97,
+    "qualityScore": 0.994
+  },
+  "diagnostics": [],
+  "renderedInstructionSha256": "910c8f3e594f7ec420ee689974b5692eb80c0405cc1f81923518c1bcfdc3d03e"
+}

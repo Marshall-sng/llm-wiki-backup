@@ -1,0 +1,770 @@
+{
+  "schemaVersion": "format-profile.v0",
+  "profileId": "profile_batch_16_pptx_github_01",
+  "source": {
+    "path": "runtime/format-profile/samples/github/pptx/pptx_github_01_手绘风通用模板.pptx",
+    "fileName": "pptx_github_01_手绘风通用模板.pptx",
+    "fileType": "pptx",
+    "sha256": "57bf6b708c0a7533c75bd97411e53a18a84ed7bc4aa7e49015e0fd23b0c24cbf",
+    "byteSize": 4263472
+  },
+  "documentKind": {
+    "label": "汇报演示",
+    "confidence": "medium",
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/github/pptx/pptx_github_01_手绘风通用模板.pptx"
+      }
+    ]
+  },
+  "capabilities": {
+    "canGuideGeneration": true,
+    "canGuideAdaptation": false,
+    "canGuideExport": false,
+    "confidence": "medium",
+    "notes": [
+      "Phase 2 已接入 PPTX slide/theme/layout 基础探测；用于逐页汇报底稿参考。"
+    ]
+  },
+  "structureProfile": {
+    "confidence": "medium",
+    "sections": [
+      {
+        "kind": "slide",
+        "index": 1,
+        "path": "ppt/slides/slide1.xml",
+        "textCount": 2,
+        "shapeCount": 2,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "汇报人：张伟崇",
+          "手绘风通用型模板"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 2,
+        "path": "ppt/slides/slide10.xml",
+        "textCount": 7,
+        "shapeCount": 7,
+        "pictureCount": 3,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+          "这里输入你的标题",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 3,
+        "path": "ppt/slides/slide11.xml",
+        "textCount": 13,
+        "shapeCount": 10,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入您的标题",
+          "2300"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 4,
+        "path": "ppt/slides/slide12.xml",
+        "textCount": 7,
+        "shapeCount": 7,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+          "这里输入你的标题",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 5,
+        "path": "ppt/slides/slide13.xml",
+        "textCount": 7,
+        "shapeCount": 10,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 6,
+        "path": "ppt/slides/slide14.xml",
+        "textCount": 7,
+        "shapeCount": 47,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 7,
+        "path": "ppt/slides/slide15.xml",
+        "textCount": 1,
+        "shapeCount": 1,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 8,
+        "path": "ppt/slides/slide16.xml",
+        "textCount": 5,
+        "shapeCount": 5,
+        "pictureCount": 2,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入您的标题",
+          "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 9,
+        "path": "ppt/slides/slide17.xml",
+        "textCount": 9,
+        "shapeCount": 13,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 10,
+        "path": "ppt/slides/slide18.xml",
+        "textCount": 7,
+        "shapeCount": 13,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+          "输入标题",
+          "请在这里输入你想要添加的正文内容",
+          "输入标题",
+          "请在这里输入你想要添加的正文内容"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 11,
+        "path": "ppt/slides/slide19.xml",
+        "textCount": 9,
+        "shapeCount": 26,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+          "这里输入小标题",
+          "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+          "这里输入小标题",
+          "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+          "这里输入小标题",
+          "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 12,
+        "path": "ppt/slides/slide2.xml",
+        "textCount": 4,
+        "shapeCount": 4,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "这里输入你的标题",
+          "这里输入你的标题",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 13,
+        "path": "ppt/slides/slide20.xml",
+        "textCount": 11,
+        "shapeCount": 11,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "关键词",
+          "关键词",
+          "关键词",
+          "关键词",
+          "关键词",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 14,
+        "path": "ppt/slides/slide21.xml",
+        "textCount": 13,
+        "shapeCount": 13,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 15,
+        "path": "ppt/slides/slide22.xml",
+        "textCount": 1,
+        "shapeCount": 1,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 16,
+        "path": "ppt/slides/slide23.xml",
+        "textCount": 3,
+        "shapeCount": 5,
+        "pictureCount": 1,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 17,
+        "path": "ppt/slides/slide24.xml",
+        "textCount": 10,
+        "shapeCount": 10,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 18,
+        "path": "ppt/slides/slide25.xml",
+        "textCount": 9,
+        "shapeCount": 9,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+          "这里输入你的标题",
+          "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要",
+          "这里输入你的标题"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 19,
+        "path": "ppt/slides/slide26.xml",
+        "textCount": 7,
+        "shapeCount": 7,
+        "pictureCount": 3,
+        "tableCount": 0,
+        "textSample": [
+          "这里输入你的标题",
+          "输入小标题",
+          "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容",
+          "输入小标题",
+          "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容",
+          "输入小标题",
+          "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容"
+        ]
+      },
+      {
+        "kind": "slide",
+        "index": 20,
+        "path": "ppt/slides/slide27.xml",
+        "textCount": 19,
+        "shapeCount": 19,
+        "pictureCount": 0,
+        "tableCount": 0,
+        "textSample": [
+          "关键词",
+          "关键词",
+          "输入你的正文内容",
+          "输入你的标题",
+          "输入你的正文内容",
+          "输入你的标题",
+          "输入你的正文内容",
+          "输入你的标题"
+        ]
+      }
+    ],
+    "tables": [],
+    "slideCount": 31,
+    "layoutCount": 62,
+    "masterCount": 1,
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/github/pptx/pptx_github_01_手绘风通用模板.pptx"
+      }
+    ]
+  },
+  "styleProfile": {
+    "confidence": "medium",
+    "layout": {
+      "slideCount": 31,
+      "layoutCount": 62,
+      "masterCount": 1
+    },
+    "typography": {
+      "fontSchemeCount": 3
+    },
+    "colors": {
+      "colorSchemeCount": 3
+    },
+    "formatSpecific": {
+      "extractionStage": "basic_probe",
+      "realParserAttached": true,
+      "officeKind": "pptx",
+      "themeCount": 3,
+      "themeName": "Office 主题​​"
+    },
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/github/pptx/pptx_github_01_手绘风通用模板.pptx"
+      }
+    ]
+  },
+  "writingProfile": {
+    "confidence": "low",
+    "tone": [
+      "汇报型",
+      "要点化"
+    ],
+    "genre": [
+      "逐页汇报底稿"
+    ],
+    "constraints": [
+      "按幻灯片页组织内容；每页包含标题、核心观点和讲述要点。"
+    ],
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/github/pptx/pptx_github_01_手绘风通用模板.pptx"
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "severity": "info",
+      "code": "probe.completed",
+      "message": "Phase 2 已完成 PPTX 基础探测：幻灯片 31、版式 62、母版 1、主题 3。"
+    },
+    {
+      "severity": "info",
+      "code": "format.pptx.boundary",
+      "message": "PPTX 用作汇报结构和逐页内容参考，不在本阶段生成 PPTX 成品。"
+    }
+  ],
+  "rawProbeFacts": {
+    "kind": "office_zip",
+    "officeKind": "pptx",
+    "entryCount": 236,
+    "structure": {
+      "slideCount": 31,
+      "layoutCount": 62,
+      "masterCount": 1,
+      "presentationRelationshipCount": 31,
+      "slideStats": [
+        {
+          "path": "ppt/slides/slide1.xml",
+          "textCount": 2,
+          "shapeCount": 2,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "汇报人：张伟崇",
+            "手绘风通用型模板"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide10.xml",
+          "textCount": 7,
+          "shapeCount": 7,
+          "pictureCount": 3,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide11.xml",
+          "textCount": 13,
+          "shapeCount": 10,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入您的标题",
+            "2300"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide12.xml",
+          "textCount": 7,
+          "shapeCount": 7,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+            "这里输入你的标题",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide13.xml",
+          "textCount": 7,
+          "shapeCount": 10,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide14.xml",
+          "textCount": 7,
+          "shapeCount": 47,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide15.xml",
+          "textCount": 1,
+          "shapeCount": 1,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide16.xml",
+          "textCount": 5,
+          "shapeCount": 5,
+          "pictureCount": 2,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入您的标题",
+            "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide17.xml",
+          "textCount": 9,
+          "shapeCount": 13,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide18.xml",
+          "textCount": 7,
+          "shapeCount": 13,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+            "输入标题",
+            "请在这里输入你想要添加的正文内容",
+            "输入标题",
+            "请在这里输入你想要添加的正文内容"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide19.xml",
+          "textCount": 9,
+          "shapeCount": 26,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+            "这里输入小标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+            "这里输入小标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+            "这里输入小标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide2.xml",
+          "textCount": 4,
+          "shapeCount": 4,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide20.xml",
+          "textCount": 11,
+          "shapeCount": 11,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "关键词",
+            "关键词",
+            "关键词",
+            "关键词",
+            "关键词",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide21.xml",
+          "textCount": 13,
+          "shapeCount": 13,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide22.xml",
+          "textCount": 1,
+          "shapeCount": 1,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide23.xml",
+          "textCount": 3,
+          "shapeCount": 5,
+          "pictureCount": 1,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide24.xml",
+          "textCount": 10,
+          "shapeCount": 10,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide25.xml",
+          "textCount": 9,
+          "shapeCount": 9,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide26.xml",
+          "textCount": 7,
+          "shapeCount": 7,
+          "pictureCount": 3,
+          "tableCount": 0,
+          "textSample": [
+            "这里输入你的标题",
+            "输入小标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容",
+            "输入小标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容",
+            "输入小标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容"
+          ]
+        },
+        {
+          "path": "ppt/slides/slide27.xml",
+          "textCount": 19,
+          "shapeCount": 19,
+          "pictureCount": 0,
+          "tableCount": 0,
+          "textSample": [
+            "关键词",
+            "关键词",
+            "输入你的正文内容",
+            "输入你的标题",
+            "输入你的正文内容",
+            "输入你的标题",
+            "输入你的正文内容",
+            "输入你的标题"
+          ]
+        }
+      ]
+    },
+    "style": {
+      "themeCount": 3,
+      "themeName": "Office 主题​​",
+      "colorSchemeCount": 3,
+      "fontSchemeCount": 3
+    }
+  }
+}

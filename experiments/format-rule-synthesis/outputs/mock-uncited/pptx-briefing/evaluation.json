@@ -1,0 +1,42 @@
+{
+  "caseId": "pptx-briefing",
+  "diagnostics": [
+    {
+      "code": "boundary",
+      "message": "globalBoundaries must include at least 3 items",
+      "severity": "error"
+    },
+    {
+      "code": "forbidden-promise",
+      "message": "forbidden promise: exact visual recreation",
+      "severity": "error"
+    },
+    {
+      "code": "forbidden-promise",
+      "message": "forbidden promise: high-fidelity export",
+      "severity": "error"
+    },
+    {
+      "code": "unknown-evidence",
+      "message": "rule pptx-deck-1 cites missing.evidence.0001",
+      "severity": "error"
+    },
+    {
+      "code": "evidence-coverage",
+      "message": "valid refs 192/193",
+      "severity": "warning"
+    }
+  ],
+  "metrics": {
+    "attributeCount": 28,
+    "baselineAttributeCount": 0,
+    "baselineRuleCount": 12,
+    "evidenceCoverage": 0.9948186528497409,
+    "granularityScore": 100,
+    "requiredAttributeHits": 10,
+    "ruleCount": 14,
+    "targetCount": 8
+  },
+  "schemaVersion": "format-rule-synthesis-evaluation.v0",
+  "verdict": "fail"
+}

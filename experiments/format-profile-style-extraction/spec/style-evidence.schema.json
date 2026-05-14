@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Style Evidence v0",
+  "type": "object",
+  "required": ["id", "kind", "pointer", "confidence", "sha256"],
+  "properties": {
+    "id": { "type": "string" },
+    "kind": { "type": "string" },
+    "pointer": { "type": "string" },
+    "confidence": { "enum": ["high", "medium", "low", "unknown"] },
+    "value": {},
+    "description": { "type": "string" },
+    "sha256": { "type": "string" }
+  },
+  "additionalProperties": false
+}

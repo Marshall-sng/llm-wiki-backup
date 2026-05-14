@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "format-profile-llm-overlay.v0",
+  "caseId": "pptx-briefing",
+  "confidence": {
+    "semanticConfidence": "medium",
+    "notes": [
+      "mock-pass overlay for harness validation"
+    ]
+  },
+  "semanticOverlay": {
+    "documentKind": {
+      "value": "汇报演示",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001"
+      ],
+      "inference": false,
+      "rationale": "documentKind comes from deterministic profile label."
+    },
+    "structureSummary": {
+      "value": [
+        "按逐页汇报叙事组织：封面/议题/主体/总结等页级边界。",
+        "保留 slideCount、layoutCount、masterCount 等线索，用于控制内容粒度。"
+      ],
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003"
+      ],
+      "inference": true,
+      "rationale": "Structure summary is compressed from profile/evidence headings or format facts."
+    },
+    "styleSummary": {
+      "value": [
+        "版式、母版、主题和颜色线索用于提示页面节奏与正式程度。"
+      ],
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003"
+      ],
+      "inference": true,
+      "rationale": "Style summary cites style evidence and avoids export promises."
+    },
+    "writingConstraints": {
+      "value": [
+        "输出可转写到幻灯片的分页面底稿，每页聚焦一个观点。"
+      ],
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "diagnostic.0001"
+      ],
+      "inference": true,
+      "rationale": "Writing constraints preserve user fact boundary."
+    },
+    "formatBoundaries": {
+      "value": [
+        "PPTX 画像用于汇报底稿和页级结构建议，不代表会生成演示文件。"
+      ],
+      "evidenceRefs": [
+        "diagnostic.0001"
+      ],
+      "inference": true,
+      "rationale": "Boundaries are derived from capability diagnostics and harness policy."
+    }
+  },
+  "diagnostics": [
+    {
+      "severity": "info",
+      "code": "mock_pass",
+      "message": "Mock overlay generated for harness validation.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001"
+      ]
+    }
+  ]
+}

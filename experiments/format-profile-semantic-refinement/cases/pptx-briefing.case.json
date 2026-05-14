@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "format-profile-refinement-case.v0",
+  "caseId": "pptx-briefing",
+  "sourceCaseId": "batch_16_pptx_github_01",
+  "phase": "phase2",
+  "formatType": "pptx",
+  "role": "golden",
+  "taskMode": "adapt_draft_to_profile",
+  "description": "PPTX 汇报样本，用于验证逐页叙事结构、母版/版式线索与不承诺生成演示成品。",
+  "constraints": {
+    "maxInstructionChars": 3600,
+    "maxOverlayClaims": 14,
+    "allowInference": true
+  },
+  "expected": {
+    "mustPreserveFallbackHashes": true,
+    "mustRejectUnsupportedInstruction": true,
+    "qualityThreshold": 0.7
+  }
+}

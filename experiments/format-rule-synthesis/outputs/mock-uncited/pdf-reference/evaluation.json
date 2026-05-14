@@ -1,0 +1,47 @@
+{
+  "caseId": "pdf-reference",
+  "diagnostics": [
+    {
+      "code": "boundary",
+      "message": "globalBoundaries must include at least 3 items",
+      "severity": "error"
+    },
+    {
+      "code": "forbidden-promise",
+      "message": "forbidden promise: exact visual recreation",
+      "severity": "error"
+    },
+    {
+      "code": "forbidden-promise",
+      "message": "forbidden promise: high-fidelity export",
+      "severity": "error"
+    },
+    {
+      "code": "unknown-evidence",
+      "message": "rule pdf-page-1 cites missing.evidence.0001",
+      "severity": "error"
+    },
+    {
+      "code": "attribute-coverage",
+      "message": "missing attribute textLayer",
+      "severity": "error"
+    },
+    {
+      "code": "evidence-coverage",
+      "message": "valid refs 103/104",
+      "severity": "warning"
+    }
+  ],
+  "metrics": {
+    "attributeCount": 18,
+    "baselineAttributeCount": 0,
+    "baselineRuleCount": 8,
+    "evidenceCoverage": 0.9903846153846154,
+    "granularityScore": 97,
+    "requiredAttributeHits": 9,
+    "ruleCount": 10,
+    "targetCount": 7
+  },
+  "schemaVersion": "format-rule-synthesis-evaluation.v0",
+  "verdict": "fail"
+}

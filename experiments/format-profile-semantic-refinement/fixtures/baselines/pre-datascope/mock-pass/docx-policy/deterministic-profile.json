@@ -1,0 +1,1603 @@
+{
+  "schemaVersion": "format-profile.v0",
+  "profileId": "profile_batch_25_docx_local_05_procurement_2023_13",
+  "source": {
+    "path": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "fileName": "docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "fileType": "docx",
+    "sha256": "338fe3517a7c41233c8872192c963fb907b0b713bd0d928a89d9335f28bb6641",
+    "byteSize": 295529
+  },
+  "documentKind": {
+    "label": "制度/正式文稿",
+    "confidence": "medium",
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx"
+      }
+    ]
+  },
+  "capabilities": {
+    "canGuideGeneration": true,
+    "canGuideAdaptation": true,
+    "canGuideExport": false,
+    "confidence": "medium",
+    "notes": [
+      "Phase 2 已接入 DOCX ZIP/XML 基础探测；仍未生成 DOCX 成品。"
+    ]
+  },
+  "structureProfile": {
+    "confidence": "medium",
+    "sections": [
+      {
+        "kind": "heading-candidate",
+        "index": 69,
+        "text": "1.公司生产运营所需物资和服务采购，包括：各类机械设备、 电气设备、信息设备、车辆、工器具、办公用品等的采购；相关 设备维修、运维服务采购； 以及车辆租赁、物流服务、物业服务 等的采购。",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 70,
+        "text": "2.公司信息化建设相关项目采购，包括：根据公司信息化项 目的建设和开发需要，进行的软件产品、硬件产品、软硬件组件 的购买，以及信息化业务系统建设、开发、升级、技术服务等的 采购；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 71,
+        "text": "3.公司信息化系统运维采购，包括根据公司信息化项目运维",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 77,
+        "text": "4.公司科技创新项目采购，包括根据公司科技创新工作需要， 进行科技创新相关项目和课题所需的物资、研究开发和技术服务 等的采购；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 78,
+        "text": "5.公司劳务服务采购，包括为满足公司经营需要进行的劳务 服务采购；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 79,
+        "text": "6.公司中介机构及咨询服务采购，包括为满足公司生产经营 活动所需的评估、审计、法律服务、咨询、代理、监理、鉴证、 测评等的服务采购。",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 83,
+        "text": "2.相关的设备、材料等货物单项合同估算价在 200 万元（含） 以上的；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 84,
+        "text": "3.勘察、设计、监理等服务单项合同估算价在 100 万元（含） 以上的；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 85,
+        "text": "4. 同一项目 中可以合并进行的勘察、设计、施工、监理以 及与工程建设有关的重要设备、材料等的采购，合同估算价合 计达到前款规定标准的；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 86,
+        "text": "5.其他按照国家有关规定必须招标的。",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 92,
+        "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少量 潜在投标人可供选择的；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 93,
+        "text": "2.涉及国家安全、 国家秘密或者抢险救灾，适宜招标但不 适宜公开招标的。",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 95,
+        "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少数 潜在投标人可供选择的；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 96,
+        "text": "2.涉及国家安全、 国家秘密、公司商业秘密、抢险救灾，适 宜招标但不适宜公开招标的。",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 172,
+        "text": "50 万元以下的由经营管理部分管领导审批。",
+        "styleId": "TableText",
+        "styleName": "Table Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 183,
+        "text": "50 万元（含） 以上的由总经理审批。",
+        "styleId": "TableText",
+        "styleName": "Table Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 470,
+        "text": "1.将必须招标的项目化整为零或者以其他任何方式规避招 标；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 471,
+        "text": "2.与投标人串通进行虚假招标，明招暗定；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 472,
+        "text": "3.非法干预评标（含谈判/询价）小组工作、影响评标（含谈 判/询价）结果；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 473,
+        "text": "4.以不合理的条件限制或排斥潜在投标人参与投标竞争或对 潜在投标人实行歧视待遇；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 474,
+        "text": "5.强制投标人组成联合体共同投标，限制投标人之间竞争；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 479,
+        "text": "6.在评标（含谈判/询价）小组按规定推荐的中标（成交）候 选人以外确定中标（成交）人；",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 480,
+        "text": "7.其他违反国家有关法律、法规、规章和公司有关规定的行 为。",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 481,
+        "text": "8.所有参加采购活动的评标（含谈判）小组成员和工作人员 严禁有下列行为：",
+        "styleId": "BodyText",
+        "styleName": "Body Text",
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 757,
+        "text": "1、拟成交金额为 5 万元（含） 以上 50 万元以下的采购项目，经营管理部分管领导审批后执行。",
+        "styleId": null,
+        "styleName": null,
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 758,
+        "text": "2、拟成交金额为 50 万元（含） 以上 100 万元以下的采购项目，总经理审批后执行。",
+        "styleId": null,
+        "styleName": null,
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 759,
+        "text": "3、拟成交金额为 100 万元（含） 以上 1000 万元以下的采购项目， 由经营管理部组织报公司总经 理办公会决议后，总经理签名后执行。",
+        "styleId": null,
+        "styleName": null,
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      },
+      {
+        "kind": "heading-candidate",
+        "index": 760,
+        "text": "4、拟成交金额为 1000 万元（含） 以上的采购项目， 由经营管理部组织报公司董事会决议后，董事长签 名后执行。",
+        "styleId": null,
+        "styleName": null,
+        "outlineLevel": null,
+        "numberingId": null,
+        "numberingLevel": null
+      }
+    ],
+    "tables": [
+      {
+        "index": 1,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 2,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 3,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 4,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 5,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 6,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 7,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 8,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 9,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 10,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 11,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 12,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 13,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 14,
+        "source": "word/document.xml"
+      },
+      {
+        "index": 15,
+        "source": "word/document.xml"
+      }
+    ],
+    "counts": {
+      "paragraphs": 925,
+      "runs": 1826,
+      "tables": 15
+    },
+    "sectionPattern": "decimal-numbered-sections",
+    "headingStyleRefs": [],
+    "paragraphStyleUsage": [
+      {
+        "value": "BodyText",
+        "count": 205
+      },
+      {
+        "value": "TableText",
+        "count": 149
+      }
+    ],
+    "numberingUsage": [],
+    "paragraphSamples": [
+      {
+        "index": 7,
+        "text": "云南省大数据有限公司采购管理制度（暂行）",
+        "styleId": null,
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 1,
+        "hasBold": true,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [
+          "43"
+        ],
+        "fonts": [
+          "SimHei"
+        ]
+      },
+      {
+        "index": 9,
+        "text": "第一章 总则",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 3,
+        "hasBold": true,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 10,
+        "text": "第一条 为规范云南省大数据有限公司（以下简称“公司 ”） 的采购工作，提高采购效率和质量，降低采购成本，防范采购风 险，根据《中华人民共和国招标投标法》、《中华人民共和国政 府采购法》等相关法律法规，结合公司实际制定本制度。",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 13,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 11,
+        "text": "第二条 本制度适用于公司的采购工作管理。",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 3,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 12,
+        "text": "第三条 本制度所称采购，包括公司工程建设和生产经营相关 的工程、货物、服务等的采购。",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 5,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 13,
+        "text": "第四条 公司采购工作应当遵循公开、公平、公正和诚实信用 原则；坚持公平竞争，阳光择优。",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 5,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 14,
+        "text": "第五条 公司采购工作必须遵守国家有关法律、法规和规章的 有关规定，并依法接受监督。",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 5,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 15,
+        "text": "第二章 采购管理机构与职责",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 3,
+        "hasBold": true,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 16,
+        "text": "第六条 总经理办公会采购管理职责",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 3,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 17,
+        "text": "总经理办公会负责管理和监督公司采购工作，指导、协调公 司采购活动，并将公司采购管理的重大事项报公司党委会、董事 会决策。主要职责包括：",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 5,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 18,
+        "text": "（ 一）贯彻落实《中华人民共和国招标投标法》及国家有关 政策法规和规章；",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 5,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 19,
+        "text": "（二）研究决策公司采购工作的重大问题；",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 1,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 20,
+        "text": "（三）审批公司采购项目的采购结果；",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 1,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 21,
+        "text": "（四）对公司采购工作实施管理、监督和检查；",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 1,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 22,
+        "text": "（五）将公司采购管理的重大事项报党委会、董事会决策；",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 1,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 23,
+        "text": "（六）完成其他需要公司总经理办公会研究审批的采购事项。",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 1,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 28,
+        "text": "第七条 采购管理职能部门职责",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 3,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 29,
+        "text": "公司下设采购工作办公室，办公室设在经营管理部。经营管 理部是公司采购业务归口管理部门，其主要职责为：",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 4,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 30,
+        "text": "（一）依据国家法律、法规、规章有关规定，组织制定和完 善公司有关采购管理规章制度，建立健全公司采购管理内控机制, 规范采购业务流程和管理程序，对采购业务流程中的廉洁风险进 行管控；",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 7,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      },
+      {
+        "index": 31,
+        "text": "（二）组织各部门编制公司招标及非招标采购项目的相关方 案及文件；",
+        "styleId": "BodyText",
+        "numberingId": null,
+        "numberingLevel": null,
+        "runCount": 3,
+        "hasBold": false,
+        "hasItalic": false,
+        "hasUnderline": false,
+        "fontSizesHalfPoints": [],
+        "fonts": []
+      }
+    ],
+    "textSample": [
+      "云南省大数据有限公司采购管理制度（暂行）",
+      "第一章 总则",
+      "第一条 为规范云南省大数据有限公司（以下简称“公司 ”） 的采购工作，提高采购效率和质量，降低采购成本，防范采购风 险，根据《中华人民共和国招标投标法》、《中华人民共和国政 府采购法》等相关法律法规，结合公司实际制定本制度。",
+      "第二条 本制度适用于公司的采购工作管理。",
+      "第三条 本制度所称采购，包括公司工程建设和生产经营相关 的工程、货物、服务等的采购。",
+      "第四条 公司采购工作应当遵循公开、公平、公正和诚实信用 原则；坚持公平竞争，阳光择优。",
+      "第五条 公司采购工作必须遵守国家有关法律、法规和规章的 有关规定，并依法接受监督。",
+      "第二章 采购管理机构与职责",
+      "第六条 总经理办公会采购管理职责",
+      "总经理办公会负责管理和监督公司采购工作，指导、协调公 司采购活动，并将公司采购管理的重大事项报公司党委会、董事 会决策。主要职责包括：",
+      "（ 一）贯彻落实《中华人民共和国招标投标法》及国家有关 政策法规和规章；",
+      "（二）研究决策公司采购工作的重大问题；"
+    ],
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx"
+      }
+    ]
+  },
+  "styleProfile": {
+    "confidence": "medium",
+    "layout": {
+      "page": {
+        "widthTwips": "11905",
+        "heightTwips": "16834",
+        "orientation": null,
+        "marginsTwips": {
+          "top": "1",
+          "right": "0",
+          "bottom": "1",
+          "left": "0"
+        }
+      }
+    },
+    "typography": {
+      "fonts": [
+        "Arial",
+        "en-US",
+        "FangSong",
+        "SimHei",
+        "Times New Roman",
+        "SimSun",
+        "MS UI Gothic"
+      ],
+      "fontUsage": [
+        {
+          "value": "Arial",
+          "count": 377
+        },
+        {
+          "value": "SimSun",
+          "count": 155
+        },
+        {
+          "value": "Times New Roman",
+          "count": 8
+        },
+        {
+          "value": "MS UI Gothic",
+          "count": 1
+        },
+        {
+          "value": "SimHei",
+          "count": 1
+        }
+      ],
+      "fontSizeUsageHalfPoints": [
+        {
+          "value": "21",
+          "count": 362
+        },
+        {
+          "value": "18",
+          "count": 146
+        },
+        {
+          "value": "24",
+          "count": 8
+        },
+        {
+          "value": "25",
+          "count": 7
+        },
+        {
+          "value": "19",
+          "count": 6
+        },
+        {
+          "value": "2",
+          "count": 5
+        },
+        {
+          "value": "31",
+          "count": 4
+        },
+        {
+          "value": "22",
+          "count": 1
+        },
+        {
+          "value": "28",
+          "count": 1
+        },
+        {
+          "value": "43",
+          "count": 1
+        }
+      ],
+      "styleCount": 4,
+      "styleIds": [
+        "Normal",
+        "TableNormal",
+        "BodyText",
+        "TableText"
+      ],
+      "styles": [
+        {
+          "styleId": "Normal",
+          "type": "paragraph",
+          "name": "Normal",
+          "basedOn": null,
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [],
+          "fontSizesHalfPoints": [],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "TableNormal",
+          "type": "table",
+          "name": "Table Normal",
+          "basedOn": null,
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [],
+          "fontSizesHalfPoints": [],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "BodyText",
+          "type": "paragraph",
+          "name": "Body Text",
+          "basedOn": "Normal",
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [
+            "FangSong",
+            "en-US"
+          ],
+          "fontSizesHalfPoints": [
+            "31"
+          ],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "TableText",
+          "type": "paragraph",
+          "name": "Table Text",
+          "basedOn": "Normal",
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [
+            "FangSong",
+            "en-US"
+          ],
+          "fontSizesHalfPoints": [
+            "20"
+          ],
+          "hasBold": false,
+          "hasItalic": false
+        }
+      ]
+    },
+    "colors": {},
+    "formatSpecific": {
+      "extractionStage": "basic_probe",
+      "realParserAttached": true,
+      "officeKind": "docx",
+      "entryCount": 41,
+      "numberingDefinitions": 0
+    },
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx"
+      }
+    ]
+  },
+  "writingProfile": {
+    "confidence": "low",
+    "tone": [
+      "正式",
+      "结构化"
+    ],
+    "genre": [
+      "正式文稿"
+    ],
+    "constraints": [
+      "按标题层级、段落和表格线索组织底稿；真实行文风格需后续内容解析/LLM 提炼。"
+    ],
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx"
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "severity": "info",
+      "code": "probe.completed",
+      "message": "Phase 2 已完成 DOCX 基础探测：段落 925、候选标题 28、表格 15、样式 4、字体线索 7。"
+    },
+    {
+      "severity": "info",
+      "code": "binding.adaptation_mode",
+      "message": "该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。"
+    }
+  ],
+  "rawProbeFacts": {
+    "kind": "office_zip",
+    "officeKind": "docx",
+    "entryCount": 41,
+    "hasMainDocument": true,
+    "relationships": 2,
+    "contentTypesCount": 31,
+    "structure": {
+      "paragraphs": 925,
+      "runs": 1826,
+      "tables": 15,
+      "headingStyleRefs": [],
+      "headingCandidates": [
+        {
+          "index": 69,
+          "text": "1.公司生产运营所需物资和服务采购，包括：各类机械设备、 电气设备、信息设备、车辆、工器具、办公用品等的采购；相关 设备维修、运维服务采购； 以及车辆租赁、物流服务、物业服务 等的采购。",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 70,
+          "text": "2.公司信息化建设相关项目采购，包括：根据公司信息化项 目的建设和开发需要，进行的软件产品、硬件产品、软硬件组件 的购买，以及信息化业务系统建设、开发、升级、技术服务等的 采购；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 71,
+          "text": "3.公司信息化系统运维采购，包括根据公司信息化项目运维",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 77,
+          "text": "4.公司科技创新项目采购，包括根据公司科技创新工作需要， 进行科技创新相关项目和课题所需的物资、研究开发和技术服务 等的采购；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 78,
+          "text": "5.公司劳务服务采购，包括为满足公司经营需要进行的劳务 服务采购；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 79,
+          "text": "6.公司中介机构及咨询服务采购，包括为满足公司生产经营 活动所需的评估、审计、法律服务、咨询、代理、监理、鉴证、 测评等的服务采购。",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 83,
+          "text": "2.相关的设备、材料等货物单项合同估算价在 200 万元（含） 以上的；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 84,
+          "text": "3.勘察、设计、监理等服务单项合同估算价在 100 万元（含） 以上的；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 85,
+          "text": "4. 同一项目 中可以合并进行的勘察、设计、施工、监理以 及与工程建设有关的重要设备、材料等的采购，合同估算价合 计达到前款规定标准的；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 86,
+          "text": "5.其他按照国家有关规定必须招标的。",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 92,
+          "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少量 潜在投标人可供选择的；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 93,
+          "text": "2.涉及国家安全、 国家秘密或者抢险救灾，适宜招标但不 适宜公开招标的。",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 95,
+          "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少数 潜在投标人可供选择的；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 96,
+          "text": "2.涉及国家安全、 国家秘密、公司商业秘密、抢险救灾，适 宜招标但不适宜公开招标的。",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 172,
+          "text": "50 万元以下的由经营管理部分管领导审批。",
+          "styleId": "TableText",
+          "styleName": "Table Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 183,
+          "text": "50 万元（含） 以上的由总经理审批。",
+          "styleId": "TableText",
+          "styleName": "Table Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 470,
+          "text": "1.将必须招标的项目化整为零或者以其他任何方式规避招 标；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 471,
+          "text": "2.与投标人串通进行虚假招标，明招暗定；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 472,
+          "text": "3.非法干预评标（含谈判/询价）小组工作、影响评标（含谈 判/询价）结果；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 473,
+          "text": "4.以不合理的条件限制或排斥潜在投标人参与投标竞争或对 潜在投标人实行歧视待遇；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 474,
+          "text": "5.强制投标人组成联合体共同投标，限制投标人之间竞争；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 479,
+          "text": "6.在评标（含谈判/询价）小组按规定推荐的中标（成交）候 选人以外确定中标（成交）人；",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 480,
+          "text": "7.其他违反国家有关法律、法规、规章和公司有关规定的行 为。",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 481,
+          "text": "8.所有参加采购活动的评标（含谈判）小组成员和工作人员 严禁有下列行为：",
+          "styleId": "BodyText",
+          "styleName": "Body Text",
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 757,
+          "text": "1、拟成交金额为 5 万元（含） 以上 50 万元以下的采购项目，经营管理部分管领导审批后执行。",
+          "styleId": null,
+          "styleName": null,
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 758,
+          "text": "2、拟成交金额为 50 万元（含） 以上 100 万元以下的采购项目，总经理审批后执行。",
+          "styleId": null,
+          "styleName": null,
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 759,
+          "text": "3、拟成交金额为 100 万元（含） 以上 1000 万元以下的采购项目， 由经营管理部组织报公司总经 理办公会决议后，总经理签名后执行。",
+          "styleId": null,
+          "styleName": null,
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        },
+        {
+          "index": 760,
+          "text": "4、拟成交金额为 1000 万元（含） 以上的采购项目， 由经营管理部组织报公司董事会决议后，董事长签 名后执行。",
+          "styleId": null,
+          "styleName": null,
+          "outlineLevel": null,
+          "numberingId": null,
+          "numberingLevel": null
+        }
+      ],
+      "sectionPattern": "decimal-numbered-sections",
+      "paragraphStyleUsage": [
+        {
+          "value": "BodyText",
+          "count": 205
+        },
+        {
+          "value": "TableText",
+          "count": 149
+        }
+      ],
+      "numberingUsage": [],
+      "paragraphSamples": [
+        {
+          "index": 7,
+          "text": "云南省大数据有限公司采购管理制度（暂行）",
+          "styleId": null,
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 1,
+          "hasBold": true,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [
+            "43"
+          ],
+          "fonts": [
+            "SimHei"
+          ]
+        },
+        {
+          "index": 9,
+          "text": "第一章 总则",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 3,
+          "hasBold": true,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 10,
+          "text": "第一条 为规范云南省大数据有限公司（以下简称“公司 ”） 的采购工作，提高采购效率和质量，降低采购成本，防范采购风 险，根据《中华人民共和国招标投标法》、《中华人民共和国政 府采购法》等相关法律法规，结合公司实际制定本制度。",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 13,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 11,
+          "text": "第二条 本制度适用于公司的采购工作管理。",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 3,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 12,
+          "text": "第三条 本制度所称采购，包括公司工程建设和生产经营相关 的工程、货物、服务等的采购。",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 5,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 13,
+          "text": "第四条 公司采购工作应当遵循公开、公平、公正和诚实信用 原则；坚持公平竞争，阳光择优。",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 5,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 14,
+          "text": "第五条 公司采购工作必须遵守国家有关法律、法规和规章的 有关规定，并依法接受监督。",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 5,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 15,
+          "text": "第二章 采购管理机构与职责",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 3,
+          "hasBold": true,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 16,
+          "text": "第六条 总经理办公会采购管理职责",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 3,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 17,
+          "text": "总经理办公会负责管理和监督公司采购工作，指导、协调公 司采购活动，并将公司采购管理的重大事项报公司党委会、董事 会决策。主要职责包括：",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 5,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 18,
+          "text": "（ 一）贯彻落实《中华人民共和国招标投标法》及国家有关 政策法规和规章；",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 5,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 19,
+          "text": "（二）研究决策公司采购工作的重大问题；",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 1,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 20,
+          "text": "（三）审批公司采购项目的采购结果；",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 1,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 21,
+          "text": "（四）对公司采购工作实施管理、监督和检查；",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 1,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 22,
+          "text": "（五）将公司采购管理的重大事项报党委会、董事会决策；",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 1,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 23,
+          "text": "（六）完成其他需要公司总经理办公会研究审批的采购事项。",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 1,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 28,
+          "text": "第七条 采购管理职能部门职责",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 3,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 29,
+          "text": "公司下设采购工作办公室，办公室设在经营管理部。经营管 理部是公司采购业务归口管理部门，其主要职责为：",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 4,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 30,
+          "text": "（一）依据国家法律、法规、规章有关规定，组织制定和完 善公司有关采购管理规章制度，建立健全公司采购管理内控机制, 规范采购业务流程和管理程序，对采购业务流程中的廉洁风险进 行管控；",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 7,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        },
+        {
+          "index": 31,
+          "text": "（二）组织各部门编制公司招标及非招标采购项目的相关方 案及文件；",
+          "styleId": "BodyText",
+          "numberingId": null,
+          "numberingLevel": null,
+          "runCount": 3,
+          "hasBold": false,
+          "hasItalic": false,
+          "hasUnderline": false,
+          "fontSizesHalfPoints": [],
+          "fonts": []
+        }
+      ],
+      "textSample": [
+        "云南省大数据有限公司采购管理制度（暂行）",
+        "第一章 总则",
+        "第一条 为规范云南省大数据有限公司（以下简称“公司 ”） 的采购工作，提高采购效率和质量，降低采购成本，防范采购风 险，根据《中华人民共和国招标投标法》、《中华人民共和国政 府采购法》等相关法律法规，结合公司实际制定本制度。",
+        "第二条 本制度适用于公司的采购工作管理。",
+        "第三条 本制度所称采购，包括公司工程建设和生产经营相关 的工程、货物、服务等的采购。",
+        "第四条 公司采购工作应当遵循公开、公平、公正和诚实信用 原则；坚持公平竞争，阳光择优。",
+        "第五条 公司采购工作必须遵守国家有关法律、法规和规章的 有关规定，并依法接受监督。",
+        "第二章 采购管理机构与职责",
+        "第六条 总经理办公会采购管理职责",
+        "总经理办公会负责管理和监督公司采购工作，指导、协调公 司采购活动，并将公司采购管理的重大事项报公司党委会、董事 会决策。主要职责包括：",
+        "（ 一）贯彻落实《中华人民共和国招标投标法》及国家有关 政策法规和规章；",
+        "（二）研究决策公司采购工作的重大问题；"
+      ]
+    },
+    "style": {
+      "hasStyles": true,
+      "styleCount": 4,
+      "styleIds": [
+        "Normal",
+        "TableNormal",
+        "BodyText",
+        "TableText"
+      ],
+      "styles": [
+        {
+          "styleId": "Normal",
+          "type": "paragraph",
+          "name": "Normal",
+          "basedOn": null,
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [],
+          "fontSizesHalfPoints": [],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "TableNormal",
+          "type": "table",
+          "name": "Table Normal",
+          "basedOn": null,
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [],
+          "fontSizesHalfPoints": [],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "BodyText",
+          "type": "paragraph",
+          "name": "Body Text",
+          "basedOn": "Normal",
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [
+            "FangSong",
+            "en-US"
+          ],
+          "fontSizesHalfPoints": [
+            "31"
+          ],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "TableText",
+          "type": "paragraph",
+          "name": "Table Text",
+          "basedOn": "Normal",
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [
+            "FangSong",
+            "en-US"
+          ],
+          "fontSizesHalfPoints": [
+            "20"
+          ],
+          "hasBold": false,
+          "hasItalic": false
+        }
+      ],
+      "fonts": [
+        "Arial",
+        "en-US",
+        "FangSong",
+        "SimHei",
+        "Times New Roman",
+        "SimSun",
+        "MS UI Gothic"
+      ],
+      "fontUsage": [
+        {
+          "value": "Arial",
+          "count": 377
+        },
+        {
+          "value": "SimSun",
+          "count": 155
+        },
+        {
+          "value": "Times New Roman",
+          "count": 8
+        },
+        {
+          "value": "MS UI Gothic",
+          "count": 1
+        },
+        {
+          "value": "SimHei",
+          "count": 1
+        }
+      ],
+      "fontSizeUsageHalfPoints": [
+        {
+          "value": "21",
+          "count": 362
+        },
+        {
+          "value": "18",
+          "count": 146
+        },
+        {
+          "value": "24",
+          "count": 8
+        },
+        {
+          "value": "25",
+          "count": 7
+        },
+        {
+          "value": "19",
+          "count": 6
+        },
+        {
+          "value": "2",
+          "count": 5
+        },
+        {
+          "value": "31",
+          "count": 4
+        },
+        {
+          "value": "22",
+          "count": 1
+        },
+        {
+          "value": "28",
+          "count": 1
+        },
+        {
+          "value": "43",
+          "count": 1
+        }
+      ],
+      "page": {
+        "widthTwips": "11905",
+        "heightTwips": "16834",
+        "orientation": null,
+        "marginsTwips": {
+          "top": "1",
+          "right": "0",
+          "bottom": "1",
+          "left": "0"
+        }
+      },
+      "numberingDefinitions": 0
+    }
+  }
+}

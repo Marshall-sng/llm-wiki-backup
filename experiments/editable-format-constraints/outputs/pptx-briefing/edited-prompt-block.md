@@ -1,0 +1,68 @@
+## 可编辑格式约束（Editable Format Constraints）
+
+- schemaVersion: editable-format-constraints.v0
+- caseId: pptx-briefing
+- mode: edited
+- activeRuleSource: user-edited-over-auto
+
+### 规则
+- 【deck/hierarchy】Organize the briefing as a sequenced slide deck with one cover, multiple content layouts, and optional divider or summary slides.（用户已确认采用） Treat the source as a 31-slide briefing template with many reusable layouts. Generated content should preserve slide-order logic rather than trying to recreate each slide visually. User edit: keep this as the active drafting constraint.
+  - slideCount: 31 slides
+  - master: single-master deck architecture count=1
+  - layout: multi-layout briefing system layoutCount=62
+- 【deck/page】Use a widescreen presentation canvas unless downstream constraints require otherwise. Set slide size to 16:9 widescreen as the default executable PPTX briefing page model; if exact dimensions are required, use 13.333 x 7.5 inches. This is a standard-default because the probe did not expose exact slide dimensions.
+  - slideSize: 16:9 widescreen; 13.333in x 7.5in default ratio/in
+- 【theme/typography】Base visual styling on the detected Office-theme family, with restrained document-like typography. Use the detected theme only as a style cue. Prefer Chinese official-document typography defaults: title in a strong Song-style display face, primary headings in bold Hei-style, body in FangSong/Song fallback. Do not infer exact font names from the probe.
+  - theme: Office-theme-derived, not exact-copy theme
+  - titleFont: FZ XiaoBiaoSong or SimSun fallback font-family
+  - bodyFont: FangSong_GB2312, SimFang, or SimSun fallback font-family
+- 【theme/hierarchy】Keep a compact theme system with no more than three coordinated color schemes. Because the probe found three color schemes, generated rules should support a primary, secondary, and accent palette while avoiding uncontrolled color expansion.
+  - theme: 3 coordinated color schemes maximum schemes
+- 【layout/alignment】Use one master-level grid and assign each slide to a reusable layout archetype. Define reusable archetypes for cover, section divider, title-and-body, multi-card content, picture-plus-text, statistic, and summary slides. Keep margins and title positions consistent across archetypes.
+  - master: 1 shared master grid master
+  - layout: cover|divider|content|multi-card|image-text|statistic|summary layout-archetype
+  - placeholder: title, subtitle, body, image, metric, keyword placeholder-role
+- 【layout/spacing】Apply a formal grid with clear margins and non-overlapping content zones. Use approximately 6-8 percent slide-width side margins, 8-10 percent top title zone, and a consistent content region below the title. Align repeated cards, icons, and pictures to the same grid columns.
+  - spacing: side margins 6-8%, title zone 8-10%, inter-card gap 2-3% percent-of-slide
+  - layout: grid-aligned content zones grid
+- 【cover-slide/hierarchy】The cover slide must contain a main briefing title and one subordinate metadata line when available. Use a large centered or upper-middle title, with presenter, organization, date, or occasion as smaller metadata. Source placeholder or sample identity text must not be reused.
+  - titleFont: display Song-style, bold or semi-bold font-family
+  - fontSizePt: 34-44 pt
+  - placeholder: mainTitle, metadataLine role
+  - spacing: metadata separated from title by 18-30 pt pt
+- 【content-slide/typography】Every standard content slide should use a concise title above the body region. Use one short title per slide. For GB/T-like hierarchy, title text should be visually dominant but not oversized relative to the body; recommended range is 24-32 pt.
+  - titleFont: Hei-style or Song-style heading font-family
+  - fontSizePt: 24-32 pt
+  - placeholder: slideTitle role
+- 【content-slide/density】Keep each content slide focused on one subject with either three to five text points or one primary visual explanation. The evidence shows repeated title/body groups and picture-plus-text slides. Generated slides should avoid crowding by limiting body groups and reserving space for charts, pictures, or metrics when used.
+  - bodyFont: FangSong/Song fallback font-family
+  - fontSizePt: 16-22 pt
+  - density: 3-5 body points or 1 primary visual per slide items
+  - placeholder: bodyText, visual, caption role
+- 【bullet/numbering】Use shallow bullet hierarchy: primary bullets for key points and optional secondary bullets only for clarification. Avoid deep nesting. Primary bullets should align under the body text box; secondary bullets should indent consistently and use smaller type.
+  - bulletLevel: level 1 primary; level 2 optional; no level 3 by default level
+  - spacing: primary line spacing 1.15-1.3; paragraph gap 4-8 pt ratio/pt
+  - fontSizePt: 16-20 primary; 14-18 secondary pt
+- 【content-slide/hierarchy】Use sparse divider slides to separate major sections. Slides with a single text element indicate a sparse transition pattern. Divider slides should contain only the section title or short label, centered or strongly aligned to the master grid.
+  - layout: section-divider layout-archetype
+  - density: 1 text element preferred text-box-count
+  - placeholder: sectionTitle role
+- 【layout/alignment】For slides with pictures, pair visuals with adjacent explanatory text and maintain equal visual weight. The sample includes picture-bearing slides with multiple text areas. Use image placeholders as evidence-backed layout roles, but do not infer exact images or positions.
+  - placeholder: image, imageCaption, adjacentBody role
+  - layout: image-text split or three-card visual row layout-archetype
+  - spacing: image-text gutter 18-30 pt pt
+- 【visual-density/density】Classify slide density by text, shape, and picture counts, then simplify overcrowded slides before rendering. Low density is 1-4 text boxes and fewer than 8 shapes; medium density is 5-10 text boxes or 8-20 shapes; high density is more than 10 text boxes or more than 20 shapes. High-density slides should be split or converted to diagrammatic groupings.
+  - density: low: <=4 text and <8 shapes; medium: 5-10 text or 8-20 shapes; high: >10 text or >20 shapes count-threshold
+- 【content-slide/hierarchy】When using keyword or concept cards, keep labels short and visually parallel. Slides with repeated keyword-like labels indicate a card or concept grouping pattern. Each card should contain one label plus optional concise support text.
+  - layout: keyword-card grid layout-archetype
+  - placeholder: keywordLabel, supportText role
+  - density: 4-6 cards per slide preferred cards
+- 【content-slide/typography】Render isolated metrics as large numeric callouts with a nearby explanatory label. The source includes at least one metric-like text item, so numerical facts should be styled as emphasis elements rather than buried in paragraphs.
+  - fontSizePt: 36-54 for metric callout; 14-18 for label pt
+  - placeholder: metricValue, metricLabel role
+  - density: 1-3 metrics per slide metrics
+- 【content-slide/table】Do not default to tables unless the user content requires comparison or structured data. The probe found no tables in the sampled structure, so tables should be introduced only for genuine tabular content and kept simple.
+  - layout: table optional, not default policy
+  - density: maximum 5 columns and 6 rows for readability cells
+- 【boundary/boundary】Treat PPTX evidence as reference material only. This rule system may guide structure, hierarchy, density, and typography defaults, but must not assert finished PPTX generation or exact source-template reproduction.
+  - boundary: reference-only; no exact recreation claim constraint

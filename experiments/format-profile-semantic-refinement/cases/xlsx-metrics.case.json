@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "format-profile-refinement-case.v0",
+  "caseId": "xlsx-metrics",
+  "sourceCaseId": "batch_35_xlsx_local_01_data_element",
+  "phase": "phase2",
+  "formatType": "xlsx",
+  "role": "golden",
+  "taskMode": "adapt_draft_to_profile",
+  "description": "本地 XLSX 数据要素样本，用于验证工作表/指标/表格边界与禁止承诺导出。",
+  "constraints": {
+    "maxInstructionChars": 3600,
+    "maxOverlayClaims": 14,
+    "allowInference": true
+  },
+  "expected": {
+    "mustPreserveFallbackHashes": true,
+    "mustRejectUnsupportedInstruction": true,
+    "qualityThreshold": 0.7
+  }
+}

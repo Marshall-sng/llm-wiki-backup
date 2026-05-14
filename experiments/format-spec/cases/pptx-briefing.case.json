@@ -1,0 +1,7 @@
+﻿{
+  "schemaVersion": "format-spec-case.v0",
+  "caseId": "pptx-briefing",
+  "formatType": "pptx",
+  "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+  "expected": { "minRules": 12 }
+}

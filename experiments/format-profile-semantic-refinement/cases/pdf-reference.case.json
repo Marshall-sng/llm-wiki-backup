@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "format-profile-refinement-case.v0",
+  "caseId": "pdf-reference",
+  "sourceCaseId": "batch_29_pdf_local_01_platform_intro_0312",
+  "phase": "phase2",
+  "formatType": "pdf",
+  "role": "golden",
+  "taskMode": "reference_profile_only",
+  "description": "PDF 参考成品样本，用于验证文本层/扫描倾向/参考边界，不把 PDF 画像当作可导出模板。",
+  "constraints": {
+    "maxInstructionChars": 3400,
+    "maxOverlayClaims": 12,
+    "allowInference": true
+  },
+  "expected": {
+    "mustPreserveFallbackHashes": true,
+    "mustRejectUnsupportedInstruction": true,
+    "qualityThreshold": 0.68
+  }
+}

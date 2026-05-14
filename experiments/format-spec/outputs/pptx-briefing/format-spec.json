@@ -1,0 +1,161 @@
+{
+  "caseId": "pptx-briefing",
+  "confidence": "medium",
+  "contentLeakagePolicy": {
+    "includeRawEvidenceDump": false,
+    "includeSourceBodyText": false,
+    "promptMayIncludeEvidenceIds": false
+  },
+  "documentIntent": "汇报演示",
+  "globalBoundaries": [
+    "来源事实优先于格式约束；不得根据格式画像虚构组织、金额、条款、结论或引用。",
+    "FormatSpec 只约束结构、表达、排版和诊断，不承诺导出文件。",
+    "FormatSpec 不承诺视觉还原；证据不足的字段必须降级为建议或诊断。",
+    "默认数据范围为 evidence-only；draft prompt 不展示 raw evidence 正文或证据转储。"
+  ],
+  "rules": [
+    {
+      "confidence": "medium",
+      "detail": "检测到约 31 页、62 个版式、1 个母版。",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004"
+      ],
+      "id": "pptx-deck-1",
+      "rule": "以演示文稿页序组织内容。",
+      "source": "detected",
+      "target": "deck"
+    },
+    {
+      "confidence": "medium",
+      "detail": "主题线索：Office 主题​​；颜色方案 3、字体方案 3。",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "pptx-theme-1",
+      "rule": "主题只作为视觉风格线索。",
+      "source": "detected",
+      "target": "theme"
+    },
+    {
+      "confidence": "medium",
+      "detail": "无法稳定识别每页版式时，输出逐页大纲而非承诺复刻具体占位符。",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004"
+      ],
+      "id": "pptx-layout-1",
+      "rule": "按封面、目录/过渡、内容、总结组织。",
+      "source": "inferred",
+      "target": "layout"
+    },
+    {
+      "confidence": "high",
+      "detail": "封面内容必须来自用户任务；不复用来源模板中的占位文本或示例署名。",
+      "id": "pptx-cover-1",
+      "rule": "封面应包含主题、汇报对象或时间等必要字段。",
+      "source": "standard-default",
+      "target": "cover-slide"
+    },
+    {
+      "confidence": "medium",
+      "detail": "内容页标题保持短句；正文使用 3-5 个要点或一个图表/表格解释。",
+      "id": "pptx-content-1",
+      "rule": "每页聚焦一个主题。",
+      "source": "standard-default",
+      "target": "content-slide"
+    },
+    {
+      "confidence": "medium",
+      "detail": "若底稿是报告文字，应拆为页标题、核心观点、支撑事实、备注。",
+      "id": "pptx-content-2",
+      "rule": "避免把长文直接铺进幻灯片。",
+      "source": "standard-default",
+      "target": "content-slide"
+    },
+    {
+      "confidence": "medium",
+      "detail": "每条要点建议一行表达一个判断；不要混用多个编号体系。",
+      "id": "pptx-bullet-1",
+      "rule": "正文 bullet 保持并列和短句。",
+      "source": "standard-default",
+      "target": "bullet"
+    },
+    {
+      "confidence": "high",
+      "detail": "bullet 只重组用户事实；不得补造数据、案例或结论。",
+      "id": "pptx-bullet-2",
+      "rule": "项目符号不生成新事实。",
+      "source": "standard-default",
+      "target": "bullet"
+    },
+    {
+      "confidence": "medium",
+      "detail": "图片/形状较多的模板线索意味着内容应更摘要化；文字页避免超过页面可读密度。",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004"
+      ],
+      "id": "pptx-visual-density-1",
+      "rule": "控制页面信息密度。",
+      "source": "inferred",
+      "target": "visual-density"
+    },
+    {
+      "confidence": "high",
+      "detail": "没有图表数据时，只给图表占位建议，不生成伪图表数据。",
+      "id": "pptx-visual-density-2",
+      "rule": "图表页需要标题、图示对象和结论句。",
+      "source": "standard-default",
+      "target": "visual-density"
+    },
+    {
+      "confidence": "high",
+      "detail": "不承诺生成 PPTX 文件，不承诺还原主题、动画、母版或图片位置。",
+      "id": "pptx-boundary-1",
+      "rule": "PPTX 画像用于汇报大纲和逐页草稿。",
+      "source": "standard-default",
+      "target": "boundary"
+    },
+    {
+      "confidence": "high",
+      "detail": "来源中的示例占位词、人名、标题样例只作为模板诊断，不进入最终 prompt。",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004"
+      ],
+      "id": "pptx-boundary-2",
+      "rule": "模板占位文本不得进入业务内容。",
+      "source": "inferred",
+      "target": "boundary"
+    }
+  ],
+  "schemaVersion": "format-spec.v0",
+  "sourceFileType": "pptx",
+  "typeSpecific": {
+    "pptx": {
+      "deck": {
+        "layoutCount": 62,
+        "masterCount": 1,
+        "slideCount": 31
+      },
+      "outputMode": "slide-outline-and-page-by-page-draft",
+      "theme": {
+        "colorSchemeCount": 3,
+        "fontSchemeCount": 3,
+        "name": "Office 主题​​"
+      }
+    }
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "caseId": "pptx-briefing",
+  "confidence": "medium",
+  "currentFormatSpecControl": {
+    "ruleCount": 12,
+    "sampleRules": [
+      {
+        "detail": "检测到约 31 页、62 个版式、1 个母版。",
+        "id": "pptx-deck-1",
+        "rule": "以演示文稿页序组织内容。",
+        "target": "deck"
+      },
+      {
+        "detail": "主题线索：Office 主题​​；颜色方案 3、字体方案 3。",
+        "id": "pptx-theme-1",
+        "rule": "主题只作为视觉风格线索。",
+        "target": "theme"
+      },
+      {
+        "detail": "无法稳定识别每页版式时，输出逐页大纲而非承诺复刻具体占位符。",
+        "id": "pptx-layout-1",
+        "rule": "按封面、目录/过渡、内容、总结组织。",
+        "target": "layout"
+      },
+      {
+        "detail": "封面内容必须来自用户任务；不复用来源模板中的占位文本或示例署名。",
+        "id": "pptx-cover-1",
+        "rule": "封面应包含主题、汇报对象或时间等必要字段。",
+        "target": "cover-slide"
+      },
+      {
+        "detail": "内容页标题保持短句；正文使用 3-5 个要点或一个图表/表格解释。",
+        "id": "pptx-content-1",
+        "rule": "每页聚焦一个主题。",
+        "target": "content-slide"
+      }
+    ],
+    "targets": [
+      "deck",
+      "theme",
+      "layout",
+      "cover-slide",
+      "content-slide",
+      "bullet",
+      "visual-density",
+      "boundary"
+    ]
+  },
+  "documentKind": "汇报演示",
+  "evidenceCatalog": [
+    {
+      "id": "raw.pptx.slide.0001",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/0",
+      "text": "slide-1",
+      "valueDigest": "0c2d2817e1b05689"
+    },
+    {
+      "id": "raw.pptx.slide.0002",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/1",
+      "text": "slide-2",
+      "valueDigest": "5bb4a4ab64e60064"
+    },
+    {
+      "id": "raw.pptx.slide.0003",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/2",
+      "text": "slide-3",
+      "valueDigest": "c92de1adc5ad8250"
+    },
+    {
+      "id": "raw.pptx.slide.0004",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/3",
+      "text": "slide-4",
+      "valueDigest": "209e892921bdc09b"
+    },
+    {
+      "id": "raw.pptx.slide.0005",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/4",
+      "text": "slide-5",
+      "valueDigest": "401d5d901578765e"
+    },
+    {
+      "id": "raw.pptx.slide.0006",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/5",
+      "text": "slide-6",
+      "valueDigest": "bfb81e7b8d651b81"
+    },
+    {
+      "id": "raw.pptx.slide.0007",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/6",
+      "text": "slide-7",
+      "valueDigest": "5e3b0833f7e1d004"
+    },
+    {
+      "id": "raw.pptx.slide.0008",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/7",
+      "text": "slide-8",
+      "valueDigest": "1677cf36b311ae80"
+    },
+    {
+      "id": "raw.pptx.slide.0009",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/8",
+      "text": "slide-9",
+      "valueDigest": "ee8b90b74587654b"
+    },
+    {
+      "id": "raw.pptx.slide.0010",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/9",
+      "text": "slide-10",
+      "valueDigest": "d7d85e85c1870358"
+    },
+    {
+      "id": "raw.pptx.slide.0011",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/10",
+      "text": "slide-11",
+      "valueDigest": "92d671b458a082a7"
+    },
+    {
+      "id": "raw.pptx.slide.0012",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/11",
+      "text": "slide-12",
+      "valueDigest": "b0457c52f2115a11"
+    },
+    {
+      "id": "raw.pptx.slide.0013",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/12",
+      "text": "slide-13",
+      "valueDigest": "bdb3746a1c80813b"
+    },
+    {
+      "id": "raw.pptx.slide.0014",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/13",
+      "text": "slide-14",
+      "valueDigest": "7f82392c73680f90"
+    },
+    {
+      "id": "raw.pptx.slide.0015",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/14",
+      "text": "slide-15",
+      "valueDigest": "e7d92f38c72996c4"
+    },
+    {
+      "id": "raw.pptx.slide.0016",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/15",
+      "text": "slide-16",
+      "valueDigest": "ffeb70ee5c65bf1b"
+    },
+    {
+      "id": "raw.pptx.slide.0017",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/16",
+      "text": "slide-17",
+      "valueDigest": "fcd49109ef10957c"
+    },
+    {
+      "id": "raw.pptx.slide.0018",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/17",
+      "text": "slide-18",
+      "valueDigest": "a91e21fcfe34a86b"
+    },
+    {
+      "id": "raw.pptx.slide.0019",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/18",
+      "text": "slide-19",
+      "valueDigest": "89373f26933b221a"
+    },
+    {
+      "id": "raw.pptx.slide.0020",
+      "kind": "raw.pptx.slide",
+      "pointer": "/rawProbeFacts/structure/slides/19",
+      "text": "slide-20",
+      "valueDigest": "02118c03a2833b98"
+    },
+    {
+      "id": "profile.structure.0001",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/0",
+      "text": "slide",
+      "valueDigest": "0c2d2817e1b05689"
+    },
+    {
+      "id": "profile.structure.0002",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/1",
+      "text": "slide",
+      "valueDigest": "5bb4a4ab64e60064"
+    },
+    {
+      "id": "profile.structure.0003",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/2",
+      "text": "slide",
+      "valueDigest": "c92de1adc5ad8250"
+    },
+    {
+      "id": "profile.structure.0004",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/3",
+      "text": "slide",
+      "valueDigest": "209e892921bdc09b"
+    },
+    {
+      "id": "profile.structure.0005",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/4",
+      "text": "slide",
+      "valueDigest": "401d5d901578765e"
+    },
+    {
+      "id": "profile.structure.0006",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/5",
+      "text": "slide",
+      "valueDigest": "bfb81e7b8d651b81"
+    },
+    {
+      "id": "profile.structure.0007",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/6",
+      "text": "slide",
+      "valueDigest": "5e3b0833f7e1d004"
+    },
+    {
+      "id": "profile.structure.0008",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/7",
+      "text": "slide",
+      "valueDigest": "1677cf36b311ae80"
+    },
+    {
+      "id": "profile.structure.0009",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/8",
+      "text": "slide",
+      "valueDigest": "ee8b90b74587654b"
+    },
+    {
+      "id": "profile.structure.0010",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/9",
+      "text": "slide",
+      "valueDigest": "d7d85e85c1870358"
+    },
+    {
+      "id": "profile.structure.0011",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/10",
+      "text": "slide",
+      "valueDigest": "92d671b458a082a7"
+    },
+    {
+      "id": "profile.structure.0012",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/11",
+      "text": "slide",
+      "valueDigest": "b0457c52f2115a11"
+    },
+    {
+      "id": "profile.structure.0013",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/12",
+      "text": "slide",
+      "valueDigest": "bdb3746a1c80813b"
+    },
+    {
+      "id": "profile.structure.0014",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/13",
+      "text": "slide",
+      "valueDigest": "7f82392c73680f90"
+    },
+    {
+      "id": "profile.structure.0015",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/14",
+      "text": "slide",
+      "valueDigest": "e7d92f38c72996c4"
+    },
+    {
+      "id": "profile.structure.0016",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/15",
+      "text": "slide",
+      "valueDigest": "ffeb70ee5c65bf1b"
+    },
+    {
+      "id": "profile.structure.0017",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/16",
+      "text": "slide",
+      "valueDigest": "fcd49109ef10957c"
+    },
+    {
+      "id": "profile.structure.0018",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/17",
+      "text": "slide",
+      "valueDigest": "a91e21fcfe34a86b"
+    },
+    {
+      "id": "profile.structure.0019",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/18",
+      "text": "slide",
+      "valueDigest": "89373f26933b221a"
+    },
+    {
+      "id": "profile.structure.0020",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/19",
+      "text": "slide",
+      "valueDigest": "02118c03a2833b98"
+    },
+    {
+      "id": "profile.style.0001",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/layout",
+      "text": "layout evidence",
+      "valueDigest": "f2ffc4b6044801c6"
+    },
+    {
+      "id": "profile.style.0002",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/typography",
+      "text": "typography evidence",
+      "valueDigest": "dacabc548f945e60"
+    },
+    {
+      "id": "profile.style.0003",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/colors",
+      "text": "colors evidence",
+      "valueDigest": "932243c308913456"
+    },
+    {
+      "id": "profile.style.0004",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/formatSpecific",
+      "text": "formatSpecific evidence",
+      "valueDigest": "99b7c15d0fa1908e"
+    },
+    {
+      "id": "diagnostic.0001",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/0",
+      "text": "info probe.completed: Phase 2 已完成 PPTX 基础探测：幻灯片 31、版式 62、母版 1、主题 3。",
+      "valueDigest": "550cb7467a38b358"
+    },
+    {
+      "id": "diagnostic.0002",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/1",
+      "text": "info format.pptx.boundary: PPTX 用作汇报结构和逐页内容参考，不在本阶段生成 PPTX 成品。",
+      "valueDigest": "536855093ad0322c"
+    }
+  ],
+  "fileType": "pptx",
+  "instruction": "Infer detailed GB/T-like executable formatting rules from evidence. Do not copy source body text into rules. Every non-boundary rule must cite evidenceRefs.",
+  "profileSummary": {
+    "diagnostics": [
+      {
+        "code": "probe.completed",
+        "message": "Phase 2 已完成 PPTX 基础探测：幻灯片 31、版式 62、母版 1、主题 3。",
+        "severity": "info"
+      },
+      {
+        "code": "format.pptx.boundary",
+        "message": "PPTX 用作汇报结构和逐页内容参考，不在本阶段生成 PPTX 成品。",
+        "severity": "info"
+      }
+    ],
+    "structure": {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+          "kind": "file_probe",
+          "path": "[REDACTED_PATH]"
+        }
+      ],
+      "layoutCount": 62,
+      "masterCount": 1,
+      "sections": [
+        {
+          "index": 1,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 2,
+          "tableCount": 0,
+          "textCount": 2,
+          "textSample": [
+            "汇报人：张伟崇",
+            "手绘风通用型模板"
+          ]
+        },
+        {
+          "index": 2,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 3,
+          "shapeCount": 7,
+          "tableCount": 0,
+          "textCount": 7,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容"
+          ]
+        },
+        {
+          "index": 3,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 10,
+          "tableCount": 0,
+          "textCount": 13,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入您的标题",
+            "2300"
+          ]
+        },
+        {
+          "index": 4,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 7,
+          "tableCount": 0,
+          "textCount": 7,
+          "textSample": [
+            "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容在这里输入所想要的正文内容。",
+            "这里输入你的标题",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 5,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 10,
+          "tableCount": 0,
+          "textCount": 7,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 6,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 47,
+          "tableCount": 0,
+          "textCount": 7,
+          "textSample": [
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 7,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 1,
+          "tableCount": 0,
+          "textCount": 1,
+          "textSample": [
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 8,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 2,
+          "shapeCount": 5,
+          "tableCount": 0,
+          "textCount": 5,
+          "textSample": [
+            "这里输入您的标题",
+            "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 9,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 13,
+          "tableCount": 0,
+          "textCount": 9,
+          "textSample": [
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 10,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 13,
+          "tableCount": 0,
+          "textCount": 7,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容",
+            "输入标题",
+            "请在这里输入你想要添加的正文内容",
+            "输入标题",
+            "请在这里输入你想要添加的正文内容"
+          ]
+        },
+        {
+          "index": 11,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 26,
+          "tableCount": 0,
+          "textCount": 9,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+            "这里输入小标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+            "这里输入小标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容",
+            "这里输入小标题",
+            "请在这里输入你想要添加的正文内容请在这里输入所想要的正文内容"
+          ]
+        },
+        {
+          "index": 12,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 4,
+          "tableCount": 0,
+          "textCount": 4,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 13,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 11,
+          "tableCount": 0,
+          "textCount": 11,
+          "textSample": [
+            "关键词",
+            "关键词",
+            "关键词",
+            "关键词",
+            "关键词",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要"
+          ]
+        },
+        {
+          "index": 14,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 13,
+          "tableCount": 0,
+          "textCount": 13,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容"
+          ]
+        },
+        {
+          "index": 15,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 1,
+          "tableCount": 0,
+          "textCount": 1,
+          "textSample": [
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 16,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 1,
+          "shapeCount": 5,
+          "tableCount": 0,
+          "textCount": 3,
+          "textSample": [
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的正文内容请在这里输入你想要添加请在这里输入你想要添加的正文内容，在这里输入你想要添加你所想要的正文内容，请在这里输入你想要添加你所想要的",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 17,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 10,
+          "tableCount": 0,
+          "textCount": 10,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容"
+          ]
+        },
+        {
+          "index": 18,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 9,
+          "tableCount": 0,
+          "textCount": 9,
+          "textSample": [
+            "这里输入你的标题",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要的正文内容，输入你想要",
+            "这里输入你的标题",
+            "请在这里输入你想要添加的正文内容，请请在这里输入你想要添加你所想要",
+            "这里输入你的标题"
+          ]
+        },
+        {
+          "index": 19,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 3,
+          "shapeCount": 7,
+          "tableCount": 0,
+          "textCount": 7,
+          "textSample": [
+            "这里输入你的标题",
+            "输入小标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容",
+            "输入小标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容",
+            "输入小标题",
+            "请在这里输入你想要添加的正文内容，请在这里输入所想要的正文内容，输入正文内容请在这里输入所想要的正文内容，输入正文内容"
+          ]
+        },
+        {
+          "index": 20,
+          "kind": "slide",
+          "path": "[REDACTED_PATH]",
+          "pictureCount": 0,
+          "shapeCount": 19,
+          "tableCount": 0,
+          "textCount": 19,
+          "textSample": [
+            "关键词",
+            "关键词",
+            "输入你的正文内容",
+            "输入你的标题",
+            "输入你的正文内容",
+            "输入你的标题",
+            "输入你的正文内容",
+            "输入你的标题"
+          ]
+        }
+      ],
+      "slideCount": 31,
+      "tables": []
+    },
+    "styleProfile": {
+      "colors": {
+        "colorSchemeCount": 3
+      },
+      "evidenceSummary": [],
+      "formatSpecific": {
+        "extractionStage": "basic_probe",
+        "officeKind": "pptx",
+        "realParserAttached": true,
+        "themeCount": 3,
+        "themeName": "Office 主题​​"
+      },
+      "layout": {
+        "layoutCount": 62,
+        "masterCount": 1,
+        "slideCount": 31
+      },
+      "typography": {
+        "fontSchemeCount": 3
+      }
+    }
+  },
+  "schemaVersion": "format-rule-synthesis-evidence-pack.v0"
+}

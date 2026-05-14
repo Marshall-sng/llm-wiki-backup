@@ -13,8 +13,8 @@ import { useReviewStore } from "@/stores/review-store"
 import { useActivityStore } from "@/stores/activity-store"
 import { useResearchStore } from "@/stores/research-store"
 import { useDraftStore } from "@/stores/draft-store"
-import { useTemplateStore } from "@/stores/template-store"
-import { clearDraftAutoSaveTimer, clearTemplateAutoSaveTimer } from "@/lib/auto-save"
+import { useFormatProfileStore } from "@/stores/format-profile-store"
+import { clearDraftAutoSaveTimer, clearFormatProfileAutoSaveTimer } from "@/lib/auto-save"
 
 export async function resetProjectState(): Promise<void> {
   // Zustand stores — clear all per-project data (synchronous)
@@ -43,8 +43,8 @@ export async function resetProjectState(): Promise<void> {
 
   clearDraftAutoSaveTimer()
   useDraftStore.getState().clearDrafts({ silent: true })
-  clearTemplateAutoSaveTimer()
-  useTemplateStore.getState().clearTemplates({ silent: true })
+  clearFormatProfileAutoSaveTimer()
+  useFormatProfileStore.getState().clearProfiles({ silent: true })
 
   // Module-level caches — load in parallel and clear each, surfacing any
   // failure instead of swallowing it.

@@ -6,7 +6,7 @@ import { ChatMessage, StreamingMessage, useSourceFiles } from "./chat-message"
 import { ChatInput } from "./chat-input"
 import { useChatStore, chatMessagesToLLM } from "@/stores/chat-store"
 import { useWikiStore } from "@/stores/wiki-store"
-import { useTemplateStore } from "@/stores/template-store"
+import { useFormatProfileStore } from "@/stores/format-profile-store"
 import { streamChat, type ChatMessage as LLMMessage } from "@/lib/llm-client"
 import { executeIngestWrites } from "@/lib/ingest"
 import { listDirectory, readFile, deleteFile } from "@/commands/fs"
@@ -17,6 +17,7 @@ import { getOutputLanguage, buildLanguageReminder } from "@/lib/output-language"
 import { isGreeting } from "@/lib/greeting-detector"
 import { computeContextBudget } from "@/lib/context-budget"
 import { buildDraftProcessingSystemPrompt } from "@/lib/draft-processing"
+import { buildFormatSpecAuditView } from "@/lib/format-spec"
 
 // Store the page mapping from the last query so SourceFilesBar can show which pages were cited
 export let lastQueryPages: { title: string; path: string }[] = []
@@ -138,9 +139,9 @@ export function ChatPanel() {
   const maxHistoryMessages = useChatStore((s) => s.maxHistoryMessages)
   const pendingDraftProcessingRequest = useChatStore((s) => s.pendingDraftProcessingRequest)
   const consumeDraftProcessingRequest = useChatStore((s) => s.consumeDraftProcessingRequest)
-  const templates = useTemplateStore((s) => s.templates)
-  const activeTemplateId = useTemplateStore((s) => s.activeTemplateId)
-  const setActiveTemplate = useTemplateStore((s) => s.setActiveTemplate)
+  const formatProfiles = useFormatProfileStore((s) => s.profiles)
+  const activeProfileId = useFormatProfileStore((s) => s.activeProfileId)
+  const setActiveProfile = useFormatProfileStore((s) => s.setActiveProfile)
 
   // Derive active messages via selector to re-render on message changes
   const allMessages = useChatStore((s) => s.messages)
@@ -150,7 +151,15 @@ export function ChatPanel() {
   const activeConversation = activeConversationId
     ? conversations.find((conversation) => conversation.id === activeConversationId) ?? null
     : null
-  const activeTemplate = templates.find((template) => template.id === activeTemplateId) ?? null
+  const activeProfile = formatProfiles.find((profile) => profile.id === activeProfileId) ?? null
+  const activeDraftFormatProfileSnapshot = activeConversation?.draftContext?.formatProfileSnapshot
+  const activeDraftFormatSpecAudit = activeDraftFormatProfileSnapshot
+    ? buildFormatSpecAuditView(activeDraftFormatProfileSnapshot.formatSpec, {
+      sourceProfileHash: activeDraftFormatProfileSnapshot.sourceProfileHash,
+      formatSpecHash: activeDraftFormatProfileSnapshot.formatSpecHash,
+      legacyGenerationInstruction: activeDraftFormatProfileSnapshot.legacyGenerationInstruction,
+    })
+    : null
 
   const project = useWikiStore((s) => s.project)
   const llmConfig = useWikiStore((s) => s.llmConfig)
@@ -541,33 +550,81 @@ export function ChatPanel() {
                     <div className="mt-1">
                       {t("chat.draftProcessingSource", { title: activeConversation.draftContext.draftTitle })}
                     </div>
-                    {activeConversation.draftContext.templateSnapshot && (
+                    {activeConversation.draftContext.formatProfileSnapshot && (
                       <div className="mt-1">
-                        {t("chat.draftProcessingTemplate", {
-                          title: activeConversation.draftContext.templateSnapshot.title,
+                        {t("chat.draftProcessingFormatProfile", {
+                          title: activeConversation.draftContext.formatProfileSnapshot.title,
                         })}
                       </div>
+                    )}
+                    {activeDraftFormatSpecAudit && (
+                      <details className="mt-2 rounded-md border border-primary/20 bg-background/70 p-2">
+                        <summary className="cursor-pointer font-medium text-foreground">
+                          本次格式约束 · {activeDraftFormatSpecAudit.sourceFileType.toUpperCase()} · {activeDraftFormatSpecAudit.formatSpecHash?.slice(0, 12)}
+                        </summary>
+                        <div className="mt-2 space-y-2">
+                          <div className="grid gap-2 md:grid-cols-3">
+                            <div className="rounded bg-muted/30 p-2">
+                              <div className="text-muted-foreground">Renderer</div>
+                              <div className="break-words font-mono text-[10px] text-foreground">{activeDraftFormatSpecAudit.rendererVersion}</div>
+                            </div>
+                            <div className="rounded bg-muted/30 p-2">
+                              <div className="text-muted-foreground">Policy</div>
+                              <div className="break-words font-mono text-[10px] text-foreground">{activeDraftFormatSpecAudit.policyVersion}</div>
+                            </div>
+                            <div className="rounded bg-muted/30 p-2">
+                              <div className="text-muted-foreground">Scope</div>
+                              <div className="font-mono text-[10px] text-foreground">evidence-only</div>
+                            </div>
+                          </div>
+                          <div className="rounded bg-muted/20 p-2">
+                            <div className="mb-1 font-medium text-foreground">摘要</div>
+                            <ul className="space-y-1">
+                              {activeDraftFormatSpecAudit.summaryLines.map((item, index) => (
+                                <li key={`${item}-${index}`} className="break-words">- {item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="rounded bg-muted/20 p-2">
+                            <div className="mb-1 font-medium text-foreground">边界</div>
+                            <ul className="space-y-1">
+                              {activeDraftFormatSpecAudit.boundaries.map((item, index) => (
+                                <li key={`${item}-${index}`} className="break-words">- {item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          <details className="rounded border bg-muted/10 p-2">
+                            <summary className="cursor-pointer font-medium text-foreground">审计文本</summary>
+                            <p className="mt-2 text-[11px] leading-relaxed">
+                              这是本次发送给模型的格式约束文本，不代表导出、视觉复刻或高保真承诺。
+                            </p>
+                            <pre className="mt-2 max-h-48 overflow-auto whitespace-pre-wrap break-words rounded bg-background/70 p-2 font-mono text-[10px] leading-relaxed">
+                              {activeDraftFormatSpecAudit.promptBlock}
+                            </pre>
+                          </details>
+                        </div>
+                      </details>
                     )}
                     <div className="mt-1">{t("chat.draftProcessingNoOverwriteHint")}</div>
                   </div>
                 )}
-                {activeTemplate && (
+                {activeProfile && (
                   <div className="rounded-lg border border-amber-500/30 bg-amber-50/70 p-3 text-xs text-muted-foreground dark:bg-amber-950/20">
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <div className="font-semibold text-foreground">
-                          {t("chat.activeTemplateBannerTitle", { title: activeTemplate.title })}
+                          {t("chat.activeFormatProfileBannerTitle", { title: activeProfile.title })}
                         </div>
-                        <div className="mt-1">{t("chat.activeTemplateHint")}</div>
+                        <div className="mt-1">{t("chat.activeFormatProfileHint")}</div>
                       </div>
                       <Button
                         type="button"
                         variant="ghost"
                         size="xs"
                         className="shrink-0"
-                        onClick={() => setActiveTemplate(null)}
+                        onClick={() => setActiveProfile(null)}
                       >
-                        {t("chat.clearActiveTemplate")}
+                        {t("chat.clearActiveFormatProfile")}
                       </Button>
                     </div>
                   </div>

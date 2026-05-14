@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "format-profile-harness-validation-summary.v1",
+  "generatedAt": "2026-05-13T14:42:58.946732+00:00",
+  "entries": [
+    {
+      "mode": "disabled",
+      "caseId": "docx-policy",
+      "attemptStatus": "not_attempted",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "llm_disabled",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "disabled",
+      "caseId": "pdf-reference",
+      "attemptStatus": "not_attempted",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "llm_disabled",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "disabled",
+      "caseId": "pptx-briefing",
+      "attemptStatus": "not_attempted",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "llm_disabled",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "disabled",
+      "caseId": "xlsx-metrics",
+      "attemptStatus": "not_attempted",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "llm_disabled",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "mock-error",
+      "caseId": "docx-policy",
+      "attemptStatus": "llm_error",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "llm_error",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "mock-hallucination",
+      "caseId": "docx-policy",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "fail",
+      "finalStatus": "fallback",
+      "fallbackReason": "evaluator_rejected",
+      "qualityScore": 0.984,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "mock-invalid-json",
+      "caseId": "docx-policy",
+      "attemptStatus": "invalid_json",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "invalid_json",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "mock-overreach-instruction",
+      "caseId": "docx-policy",
+      "attemptStatus": "schema_invalid",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "schema_invalid",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "mock-pass",
+      "caseId": "docx-policy",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.984,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": null
+    },
+    {
+      "mode": "mock-pass",
+      "caseId": "pdf-reference",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.994,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": null
+    },
+    {
+      "mode": "mock-pass",
+      "caseId": "pptx-briefing",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.994,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": null
+    },
+    {
+      "mode": "mock-pass",
+      "caseId": "xlsx-metrics",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.994,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": null
+    },
+    {
+      "mode": "mock-schema-invalid",
+      "caseId": "docx-policy",
+      "attemptStatus": "schema_invalid",
+      "evaluatorVerdict": "not_run",
+      "finalStatus": "fallback",
+      "fallbackReason": "schema_invalid",
+      "qualityScore": 0,
+      "fallbackPreservedInstructionHash": true,
+      "hasAcceptedOverlay": false,
+      "provider": null
+    },
+    {
+      "mode": "real-llm",
+      "caseId": "docx-policy",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.984,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": {
+        "provider": "codex-cli",
+        "endpoint": "codex-cli",
+        "model": "gpt-5.3-codex-spark"
+      }
+    },
+    {
+      "mode": "real-llm",
+      "caseId": "pdf-reference",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.9564999999999999,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": {
+        "provider": "codex-cli",
+        "endpoint": "codex-cli",
+        "model": "gpt-5.3-codex-spark"
+      }
+    },
+    {
+      "mode": "real-llm",
+      "caseId": "pptx-briefing",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.9564999999999999,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": {
+        "provider": "codex-cli",
+        "endpoint": "codex-cli",
+        "model": "gpt-5.3-codex-spark"
+      }
+    },
+    {
+      "mode": "real-llm",
+      "caseId": "xlsx-metrics",
+      "attemptStatus": "llm_completed",
+      "evaluatorVerdict": "pass",
+      "finalStatus": "refined",
+      "fallbackReason": null,
+      "qualityScore": 0.9564999999999999,
+      "fallbackPreservedInstructionHash": null,
+      "hasAcceptedOverlay": true,
+      "provider": {
+        "provider": "codex-cli",
+        "endpoint": "codex-cli",
+        "model": "gpt-5.3-codex-spark"
+      }
+    }
+  ]
+}

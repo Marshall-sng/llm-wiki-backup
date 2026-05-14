@@ -1,0 +1,624 @@
+{
+  "caseId": "pptx-briefing",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Rules constrain drafting and audit only; they do not promise file export.",
+    "Rules do not promise high-fidelity visual restoration or pixel-perfect replication.",
+    "Source facts and user draft content override formatting rules.",
+    "Do not copy source body text or raw evidence into the generated draft."
+  ],
+  "rationale": "LLM-style synthesis converts existing evidence into explicit normative formatting constraints with attributes.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "slideSize",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "master",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "layout",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes slideSize, master, layout explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-deck-1",
+      "normType": "hierarchy",
+      "rule": "deck uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "deck"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "theme",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "titleFont",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "bodyFont",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes theme, titleFont, bodyFont explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "pptx-theme-2",
+      "normType": "typography",
+      "rule": "theme uses evidence-bound typography constraints.",
+      "source": "llm-inferred",
+      "target": "theme"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "layout",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "placeholder",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes layout, placeholder explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-layout-3",
+      "normType": "hierarchy",
+      "rule": "layout uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "layout"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "titleFont",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "density",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes titleFont, density explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-cover-slide-4",
+      "normType": "hierarchy",
+      "rule": "cover-slide uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "cover-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "density",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "spacing",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes density, spacing explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-content-slide-5",
+      "normType": "density",
+      "rule": "content-slide uses evidence-bound density constraints.",
+      "source": "llm-inferred",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "bulletLevel",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "bodyFont",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "spacing",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes bulletLevel, bodyFont, spacing explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-bullet-6",
+      "normType": "hierarchy",
+      "rule": "bullet uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "bullet"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "density",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "placeholder",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes density, placeholder explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "pptx-visual-density-7",
+      "normType": "spacing",
+      "rule": "visual-density uses evidence-bound spacing constraints.",
+      "source": "llm-inferred",
+      "target": "visual-density"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "tableHeader",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "placeholder",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes tableHeader, placeholder explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-content-slide-8",
+      "normType": "table",
+      "rule": "content-slide uses evidence-bound table constraints.",
+      "source": "llm-inferred",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "exportPromise",
+          "value": "forbidden"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "visualReplication",
+          "value": "forbidden"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The synthesized rule makes exportPromise, visualReplication explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-boundary-9",
+      "normType": "boundary",
+      "rule": "boundary uses evidence-bound boundary constraints.",
+      "source": "standard-default",
+      "target": "boundary"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "layout",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "density",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes layout, density explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-layout-10",
+      "normType": "hierarchy",
+      "rule": "layout uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "layout"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "titleFont",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "spacing",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes titleFont, spacing explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "pptx-content-slide-11",
+      "normType": "typography",
+      "rule": "content-slide uses evidence-bound typography constraints.",
+      "source": "llm-inferred",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "notesPolicy",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001",
+            "raw.pptx.slide.0002",
+            "raw.pptx.slide.0003",
+            "raw.pptx.slide.0004",
+            "raw.pptx.slide.0005"
+          ],
+          "name": "density",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes notesPolicy, density explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "raw.pptx.slide.0002",
+        "raw.pptx.slide.0003",
+        "raw.pptx.slide.0004",
+        "raw.pptx.slide.0005"
+      ],
+      "id": "pptx-content-slide-12",
+      "normType": "hierarchy",
+      "rule": "content-slide uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "theme",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "spacing",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes theme, spacing explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "pptx-theme-13",
+      "normType": "typography",
+      "rule": "theme uses evidence-bound typography constraints.",
+      "source": "llm-inferred",
+      "target": "theme"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "bulletLevel",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "spacing",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes bulletLevel, spacing explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "pptx-bullet-14",
+      "normType": "spacing",
+      "rule": "bullet uses evidence-bound spacing constraints.",
+      "source": "llm-inferred",
+      "target": "bullet"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "pptx",
+  "synthesisMode": "mock-llm"
+}

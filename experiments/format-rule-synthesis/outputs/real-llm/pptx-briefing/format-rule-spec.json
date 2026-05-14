@@ -1,0 +1,697 @@
+{
+  "caseId": "pptx-briefing",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Use the PPTX only as briefing-structure and style evidence, not as source text to reproduce.",
+    "Do not copy template placeholder wording, sample names, or body text into generated rules or output.",
+    "Do not claim exact visual recreation, high-fidelity restoration, export completion, or finished PPTX production.",
+    "When evidence lacks exact measurements, use conservative GB/T-like defaults and mark confidence accordingly."
+  ],
+  "rationale": "Evidence is sufficient for structure, theme count, master/layout density, and slide-level content patterns, but lacks exact measurements and font names, so detailed metrics combine detected PPTX facts with GB/T-like defaults.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "diagnostic.0001"
+          ],
+          "name": "slideCount",
+          "unit": "slides",
+          "value": "31"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "diagnostic.0001",
+            "profile.style.0001"
+          ],
+          "name": "master",
+          "unit": "count=1",
+          "value": "single-master deck architecture"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "diagnostic.0001",
+            "profile.style.0001"
+          ],
+          "name": "layout",
+          "unit": "layoutCount=62",
+          "value": "multi-layout briefing system"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Treat the source as a 31-slide briefing template with many reusable layouts. Generated content should preserve slide-order logic rather than trying to recreate each slide visually.",
+      "evidenceRefs": [
+        "diagnostic.0001",
+        "profile.style.0001"
+      ],
+      "id": "deck-structure-31",
+      "normType": "hierarchy",
+      "rule": "Organize the briefing as a sequenced slide deck with one cover, multiple content layouts, and optional divider or summary slides.",
+      "source": "detected",
+      "target": "deck"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0004"
+          ],
+          "name": "slideSize",
+          "unit": "ratio/in",
+          "value": "16:9 widescreen; 13.333in x 7.5in default"
+        }
+      ],
+      "confidence": "low",
+      "detail": "Set slide size to 16:9 widescreen as the default executable PPTX briefing page model; if exact dimensions are required, use 13.333 x 7.5 inches. This is a standard-default because the probe did not expose exact slide dimensions.",
+      "evidenceRefs": [
+        "profile.style.0004",
+        "diagnostic.0001"
+      ],
+      "id": "deck-slide-size",
+      "normType": "page",
+      "rule": "Use a widescreen presentation canvas unless downstream constraints require otherwise.",
+      "source": "standard-default",
+      "target": "deck"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0004"
+          ],
+          "name": "theme",
+          "unit": "theme",
+          "value": "Office-theme-derived, not exact-copy"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "titleFont",
+          "unit": "font-family",
+          "value": "FZ XiaoBiaoSong or SimSun fallback"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "bodyFont",
+          "unit": "font-family",
+          "value": "FangSong_GB2312, SimFang, or SimSun fallback"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use the detected theme only as a style cue. Prefer Chinese official-document typography defaults: title in a strong Song-style display face, primary headings in bold Hei-style, body in FangSong/Song fallback. Do not infer exact font names from the probe.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "profile.style.0004"
+      ],
+      "id": "theme-office-cue",
+      "normType": "typography",
+      "rule": "Base visual styling on the detected Office-theme family, with restrained document-like typography.",
+      "source": "llm-inferred",
+      "target": "theme"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0003"
+          ],
+          "name": "theme",
+          "unit": "schemes",
+          "value": "3 coordinated color schemes maximum"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Because the probe found three color schemes, generated rules should support a primary, secondary, and accent palette while avoiding uncontrolled color expansion.",
+      "evidenceRefs": [
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "theme-color-count",
+      "normType": "hierarchy",
+      "rule": "Keep a compact theme system with no more than three coordinated color schemes.",
+      "source": "detected",
+      "target": "theme"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "diagnostic.0001"
+          ],
+          "name": "master",
+          "unit": "master",
+          "value": "1 shared master grid"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0002",
+            "profile.structure.0008",
+            "profile.structure.0011",
+            "profile.structure.0019"
+          ],
+          "name": "layout",
+          "unit": "layout-archetype",
+          "value": "cover|divider|content|multi-card|image-text|statistic|summary"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0001",
+            "profile.structure.0003",
+            "profile.structure.0013",
+            "profile.structure.0020"
+          ],
+          "name": "placeholder",
+          "unit": "placeholder-role",
+          "value": "title, subtitle, body, image, metric, keyword"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Define reusable archetypes for cover, section divider, title-and-body, multi-card content, picture-plus-text, statistic, and summary slides. Keep margins and title positions consistent across archetypes.",
+      "evidenceRefs": [
+        "diagnostic.0001",
+        "profile.structure.0002",
+        "profile.structure.0008",
+        "profile.structure.0011",
+        "profile.structure.0019"
+      ],
+      "id": "layout-master-discipline",
+      "normType": "alignment",
+      "rule": "Use one master-level grid and assign each slide to a reusable layout archetype.",
+      "source": "llm-inferred",
+      "target": "layout"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "spacing",
+          "unit": "percent-of-slide",
+          "value": "side margins 6-8%, title zone 8-10%, inter-card gap 2-3%"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0006",
+            "profile.structure.0011"
+          ],
+          "name": "layout",
+          "unit": "grid",
+          "value": "grid-aligned content zones"
+        }
+      ],
+      "confidence": "low",
+      "detail": "Use approximately 6-8 percent slide-width side margins, 8-10 percent top title zone, and a consistent content region below the title. Align repeated cards, icons, and pictures to the same grid columns.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.structure.0006",
+        "profile.structure.0011"
+      ],
+      "id": "layout-margins-grid",
+      "normType": "spacing",
+      "rule": "Apply a formal grid with clear margins and non-overlapping content zones.",
+      "source": "standard-default",
+      "target": "layout"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "titleFont",
+          "unit": "font-family",
+          "value": "display Song-style, bold or semi-bold"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "34-44"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0001"
+          ],
+          "name": "placeholder",
+          "unit": "role",
+          "value": "mainTitle, metadataLine"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "raw.pptx.slide.0001"
+          ],
+          "name": "spacing",
+          "unit": "pt",
+          "value": "metadata separated from title by 18-30 pt"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use a large centered or upper-middle title, with presenter, organization, date, or occasion as smaller metadata. Source placeholder or sample identity text must not be reused.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0001",
+        "profile.structure.0001"
+      ],
+      "id": "cover-slide-fields",
+      "normType": "hierarchy",
+      "rule": "The cover slide must contain a main briefing title and one subordinate metadata line when available.",
+      "source": "llm-inferred",
+      "target": "cover-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "titleFont",
+          "unit": "font-family",
+          "value": "Hei-style or Song-style heading"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.structure.0002"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "24-32"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.structure.0002",
+            "profile.structure.0004",
+            "profile.structure.0009"
+          ],
+          "name": "placeholder",
+          "unit": "role",
+          "value": "slideTitle"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use one short title per slide. For GB/T-like hierarchy, title text should be visually dominant but not oversized relative to the body; recommended range is 24-32 pt.",
+      "evidenceRefs": [
+        "profile.structure.0002",
+        "profile.structure.0004",
+        "profile.structure.0009",
+        "profile.structure.0014"
+      ],
+      "id": "content-slide-title",
+      "normType": "typography",
+      "rule": "Every standard content slide should use a concise title above the body region.",
+      "source": "llm-inferred",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "bodyFont",
+          "unit": "font-family",
+          "value": "FangSong/Song fallback"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.structure.0002",
+            "profile.structure.0008"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "16-22"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0002",
+            "profile.structure.0019"
+          ],
+          "name": "density",
+          "unit": "items",
+          "value": "3-5 body points or 1 primary visual per slide"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0008",
+            "profile.structure.0016"
+          ],
+          "name": "placeholder",
+          "unit": "role",
+          "value": "bodyText, visual, caption"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The evidence shows repeated title/body groups and picture-plus-text slides. Generated slides should avoid crowding by limiting body groups and reserving space for charts, pictures, or metrics when used.",
+      "evidenceRefs": [
+        "profile.structure.0002",
+        "profile.structure.0008",
+        "profile.structure.0016",
+        "profile.structure.0019"
+      ],
+      "id": "content-slide-body",
+      "normType": "density",
+      "rule": "Keep each content slide focused on one subject with either three to five text points or one primary visual explanation.",
+      "source": "llm-inferred",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0009",
+            "profile.structure.0014"
+          ],
+          "name": "bulletLevel",
+          "unit": "level",
+          "value": "level 1 primary; level 2 optional; no level 3 by default"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.structure.0018"
+          ],
+          "name": "spacing",
+          "unit": "ratio/pt",
+          "value": "primary line spacing 1.15-1.3; paragraph gap 4-8 pt"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.structure.0009"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "16-20 primary; 14-18 secondary"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Avoid deep nesting. Primary bullets should align under the body text box; secondary bullets should indent consistently and use smaller type.",
+      "evidenceRefs": [
+        "profile.structure.0009",
+        "profile.structure.0014",
+        "profile.structure.0018"
+      ],
+      "id": "bullet-hierarchy",
+      "normType": "numbering",
+      "rule": "Use shallow bullet hierarchy: primary bullets for key points and optional secondary bullets only for clarification.",
+      "source": "standard-default",
+      "target": "bullet"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0007",
+            "profile.structure.0015"
+          ],
+          "name": "layout",
+          "unit": "layout-archetype",
+          "value": "section-divider"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.pptx.slide.0007",
+            "raw.pptx.slide.0015"
+          ],
+          "name": "density",
+          "unit": "text-box-count",
+          "value": "1 text element preferred"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0007"
+          ],
+          "name": "placeholder",
+          "unit": "role",
+          "value": "sectionTitle"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Slides with a single text element indicate a sparse transition pattern. Divider slides should contain only the section title or short label, centered or strongly aligned to the master grid.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0007",
+        "raw.pptx.slide.0015",
+        "profile.structure.0007",
+        "profile.structure.0015"
+      ],
+      "id": "section-divider",
+      "normType": "hierarchy",
+      "rule": "Use sparse divider slides to separate major sections.",
+      "source": "detected",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0002",
+            "profile.structure.0019"
+          ],
+          "name": "placeholder",
+          "unit": "role",
+          "value": "image, imageCaption, adjacentBody"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0008",
+            "profile.structure.0019"
+          ],
+          "name": "layout",
+          "unit": "layout-archetype",
+          "value": "image-text split or three-card visual row"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.structure.0016"
+          ],
+          "name": "spacing",
+          "unit": "pt",
+          "value": "image-text gutter 18-30 pt"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The sample includes picture-bearing slides with multiple text areas. Use image placeholders as evidence-backed layout roles, but do not infer exact images or positions.",
+      "evidenceRefs": [
+        "profile.structure.0002",
+        "profile.structure.0008",
+        "profile.structure.0016",
+        "profile.structure.0019"
+      ],
+      "id": "picture-text-layout",
+      "normType": "alignment",
+      "rule": "For slides with pictures, pair visuals with adjacent explanatory text and maintain equal visual weight.",
+      "source": "detected",
+      "target": "layout"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0006",
+            "profile.structure.0011",
+            "profile.structure.0020"
+          ],
+          "name": "density",
+          "unit": "count-threshold",
+          "value": "low: <=4 text and <8 shapes; medium: 5-10 text or 8-20 shapes; high: >10 text or >20 shapes"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Low density is 1-4 text boxes and fewer than 8 shapes; medium density is 5-10 text boxes or 8-20 shapes; high density is more than 10 text boxes or more than 20 shapes. High-density slides should be split or converted to diagrammatic groupings.",
+      "evidenceRefs": [
+        "profile.structure.0006",
+        "profile.structure.0011",
+        "profile.structure.0014",
+        "profile.structure.0020"
+      ],
+      "id": "visual-density-control",
+      "normType": "density",
+      "rule": "Classify slide density by text, shape, and picture counts, then simplify overcrowded slides before rendering.",
+      "source": "llm-inferred",
+      "target": "visual-density"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0013",
+            "profile.structure.0020"
+          ],
+          "name": "layout",
+          "unit": "layout-archetype",
+          "value": "keyword-card grid"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0013"
+          ],
+          "name": "placeholder",
+          "unit": "role",
+          "value": "keywordLabel, supportText"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "raw.pptx.slide.0013",
+            "raw.pptx.slide.0020"
+          ],
+          "name": "density",
+          "unit": "cards",
+          "value": "4-6 cards per slide preferred"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Slides with repeated keyword-like labels indicate a card or concept grouping pattern. Each card should contain one label plus optional concise support text.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0013",
+        "raw.pptx.slide.0020",
+        "profile.structure.0013",
+        "profile.structure.0020"
+      ],
+      "id": "keyword-card-layout",
+      "normType": "hierarchy",
+      "rule": "When using keyword or concept cards, keep labels short and visually parallel.",
+      "source": "detected",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.structure.0003"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "36-54 for metric callout; 14-18 for label"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pptx.slide.0003"
+          ],
+          "name": "placeholder",
+          "unit": "role",
+          "value": "metricValue, metricLabel"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.structure.0003"
+          ],
+          "name": "density",
+          "unit": "metrics",
+          "value": "1-3 metrics per slide"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The source includes at least one metric-like text item, so numerical facts should be styled as emphasis elements rather than buried in paragraphs.",
+      "evidenceRefs": [
+        "raw.pptx.slide.0003",
+        "profile.structure.0003"
+      ],
+      "id": "statistic-treatment",
+      "normType": "typography",
+      "rule": "Render isolated metrics as large numeric callouts with a nearby explanatory label.",
+      "source": "detected",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "layout",
+          "unit": "policy",
+          "value": "table optional, not default"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "diagnostic.0001"
+          ],
+          "name": "density",
+          "unit": "cells",
+          "value": "maximum 5 columns and 6 rows for readability"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The probe found no tables in the sampled structure, so tables should be introduced only for genuine tabular content and kept simple.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "diagnostic.0001"
+      ],
+      "id": "table-policy",
+      "normType": "table",
+      "rule": "Do not default to tables unless the user content requires comparison or structured data.",
+      "source": "detected",
+      "target": "content-slide"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "diagnostic.0002"
+          ],
+          "name": "boundary",
+          "unit": "constraint",
+          "value": "reference-only; no exact recreation claim"
+        }
+      ],
+      "confidence": "high",
+      "detail": "This rule system may guide structure, hierarchy, density, and typography defaults, but must not assert finished PPTX generation or exact source-template reproduction.",
+      "evidenceRefs": [
+        "diagnostic.0002"
+      ],
+      "id": "boundary-pptx-reference-only",
+      "normType": "boundary",
+      "rule": "Treat PPTX evidence as reference material only.",
+      "source": "detected",
+      "target": "boundary"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "pptx",
+  "synthesisMode": "real-llm"
+}

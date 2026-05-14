@@ -1,0 +1,7 @@
+﻿{
+  "schemaVersion": "format-spec-case.v0",
+  "caseId": "pdf-reference",
+  "formatType": "pdf",
+  "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pdf-reference/input.json",
+  "expected": { "minRules": 8 }
+}

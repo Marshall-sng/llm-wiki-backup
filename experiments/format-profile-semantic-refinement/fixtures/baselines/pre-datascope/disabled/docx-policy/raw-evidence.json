@@ -1,0 +1,1395 @@
+[
+  {
+    "id": "raw.docx.paragraph.0001",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/0",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.公司生产运营所需物资和服务采购，包括：各类机械设备、 电气设备、信息设备、车辆、工器具、办公用品等的采购；相关 设备维修、运维服务采购； 以及车辆租赁、物流服务、物业服务 等的采购。",
+    "value": {
+      "index": 69,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "3bea635995903e11d37fc226ee1cfb26993757463dd4134769375dbd806891c8"
+  },
+  {
+    "id": "raw.docx.paragraph.0002",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/1",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.公司信息化建设相关项目采购，包括：根据公司信息化项 目的建设和开发需要，进行的软件产品、硬件产品、软硬件组件 的购买，以及信息化业务系统建设、开发、升级、技术服务等的 采购；",
+    "value": {
+      "index": 70,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "a6c3bfc1e377eb9402ab215d3d37a71c23d17b1c49ac89c4d0a89af509c1d876"
+  },
+  {
+    "id": "raw.docx.paragraph.0003",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/2",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3.公司信息化系统运维采购，包括根据公司信息化项目运维",
+    "value": {
+      "index": 71,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "4670035fc044d0c6778ac6cda75ed7525db5f37715886ade1d20c3fa6b1765f2"
+  },
+  {
+    "id": "raw.docx.paragraph.0004",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/3",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4.公司科技创新项目采购，包括根据公司科技创新工作需要， 进行科技创新相关项目和课题所需的物资、研究开发和技术服务 等的采购；",
+    "value": {
+      "index": 77,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "92b0f8c04a1c29248e5708706f6eda0041c27313cf573e28fd8ca2390d1f95b5"
+  },
+  {
+    "id": "raw.docx.paragraph.0005",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/4",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "5.公司劳务服务采购，包括为满足公司经营需要进行的劳务 服务采购；",
+    "value": {
+      "index": 78,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "2e8ddbcbaa75da80efb8c13c3ffe6863913559929004e9346c8ab0b22a8aaf09"
+  },
+  {
+    "id": "raw.docx.paragraph.0006",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/5",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "6.公司中介机构及咨询服务采购，包括为满足公司生产经营 活动所需的评估、审计、法律服务、咨询、代理、监理、鉴证、 测评等的服务采购。",
+    "value": {
+      "index": 79,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "2c2a668e28057ae4ff8b9a620e2e3b1b945403c2d27aaa5673fcd9c02b520c15"
+  },
+  {
+    "id": "raw.docx.paragraph.0007",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/6",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.相关的设备、材料等货物单项合同估算价在 200 万元（含） 以上的；",
+    "value": {
+      "index": 83,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "84dd3ecfc9164bf50284be08474b13a15289bbb1237cd9f81b2533429534664c"
+  },
+  {
+    "id": "raw.docx.paragraph.0008",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/7",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3.勘察、设计、监理等服务单项合同估算价在 100 万元（含） 以上的；",
+    "value": {
+      "index": 84,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "f295aa39e46b79c27cab6c696c77d0fd22828183da68da735bf8e4f37bfe6443"
+  },
+  {
+    "id": "raw.docx.paragraph.0009",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/8",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4. 同一项目 中可以合并进行的勘察、设计、施工、监理以 及与工程建设有关的重要设备、材料等的采购，合同估算价合 计达到前款规定标准的；",
+    "value": {
+      "index": 85,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "276c7236d1702bce0761cfa123fb08e43f67fa7061df34bbdae4b2949444eab8"
+  },
+  {
+    "id": "raw.docx.paragraph.0010",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/9",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "5.其他按照国家有关规定必须招标的。",
+    "value": {
+      "index": 86,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "94dbbb9e15aae8f6ffed6c7ab3030ac89240e5ebf5453e9b72791e4eb764a2e1"
+  },
+  {
+    "id": "raw.docx.paragraph.0011",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/10",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少量 潜在投标人可供选择的；",
+    "value": {
+      "index": 92,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "c47875f065addfe7c77abafc5730c7123cda499a08970d3be27ec135ae5b5337"
+  },
+  {
+    "id": "raw.docx.paragraph.0012",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/11",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.涉及国家安全、 国家秘密或者抢险救灾，适宜招标但不 适宜公开招标的。",
+    "value": {
+      "index": 93,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "4adf9f9b39b6e41e7fa96095b9f1e52019d4f1c0090ec90efa4156c4e57e724e"
+  },
+  {
+    "id": "raw.docx.paragraph.0013",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/12",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少数 潜在投标人可供选择的；",
+    "value": {
+      "index": 95,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "3d09012335490b7c5643b06d1c68494d9abe60f576846132a6751861a411b416"
+  },
+  {
+    "id": "raw.docx.paragraph.0014",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/13",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.涉及国家安全、 国家秘密、公司商业秘密、抢险救灾，适 宜招标但不适宜公开招标的。",
+    "value": {
+      "index": 96,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "90dc2d1e0ba6feff660b50cc900bf3258e6135391e9badb49c650f4c804bc013"
+  },
+  {
+    "id": "raw.docx.paragraph.0015",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/14",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "50 万元以下的由经营管理部分管领导审批。",
+    "value": {
+      "index": 172,
+      "styleId": "TableText",
+      "styleName": "Table Text",
+      "outlineLevel": null
+    },
+    "sha256": "3118e47ad273261f961dd53b0ade0909e20eef68a5d30f1b17409a7abee6071f"
+  },
+  {
+    "id": "raw.docx.paragraph.0016",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/15",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "50 万元（含） 以上的由总经理审批。",
+    "value": {
+      "index": 183,
+      "styleId": "TableText",
+      "styleName": "Table Text",
+      "outlineLevel": null
+    },
+    "sha256": "9a283882eceff83252309d17f79f491a3dd00f75a74fd5043a659c2fe3c2a582"
+  },
+  {
+    "id": "raw.docx.paragraph.0017",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/16",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.将必须招标的项目化整为零或者以其他任何方式规避招 标；",
+    "value": {
+      "index": 470,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "a186443ce45b912d8511292f311f3fe0e7a055c68a838859622eb024c3351749"
+  },
+  {
+    "id": "raw.docx.paragraph.0018",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/17",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.与投标人串通进行虚假招标，明招暗定；",
+    "value": {
+      "index": 471,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "7b122213d1180c27ed74937cc4dc1a3157698fecbebeb6136677ea3d4f220657"
+  },
+  {
+    "id": "raw.docx.paragraph.0019",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/18",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3.非法干预评标（含谈判/询价）小组工作、影响评标（含谈 判/询价）结果；",
+    "value": {
+      "index": 472,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "2748cdbbbc6e789b09a3ad3f048a74bcf7a68ade15f95645514bd3cfa6311bfd"
+  },
+  {
+    "id": "raw.docx.paragraph.0020",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/19",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4.以不合理的条件限制或排斥潜在投标人参与投标竞争或对 潜在投标人实行歧视待遇；",
+    "value": {
+      "index": 473,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "77e1bb94cb0c947b7c5eff2f35a8c17de0e2a50e191c73974052c8e4d34d60fe"
+  },
+  {
+    "id": "raw.docx.paragraph.0021",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/20",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "5.强制投标人组成联合体共同投标，限制投标人之间竞争；",
+    "value": {
+      "index": 474,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "4516df675c66a0ed28543fecdc8d623c07b49b1ed689b1659a03dd276da65001"
+  },
+  {
+    "id": "raw.docx.paragraph.0022",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/21",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "6.在评标（含谈判/询价）小组按规定推荐的中标（成交）候 选人以外确定中标（成交）人；",
+    "value": {
+      "index": 479,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "67c23d6424443dac0c60a666be2ce57defbef4b4f4fbf799b4842717601825ab"
+  },
+  {
+    "id": "raw.docx.paragraph.0023",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/22",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "7.其他违反国家有关法律、法规、规章和公司有关规定的行 为。",
+    "value": {
+      "index": 480,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "8a1efc2b25cadcf4dc2be9a828be6a2c8d6d8ee5d1e772ada05000a5c46fac1d"
+  },
+  {
+    "id": "raw.docx.paragraph.0024",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/23",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "8.所有参加采购活动的评标（含谈判）小组成员和工作人员 严禁有下列行为：",
+    "value": {
+      "index": 481,
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null
+    },
+    "sha256": "475772b02c009b3ee9867fcf27c2bb407af1354e4a5d0139728486b81fddfcbc"
+  },
+  {
+    "id": "raw.docx.paragraph.0025",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/24",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1、拟成交金额为 5 万元（含） 以上 50 万元以下的采购项目，经营管理部分管领导审批后执行。",
+    "value": {
+      "index": 757,
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null
+    },
+    "sha256": "09a48e3c1841520497c93acabd6013b1e6b5cef6511839e96262236796aea5a4"
+  },
+  {
+    "id": "raw.docx.paragraph.0026",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/25",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2、拟成交金额为 50 万元（含） 以上 100 万元以下的采购项目，总经理审批后执行。",
+    "value": {
+      "index": 758,
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null
+    },
+    "sha256": "9adf3cdb0b818dd96b25261ec22a5d4894e57049b49a2fd8e9a9a0179e8f2040"
+  },
+  {
+    "id": "raw.docx.paragraph.0027",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/26",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3、拟成交金额为 100 万元（含） 以上 1000 万元以下的采购项目， 由经营管理部组织报公司总经 理办公会决议后，总经理签名后执行。",
+    "value": {
+      "index": 759,
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null
+    },
+    "sha256": "c7e9bbb069b68df38e7487b97ad2be20a85d47916f60b561109cd99fb5bb7235"
+  },
+  {
+    "id": "raw.docx.paragraph.0028",
+    "kind": "raw.docx.paragraph",
+    "pointer": "/rawProbeFacts/structure/headingCandidates/27",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4、拟成交金额为 1000 万元（含） 以上的采购项目， 由经营管理部组织报公司董事会决议后，董事长签 名后执行。",
+    "value": {
+      "index": 760,
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null
+    },
+    "sha256": "2e92bd192ce3217a652fa825f2dc52bfcf9a5803f85ad33627ded479365b03b7"
+  },
+  {
+    "id": "raw.docx.style.0001",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontUsage/0",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "Arial",
+    "value": {
+      "type": "fontUsage",
+      "value": "Arial",
+      "count": 377
+    },
+    "sha256": "b941000a52137c38a789a95d6ddce9847c83917bf0ae0299cc9b7c31c8f48523"
+  },
+  {
+    "id": "raw.docx.style.0002",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontUsage/1",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "SimSun",
+    "value": {
+      "type": "fontUsage",
+      "value": "SimSun",
+      "count": 155
+    },
+    "sha256": "396d3bc8671fcbeaab566dda37ded7d5b8776572ee911ba1ec18cef3b5f0563d"
+  },
+  {
+    "id": "raw.docx.style.0003",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontUsage/2",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "Times New Roman",
+    "value": {
+      "type": "fontUsage",
+      "value": "Times New Roman",
+      "count": 8
+    },
+    "sha256": "23ad15c6e0d52c0f17f6665498491ea489d869ccb4d07782c34516b4223dff54"
+  },
+  {
+    "id": "raw.docx.style.0004",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontUsage/3",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "MS UI Gothic",
+    "value": {
+      "type": "fontUsage",
+      "value": "MS UI Gothic",
+      "count": 1
+    },
+    "sha256": "3c31a8c6652af03d9f164513d40477308ecd7e3e5a5fff0f95fff73cf7ca177a"
+  },
+  {
+    "id": "raw.docx.style.0005",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontUsage/4",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "SimHei",
+    "value": {
+      "type": "fontUsage",
+      "value": "SimHei",
+      "count": 1
+    },
+    "sha256": "1b43b026f8716a4a9fab0f61d581b16be0caa3a06aaff308f2d1b926f2e9b1fc"
+  },
+  {
+    "id": "raw.docx.style.0006",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/5",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "21",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "21",
+      "count": 362
+    },
+    "sha256": "e201a17a5babc215f7fdccf3ff70b817b34fe785fc825751b6eb5b6cf651ee0e"
+  },
+  {
+    "id": "raw.docx.style.0007",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/6",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "18",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "18",
+      "count": 146
+    },
+    "sha256": "12d84988d7a75b8c2b3528996a54577a6b8815a8ae755bb5cab2dea8dfa50c7a"
+  },
+  {
+    "id": "raw.docx.style.0008",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/7",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "24",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "24",
+      "count": 8
+    },
+    "sha256": "1d34be54387cd67336ba834f6166bda9fc5be9854c6b2a56549189f14a602c02"
+  },
+  {
+    "id": "raw.docx.style.0009",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/8",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "25",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "25",
+      "count": 7
+    },
+    "sha256": "e361ed9626a9988ae8a82390418e3e175f41f040958e0e471a378dbeb931f04b"
+  },
+  {
+    "id": "raw.docx.style.0010",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/9",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "19",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "19",
+      "count": 6
+    },
+    "sha256": "7347bec27c38334476ccd5a103f2a30f73e8a2737d22d002677858cf6ff20ef0"
+  },
+  {
+    "id": "raw.docx.style.0011",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/10",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "2",
+      "count": 5
+    },
+    "sha256": "d86eda44be5f305e3ae81e1ddcab1f9c9e4e2fa62aca19d16ce5506c429536bd"
+  },
+  {
+    "id": "raw.docx.style.0012",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/11",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "31",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "31",
+      "count": 4
+    },
+    "sha256": "faaead1fd901a3bf915ba2c3901f56fe775e274ad3ac541932b8d8d6aab9d6cc"
+  },
+  {
+    "id": "raw.docx.style.0013",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/12",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "22",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "22",
+      "count": 1
+    },
+    "sha256": "898fa32468e755d62fa907e81127291fbb8de7473fd14ba0eeb15779c49c1185"
+  },
+  {
+    "id": "raw.docx.style.0014",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/13",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "28",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "28",
+      "count": 1
+    },
+    "sha256": "2f022b4420a69dd98a311542b856aed9cdf6b5d03f975600ba1f1bfa8b23d25a"
+  },
+  {
+    "id": "raw.docx.style.0015",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/fontSizeHalfPoints/14",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "43",
+    "value": {
+      "type": "fontSizeHalfPoints",
+      "value": "43",
+      "count": 1
+    },
+    "sha256": "81b2a8f7455ca918a72e2e6b6d9010354d3e9768514c258cc0a205653c407058"
+  },
+  {
+    "id": "raw.docx.style.0016",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/paragraph/15",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "Normal",
+    "value": {
+      "type": "paragraph",
+      "styleId": "Normal",
+      "name": "Normal",
+      "basedOn": null,
+      "next": null,
+      "outlineLevel": null,
+      "fonts": [],
+      "fontSizesHalfPoints": [],
+      "hasBold": false,
+      "hasItalic": false
+    },
+    "sha256": "a862e0ebd8822834e0ff4670c9327fbcd6e27ac3fcf93631692e3cafdd4100a1"
+  },
+  {
+    "id": "raw.docx.style.0017",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/table/16",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "Table Normal",
+    "value": {
+      "type": "table",
+      "styleId": "TableNormal",
+      "name": "Table Normal",
+      "basedOn": null,
+      "next": null,
+      "outlineLevel": null,
+      "fonts": [],
+      "fontSizesHalfPoints": [],
+      "hasBold": false,
+      "hasItalic": false
+    },
+    "sha256": "1fc3a6194ae2c7c301f7a1461b4af30675f0d2f21f82c9de3da21d2084e34330"
+  },
+  {
+    "id": "raw.docx.style.0018",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/paragraph/17",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "Body Text",
+    "value": {
+      "type": "paragraph",
+      "styleId": "BodyText",
+      "name": "Body Text",
+      "basedOn": "Normal",
+      "next": null,
+      "outlineLevel": null,
+      "fonts": [
+        "FangSong",
+        "en-US"
+      ],
+      "fontSizesHalfPoints": [
+        "31"
+      ],
+      "hasBold": false,
+      "hasItalic": false
+    },
+    "sha256": "8065cd5d59944f4859ff87b1838d4a1ab3fe13bd38fc671c0e307394fcff5bcf"
+  },
+  {
+    "id": "raw.docx.style.0019",
+    "kind": "raw.docx.style",
+    "pointer": "/styleProfile/typography/paragraph/18",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "Table Text",
+    "value": {
+      "type": "paragraph",
+      "styleId": "TableText",
+      "name": "Table Text",
+      "basedOn": "Normal",
+      "next": null,
+      "outlineLevel": null,
+      "fonts": [
+        "FangSong",
+        "en-US"
+      ],
+      "fontSizesHalfPoints": [
+        "20"
+      ],
+      "hasBold": false,
+      "hasItalic": false
+    },
+    "sha256": "93dd77f88dabd272c36af6ab1149771320518298cee98727bde006fe51730011"
+  },
+  {
+    "id": "profile.structure.0001",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/0",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.公司生产运营所需物资和服务采购，包括：各类机械设备、 电气设备、信息设备、车辆、工器具、办公用品等的采购；相关 设备维修、运维服务采购； 以及车辆租赁、物流服务、物业服务 等的采购。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 69,
+      "text": "1.公司生产运营所需物资和服务采购，包括：各类机械设备、 电气设备、信息设备、车辆、工器具、办公用品等的采购；相关 设备维修、运维服务采购； 以及车辆租赁、物流服务、物业服务 等的采购。",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "e5fa376683af3582b0c9c63c6438e13a5ac34541fcbda0070e29efee8cff8fb1"
+  },
+  {
+    "id": "profile.structure.0002",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/1",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.公司信息化建设相关项目采购，包括：根据公司信息化项 目的建设和开发需要，进行的软件产品、硬件产品、软硬件组件 的购买，以及信息化业务系统建设、开发、升级、技术服务等的 采购；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 70,
+      "text": "2.公司信息化建设相关项目采购，包括：根据公司信息化项 目的建设和开发需要，进行的软件产品、硬件产品、软硬件组件 的购买，以及信息化业务系统建设、开发、升级、技术服务等的 采购；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "0e768a8787131f3a31f3f3432a8a947e581965fa6c78b4fdb32d76f2e12bd9fa"
+  },
+  {
+    "id": "profile.structure.0003",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/2",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3.公司信息化系统运维采购，包括根据公司信息化项目运维",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 71,
+      "text": "3.公司信息化系统运维采购，包括根据公司信息化项目运维",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "24e77e4faeb4e7f306a7110047cc101d29c36a81cc347d1dbd8892f874426f78"
+  },
+  {
+    "id": "profile.structure.0004",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/3",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4.公司科技创新项目采购，包括根据公司科技创新工作需要， 进行科技创新相关项目和课题所需的物资、研究开发和技术服务 等的采购；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 77,
+      "text": "4.公司科技创新项目采购，包括根据公司科技创新工作需要， 进行科技创新相关项目和课题所需的物资、研究开发和技术服务 等的采购；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "75f5de9c26f7722305236445653be5f84bc8a2445f8c6bc07167150ddf6b2171"
+  },
+  {
+    "id": "profile.structure.0005",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/4",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "5.公司劳务服务采购，包括为满足公司经营需要进行的劳务 服务采购；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 78,
+      "text": "5.公司劳务服务采购，包括为满足公司经营需要进行的劳务 服务采购；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "98229bb2d894e08536847ba10a0a6972cbfdfd33241eef7dbea109c4df2a9188"
+  },
+  {
+    "id": "profile.structure.0006",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/5",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "6.公司中介机构及咨询服务采购，包括为满足公司生产经营 活动所需的评估、审计、法律服务、咨询、代理、监理、鉴证、 测评等的服务采购。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 79,
+      "text": "6.公司中介机构及咨询服务采购，包括为满足公司生产经营 活动所需的评估、审计、法律服务、咨询、代理、监理、鉴证、 测评等的服务采购。",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "e618d9f79ca579caa34ccbbf34875057fcddfda48a92d5aaa2d10684d039ee2a"
+  },
+  {
+    "id": "profile.structure.0007",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/6",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.相关的设备、材料等货物单项合同估算价在 200 万元（含） 以上的；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 83,
+      "text": "2.相关的设备、材料等货物单项合同估算价在 200 万元（含） 以上的；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "cc1332dea7af9f178fe0061fc915a70cf4a52aa4e4c7d4a25b633edc33b07b14"
+  },
+  {
+    "id": "profile.structure.0008",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/7",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3.勘察、设计、监理等服务单项合同估算价在 100 万元（含） 以上的；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 84,
+      "text": "3.勘察、设计、监理等服务单项合同估算价在 100 万元（含） 以上的；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "81f8dcadac1b975d06af09fd6992e62967688c6bc232e4a5cf68f3a601c8009b"
+  },
+  {
+    "id": "profile.structure.0009",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/8",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4. 同一项目 中可以合并进行的勘察、设计、施工、监理以 及与工程建设有关的重要设备、材料等的采购，合同估算价合 计达到前款规定标准的；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 85,
+      "text": "4. 同一项目 中可以合并进行的勘察、设计、施工、监理以 及与工程建设有关的重要设备、材料等的采购，合同估算价合 计达到前款规定标准的；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "ea2d7d096732b216eb0a9c228d7796f082b013fcf085d7df2d2fba92d773c1df"
+  },
+  {
+    "id": "profile.structure.0010",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/9",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "5.其他按照国家有关规定必须招标的。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 86,
+      "text": "5.其他按照国家有关规定必须招标的。",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "596de1b6e3085455bb15167593bb7d21fc732222927693897d0826a929d2d0eb"
+  },
+  {
+    "id": "profile.structure.0011",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/10",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少量 潜在投标人可供选择的；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 92,
+      "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少量 潜在投标人可供选择的；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "81ed6056d0d30b8e00f7089e13b89d5f3759176c6bac960224503d1827c68d74"
+  },
+  {
+    "id": "profile.structure.0012",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/11",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.涉及国家安全、 国家秘密或者抢险救灾，适宜招标但不 适宜公开招标的。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 93,
+      "text": "2.涉及国家安全、 国家秘密或者抢险救灾，适宜招标但不 适宜公开招标的。",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "9ffdda33c2ed54691c4330353de965723a95adc6051cc738118e9703991e1fac"
+  },
+  {
+    "id": "profile.structure.0013",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/12",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少数 潜在投标人可供选择的；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 95,
+      "text": "1.技术复杂、有特殊要求或者受 自然环境限制，只有少数 潜在投标人可供选择的；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "f0d8a6225f5eca8b38739e6611b34bf09aa54edb9e49e28aa2e845633cc47544"
+  },
+  {
+    "id": "profile.structure.0014",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/13",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.涉及国家安全、 国家秘密、公司商业秘密、抢险救灾，适 宜招标但不适宜公开招标的。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 96,
+      "text": "2.涉及国家安全、 国家秘密、公司商业秘密、抢险救灾，适 宜招标但不适宜公开招标的。",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "1ecdc7e9439babdee63236f41f8373f45356d033f790ff8406af6a5682a5b053"
+  },
+  {
+    "id": "profile.structure.0015",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/14",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "50 万元以下的由经营管理部分管领导审批。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 172,
+      "text": "50 万元以下的由经营管理部分管领导审批。",
+      "styleId": "TableText",
+      "styleName": "Table Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "95f57bebd9395321e5d1e90d8a6fdc545b20215bac9169f29805a1825b8643cd"
+  },
+  {
+    "id": "profile.structure.0016",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/15",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "50 万元（含） 以上的由总经理审批。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 183,
+      "text": "50 万元（含） 以上的由总经理审批。",
+      "styleId": "TableText",
+      "styleName": "Table Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "6ff63f9e866a8b4779e39d58034544327bdf494df4f9199cfcbb44475a528c48"
+  },
+  {
+    "id": "profile.structure.0017",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/16",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1.将必须招标的项目化整为零或者以其他任何方式规避招 标；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 470,
+      "text": "1.将必须招标的项目化整为零或者以其他任何方式规避招 标；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "28cf1b1d39c611a33028bdab8892ccfdc8b08d100bf2654e55f7073e6b615760"
+  },
+  {
+    "id": "profile.structure.0018",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/17",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2.与投标人串通进行虚假招标，明招暗定；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 471,
+      "text": "2.与投标人串通进行虚假招标，明招暗定；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "b79ff34defea912aa29b35452e6e5bd55ec9ba4ac94a0f884fb80262249eb82b"
+  },
+  {
+    "id": "profile.structure.0019",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/18",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3.非法干预评标（含谈判/询价）小组工作、影响评标（含谈 判/询价）结果；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 472,
+      "text": "3.非法干预评标（含谈判/询价）小组工作、影响评标（含谈 判/询价）结果；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "da61fdead80944e6c168a4f449e9d718c954ca718494d19842ddf3b37e832b11"
+  },
+  {
+    "id": "profile.structure.0020",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/19",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4.以不合理的条件限制或排斥潜在投标人参与投标竞争或对 潜在投标人实行歧视待遇；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 473,
+      "text": "4.以不合理的条件限制或排斥潜在投标人参与投标竞争或对 潜在投标人实行歧视待遇；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "97a9c6a0e08ff7ce7227ca60677d9ebf53fb7a61f85965fa105e1989251769d1"
+  },
+  {
+    "id": "profile.structure.0021",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/20",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "5.强制投标人组成联合体共同投标，限制投标人之间竞争；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 474,
+      "text": "5.强制投标人组成联合体共同投标，限制投标人之间竞争；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "055df676729a6fe7f1345c42a339e0b0bf0a688b733f411114fd743bcad707c3"
+  },
+  {
+    "id": "profile.structure.0022",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/21",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "6.在评标（含谈判/询价）小组按规定推荐的中标（成交）候 选人以外确定中标（成交）人；",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 479,
+      "text": "6.在评标（含谈判/询价）小组按规定推荐的中标（成交）候 选人以外确定中标（成交）人；",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "5e5451ed39911dac102d665759cf4a96a2bec201aae7dd76d9767f714d5e49ec"
+  },
+  {
+    "id": "profile.structure.0023",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/22",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "7.其他违反国家有关法律、法规、规章和公司有关规定的行 为。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 480,
+      "text": "7.其他违反国家有关法律、法规、规章和公司有关规定的行 为。",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "219d49d537241e685498c8624a74872981760aab6ce0b6e1c33b1581f3ea28d6"
+  },
+  {
+    "id": "profile.structure.0024",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/23",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "8.所有参加采购活动的评标（含谈判）小组成员和工作人员 严禁有下列行为：",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 481,
+      "text": "8.所有参加采购活动的评标（含谈判）小组成员和工作人员 严禁有下列行为：",
+      "styleId": "BodyText",
+      "styleName": "Body Text",
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "9fc2314bd67d57d1774de512195ba79317608abf918f8867609431468864261e"
+  },
+  {
+    "id": "profile.structure.0025",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/24",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "1、拟成交金额为 5 万元（含） 以上 50 万元以下的采购项目，经营管理部分管领导审批后执行。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 757,
+      "text": "1、拟成交金额为 5 万元（含） 以上 50 万元以下的采购项目，经营管理部分管领导审批后执行。",
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "b405f19e8c1e39e9f16f110c43b7d5795395e58ea9a419cf629a594a177d0e92"
+  },
+  {
+    "id": "profile.structure.0026",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/25",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "2、拟成交金额为 50 万元（含） 以上 100 万元以下的采购项目，总经理审批后执行。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 758,
+      "text": "2、拟成交金额为 50 万元（含） 以上 100 万元以下的采购项目，总经理审批后执行。",
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "39b2c88ab27178af6eaf3733bd66c504694d0b7dbb2aaceb2841eb28d9754a0f"
+  },
+  {
+    "id": "profile.structure.0027",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/26",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "3、拟成交金额为 100 万元（含） 以上 1000 万元以下的采购项目， 由经营管理部组织报公司总经 理办公会决议后，总经理签名后执行。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 759,
+      "text": "3、拟成交金额为 100 万元（含） 以上 1000 万元以下的采购项目， 由经营管理部组织报公司总经 理办公会决议后，总经理签名后执行。",
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "e64a73a106a555083b542205566f2e6a6844d7ab6cce78ff5fce46223b00061e"
+  },
+  {
+    "id": "profile.structure.0028",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/27",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "4、拟成交金额为 1000 万元（含） 以上的采购项目， 由经营管理部组织报公司董事会决议后，董事长签 名后执行。",
+    "value": {
+      "kind": "heading-candidate",
+      "index": 760,
+      "text": "4、拟成交金额为 1000 万元（含） 以上的采购项目， 由经营管理部组织报公司董事会决议后，董事长签 名后执行。",
+      "styleId": null,
+      "styleName": null,
+      "outlineLevel": null,
+      "numberingId": null,
+      "numberingLevel": null
+    },
+    "sha256": "78193a6268226f4deda0604db1ed512cbe38ff22009785b84bbaf39df7d4e831"
+  },
+  {
+    "id": "profile.style.0001",
+    "kind": "profile.style",
+    "pointer": "/styleProfile/layout",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "layout evidence",
+    "value": {
+      "page": {
+        "widthTwips": "11905",
+        "heightTwips": "16834",
+        "orientation": null,
+        "marginsTwips": {
+          "top": "1",
+          "right": "0",
+          "bottom": "1",
+          "left": "0"
+        }
+      }
+    },
+    "sha256": "275b40fbc10af67ca6dd1b3f4912cb300659518daf2ddf4c7426163a63e4dc58"
+  },
+  {
+    "id": "profile.style.0002",
+    "kind": "profile.style",
+    "pointer": "/styleProfile/typography",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "typography evidence",
+    "value": {
+      "fonts": [
+        "Arial",
+        "en-US",
+        "FangSong",
+        "SimHei",
+        "Times New Roman",
+        "SimSun",
+        "MS UI Gothic"
+      ],
+      "fontUsage": [
+        {
+          "value": "Arial",
+          "count": 377
+        },
+        {
+          "value": "SimSun",
+          "count": 155
+        },
+        {
+          "value": "Times New Roman",
+          "count": 8
+        },
+        {
+          "value": "MS UI Gothic",
+          "count": 1
+        },
+        {
+          "value": "SimHei",
+          "count": 1
+        }
+      ],
+      "fontSizeUsageHalfPoints": [
+        {
+          "value": "21",
+          "count": 362
+        },
+        {
+          "value": "18",
+          "count": 146
+        },
+        {
+          "value": "24",
+          "count": 8
+        },
+        {
+          "value": "25",
+          "count": 7
+        },
+        {
+          "value": "19",
+          "count": 6
+        },
+        {
+          "value": "2",
+          "count": 5
+        },
+        {
+          "value": "31",
+          "count": 4
+        },
+        {
+          "value": "22",
+          "count": 1
+        },
+        {
+          "value": "28",
+          "count": 1
+        },
+        {
+          "value": "43",
+          "count": 1
+        }
+      ],
+      "styleCount": 4,
+      "styleIds": [
+        "Normal",
+        "TableNormal",
+        "BodyText",
+        "TableText"
+      ],
+      "styles": [
+        {
+          "styleId": "Normal",
+          "type": "paragraph",
+          "name": "Normal",
+          "basedOn": null,
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [],
+          "fontSizesHalfPoints": [],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "TableNormal",
+          "type": "table",
+          "name": "Table Normal",
+          "basedOn": null,
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [],
+          "fontSizesHalfPoints": [],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "BodyText",
+          "type": "paragraph",
+          "name": "Body Text",
+          "basedOn": "Normal",
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [
+            "FangSong",
+            "en-US"
+          ],
+          "fontSizesHalfPoints": [
+            "31"
+          ],
+          "hasBold": false,
+          "hasItalic": false
+        },
+        {
+          "styleId": "TableText",
+          "type": "paragraph",
+          "name": "Table Text",
+          "basedOn": "Normal",
+          "next": null,
+          "outlineLevel": null,
+          "fonts": [
+            "FangSong",
+            "en-US"
+          ],
+          "fontSizesHalfPoints": [
+            "20"
+          ],
+          "hasBold": false,
+          "hasItalic": false
+        }
+      ]
+    },
+    "sha256": "fb09334ee401f723d6f3735852396e73a7ca2e0e2054813f52b37b56cf4bb651"
+  },
+  {
+    "id": "profile.style.0004",
+    "kind": "profile.style",
+    "pointer": "/styleProfile/formatSpecific",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "formatSpecific evidence",
+    "value": {
+      "extractionStage": "basic_probe",
+      "realParserAttached": true,
+      "officeKind": "docx",
+      "entryCount": 41,
+      "numberingDefinitions": 0
+    },
+    "sha256": "a3fa26fbc61035fbd7abbc3d893569f00782c01d25898b17dec19d0afb7a915a"
+  },
+  {
+    "id": "diagnostic.0001",
+    "kind": "diagnostic",
+    "pointer": "/diagnostics/0",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "info probe.completed: Phase 2 已完成 DOCX 基础探测：段落 925、候选标题 28、表格 15、样式 4、字体线索 7。",
+    "value": {
+      "severity": "info",
+      "code": "probe.completed",
+      "message": "Phase 2 已完成 DOCX 基础探测：段落 925、候选标题 28、表格 15、样式 4、字体线索 7。"
+    },
+    "sha256": "3a88dff507f8f61b51bd08833b0cea3a891c61b0491617015852046f08e7b9b5"
+  },
+  {
+    "id": "diagnostic.0002",
+    "kind": "diagnostic",
+    "pointer": "/diagnostics/1",
+    "sourcePath": "runtime/format-profile/samples/local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+    "text": "info binding.adaptation_mode: 该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。",
+    "value": {
+      "severity": "info",
+      "code": "binding.adaptation_mode",
+      "message": "该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。"
+    },
+    "sha256": "38d312d4361a780b4f64dee41b522eb059ab967939bb2fdfd0a6dc37b07ba27f"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "format-profile-evaluator-report.v0",
+  "caseId": "pdf-reference",
+  "verdict": "not_run",
+  "ruleResults": [],
+  "metrics": {
+    "qualityScore": 0
+  },
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "llm_disabled",
+      "message": "LLM refinement disabled by mode."
+    }
+  ]
+}

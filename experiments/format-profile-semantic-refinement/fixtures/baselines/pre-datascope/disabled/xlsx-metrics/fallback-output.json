@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "format-profile-harness-output.v0",
+  "caseId": "xlsx-metrics",
+  "attemptStatus": "not_attempted",
+  "evaluatorVerdict": "not_run",
+  "finalStatus": "fallback",
+  "fallbackReason": "llm_disabled",
+  "hashes": {
+    "deterministicProfileSha256": "b83f8d5c49ae762164f6089b2e951e48b44dd9410d070d58293b23779c58db6e",
+    "deterministicInstructionSha256": "bd675997d28cfff9614d69aaa3c3ff6539e86270fc805543e8e67d6e17635b0b",
+    "rawEvidenceSha256": "a3fd137504a74c5bddf64f96d674063c6be07e6609bc47219aece8298e9c5822",
+    "renderedInstructionSha256": "bd675997d28cfff9614d69aaa3c3ff6539e86270fc805543e8e67d6e17635b0b"
+  },
+  "renderedGenerationInstruction": "# Generation Instruction: batch_35_xlsx_local_01_data_element\n\n## 任务\n\n根据该表格成品提炼表格结构、指标表达和可用于底稿生成的约束。\n\n## 模式\n\n先选择格式画像，再按画像生成底稿。\n\n## 探测摘要\n\n- Profile: profile_batch_35_xlsx_local_01_data_element\n- 文件类型: xlsx\n- 文档类型推断: 表格/指标分析\n- 画像置信度: medium\n- Snapshot: 4465418fc84c1dba50060c6b6c9caf1517896f63316339559a7ef0e7e42b1582\n- 探测摘要: 工作表 1、共享字符串 65、字体 4、填充 3\n\n## 临时调整\n\n- experiment: phase2-batch\n- formatBoundary: XLSX 用于表格结构和指标表达，不生成 Excel 成品。\n\n## 写作约束\n\n1. 优先满足用户目标，不把格式说明混入正文。\n2. 持续遵守当前 FormatBinding；后续补写、改写和续写均默认继承该绑定。\n3. 如果格式画像与用户材料冲突，保留用户事实，并在 diagnostics 中说明冲突。\n4. 对 DOCX，优先生成正式文稿结构；对 XLSX，优先生成表格化分析；对 PPTX，优先生成逐页汇报底稿；对 PDF，仅作为参考成品。\n\n## 画像约束\n\n- 将该格式视为表格/指标表达参考，而不是普通长文皮肤。\n- 工作表线索：Sheet1\n- 输出底稿时优先组织为指标分组、字段口径、结论摘要和补充说明。\n\n## 能力边界\n\n- [info] probe.completed: Phase 2 已完成 XLSX 基础探测：工作表 1、共享字符串 65、字体 4、填充 3。\n- [info] format.xlsx.boundary: XLSX 用作表格结构和指标表达参考，不在本阶段生成 Excel 成品。\n",
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "llm_disabled",
+      "message": "LLM refinement disabled by mode."
+    }
+  ],
+  "reports": {
+    "evaluatorReportPath": "evaluator-report.json"
+  }
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "id": "raw.xlsx.sheet.0001",
+    "kind": "raw.xlsx.sheet",
+    "pointer": "/rawProbeFacts/structure/sheets/0",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "Sheet1",
+    "value": {
+      "name": "Sheet1",
+      "sheetId": "1"
+    },
+    "sha256": "e0433104c4a3f3ca0c1a57208fbdfb2fb270929e3d45d4ba1bdebe2cf04928c4"
+  },
+  {
+    "id": "profile.structure.0001",
+    "kind": "profile.structure",
+    "pointer": "/structureProfile/sections/0",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "worksheet",
+    "value": {
+      "kind": "worksheet",
+      "index": 1,
+      "name": "Sheet1",
+      "sheetId": "1"
+    },
+    "sha256": "d6a05d91d637e2a361548242dd7568716427eba0cf1f096af1bd33cdc077afb3"
+  },
+  {
+    "id": "profile.style.0001",
+    "kind": "profile.style",
+    "pointer": "/styleProfile/layout",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "layout evidence",
+    "value": {
+      "sheets": [
+        {
+          "path": "xl/worksheets/sheet1.xml",
+          "dimension": "A1:C29"
+        }
+      ]
+    },
+    "sha256": "2d305792286124fe5492f03b13f367eb5a4e7a79a7156e0c1796c598de2ead90"
+  },
+  {
+    "id": "profile.style.0002",
+    "kind": "profile.style",
+    "pointer": "/styleProfile/typography",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "typography evidence",
+    "value": {
+      "fontCount": 4
+    },
+    "sha256": "7f4750990f741c01570aae99ab5f0bb2328fe6344c81da873d51b820df843155"
+  },
+  {
+    "id": "profile.style.0003",
+    "kind": "profile.style",
+    "pointer": "/styleProfile/colors",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "colors evidence",
+    "value": {
+      "fillCount": 3,
+      "borderCount": 5
+    },
+    "sha256": "ce520b84d9fe23e1315cea1c646d03b2ba8cb99729aebdeeaf7ba2ba60756f77"
+  },
+  {
+    "id": "profile.style.0004",
+    "kind": "profile.style",
+    "pointer": "/styleProfile/formatSpecific",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "formatSpecific evidence",
+    "value": {
+      "extractionStage": "basic_probe",
+      "realParserAttached": true,
+      "officeKind": "xlsx",
+      "cellStyleCount": 1,
+      "sharedStringCount": 65
+    },
+    "sha256": "80149d0d487913da916227b80ec04605ec77385de42defb8c4f6fb318a6ab63d"
+  },
+  {
+    "id": "diagnostic.0001",
+    "kind": "diagnostic",
+    "pointer": "/diagnostics/0",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "info probe.completed: Phase 2 已完成 XLSX 基础探测：工作表 1、共享字符串 65、字体 4、填充 3。",
+    "value": {
+      "severity": "info",
+      "code": "probe.completed",
+      "message": "Phase 2 已完成 XLSX 基础探测：工作表 1、共享字符串 65、字体 4、填充 3。"
+    },
+    "sha256": "13a5b6e97c78bb4a74eac7eba084ed7d44f86660760d731ccbeee05422369b4e"
+  },
+  {
+    "id": "diagnostic.0002",
+    "kind": "diagnostic",
+    "pointer": "/diagnostics/1",
+    "sourcePath": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "text": "info format.xlsx.boundary: XLSX 用作表格结构和指标表达参考，不在本阶段生成 Excel 成品。",
+    "value": {
+      "severity": "info",
+      "code": "format.xlsx.boundary",
+      "message": "XLSX 用作表格结构和指标表达参考，不在本阶段生成 Excel 成品。"
+    },
+    "sha256": "d2a58e3d604ce55c299a7903d3b3a5e374ef049478dd9f49a71521960af5c7f2"
+  }
+]

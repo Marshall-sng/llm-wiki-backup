@@ -1,35 +1,10 @@
 import { create } from "zustand"
 import type { ChatMessage } from "@/lib/llm-client"
+import type { DraftProcessingContext, MessageReference } from "@/lib/format-profile-types"
 
-export interface MessageReference {
-  title: string
-  path: string
-}
+export type { DraftProcessingContext, DraftProcessingFormatProfileSnapshot, MessageReference } from "@/lib/format-profile-types"
 
 export type ConversationKind = "normal" | "draft-processing"
-
-export interface DraftProcessingContext {
-  draftId: string
-  draftTitle: string
-  parentContentHash: string
-  instruction: string
-  references: MessageReference[]
-  startedAt: number
-  templateSnapshot?: DraftProcessingTemplateSnapshot
-}
-
-export interface DraftProcessingTemplateSnapshot {
-  id: string
-  title: string
-  description: string
-  intent: string
-  requiredSections: string[]
-  sectionOrder: string[]
-  tone: string
-  lengthLimit: string
-  citationPolicy: string
-  capturedAt: number
-}
 
 export interface Conversation {
   id: string

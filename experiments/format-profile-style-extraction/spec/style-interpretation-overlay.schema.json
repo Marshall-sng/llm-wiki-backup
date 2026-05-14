@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Style Interpretation Overlay v0",
+  "type": "object",
+  "required": ["schemaVersion", "caseId", "status", "claims"],
+  "properties": {
+    "schemaVersion": { "const": "format-profile-style-interpretation.v0" },
+    "caseId": { "type": "string" },
+    "status": { "enum": ["accepted", "rejected"] },
+    "claims": { "type": "array" },
+    "diagnostics": { "type": "array" }
+  },
+  "additionalProperties": false
+}

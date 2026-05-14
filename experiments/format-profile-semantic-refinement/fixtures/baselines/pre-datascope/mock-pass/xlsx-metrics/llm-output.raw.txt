@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "format-profile-llm-overlay.v0",
+  "caseId": "xlsx-metrics",
+  "confidence": {
+    "semanticConfidence": "medium",
+    "notes": [
+      "mock-pass overlay for harness validation"
+    ]
+  },
+  "semanticOverlay": {
+    "documentKind": {
+      "value": "表格/指标分析",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001"
+      ],
+      "inference": false,
+      "rationale": "documentKind comes from deterministic profile label."
+    },
+    "structureSummary": {
+      "value": [
+        "以工作表、字段、指标和数据区域为主要组织边界。",
+        "生成底稿时优先输出表格化分析框架，而不是承诺生成 Excel 文件。"
+      ],
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "inference": true,
+      "rationale": "Structure summary is compressed from profile/evidence headings or format facts."
+    },
+    "styleSummary": {
+      "value": [
+        "保留字体、填充、表格区域和工作表数量等线索，用于判断数据呈现密度。"
+      ],
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003"
+      ],
+      "inference": true,
+      "rationale": "Style summary cites style evidence and avoids export promises."
+    },
+    "writingConstraints": {
+      "value": [
+        "围绕指标解释、口径说明、数据质量和后续填表步骤组织内容。"
+      ],
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001",
+        "diagnostic.0001"
+      ],
+      "inference": true,
+      "rationale": "Writing constraints preserve user fact boundary."
+    },
+    "formatBoundaries": {
+      "value": [
+        "XLSX 画像用于表格结构和分析约束，不代表会生成电子表格成品。"
+      ],
+      "evidenceRefs": [
+        "diagnostic.0001"
+      ],
+      "inference": true,
+      "rationale": "Boundaries are derived from capability diagnostics and harness policy."
+    }
+  },
+  "diagnostics": [
+    {
+      "severity": "info",
+      "code": "mock_pass",
+      "message": "Mock overlay generated for harness validation.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001"
+      ]
+    }
+  ]
+}

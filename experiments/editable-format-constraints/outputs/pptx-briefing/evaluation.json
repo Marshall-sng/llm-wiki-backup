@@ -1,0 +1,93 @@
+{
+  "caseId": "pptx-briefing",
+  "verdict": "pass",
+  "baseline": {
+    "ruleCount": 12,
+    "hash": "c6c1c00186fc6c762816f7fe4b717818272b57147843383faee65f2af44d4b6b"
+  },
+  "metrics": {
+    "autoRuleCount": 17,
+    "editedRuleCount": 17,
+    "warningCount": 34,
+    "editedOverrides": 1
+  },
+  "variants": {
+    "auto": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "missingSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:deck-structure-31: missing source defaulted to inferred",
+        "soft-source-default:deck-slide-size: missing source defaulted to inferred",
+        "soft-source-default:theme-office-cue: missing source defaulted to inferred",
+        "soft-source-default:theme-color-count: missing source defaulted to inferred",
+        "soft-source-default:layout-master-discipline: missing source defaulted to inferred",
+        "soft-source-default:layout-margins-grid: missing source defaulted to inferred",
+        "soft-source-default:cover-slide-fields: missing source defaulted to inferred",
+        "soft-source-default:content-slide-title: missing source defaulted to inferred",
+        "soft-source-default:content-slide-body: missing source defaulted to inferred",
+        "soft-source-default:bullet-hierarchy: missing source defaulted to inferred",
+        "soft-source-default:section-divider: missing source defaulted to inferred",
+        "soft-source-default:picture-text-layout: missing source defaulted to inferred",
+        "soft-source-default:visual-density-control: missing source defaulted to inferred",
+        "soft-source-default:keyword-card-layout: missing source defaulted to inferred",
+        "soft-source-default:statistic-treatment: missing source defaulted to inferred",
+        "soft-source-default:table-policy: missing source defaulted to inferred",
+        "soft-source-default:boundary-pptx-reference-only: missing source defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "unknownSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:deck-structure-31: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:deck-slide-size: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:theme-office-cue: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:theme-color-count: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:layout-master-discipline: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:layout-margins-grid: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:cover-slide-fields: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:content-slide-title: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:content-slide-body: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:bullet-hierarchy: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:section-divider: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:picture-text-layout: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:visual-density-control: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:keyword-card-layout: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:statistic-treatment: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:table-policy: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:boundary-pptx-reference-only: unknown source \"parser-stylefacts\" defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "edited": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "negativeUnknownEvidence": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "evidence:deck-structure-31: unknown evidenceRef missing.evidence"
+      ]
+    },
+    "negativeForbiddenField": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "forbidden-field:rawText"
+      ]
+    },
+    "negativeFidelityPromise": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "boundary-promise:fidelity/export promise detected"
+      ]
+    }
+  }
+}

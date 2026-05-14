@@ -1,0 +1,22 @@
+{
+  "caseId": "xlsx-metrics",
+  "diagnostics": [],
+  "metrics": {
+    "diagnosticCount": 0,
+    "ruleCount": 12,
+    "targetCount": 9
+  },
+  "outputDir": "experiments/format-spec/outputs/xlsx-metrics",
+  "provenance": {
+    "caseSha256": "c16e28b0434cb6a8d5cf0b069c1d2a378672ee9b49b7411dfb21417f5d4dab24",
+    "draftPromptSha256": "95ef7a01d637de0034196f28bd6286aa4b710c5753f13ffde25096e6e6a7412c",
+    "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+    "formatSpecMarkdownSha256": "e4b81738697126019d49bc701abd983c4a6547f74fa4bc58207506720da03eb0",
+    "formatSpecSha256": "9b349d4bf699e0fb4b4890d0287f0f8bdbb6c2d5537e32fd5f27697a88220bfe",
+    "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975",
+    "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+    "inputSha256": "0f1a9a9e47be2e52b76b492983aeb773d251f8914b2a2eb20bc6584afde30ac3"
+  },
+  "schemaVersion": "format-spec-evaluation.v1",
+  "verdict": "pass"
+}

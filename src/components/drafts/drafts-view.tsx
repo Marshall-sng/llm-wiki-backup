@@ -8,25 +8,23 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { useDraftStore } from "@/stores/draft-store"
 import { useChatStore, type DraftProcessingContext } from "@/stores/chat-store"
 import { useWikiStore } from "@/stores/wiki-store"
-import { useTemplateStore } from "@/stores/template-store"
-import { buildDraftProcessingPrompt, buildDraftTemplateSnapshot } from "@/lib/draft-processing"
+import { useFormatProfileStore } from "@/stores/format-profile-store"
+import { buildDraftProcessingPrompt, buildDraftFormatProfileSnapshot } from "@/lib/draft-processing"
 import { compareDraftText } from "@/lib/draft-versioning"
-import { buildTemplateMatchReport, type TemplateMatchSeverity } from "@/lib/template-match"
+import type { FormatDiagnosticSeverity } from "@/lib/format-profile"
 
 function formatDate(ts: number): string {
   if (!Number.isFinite(ts)) return ""
   return new Date(ts).toLocaleString()
 }
 
-function templateMatchSeverityClass(severity: TemplateMatchSeverity): string {
+function formatDiagnosticSeverityClass(severity: FormatDiagnosticSeverity): string {
   switch (severity) {
-    case "pass":
-      return "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
-    case "missing":
+    case "error":
       return "border-destructive/30 bg-destructive/10 text-destructive"
     case "warning":
       return "border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300"
-    case "manual":
+    case "info":
       return "border-blue-500/30 bg-blue-500/10 text-blue-700 dark:text-blue-300"
   }
 }
@@ -45,26 +43,21 @@ export function DraftsView() {
   const createConversation = useChatStore((s) => s.createConversation)
   const enqueueDraftProcessingRequest = useChatStore((s) => s.enqueueDraftProcessingRequest)
   const setActiveView = useWikiStore((s) => s.setActiveView)
-  const templates = useTemplateStore((s) => s.templates)
-  const activeTemplateId = useTemplateStore((s) => s.activeTemplateId)
+  const formatProfiles = useFormatProfileStore((s) => s.profiles)
+  const activeProfileId = useFormatProfileStore((s) => s.activeProfileId)
 
   const sortedDrafts = useMemo(
     () => [...drafts].sort((a, b) => b.updatedAt - a.updatedAt),
     [drafts],
   )
   const selectedDraft = drafts.find((draft) => draft.id === selectedDraftId) ?? null
-  const activeTemplate = templates.find((template) => template.id === activeTemplateId) ?? null
+  const activeProfile = formatProfiles.find((profile) => profile.id === activeProfileId) ?? null
   const selectedVersion = selectedDraft?.versions.find((version) => version.id === selectedVersionId) ?? null
   const versionComparison = useMemo(() => (
     selectedDraft && selectedVersion
       ? compareDraftText(selectedDraft.content, selectedVersion.content)
       : null
   ), [selectedDraft?.id, selectedDraft?.content, selectedVersion?.id, selectedVersion?.content])
-  const templateMatchReport = useMemo(() => (
-    selectedDraft && activeTemplate
-      ? buildTemplateMatchReport(selectedDraft, activeTemplate)
-      : null
-  ), [activeTemplate, selectedDraft])
   const canStartProcessing = processingInstruction.trim().length > 0
 
   useEffect(() => {
@@ -81,7 +74,7 @@ export function DraftsView() {
     if (!selectedDraft) return
     const instruction = processingInstruction.trim()
     if (!instruction) return
-    const templateSnapshot = activeTemplate ? buildDraftTemplateSnapshot(activeTemplate) : undefined
+    const formatProfileSnapshot = activeProfile ? buildDraftFormatProfileSnapshot(activeProfile) : undefined
 
     const draftContext: DraftProcessingContext = {
       draftId: selectedDraft.id,
@@ -90,11 +83,11 @@ export function DraftsView() {
       instruction,
       references: [...selectedDraft.references],
       startedAt: Date.now(),
-      templateSnapshot,
+      formatProfileSnapshot,
     }
     const conversationId = createConversation({
-      title: templateSnapshot
-        ? t("drafts.templateProcessingConversationTitle", { title: selectedDraft.title })
+      title: formatProfileSnapshot
+        ? t("drafts.formatProfileProcessingConversationTitle", { title: selectedDraft.title })
         : t("drafts.processingConversationTitle", { title: selectedDraft.title }),
       kind: "draft-processing",
       draftContext,
@@ -102,7 +95,7 @@ export function DraftsView() {
     enqueueDraftProcessingRequest({
       id: `draft_processing_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
       conversationId,
-      prompt: buildDraftProcessingPrompt(selectedDraft, instruction, templateSnapshot),
+      prompt: buildDraftProcessingPrompt(selectedDraft, instruction, formatProfileSnapshot),
     })
     setProcessingInstruction("")
     setActiveView("wiki")
@@ -224,20 +217,20 @@ export function DraftsView() {
                     className="min-h-24 w-full resize-none rounded-md border border-input bg-background p-2 text-xs leading-relaxed outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/40"
                   />
                   <div className={`mt-2 rounded-md border p-2 text-[11px] leading-relaxed ${
-                    activeTemplate
+                    activeProfile
                       ? "border-primary/20 bg-primary/5 text-muted-foreground"
                       : "bg-muted/20 text-muted-foreground"
                   }`}
                   >
                     <div className="font-medium text-foreground">
-                      {activeTemplate
-                        ? t("drafts.processingTemplateActive", { title: activeTemplate.title })
-                        : t("drafts.processingTemplateNone")}
+                      {activeProfile
+                        ? t("drafts.processingFormatProfileActive", { title: activeProfile.title })
+                        : t("drafts.processingFormatProfileNone")}
                     </div>
                     <div className="mt-0.5">
-                      {activeTemplate
-                        ? t("drafts.processingTemplateActiveHint")
-                        : t("drafts.processingTemplateNoneHint")}
+                      {activeProfile
+                        ? t("drafts.processingFormatProfileActiveHint")
+                        : t("drafts.processingFormatProfileNoneHint")}
                     </div>
                   </div>
                   <Button
@@ -247,8 +240,8 @@ export function DraftsView() {
                     disabled={!canStartProcessing}
                     onClick={handleStartProcessing}
                   >
-                    {activeTemplate
-                      ? t("drafts.createTemplateProcessingConversation")
+                    {activeProfile
+                      ? t("drafts.createFormatProfileProcessingConversation")
                       : t("drafts.createProcessingConversation")}
                   </Button>
                   <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
@@ -256,34 +249,34 @@ export function DraftsView() {
                   </p>
                 </section>
 
-                {templateMatchReport && (
+                {activeProfile && (
                   <section className="mb-5 rounded-lg border bg-background/70 p-3">
                     <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                      {t("drafts.templateMatchReport")}
+                      {t("drafts.formatProfileDiagnostics")}
                     </h2>
                     <div className="mb-2 rounded-md bg-muted/30 p-2 text-[11px] leading-relaxed text-muted-foreground">
                       <div className="font-medium text-foreground">
-                        {t("drafts.templateMatchTemplate", { title: templateMatchReport.templateTitle })}
+                        {t("drafts.formatProfileCurrent", { title: activeProfile.title })}
                       </div>
                       <div className="mt-0.5">
-                        {t("drafts.templateMatchSummary", templateMatchReport.summary)}
+                        {activeProfile.writingProfile.constraints.slice(0, 2).join(" ")}
                       </div>
                     </div>
                     <div className="space-y-1.5">
-                      {templateMatchReport.items.map((item) => (
+                      {activeProfile.diagnostics.map((item) => (
                         <div
                           key={item.id}
-                          className={`rounded-md border p-2 text-[11px] leading-relaxed ${templateMatchSeverityClass(item.severity)}`}
+                          className={`rounded-md border p-2 text-[11px] leading-relaxed ${formatDiagnosticSeverityClass(item.severity)}`}
                         >
                           <div className="font-medium">
-                            {t(`drafts.templateMatchSeverity.${item.severity}`)} · {item.title}
+                            {t(`drafts.formatDiagnosticSeverity.${item.severity}`)} · {item.message}
                           </div>
-                          <div className="mt-0.5 opacity-90">{item.detail}</div>
+                          {item.recommendation && <div className="mt-0.5 opacity-90">{item.recommendation}</div>}
                         </div>
                       ))}
                     </div>
                     <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
-                      {t("drafts.templateMatchNonBlockingHint")}
+                      {t("drafts.formatProfileDiagnosticsNonBlockingHint")}
                     </p>
                   </section>
                 )}

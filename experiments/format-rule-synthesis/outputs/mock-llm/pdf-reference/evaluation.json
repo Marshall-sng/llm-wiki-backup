@@ -1,0 +1,16 @@
+{
+  "caseId": "pdf-reference",
+  "diagnostics": [],
+  "metrics": {
+    "attributeCount": 20,
+    "baselineAttributeCount": 0,
+    "baselineRuleCount": 8,
+    "evidenceCoverage": 1,
+    "granularityScore": 100,
+    "requiredAttributeHits": 10,
+    "ruleCount": 10,
+    "targetCount": 7
+  },
+  "schemaVersion": "format-rule-synthesis-evaluation.v0",
+  "verdict": "pass"
+}

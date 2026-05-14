@@ -1,0 +1,10 @@
+﻿[
+  {"type":"heading","level":1,"text":"一、背景与目标"},
+  {"type":"paragraph","text":"本实验验证 DOCX-first 正式导出链路的最小可行输出：模型先生成结构化中间稿，确定性 DOCX adapter 再生成可审计文件。"},
+  {"type":"heading","level":1,"text":"二、生成合同"},
+  {"type":"paragraph","text":"DocxExportContract 应绑定 draft version、FormatSpec hash、证据策略、章节结构、字数边界与导出审计字段。"},
+  {"type":"heading","level":2,"text":"（一）硬性边界"},
+  {"type":"paragraph","text":"LLM 不修改 StyleFacts 或 FormatProfile 事实层，不默认发送 snippets/fulltext，不承诺高保真视觉复刻。"},
+  {"type":"heading","level":1,"text":"三、导出前检查"},
+  {"type":"paragraph","text":"DocxMatchReview 应检查必填章节、顺序、证据引用、格式规则覆盖、导出阻断项和审计记录完整性。"}
+]

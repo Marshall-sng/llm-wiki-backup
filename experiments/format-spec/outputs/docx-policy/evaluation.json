@@ -1,0 +1,22 @@
+{
+  "caseId": "docx-policy",
+  "diagnostics": [],
+  "metrics": {
+    "diagnosticCount": 0,
+    "ruleCount": 17,
+    "targetCount": 8
+  },
+  "outputDir": "experiments/format-spec/outputs/docx-policy",
+  "provenance": {
+    "caseSha256": "619c614568f86577f7d40e776a76a2903adc4284115b35442407fd7aa69c4f80",
+    "draftPromptSha256": "dd99c14d45271f5e3299aa5d90105727bce9f040e4c5584689fcd57e5c6ba5ac",
+    "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+    "formatSpecMarkdownSha256": "5ea8e2ee3bef869ed84752a2b43b40dd1e7daedbd49b128d32508d8f51b5e465",
+    "formatSpecSha256": "cec9f8b9fb94de26a5b7b008b5a0ef7f5d6a93022c7b39b4f79553d517ed1432",
+    "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975",
+    "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+    "inputSha256": "63f82866fc241531fe130087c6d4bef313a33895ccd2e731c4d60623936c1de0"
+  },
+  "schemaVersion": "format-spec-evaluation.v1",
+  "verdict": "pass"
+}

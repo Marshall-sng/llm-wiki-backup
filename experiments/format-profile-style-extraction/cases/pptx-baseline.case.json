@@ -1,0 +1,15 @@
+{
+  "caseId": "pptx-baseline",
+  "format": "pptx",
+  "priority": "baseline",
+  "sourceProfile": "runtime/format-profile/outputs/phase2/batch_16_pptx_github_01/profile.json",
+  "expected": {
+    "slideCount": 31,
+    "layoutCount": 62,
+    "masterCount": 1,
+    "themeCount": 3,
+    "themeName": "Office 主题​​",
+    "fontSchemeCount": 3,
+    "colorSchemeCount": 3
+  }
+}

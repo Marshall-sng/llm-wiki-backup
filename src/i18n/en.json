@@ -15,7 +15,7 @@
     "updateAvailable": "Update available",
     "updateAvailableSuffix": " · update",
     "drafts": "Drafts",
-    "templates": "Templates"
+    "formatProfiles": "Format Profiles"
   },
   "updateBanner": {
     "message": "Version {{version}} is available",
@@ -64,10 +64,10 @@
     "draftProcessingBannerTitle": "Draft processing session",
     "draftProcessingSource": "Source draft: {{title}}",
     "draftProcessingNoOverwriteHint": "The original draft will not be overwritten automatically. Save the result as a new draft when satisfied.",
-    "activeTemplateBannerTitle": "Current template: {{title}}",
-    "activeTemplateHint": "The template is bound to this project. Normal Chat is not affected automatically; draft AI processing will use the current template explicitly.",
-    "clearActiveTemplate": "Clear template",
-    "draftProcessingTemplate": "Template used: {{title}}"
+    "activeFormatProfileBannerTitle": "Current format profile: {{title}}",
+    "activeFormatProfileHint": "The format profile is bound to this project. Normal Chat is not affected automatically; draft AI processing will use it explicitly.",
+    "clearActiveFormatProfile": "Clear profile",
+    "draftProcessingFormatProfile": "Format profile used: {{title}}"
   },
   "search": {
     "title": "Search",
@@ -343,51 +343,87 @@
     "parentVersionHash": "Parent version hash",
     "restoredAt": "Restored at",
     "processingConversationTitle": "Process: {{title}}",
-    "templateProcessingConversationTitle": "Template process: {{title}}",
-    "processingTemplateActive": "Current template: {{title}}",
-    "processingTemplateActiveHint": "This draft-processing session will carry a template snapshot and try to follow its structure, tone, length, and citation rules.",
-    "processingTemplateNone": "No current template selected",
-    "processingTemplateNoneHint": "This will run normal draft processing without applying a template automatically.",
-    "createTemplateProcessingConversation": "Create Template Processing Session",
-    "templateMatchReport": "Basic template match report",
-    "templateMatchTemplate": "Current template: {{title}}",
-    "templateMatchSummary": "{{pass}} passed, {{warning}} warnings, {{missing}} missing, {{manual}} manual checks.",
-    "templateMatchNonBlockingHint": "This report is a basic static check and does not block saving or processing; manual review is still required before formal export.",
-    "templateMatchSeverity": {
-      "pass": "Pass",
+    "formatProfileProcessingConversationTitle": "Format-profile process: {{title}}",
+    "processingFormatProfileActive": "Current format profile: {{title}}",
+    "processingFormatProfileActiveHint": "This draft-processing session will carry the profile snapshot and follow its structure cues, writing constraints, and diagnostic boundaries.",
+    "processingFormatProfileNone": "No current format profile selected",
+    "processingFormatProfileNoneHint": "This will run normal draft processing without applying a format profile automatically.",
+    "createFormatProfileProcessingConversation": "Create Format-Profile Processing Session",
+    "formatProfileDiagnostics": "Format profile diagnostics",
+    "formatProfileCurrent": "Current format profile: {{title}}",
+    "formatProfileDiagnosticsNonBlockingHint": "Diagnostics describe profile usability boundaries and do not block saving or processing. Export and high-fidelity reconstruction are not promised in this version.",
+    "formatDiagnosticSeverity": {
+      "info": "Info",
       "warning": "Warning",
-      "missing": "Missing",
-      "manual": "Manual"
+      "error": "Error"
     }
   },
-  "templates": {
-    "title": "Template Library",
-    "count": "{{count}} templates",
-    "emptyTitle": "No templates yet",
-    "emptyHint": "Create a template to record the draft structure, tone, length, and citation rules.",
-    "create": "New Template",
-    "defaultTitle": "Untitled Template",
-    "currentTemplate": "Current template",
-    "titleLabel": "Template title",
-    "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Explain which material or workflow this template fits.",
-    "intentLabel": "Writing goal",
-    "intentPlaceholder": "Example: formal briefing, policy interpretation, project background.",
-    "requiredSectionsLabel": "Required sections",
-    "sectionOrderLabel": "Section order",
-    "linesPlaceholder": "Enter one item per line.",
-    "toneLabel": "Tone",
-    "tonePlaceholder": "Example: formal, cautious, for government and enterprise readers.",
-    "lengthLimitLabel": "Length requirement",
-    "lengthLimitPlaceholder": "Example: at least 3,000 Chinese characters, or no more than 3 paragraphs per section.",
-    "citationPolicyLabel": "Citation policy",
-    "citationPolicyPlaceholder": "Example: keep existing citations; new facts must have sources; never invent references.",
+  "formatProfiles": {
+    "title": "Format Profile Library",
+    "count": "{{count}} profiles",
+    "emptyTitle": "No format profiles yet",
+    "emptyHint": "Upload a finished DOCX / XLSX / PPTX / PDF file and the system will extract a format profile automatically.",
+    "import": "Import finished file",
+    "importing": "Importing...",
+    "currentProfile": "Current format profile",
     "setCurrent": "Set Current",
     "clearCurrent": "Clear Current",
     "delete": "Delete",
     "deleteAgain": "Click Again to Delete",
     "scopeTitle": "Phase scope",
-    "scopeHint": "The template library only saves templates and binds the current template. It does not change Chat prompts, produce match reports, or export files.",
-    "noSelection": "Select a template."
+    "scopeHint": "Manual template input has been abandoned in this version. Format profiles are extracted from finished files and used for draft generation/adaptation, without export or high-fidelity reconstruction promises.",
+    "documentKind": "Document kind",
+    "sectionPattern": "Section pattern",
+    "confidenceLabel": "Confidence",
+    "confidence": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "sections": "Structure cues",
+    "noSections": "No stable section structure detected.",
+    "diagnostics": "Diagnostics",
+    "diagnosticsSummary": "{{info}} info, {{warning}} warnings, {{error}} errors.",
+    "severity": {
+      "info": "Info",
+      "warning": "Warning",
+      "error": "Error"
+    },
+    "generationInstruction": "Generation instruction",
+    "noSelection": "Select or import a format profile.",
+    "styleEvidence": "Text style / layout cues",
+    "styleSummary": "Style summary",
+    "structureEvidence": "Probe evidence",
+    "styleFactsBoundary": "Deterministic style facts guide draft constraints; they do not promise export or visual reproduction.",
+    "styleFactsNoLlm": "This profile uses deterministic style facts only; no intelligent refinement has been applied.",
+    "styleFactsEvidenceDetails": "Style evidence details ({{count}} items)",
+    "semanticOverlay": {
+      "title": "Semantic interpretation",
+      "run": "Generate interpretation",
+      "refresh": "Regenerate",
+      "acceptedBoundary": "A validated evidence-bound interpretation is shown; deterministic style facts remain authoritative.",
+      "fallbackReason": "Using deterministic fallback: {{reason}}",
+      "status": {
+        "not-configured": "No usable model is configured, so deterministic style facts are used.",
+        "eligible": "A configured model can generate an evidence-bound interpretation; only evidence-only summaries are sent by default.",
+        "running": "Semantic interpretation is running; deterministic profile remains active until it passes validation.",
+        "accepted": "Semantic interpretation passed evidence validation and is used for the main summary and draft constraints.",
+        "rejected": "The model output did not pass evidence validation; deterministic profile is still used.",
+        "failed": "The model call failed; deterministic profile is still used.",
+        "stale": "The saved interpretation no longer matches this profile and must be regenerated; deterministic profile is used."
+      },
+      "fallback": {
+        "not-configured": "no usable model is configured",
+        "cancelled": "cancelled",
+        "timeout": "model response timed out; retry or use a faster model",
+        "provider-error": "model service error; check model settings, quota, or network",
+        "empty-response": "model returned an empty response",
+        "invalid-json": "model output was not valid JSON",
+        "schema-invalid": "model output did not match the required schema",
+        "evaluator-rejected": "model output did not pass evidence validation",
+        "stale-overlay": "semantic interpretation is stale",
+        "interrupted": "previous run was interrupted"
+      }
+    }
   }
 }

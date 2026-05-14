@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-wiki.local/format-profile/harness-refinement-output.schema.json",
+  "title": "Harness Refinement Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "caseId",
+    "attemptStatus",
+    "evaluatorVerdict",
+    "finalStatus",
+    "hashes",
+    "renderedGenerationInstruction"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "format-profile-harness-output.v0"
+    },
+    "caseId": {
+      "type": "string"
+    },
+    "attemptStatus": {
+      "enum": [
+        "not_attempted",
+        "llm_completed",
+        "llm_error",
+        "invalid_json",
+        "schema_invalid"
+      ]
+    },
+    "evaluatorVerdict": {
+      "enum": [
+        "pass",
+        "fail",
+        "not_run"
+      ]
+    },
+    "finalStatus": {
+      "enum": [
+        "refined",
+        "fallback"
+      ]
+    },
+    "fallbackReason": {
+      "enum": [
+        "llm_disabled",
+        "llm_error",
+        "invalid_json",
+        "schema_invalid",
+        "evaluator_rejected"
+      ]
+    },
+    "hashes": {
+      "type": "object"
+    },
+    "acceptedOverlay": {
+      "type": "object"
+    },
+    "renderedGenerationInstruction": {
+      "type": "string"
+    },
+    "reports": {
+      "type": "object"
+    }
+  }
+}

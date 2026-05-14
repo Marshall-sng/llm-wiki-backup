@@ -1,0 +1,16 @@
+{
+  "caseId": "pptx-briefing",
+  "diagnostics": [],
+  "metrics": {
+    "attributeCount": 43,
+    "baselineAttributeCount": 0,
+    "baselineRuleCount": 12,
+    "evidenceCoverage": 1,
+    "granularityScore": 100,
+    "requiredAttributeHits": 10,
+    "ruleCount": 17,
+    "targetCount": 8
+  },
+  "schemaVersion": "format-rule-synthesis-evaluation.v0",
+  "verdict": "pass"
+}

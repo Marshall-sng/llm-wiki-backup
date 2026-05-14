@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "format-profile-evaluator-report.v0",
+  "caseId": "docx-policy",
+  "verdict": "pass",
+  "ruleResults": [
+    {
+      "code": "schema.closed",
+      "pass": true,
+      "message": "Overlay matches closed harness schema"
+    },
+    {
+      "code": "evidence.ref.exists",
+      "pass": true,
+      "message": "All 12 evidence references exist"
+    },
+    {
+      "code": "boundary.forbidden_terms",
+      "pass": true,
+      "message": "No forbidden template/export promises found"
+    },
+    {
+      "code": "renderer.max_chars",
+      "pass": true,
+      "message": "Rendered instruction stays within case budget",
+      "length": 591
+    },
+    {
+      "code": "metrics.quality_threshold",
+      "pass": true,
+      "message": "Quality score 0.984 >= 0.72"
+    }
+  ],
+  "metrics": {
+    "structureNoiseScore": 1,
+    "instructionCompressionScore": 1,
+    "evidenceCoverageScore": 1,
+    "boundarySafetyScore": 0.9199999999999999,
+    "qualityScore": 0.984
+  },
+  "diagnostics": [],
+  "renderedInstructionSha256": "723debf79a9dfd1355dc44c35a8e868b2e0a41411a916168c8fcabd8eb4308e4"
+}

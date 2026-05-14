@@ -1,0 +1,179 @@
+{
+  "caseId": "xlsx-metrics",
+  "confidence": "medium",
+  "currentFormatSpecControl": {
+    "ruleCount": 12,
+    "sampleRules": [
+      {
+        "detail": "检测到工作表区域线索 A1:C29；输出应围绕表格结构和指标口径，而不是改写成长文。",
+        "id": "xlsx-workbook-1",
+        "rule": "以工作簿/工作表为最高组织单元。",
+        "target": "workbook"
+      },
+      {
+        "detail": "不根据工作表名推断不存在的业务主题；主题必须来自用户任务或底稿。",
+        "id": "xlsx-sheet-1",
+        "rule": "工作表命名只作为定位线索。",
+        "target": "sheet"
+      },
+      {
+        "detail": "当只有区域维度证据时，默认按首行/前若干行可能为标题或表头处理，并在诊断中提示需确认。",
+        "id": "xlsx-table-region-1",
+        "rule": "区分标题区、表头区、数据区和备注/合计区。",
+        "target": "table-region"
+      },
+      {
+        "detail": "生成表格说明时应优先解释字段关系、单位和统计口径，不擅自改列名。",
+        "id": "xlsx-header-1",
+        "rule": "表头应短、字段化、同列口径一致。",
+        "target": "header"
+      },
+      {
+        "detail": "不得把单元格事实打散为无序段落；观察结论应能追溯到行/列维度。",
+        "id": "xlsx-data-region-1",
+        "rule": "数据区保持行列关系。",
+        "target": "data-region"
+      }
+    ],
+    "targets": [
+      "workbook",
+      "sheet",
+      "table-region",
+      "header",
+      "data-region",
+      "style",
+      "formula",
+      "number-format",
+      "boundary"
+    ]
+  },
+  "documentKind": "表格/指标分析",
+  "evidenceCatalog": [
+    {
+      "id": "raw.xlsx.sheet.0001",
+      "kind": "raw.xlsx.sheet",
+      "pointer": "/rawProbeFacts/structure/sheets/0",
+      "text": "Sheet1",
+      "valueDigest": "011ec1cad1cdd13d"
+    },
+    {
+      "id": "profile.structure.0001",
+      "kind": "profile.structure",
+      "pointer": "/structureProfile/sections/0",
+      "text": "worksheet",
+      "valueDigest": "25b96f12fd74fbc6"
+    },
+    {
+      "id": "profile.style.0001",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/layout",
+      "text": "layout evidence",
+      "valueDigest": "708dfe550f889280"
+    },
+    {
+      "id": "profile.style.0002",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/typography",
+      "text": "typography evidence",
+      "valueDigest": "844a2007c5c247ab"
+    },
+    {
+      "id": "profile.style.0003",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/colors",
+      "text": "colors evidence",
+      "valueDigest": "92dd90400425da62"
+    },
+    {
+      "id": "profile.style.0004",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/formatSpecific",
+      "text": "formatSpecific evidence",
+      "valueDigest": "583c0dada1149abc"
+    },
+    {
+      "id": "diagnostic.0001",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/0",
+      "text": "info probe.completed: Phase 2 已完成 XLSX 基础探测：工作表 1、共享字符串 65、字体 4、填充 3。",
+      "valueDigest": "f4b7c4e9da4879ca"
+    },
+    {
+      "id": "diagnostic.0002",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/1",
+      "text": "info format.xlsx.boundary: XLSX 用作表格结构和指标表达参考，不在本阶段生成 Excel 成品。",
+      "valueDigest": "aa53bec8d8597ca8"
+    }
+  ],
+  "fileType": "xlsx",
+  "instruction": "Infer detailed GB/T-like executable formatting rules from evidence. Do not copy source body text into rules. Every non-boundary rule must cite evidenceRefs.",
+  "profileSummary": {
+    "diagnostics": [
+      {
+        "code": "probe.completed",
+        "message": "Phase 2 已完成 XLSX 基础探测：工作表 1、共享字符串 65、字体 4、填充 3。",
+        "severity": "info"
+      },
+      {
+        "code": "format.xlsx.boundary",
+        "message": "XLSX 用作表格结构和指标表达参考，不在本阶段生成 Excel 成品。",
+        "severity": "info"
+      }
+    ],
+    "structure": {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+          "kind": "file_probe",
+          "path": "[REDACTED_PATH]"
+        }
+      ],
+      "sections": [
+        {
+          "index": 1,
+          "kind": "worksheet",
+          "name": "Sheet1",
+          "sheetId": "1"
+        }
+      ],
+      "tables": [
+        {
+          "cellCount": 87,
+          "dimension": "A1:C29",
+          "formulaCount": 0,
+          "mergedCellCount": 5,
+          "path": "[REDACTED_PATH]",
+          "rowCount": 29
+        }
+      ]
+    },
+    "styleProfile": {
+      "colors": {
+        "borderCount": 5,
+        "fillCount": 3
+      },
+      "evidenceSummary": [],
+      "formatSpecific": {
+        "cellStyleCount": 1,
+        "extractionStage": "basic_probe",
+        "officeKind": "xlsx",
+        "realParserAttached": true,
+        "sharedStringCount": 65
+      },
+      "layout": {
+        "sheets": [
+          {
+            "dimension": "A1:C29",
+            "path": "[REDACTED_PATH]"
+          }
+        ]
+      },
+      "typography": {
+        "fontCount": 4
+      }
+    }
+  },
+  "schemaVersion": "format-rule-synthesis-evidence-pack.v0"
+}

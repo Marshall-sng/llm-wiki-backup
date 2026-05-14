@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "format-profile-refinement-case.v0",
+  "caseId": "docx-policy",
+  "sourceCaseId": "batch_25_docx_local_05_procurement_2023_13",
+  "phase": "phase2",
+  "formatType": "docx",
+  "role": "golden",
+  "taskMode": "adapt_draft_to_profile",
+  "description": "中文正式制度/采购管理类 DOCX，用于验证长候选标题降噪、章节语义概括、样式线索保留。",
+  "constraints": {
+    "maxInstructionChars": 4000,
+    "maxOverlayClaims": 16,
+    "allowInference": true
+  },
+  "expected": {
+    "mustPreserveFallbackHashes": true,
+    "mustRejectUnsupportedInstruction": true,
+    "qualityThreshold": 0.72
+  }
+}

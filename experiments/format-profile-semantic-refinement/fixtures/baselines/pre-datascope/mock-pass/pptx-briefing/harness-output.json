@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "format-profile-harness-output.v0",
+  "caseId": "pptx-briefing",
+  "attemptStatus": "llm_completed",
+  "evaluatorVerdict": "pass",
+  "finalStatus": "refined",
+  "hashes": {
+    "deterministicProfileSha256": "c67d04e64a1bdfa16c92671df6a1c4deab3fbaaa80ff26ba1a6cb568c7874cba",
+    "deterministicInstructionSha256": "a7cb4dff51cd43f55d5741ffc5d31253ce0a415cb95b0094509ff0bd91d68d6b",
+    "rawEvidenceSha256": "77fdd95af5bf7abec16795b2eebf0001ac6224172af25e91fd414e1ff9906856",
+    "acceptedOverlaySha256": "2ecc8071abf9193c187b870a7f88813f937926be708c3c29dff7aef02576afad",
+    "renderedInstructionSha256": "a1185ff747d93559b54e6ca047e19408c9d4125f928ee4df9c4362ec330fa9a5"
+  },
+  "acceptedOverlay": {
+    "schemaVersion": "format-profile-llm-overlay.v0",
+    "caseId": "pptx-briefing",
+    "confidence": {
+      "semanticConfidence": "medium",
+      "notes": [
+        "mock-pass overlay for harness validation"
+      ]
+    },
+    "semanticOverlay": {
+      "documentKind": {
+        "value": "汇报演示",
+        "evidenceRefs": [
+          "raw.pptx.slide.0001"
+        ],
+        "inference": false,
+        "rationale": "documentKind comes from deterministic profile label."
+      },
+      "structureSummary": {
+        "value": [
+          "按逐页汇报叙事组织：封面/议题/主体/总结等页级边界。",
+          "保留 slideCount、layoutCount、masterCount 等线索，用于控制内容粒度。"
+        ],
+        "evidenceRefs": [
+          "raw.pptx.slide.0001",
+          "raw.pptx.slide.0002",
+          "raw.pptx.slide.0003"
+        ],
+        "inference": true,
+        "rationale": "Structure summary is compressed from profile/evidence headings or format facts."
+      },
+      "styleSummary": {
+        "value": [
+          "版式、母版、主题和颜色线索用于提示页面节奏与正式程度。"
+        ],
+        "evidenceRefs": [
+          "profile.style.0001",
+          "profile.style.0002",
+          "profile.style.0003"
+        ],
+        "inference": true,
+        "rationale": "Style summary cites style evidence and avoids export promises."
+      },
+      "writingConstraints": {
+        "value": [
+          "输出可转写到幻灯片的分页面底稿，每页聚焦一个观点。"
+        ],
+        "evidenceRefs": [
+          "raw.pptx.slide.0001",
+          "raw.pptx.slide.0002",
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Writing constraints preserve user fact boundary."
+      },
+      "formatBoundaries": {
+        "value": [
+          "PPTX 画像用于汇报底稿和页级结构建议，不代表会生成演示文件。"
+        ],
+        "evidenceRefs": [
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Boundaries are derived from capability diagnostics and harness policy."
+      }
+    },
+    "diagnostics": [
+      {
+        "severity": "info",
+        "code": "mock_pass",
+        "message": "Mock overlay generated for harness validation.",
+        "evidenceRefs": [
+          "raw.pptx.slide.0001"
+        ]
+      }
+    ]
+  },
+  "renderedGenerationInstruction": "# 格式画像语义精炼约束: pptx-briefing\n\n## 适用边界\n- 文件类型：pptx\n- 来源画像：profile_batch_16_pptx_github_01\n- 本指令由 harness 根据确定性画像和已验收 LLM overlay 渲染；LLM 不直接生成最终指令。\n- 保留来源事实边界，不根据格式画像虚构内容；不承诺版式还原或文件导出能力。\n\n### 文档定位\n- 汇报演示 （证据：raw.pptx.slide.0001）\n\n### 结构组织建议\n- 按逐页汇报叙事组织：封面/议题/主体/总结等页级边界。\n- 保留 slideCount、layoutCount、masterCount 等线索，用于控制内容粒度。\n\n### 样式/版式线索\n- 版式、母版、主题和颜色线索用于提示页面节奏与正式程度。\n\n### 写作约束\n- 输出可转写到幻灯片的分页面底稿，每页聚焦一个观点。\n\n### 格式边界\n- PPTX 画像用于汇报底稿和页级结构建议，不代表会生成演示文件。\n\n## 诊断边界\n- 语义置信度：medium\n- Harness 质量分：0.994\n- 若用户事实材料与格式画像冲突，以用户事实材料为准，并记录诊断。\n",
+  "diagnostics": [],
+  "reports": {
+    "evaluatorReportPath": "evaluator-report.json"
+  }
+}

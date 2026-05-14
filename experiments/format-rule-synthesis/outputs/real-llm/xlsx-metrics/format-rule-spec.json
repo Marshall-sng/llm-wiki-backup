@@ -1,0 +1,497 @@
+{
+  "caseId": "xlsx-metrics",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Use the XLSX only as evidence for table structure, metric organization, and formatting tendencies.",
+    "Do not infer missing business meaning, hidden sheets, formulas, units, or print settings from absent evidence.",
+    "Do not promise Excel export, exact visual recreation, high-fidelity restoration, or source-document reconstruction.",
+    "Rules may provide fallback behavior when evidence is absent, but such fallbacks must remain conservative and diagnostic-friendly."
+  ],
+  "rationale": "Evidence supports a single-sheet, compact metric table with limited style diversity; detailed rules are conservative and executable but avoid unsupported visual claims.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001"
+          ],
+          "name": "sheetName",
+          "unit": "worksheet-name",
+          "value": "Sheet1"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Build formatting logic around one detected worksheet and one compact used range. Do not split the content into multiple independent documents unless later evidence shows additional sheets or regions.",
+      "evidenceRefs": [
+        "profile.structure.0001",
+        "diagnostic.0001"
+      ],
+      "id": "wb-structure",
+      "normType": "hierarchy",
+      "rule": "Treat the workbook as a single top-level tabular document container.",
+      "source": "detected",
+      "target": "workbook"
+    },
+    {
+      "attributes": [],
+      "confidence": "high",
+      "detail": "Any downstream representation should preserve table logic and cite uncertainty where required rather than claiming a generated workbook deliverable.",
+      "evidenceRefs": [
+        "diagnostic.0002"
+      ],
+      "id": "wb-scope",
+      "normType": "boundary",
+      "rule": "The workbook is a reference source for structure and metrics, not a requested finished spreadsheet artifact.",
+      "source": "detected",
+      "target": "workbook"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001"
+          ],
+          "name": "sheetName",
+          "unit": "worksheet-name",
+          "value": "Sheet1"
+        }
+      ],
+      "confidence": "high",
+      "detail": "If a display title is needed, derive it from user instructions or verified cell content outside this evidence pack. The sheet label alone must not create a business topic.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "sheet-name",
+      "normType": "hierarchy",
+      "rule": "Use the worksheet name only as a locator, not as a semantic title.",
+      "source": "llm-inferred",
+      "target": "sheet"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "tableRegion",
+          "unit": "cell-range",
+          "value": "A1:C29"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "printLayout",
+          "unit": "layout-policy",
+          "value": "fit-used-range-one-table-per-page-if-printing-is-requested"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The active table canvas is columns A through C and rows 1 through 29. Empty surrounding cells should remain outside the formatting target.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.structure.0001"
+      ],
+      "id": "sheet-used-range",
+      "normType": "page",
+      "rule": "Constrain formatting operations to the detected used range unless new evidence expands it.",
+      "source": "detected",
+      "target": "sheet"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "tableRegion",
+          "unit": "cell-range",
+          "value": "A1:C29"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "headerRow",
+          "unit": "row-index-policy",
+          "value": "1 or first content row after title detection"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "dataRegion",
+          "unit": "cell-range-policy",
+          "value": "A2:C29 unless title/header analysis changes boundary"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Because only range-level evidence is available, row 1 should be treated as a header/title candidate; rows below it form the initial data-region candidate until cell-level content proves a different split.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.structure.0001"
+      ],
+      "id": "region-partition",
+      "normType": "hierarchy",
+      "rule": "Partition the used range into title/header candidates, data body, and possible summary or note rows by row role.",
+      "source": "llm-inferred",
+      "target": "table-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "headerRow",
+          "unit": "row-index",
+          "value": "candidate row 1"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt-policy",
+          "value": "data-size plus 0 to 1 pt, capped by available style evidence"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use one consistent header style across the detected three-column region. If a separate title row is later confirmed, keep title styling distinct from field-header styling.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "profile.style.0004"
+      ],
+      "id": "header-fields",
+      "normType": "typography",
+      "rule": "Render header cells as short field labels with stronger emphasis than data cells.",
+      "source": "llm-inferred",
+      "target": "header"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "columnWidth",
+          "unit": "policy",
+          "value": "auto-fit within A:C; prefer wrap over adding columns"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "For a compact indicator table, header alignment should support column scanning. Text wrapping is allowed for long field labels rather than widening the table beyond the detected three-column layout.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002"
+      ],
+      "id": "header-align",
+      "normType": "alignment",
+      "rule": "Align header labels centrally within their cells unless column content requires a measured exception.",
+      "source": "llm-inferred",
+      "target": "header"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "dataRegion",
+          "unit": "cell-range-policy",
+          "value": "body rows inside A1:C29 after header/title detection"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Do not flatten metric rows into prose-only paragraphs. Each observation must remain traceable to its row and column position within the table region.",
+      "evidenceRefs": [
+        "profile.structure.0001",
+        "profile.style.0001"
+      ],
+      "id": "data-preserve-grid",
+      "normType": "hierarchy",
+      "rule": "Preserve row-column relationships as the primary meaning carrier.",
+      "source": "llm-inferred",
+      "target": "data-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "tableRegion",
+          "unit": "table-size",
+          "value": "29 rows by 3 columns"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "columnWidth",
+          "unit": "policy",
+          "value": "auto-fit each of A:C to content with consistent minimum width"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Row height, wrapping, and padding should prioritize complete visibility and scanability. Avoid oversized decorative spacing that would obscure the compact metric-table character.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "diagnostic.0001"
+      ],
+      "id": "data-density",
+      "normType": "density",
+      "rule": "Use compact table density suitable for 29 rows and 3 columns.",
+      "source": "llm-inferred",
+      "target": "data-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0003"
+          ],
+          "name": "fill",
+          "unit": "style-policy",
+          "value": "reuse no more than the detected small fill family unless explicitly specified"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0003"
+          ],
+          "name": "border",
+          "unit": "style-policy",
+          "value": "reuse a limited border family; avoid decorative border proliferation"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The detected workbook has limited font, fill, border, and cell-style counts. Maintain that restraint: title, header, body, and optional note/summary styles are sufficient unless content evidence requires more.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004",
+        "diagnostic.0001"
+      ],
+      "id": "style-limited-set",
+      "normType": "typography",
+      "rule": "Use a small, controlled style set rather than many ad hoc variants.",
+      "source": "detected",
+      "target": "style"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.structure.0001"
+          ],
+          "name": "tableRegion",
+          "unit": "cell-range",
+          "value": "A1:C29 includes merged-cell evidence"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Merged areas should not be duplicated into every covered cell. Read and render the merged value once at the merged region's logical anchor.",
+      "evidenceRefs": [
+        "profile.structure.0001"
+      ],
+      "id": "style-merged-cells",
+      "normType": "hierarchy",
+      "rule": "Treat merged cells as layout signals that may mark titles, group labels, or notes.",
+      "source": "detected",
+      "target": "style"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.structure.0001"
+          ],
+          "name": "numberFormat",
+          "unit": "policy",
+          "value": "preserve detected literal values; no formula-derived recalculation"
+        }
+      ],
+      "confidence": "high",
+      "detail": "If totals, ratios, or derived indicators are needed later, mark them as newly derived and keep them separate from imported cell facts.",
+      "evidenceRefs": [
+        "profile.structure.0001",
+        "profile.style.0004"
+      ],
+      "id": "formula-absence",
+      "normType": "numbering",
+      "rule": "Do not infer calculated fields or formulas where no formula evidence is detected.",
+      "source": "detected",
+      "target": "formula"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0004"
+          ],
+          "name": "numberFormat",
+          "unit": "format-policy",
+          "value": "preserve-source-display-or-general-when-undetected"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0004"
+          ],
+          "name": "unit",
+          "unit": "unit-policy",
+          "value": "not detected; require explicit evidence before applying"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "When a cell is numeric, retain its apparent precision and sign style. Percent, currency, date, or unit labels may be applied only when present in verified cell formatting or user instructions.",
+      "evidenceRefs": [
+        "profile.style.0004",
+        "profile.structure.0001"
+      ],
+      "id": "num-format-detect",
+      "normType": "numbering",
+      "rule": "Preserve detected numeric display semantics and avoid inventing units.",
+      "source": "llm-inferred",
+      "target": "number-format"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0003"
+          ],
+          "name": "border",
+          "unit": "style-policy",
+          "value": "consistent inner grid; stronger header separator if role detected"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Apply consistent inner gridlines to the data body and slightly stronger separation for header or summary rows when identified. Border variety should remain within the small detected style family.",
+      "evidenceRefs": [
+        "profile.style.0003",
+        "profile.style.0001"
+      ],
+      "id": "table-border-grid",
+      "normType": "table",
+      "rule": "Use borders to clarify the compact grid without turning the table into a decorative layout.",
+      "source": "llm-inferred",
+      "target": "table-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0003"
+          ],
+          "name": "fill",
+          "unit": "style-policy",
+          "value": "limited structural fills; no invented heatmap coloring"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Because only a small fill set is detected, avoid alternating or multi-color semantic encodings unless cell-level evidence later confirms them.",
+      "evidenceRefs": [
+        "profile.style.0003",
+        "diagnostic.0001"
+      ],
+      "id": "table-fill-hierarchy",
+      "normType": "table",
+      "rule": "Use fill color only for structural emphasis such as header, title, or summary rows.",
+      "source": "llm-inferred",
+      "target": "table-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "printLayout",
+          "unit": "print-policy",
+          "value": "print-area=A1:C29; orientation=undetected; fit-width=1-page-if-needed"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "tableRegion",
+          "unit": "cell-range",
+          "value": "A1:C29"
+        }
+      ],
+      "confidence": "low",
+      "detail": "Set print area to the detected used range, preserve portrait or landscape choice as unknown until explicit evidence appears, and prefer scaling that keeps all three columns visible.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.structure.0001"
+      ],
+      "id": "page-print-conservative",
+      "normType": "page",
+      "rule": "If print layout is requested, fit the used table region as one compact report area.",
+      "source": "llm-inferred",
+      "target": "sheet"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0004"
+          ],
+          "name": "unit",
+          "unit": "policy",
+          "value": "unknown unless present in verified cells or user instructions"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "printLayout",
+          "unit": "policy",
+          "value": "unknown except used-range fit policy when requested"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Do not assert exact font names, exact column widths, exact colors, formulas, units, print orientation, or hidden semantic groupings from this evidence pack alone.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004",
+        "diagnostic.0002"
+      ],
+      "id": "boundary-unknowns",
+      "normType": "boundary",
+      "rule": "Unobserved formatting details must remain unspecified or marked as inferred defaults.",
+      "source": "detected",
+      "target": "boundary"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "xlsx",
+  "synthesisMode": "real-llm"
+}

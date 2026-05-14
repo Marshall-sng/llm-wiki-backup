@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "format-profile-deterministic-cleanup.v0",
+  "caseId": "xlsx-metrics",
+  "formatType": "xlsx",
+  "structureSummary": [
+    "Sheet1"
+  ],
+  "styleSummary": [],
+  "boundarySummary": [
+    "保留来源事实边界，不根据格式画像虚构内容。",
+    "格式画像只约束结构、表达和诊断，不代表正式导出样式。"
+  ]
+}

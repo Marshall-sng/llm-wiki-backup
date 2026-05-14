@@ -1,0 +1,692 @@
+{
+  "caseId": "docx-policy",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Do not treat extracted body text as reusable template content; use only structural and formatting signals.",
+    "Do not promise exact recreation, export fidelity, visual restoration, or source-document identity preservation.",
+    "When detected values conflict with GB/T-like defaults, prefer explicit confidence labels and allow manual review.",
+    "Detected page margins are anomalous and must be treated as weak diagnostic evidence rather than a reliable source value.",
+    "Long decimal-numbered paragraphs that contain full sentences are list/body items, not headings, unless separately marked by hierarchy."
+  ],
+  "rationale": "Evidence shows a formal Chinese policy document with A4-like page geometry, chapter/article hierarchy, body/table styles, decimal and Chinese enumerations, and limited reliable margin data; rules combine detected patterns with conservative GB/T-like defaults.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "pageSize",
+          "unit": "mm",
+          "value": "A4 portrait, 210mm x 297mm"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Set page size to approximately 210 mm by 297 mm in portrait orientation when DOCX dimensions are close to A4.",
+      "evidenceRefs": [
+        "profile.style.0001"
+      ],
+      "id": "page-a4-portrait",
+      "normType": "page",
+      "rule": "Use A4 portrait page geometry for formal policy documents.",
+      "source": "detected",
+      "target": "page"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "diagnostic.0002"
+          ],
+          "name": "margin",
+          "unit": "mm",
+          "value": "top 37, bottom 35, left 28, right 26"
+        }
+      ],
+      "confidence": "low",
+      "detail": "Apply top 37 mm, bottom 35 mm, left 28 mm, and right 26 mm as a conservative formal-document default; flag the result for review because the probe margins are near-zero twips.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "diagnostic.0002"
+      ],
+      "id": "page-margins-gbt-like",
+      "normType": "page",
+      "rule": "Use GB/T-like government-document margins when detected margins are unreliable.",
+      "source": "standard-default",
+      "target": "page"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "alignment",
+          "unit": "keyword",
+          "value": "center"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0005",
+            "raw.docx.style.0015"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "SimHei or GB/T-like title face"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0015"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "21.5"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The title should be visually distinct from body text, appear before the first chapter heading, and not share a paragraph with article or list content.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "raw.docx.style.0015"
+      ],
+      "id": "title-standalone-centered",
+      "normType": "hierarchy",
+      "rule": "Place the main title as a standalone centered paragraph before chapter content.",
+      "source": "detected",
+      "target": "title"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0005"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "SimHei"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0015"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "21.5"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use a title face or bold weight with larger size; do not infer title wording from the sample document.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "raw.docx.style.0005",
+        "raw.docx.style.0015"
+      ],
+      "id": "title-weight",
+      "normType": "typography",
+      "rule": "Make the main title bold or otherwise heavier than body text.",
+      "source": "detected",
+      "target": "title"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "numbering",
+          "unit": "pattern",
+          "value": "第N章"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "alignment",
+          "unit": "keyword",
+          "value": "center"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0005",
+            "raw.docx.style.0018"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "SimHei or bold body-compatible Chinese font"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0012"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "15.5"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Recognize short Chinese chapter markers such as 第N章 as first-level headings; keep them separate from article paragraphs.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "raw.docx.style.0018"
+      ],
+      "id": "heading-chapter-pattern",
+      "normType": "hierarchy",
+      "rule": "Use chapter-level headings for major divisions.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "numbering",
+          "unit": "pattern",
+          "value": "第N条"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0018"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "FangSong for body-compatible article headings"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0012"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "15.5"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Recognize 第N条 as article-level labels embedded at the beginning of a paragraph; retain body style unless a distinct heading style is explicitly available.",
+      "evidenceRefs": [
+        "raw.docx.style.0018",
+        "profile.style.0002"
+      ],
+      "id": "heading-article-pattern",
+      "normType": "hierarchy",
+      "rule": "Use article markers as second-level structural paragraphs, not automatic Word numbering.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [],
+      "confidence": "high",
+      "detail": "A paragraph beginning with a numeric marker is not a heading when it contains full sentence content or clause detail.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0017",
+        "raw.docx.paragraph.0024"
+      ],
+      "id": "heading-demote-long-candidates",
+      "normType": "boundary",
+      "rule": "Demote long numeric candidates to list or body paragraphs.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0002",
+            "profile.style.0004"
+          ],
+          "name": "numbering",
+          "unit": "pattern",
+          "value": "（一）, （二）, （三）"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "indent",
+          "unit": "em",
+          "value": "first-line 2 Chinese characters"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Use full-width parenthesized Chinese numerals such as （一）, （二）, （三） for ordered subitems; implement as literal paragraph prefixes when no DOCX numbering definitions exist.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "profile.style.0004"
+      ],
+      "id": "numbering-chinese-lists",
+      "normType": "numbering",
+      "rule": "Support Chinese parenthesized list numbering below article paragraphs.",
+      "source": "detected",
+      "target": "numbering"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0025",
+            "profile.style.0004"
+          ],
+          "name": "numbering",
+          "unit": "pattern",
+          "value": "N. and N、"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0025"
+          ],
+          "name": "indent",
+          "unit": "layout-rule",
+          "value": "hanging indent aligned after marker"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Recognize N. and N、 prefixes as list markers; do not promote them to headings solely because they begin with numbers.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0007",
+        "raw.docx.paragraph.0017",
+        "raw.docx.paragraph.0025",
+        "profile.style.0004"
+      ],
+      "id": "numbering-decimal-lists",
+      "normType": "numbering",
+      "rule": "Support decimal list prefixes for detailed enumerations.",
+      "source": "detected",
+      "target": "numbering"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0004"
+          ],
+          "name": "numbering",
+          "unit": "implementation-mode",
+          "value": "literal-prefix numbering"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Because numbering definitions are absent, executable formatting should preserve visible numbering tokens as paragraph text or generated prefixes.",
+      "evidenceRefs": [
+        "profile.style.0004"
+      ],
+      "id": "numbering-no-docx-auto",
+      "normType": "numbering",
+      "rule": "Do not require Word automatic numbering for this profile.",
+      "source": "detected",
+      "target": "numbering"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.docx.style.0018",
+            "raw.docx.style.0001",
+            "raw.docx.style.0003"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "FangSong for CJK body; Arial or Times New Roman for Latin fallback"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0012"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "15.5"
+        }
+      ],
+      "confidence": "high",
+      "detail": "BodyText style indicates FangSong with a formal-document body size; fallback Latin font may remain Arial or Times New Roman for ASCII segments.",
+      "evidenceRefs": [
+        "raw.docx.style.0018",
+        "raw.docx.style.0001",
+        "raw.docx.style.0003"
+      ],
+      "id": "typography-body-font",
+      "normType": "typography",
+      "rule": "Use FangSong-style Chinese body typography for formal policy body text.",
+      "source": "detected",
+      "target": "typography"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0012",
+            "raw.docx.style.0015",
+            "raw.docx.style.0019"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "15.5 body; 10 table; 21.5 title"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Prefer body around 15.5 pt, table text around 10 pt, common inline text around 10.5 pt or 9 pt when matching detected runs, and title around 21.5 pt.",
+      "evidenceRefs": [
+        "raw.docx.style.0006",
+        "raw.docx.style.0007",
+        "raw.docx.style.0012",
+        "raw.docx.style.0015",
+        "raw.docx.style.0019"
+      ],
+      "id": "typography-common-sizes",
+      "normType": "typography",
+      "rule": "Use a constrained size scale for body, table, and title text.",
+      "source": "detected",
+      "target": "typography"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0018",
+            "profile.style.0002"
+          ],
+          "name": "indent",
+          "unit": "em",
+          "value": "first-line 2 Chinese characters"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "alignment",
+          "unit": "keyword",
+          "value": "justified"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "raw.docx.style.0018",
+            "profile.style.0002"
+          ],
+          "name": "lineSpacing",
+          "unit": "pt",
+          "value": "28"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0018"
+          ],
+          "name": "paragraphSpacing",
+          "unit": "pt",
+          "value": "0 before, 0 after"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use first-line indent of two Chinese characters, justified alignment, and fixed line spacing suitable for GB/T-like documents; keep paragraphs visually dense but readable.",
+      "evidenceRefs": [
+        "raw.docx.style.0018",
+        "profile.style.0002",
+        "diagnostic.0001"
+      ],
+      "id": "paragraph-body-default",
+      "normType": "spacing",
+      "rule": "Format normal body paragraphs as formal policy text with first-line indentation and stable line spacing.",
+      "source": "llm-inferred",
+      "target": "paragraph"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.docx.style.0018"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "FangSong"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0012"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "15.5"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Most formal body, chapter, article, and list paragraphs should inherit a common body style unless they are inside tables.",
+      "evidenceRefs": [
+        "raw.docx.style.0018",
+        "diagnostic.0001"
+      ],
+      "id": "paragraph-style-scope",
+      "normType": "hierarchy",
+      "rule": "Use BodyText as the dominant paragraph style for main document content.",
+      "source": "detected",
+      "target": "paragraph"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0018",
+            "diagnostic.0001"
+          ],
+          "name": "paragraphSpacing",
+          "unit": "pt",
+          "value": "minimal; normally 0 pt before and after body paragraphs"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Avoid excessive paragraph spacing; use punctuation and numbering to express structure rather than adding large vertical gaps.",
+      "evidenceRefs": [
+        "diagnostic.0001",
+        "raw.docx.style.0018"
+      ],
+      "id": "paragraph-density",
+      "normType": "density",
+      "rule": "Keep formal body text compact and continuous across clauses.",
+      "source": "llm-inferred",
+      "target": "paragraph"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0017",
+            "raw.docx.style.0019"
+          ],
+          "name": "tableHeader",
+          "unit": "table-rule",
+          "value": "repeat header row when table spans pages; use centered bold header text when header role is known"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.docx.style.0019"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "FangSong"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0019"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "10"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Use table formatting for approval matrices, thresholds, responsibilities, or process comparisons; preserve table paragraphs separately from body paragraphs.",
+      "evidenceRefs": [
+        "diagnostic.0001",
+        "raw.docx.style.0017",
+        "raw.docx.style.0019"
+      ],
+      "id": "table-presence",
+      "normType": "table",
+      "rule": "Support multiple formal tables within the document body.",
+      "source": "detected",
+      "target": "table"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.docx.style.0019"
+          ],
+          "name": "font",
+          "unit": "font-family",
+          "value": "FangSong"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0019"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "10"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0019",
+            "raw.docx.paragraph.0015",
+            "raw.docx.paragraph.0016"
+          ],
+          "name": "alignment",
+          "unit": "keyword",
+          "value": "center or left according to cell role"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0019"
+          ],
+          "name": "paragraphSpacing",
+          "unit": "pt",
+          "value": "0 before, 0 after inside cells"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Table cell text should use TableText-like typography, with compact size and controlled wrapping; keep numeric thresholds and approval labels readable.",
+      "evidenceRefs": [
+        "raw.docx.style.0019",
+        "raw.docx.paragraph.0015",
+        "raw.docx.paragraph.0016"
+      ],
+      "id": "table-text-style",
+      "normType": "typography",
+      "rule": "Use a smaller table text style than body paragraphs.",
+      "source": "detected",
+      "target": "table"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0017",
+            "diagnostic.0001"
+          ],
+          "name": "tableHeader",
+          "unit": "table-rule",
+          "value": "plain bordered header row"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Apply single-line borders around cells and fit table width within page margins; avoid decorative table styling.",
+      "evidenceRefs": [
+        "diagnostic.0001",
+        "raw.docx.style.0017"
+      ],
+      "id": "table-borders",
+      "normType": "table",
+      "rule": "Use visible grid borders for formal tables unless a template specifies otherwise.",
+      "source": "standard-default",
+      "target": "table"
+    },
+    {
+      "attributes": [],
+      "confidence": "high",
+      "detail": "The probe reports basic extraction only, no numbering definitions, limited styles, and an adaptation-mode diagnostic; downstream use should expose low-confidence fields for review.",
+      "evidenceRefs": [
+        "profile.style.0004",
+        "diagnostic.0001",
+        "diagnostic.0002"
+      ],
+      "id": "boundary-evidence-limits",
+      "normType": "boundary",
+      "rule": "Treat this synthesis as executable guidance with medium confidence, not as a source-faithful reconstruction.",
+      "source": "detected",
+      "target": "boundary"
+    },
+    {
+      "attributes": [],
+      "confidence": "high",
+      "detail": "Only structural patterns, style names, size distributions, and document-kind signals are reusable formatting evidence.",
+      "evidenceRefs": [
+        "diagnostic.0002"
+      ],
+      "id": "boundary-content-reuse",
+      "normType": "boundary",
+      "rule": "Do not reuse source body wording in generated rules or templates.",
+      "source": "llm-inferred",
+      "target": "boundary"
+    },
+    {
+      "attributes": [],
+      "confidence": "high",
+      "detail": "A short chapter or article marker may define hierarchy; a long numeric paragraph containing detailed subject matter should remain body or list content.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0025",
+        "raw.docx.paragraph.0028"
+      ],
+      "id": "boundary-heading-conflict",
+      "normType": "boundary",
+      "rule": "Resolve heading/list ambiguity by length and semantic role.",
+      "source": "llm-inferred",
+      "target": "boundary"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "docx",
+  "synthesisMode": "real-llm"
+}

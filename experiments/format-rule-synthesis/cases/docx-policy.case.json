@@ -1,0 +1,7 @@
+﻿{
+  "schemaVersion": "format-spec-case.v0",
+  "caseId": "docx-policy",
+  "formatType": "docx",
+  "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+  "expected": { "minRules": 16 }
+}

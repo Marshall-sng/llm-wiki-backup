@@ -1,0 +1,179 @@
+{
+  "failed": [],
+  "generatedAt": "2026-05-14T06:55:57.887Z",
+  "negativeSelfTests": {
+    "failed": [],
+    "passed": 5,
+    "results": [
+      {
+        "codes": [
+          "content-leak-normalized"
+        ],
+        "expectedCode": "content-leak-normalized",
+        "name": "normalized-raw-leakage",
+        "ok": true,
+        "verdict": "fail"
+      },
+      {
+        "codes": [
+          "prompt-evidence-dump",
+          "prompt-evidence-dump"
+        ],
+        "expectedCode": "prompt-evidence-dump",
+        "name": "evidence-id-dump",
+        "ok": true,
+        "verdict": "fail"
+      },
+      {
+        "codes": [
+          "boundary-forbidden",
+          "boundary-forbidden"
+        ],
+        "expectedCode": "boundary-forbidden",
+        "name": "forbidden-promise",
+        "ok": true,
+        "verdict": "fail"
+      },
+      {
+        "codes": [
+          "rule-count",
+          "coverage"
+        ],
+        "expectedCode": "coverage",
+        "name": "missing-target",
+        "ok": true,
+        "verdict": "fail"
+      },
+      {
+        "codes": [
+          "type-specific"
+        ],
+        "expectedCode": "type-specific",
+        "name": "multiple-type-specific",
+        "ok": true,
+        "verdict": "fail"
+      }
+    ],
+    "total": 5
+  },
+  "passed": 4,
+  "provenance": {
+    "caseCount": 4,
+    "cases": [
+      {
+        "caseId": "docx-policy",
+        "caseSha256": "619c614568f86577f7d40e776a76a2903adc4284115b35442407fd7aa69c4f80",
+        "draftPromptSha256": "dd99c14d45271f5e3299aa5d90105727bce9f040e4c5584689fcd57e5c6ba5ac",
+        "formatSpecMarkdownSha256": "5ea8e2ee3bef869ed84752a2b43b40dd1e7daedbd49b128d32508d8f51b5e465",
+        "formatSpecSha256": "cec9f8b9fb94de26a5b7b008b5a0ef7f5d6a93022c7b39b4f79553d517ed1432",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+        "inputSha256": "63f82866fc241531fe130087c6d4bef313a33895ccd2e731c4d60623936c1de0"
+      },
+      {
+        "caseId": "pdf-reference",
+        "caseSha256": "c5634d4db2e9a57b08649a1418f3ebb9689bcbfbd8c61c70129043b2e4499c98",
+        "draftPromptSha256": "77f7d397f46a96b234419252a7750891ac4f024705f830d69b77314b1b9a7074",
+        "formatSpecMarkdownSha256": "1436dc1f7d976ad74aa6065886fb34b833300ef2f1b636ff5479e7b7fe956f73",
+        "formatSpecSha256": "a2752391d51d50cbe7c5c2190eb43315d8abeb660ce717fc06174e7d9f09592f",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pdf-reference/input.json",
+        "inputSha256": "8eae5f60d292af90941f417f6fc0dcfd112d758e9f6c40f3e06e5f12bb505978"
+      },
+      {
+        "caseId": "pptx-briefing",
+        "caseSha256": "5e00503fff819e50385ddef3ad9b9ab2f4659c0a571ab6775cf12cb181d6dd7a",
+        "draftPromptSha256": "b261f0d16da7265e834ba94803b49de14010d5128eac606b17b34cbe49076a04",
+        "formatSpecMarkdownSha256": "b3c005e1ced28edf8d8ee0b8c419768bd140c3a15cbd2d1c9785d231405662ef",
+        "formatSpecSha256": "2e6bee5ee5152d60d0a89ee708beda71478d9bc2ec2c059aec40116264637427",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+        "inputSha256": "1fc04d9cf224e22a4041fcd0e0f821e87ad07aa514b97f929207cb9978d95b23"
+      },
+      {
+        "caseId": "xlsx-metrics",
+        "caseSha256": "c16e28b0434cb6a8d5cf0b069c1d2a378672ee9b49b7411dfb21417f5d4dab24",
+        "draftPromptSha256": "95ef7a01d637de0034196f28bd6286aa4b710c5753f13ffde25096e6e6a7412c",
+        "formatSpecMarkdownSha256": "e4b81738697126019d49bc701abd983c4a6547f74fa4bc58207506720da03eb0",
+        "formatSpecSha256": "9b349d4bf699e0fb4b4890d0287f0f8bdbb6c2d5537e32fd5f27697a88220bfe",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+        "inputSha256": "0f1a9a9e47be2e52b76b492983aeb773d251f8914b2a2eb20bc6584afde30ac3"
+      }
+    ],
+    "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+    "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975"
+  },
+  "results": [
+    {
+      "caseId": "docx-policy",
+      "diagnostics": [],
+      "formatType": "docx",
+      "outputDir": "experiments/format-spec/outputs/docx-policy",
+      "provenance": {
+        "caseSha256": "619c614568f86577f7d40e776a76a2903adc4284115b35442407fd7aa69c4f80",
+        "draftPromptSha256": "dd99c14d45271f5e3299aa5d90105727bce9f040e4c5584689fcd57e5c6ba5ac",
+        "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+        "formatSpecMarkdownSha256": "5ea8e2ee3bef869ed84752a2b43b40dd1e7daedbd49b128d32508d8f51b5e465",
+        "formatSpecSha256": "cec9f8b9fb94de26a5b7b008b5a0ef7f5d6a93022c7b39b4f79553d517ed1432",
+        "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+        "inputSha256": "63f82866fc241531fe130087c6d4bef313a33895ccd2e731c4d60623936c1de0"
+      },
+      "ruleCount": 17,
+      "verdict": "pass"
+    },
+    {
+      "caseId": "pdf-reference",
+      "diagnostics": [],
+      "formatType": "pdf",
+      "outputDir": "experiments/format-spec/outputs/pdf-reference",
+      "provenance": {
+        "caseSha256": "c5634d4db2e9a57b08649a1418f3ebb9689bcbfbd8c61c70129043b2e4499c98",
+        "draftPromptSha256": "77f7d397f46a96b234419252a7750891ac4f024705f830d69b77314b1b9a7074",
+        "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+        "formatSpecMarkdownSha256": "1436dc1f7d976ad74aa6065886fb34b833300ef2f1b636ff5479e7b7fe956f73",
+        "formatSpecSha256": "a2752391d51d50cbe7c5c2190eb43315d8abeb660ce717fc06174e7d9f09592f",
+        "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pdf-reference/input.json",
+        "inputSha256": "8eae5f60d292af90941f417f6fc0dcfd112d758e9f6c40f3e06e5f12bb505978"
+      },
+      "ruleCount": 8,
+      "verdict": "pass"
+    },
+    {
+      "caseId": "pptx-briefing",
+      "diagnostics": [],
+      "formatType": "pptx",
+      "outputDir": "experiments/format-spec/outputs/pptx-briefing",
+      "provenance": {
+        "caseSha256": "5e00503fff819e50385ddef3ad9b9ab2f4659c0a571ab6775cf12cb181d6dd7a",
+        "draftPromptSha256": "b261f0d16da7265e834ba94803b49de14010d5128eac606b17b34cbe49076a04",
+        "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+        "formatSpecMarkdownSha256": "b3c005e1ced28edf8d8ee0b8c419768bd140c3a15cbd2d1c9785d231405662ef",
+        "formatSpecSha256": "2e6bee5ee5152d60d0a89ee708beda71478d9bc2ec2c059aec40116264637427",
+        "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+        "inputSha256": "1fc04d9cf224e22a4041fcd0e0f821e87ad07aa514b97f929207cb9978d95b23"
+      },
+      "ruleCount": 12,
+      "verdict": "pass"
+    },
+    {
+      "caseId": "xlsx-metrics",
+      "diagnostics": [],
+      "formatType": "xlsx",
+      "outputDir": "experiments/format-spec/outputs/xlsx-metrics",
+      "provenance": {
+        "caseSha256": "c16e28b0434cb6a8d5cf0b069c1d2a378672ee9b49b7411dfb21417f5d4dab24",
+        "draftPromptSha256": "95ef7a01d637de0034196f28bd6286aa4b710c5753f13ffde25096e6e6a7412c",
+        "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+        "formatSpecMarkdownSha256": "e4b81738697126019d49bc701abd983c4a6547f74fa4bc58207506720da03eb0",
+        "formatSpecSha256": "9b349d4bf699e0fb4b4890d0287f0f8bdbb6c2d5537e32fd5f27697a88220bfe",
+        "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+        "inputSha256": "0f1a9a9e47be2e52b76b492983aeb773d251f8914b2a2eb20bc6584afde30ac3"
+      },
+      "ruleCount": 12,
+      "verdict": "pass"
+    }
+  ],
+  "schemaVersion": "format-spec-independent-evaluator-summary.v0",
+  "total": 4
+}

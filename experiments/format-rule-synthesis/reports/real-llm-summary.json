@@ -1,0 +1,114 @@
+{
+  "failed": [],
+  "generatedAt": "2026-05-14T09:30:06.709Z",
+  "mode": "real-llm",
+  "passed": 4,
+  "results": [
+    {
+      "caseId": "docx-policy",
+      "diagnostics": [],
+      "formatType": "docx",
+      "metrics": {
+        "attributeCount": 37,
+        "baselineAttributeCount": 0,
+        "baselineRuleCount": 17,
+        "evidenceCoverage": 1,
+        "granularityScore": 100,
+        "requiredAttributeHits": 10,
+        "ruleCount": 21,
+        "targetCount": 8
+      },
+      "mode": "real-llm",
+      "outputDir": "experiments/format-rule-synthesis/outputs/real-llm/docx-policy",
+      "provenance": {
+        "baselineSha256": "cec9f8b9fb94de26a5b7b008b5a0ef7f5d6a93022c7b39b4f79553d517ed1432",
+        "caseSha256": "619c614568f86577f7d40e776a76a2903adc4284115b35442407fd7aa69c4f80",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+        "inputSha256": "63f82866fc241531fe130087c6d4bef313a33895ccd2e731c4d60623936c1de0",
+        "outputSha256": "20bd016bc6d370e4482a2b6d3b794cbc52d1f85daa12816bea9ca982a35be25a",
+        "scriptSha256": "5584e45fb11a8e36d8a72451f415bcbbd506d93b34a8091181c76afa49e4675f"
+      },
+      "verdict": "pass"
+    },
+    {
+      "caseId": "pdf-reference",
+      "diagnostics": [],
+      "formatType": "pdf",
+      "metrics": {
+        "attributeCount": 24,
+        "baselineAttributeCount": 0,
+        "baselineRuleCount": 8,
+        "evidenceCoverage": 1,
+        "granularityScore": 100,
+        "requiredAttributeHits": 10,
+        "ruleCount": 12,
+        "targetCount": 7
+      },
+      "mode": "real-llm",
+      "outputDir": "experiments/format-rule-synthesis/outputs/real-llm/pdf-reference",
+      "provenance": {
+        "baselineSha256": "a2752391d51d50cbe7c5c2190eb43315d8abeb660ce717fc06174e7d9f09592f",
+        "caseSha256": "c5634d4db2e9a57b08649a1418f3ebb9689bcbfbd8c61c70129043b2e4499c98",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pdf-reference/input.json",
+        "inputSha256": "8eae5f60d292af90941f417f6fc0dcfd112d758e9f6c40f3e06e5f12bb505978",
+        "outputSha256": "ae71a75a5f2c89d6f0304756b72b21babe9433acdce34b8caa51497f49dd279f",
+        "scriptSha256": "5584e45fb11a8e36d8a72451f415bcbbd506d93b34a8091181c76afa49e4675f"
+      },
+      "verdict": "pass"
+    },
+    {
+      "caseId": "pptx-briefing",
+      "diagnostics": [],
+      "formatType": "pptx",
+      "metrics": {
+        "attributeCount": 43,
+        "baselineAttributeCount": 0,
+        "baselineRuleCount": 12,
+        "evidenceCoverage": 1,
+        "granularityScore": 100,
+        "requiredAttributeHits": 10,
+        "ruleCount": 17,
+        "targetCount": 8
+      },
+      "mode": "real-llm",
+      "outputDir": "experiments/format-rule-synthesis/outputs/real-llm/pptx-briefing",
+      "provenance": {
+        "baselineSha256": "2e6bee5ee5152d60d0a89ee708beda71478d9bc2ec2c059aec40116264637427",
+        "caseSha256": "5e00503fff819e50385ddef3ad9b9ab2f4659c0a571ab6775cf12cb181d6dd7a",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+        "inputSha256": "1fc04d9cf224e22a4041fcd0e0f821e87ad07aa514b97f929207cb9978d95b23",
+        "outputSha256": "785569566ee2fcca385919073e29aea71f5394f74b31afcc35cd1f08e044abc2",
+        "scriptSha256": "5584e45fb11a8e36d8a72451f415bcbbd506d93b34a8091181c76afa49e4675f"
+      },
+      "verdict": "pass"
+    },
+    {
+      "caseId": "xlsx-metrics",
+      "diagnostics": [],
+      "formatType": "xlsx",
+      "metrics": {
+        "attributeCount": 25,
+        "baselineAttributeCount": 0,
+        "baselineRuleCount": 12,
+        "evidenceCoverage": 1,
+        "granularityScore": 100,
+        "requiredAttributeHits": 10,
+        "ruleCount": 17,
+        "targetCount": 9
+      },
+      "mode": "real-llm",
+      "outputDir": "experiments/format-rule-synthesis/outputs/real-llm/xlsx-metrics",
+      "provenance": {
+        "baselineSha256": "9b349d4bf699e0fb4b4890d0287f0f8bdbb6c2d5537e32fd5f27697a88220bfe",
+        "caseSha256": "c16e28b0434cb6a8d5cf0b069c1d2a378672ee9b49b7411dfb21417f5d4dab24",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+        "inputSha256": "0f1a9a9e47be2e52b76b492983aeb773d251f8914b2a2eb20bc6584afde30ac3",
+        "outputSha256": "cb3980eac56bdc5899594794fcb770445e2f2a8f130214e12199336b1a7792a9",
+        "scriptSha256": "5584e45fb11a8e36d8a72451f415bcbbd506d93b34a8091181c76afa49e4675f"
+      },
+      "verdict": "pass"
+    }
+  ],
+  "schemaVersion": "format-rule-synthesis-summary.v0",
+  "total": 4
+}

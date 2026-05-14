@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "format-profile-refinement-input.v0",
+  "case": {
+    "schemaVersion": "format-profile-refinement-case.v0",
+    "caseId": "pdf-reference",
+    "sourceCaseId": "batch_29_pdf_local_01_platform_intro_0312",
+    "phase": "phase2",
+    "formatType": "pdf",
+    "role": "golden",
+    "taskMode": "reference_profile_only",
+    "description": "PDF 参考成品样本，用于验证文本层/扫描倾向/参考边界，不把 PDF 画像当作可导出模板。",
+    "constraints": {
+      "maxInstructionChars": 3400,
+      "maxOverlayClaims": 12,
+      "allowInference": true
+    },
+    "expected": {
+      "mustPreserveFallbackHashes": true,
+      "mustRejectUnsupportedInstruction": true,
+      "qualityThreshold": 0.68
+    }
+  },
+  "deterministicProfile": {
+    "schemaVersion": "format-profile.v0",
+    "profileId": "profile_batch_29_pdf_local_01_platform_intro_0312",
+    "source": {
+      "path": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "fileName": "pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "fileType": "pdf",
+      "sha256": "b4445435434470faf05b57a6844f669c12b0658dacb7736b2d06c88aded08ded",
+      "byteSize": 5209651
+    },
+    "documentKind": {
+      "label": "成品参考/宣传介绍",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "kind": "file_probe",
+          "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+          "path": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf"
+        }
+      ]
+    },
+    "capabilities": {
+      "canGuideGeneration": true,
+      "canGuideAdaptation": true,
+      "canGuideExport": false,
+      "confidence": "medium",
+      "notes": [
+        "Phase 2 已接入 PDF 基础字节诊断；复杂版式和扫描件仍需降级。"
+      ]
+    },
+    "structureProfile": {
+      "confidence": "medium",
+      "sections": [],
+      "tables": [],
+      "pageCount": 15,
+      "textOperatorCount": 52,
+      "imageCount": 108,
+      "scanLikely": false,
+      "evidence": [
+        {
+          "kind": "file_probe",
+          "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+          "path": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf"
+        }
+      ]
+    },
+    "styleProfile": {
+      "confidence": "medium",
+      "layout": {
+        "pageCount": 15
+      },
+      "typography": {
+        "fontRefs": [
+          "YWSWBG+MicrosoftYaHei-Bold",
+          "UDUJXM+SegoeUI-Bold",
+          "YMVEVT+MicrosoftYaHei",
+          "LNUHNF+SimSun",
+          "VULAQV+SegoeUI"
+        ]
+      },
+      "colors": {},
+      "formatSpecific": {
+        "extractionStage": "basic_probe",
+        "realParserAttached": true,
+        "pdfHeader": "%PDF-1.7\n%Â³ÇØ\r\n",
+        "encrypted": false,
+        "hasTextLayerHint": true,
+        "scanLikely": false
+      },
+      "evidence": [
+        {
+          "kind": "file_probe",
+          "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+          "path": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf"
+        }
+      ]
+    },
+    "writingProfile": {
+      "confidence": "low",
+      "tone": [
+        "参考成品"
+      ],
+      "genre": [
+        "宣传介绍或正式材料"
+      ],
+      "constraints": [
+        "PDF 只作为参考，不承诺还原原始排版。"
+      ],
+      "evidence": [
+        {
+          "kind": "file_probe",
+          "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+          "path": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf"
+        }
+      ]
+    },
+    "diagnostics": [
+      {
+        "severity": "info",
+        "code": "probe.completed",
+        "message": "Phase 2 已完成 PDF 基础探测：页对象 15、文本操作符 52、图片 108、字体线索 5。"
+      },
+      {
+        "severity": "info",
+        "code": "format.pdf.text_layer_diagnostic",
+        "message": "PDF 有文本层或字体线索，可作为中低置信度参考成品。"
+      },
+      {
+        "severity": "info",
+        "code": "binding.adaptation_mode",
+        "message": "该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。"
+      }
+    ],
+    "rawProbeFacts": {
+      "kind": "pdf",
+      "header": "%PDF-1.7\n%Â³ÇØ\r\n",
+      "structure": {
+        "pageCount": 15,
+        "textOperatorCount": 52,
+        "imageCount": 108,
+        "encrypted": false,
+        "hasXfa": false,
+        "hasTextLayerHint": true,
+        "scanLikely": false
+      },
+      "style": {
+        "fontRefs": [
+          "YWSWBG+MicrosoftYaHei-Bold",
+          "UDUJXM+SegoeUI-Bold",
+          "YMVEVT+MicrosoftYaHei",
+          "LNUHNF+SimSun",
+          "VULAQV+SegoeUI"
+        ]
+      }
+    }
+  },
+  "deterministicGenerationInstruction": "# Generation Instruction: batch_29_pdf_local_01_platform_intro_0312\n\n## 任务\n\n根据该 PDF 成品判断可解析文本、页面结构和是否适合作为格式参考。\n\n## 模式\n\n已有底稿适配到格式画像。\n\n## 探测摘要\n\n- Profile: profile_batch_29_pdf_local_01_platform_intro_0312\n- 文件类型: pdf\n- 文档类型推断: 成品参考/宣传介绍\n- 画像置信度: medium\n- Snapshot: cb31b28a7a67dc9236ba2179a32de8c5624a1c11795136c4ecda60f48c545daa\n- 探测摘要: 页对象 15、文本操作符 52、图片 108、字体线索 5\n\n## 临时调整\n\n- experiment: phase2-batch\n- formatBoundary: PDF 仅作为成品参考，不承诺高保真还原。\n\n## 写作约束\n\n1. 优先满足用户目标，不把格式说明混入正文。\n2. 持续遵守当前 FormatBinding；后续补写、改写和续写均默认继承该绑定。\n3. 如果格式画像与用户材料冲突，保留用户事实，并在 diagnostics 中说明冲突。\n4. 对 DOCX，优先生成正式文稿结构；对 XLSX，优先生成表格化分析；对 PPTX，优先生成逐页汇报底稿；对 PDF，仅作为参考成品。\n\n## 画像约束\n\n- 将 PDF 作为成品参考，不承诺还原原始版式。\n- 页面线索：15 页；文本层线索：52。\n- 若 PDF 图片密集或字体线索不足，生成时只参考文体与结构，不复制排版。\n\n## 能力边界\n\n- [info] probe.completed: Phase 2 已完成 PDF 基础探测：页对象 15、文本操作符 52、图片 108、字体线索 5。\n- [info] format.pdf.text_layer_diagnostic: PDF 有文本层或字体线索，可作为中低置信度参考成品。\n- [info] binding.adaptation_mode: 该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。\n",
+  "diagnostics": {
+    "schemaVersion": "format-diagnostics.v0",
+    "caseId": "batch_29_pdf_local_01_platform_intro_0312",
+    "status": "ready",
+    "diagnostics": [
+      {
+        "severity": "info",
+        "code": "probe.completed",
+        "message": "Phase 2 已完成 PDF 基础探测：页对象 15、文本操作符 52、图片 108、字体线索 5。"
+      },
+      {
+        "severity": "info",
+        "code": "format.pdf.text_layer_diagnostic",
+        "message": "PDF 有文本层或字体线索，可作为中低置信度参考成品。"
+      },
+      {
+        "severity": "info",
+        "code": "binding.adaptation_mode",
+        "message": "该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。"
+      }
+    ]
+  },
+  "rawEvidence": [
+    {
+      "id": "raw.pdf.fact.pageCount",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/pageCount",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "pageCount: 15",
+      "value": 15,
+      "sha256": "1b6d0dfb3006db8e97510bf11de6b6e8ee7bb8b87a91894cd25eef04bc93f9e8"
+    },
+    {
+      "id": "raw.pdf.fact.textOperatorCount",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/textOperatorCount",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "textOperatorCount: 52",
+      "value": 52,
+      "sha256": "6098ced2e8c2cd877949d59a5f3abe91d771b79f14d40f9c87c686260a398ae1"
+    },
+    {
+      "id": "raw.pdf.fact.imageCount",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/imageCount",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "imageCount: 108",
+      "value": 108,
+      "sha256": "b6281aa0a00cfb4951c323cfd774b99cfd3ca83849a18af9f93a2e3d12934607"
+    },
+    {
+      "id": "raw.pdf.fact.scanLikely",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/scanLikely",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "scanLikely: false",
+      "value": false,
+      "sha256": "1f0f242cedcfc330836eefa056654093e74c3a8e6a82c88eac75f11f7ee694f1"
+    },
+    {
+      "id": "profile.style.0001",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/layout",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "layout evidence",
+      "value": {
+        "pageCount": 15
+      },
+      "sha256": "3805eeb66276a94a3986a1737c2dbb0e521ed26d2891a464f5f3e5b3d4ba6375"
+    },
+    {
+      "id": "profile.style.0002",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/typography",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "typography evidence",
+      "value": {
+        "fontRefs": [
+          "YWSWBG+MicrosoftYaHei-Bold",
+          "UDUJXM+SegoeUI-Bold",
+          "YMVEVT+MicrosoftYaHei",
+          "LNUHNF+SimSun",
+          "VULAQV+SegoeUI"
+        ]
+      },
+      "sha256": "b7163b8eda22467e653a3e56b62208437e0e9c2aa51448b28a8ee453f57b6454"
+    },
+    {
+      "id": "profile.style.0004",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/formatSpecific",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "formatSpecific evidence",
+      "value": {
+        "extractionStage": "basic_probe",
+        "realParserAttached": true,
+        "pdfHeader": "%PDF-1.7\n%Â³ÇØ\r\n",
+        "encrypted": false,
+        "hasTextLayerHint": true,
+        "scanLikely": false
+      },
+      "sha256": "090f0af123442060efdb3019f617ea08f0363e820c4c58ed09baba47cb880ad3"
+    },
+    {
+      "id": "diagnostic.0001",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/0",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "info probe.completed: Phase 2 已完成 PDF 基础探测：页对象 15、文本操作符 52、图片 108、字体线索 5。",
+      "value": {
+        "severity": "info",
+        "code": "probe.completed",
+        "message": "Phase 2 已完成 PDF 基础探测：页对象 15、文本操作符 52、图片 108、字体线索 5。"
+      },
+      "sha256": "f26717f4138edda84e540901ace9f24948d1fc077a6d6f9e48a30e196fec71b7"
+    },
+    {
+      "id": "diagnostic.0002",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/1",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "info format.pdf.text_layer_diagnostic: PDF 有文本层或字体线索，可作为中低置信度参考成品。",
+      "value": {
+        "severity": "info",
+        "code": "format.pdf.text_layer_diagnostic",
+        "message": "PDF 有文本层或字体线索，可作为中低置信度参考成品。"
+      },
+      "sha256": "bec9c10ae6d21e11c79642aaa57f3451dbb81a39f1838c547e6a431893d7b87f"
+    },
+    {
+      "id": "diagnostic.0003",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/2",
+      "sourcePath": "runtime/format-profile/samples/local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "text": "info binding.adaptation_mode: 该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。",
+      "value": {
+        "severity": "info",
+        "code": "binding.adaptation_mode",
+        "message": "该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。"
+      },
+      "sha256": "7e32a6bffc8c88750e26590c37d2c77359974192c79fd7616d5654934b4adcfd"
+    }
+  ],
+  "hashes": {
+    "deterministicProfileSha256": "940e3ce386dc8224542359dc37f8c2a689dfbc20b4fe59aa01b992fed835c337",
+    "deterministicInstructionSha256": "c4dbe9f0653fe7cfcfc140396f24657a4411fdbd48f26f5dce3d027312a13c9c",
+    "rawEvidenceSha256": "41aafaf2459ddd461b90b1a062ed39d0113d269766c4e86310567fe0a3dd22e0"
+  },
+  "paths": {
+    "runtimeDir": "runtime/format-profile/outputs/phase2/batch_29_pdf_local_01_platform_intro_0312",
+    "profilePath": "runtime/format-profile/outputs/phase2/batch_29_pdf_local_01_platform_intro_0312/profile.json",
+    "instructionPath": "runtime/format-profile/outputs/phase2/batch_29_pdf_local_01_platform_intro_0312/generation-instruction.md",
+    "diagnosticsPath": "runtime/format-profile/outputs/phase2/batch_29_pdf_local_01_platform_intro_0312/diagnostics.json"
+  }
+}

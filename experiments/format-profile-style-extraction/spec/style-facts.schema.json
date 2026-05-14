@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FormatProfile Style Facts v0",
+  "type": "object",
+  "required": ["schemaVersion", "caseId", "source", "parser", "capabilities", "styleFacts", "evidence", "diagnostics", "metadata"],
+  "properties": {
+    "schemaVersion": { "const": "format-profile-style-facts.v0" },
+    "caseId": { "type": "string" },
+    "source": { "type": "object" },
+    "parser": { "type": "object", "required": ["deterministic", "authority"] },
+    "capabilities": { "type": "object" },
+    "styleFacts": { "type": "object" },
+    "evidence": { "type": "array" },
+    "diagnostics": { "type": "array" },
+    "metadata": { "type": "object", "required": ["styleFactsSha256"] }
+  },
+  "additionalProperties": false
+}

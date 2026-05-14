@@ -1,0 +1,138 @@
+{
+  "caseId": "pdf-reference",
+  "confidence": "medium",
+  "contentLeakagePolicy": {
+    "includeRawEvidenceDump": false,
+    "includeSourceBodyText": false,
+    "promptMayIncludeEvidenceIds": false
+  },
+  "documentIntent": "成品参考/宣传介绍",
+  "globalBoundaries": [
+    "来源事实优先于格式约束；不得根据格式画像虚构组织、金额、条款、结论或引用。",
+    "FormatSpec 只约束结构、表达、排版和诊断，不承诺导出文件。",
+    "FormatSpec 不承诺视觉还原；证据不足的字段必须降级为建议或诊断。",
+    "默认数据范围为 evidence-only；draft prompt 不展示 raw evidence 正文或证据转储。"
+  ],
+  "rules": [
+    {
+      "confidence": "medium",
+      "detail": "检测到页数 15；可参考篇幅和页面密度，但不反推完整可编辑模板。",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely",
+        "profile.style.0001"
+      ],
+      "id": "pdf-page-1",
+      "rule": "PDF 以页为参考单位。",
+      "source": "detected",
+      "target": "page"
+    },
+    {
+      "confidence": "medium",
+      "detail": "文本层提示：存在；文本层不足时只做低置信参考。",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely",
+        "profile.style.0001"
+      ],
+      "id": "pdf-text-layer-1",
+      "rule": "文本层线索决定可参考程度。",
+      "source": "detected",
+      "target": "text-layer"
+    },
+    {
+      "confidence": "medium",
+      "detail": "图片较多时，生成底稿应保持图文分区建议，不补造图片内容或位置。",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely",
+        "profile.style.0001"
+      ],
+      "id": "pdf-image-density-1",
+      "rule": "图片密度只作为版面复杂度诊断。",
+      "source": "inferred",
+      "target": "image-density"
+    },
+    {
+      "confidence": "medium",
+      "detail": "字体引用线索：YWSWBG+MicrosoftYaHei-Bold、UDUJXM+SegoeUI-Bold、YMVEVT+MicrosoftYaHei、LNUHNF+SimSun、VULAQV+SegoeUI；这些是 PDF 资源名，只能用于诊断。",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely",
+        "profile.style.0001"
+      ],
+      "id": "pdf-font-ref-1",
+      "rule": "字体引用不是可编辑字体承诺。",
+      "source": "detected",
+      "target": "font-ref"
+    },
+    {
+      "confidence": "medium",
+      "detail": "扫描风险：未明显触发；扫描风险高时不得输出细排版规则。",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "raw.pdf.fact.scanLikely",
+        "profile.style.0001"
+      ],
+      "id": "pdf-scan-risk-1",
+      "rule": "扫描风险影响置信度。",
+      "source": "detected",
+      "target": "scan-risk"
+    },
+    {
+      "confidence": "medium",
+      "detail": "可参考页数、栏目密度、图文比例、正式程度；不把 PDF 当作可直接套用模板。",
+      "id": "pdf-reference-1",
+      "rule": "PDF 适合作为成品参考。",
+      "source": "standard-default",
+      "target": "reference-use"
+    },
+    {
+      "confidence": "high",
+      "detail": "不能承诺跨页布局、图像位置、页眉页脚、印章、水印或装订效果。",
+      "id": "pdf-boundary-1",
+      "rule": "PDF 画像不承诺视觉还原。",
+      "source": "standard-default",
+      "target": "boundary"
+    },
+    {
+      "confidence": "high",
+      "detail": "任何正文、数据、引用和结论必须来自用户底稿或授权资料，不从字体/页面线索推断。",
+      "id": "pdf-boundary-2",
+      "rule": "PDF 不产生来源事实。",
+      "source": "standard-default",
+      "target": "boundary"
+    }
+  ],
+  "schemaVersion": "format-spec.v0",
+  "sourceFileType": "pdf",
+  "typeSpecific": {
+    "pdf": {
+      "outputMode": "finished-reference-diagnostics",
+      "page": {
+        "hasTextLayerHint": true,
+        "pageCount": 15,
+        "scanLikely": false
+      },
+      "typography": {
+        "fontRefs": [
+          "YWSWBG+MicrosoftYaHei-Bold",
+          "UDUJXM+SegoeUI-Bold",
+          "YMVEVT+MicrosoftYaHei",
+          "LNUHNF+SimSun",
+          "VULAQV+SegoeUI"
+        ]
+      }
+    }
+  }
+}

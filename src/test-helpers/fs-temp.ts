@@ -14,6 +14,13 @@ import path from "node:path"
 import os from "node:os"
 import type { FileNode } from "@/types/wiki"
 
+async function writeFileAtomic(p: string, contents: string): Promise<void> {
+  await fs.mkdir(path.dirname(p), { recursive: true })
+  const tmp = `${p}.tmp-${process.pid}-${Date.now()}-${Math.random().toString(36).slice(2)}`
+  await fs.writeFile(tmp, contents, "utf-8")
+  await fs.rename(tmp, p)
+}
+
 async function buildTree(dir: string): Promise<FileNode[]> {
   let entries
   try {
@@ -53,8 +60,7 @@ export const realFs = {
     return fs.readFile(p, "utf-8")
   },
   writeFile: async (p: string, contents: string): Promise<void> => {
-    await fs.mkdir(path.dirname(p), { recursive: true })
-    await fs.writeFile(p, contents, "utf-8")
+    await writeFileAtomic(p, contents)
   },
   listDirectory: async (p: string): Promise<FileNode[]> => {
     return buildTree(p)
@@ -132,8 +138,7 @@ export async function readFileRaw(p: string): Promise<string> {
 
 /** Write a file directly (bypasses the mocked API) — used in fixture setup. */
 export async function writeFileRaw(p: string, contents: string): Promise<void> {
-  await fs.mkdir(path.dirname(p), { recursive: true })
-  await fs.writeFile(p, contents, "utf-8")
+  await writeFileAtomic(p, contents)
 }
 
 /** Check if a file exists on disk. */

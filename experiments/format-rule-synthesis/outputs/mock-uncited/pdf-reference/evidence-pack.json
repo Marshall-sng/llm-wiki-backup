@@ -1,0 +1,183 @@
+{
+  "caseId": "pdf-reference",
+  "confidence": "medium",
+  "currentFormatSpecControl": {
+    "ruleCount": 8,
+    "sampleRules": [
+      {
+        "detail": "检测到页数 15；可参考篇幅和页面密度，但不反推完整可编辑模板。",
+        "id": "pdf-page-1",
+        "rule": "PDF 以页为参考单位。",
+        "target": "page"
+      },
+      {
+        "detail": "文本层提示：存在；文本层不足时只做低置信参考。",
+        "id": "pdf-text-layer-1",
+        "rule": "文本层线索决定可参考程度。",
+        "target": "text-layer"
+      },
+      {
+        "detail": "图片较多时，生成底稿应保持图文分区建议，不补造图片内容或位置。",
+        "id": "pdf-image-density-1",
+        "rule": "图片密度只作为版面复杂度诊断。",
+        "target": "image-density"
+      },
+      {
+        "detail": "字体引用线索：YWSWBG+MicrosoftYaHei-Bold、UDUJXM+SegoeUI-Bold、YMVEVT+MicrosoftYaHei、LNUHNF+SimSun、VULAQV+SegoeUI；这些是 PDF 资源名，只能用于诊断。",
+        "id": "pdf-font-ref-1",
+        "rule": "字体引用不是可编辑字体承诺。",
+        "target": "font-ref"
+      },
+      {
+        "detail": "扫描风险：未明显触发；扫描风险高时不得输出细排版规则。",
+        "id": "pdf-scan-risk-1",
+        "rule": "扫描风险影响置信度。",
+        "target": "scan-risk"
+      }
+    ],
+    "targets": [
+      "page",
+      "text-layer",
+      "image-density",
+      "font-ref",
+      "scan-risk",
+      "reference-use",
+      "boundary"
+    ]
+  },
+  "documentKind": "成品参考/宣传介绍",
+  "evidenceCatalog": [
+    {
+      "id": "raw.pdf.fact.pageCount",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/pageCount",
+      "text": "pageCount: 15",
+      "valueDigest": "e629fa6598d73276"
+    },
+    {
+      "id": "raw.pdf.fact.textOperatorCount",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/textOperatorCount",
+      "text": "textOperatorCount: 52",
+      "valueDigest": "41cfc0d1f2d127b0"
+    },
+    {
+      "id": "raw.pdf.fact.imageCount",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/imageCount",
+      "text": "imageCount: 108",
+      "valueDigest": "9537f32ec7599e1a"
+    },
+    {
+      "id": "raw.pdf.fact.scanLikely",
+      "kind": "raw.pdf.fact",
+      "pointer": "/pdfFacts/scanLikely",
+      "text": "scanLikely: false",
+      "valueDigest": "fcbcf165908dd18a"
+    },
+    {
+      "id": "profile.style.0001",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/layout",
+      "text": "layout evidence",
+      "valueDigest": "0c3b5fc7b3288e16"
+    },
+    {
+      "id": "profile.style.0002",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/typography",
+      "text": "typography evidence",
+      "valueDigest": "843cc74a7501eaaf"
+    },
+    {
+      "id": "profile.style.0004",
+      "kind": "profile.style",
+      "pointer": "/styleProfile/formatSpecific",
+      "text": "formatSpecific evidence",
+      "valueDigest": "de6e470bf9efbd5a"
+    },
+    {
+      "id": "diagnostic.0001",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/0",
+      "text": "info probe.completed: Phase 2 已完成 PDF 基础探测：页对象 15、文本操作符 52、图片 108、字体线索 5。",
+      "valueDigest": "07b9bbeaf3ebcc07"
+    },
+    {
+      "id": "diagnostic.0002",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/1",
+      "text": "info format.pdf.text_layer_diagnostic: PDF 有文本层或字体线索，可作为中低置信度参考成品。",
+      "valueDigest": "d1712e95b5a0a30f"
+    },
+    {
+      "id": "diagnostic.0003",
+      "kind": "diagnostic",
+      "pointer": "/diagnostics/2",
+      "text": "info binding.adaptation_mode: 该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。",
+      "valueDigest": "18326c04f5a9bcbd"
+    }
+  ],
+  "fileType": "pdf",
+  "instruction": "Infer detailed GB/T-like executable formatting rules from evidence. Do not copy source body text into rules. Every non-boundary rule must cite evidenceRefs.",
+  "profileSummary": {
+    "diagnostics": [
+      {
+        "code": "probe.completed",
+        "message": "Phase 2 已完成 PDF 基础探测：页对象 15、文本操作符 52、图片 108、字体线索 5。",
+        "severity": "info"
+      },
+      {
+        "code": "format.pdf.text_layer_diagnostic",
+        "message": "PDF 有文本层或字体线索，可作为中低置信度参考成品。",
+        "severity": "info"
+      },
+      {
+        "code": "binding.adaptation_mode",
+        "message": "该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。",
+        "severity": "info"
+      }
+    ],
+    "structure": {
+      "confidence": "medium",
+      "evidence": [
+        {
+          "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+          "kind": "file_probe",
+          "path": "[REDACTED_PATH]"
+        }
+      ],
+      "imageCount": 108,
+      "pageCount": 15,
+      "scanLikely": false,
+      "sections": [],
+      "tables": [],
+      "textOperatorCount": 52
+    },
+    "styleProfile": {
+      "colors": {},
+      "evidenceSummary": [],
+      "formatSpecific": {
+        "encrypted": false,
+        "extractionStage": "basic_probe",
+        "hasTextLayerHint": true,
+        "pdfHeader": "%PDF-1.7 %Â³ÇØ",
+        "realParserAttached": true,
+        "scanLikely": false
+      },
+      "layout": {
+        "pageCount": 15
+      },
+      "typography": {
+        "fontRefs": [
+          "YWSWBG+MicrosoftYaHei-Bold",
+          "UDUJXM+SegoeUI-Bold",
+          "YMVEVT+MicrosoftYaHei",
+          "LNUHNF+SimSun",
+          "VULAQV+SegoeUI"
+        ]
+      }
+    }
+  },
+  "schemaVersion": "format-rule-synthesis-evidence-pack.v0"
+}

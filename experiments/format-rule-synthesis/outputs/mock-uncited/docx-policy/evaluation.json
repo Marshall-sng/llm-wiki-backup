@@ -1,0 +1,42 @@
+{
+  "caseId": "docx-policy",
+  "diagnostics": [
+    {
+      "code": "boundary",
+      "message": "globalBoundaries must include at least 3 items",
+      "severity": "error"
+    },
+    {
+      "code": "forbidden-promise",
+      "message": "forbidden promise: exact visual recreation",
+      "severity": "error"
+    },
+    {
+      "code": "forbidden-promise",
+      "message": "forbidden promise: high-fidelity export",
+      "severity": "error"
+    },
+    {
+      "code": "unknown-evidence",
+      "message": "rule docx-page-size cites missing.evidence.0001",
+      "severity": "error"
+    },
+    {
+      "code": "evidence-coverage",
+      "message": "valid refs 285/286",
+      "severity": "warning"
+    }
+  ],
+  "metrics": {
+    "attributeCount": 40,
+    "baselineAttributeCount": 0,
+    "baselineRuleCount": 17,
+    "evidenceCoverage": 0.9965034965034965,
+    "granularityScore": 100,
+    "requiredAttributeHits": 10,
+    "ruleCount": 18,
+    "targetCount": 8
+  },
+  "schemaVersion": "format-rule-synthesis-evaluation.v0",
+  "verdict": "fail"
+}

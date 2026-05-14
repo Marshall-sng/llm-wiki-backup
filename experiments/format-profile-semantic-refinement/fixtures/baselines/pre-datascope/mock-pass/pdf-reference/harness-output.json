@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "format-profile-harness-output.v0",
+  "caseId": "pdf-reference",
+  "attemptStatus": "llm_completed",
+  "evaluatorVerdict": "pass",
+  "finalStatus": "refined",
+  "hashes": {
+    "deterministicProfileSha256": "940e3ce386dc8224542359dc37f8c2a689dfbc20b4fe59aa01b992fed835c337",
+    "deterministicInstructionSha256": "c4dbe9f0653fe7cfcfc140396f24657a4411fdbd48f26f5dce3d027312a13c9c",
+    "rawEvidenceSha256": "41aafaf2459ddd461b90b1a062ed39d0113d269766c4e86310567fe0a3dd22e0",
+    "acceptedOverlaySha256": "981e7eaa8effcb1b6db5d49ef5ebd6a41c032f4433d0605511afccc11c280f05",
+    "renderedInstructionSha256": "4eb76d62bd758b1dd2b3cadc1271d31c0b37e9f1fabaf4115bf119ed20d0561a"
+  },
+  "acceptedOverlay": {
+    "schemaVersion": "format-profile-llm-overlay.v0",
+    "caseId": "pdf-reference",
+    "confidence": {
+      "semanticConfidence": "medium",
+      "notes": [
+        "mock-pass overlay for harness validation"
+      ]
+    },
+    "semanticOverlay": {
+      "documentKind": {
+        "value": "成品参考/宣传介绍",
+        "evidenceRefs": [
+          "raw.pdf.fact.pageCount"
+        ],
+        "inference": false,
+        "rationale": "documentKind comes from deterministic profile label."
+      },
+      "structureSummary": {
+        "value": [
+          "PDF 作为参考成品，应先判断页数、文本层和扫描倾向。",
+          "若文本层线索较弱，应降低内容抽取置信度并保留诊断。"
+        ],
+        "evidenceRefs": [
+          "raw.pdf.fact.pageCount",
+          "raw.pdf.fact.textOperatorCount",
+          "raw.pdf.fact.imageCount",
+          "raw.pdf.fact.scanLikely"
+        ],
+        "inference": true,
+        "rationale": "Structure summary is compressed from profile/evidence headings or format facts."
+      },
+      "styleSummary": {
+        "value": [
+          "字体、图片数量和页面对象只作为参考线索，不作为可编辑样式承诺。"
+        ],
+        "evidenceRefs": [
+          "profile.style.0001",
+          "profile.style.0002",
+          "profile.style.0004"
+        ],
+        "inference": true,
+        "rationale": "Style summary cites style evidence and avoids export promises."
+      },
+      "writingConstraints": {
+        "value": [
+          "生成时参考成品的主题密度和页面粒度，但事实必须来自用户材料。"
+        ],
+        "evidenceRefs": [
+          "raw.pdf.fact.pageCount",
+          "raw.pdf.fact.textOperatorCount",
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Writing constraints preserve user fact boundary."
+      },
+      "formatBoundaries": {
+        "value": [
+          "PDF 画像只作为参考，不代表可编辑模板或导出能力。"
+        ],
+        "evidenceRefs": [
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Boundaries are derived from capability diagnostics and harness policy."
+      }
+    },
+    "diagnostics": [
+      {
+        "severity": "info",
+        "code": "mock_pass",
+        "message": "Mock overlay generated for harness validation.",
+        "evidenceRefs": [
+          "raw.pdf.fact.pageCount"
+        ]
+      }
+    ]
+  },
+  "renderedGenerationInstruction": "# 格式画像语义精炼约束: pdf-reference\n\n## 适用边界\n- 文件类型：pdf\n- 来源画像：profile_batch_29_pdf_local_01_platform_intro_0312\n- 本指令由 harness 根据确定性画像和已验收 LLM overlay 渲染；LLM 不直接生成最终指令。\n- 保留来源事实边界，不根据格式画像虚构内容；不承诺版式还原或文件导出能力。\n\n### 文档定位\n- 成品参考/宣传介绍 （证据：raw.pdf.fact.pageCount）\n\n### 结构组织建议\n- PDF 作为参考成品，应先判断页数、文本层和扫描倾向。\n- 若文本层线索较弱，应降低内容抽取置信度并保留诊断。\n\n### 样式/版式线索\n- 字体、图片数量和页面对象只作为参考线索，不作为可编辑样式承诺。\n\n### 写作约束\n- 生成时参考成品的主题密度和页面粒度，但事实必须来自用户材料。\n\n### 格式边界\n- PDF 画像只作为参考，不代表可编辑模板或导出能力。\n\n## 诊断边界\n- 语义置信度：medium\n- Harness 质量分：0.994\n- 若用户事实材料与格式画像冲突，以用户事实材料为准，并记录诊断。\n",
+  "diagnostics": [],
+  "reports": {
+    "evaluatorReportPath": "evaluator-report.json"
+  }
+}

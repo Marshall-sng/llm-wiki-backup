@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-wiki.local/format-profile/llm-overlay-output.schema.json",
+  "title": "LLM Overlay Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "caseId",
+    "confidence",
+    "semanticOverlay"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "format-profile-llm-overlay.v0"
+    },
+    "caseId": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semanticConfidence"
+      ],
+      "properties": {
+        "semanticConfidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "unknown"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "semanticOverlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "documentKind": {
+          "$ref": "#/$defs/claim"
+        },
+        "structureSummary": {
+          "$ref": "#/$defs/claim"
+        },
+        "styleSummary": {
+          "$ref": "#/$defs/claim"
+        },
+        "writingConstraints": {
+          "$ref": "#/$defs/claim"
+        },
+        "formatBoundaries": {
+          "$ref": "#/$defs/claim"
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "severity",
+          "code",
+          "message"
+        ],
+        "properties": {
+          "severity": {
+            "enum": [
+              "info",
+              "warning"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "evidenceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "evidenceRefs",
+        "inference",
+        "rationale"
+      ],
+      "properties": {
+        "value": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "evidenceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "inference": {
+          "type": "boolean"
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

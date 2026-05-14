@@ -36,4 +36,4 @@ requirements/migration-decision-log.md
 ```
 
 为准。
-
+- `active/format-profile-stylefacts-productization-design-intake.md` — 2026-05-14 StyleFacts 产品化设计输入与遗漏修正。

@@ -1,0 +1,83 @@
+{
+  "caseId": "pdf-reference",
+  "verdict": "pass",
+  "baseline": {
+    "ruleCount": 8,
+    "hash": "8d590a5d92effd55eb1728928c2eb35ffa0fb9220d34258b9691668a28cf8d6f"
+  },
+  "metrics": {
+    "autoRuleCount": 12,
+    "editedRuleCount": 12,
+    "warningCount": 24,
+    "editedOverrides": 1
+  },
+  "variants": {
+    "auto": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "missingSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:page-unit-001: missing source defaulted to inferred",
+        "soft-source-default:page-density-002: missing source defaulted to inferred",
+        "soft-source-default:text-layer-001: missing source defaulted to inferred",
+        "soft-source-default:text-layer-002: missing source defaulted to inferred",
+        "soft-source-default:image-density-001: missing source defaulted to inferred",
+        "soft-source-default:font-ref-001: missing source defaulted to inferred",
+        "soft-source-default:font-ref-002: missing source defaulted to inferred",
+        "soft-source-default:scan-risk-001: missing source defaulted to inferred",
+        "soft-source-default:reference-use-001: missing source defaulted to inferred",
+        "soft-source-default:table-signature-001: missing source defaulted to inferred",
+        "soft-source-default:list-signature-001: missing source defaulted to inferred",
+        "soft-source-default:boundary-001: missing source defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "unknownSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:page-unit-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:page-density-002: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:text-layer-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:text-layer-002: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:image-density-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:font-ref-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:font-ref-002: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:scan-risk-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:reference-use-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:table-signature-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:list-signature-001: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:boundary-001: unknown source \"parser-stylefacts\" defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "edited": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "negativeUnknownEvidence": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "evidence:page-unit-001: unknown evidenceRef missing.evidence"
+      ]
+    },
+    "negativeForbiddenField": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "forbidden-field:rawText"
+      ]
+    },
+    "negativeFidelityPromise": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "boundary-promise:fidelity/export promise detected"
+      ]
+    }
+  }
+}

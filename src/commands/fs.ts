@@ -45,6 +45,23 @@ export interface MarkitdownConversion {
   timedOut: boolean
 }
 
+
+
+export interface FormatProfileProbe {
+  kind: "office_zip" | "pdf"
+  officeKind?: "docx" | "xlsx" | "pptx"
+  entryCount?: number
+  hasMainDocument?: boolean
+  relationships?: number
+  contentTypesCount?: number
+  header?: string
+  structure?: Record<string, unknown>
+  style?: Record<string, unknown>
+}
+
+export async function probeFormatProfile(path: string): Promise<FormatProfileProbe> {
+  return invoke<FormatProfileProbe>("probe_format_profile", { path })
+}
 export async function convertWithMarkitdown(
   path: string,
 ): Promise<MarkitdownConversion> {

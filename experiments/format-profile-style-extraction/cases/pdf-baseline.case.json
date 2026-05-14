@@ -1,0 +1,13 @@
+{
+  "caseId": "pdf-baseline",
+  "format": "pdf",
+  "priority": "baseline",
+  "sourceProfile": "runtime/format-profile/outputs/phase2/batch_29_pdf_local_01_platform_intro_0312/profile.json",
+  "expected": {
+    "pageCount": 15,
+    "textOperatorCount": 52,
+    "imageCount": 108,
+    "scanLikely": false,
+    "fontRefsInclude": ["MicrosoftYaHei", "SimSun"]
+  }
+}

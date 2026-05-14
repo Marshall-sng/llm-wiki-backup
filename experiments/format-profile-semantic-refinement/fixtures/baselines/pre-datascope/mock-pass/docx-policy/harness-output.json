@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "format-profile-harness-output.v0",
+  "caseId": "docx-policy",
+  "attemptStatus": "llm_completed",
+  "evaluatorVerdict": "pass",
+  "finalStatus": "refined",
+  "hashes": {
+    "deterministicProfileSha256": "3836dec7d4e86fabf220d270b7217951eee3160a9db91937f8932c6e5e65edec",
+    "deterministicInstructionSha256": "8fd2ae796e540c8e67afad4b527c2f62e803725bcbf75789e877f00c36afe80d",
+    "rawEvidenceSha256": "ff5b131a17093655bcf2ba41cb2cc5d51d96009fd009a14b57bb1a026d2b9acd",
+    "acceptedOverlaySha256": "712de587b3c21570812e5f85a68781c8bc73348b89ef8b81345f9d6a64dd8824",
+    "renderedInstructionSha256": "bb9d6dc94dd3d55f2251a8efda8ff03353b7d83b4becc8d91b81d50cb63316b2"
+  },
+  "acceptedOverlay": {
+    "schemaVersion": "format-profile-llm-overlay.v0",
+    "caseId": "docx-policy",
+    "confidence": {
+      "semanticConfidence": "medium",
+      "notes": [
+        "mock-pass overlay for harness validation"
+      ]
+    },
+    "semanticOverlay": {
+      "documentKind": {
+        "value": "制度/正式文稿",
+        "evidenceRefs": [
+          "raw.docx.paragraph.0001"
+        ],
+        "inference": false,
+        "rationale": "documentKind comes from deterministic profile label."
+      },
+      "structureSummary": {
+        "value": [
+          "正式制度类文稿，宜按章/条/款或编号条目组织。",
+          "候选标题中存在较长条目，生成时应概括为层级线索而非逐字复用。"
+        ],
+        "evidenceRefs": [
+          "raw.docx.paragraph.0001",
+          "raw.docx.paragraph.0002",
+          "raw.docx.paragraph.0003",
+          "raw.docx.paragraph.0004"
+        ],
+        "inference": true,
+        "rationale": "Structure summary is compressed from profile/evidence headings or format facts."
+      },
+      "styleSummary": {
+        "value": [
+          "保留字体、字号、样式定义和页面 twips 等版式线索，用作写作层级提示。",
+          "样式线索只作为段落层级和正式程度参考。"
+        ],
+        "evidenceRefs": [
+          "raw.docx.style.0001",
+          "raw.docx.style.0002",
+          "raw.docx.style.0003"
+        ],
+        "inference": true,
+        "rationale": "Style summary cites style evidence and avoids export promises."
+      },
+      "writingConstraints": {
+        "value": [
+          "按制度/通知类正式文稿口吻组织底稿，先搭建章节，再填充用户事实。",
+          "遇到候选标题过长或像正文条款时，应降噪为结构意图。"
+        ],
+        "evidenceRefs": [
+          "raw.docx.paragraph.0001",
+          "raw.docx.paragraph.0002",
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Writing constraints preserve user fact boundary."
+      },
+      "formatBoundaries": {
+        "value": [
+          "格式画像只约束结构、表达和诊断，不代表文件导出能力。",
+          "不得根据画像补造公司事实、金额、条款或结论。"
+        ],
+        "evidenceRefs": [
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Boundaries are derived from capability diagnostics and harness policy."
+      }
+    },
+    "diagnostics": [
+      {
+        "severity": "info",
+        "code": "mock_pass",
+        "message": "Mock overlay generated for harness validation.",
+        "evidenceRefs": [
+          "raw.docx.paragraph.0001"
+        ]
+      }
+    ]
+  },
+  "renderedGenerationInstruction": "# 格式画像语义精炼约束: docx-policy\n\n## 适用边界\n- 文件类型：docx\n- 来源画像：profile_batch_25_docx_local_05_procurement_2023_13\n- 本指令由 harness 根据确定性画像和已验收 LLM overlay 渲染；LLM 不直接生成最终指令。\n- 保留来源事实边界，不根据格式画像虚构内容；不承诺版式还原或文件导出能力。\n\n### 文档定位\n- 制度/正式文稿 （证据：raw.docx.paragraph.0001）\n\n### 结构组织建议\n- 正式制度类文稿，宜按章/条/款或编号条目组织。\n- 候选标题中存在较长条目，生成时应概括为层级线索而非逐字复用。\n\n### 样式/版式线索\n- 保留字体、字号、样式定义和页面 twips 等版式线索，用作写作层级提示。\n- 样式线索只作为段落层级和正式程度参考。\n\n### 写作约束\n- 按制度/通知类正式文稿口吻组织底稿，先搭建章节，再填充用户事实。\n- 遇到候选标题过长或像正文条款时，应降噪为结构意图。\n\n### 格式边界\n- 格式画像只约束结构、表达和诊断，不代表文件导出能力。\n- 不得根据画像补造公司事实、金额、条款或结论。\n\n## 诊断边界\n- 语义置信度：medium\n- Harness 质量分：0.984\n- 若用户事实材料与格式画像冲突，以用户事实材料为准，并记录诊断。\n",
+  "diagnostics": [],
+  "reports": {
+    "evaluatorReportPath": "evaluator-report.json"
+  }
+}

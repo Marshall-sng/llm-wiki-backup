@@ -1,0 +1,93 @@
+{
+  "caseId": "xlsx-metrics",
+  "verdict": "pass",
+  "baseline": {
+    "ruleCount": 12,
+    "hash": "5e3f9af53fc01380e7b5c5b444c7a762ecffbff9418fbccc0c7c0775b135d6b7"
+  },
+  "metrics": {
+    "autoRuleCount": 17,
+    "editedRuleCount": 17,
+    "warningCount": 34,
+    "editedOverrides": 1
+  },
+  "variants": {
+    "auto": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "missingSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:wb-structure: missing source defaulted to inferred",
+        "soft-source-default:wb-scope: missing source defaulted to inferred",
+        "soft-source-default:sheet-name: missing source defaulted to inferred",
+        "soft-source-default:sheet-used-range: missing source defaulted to inferred",
+        "soft-source-default:region-partition: missing source defaulted to inferred",
+        "soft-source-default:header-fields: missing source defaulted to inferred",
+        "soft-source-default:header-align: missing source defaulted to inferred",
+        "soft-source-default:data-preserve-grid: missing source defaulted to inferred",
+        "soft-source-default:data-density: missing source defaulted to inferred",
+        "soft-source-default:style-limited-set: missing source defaulted to inferred",
+        "soft-source-default:style-merged-cells: missing source defaulted to inferred",
+        "soft-source-default:formula-absence: missing source defaulted to inferred",
+        "soft-source-default:num-format-detect: missing source defaulted to inferred",
+        "soft-source-default:table-border-grid: missing source defaulted to inferred",
+        "soft-source-default:table-fill-hierarchy: missing source defaulted to inferred",
+        "soft-source-default:page-print-conservative: missing source defaulted to inferred",
+        "soft-source-default:boundary-unknowns: missing source defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "unknownSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:wb-structure: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:wb-scope: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:sheet-name: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:sheet-used-range: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:region-partition: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:header-fields: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:header-align: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:data-preserve-grid: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:data-density: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:style-limited-set: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:style-merged-cells: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:formula-absence: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:num-format-detect: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:table-border-grid: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:table-fill-hierarchy: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:page-print-conservative: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:boundary-unknowns: unknown source \"parser-stylefacts\" defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "edited": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "negativeUnknownEvidence": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "evidence:wb-structure: unknown evidenceRef missing.evidence"
+      ]
+    },
+    "negativeForbiddenField": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "forbidden-field:rawText"
+      ]
+    },
+    "negativeFidelityPromise": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "boundary-promise:fidelity/export promise detected"
+      ]
+    }
+  }
+}

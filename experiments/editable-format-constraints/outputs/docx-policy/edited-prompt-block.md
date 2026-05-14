@@ -1,0 +1,66 @@
+## 可编辑格式约束（Editable Format Constraints）
+
+- schemaVersion: editable-format-constraints.v0
+- caseId: docx-policy
+- mode: edited
+- activeRuleSource: user-edited-over-auto
+
+### 规则
+- 【page/page】Use A4 portrait page geometry for formal policy documents.（用户已确认采用） Set page size to approximately 210 mm by 297 mm in portrait orientation when DOCX dimensions are close to A4. User edit: keep this as the active drafting constraint.
+  - pageSize: A4 portrait, 210mm x 297mm mm
+- 【page/page】Use GB/T-like government-document margins when detected margins are unreliable. Apply top 37 mm, bottom 35 mm, left 28 mm, and right 26 mm as a conservative formal-document default; flag the result for review because the probe margins are near-zero twips.
+  - margin: top 37, bottom 35, left 28, right 26 mm
+- 【title/hierarchy】Place the main title as a standalone centered paragraph before chapter content. The title should be visually distinct from body text, appear before the first chapter heading, and not share a paragraph with article or list content.
+  - alignment: center keyword
+  - font: SimHei or GB/T-like title face font-family
+  - fontSizePt: 21.5 pt
+- 【title/typography】Make the main title bold or otherwise heavier than body text. Use a title face or bold weight with larger size; do not infer title wording from the sample document.
+  - font: SimHei font-family
+  - fontSizePt: 21.5 pt
+- 【heading/hierarchy】Use chapter-level headings for major divisions. Recognize short Chinese chapter markers such as 第N章 as first-level headings; keep them separate from article paragraphs.
+  - numbering: 第N章 pattern
+  - alignment: center keyword
+  - font: SimHei or bold body-compatible Chinese font font-family
+  - fontSizePt: 15.5 pt
+- 【heading/hierarchy】Use article markers as second-level structural paragraphs, not automatic Word numbering. Recognize 第N条 as article-level labels embedded at the beginning of a paragraph; retain body style unless a distinct heading style is explicitly available.
+  - numbering: 第N条 pattern
+  - font: FangSong for body-compatible article headings font-family
+  - fontSizePt: 15.5 pt
+- 【heading/boundary】Demote long numeric candidates to list or body paragraphs. A paragraph beginning with a numeric marker is not a heading when it contains full sentence content or clause detail.
+- 【numbering/numbering】Support Chinese parenthesized list numbering below article paragraphs. Use full-width parenthesized Chinese numerals such as （一）, （二）, （三） for ordered subitems; implement as literal paragraph prefixes when no DOCX numbering definitions exist.
+  - numbering: （一）, （二）, （三） pattern
+  - indent: first-line 2 Chinese characters em
+- 【numbering/numbering】Support decimal list prefixes for detailed enumerations. Recognize N. and N、 prefixes as list markers; do not promote them to headings solely because they begin with numbers.
+  - numbering: N. and N、 pattern
+  - indent: hanging indent aligned after marker layout-rule
+- 【numbering/numbering】Do not require Word automatic numbering for this profile. Because numbering definitions are absent, executable formatting should preserve visible numbering tokens as paragraph text or generated prefixes.
+  - numbering: literal-prefix numbering implementation-mode
+- 【typography/typography】Use FangSong-style Chinese body typography for formal policy body text. BodyText style indicates FangSong with a formal-document body size; fallback Latin font may remain Arial or Times New Roman for ASCII segments.
+  - font: FangSong for CJK body; Arial or Times New Roman for Latin fallback font-family
+  - fontSizePt: 15.5 pt
+- 【typography/typography】Use a constrained size scale for body, table, and title text. Prefer body around 15.5 pt, table text around 10 pt, common inline text around 10.5 pt or 9 pt when matching detected runs, and title around 21.5 pt.
+  - fontSizePt: 15.5 body; 10 table; 21.5 title pt
+- 【paragraph/spacing】Format normal body paragraphs as formal policy text with first-line indentation and stable line spacing. Use first-line indent of two Chinese characters, justified alignment, and fixed line spacing suitable for GB/T-like documents; keep paragraphs visually dense but readable.
+  - indent: first-line 2 Chinese characters em
+  - alignment: justified keyword
+  - lineSpacing: 28 pt
+  - paragraphSpacing: 0 before, 0 after pt
+- 【paragraph/hierarchy】Use BodyText as the dominant paragraph style for main document content. Most formal body, chapter, article, and list paragraphs should inherit a common body style unless they are inside tables.
+  - font: FangSong font-family
+  - fontSizePt: 15.5 pt
+- 【paragraph/density】Keep formal body text compact and continuous across clauses. Avoid excessive paragraph spacing; use punctuation and numbering to express structure rather than adding large vertical gaps.
+  - paragraphSpacing: minimal; normally 0 pt before and after body paragraphs pt
+- 【table/table】Support multiple formal tables within the document body. Use table formatting for approval matrices, thresholds, responsibilities, or process comparisons; preserve table paragraphs separately from body paragraphs.
+  - tableHeader: repeat header row when table spans pages; use centered bold header text when header role is known table-rule
+  - font: FangSong font-family
+  - fontSizePt: 10 pt
+- 【table/typography】Use a smaller table text style than body paragraphs. Table cell text should use TableText-like typography, with compact size and controlled wrapping; keep numeric thresholds and approval labels readable.
+  - font: FangSong font-family
+  - fontSizePt: 10 pt
+  - alignment: center or left according to cell role keyword
+  - paragraphSpacing: 0 before, 0 after inside cells pt
+- 【table/table】Use visible grid borders for formal tables unless a template specifies otherwise. Apply single-line borders around cells and fit table width within page margins; avoid decorative table styling.
+  - tableHeader: plain bordered header row table-rule
+- 【boundary/boundary】Treat this synthesis as executable guidance with medium confidence, not as a source-faithful reconstruction. The probe reports basic extraction only, no numbering definitions, limited styles, and an adaptation-mode diagnostic; downstream use should expose low-confidence fields for review.
+- 【boundary/boundary】Do not reuse source body wording in generated rules or templates. Only structural patterns, style names, size distributions, and document-kind signals are reusable formatting evidence.
+- 【boundary/boundary】Resolve heading/list ambiguity by length and semantic role. A short chapter or article marker may define hierarchy; a long numeric paragraph containing detailed subject matter should remain body or list content.

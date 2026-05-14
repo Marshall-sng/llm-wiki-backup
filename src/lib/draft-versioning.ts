@@ -1,4 +1,4 @@
-import type { MessageReference } from "@/stores/chat-store"
+import type { MessageReference } from "@/lib/format-profile-types"
 
 export type DraftVersionReason = "manual-snapshot" | "restore" | "ai-processing"
 

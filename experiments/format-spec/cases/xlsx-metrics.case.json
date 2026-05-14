@@ -1,0 +1,7 @@
+﻿{
+  "schemaVersion": "format-spec-case.v0",
+  "caseId": "xlsx-metrics",
+  "formatType": "xlsx",
+  "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+  "expected": { "minRules": 12 }
+}

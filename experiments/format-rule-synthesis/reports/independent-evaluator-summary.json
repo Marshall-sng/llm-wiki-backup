@@ -1,0 +1,353 @@
+{
+  "schemaVersion": "format-rule-synthesis-independent-evaluation.v0",
+  "generatedAt": "2026-05-14T09:15:54.182Z",
+  "verdict": "pass",
+  "modes": [
+    {
+      "mode": "mock-llm",
+      "expected": "all-pass",
+      "total": 4,
+      "passed": 4,
+      "failed": [],
+      "results": [
+        {
+          "caseId": "docx-policy",
+          "diagnostics": [],
+          "formatType": "docx",
+          "metrics": {
+            "attributeCount": 43,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 17,
+            "evidenceCoverage": 1,
+            "granularityScore": 100,
+            "requiredAttributeHits": 10,
+            "ruleCount": 18,
+            "targetCount": 8
+          },
+          "mode": "mock-llm",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-llm/docx-policy",
+          "provenance": {
+            "baselineSha256": "cec9f8b9fb94de26a5b7b008b5a0ef7f5d6a93022c7b39b4f79553d517ed1432",
+            "caseSha256": "619c614568f86577f7d40e776a76a2903adc4284115b35442407fd7aa69c4f80",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+            "inputSha256": "63f82866fc241531fe130087c6d4bef313a33895ccd2e731c4d60623936c1de0",
+            "outputSha256": "86dc57d4878fafef0700f40bb49a25291f004a3304b415b2f495d6abb3e1c59f",
+            "scriptSha256": "a9a9c8d207a6e18471eb5f59339994157fbd9d5ccc56f842c230eeac2b825642"
+          },
+          "verdict": "pass"
+        },
+        {
+          "caseId": "pdf-reference",
+          "diagnostics": [],
+          "formatType": "pdf",
+          "metrics": {
+            "attributeCount": 20,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 8,
+            "evidenceCoverage": 1,
+            "granularityScore": 100,
+            "requiredAttributeHits": 10,
+            "ruleCount": 10,
+            "targetCount": 7
+          },
+          "mode": "mock-llm",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-llm/pdf-reference",
+          "provenance": {
+            "baselineSha256": "a2752391d51d50cbe7c5c2190eb43315d8abeb660ce717fc06174e7d9f09592f",
+            "caseSha256": "c5634d4db2e9a57b08649a1418f3ebb9689bcbfbd8c61c70129043b2e4499c98",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pdf-reference/input.json",
+            "inputSha256": "8eae5f60d292af90941f417f6fc0dcfd112d758e9f6c40f3e06e5f12bb505978",
+            "outputSha256": "a4358d5c6845d55027096881bdc81948e7c4122294b7520b8fc5c73ee257f7b2",
+            "scriptSha256": "a9a9c8d207a6e18471eb5f59339994157fbd9d5ccc56f842c230eeac2b825642"
+          },
+          "verdict": "pass"
+        },
+        {
+          "caseId": "pptx-briefing",
+          "diagnostics": [],
+          "formatType": "pptx",
+          "metrics": {
+            "attributeCount": 31,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 12,
+            "evidenceCoverage": 1,
+            "granularityScore": 100,
+            "requiredAttributeHits": 10,
+            "ruleCount": 14,
+            "targetCount": 8
+          },
+          "mode": "mock-llm",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-llm/pptx-briefing",
+          "provenance": {
+            "baselineSha256": "2e6bee5ee5152d60d0a89ee708beda71478d9bc2ec2c059aec40116264637427",
+            "caseSha256": "5e00503fff819e50385ddef3ad9b9ab2f4659c0a571ab6775cf12cb181d6dd7a",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+            "inputSha256": "1fc04d9cf224e22a4041fcd0e0f821e87ad07aa514b97f929207cb9978d95b23",
+            "outputSha256": "251290af8a91f0ec3dcc50680c09346dfe6d6f4dbbe12e821e30d70600690a05",
+            "scriptSha256": "a9a9c8d207a6e18471eb5f59339994157fbd9d5ccc56f842c230eeac2b825642"
+          },
+          "verdict": "pass"
+        },
+        {
+          "caseId": "xlsx-metrics",
+          "diagnostics": [],
+          "formatType": "xlsx",
+          "metrics": {
+            "attributeCount": 32,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 12,
+            "evidenceCoverage": 1,
+            "granularityScore": 100,
+            "requiredAttributeHits": 10,
+            "ruleCount": 14,
+            "targetCount": 9
+          },
+          "mode": "mock-llm",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-llm/xlsx-metrics",
+          "provenance": {
+            "baselineSha256": "9b349d4bf699e0fb4b4890d0287f0f8bdbb6c2d5537e32fd5f27697a88220bfe",
+            "caseSha256": "c16e28b0434cb6a8d5cf0b069c1d2a378672ee9b49b7411dfb21417f5d4dab24",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+            "inputSha256": "0f1a9a9e47be2e52b76b492983aeb773d251f8914b2a2eb20bc6584afde30ac3",
+            "outputSha256": "005ba9ae2ceaf0a06c5453abd1a75df058897d7ba44d4d7707b50255afbb82a1",
+            "scriptSha256": "a9a9c8d207a6e18471eb5f59339994157fbd9d5ccc56f842c230eeac2b825642"
+          },
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "mode": "mock-uncited",
+      "expected": "all-fail",
+      "total": 4,
+      "passed": 0,
+      "failed": [
+        "docx-policy",
+        "pdf-reference",
+        "pptx-briefing",
+        "xlsx-metrics"
+      ],
+      "results": [
+        {
+          "caseId": "docx-policy",
+          "diagnostics": [
+            {
+              "code": "boundary",
+              "message": "globalBoundaries must include at least 3 items",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: exact visual recreation",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: high-fidelity export",
+              "severity": "error"
+            },
+            {
+              "code": "unknown-evidence",
+              "message": "rule docx-page-size cites missing.evidence.0001",
+              "severity": "error"
+            },
+            {
+              "code": "evidence-coverage",
+              "message": "valid refs 285/286",
+              "severity": "warning"
+            }
+          ],
+          "formatType": "docx",
+          "metrics": {
+            "attributeCount": 40,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 17,
+            "evidenceCoverage": 0.9965034965034965,
+            "granularityScore": 100,
+            "requiredAttributeHits": 10,
+            "ruleCount": 18,
+            "targetCount": 8
+          },
+          "mode": "mock-uncited",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-uncited/docx-policy",
+          "provenance": {
+            "baselineSha256": "cec9f8b9fb94de26a5b7b008b5a0ef7f5d6a93022c7b39b4f79553d517ed1432",
+            "caseSha256": "619c614568f86577f7d40e776a76a2903adc4284115b35442407fd7aa69c4f80",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+            "inputSha256": "63f82866fc241531fe130087c6d4bef313a33895ccd2e731c4d60623936c1de0",
+            "outputSha256": "65c896e9445419ef4727818a484a2e0bdd181aca3eb6597f7eb4f773bc5a826f",
+            "scriptSha256": "aad47c5f7ec4d0c0ccc60494ce4c7b1bff9a568c8c769fc51afd7fda18d75996"
+          },
+          "verdict": "fail"
+        },
+        {
+          "caseId": "pdf-reference",
+          "diagnostics": [
+            {
+              "code": "boundary",
+              "message": "globalBoundaries must include at least 3 items",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: exact visual recreation",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: high-fidelity export",
+              "severity": "error"
+            },
+            {
+              "code": "unknown-evidence",
+              "message": "rule pdf-page-1 cites missing.evidence.0001",
+              "severity": "error"
+            },
+            {
+              "code": "attribute-coverage",
+              "message": "missing attribute textLayer",
+              "severity": "error"
+            },
+            {
+              "code": "evidence-coverage",
+              "message": "valid refs 103/104",
+              "severity": "warning"
+            }
+          ],
+          "formatType": "pdf",
+          "metrics": {
+            "attributeCount": 18,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 8,
+            "evidenceCoverage": 0.9903846153846154,
+            "granularityScore": 97,
+            "requiredAttributeHits": 9,
+            "ruleCount": 10,
+            "targetCount": 7
+          },
+          "mode": "mock-uncited",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-uncited/pdf-reference",
+          "provenance": {
+            "baselineSha256": "a2752391d51d50cbe7c5c2190eb43315d8abeb660ce717fc06174e7d9f09592f",
+            "caseSha256": "c5634d4db2e9a57b08649a1418f3ebb9689bcbfbd8c61c70129043b2e4499c98",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pdf-reference/input.json",
+            "inputSha256": "8eae5f60d292af90941f417f6fc0dcfd112d758e9f6c40f3e06e5f12bb505978",
+            "outputSha256": "38f6e3072e4318f54c62ec4308a78d1f7e94a67d9b169aa3a9c6d9d1fe6eb77f",
+            "scriptSha256": "aad47c5f7ec4d0c0ccc60494ce4c7b1bff9a568c8c769fc51afd7fda18d75996"
+          },
+          "verdict": "fail"
+        },
+        {
+          "caseId": "pptx-briefing",
+          "diagnostics": [
+            {
+              "code": "boundary",
+              "message": "globalBoundaries must include at least 3 items",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: exact visual recreation",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: high-fidelity export",
+              "severity": "error"
+            },
+            {
+              "code": "unknown-evidence",
+              "message": "rule pptx-deck-1 cites missing.evidence.0001",
+              "severity": "error"
+            },
+            {
+              "code": "evidence-coverage",
+              "message": "valid refs 192/193",
+              "severity": "warning"
+            }
+          ],
+          "formatType": "pptx",
+          "metrics": {
+            "attributeCount": 28,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 12,
+            "evidenceCoverage": 0.9948186528497409,
+            "granularityScore": 100,
+            "requiredAttributeHits": 10,
+            "ruleCount": 14,
+            "targetCount": 8
+          },
+          "mode": "mock-uncited",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-uncited/pptx-briefing",
+          "provenance": {
+            "baselineSha256": "2e6bee5ee5152d60d0a89ee708beda71478d9bc2ec2c059aec40116264637427",
+            "caseSha256": "5e00503fff819e50385ddef3ad9b9ab2f4659c0a571ab6775cf12cb181d6dd7a",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+            "inputSha256": "1fc04d9cf224e22a4041fcd0e0f821e87ad07aa514b97f929207cb9978d95b23",
+            "outputSha256": "bb4ee3f2ee8c4f4656878b1d54034e23682e003b73703dc3906a3192bd2b2bc5",
+            "scriptSha256": "aad47c5f7ec4d0c0ccc60494ce4c7b1bff9a568c8c769fc51afd7fda18d75996"
+          },
+          "verdict": "fail"
+        },
+        {
+          "caseId": "xlsx-metrics",
+          "diagnostics": [
+            {
+              "code": "boundary",
+              "message": "globalBoundaries must include at least 3 items",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: exact visual recreation",
+              "severity": "error"
+            },
+            {
+              "code": "forbidden-promise",
+              "message": "forbidden promise: high-fidelity export",
+              "severity": "error"
+            },
+            {
+              "code": "unknown-evidence",
+              "message": "rule xlsx-workbook-1 cites missing.evidence.0001",
+              "severity": "error"
+            },
+            {
+              "code": "evidence-coverage",
+              "message": "valid refs 127/128",
+              "severity": "warning"
+            }
+          ],
+          "formatType": "xlsx",
+          "metrics": {
+            "attributeCount": 30,
+            "baselineAttributeCount": 0,
+            "baselineRuleCount": 12,
+            "evidenceCoverage": 0.9921875,
+            "granularityScore": 100,
+            "requiredAttributeHits": 10,
+            "ruleCount": 14,
+            "targetCount": 9
+          },
+          "mode": "mock-uncited",
+          "outputDir": "experiments/format-rule-synthesis/outputs/mock-uncited/xlsx-metrics",
+          "provenance": {
+            "baselineSha256": "9b349d4bf699e0fb4b4890d0287f0f8bdbb6c2d5537e32fd5f27697a88220bfe",
+            "caseSha256": "c16e28b0434cb6a8d5cf0b069c1d2a378672ee9b49b7411dfb21417f5d4dab24",
+            "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+            "inputSha256": "0f1a9a9e47be2e52b76b492983aeb773d251f8914b2a2eb20bc6584afde30ac3",
+            "outputSha256": "b72285219ce3a5a84e903fff955064ccb7fc8b1643a9d21c9f2d883350e88436",
+            "scriptSha256": "aad47c5f7ec4d0c0ccc60494ce4c7b1bff9a568c8c769fc51afd7fda18d75996"
+          },
+          "verdict": "fail"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "evaluatorSha256": "e43135a31e27aac74219fc4cc570184f58dcf6fe574a6ffe7ab8107755fd274a",
+    "generatorSha256": "a9a9c8d207a6e18471eb5f59339994157fbd9d5ccc56f842c230eeac2b825642",
+    "happySummarySha256": "42df8a8e7469f3b7b111e7c74efca991add12a4eba09e692cef3b448894ef4be",
+    "negativeSummarySha256": "30d240a5b01feb5ec0a249b06bff3b9f0deb5140ea812f03fbb880827e312b45"
+  }
+}

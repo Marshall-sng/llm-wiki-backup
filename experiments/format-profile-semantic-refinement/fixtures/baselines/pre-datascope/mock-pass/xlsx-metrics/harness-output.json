@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "format-profile-harness-output.v0",
+  "caseId": "xlsx-metrics",
+  "attemptStatus": "llm_completed",
+  "evaluatorVerdict": "pass",
+  "finalStatus": "refined",
+  "hashes": {
+    "deterministicProfileSha256": "b83f8d5c49ae762164f6089b2e951e48b44dd9410d070d58293b23779c58db6e",
+    "deterministicInstructionSha256": "bd675997d28cfff9614d69aaa3c3ff6539e86270fc805543e8e67d6e17635b0b",
+    "rawEvidenceSha256": "a3fd137504a74c5bddf64f96d674063c6be07e6609bc47219aece8298e9c5822",
+    "acceptedOverlaySha256": "59ffd3865a244717ca980bda828e601ac624c80bcd4fae2fd00a3453c1be3076",
+    "renderedInstructionSha256": "e523f39884d0fadbba2c4988b34502486c88c7350de2876fe7c621db250237e3"
+  },
+  "acceptedOverlay": {
+    "schemaVersion": "format-profile-llm-overlay.v0",
+    "caseId": "xlsx-metrics",
+    "confidence": {
+      "semanticConfidence": "medium",
+      "notes": [
+        "mock-pass overlay for harness validation"
+      ]
+    },
+    "semanticOverlay": {
+      "documentKind": {
+        "value": "表格/指标分析",
+        "evidenceRefs": [
+          "raw.xlsx.sheet.0001"
+        ],
+        "inference": false,
+        "rationale": "documentKind comes from deterministic profile label."
+      },
+      "structureSummary": {
+        "value": [
+          "以工作表、字段、指标和数据区域为主要组织边界。",
+          "生成底稿时优先输出表格化分析框架，而不是承诺生成 Excel 文件。"
+        ],
+        "evidenceRefs": [
+          "raw.xlsx.sheet.0001",
+          "profile.structure.0001"
+        ],
+        "inference": true,
+        "rationale": "Structure summary is compressed from profile/evidence headings or format facts."
+      },
+      "styleSummary": {
+        "value": [
+          "保留字体、填充、表格区域和工作表数量等线索，用于判断数据呈现密度。"
+        ],
+        "evidenceRefs": [
+          "profile.style.0001",
+          "profile.style.0002",
+          "profile.style.0003"
+        ],
+        "inference": true,
+        "rationale": "Style summary cites style evidence and avoids export promises."
+      },
+      "writingConstraints": {
+        "value": [
+          "围绕指标解释、口径说明、数据质量和后续填表步骤组织内容。"
+        ],
+        "evidenceRefs": [
+          "raw.xlsx.sheet.0001",
+          "profile.structure.0001",
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Writing constraints preserve user fact boundary."
+      },
+      "formatBoundaries": {
+        "value": [
+          "XLSX 画像用于表格结构和分析约束，不代表会生成电子表格成品。"
+        ],
+        "evidenceRefs": [
+          "diagnostic.0001"
+        ],
+        "inference": true,
+        "rationale": "Boundaries are derived from capability diagnostics and harness policy."
+      }
+    },
+    "diagnostics": [
+      {
+        "severity": "info",
+        "code": "mock_pass",
+        "message": "Mock overlay generated for harness validation.",
+        "evidenceRefs": [
+          "raw.xlsx.sheet.0001"
+        ]
+      }
+    ]
+  },
+  "renderedGenerationInstruction": "# 格式画像语义精炼约束: xlsx-metrics\n\n## 适用边界\n- 文件类型：xlsx\n- 来源画像：profile_batch_35_xlsx_local_01_data_element\n- 本指令由 harness 根据确定性画像和已验收 LLM overlay 渲染；LLM 不直接生成最终指令。\n- 保留来源事实边界，不根据格式画像虚构内容；不承诺版式还原或文件导出能力。\n\n### 文档定位\n- 表格/指标分析 （证据：raw.xlsx.sheet.0001）\n\n### 结构组织建议\n- 以工作表、字段、指标和数据区域为主要组织边界。\n- 生成底稿时优先输出表格化分析框架，而不是承诺生成 Excel 文件。\n\n### 样式/版式线索\n- 保留字体、填充、表格区域和工作表数量等线索，用于判断数据呈现密度。\n\n### 写作约束\n- 围绕指标解释、口径说明、数据质量和后续填表步骤组织内容。\n\n### 格式边界\n- XLSX 画像用于表格结构和分析约束，不代表会生成电子表格成品。\n\n## 诊断边界\n- 语义置信度：medium\n- Harness 质量分：0.994\n- 若用户事实材料与格式画像冲突，以用户事实材料为准，并记录诊断。\n",
+  "diagnostics": [],
+  "reports": {
+    "evaluatorReportPath": "evaluator-report.json"
+  }
+}

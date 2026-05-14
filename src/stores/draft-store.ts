@@ -1,45 +1,9 @@
 import { create } from "zustand"
-import type { DisplayMessage, MessageReference } from "@/stores/chat-store"
+import type { DisplayMessage } from "@/stores/chat-store"
+import type { MessageReference } from "@/lib/format-profile-types"
+import type { DraftDerivationMeta, DraftRecord, DraftRestorationMeta } from "@/lib/draft-types"
 import { buildDraftVersion, cloneReferences, type DraftVersion, type DraftVersionReason } from "@/lib/draft-versioning"
-
-export interface DraftSourceMeta {
-  kind: "chat-assistant"
-  conversationId: string
-  messageId: string
-  messageTimestamp: number
-  contentHash: string
-}
-
-export interface DraftDerivationMeta {
-  parentDraftId: string
-  parentDraftTitle: string
-  parentContentHash: string
-  instruction: string
-  processingConversationId: string
-  templateId?: string
-  templateTitle?: string
-}
-
-export interface DraftRestorationMeta {
-  parentDraftId: string
-  parentDraftTitle: string
-  parentVersionId: string
-  parentContentHash: string
-  restoredAt: number
-}
-
-export interface DraftRecord {
-  id: string
-  title: string
-  content: string
-  references: MessageReference[]
-  source: DraftSourceMeta
-  derivation?: DraftDerivationMeta
-  versions: DraftVersion[]
-  restoration?: DraftRestorationMeta
-  createdAt: number
-  updatedAt: number
-}
+export type { DraftDerivationMeta, DraftRecord, DraftRestorationMeta, DraftSourceMeta } from "@/lib/draft-types"
 
 export type DraftPersistMode = "none" | "debounced" | "immediate"
 
@@ -165,8 +129,8 @@ function normalizeDerivation(raw: Partial<DraftDerivationMeta> | undefined): Dra
     instruction: raw.instruction ?? "",
     processingConversationId: raw.processingConversationId ?? "",
   }
-  if (typeof raw.templateId === "string") derivation.templateId = raw.templateId
-  if (typeof raw.templateTitle === "string") derivation.templateTitle = raw.templateTitle
+  if (typeof raw.formatProfileId === "string") derivation.formatProfileId = raw.formatProfileId
+  if (typeof raw.formatProfileTitle === "string") derivation.formatProfileTitle = raw.formatProfileTitle
   return derivation
 }
 

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-wiki.local/format-profile/refinement-input.schema.json",
+  "title": "FormatProfile Refinement Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "case",
+    "deterministicProfile",
+    "deterministicGenerationInstruction",
+    "rawEvidence",
+    "hashes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "format-profile-refinement-input.v0"
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "deterministicProfile": {
+      "type": "object"
+    },
+    "deterministicGenerationInstruction": {
+      "type": "string"
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "rawEvidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidenceItem"
+      }
+    },
+    "hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "deterministicProfileSha256",
+        "deterministicInstructionSha256",
+        "rawEvidenceSha256"
+      ],
+      "properties": {
+        "deterministicProfileSha256": {
+          "type": "string"
+        },
+        "deterministicInstructionSha256": {
+          "type": "string"
+        },
+        "rawEvidenceSha256": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "pointer",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "raw.docx.paragraph",
+            "raw.docx.style",
+            "raw.xlsx.sheet",
+            "raw.pptx.slide",
+            "raw.pdf.fact",
+            "profile.structure",
+            "profile.style",
+            "diagnostic"
+          ]
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "pointer": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "value": {},
+        "sha256": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "caseId": "docx-style-rich",
+  "format": "docx",
+  "priority": "primary",
+  "sourceProfile": "runtime/format-profile/outputs/phase2/batch_25_docx_local_05_procurement_2023_13/profile.json",
+  "expected": {
+    "fontsInclude": ["Arial", "SimSun", "FangSong", "SimHei"],
+    "fontUsageTop": "Arial",
+    "styleIdsInclude": ["Normal", "BodyText", "TableText"],
+    "pageWidthTwips": "11905",
+    "pageHeightTwips": "16834",
+    "paragraphs": 925,
+    "tables": 15,
+    "requiresHalfPointToPt": true,
+    "requiresTwipToCm": true
+  }
+}

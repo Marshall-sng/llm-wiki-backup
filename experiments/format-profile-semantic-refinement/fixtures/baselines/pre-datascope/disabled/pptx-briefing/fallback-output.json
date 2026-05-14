@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "format-profile-harness-output.v0",
+  "caseId": "pptx-briefing",
+  "attemptStatus": "not_attempted",
+  "evaluatorVerdict": "not_run",
+  "finalStatus": "fallback",
+  "fallbackReason": "llm_disabled",
+  "hashes": {
+    "deterministicProfileSha256": "c67d04e64a1bdfa16c92671df6a1c4deab3fbaaa80ff26ba1a6cb568c7874cba",
+    "deterministicInstructionSha256": "a7cb4dff51cd43f55d5741ffc5d31253ce0a415cb95b0094509ff0bd91d68d6b",
+    "rawEvidenceSha256": "77fdd95af5bf7abec16795b2eebf0001ac6224172af25e91fd414e1ff9906856",
+    "renderedInstructionSha256": "a7cb4dff51cd43f55d5741ffc5d31253ce0a415cb95b0094509ff0bd91d68d6b"
+  },
+  "renderedGenerationInstruction": "# Generation Instruction: batch_16_pptx_github_01\n\n## 任务\n\n根据该演示成品提炼汇报结构、页面组织和可用于逐页底稿生成的约束。\n\n## 模式\n\n先选择格式画像，再按画像生成底稿。\n\n## 探测摘要\n\n- Profile: profile_batch_16_pptx_github_01\n- 文件类型: pptx\n- 文档类型推断: 汇报演示\n- 画像置信度: medium\n- Snapshot: 0642a1d0f9a2483567fb5e4e9799c18c38fd0f5be7e8d406be4fd97b81ecb3cf\n- 探测摘要: 幻灯片 31、版式 62、母版 1、主题 3\n\n## 临时调整\n\n- experiment: phase2-batch\n- formatBoundary: PPTX 用于汇报结构和逐页底稿，不生成 PPTX 成品。\n\n## 写作约束\n\n1. 优先满足用户目标，不把格式说明混入正文。\n2. 持续遵守当前 FormatBinding；后续补写、改写和续写均默认继承该绑定。\n3. 如果格式画像与用户材料冲突，保留用户事实，并在 diagnostics 中说明冲突。\n4. 对 DOCX，优先生成正式文稿结构；对 XLSX，优先生成表格化分析；对 PPTX，优先生成逐页汇报底稿；对 PDF，仅作为参考成品。\n\n## 画像约束\n\n- 将该格式视为逐页汇报结构参考，而不是普通长文皮肤。\n- 页数线索：31 页；版式线索：62 个。\n- 输出底稿时优先按“页标题—核心观点—讲述要点”组织。\n\n## 能力边界\n\n- [info] probe.completed: Phase 2 已完成 PPTX 基础探测：幻灯片 31、版式 62、母版 1、主题 3。\n- [info] format.pptx.boundary: PPTX 用作汇报结构和逐页内容参考，不在本阶段生成 PPTX 成品。\n",
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "llm_disabled",
+      "message": "LLM refinement disabled by mode."
+    }
+  ],
+  "reports": {
+    "evaluatorReportPath": "evaluator-report.json"
+  }
+}

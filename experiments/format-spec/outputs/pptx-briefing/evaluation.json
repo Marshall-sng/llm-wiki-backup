@@ -1,0 +1,22 @@
+{
+  "caseId": "pptx-briefing",
+  "diagnostics": [],
+  "metrics": {
+    "diagnosticCount": 0,
+    "ruleCount": 12,
+    "targetCount": 8
+  },
+  "outputDir": "experiments/format-spec/outputs/pptx-briefing",
+  "provenance": {
+    "caseSha256": "5e00503fff819e50385ddef3ad9b9ab2f4659c0a571ab6775cf12cb181d6dd7a",
+    "draftPromptSha256": "b261f0d16da7265e834ba94803b49de14010d5128eac606b17b34cbe49076a04",
+    "evaluatorSha256": "51b1a008b2a4f83f9ae7184c7d5cc2e7c13cd2d3923051c8645d648bbdfc9db8",
+    "formatSpecMarkdownSha256": "b3c005e1ced28edf8d8ee0b8c419768bd140c3a15cbd2d1c9785d231405662ef",
+    "formatSpecSha256": "2e6bee5ee5152d60d0a89ee708beda71478d9bc2ec2c059aec40116264637427",
+    "generatorSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975",
+    "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+    "inputSha256": "1fc04d9cf224e22a4041fcd0e0f821e87ad07aa514b97f929207cb9978d95b23"
+  },
+  "schemaVersion": "format-spec-evaluation.v1",
+  "verdict": "pass"
+}

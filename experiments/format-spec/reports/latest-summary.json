@@ -1,0 +1,65 @@
+{
+  "failed": [],
+  "generatedAt": "2026-05-14T06:55:57.639Z",
+  "passed": 4,
+  "results": [
+    {
+      "caseId": "docx-policy",
+      "diagnostics": [],
+      "formatType": "docx",
+      "outputDir": "experiments/format-spec/outputs/docx-policy",
+      "provenance": {
+        "caseSha256": "619c614568f86577f7d40e776a76a2903adc4284115b35442407fd7aa69c4f80",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/docx-policy/input.json",
+        "inputSha256": "63f82866fc241531fe130087c6d4bef313a33895ccd2e731c4d60623936c1de0",
+        "scriptSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975"
+      },
+      "ruleCount": 17,
+      "verdict": "pass"
+    },
+    {
+      "caseId": "pdf-reference",
+      "diagnostics": [],
+      "formatType": "pdf",
+      "outputDir": "experiments/format-spec/outputs/pdf-reference",
+      "provenance": {
+        "caseSha256": "c5634d4db2e9a57b08649a1418f3ebb9689bcbfbd8c61c70129043b2e4499c98",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pdf-reference/input.json",
+        "inputSha256": "8eae5f60d292af90941f417f6fc0dcfd112d758e9f6c40f3e06e5f12bb505978",
+        "scriptSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975"
+      },
+      "ruleCount": 8,
+      "verdict": "pass"
+    },
+    {
+      "caseId": "pptx-briefing",
+      "diagnostics": [],
+      "formatType": "pptx",
+      "outputDir": "experiments/format-spec/outputs/pptx-briefing",
+      "provenance": {
+        "caseSha256": "5e00503fff819e50385ddef3ad9b9ab2f4659c0a571ab6775cf12cb181d6dd7a",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/pptx-briefing/input.json",
+        "inputSha256": "1fc04d9cf224e22a4041fcd0e0f821e87ad07aa514b97f929207cb9978d95b23",
+        "scriptSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975"
+      },
+      "ruleCount": 12,
+      "verdict": "pass"
+    },
+    {
+      "caseId": "xlsx-metrics",
+      "diagnostics": [],
+      "formatType": "xlsx",
+      "outputDir": "experiments/format-spec/outputs/xlsx-metrics",
+      "provenance": {
+        "caseSha256": "c16e28b0434cb6a8d5cf0b069c1d2a378672ee9b49b7411dfb21417f5d4dab24",
+        "inputPath": "experiments/format-profile-semantic-refinement/outputs/mock-pass/evidence-only/evidence-only/xlsx-metrics/input.json",
+        "inputSha256": "0f1a9a9e47be2e52b76b492983aeb773d251f8914b2a2eb20bc6584afde30ac3",
+        "scriptSha256": "05389348d87f5071e6920936dcbddd43c7b77881af7cbaf35e5e5bb57c7ff975"
+      },
+      "ruleCount": 12,
+      "verdict": "pass"
+    }
+  ],
+  "schemaVersion": "format-spec-summary.v0",
+  "total": 4
+}

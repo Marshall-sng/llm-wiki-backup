@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Style Extraction Report v0",
+  "type": "object",
+  "required": ["schemaVersion", "mode", "caseResults", "summary"],
+  "properties": {
+    "schemaVersion": { "const": "format-profile-style-extraction-report.v0" },
+    "mode": { "type": "string" },
+    "caseResults": { "type": "array" },
+    "summary": { "type": "object" }
+  },
+  "additionalProperties": false
+}

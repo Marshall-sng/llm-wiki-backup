@@ -5,12 +5,12 @@ import { useWikiStore } from "@/stores/wiki-store"
 import { useReviewStore } from "@/stores/review-store"
 import { useChatStore } from "@/stores/chat-store"
 import { useDraftStore } from "@/stores/draft-store"
-import { useTemplateStore } from "@/stores/template-store"
+import { useFormatProfileStore } from "@/stores/format-profile-store"
 import { listDirectory, openProject } from "@/commands/fs"
 import { getLastProject, getRecentProjects, saveLastProject, loadLlmConfig, loadLanguage, loadSearchApiConfig, loadWebAccessConfig, loadEmbeddingConfig, loadMultimodalConfig, loadOutputLanguage, loadProviderConfigs, loadActivePresetId, loadProxyConfig, loadProjectFileSyncEnabled } from "@/lib/project-store"
 import { loadReviewItems, loadChatHistory } from "@/lib/persist"
 import { loadDrafts } from "@/lib/draft-persist"
-import { loadTemplates } from "@/lib/template-persist"
+import { loadFormatProfiles } from "@/lib/format-profile-persist"
 import { setupAutoSave } from "@/lib/auto-save"
 import { startClipWatcher } from "@/lib/clip-watcher"
 import { AppLayout } from "@/components/layout/app-layout"
@@ -349,12 +349,12 @@ function App() {
     } catch {
       // ignore, start fresh
     }
-    // Load persisted templates
+    // Load persisted format profiles
     try {
-      const savedTemplates = await loadTemplates(proj.path)
-      useTemplateStore.getState().setTemplates(
-        savedTemplates.templates,
-        savedTemplates.activeTemplateId,
+      const savedProfiles = await loadFormatProfiles(proj.path)
+      useFormatProfileStore.getState().setProfiles(
+        savedProfiles.profiles,
+        savedProfiles.activeProfileId,
         { silent: true },
       )
     } catch {

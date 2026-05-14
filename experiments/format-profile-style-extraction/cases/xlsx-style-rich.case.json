@@ -1,0 +1,19 @@
+{
+  "caseId": "xlsx-style-rich",
+  "format": "xlsx",
+  "priority": "primary",
+  "sourceProfile": "runtime/format-profile/outputs/phase2/batch_35_xlsx_local_01_data_element/profile.json",
+  "expected": {
+    "sheetCount": 1,
+    "dimension": "A1:C29",
+    "rowCount": 29,
+    "cellCount": 87,
+    "mergedCellCount": 5,
+    "formulaCount": 0,
+    "fontCount": 4,
+    "fillCount": 3,
+    "borderCount": 5,
+    "cellStyleCount": 1,
+    "sharedStringCount": 65
+  }
+}

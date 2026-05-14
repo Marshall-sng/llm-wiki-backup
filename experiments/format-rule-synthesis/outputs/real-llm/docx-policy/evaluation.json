@@ -1,0 +1,16 @@
+{
+  "caseId": "docx-policy",
+  "diagnostics": [],
+  "metrics": {
+    "attributeCount": 37,
+    "baselineAttributeCount": 0,
+    "baselineRuleCount": 17,
+    "evidenceCoverage": 1,
+    "granularityScore": 100,
+    "requiredAttributeHits": 10,
+    "ruleCount": 21,
+    "targetCount": 8
+  },
+  "schemaVersion": "format-rule-synthesis-evaluation.v0",
+  "verdict": "pass"
+}

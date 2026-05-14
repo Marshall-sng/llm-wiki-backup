@@ -1,27 +1,27 @@
 import { useReviewStore } from "@/stores/review-store"
 import { useChatStore } from "@/stores/chat-store"
 import { useDraftStore } from "@/stores/draft-store"
-import { useTemplateStore } from "@/stores/template-store"
+import { useFormatProfileStore } from "@/stores/format-profile-store"
 import { useWikiStore } from "@/stores/wiki-store"
 import { saveReviewItems, saveChatHistory } from "./persist"
 import { saveDrafts } from "./draft-persist"
-import { saveTemplates } from "./template-persist"
+import { saveFormatProfiles } from "./format-profile-persist"
 
 let reviewTimer: ReturnType<typeof setTimeout> | null = null
 let chatTimer: ReturnType<typeof setTimeout> | null = null
 let draftTimer: ReturnType<typeof setTimeout> | null = null
-let templateTimer: ReturnType<typeof setTimeout> | null = null
+let formatProfileTimer: ReturnType<typeof setTimeout> | null = null
 let handledDraftRevision = 0
-let handledTemplateRevision = 0
+let handledFormatProfileRevision = 0
 
 export function clearDraftAutoSaveTimer(): void {
   if (draftTimer) clearTimeout(draftTimer)
   draftTimer = null
 }
 
-export function clearTemplateAutoSaveTimer(): void {
-  if (templateTimer) clearTimeout(templateTimer)
-  templateTimer = null
+export function clearFormatProfileAutoSaveTimer(): void {
+  if (formatProfileTimer) clearTimeout(formatProfileTimer)
+  formatProfileTimer = null
 }
 
 export function setupAutoSave(): void {
@@ -69,12 +69,12 @@ export function setupAutoSave(): void {
     }, delay)
   })
 
-  useTemplateStore.subscribe((state) => {
-    if (state.lastChange.revision === handledTemplateRevision) return
+  useFormatProfileStore.subscribe((state) => {
+    if (state.lastChange.revision === handledFormatProfileRevision) return
     if (state.lastChange.persist === "none") return
 
-    handledTemplateRevision = state.lastChange.revision
-    clearTemplateAutoSaveTimer()
+    handledFormatProfileRevision = state.lastChange.revision
+    clearFormatProfileAutoSaveTimer()
 
     const project = useWikiStore.getState().project
     if (!project) return
@@ -82,12 +82,12 @@ export function setupAutoSave(): void {
     const projectPath = project.path
     const delay = state.lastChange.persist === "immediate" ? 0 : 1200
 
-    templateTimer = setTimeout(() => {
+    formatProfileTimer = setTimeout(() => {
       const currentProject = useWikiStore.getState().project
       if (!currentProject || currentProject.path !== projectPath) return
-      const templateState = useTemplateStore.getState()
-      saveTemplates(projectPath, templateState.templates, templateState.activeTemplateId).catch(() => {})
-      templateTimer = null
+      const profileState = useFormatProfileStore.getState()
+      saveFormatProfiles(projectPath, profileState.profiles, profileState.activeProfileId).catch(() => {})
+      formatProfileTimer = null
     }, delay)
   })
 }

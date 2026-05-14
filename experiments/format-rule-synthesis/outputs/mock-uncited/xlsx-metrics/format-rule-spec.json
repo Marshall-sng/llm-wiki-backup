@@ -1,0 +1,532 @@
+{
+  "caseId": "xlsx-metrics",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Guarantee high-fidelity export and exact visual recreation."
+  ],
+  "rationale": "LLM-style synthesis converts existing evidence into explicit normative formatting constraints with attributes.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "sheetName",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "printLayout",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes sheetName, printLayout explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "missing.evidence.0001"
+      ],
+      "id": "xlsx-workbook-1",
+      "normType": "hierarchy",
+      "rule": "workbook uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "workbook"
+    },
+    {
+      "attributes": [],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes sheetName, freezePane explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-sheet-2",
+      "normType": "hierarchy",
+      "rule": "sheet uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "sheet"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "tableRegion",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "headerRow",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "dataRegion",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes tableRegion, headerRow, dataRegion explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-table-region-3",
+      "normType": "hierarchy",
+      "rule": "table-region uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "table-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "headerRow",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "columnWidth",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "alignment",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes headerRow, columnWidth, alignment explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-header-4",
+      "normType": "table",
+      "rule": "header uses evidence-bound table constraints.",
+      "source": "llm-inferred",
+      "target": "header"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "dataRegion",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "numberFormat",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "unit",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes dataRegion, numberFormat, unit explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-data-region-5",
+      "normType": "table",
+      "rule": "data-region uses evidence-bound table constraints.",
+      "source": "llm-inferred",
+      "target": "data-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "fill",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "border",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "font",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes fill, border, font explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-style-6",
+      "normType": "typography",
+      "rule": "style uses evidence-bound typography constraints.",
+      "source": "llm-inferred",
+      "target": "style"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "formulaPolicy",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "numberFormat",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes formulaPolicy, numberFormat explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-formula-7",
+      "normType": "numbering",
+      "rule": "formula uses evidence-bound numbering constraints.",
+      "source": "llm-inferred",
+      "target": "formula"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "numberFormat",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "unit",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes numberFormat, unit explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-number-format-8",
+      "normType": "typography",
+      "rule": "number-format uses evidence-bound typography constraints.",
+      "source": "llm-inferred",
+      "target": "number-format"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "printLayout",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "pageBreak",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes printLayout, pageBreak explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-style-9",
+      "normType": "page",
+      "rule": "style uses evidence-bound page constraints.",
+      "source": "llm-inferred",
+      "target": "style"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001",
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003"
+          ],
+          "name": "exportPromise",
+          "value": "forbidden"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001",
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003"
+          ],
+          "name": "visualReplication",
+          "value": "forbidden"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The synthesized rule makes exportPromise, visualReplication explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001",
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003"
+      ],
+      "id": "xlsx-boundary-10",
+      "normType": "boundary",
+      "rule": "boundary uses evidence-bound boundary constraints.",
+      "source": "standard-default",
+      "target": "boundary"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "columnWidth",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "alignment",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes columnWidth, alignment explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-style-11",
+      "normType": "spacing",
+      "rule": "style uses evidence-bound spacing constraints.",
+      "source": "llm-inferred",
+      "target": "style"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "totalRow",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "formulaPolicy",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes totalRow, formulaPolicy explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-table-region-12",
+      "normType": "table",
+      "rule": "table-region uses evidence-bound table constraints.",
+      "source": "llm-inferred",
+      "target": "table-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "notesRegion",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.xlsx.sheet.0001",
+            "profile.structure.0001"
+          ],
+          "name": "unit",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes notesRegion, unit explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "raw.xlsx.sheet.0001",
+        "profile.structure.0001"
+      ],
+      "id": "xlsx-table-region-13",
+      "normType": "hierarchy",
+      "rule": "table-region uses evidence-bound hierarchy constraints.",
+      "source": "llm-inferred",
+      "target": "table-region"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "density",
+          "value": "evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "profile.style.0002",
+            "profile.style.0003",
+            "profile.style.0004"
+          ],
+          "name": "tableRegion",
+          "value": "evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The synthesized rule makes density, tableRegion explicit and avoids source-text copying.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "profile.style.0002",
+        "profile.style.0003",
+        "profile.style.0004"
+      ],
+      "id": "xlsx-data-region-14",
+      "normType": "spacing",
+      "rule": "data-region uses evidence-bound spacing constraints.",
+      "source": "llm-inferred",
+      "target": "data-region"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "xlsx",
+  "synthesisMode": "mock-uncited"
+}

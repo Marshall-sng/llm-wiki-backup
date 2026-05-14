@@ -1,0 +1,433 @@
+{
+  "caseId": "pdf-reference",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Use this as a format-reference profile, not as a promise to recreate the PDF exactly.",
+    "Do not infer source body content, proprietary wording, image content, or exact coordinates from the evidence pack.",
+    "Do not claim high-fidelity export, visual restoration, or exact editable template reconstruction.",
+    "Where evidence is missing, use conservative GB/T 9704-2012-like defaults only as fallback defaults and mark them as low confidence.",
+    "Preserve structural intent and formatting constraints over pixel-level visual matching."
+  ],
+  "rationale": "Evidence supports a PDF-derived reference profile with 15 pages, limited text operators, many images, font-resource hints, and low scan risk; detailed editable formatting must remain conservative and GB/T-like rather than exact.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "pageBox",
+          "unit": "policy",
+          "value": "unknown-from-evidence; prefer GB/T-like A4 portrait fallback only when target output requires a page box"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.pageCount",
+            "profile.style.0001"
+          ],
+          "name": "layoutZone",
+          "unit": "policy",
+          "value": "page-scoped layout zones; exact margins not recoverable"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001",
+            "diagnostic.0003"
+          ],
+          "name": "marginSignal",
+          "unit": "diagnostic",
+          "value": "insufficient coordinate evidence; do not infer exact margins"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Formatting engines should preserve page-aware pagination checkpoints and avoid expanding the adapted draft far beyond the observed reference length unless source content requires it.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "profile.style.0001",
+        "diagnostic.0001"
+      ],
+      "id": "page-unit-001",
+      "normType": "page",
+      "rule": "Treat the document as a page-based reference with a fixed 15-page observed extent.",
+      "source": "detected",
+      "target": "page"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.pageCount"
+          ],
+          "name": "imageDensity",
+          "unit": "imagesPerPage",
+          "value": "108 images / 15 pages = about 7.2 image resources per page"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.imageCount",
+            "profile.style.0001"
+          ],
+          "name": "layoutZone",
+          "unit": "policy",
+          "value": "separate text, figure, and table zones where content requires mixed media"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "The combination of 15 pages and 108 images indicates a finished, visually dense reference; adapted output should prefer compact, disciplined spacing and clear section breaks over loose prose-only layouts.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.imageCount",
+        "diagnostic.0001"
+      ],
+      "id": "page-density-002",
+      "normType": "density",
+      "rule": "Use moderate-to-high page complexity assumptions when placing adapted content.",
+      "source": "llm-inferred",
+      "target": "page"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0004",
+            "diagnostic.0002"
+          ],
+          "name": "textLayer",
+          "unit": "diagnostic",
+          "value": "present-or-hinted"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.textOperatorCount",
+            "diagnostic.0002"
+          ],
+          "name": "readingOrder",
+          "unit": "policy",
+          "value": "semantic-source-first; PDF text-operator order is advisory only"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Because text operators are limited relative to page count and image count, headings, captions, and lists should be reconstructed from draft semantics rather than copied from PDF operator order alone.",
+      "evidenceRefs": [
+        "raw.pdf.fact.textOperatorCount",
+        "profile.style.0004",
+        "diagnostic.0002"
+      ],
+      "id": "text-layer-001",
+      "normType": "hierarchy",
+      "rule": "Treat text extraction as present but sparse; infer hierarchy cautiously.",
+      "source": "detected",
+      "target": "text-layer"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "diagnostic.0003"
+          ],
+          "name": "readingOrder",
+          "unit": "policy",
+          "value": "body text follows logical document order supplied by the draft"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.imageCount",
+            "diagnostic.0002"
+          ],
+          "name": "layoutZone",
+          "unit": "policy",
+          "value": "main text zone should remain distinct from image-heavy regions"
+        }
+      ],
+      "confidence": "low",
+      "detail": "For adapted prose, use consistent paragraph indentation, controlled line spacing, and heading separation; do not derive exact line breaks from the reference PDF.",
+      "evidenceRefs": [
+        "diagnostic.0002",
+        "diagnostic.0003"
+      ],
+      "id": "text-layer-002",
+      "normType": "spacing",
+      "rule": "Use GB/T-like paragraph discipline when editable text must be generated.",
+      "source": "standard-default",
+      "target": "text-layer"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.imageCount",
+            "raw.pdf.fact.pageCount"
+          ],
+          "name": "imageDensity",
+          "unit": "classification",
+          "value": "high"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.pdf.fact.imageCount",
+            "profile.style.0001"
+          ],
+          "name": "layoutZone",
+          "unit": "policy",
+          "value": "figure/table/media regions should be explicitly bounded from prose regions"
+        }
+      ],
+      "confidence": "high",
+      "detail": "When adapting a draft, keep placeholders or figure slots only where the draft has corresponding visual content; do not invent or reposition missing source images from the PDF reference.",
+      "evidenceRefs": [
+        "raw.pdf.fact.imageCount",
+        "diagnostic.0001",
+        "diagnostic.0003"
+      ],
+      "id": "image-density-001",
+      "normType": "density",
+      "rule": "Use image count as a complexity signal, not as an instruction to fabricate images.",
+      "source": "detected",
+      "target": "image-density"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "fontRef",
+          "unit": "pdfResourceHint",
+          "value": "MicrosoftYaHei-Bold, SegoeUI-Bold, MicrosoftYaHei, SimSun, SegoeUI resource hints"
+        },
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "not recoverable from evidence"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Use Chinese office-document compatible fonts for generated editable text; embedded subset names and PDF resource names must not be treated as guaranteed installed fonts.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "diagnostic.0001"
+      ],
+      "id": "font-ref-001",
+      "normType": "typography",
+      "rule": "Treat PDF font resource names as diagnostic font references only.",
+      "source": "detected",
+      "target": "font-ref"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "fontRef",
+          "unit": "policy",
+          "value": "role-based mapping: heading-bold, body-regular, fallback-Chinese-compatible"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "For GB/T-like output, map headings to bold Chinese-compatible sans or serif styles and body text to readable Chinese body fonts; maintain internal consistency instead of matching resource names exactly.",
+      "evidenceRefs": [
+        "profile.style.0002",
+        "diagnostic.0002"
+      ],
+      "id": "font-ref-002",
+      "normType": "typography",
+      "rule": "Use role-based typography rather than exact PDF font matching.",
+      "source": "llm-inferred",
+      "target": "font-ref"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "raw.pdf.fact.scanLikely",
+            "profile.style.0004"
+          ],
+          "name": "scanRisk",
+          "unit": "classification",
+          "value": "low"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "diagnostic.0002"
+          ],
+          "name": "textLayer",
+          "unit": "policy",
+          "value": "usable as advisory evidence"
+        }
+      ],
+      "confidence": "high",
+      "detail": "The reference is not flagged as likely scanned, so text and font clues may inform layout rules at medium confidence while exact visual recovery remains out of scope.",
+      "evidenceRefs": [
+        "raw.pdf.fact.scanLikely",
+        "profile.style.0004",
+        "diagnostic.0002"
+      ],
+      "id": "scan-risk-001",
+      "normType": "boundary",
+      "rule": "Low scan risk permits cautious formatting inference, but not pixel reconstruction.",
+      "source": "detected",
+      "target": "scan-risk"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "diagnostic.0003"
+          ],
+          "name": "readingOrder",
+          "unit": "policy",
+          "value": "draft semantics override PDF visual order during adaptation"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "diagnostic.0003",
+            "profile.style.0001"
+          ],
+          "name": "layoutZone",
+          "unit": "policy",
+          "value": "reference zones are advisory and may be remapped to fit draft structure"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Adaptation should record conflicts between the draft and the reference profile, then prefer draft semantics where structure differs from the reference.",
+      "evidenceRefs": [
+        "diagnostic.0003",
+        "profile.style.0004"
+      ],
+      "id": "reference-use-001",
+      "normType": "boundary",
+      "rule": "Use the PDF as a finished-reference constraint set, not as an editable source template.",
+      "source": "detected",
+      "target": "reference-use"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "tableSignature",
+          "unit": "policy",
+          "value": "not detected; create only from draft semantics"
+        }
+      ],
+      "confidence": "low",
+      "detail": "The evidence pack reports no table inventory; generated tables should follow GB/T-like clean borders, aligned headers, and compact spacing only when required by the draft.",
+      "evidenceRefs": [
+        "profile.style.0001",
+        "diagnostic.0003"
+      ],
+      "id": "table-signature-001",
+      "normType": "table",
+      "rule": "Do not infer table grids unless the draft supplies tabular content.",
+      "source": "llm-inferred",
+      "target": "text-layer"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "low",
+          "evidenceRefs": [
+            "raw.pdf.fact.textOperatorCount",
+            "diagnostic.0003"
+          ],
+          "name": "listSignature",
+          "unit": "policy",
+          "value": "not reliably detected; derive from draft outline"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "diagnostic.0003"
+          ],
+          "name": "readingOrder",
+          "unit": "policy",
+          "value": "outline-driven numbering order"
+        }
+      ],
+      "confidence": "low",
+      "detail": "Because no reliable section list was extracted, numbering should be generated from the target draft outline using GB/T-like hierarchy conventions rather than copied from the PDF reference.",
+      "evidenceRefs": [
+        "raw.pdf.fact.textOperatorCount",
+        "diagnostic.0003"
+      ],
+      "id": "list-signature-001",
+      "normType": "numbering",
+      "rule": "Use explicit hierarchical numbering only when the draft structure requires it.",
+      "source": "llm-inferred",
+      "target": "text-layer"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "marginSignal",
+          "unit": "diagnostic",
+          "value": "unavailable"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0002"
+          ],
+          "name": "fontSizePt",
+          "unit": "diagnostic",
+          "value": "unavailable"
+        },
+        {
+          "confidence": "high",
+          "evidenceRefs": [
+            "profile.style.0001"
+          ],
+          "name": "pageBox",
+          "unit": "diagnostic",
+          "value": "unavailable"
+        }
+      ],
+      "confidence": "high",
+      "detail": "Do not invent exact margins, colors, coordinates, image positions, or font sizes where the evidence pack contains only page count, text operator count, image count, scan-risk, and font-resource clues.",
+      "evidenceRefs": [
+        "raw.pdf.fact.pageCount",
+        "raw.pdf.fact.textOperatorCount",
+        "raw.pdf.fact.imageCount",
+        "profile.style.0002",
+        "diagnostic.0003"
+      ],
+      "id": "boundary-001",
+      "normType": "boundary",
+      "rule": "Missing measurements are hard boundaries.",
+      "source": "llm-inferred",
+      "target": "boundary"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "pdf",
+  "synthesisMode": "real-llm"
+}

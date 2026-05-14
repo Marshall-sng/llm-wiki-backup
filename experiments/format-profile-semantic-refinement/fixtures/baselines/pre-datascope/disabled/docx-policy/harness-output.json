@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "format-profile-harness-output.v0",
+  "caseId": "docx-policy",
+  "attemptStatus": "not_attempted",
+  "evaluatorVerdict": "not_run",
+  "finalStatus": "fallback",
+  "fallbackReason": "llm_disabled",
+  "hashes": {
+    "deterministicProfileSha256": "3836dec7d4e86fabf220d270b7217951eee3160a9db91937f8932c6e5e65edec",
+    "deterministicInstructionSha256": "8fd2ae796e540c8e67afad4b527c2f62e803725bcbf75789e877f00c36afe80d",
+    "rawEvidenceSha256": "ff5b131a17093655bcf2ba41cb2cc5d51d96009fd009a14b57bb1a026d2b9acd",
+    "renderedInstructionSha256": "8fd2ae796e540c8e67afad4b527c2f62e803725bcbf75789e877f00c36afe80d"
+  },
+  "renderedGenerationInstruction": "# Generation Instruction: batch_25_docx_local_05_procurement_2023_13\n\n## 任务\n\n根据该 Word 成品提炼正式文稿结构、样式线索和可用于底稿生成的约束。\n\n## 模式\n\n已有底稿适配到格式画像。\n\n## 探测摘要\n\n- Profile: profile_batch_25_docx_local_05_procurement_2023_13\n- 文件类型: docx\n- 文档类型推断: 制度/正式文稿\n- 画像置信度: medium\n- Snapshot: 09ea285e7a891b6079a8805d87615bdbf00fe08755161827d8115ef5f37bf06e\n- 探测摘要: 段落 925、候选标题 28、表格 15、样式 4、字体线索 7\n\n## 临时调整\n\n- experiment: phase2-batch\n- formatBoundary: DOCX 用于正式文稿结构和样式线索。\n\n## 写作约束\n\n1. 优先满足用户目标，不把格式说明混入正文。\n2. 持续遵守当前 FormatBinding；后续补写、改写和续写均默认继承该绑定。\n3. 如果格式画像与用户材料冲突，保留用户事实，并在 diagnostics 中说明冲突。\n4. 对 DOCX，优先生成正式文稿结构；对 XLSX，优先生成表格化分析；对 PPTX，优先生成逐页汇报底稿；对 PDF，仅作为参考成品。\n\n## 画像约束\n\n- DOCX 用作正式文稿/制度材料写作约束，不是导出版式承诺。\n- 章节模式：decimal-numbered-sections。\n- 结构策略：优先使用数字分级标题。\n- 候选标题数量：28；生成时把它们当作结构风格证据，不要逐字复用。\n- 候选标题样例：\n  1. (candidate) 1.公司生产运营所需物资和服务采购，包括：各类机械设备、 电气设备、信息设备、车辆、工器具、办公用品等的采购；相关 设备维修、运维服务采购； 以及车辆租赁、物流服务、物业服务 等的采购。\n  2. (candidate) 2.公司信息化建设相关项目采购，包括：根据公司信息化项 目的建设和开发需要，进行的软件产品、硬件产品、软硬件组件 的购买，以及信息化业务系统建设、开发、升级、技术服务等的 采购；\n  3. (candidate) 3.公司信息化系统运维采购，包括根据公司信息化项目运维\n  4. (candidate) 4.公司科技创新项目采购，包括根据公司科技创新工作需要， 进行科技创新相关项目和课题所需的物资、研究开发和技术服务 等的采购；\n  5. (candidate) 5.公司劳务服务采购，包括为满足公司经营需要进行的劳务 服务采购；\n  6. (candidate) 6.公司中介机构及咨询服务采购，包括为满足公司生产经营 活动所需的评估、审计、法律服务、咨询、代理、监理、鉴证、 测评等的服务采购。\n  7. (candidate) 2.相关的设备、材料等货物单项合同估算价在 200 万元（含） 以上的；\n  8. (candidate) 3.勘察、设计、监理等服务单项合同估算价在 100 万元（含） 以上的；\n  9. (candidate) 4. 同一项目 中可以合并进行的勘察、设计、施工、监理以 及与工程建设有关的重要设备、材料等的采购，合同估算价合 计达到前款规定标准的；\n  10. (candidate) 5.其他按照国家有关规定必须招标的。\n  11. (candidate) 1.技术复杂、有特殊要求或者受 自然环境限制，只有少量 潜在投标人可供选择的；\n  12. (candidate) 2.涉及国家安全、 国家秘密或者抢险救灾，适宜招标但不 适宜公开招标的。\n- 段落样式使用频率：\n  - BodyText: 205\n  - TableText: 149\n- 编号线索：未识别显式编号定义。\n- 字体线索：\n  - Arial: 377\n  - SimSun: 155\n  - Times New Roman: 8\n  - MS UI Gothic: 1\n  - SimHei: 1\n- 字号线索：\n  - 21 half-points: 362\n  - 18 half-points: 146\n  - 24 half-points: 8\n  - 25 half-points: 7\n  - 19 half-points: 6\n  - 2 half-points: 5\n  - 31 half-points: 4\n  - 22 half-points: 1\n- 页面线索：11905×16834 twips；页边距 {\"top\":\"1\",\"right\":\"0\",\"bottom\":\"1\",\"left\":\"0\"}。\n- 生成策略：先确定用户材料需要的章节，再套用上述结构/语气/层级线索；不要为了匹配样式而编造事实。\n- 适配策略：已有底稿与候选标题冲突时，优先保留事实内容，再重组为更接近目标文体的章节。\n\n## 能力边界\n\n- [info] probe.completed: Phase 2 已完成 DOCX 基础探测：段落 925、候选标题 28、表格 15、样式 4、字体线索 7。\n- [info] binding.adaptation_mode: 该 case 验证已有底稿适配格式画像，需要记录结构冲突和改写边界。\n",
+  "diagnostics": [
+    {
+      "severity": "error",
+      "code": "llm_disabled",
+      "message": "LLM refinement disabled by mode."
+    }
+  ],
+  "reports": {
+    "evaluatorReportPath": "evaluator-report.json"
+  }
+}

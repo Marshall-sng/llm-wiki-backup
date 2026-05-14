@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "format-profile.v0",
+  "profileId": "profile_batch_35_xlsx_local_01_data_element",
+  "source": {
+    "path": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "fileName": "xlsx_local_01_data_element_数据元定义标准.xlsx",
+    "fileType": "xlsx",
+    "sha256": "7ac2e9953e6455f362148253438269eb2bba91faa6b376b0c4bc0e4b9813855b",
+    "byteSize": 11209
+  },
+  "documentKind": {
+    "label": "表格/指标分析",
+    "confidence": "medium",
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx"
+      }
+    ]
+  },
+  "capabilities": {
+    "canGuideGeneration": true,
+    "canGuideAdaptation": false,
+    "canGuideExport": false,
+    "confidence": "medium",
+    "notes": [
+      "Phase 2 已接入 XLSX workbook/sheet/style 基础探测；用于表格化表达参考。"
+    ]
+  },
+  "structureProfile": {
+    "confidence": "medium",
+    "sections": [
+      {
+        "kind": "worksheet",
+        "index": 1,
+        "name": "Sheet1",
+        "sheetId": "1"
+      }
+    ],
+    "tables": [
+      {
+        "path": "xl/worksheets/sheet1.xml",
+        "dimension": "A1:C29",
+        "rowCount": 29,
+        "cellCount": 87,
+        "mergedCellCount": 5,
+        "formulaCount": 0
+      }
+    ],
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx"
+      }
+    ]
+  },
+  "styleProfile": {
+    "confidence": "medium",
+    "layout": {
+      "sheets": [
+        {
+          "path": "xl/worksheets/sheet1.xml",
+          "dimension": "A1:C29"
+        }
+      ]
+    },
+    "typography": {
+      "fontCount": 4
+    },
+    "colors": {
+      "fillCount": 3,
+      "borderCount": 5
+    },
+    "formatSpecific": {
+      "extractionStage": "basic_probe",
+      "realParserAttached": true,
+      "officeKind": "xlsx",
+      "cellStyleCount": 1,
+      "sharedStringCount": 65
+    },
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx"
+      }
+    ]
+  },
+  "writingProfile": {
+    "confidence": "low",
+    "tone": [
+      "分析型",
+      "指标导向"
+    ],
+    "genre": [
+      "表格化分析"
+    ],
+    "constraints": [
+      "优先生成指标分组、口径解释和结论摘要，不强行写成长文。"
+    ],
+    "evidence": [
+      {
+        "kind": "file_probe",
+        "description": "Phase 2 runner 已读取样本并完成基础格式探测。",
+        "path": "runtime/format-profile/samples/local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx"
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "severity": "info",
+      "code": "probe.completed",
+      "message": "Phase 2 已完成 XLSX 基础探测：工作表 1、共享字符串 65、字体 4、填充 3。"
+    },
+    {
+      "severity": "info",
+      "code": "format.xlsx.boundary",
+      "message": "XLSX 用作表格结构和指标表达参考，不在本阶段生成 Excel 成品。"
+    }
+  ],
+  "rawProbeFacts": {
+    "kind": "office_zip",
+    "officeKind": "xlsx",
+    "entryCount": 10,
+    "structure": {
+      "sheetCount": 1,
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "sheetId": "1"
+        }
+      ],
+      "sheetStats": [
+        {
+          "path": "xl/worksheets/sheet1.xml",
+          "dimension": "A1:C29",
+          "rowCount": 29,
+          "cellCount": 87,
+          "mergedCellCount": 5,
+          "formulaCount": 0
+        }
+      ]
+    },
+    "style": {
+      "hasStyles": true,
+      "cellStyleCount": 1,
+      "fontCount": 4,
+      "fillCount": 3,
+      "borderCount": 5,
+      "sharedStringCount": 65
+    }
+  }
+}

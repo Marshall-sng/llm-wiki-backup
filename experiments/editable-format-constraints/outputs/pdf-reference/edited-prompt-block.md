@@ -1,0 +1,44 @@
+## 可编辑格式约束（Editable Format Constraints）
+
+- schemaVersion: editable-format-constraints.v0
+- caseId: pdf-reference
+- mode: edited
+- activeRuleSource: user-edited-over-auto
+
+### 规则
+- 【page/page】Treat the document as a page-based reference with a fixed 15-page observed extent.（用户已确认采用） Formatting engines should preserve page-aware pagination checkpoints and avoid expanding the adapted draft far beyond the observed reference length unless source content requires it. User edit: keep this as the active drafting constraint.
+  - pageBox: unknown-from-evidence; prefer GB/T-like A4 portrait fallback only when target output requires a page box policy
+  - layoutZone: page-scoped layout zones; exact margins not recoverable policy
+  - marginSignal: insufficient coordinate evidence; do not infer exact margins diagnostic
+- 【page/density】Use moderate-to-high page complexity assumptions when placing adapted content. The combination of 15 pages and 108 images indicates a finished, visually dense reference; adapted output should prefer compact, disciplined spacing and clear section breaks over loose prose-only layouts.
+  - imageDensity: 108 images / 15 pages = about 7.2 image resources per page imagesPerPage
+  - layoutZone: separate text, figure, and table zones where content requires mixed media policy
+- 【text-layer/hierarchy】Treat text extraction as present but sparse; infer hierarchy cautiously. Because text operators are limited relative to page count and image count, headings, captions, and lists should be reconstructed from draft semantics rather than copied from PDF operator order alone.
+  - textLayer: present-or-hinted diagnostic
+  - readingOrder: semantic-source-first; PDF text-operator order is advisory only policy
+- 【text-layer/spacing】Use GB/T-like paragraph discipline when editable text must be generated. For adapted prose, use consistent paragraph indentation, controlled line spacing, and heading separation; do not derive exact line breaks from the reference PDF.
+  - readingOrder: body text follows logical document order supplied by the draft policy
+  - layoutZone: main text zone should remain distinct from image-heavy regions policy
+- 【image-density/density】Use image count as a complexity signal, not as an instruction to fabricate images. When adapting a draft, keep placeholders or figure slots only where the draft has corresponding visual content; do not invent or reposition missing source images from the PDF reference.
+  - imageDensity: high classification
+  - layoutZone: figure/table/media regions should be explicitly bounded from prose regions policy
+- 【font-ref/typography】Treat PDF font resource names as diagnostic font references only. Use Chinese office-document compatible fonts for generated editable text; embedded subset names and PDF resource names must not be treated as guaranteed installed fonts.
+  - fontRef: MicrosoftYaHei-Bold, SegoeUI-Bold, MicrosoftYaHei, SimSun, SegoeUI resource hints pdfResourceHint
+  - fontSizePt: not recoverable from evidence pt
+- 【font-ref/typography】Use role-based typography rather than exact PDF font matching. For GB/T-like output, map headings to bold Chinese-compatible sans or serif styles and body text to readable Chinese body fonts; maintain internal consistency instead of matching resource names exactly.
+  - fontRef: role-based mapping: heading-bold, body-regular, fallback-Chinese-compatible policy
+- 【scan-risk/boundary】Low scan risk permits cautious formatting inference, but not pixel reconstruction. The reference is not flagged as likely scanned, so text and font clues may inform layout rules at medium confidence while exact visual recovery remains out of scope.
+  - scanRisk: low classification
+  - textLayer: usable as advisory evidence policy
+- 【reference-use/boundary】Use the PDF as a finished-reference constraint set, not as an editable source template. Adaptation should record conflicts between the draft and the reference profile, then prefer draft semantics where structure differs from the reference.
+  - readingOrder: draft semantics override PDF visual order during adaptation policy
+  - layoutZone: reference zones are advisory and may be remapped to fit draft structure policy
+- 【text-layer/table】Do not infer table grids unless the draft supplies tabular content. The evidence pack reports no table inventory; generated tables should follow GB/T-like clean borders, aligned headers, and compact spacing only when required by the draft.
+  - tableSignature: not detected; create only from draft semantics policy
+- 【text-layer/numbering】Use explicit hierarchical numbering only when the draft structure requires it. Because no reliable section list was extracted, numbering should be generated from the target draft outline using GB/T-like hierarchy conventions rather than copied from the PDF reference.
+  - listSignature: not reliably detected; derive from draft outline policy
+  - readingOrder: outline-driven numbering order policy
+- 【boundary/boundary】Missing measurements are hard boundaries. Do not invent exact margins, colors, coordinates, image positions, or font sizes where the evidence pack contains only page count, text operator count, image count, scan-risk, and font-resource clues.
+  - marginSignal: unavailable diagnostic
+  - fontSizePt: unavailable diagnostic
+  - pageBox: unavailable diagnostic

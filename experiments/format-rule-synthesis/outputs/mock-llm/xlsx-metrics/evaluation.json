@@ -1,0 +1,16 @@
+{
+  "caseId": "xlsx-metrics",
+  "diagnostics": [],
+  "metrics": {
+    "attributeCount": 32,
+    "baselineAttributeCount": 0,
+    "baselineRuleCount": 12,
+    "evidenceCoverage": 1,
+    "granularityScore": 100,
+    "requiredAttributeHits": 10,
+    "ruleCount": 14,
+    "targetCount": 9
+  },
+  "schemaVersion": "format-rule-synthesis-evaluation.v0",
+  "verdict": "pass"
+}

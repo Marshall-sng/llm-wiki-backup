@@ -1,0 +1,814 @@
+{
+  "caseId": "docx-policy",
+  "confidence": "medium",
+  "globalBoundaries": [
+    "Guarantee high-fidelity export and exact visual recreation."
+  ],
+  "rationale": "LLM-style synthesis converts existing evidence into explicit normative formatting constraints with attributes.",
+  "rules": [
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "pageSize",
+          "value": "A4-like portrait"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "margin",
+          "value": "detect-or-confirm; do not fabricate exact margins"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "pageOrientation",
+          "value": "portrait unless evidence contradicts"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Represent page size as an approximate drafting constraint, not an export promise.",
+      "evidenceRefs": [
+        "missing.evidence.0001"
+      ],
+      "id": "docx-page-size",
+      "normType": "page",
+      "rule": "Use formal A4-like page organization when page evidence supports it.",
+      "source": "llm-inferred",
+      "target": "page"
+    },
+    {
+      "attributes": [],
+      "confidence": "medium",
+      "detail": "Title expresses the current draft topic; it must not reuse source file title text.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-title-main",
+      "normType": "hierarchy",
+      "rule": "Main title is standalone and visually separated from body.",
+      "source": "llm-inferred",
+      "target": "title"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "numbering",
+          "value": "chapter/major-section pattern"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "font",
+          "value": "heading font from evidence or formal default"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "paragraphSpacing",
+          "value": "more spacing before than body"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use one consistent pattern such as Chapter/Section or Chinese numeral headings.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-heading-l1",
+      "normType": "hierarchy",
+      "rule": "Level-1 headings represent chapters or major sections.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "numbering",
+          "value": "section/subsection pattern"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "alignment",
+          "value": "left or formal heading alignment"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "fontSizePt",
+          "value": "between title and body"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use one consistent second-level marker and keep heading text short.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-heading-l2",
+      "normType": "hierarchy",
+      "rule": "Level-2 headings group related provisions.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "numbering",
+          "value": "item marker such as 1. or (1)"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "indent",
+          "value": "same-level consistent indent"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Do not promote long provision sentences into headings.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-heading-l3",
+      "normType": "hierarchy",
+      "rule": "Level-3 headings identify concrete items.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "numbering",
+          "value": "continuous within each level"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "indent",
+          "value": "nested levels increase indent consistently"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Preserve chapter/article/paragraph/item ordering inferred from evidence.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-numbering-seq",
+      "normType": "numbering",
+      "rule": "Provision numbering is continuous and same-level markers are homogeneous.",
+      "source": "llm-inferred",
+      "target": "numbering"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "font",
+          "value": "Arial"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "fontSizePt",
+          "unit": "pt",
+          "value": "10.5"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "lineSpacing",
+          "value": "stable formal-document line spacing"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use detected font and size as drafting constraints and show uncertainty if evidence is weak.",
+      "evidenceRefs": [
+        "raw.docx.style.0001",
+        "raw.docx.style.0002",
+        "raw.docx.style.0003",
+        "raw.docx.style.0004",
+        "raw.docx.style.0005"
+      ],
+      "id": "docx-body-font",
+      "normType": "typography",
+      "rule": "Body typography follows detected dominant body style.",
+      "source": "llm-inferred",
+      "target": "typography"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "indent",
+          "value": "first-line indent around two Chinese characters when appropriate"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "alignment",
+          "value": "left or justified"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "paragraphSpacing",
+          "value": "consistent same-level spacing"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "lineSpacing",
+          "value": "consistent body line spacing"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Use first-line indent, consistent line spacing, and controlled before/after spacing.",
+      "evidenceRefs": [
+        "raw.docx.style.0001",
+        "raw.docx.style.0002",
+        "raw.docx.style.0003",
+        "raw.docx.style.0004",
+        "raw.docx.style.0005"
+      ],
+      "id": "docx-body-paragraph",
+      "normType": "spacing",
+      "rule": "Body paragraphs use formal paragraph rhythm.",
+      "source": "llm-inferred",
+      "target": "paragraph"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "promotionPolicy",
+          "value": "do not promote long provisions to headings"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "indent",
+          "value": "list indent consistent by level"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Long sentences, amounts, thresholds and responsibilities remain body provisions.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-list-item",
+      "normType": "hierarchy",
+      "rule": "List-like body items remain body text unless they are real headings.",
+      "source": "llm-inferred",
+      "target": "paragraph"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "tableHeader",
+          "value": "short field labels"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "bodyFontSizePt",
+          "unit": "pt",
+          "value": "may be smaller than body if evidence supports"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "alignment",
+          "value": "cell text readable and consistent"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Table facts must come from user draft or references, never from the format image.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-table-structure",
+      "normType": "table",
+      "rule": "Tables carry matrices, lists, thresholds or comparisons.",
+      "source": "llm-inferred",
+      "target": "table"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "paragraphSpacing",
+          "value": "caption/table spacing distinct from body"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "numbering",
+          "value": "table numbering optional and evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Caption precedes table or is clearly attached; header cells do not contain article numbering.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-table-caption",
+      "normType": "hierarchy",
+      "rule": "Table caption is separated from body provisions.",
+      "source": "llm-inferred",
+      "target": "table"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "headerFooter",
+          "value": "confirm before use"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "margin",
+          "value": "do not infer exact header/footer distance"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Do not invent headers, footers, watermarks, seals, or page numbers.",
+      "evidenceRefs": [
+        "raw.docx.style.0001",
+        "raw.docx.style.0002",
+        "raw.docx.style.0003",
+        "raw.docx.style.0004",
+        "raw.docx.style.0005"
+      ],
+      "id": "docx-header-footer",
+      "normType": "page",
+      "rule": "Header/footer evidence is diagnostic only unless explicitly present.",
+      "source": "llm-inferred",
+      "target": "page"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "paragraphSpacing",
+          "value": "level-specific consistent spacing"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "lineSpacing",
+          "value": "heading line spacing stable"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Before/after spacing may differ by level but should be consistent within each level.",
+      "evidenceRefs": [
+        "raw.docx.style.0001",
+        "raw.docx.style.0002",
+        "raw.docx.style.0003",
+        "raw.docx.style.0004",
+        "raw.docx.style.0005"
+      ],
+      "id": "docx-spacing-heading",
+      "normType": "spacing",
+      "rule": "Heading spacing separates hierarchy without adding content.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "fontFallback",
+          "value": "do not overfit Arial/en-US counts"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "font",
+          "value": "Arial"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Prefer body-style evidence over global font counts when they conflict.",
+      "evidenceRefs": [
+        "raw.docx.style.0001",
+        "raw.docx.style.0002",
+        "raw.docx.style.0003",
+        "raw.docx.style.0004",
+        "raw.docx.style.0005"
+      ],
+      "id": "docx-font-fallback",
+      "normType": "typography",
+      "rule": "Western/default fonts are compatibility evidence, not Chinese body preference.",
+      "source": "llm-inferred",
+      "target": "typography"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "confidencePolicy",
+          "value": "lower confidence on weak evidence"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Weak margin or numbering evidence must lower confidence rather than create exact rules.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-diagnostics",
+      "normType": "boundary",
+      "rule": "Uncertain layout facts are surfaced as diagnostics.",
+      "source": "llm-inferred",
+      "target": "boundary"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "exportPromise",
+          "value": "forbidden"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "visualReplication",
+          "value": "forbidden"
+        }
+      ],
+      "confidence": "high",
+      "detail": "This is a drafting constraint layer only.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-boundary",
+      "normType": "boundary",
+      "rule": "Never claim DOCX export or visual replication.",
+      "source": "standard-default",
+      "target": "boundary"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.paragraph.0001",
+            "raw.docx.paragraph.0002",
+            "raw.docx.paragraph.0003",
+            "raw.docx.paragraph.0004",
+            "raw.docx.paragraph.0005"
+          ],
+          "name": "numbering",
+          "value": "appendix labels evidence-bound"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "paragraphSpacing",
+          "value": "separate from body"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Only create appendix structure when the current draft requires it.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-appendix",
+      "normType": "hierarchy",
+      "rule": "Appendix or attachment sections remain separate from body hierarchy.",
+      "source": "llm-inferred",
+      "target": "heading"
+    },
+    {
+      "attributes": [
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "alignment",
+          "value": "confirm before right/center alignment"
+        },
+        {
+          "confidence": "medium",
+          "evidenceRefs": [
+            "raw.docx.style.0001",
+            "raw.docx.style.0002",
+            "raw.docx.style.0003",
+            "raw.docx.style.0004",
+            "raw.docx.style.0005"
+          ],
+          "name": "paragraphSpacing",
+          "value": "sign-off spacing evidence-bound"
+        }
+      ],
+      "confidence": "medium",
+      "detail": "Do not create issuer/date/seal areas unless draft facts require them.",
+      "evidenceRefs": [
+        "raw.docx.paragraph.0001",
+        "raw.docx.paragraph.0002",
+        "raw.docx.paragraph.0003",
+        "raw.docx.paragraph.0004",
+        "raw.docx.paragraph.0005"
+      ],
+      "id": "docx-signoff",
+      "normType": "spacing",
+      "rule": "Sign-off/date blocks are not inferred from style alone.",
+      "source": "llm-inferred",
+      "target": "paragraph"
+    }
+  ],
+  "schemaVersion": "format-rule-spec-synthesis.v0",
+  "sourceFileType": "docx",
+  "synthesisMode": "mock-uncited"
+}

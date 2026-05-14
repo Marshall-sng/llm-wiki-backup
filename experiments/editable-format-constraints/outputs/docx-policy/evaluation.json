@@ -1,0 +1,101 @@
+{
+  "caseId": "docx-policy",
+  "verdict": "pass",
+  "baseline": {
+    "ruleCount": 17,
+    "hash": "52c2c39385b7457fce6e11fec130393e222215b4a609649df64fe7a8cf4ebfb2"
+  },
+  "metrics": {
+    "autoRuleCount": 21,
+    "editedRuleCount": 21,
+    "warningCount": 42,
+    "editedOverrides": 1
+  },
+  "variants": {
+    "auto": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "missingSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:page-a4-portrait: missing source defaulted to inferred",
+        "soft-source-default:page-margins-gbt-like: missing source defaulted to inferred",
+        "soft-source-default:title-standalone-centered: missing source defaulted to inferred",
+        "soft-source-default:title-weight: missing source defaulted to inferred",
+        "soft-source-default:heading-chapter-pattern: missing source defaulted to inferred",
+        "soft-source-default:heading-article-pattern: missing source defaulted to inferred",
+        "soft-source-default:heading-demote-long-candidates: missing source defaulted to inferred",
+        "soft-source-default:numbering-chinese-lists: missing source defaulted to inferred",
+        "soft-source-default:numbering-decimal-lists: missing source defaulted to inferred",
+        "soft-source-default:numbering-no-docx-auto: missing source defaulted to inferred",
+        "soft-source-default:typography-body-font: missing source defaulted to inferred",
+        "soft-source-default:typography-common-sizes: missing source defaulted to inferred",
+        "soft-source-default:paragraph-body-default: missing source defaulted to inferred",
+        "soft-source-default:paragraph-style-scope: missing source defaulted to inferred",
+        "soft-source-default:paragraph-density: missing source defaulted to inferred",
+        "soft-source-default:table-presence: missing source defaulted to inferred",
+        "soft-source-default:table-text-style: missing source defaulted to inferred",
+        "soft-source-default:table-borders: missing source defaulted to inferred",
+        "soft-source-default:boundary-evidence-limits: missing source defaulted to inferred",
+        "soft-source-default:boundary-content-reuse: missing source defaulted to inferred",
+        "soft-source-default:boundary-heading-conflict: missing source defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "unknownSource": {
+      "status": "accepted",
+      "warnings": [
+        "soft-source-default:page-a4-portrait: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:page-margins-gbt-like: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:title-standalone-centered: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:title-weight: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:heading-chapter-pattern: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:heading-article-pattern: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:heading-demote-long-candidates: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:numbering-chinese-lists: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:numbering-decimal-lists: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:numbering-no-docx-auto: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:typography-body-font: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:typography-common-sizes: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:paragraph-body-default: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:paragraph-style-scope: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:paragraph-density: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:table-presence: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:table-text-style: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:table-borders: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:boundary-evidence-limits: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:boundary-content-reuse: unknown source \"parser-stylefacts\" defaulted to inferred",
+        "soft-source-default:boundary-heading-conflict: unknown source \"parser-stylefacts\" defaulted to inferred"
+      ],
+      "violations": []
+    },
+    "edited": {
+      "status": "accepted",
+      "warnings": [],
+      "violations": []
+    },
+    "negativeUnknownEvidence": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "evidence:page-a4-portrait: unknown evidenceRef missing.evidence"
+      ]
+    },
+    "negativeForbiddenField": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "forbidden-field:rawText"
+      ]
+    },
+    "negativeFidelityPromise": {
+      "status": "rejected",
+      "warnings": [],
+      "violations": [
+        "boundary-promise:fidelity/export promise detected"
+      ]
+    }
+  }
+}

@@ -15,7 +15,7 @@
     "updateAvailable": "有可用更新",
     "updateAvailableSuffix": " · 有更新",
     "drafts": "底稿",
-    "templates": "模板"
+    "formatProfiles": "格式画像"
   },
   "updateBanner": {
     "message": "新版本 {{version}} 已发布",
@@ -64,10 +64,10 @@
     "draftProcessingBannerTitle": "底稿加工会话",
     "draftProcessingSource": "来源底稿：{{title}}",
     "draftProcessingNoOverwriteHint": "原底稿不会被自动覆盖，满意后请点击“保存为新底稿”。",
-    "activeTemplateBannerTitle": "当前模板：{{title}}",
-    "activeTemplateHint": "模板已绑定到当前项目。普通 Chat 不会自动受模板影响；进入底稿 AI 加工时会显式使用当前模板。",
-    "clearActiveTemplate": "清除模板",
-    "draftProcessingTemplate": "使用模板：{{title}}"
+    "activeFormatProfileBannerTitle": "当前格式画像：{{title}}",
+    "activeFormatProfileHint": "格式画像已绑定到当前项目。普通 Chat 不会自动受影响；进入底稿 AI 加工时会显式使用该画像。",
+    "clearActiveFormatProfile": "清除格式画像",
+    "draftProcessingFormatProfile": "使用格式画像：{{title}}"
   },
   "search": {
     "title": "搜索",
@@ -343,51 +343,87 @@
     "parentVersionHash": "父版本哈希",
     "restoredAt": "恢复时间",
     "processingConversationTitle": "加工：{{title}}",
-    "templateProcessingConversationTitle": "模板加工：{{title}}",
-    "processingTemplateActive": "当前模板：{{title}}",
-    "processingTemplateActiveHint": "本次底稿加工会携带该模板快照，并尽量遵循模板结构、语气、长度和引用规则。",
-    "processingTemplateNone": "未选择当前模板",
-    "processingTemplateNoneHint": "本次将按普通底稿加工执行，不会自动套用模板。",
-    "createTemplateProcessingConversation": "按模板新建加工会话",
-    "templateMatchReport": "基础模板匹配报告",
-    "templateMatchTemplate": "当前模板：{{title}}",
-    "templateMatchSummary": "通过 {{pass}} 项，提醒 {{warning}} 项，缺失 {{missing}} 项，人工确认 {{manual}} 项。",
-    "templateMatchNonBlockingHint": "该报告只做基础静态检查，不会阻断保存或加工；正式导出前仍需人工复核。",
-    "templateMatchSeverity": {
-      "pass": "通过",
+    "formatProfileProcessingConversationTitle": "格式画像加工：{{title}}",
+    "processingFormatProfileActive": "当前格式画像：{{title}}",
+    "processingFormatProfileActiveHint": "本次底稿加工会携带该画像快照，并遵循其结构线索、写作约束和诊断边界。",
+    "processingFormatProfileNone": "未选择当前格式画像",
+    "processingFormatProfileNoneHint": "本次将按普通底稿加工执行，不会自动套用格式画像。",
+    "createFormatProfileProcessingConversation": "按格式画像新建加工会话",
+    "formatProfileDiagnostics": "格式画像诊断",
+    "formatProfileCurrent": "当前格式画像：{{title}}",
+    "formatProfileDiagnosticsNonBlockingHint": "诊断只说明画像可用边界，不会阻断保存或加工；正式导出和高保真还原当前不承诺。",
+    "formatDiagnosticSeverity": {
+      "info": "信息",
       "warning": "提醒",
-      "missing": "缺失",
-      "manual": "人工确认"
+      "error": "错误"
     }
   },
-  "templates": {
-    "title": "模板库",
-    "count": "{{count}} 个模板",
-    "emptyTitle": "还没有模板",
-    "emptyHint": "先创建一个模板，用来记录底稿应遵循的结构、语气、长度和引用规则。",
-    "create": "新建模板",
-    "defaultTitle": "未命名模板",
-    "currentTemplate": "当前模板",
-    "titleLabel": "模板标题",
-    "descriptionLabel": "模板说明",
-    "descriptionPlaceholder": "说明这个模板适合什么材料或工作场景。",
-    "intentLabel": "写作目标",
-    "intentPlaceholder": "例如：形成正式汇报材料、政策解读、项目背景说明。",
-    "requiredSectionsLabel": "必备章节",
-    "sectionOrderLabel": "章节顺序",
-    "linesPlaceholder": "每行填写一项。",
-    "toneLabel": "语气要求",
-    "tonePlaceholder": "例如：正式、审慎、面向政企读者。",
-    "lengthLimitLabel": "长度要求",
-    "lengthLimitPlaceholder": "例如：正文不少于 3000 字，或每节控制在 3 段以内。",
-    "citationPolicyLabel": "引用规则",
-    "citationPolicyPlaceholder": "例如：保留原文引用标记；新增事实必须有来源；不得虚构出处。",
-    "setCurrent": "设为当前模板",
-    "clearCurrent": "清除当前模板",
+  "formatProfiles": {
+    "title": "格式画像库",
+    "count": "{{count}} 个画像",
+    "emptyTitle": "还没有格式画像",
+    "emptyHint": "上传一个 DOCX / XLSX / PPTX / PDF 成品文件，系统会自动提炼格式画像。",
+    "import": "导入成品文件",
+    "importing": "导入中...",
+    "currentProfile": "当前格式画像",
+    "setCurrent": "设为当前画像",
+    "clearCurrent": "清除当前画像",
     "delete": "删除",
     "deleteAgain": "再次点击删除",
     "scopeTitle": "当前阶段说明",
-    "scopeHint": "模板库只负责保存模板并绑定当前模板，不会改写 Chat 提示词，也不会生成匹配报告或导出文件。",
-    "noSelection": "请选择一个模板。"
+    "scopeHint": "当前版本已放弃手动输入模板；格式画像来自成品文件提炼，用于底稿生成/适配，不承诺导出或高保真复刻。",
+    "documentKind": "文档定位",
+    "sectionPattern": "章节模式",
+    "confidenceLabel": "置信度",
+    "confidence": {
+      "high": "高",
+      "medium": "中",
+      "low": "低"
+    },
+    "sections": "结构线索",
+    "noSections": "未识别到稳定章节结构。",
+    "diagnostics": "诊断",
+    "diagnosticsSummary": "信息 {{info}} 项，提醒 {{warning}} 项，错误 {{error}} 项。",
+    "severity": {
+      "info": "信息",
+      "warning": "提醒",
+      "error": "错误"
+    },
+    "generationInstruction": "生成约束",
+    "noSelection": "请选择或导入一个格式画像。",
+    "styleEvidence": "文本样式/版式线索",
+    "styleSummary": "样式摘要",
+    "structureEvidence": "探测证据",
+    "styleFactsBoundary": "确定性样式事实仅用于底稿约束，不代表导出复刻或视觉还原。",
+    "styleFactsNoLlm": "当前为确定性样式事实，未进行智能精炼。",
+    "styleFactsEvidenceDetails": "样式证据详情（{{count}} 项）",
+    "semanticOverlay": {
+      "title": "智能解释",
+      "run": "生成智能解释",
+      "refresh": "重新生成",
+      "acceptedBoundary": "当前显示的是证据绑定的智能解释；样式事实仍以确定性解析结果为准。",
+      "fallbackReason": "已使用确定性画像降级：{{reason}}",
+      "status": {
+        "not-configured": "未配置可用模型，当前使用确定性样式事实。",
+        "eligible": "可使用已配置模型生成证据绑定的智能解释；默认只发送 evidence-only 摘要。",
+        "running": "正在生成智能解释，完成前继续使用确定性画像。",
+        "accepted": "智能解释已通过证据校验，已用于主要摘要和底稿约束。",
+        "rejected": "模型输出未通过证据校验，当前仍使用确定性画像。",
+        "failed": "模型调用失败，当前仍使用确定性画像。",
+        "stale": "已有智能解释与当前画像不匹配，需要重新生成；当前使用确定性画像。"
+      },
+      "fallback": {
+        "not-configured": "未配置可用模型",
+        "cancelled": "已取消",
+        "timeout": "模型响应超时，请重试或换用更快模型",
+        "provider-error": "模型服务返回错误，请检查模型配置、额度或网络",
+        "empty-response": "模型返回为空",
+        "invalid-json": "模型输出不是有效 JSON",
+        "schema-invalid": "模型输出结构不符合要求",
+        "evaluator-rejected": "模型输出未通过证据校验",
+        "stale-overlay": "智能解释已过期",
+        "interrupted": "上次运行被中断"
+      }
+    }
   }
 }

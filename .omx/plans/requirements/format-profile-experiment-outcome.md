@@ -145,3 +145,25 @@ P4：再评估导出和高保真
 不做导出、不做高保真、不做模板自动演化。
 ```
 
+
+## 2026-05-14 Update：FormatSpec 实验补充
+
+在原 FormatProfile / StyleFacts / SemanticOverlay 成果之上，新增 `experiments/format-spec/` 实验，用于验证“格式画像约束层”是否可以从机械摘要升级为详细规则。
+
+验证命令：
+
+```powershell
+node experiments/format-spec/scripts/run-format-spec.mjs
+```
+
+结果：
+
+```text
+docx-policy: pass rules=17
+xlsx-metrics: pass rules=12
+pptx-briefing: pass rules=12
+pdf-reference: pass rules=8
+4/4 passed
+```
+
+该实验说明：四格式可以共享同一个 `FormatSpec` 外壳，同时各自保留专属规则分支。下一步产品化重点应从“把画像摘要塞进 prompt”转为“让 draft prompt 消费 FormatSpec”。
