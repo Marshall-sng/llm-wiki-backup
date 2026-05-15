@@ -17,6 +17,7 @@ import {
 } from "@/lib/extract-source-images"
 import { captionMarkdownImages, loadCaptionCache } from "@/lib/image-caption-pipeline"
 import type { MultimodalConfig } from "@/stores/wiki-store"
+import { ensureXlsxSourceSidecarFresh, readXlsxSourceSidecarFeatureFlag } from "@/lib/source-sidecar-ingest"
 
 /**
  * Resolve the LLM config that the caption pipeline should use.
@@ -332,6 +333,15 @@ async function autoIngestImpl(
     console.log(`[ingest:convert] reused converted markdown for "${fileName}" from ${loadedSource.convertedPath}`)
   } else if (loadedSource.error) {
     console.warn(`[ingest:convert] MarkItDown unavailable for "${fileName}", using native extraction: ${loadedSource.error}`)
+  }
+
+  const xlsxSidecarResult = await ensureXlsxSourceSidecarFresh({
+    projectPath: pp,
+    sourcePath: sp,
+    enabled: readXlsxSourceSidecarFeatureFlag(),
+  })
+  if (xlsxSidecarResult.status === "written") {
+    console.log(`[ingest:sidecar] wrote XLSX sidecar for "${fileName}" → ${xlsxSidecarResult.path}`)
   }
 
   // ── Cache check: skip re-ingest if source content hasn't changed ──

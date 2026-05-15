@@ -83,6 +83,9 @@ export const realFs = {
     error: "MarkItDown not available in realFs test adapter",
     timedOut: false,
   }),
+  extractXlsxSidecarPayload: async (): Promise<never> => {
+    throw new Error("extractXlsxSidecarPayload not supported in realFs test adapter")
+  },
   deleteFile: async (p: string): Promise<void> => {
     await fs.rm(p, { recursive: true, force: true }).catch(() => {})
   },

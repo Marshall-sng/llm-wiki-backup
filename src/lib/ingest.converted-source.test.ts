@@ -22,6 +22,9 @@ const fsMock = vi.hoisted(() => {
       error: null,
       timedOut: false,
     })),
+    extractXlsxSidecarPayload: vi.fn(async () => {
+      throw new Error("extractXlsxSidecarPayload should stay disabled in ingest converted-source tests")
+    }),
     reset: () => {
       now = 1_000
       files.clear()
@@ -67,6 +70,7 @@ vi.mock("@/commands/fs", () => ({
   fileExists: fsMock.fileExists,
   fileModifiedMs: fsMock.fileModifiedMs,
   convertWithMarkitdown: fsMock.convertWithMarkitdown,
+  extractXlsxSidecarPayload: fsMock.extractXlsxSidecarPayload,
 }))
 
 vi.mock("./llm-client", () => ({
