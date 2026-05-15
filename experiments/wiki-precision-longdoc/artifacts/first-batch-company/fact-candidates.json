@@ -1,0 +1,1440 @@
+{
+  "fact_count": 147,
+  "facts": [
+    {
+      "fact_id": "fact:7dfc29726a79ceae",
+      "kind": "first_batch_company_row",
+      "subject": "云南省贵金属新材料控股集团股份有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "1",
+        "project_name": "稀贵金属产业数字化供应链平台, 基于人工智能大模型的贵金属新材料高质量数据集的研究与开发, 云南省行业级大数据中心（贵金属新材料行业），稀贵金属行业高质量数据集建设和应用项目, 稀贵金属行业高质量数据集建设和应用项目",
+        "contacts": [
+          "王志强"
+        ],
+        "phones": [
+          "18301229963"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集储备项目"
+        ],
+        "industry": "省内重点产业企业"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:3"
+    },
+    {
+      "fact_id": "fact:933c76ecdb9b2a0e",
+      "kind": "project_candidate",
+      "subject": "云南省贵金属新材料控股集团股份有限公司",
+      "predicate": "has_project",
+      "object": "稀贵金属产业数字化供应链平台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:3"
+    },
+    {
+      "fact_id": "fact:95e2806091977137",
+      "kind": "project_candidate",
+      "subject": "云南省贵金属新材料控股集团股份有限公司",
+      "predicate": "has_project",
+      "object": "基于人工智能大模型的贵金属新材料高质量数据集的研究与开发",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:3"
+    },
+    {
+      "fact_id": "fact:e27f87b8919cc58c",
+      "kind": "project_candidate",
+      "subject": "云南省贵金属新材料控股集团股份有限公司",
+      "predicate": "has_project",
+      "object": "云南省行业级大数据中心（贵金属新材料行业）",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:3"
+    },
+    {
+      "fact_id": "fact:55f8c2ae376f74ee",
+      "kind": "project_candidate",
+      "subject": "云南省贵金属新材料控股集团股份有限公司",
+      "predicate": "has_project",
+      "object": "稀贵金属行业高质量数据集建设和应用项目",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:3"
+    },
+    {
+      "fact_id": "fact:55f8c2ae376f74ee",
+      "kind": "project_candidate",
+      "subject": "云南省贵金属新材料控股集团股份有限公司",
+      "predicate": "has_project",
+      "object": "稀贵金属行业高质量数据集建设和应用项目",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:3"
+    },
+    {
+      "fact_id": "fact:9921a30a109124e1",
+      "kind": "first_batch_company_row",
+      "subject": "云南电网有限责任公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "2",
+        "project_name": "“数中有术”激发玉溪市特色优势产业新动能, 云南能源数据要素流通利用算力网助力数字经济发展, 云南省能源数据要素流通利用基础设施建设, 云南省能源数据要素流通利用算力网建设, 云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省能源数据要素流通利用算力网建设，云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省电力行业标注中心建设",
+        "contacts": [
+          "常荣"
+        ],
+        "phones": [
+          "15808659105"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集-数据标注",
+          "基础设施储备项目",
+          "算力一体化"
+        ],
+        "industry": "省内重点产业企业"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:e944cc423df45416",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "“数中有术”激发玉溪市特色优势产业新动能",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:9da9d96ce182ac02",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南能源数据要素流通利用算力网助力数字经济发展",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:7a334398b1f2b9d7",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省能源数据要素流通利用基础设施建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:dec7b2e28e5a3ffc",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省能源数据要素流通利用算力网建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:fab9346c30a4aeca",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省行业级大数据中心（电力能源行业）",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:7a334398b1f2b9d7",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省能源数据要素流通利用基础设施建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:996d59c50a49d46f",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:a856a8ff81e6fc31",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "信创生态下数字电网边缘算力基础设施建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:2027a3f49ed52ccd",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "智能算法驱动的变电站数据标注实践：高效降本",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:e3f67da59047c060",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "提升变电运维效益",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:62f2477fc34b11f4",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省电力行业标注中心建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:da20e818fa0fc08d",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "基层自主首创高质量数据集治理产品包和智能服务新模式",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:dec7b2e28e5a3ffc",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省能源数据要素流通利用算力网建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:fab9346c30a4aeca",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省行业级大数据中心（电力能源行业）",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:7a334398b1f2b9d7",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省能源数据要素流通利用基础设施建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:996d59c50a49d46f",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:a856a8ff81e6fc31",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "信创生态下数字电网边缘算力基础设施建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:2027a3f49ed52ccd",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "智能算法驱动的变电站数据标注实践：高效降本",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:e3f67da59047c060",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "提升变电运维效益",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:62f2477fc34b11f4",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省电力行业标注中心建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:da20e818fa0fc08d",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "基层自主首创高质量数据集治理产品包和智能服务新模式",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:62f2477fc34b11f4",
+      "kind": "project_candidate",
+      "subject": "云南电网有限责任公司",
+      "predicate": "has_project",
+      "object": "云南省电力行业标注中心建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:4"
+    },
+    {
+      "fact_id": "fact:098e05f4a9225811",
+      "kind": "first_batch_company_row",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "3",
+        "project_name": "中医药行业雷公大模型, 中医药行业高质量数据集, 中医药行业雷公大模型数据标注范式、三七卫星遥感产量预测与采购价格预测高质量数据集、中医药行业高质量数据集建设与领域应用试点, 中医药行业雷公大模型数据标注范式, 中医药行业高质量数据集建设与领域应用试点",
+        "contacts": [
+          "孟得力",
+          "杨映辉"
+        ],
+        "phones": [
+          "18611001103",
+          "15368080553"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集-数据标注",
+          "高质量数据集储备项目"
+        ],
+        "industry": "中医药行业/第一批高质量数据集试点"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:5a16facf3dba0d33",
+      "kind": "project_candidate",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "has_project",
+      "object": "中医药行业雷公大模型",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:098055d4fef564ad",
+      "kind": "project_candidate",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "has_project",
+      "object": "中医药行业高质量数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:61db5eda651ec2c4",
+      "kind": "project_candidate",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "has_project",
+      "object": "中医药行业雷公大模型数据标注范式",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:d7a512eb403be90c",
+      "kind": "project_candidate",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "has_project",
+      "object": "三七卫星遥感产量预测与采购价格预测高质量数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:0977ff0db09b9a27",
+      "kind": "project_candidate",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "has_project",
+      "object": "中医药行业高质量数据集建设与领域应用试点",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:61db5eda651ec2c4",
+      "kind": "project_candidate",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "has_project",
+      "object": "中医药行业雷公大模型数据标注范式",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:0977ff0db09b9a27",
+      "kind": "project_candidate",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "has_project",
+      "object": "中医药行业高质量数据集建设与领域应用试点",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:5"
+    },
+    {
+      "fact_id": "fact:af04d0effd69a520",
+      "kind": "first_batch_company_row",
+      "subject": "中国科学院昆明动物研究所",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "4",
+        "project_name": "云南省动物资源高质量数据集, 面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+        "contacts": [
+          "王易芬"
+        ],
+        "phones": [
+          "13888077241"
+        ],
+        "source_worksheets": [
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集储备项目"
+        ],
+        "industry": "科技/第一批高质量数据集试点"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:6"
+    },
+    {
+      "fact_id": "fact:4036a408d4fd9566",
+      "kind": "project_candidate",
+      "subject": "中国科学院昆明动物研究所",
+      "predicate": "has_project",
+      "object": "云南省动物资源高质量数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:6"
+    },
+    {
+      "fact_id": "fact:62b51354a261d544",
+      "kind": "project_candidate",
+      "subject": "中国科学院昆明动物研究所",
+      "predicate": "has_project",
+      "object": "面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:6"
+    },
+    {
+      "fact_id": "fact:8535470e92ba9c67",
+      "kind": "first_batch_company_row",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "6",
+        "project_name": "咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。",
+        "contacts": [
+          "张斌"
+        ],
+        "phones": [
+          "18387902182"
+        ],
+        "source_worksheets": [
+          "项目储备表-高质量数据集储备项目表"
+        ],
+        "industry": "咖啡"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:09fe238e7a0fa23b",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:9705e873a26be476",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "支持数据管理",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:1a58b288ef57b7d7",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "数据标注",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:8b8d04697a7a2894",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "数据协作",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:5bc8e70fef74984e",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "数据获取/展示",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:beb38765eafd4f49",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "数据采集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:a85025b4ab8441f0",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "数据清洗",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:b1951d4dba2ec33f",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "数据治理等能力",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:5d14f0fe26421af2",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "归集覆盖种植",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:782da8d51a747a44",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "加工",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:831adecdef027b8e",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "销售及产业链配套等咖啡产业全链条数据资源",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:ddf9f615e1f07aba",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "构建多个数据产品",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:1bba0694f0d17a24",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "以及12个高质量数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:327f7fe32a450b3a",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "赋能人工智能发展和场景应用建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:e39209cf53dfe67d",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "建立数据集测评基准体系标准",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:6f032d25cded2ce5",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "探索收益分配机制",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:4d3f6bc44f518377",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "完善组织架构",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:28725cb12d5fb7ed",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "形成“需求驱动",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:900f7fddae522326",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "数据支撑",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:f95c99c33c977ac4",
+      "kind": "project_candidate",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "has_project",
+      "object": "价值释放”的场景应用闭环。",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "fact_id": "fact:03340a054a418137",
+      "kind": "first_batch_company_row",
+      "subject": "云南省广播电视台",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "7",
+        "project_name": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行：本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。",
+        "contacts": [
+          "金晶"
+        ],
+        "phones": [
+          "13888108125"
+        ],
+        "source_worksheets": [
+          "项目储备表-高质量数据集储备项目表"
+        ],
+        "industry": "广电传媒/第一批高质量数据集试点"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:05bcc3a302cb5436",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行：本先行先试方案旨在打造产业亟需",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:5189431760781038",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "规模庞大",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:228d87590392973f",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "模态丰富",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:355ecf7918f3dde2",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "质量过硬",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:05e575b8dccd618f",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "具有云南特色",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:2974abca42774c9c",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "面向南亚东南亚",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:21f55c712acd0176",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:45a179caee9d2317",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "处理流程完善",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:0efdeeaf4ac82dc8",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "技术有创新。 本方案完全响应任务要求",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:af08485902d5f818",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "技术方案上",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:7fc5eb0d7ef37fdd",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "采集多模态数据",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:661dd08b9cca4151",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "提升处理效率;场景应用上",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:f7b8927425165347",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "覆盖多领域并保障安全;标准验证上",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:52d0add2901d173d",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "制定符合特色的格式等标准;机制建设上",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:a478d6cabbda7f5b",
+      "kind": "project_candidate",
+      "subject": "云南省广播电视台",
+      "predicate": "has_project",
+      "object": "探索收益分配等机制。",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "fact_id": "fact:af8d240cece854e8",
+      "kind": "first_batch_company_row",
+      "subject": "昆明国际花卉拍卖交易中心有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "8",
+        "project_name": "全国高质量花卉数据集, 花卉行业供应链高质量数据集项目",
+        "contacts": [
+          "仇晶辉"
+        ],
+        "phones": [
+          "15925160153"
+        ],
+        "source_worksheets": [
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集储备项目"
+        ],
+        "industry": "花卉"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:9"
+    },
+    {
+      "fact_id": "fact:44f57d2c99e103bc",
+      "kind": "project_candidate",
+      "subject": "昆明国际花卉拍卖交易中心有限公司",
+      "predicate": "has_project",
+      "object": "全国高质量花卉数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:9"
+    },
+    {
+      "fact_id": "fact:882c10d8800831dd",
+      "kind": "project_candidate",
+      "subject": "昆明国际花卉拍卖交易中心有限公司",
+      "predicate": "has_project",
+      "object": "花卉行业供应链高质量数据集项目",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:9"
+    },
+    {
+      "fact_id": "fact:decb2704d3a27f66",
+      "kind": "first_batch_company_row",
+      "subject": "云南瑞和锦程实业股份有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "5",
+        "project_name": "数链协同——多式联运数字化新平台, 云南省智慧物流数据共享体系建设",
+        "contacts": [
+          "赵卫鹏"
+        ],
+        "phones": [
+          "13888055711"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集储备项目"
+        ],
+        "industry": "物流"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:10"
+    },
+    {
+      "fact_id": "fact:ba26c049ff8ea689",
+      "kind": "project_candidate",
+      "subject": "云南瑞和锦程实业股份有限公司",
+      "predicate": "has_project",
+      "object": "数链协同——多式联运数字化新平台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:10"
+    },
+    {
+      "fact_id": "fact:b58db0f91831a7b1",
+      "kind": "project_candidate",
+      "subject": "云南瑞和锦程实业股份有限公司",
+      "predicate": "has_project",
+      "object": "云南省智慧物流数据共享体系建设",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:10"
+    },
+    {
+      "fact_id": "fact:59a8a1d6c01c2fc8",
+      "kind": "first_batch_company_row",
+      "subject": "科大讯飞",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "9",
+        "project_name": "建设1个数据资源底座，包括数据加工治理平台、数据资源调度平台。建设1套数据资源管理体系，包括标准规范、机制设计、技术体系、安全保障等。建设N类多模态高质量训练数据集，包括通用语料训练数据集以及教育、医疗、人力资源等各行业高质量数据集。",
+        "contacts": [
+          "吴荣玉"
+        ],
+        "phones": [
+          "18180465060"
+        ],
+        "source_worksheets": [],
+        "industry": "教育"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:9229396c087b27c9",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "建设1个数据资源底座",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:2634ed85e328cda6",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "包括数据加工治理平台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:950946b5fb13ddf6",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "数据资源调度平台。建设1套数据资源管理体系",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:9d71a7f918b819ec",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "包括标准规范",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:ad7191bb3f6f731c",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "机制设计",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:8763f3a729ae7bfc",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "技术体系",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:f9c27ea243b31816",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "安全保障等。建设N类多模态高质量训练数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:d5cd30c7470cd47e",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "包括通用语料训练数据集以及教育",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:4ea1061b21bee683",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "医疗",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:0abdb22b4924160f",
+      "kind": "project_candidate",
+      "subject": "科大讯飞",
+      "predicate": "has_project",
+      "object": "人力资源等各行业高质量数据集。",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:11"
+    },
+    {
+      "fact_id": "fact:0ac60749fe368969",
+      "kind": "first_batch_company_row",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "10",
+        "project_name": "针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中、数据标注不规范、数据质量不可靠、数据更新不及时等问题，依托集团在“建管养运服安”全周期场景积累的内外部数据资源，按照“数据服务算法、算法服务应用、应用服务场景”建设理念，形成面向公路交通行业全场景的人工智能应用赋能高质量数据集，并建设与之匹配的可供外部接入、安全可信、高速传输、全域发现、在线流转的行业数据集研发、管理与服务平台。",
+        "contacts": [
+          "向鹏程"
+        ],
+        "phones": [
+          "18988289769"
+        ],
+        "source_worksheets": [],
+        "industry": "省属国有企业"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:719634346c901a4d",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:10aeab1785c0cf89",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "数据标注不规范",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:bd213ca0a1e268b2",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "数据质量不可靠",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:58f99cbe7dc765b3",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "数据更新不及时等问题",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:a0d49616058f5c47",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "依托集团在“建管养运服安”全周期场景积累的内外部数据资源",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:49f5d4372db21d42",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "按照“数据服务算法",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:69a72f09ccabc083",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "算法服务应用",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:816e87475575ce0d",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "应用服务场景”建设理念",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:437216f090b2a9cd",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "形成面向公路交通行业全场景的人工智能应用赋能高质量数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:dd076ef82798f177",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "并建设与之匹配的可供外部接入",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:936b92455e07b54f",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "安全可信",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:4467372aacaf7d2e",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "高速传输",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:801401008d3226d9",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "全域发现",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:2ef9b25fc9d97e72",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "在线流转的行业数据集研发",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:113045f10208a3bd",
+      "kind": "project_candidate",
+      "subject": "云南省交通投资建设集团有限公司",
+      "predicate": "has_project",
+      "object": "管理与服务平台。",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:12"
+    },
+    {
+      "fact_id": "fact:3fdb8548f14eddb0",
+      "kind": "first_batch_company_row",
+      "subject": "云南省融资信用征信服务有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "11",
+        "project_name": "云南省融资信用服务平台（地方征信平台）, 信用信息共享赋能“预授信”模式创新金融服务小微新生态",
+        "contacts": [
+          "杨枫"
+        ],
+        "phones": [
+          "15887087069"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "数据要素x2025"
+        ],
+        "industry": "金融"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:13"
+    },
+    {
+      "fact_id": "fact:daef95bd26dbe5ba",
+      "kind": "project_candidate",
+      "subject": "云南省融资信用征信服务有限公司",
+      "predicate": "has_project",
+      "object": "云南省融资信用服务平台（地方征信平台）",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:13"
+    },
+    {
+      "fact_id": "fact:afb6af55433c448c",
+      "kind": "project_candidate",
+      "subject": "云南省融资信用征信服务有限公司",
+      "predicate": "has_project",
+      "object": "信用信息共享赋能“预授信”模式创新金融服务小微新生态",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:13"
+    },
+    {
+      "fact_id": "fact:c4feb320cb2712c8",
+      "kind": "first_batch_company_row",
+      "subject": "云南省低空经济产投资有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "12",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "低空经济"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:14"
+    },
+    {
+      "fact_id": "fact:6a2476f20a843b1d",
+      "kind": "first_batch_company_row",
+      "subject": "云南省腾云信息产业有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "13",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "旅游"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:15"
+    },
+    {
+      "fact_id": "fact:7fcfb332fe70b372",
+      "kind": "first_batch_company_row",
+      "subject": "云南省科学技术研究院",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "14",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "科技"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:16"
+    },
+    {
+      "fact_id": "fact:01d095545402b71d",
+      "kind": "first_batch_company_row",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "18",
+        "project_name": "项目建设内容主要包括：1个大数据集（包含10个子数据集）、1个数据集市、1个中心、1个AI助手、5个平台。\n具体为：1个农业科技成果数据集：包含10个子数据集，即粮食数据子数据集、花卉子数据集、蔬菜数据子数据集、水果数据子数据集、咖啡数据子数据集、中药材数据子数据集、甘蔗数据子数据集、蚕桑数据子数据集、茶叶数据子数据集、油料数据子数据集。\n1个农业科技成果数据集市。\n1个农业科技成果服务大数据及展示中心。\n1个AI数字农人助手。\n5个平台：区块链平台、数据（安全）中台、物联网中台、AI中台、GIS支撑平台。",
+        "contacts": [
+          "尹兴祥、甘苇"
+        ],
+        "phones": [
+          "13508718301、15288320209"
+        ],
+        "source_worksheets": [
+          "行业高质量数据集"
+        ],
+        "industry": "农业"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:f36448088c392ec5",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "项目建设内容主要包括：1个大数据集（包含10个子数据集）",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:de6627df006f4e4f",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "1个数据集市",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:9a46a848ff1e9ccf",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "1个中心",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:42d6a386c295b16a",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "1个AI助手",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:bc91fac1aede9c6b",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "5个平台。\n具体为：1个农业科技成果数据集：包含10个子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:813e42a6b6dea468",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "即粮食数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:e809673a3e65560e",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "花卉子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:a044c97ef02f3fb8",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "蔬菜数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:bb4e4627aad4bdf1",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "水果数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:06f5cd34e68d0d05",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "咖啡数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:be072afa80fbf358",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "中药材数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:bed4faa86ce4341e",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "甘蔗数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:dcadbea7d3a2653a",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "蚕桑数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:a1b1c67d6b2a312a",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "茶叶数据子数据集",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:3da910494740a3fa",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "油料数据子数据集。\n1个农业科技成果数据集市。\n1个农业科技成果服务大数据及展示中心。\n1个AI数字农人助手。\n5个平台：区块链平台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:561f2eb76e541d73",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "数据（安全）中台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:cbc14a4faaca7218",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "物联网中台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:8d38657ec743d276",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "AI中台",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:da5764a64c5895de",
+      "kind": "project_candidate",
+      "subject": "云南省农业科学院、新华网股份有限公司",
+      "predicate": "has_project",
+      "object": "GIS支撑平台。",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:17"
+    },
+    {
+      "fact_id": "fact:95faf1b2e798aa2a",
+      "kind": "first_batch_company_row",
+      "subject": "筑龙招投标有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "15",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "招投标"
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:18"
+    },
+    {
+      "fact_id": "fact:b7df3175246c0326",
+      "kind": "first_batch_company_row",
+      "subject": "云南山海遊旅游集团有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "16",
+        "project_name": "云南普者黑5A级旅游景区票务数据、云南普者黑5A级旅游景区营销汇总数据、云南普者黑5A级旅游景区游客画像",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": ""
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:19"
+    },
+    {
+      "fact_id": "fact:53b147efd91e2f92",
+      "kind": "project_candidate",
+      "subject": "云南山海遊旅游集团有限公司",
+      "predicate": "has_project",
+      "object": "云南普者黑5A级旅游景区票务数据",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:19"
+    },
+    {
+      "fact_id": "fact:b46d61a3ec964eb6",
+      "kind": "project_candidate",
+      "subject": "云南山海遊旅游集团有限公司",
+      "predicate": "has_project",
+      "object": "云南普者黑5A级旅游景区营销汇总数据",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:19"
+    },
+    {
+      "fact_id": "fact:92cc2eb7ca8f5c91",
+      "kind": "project_candidate",
+      "subject": "云南山海遊旅游集团有限公司",
+      "predicate": "has_project",
+      "object": "云南普者黑5A级旅游景区游客画像",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:19"
+    },
+    {
+      "fact_id": "fact:e4fedcfdb97139fd",
+      "kind": "first_batch_company_row",
+      "subject": "昆明斗南农产品拍卖有限公司",
+      "predicate": "listed_in_first_batch",
+      "object": {
+        "original_serial": "17",
+        "project_name": "DFETC鲜切花拍卖品种数据",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": ""
+      },
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:20"
+    },
+    {
+      "fact_id": "fact:96c0f8eee649a750",
+      "kind": "project_candidate",
+      "subject": "昆明斗南农产品拍卖有限公司",
+      "predicate": "has_project",
+      "object": "DFETC鲜切花拍卖品种数据",
+      "evidence_anchor_id": "first-batch:xlsx:第一批名单:r:20"
+    },
+    {
+      "fact_id": "fact:f309d8893fddfac4",
+      "kind": "pilot_unit_project",
+      "subject": "云南省广播电视台",
+      "predicate": "selected_pilot_project",
+      "object": {
+        "original_serial": "12",
+        "project_name": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行",
+        "investment_10k": "10000",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "金晶"
+        ],
+        "phones": [
+          "13888108125"
+        ]
+      },
+      "evidence_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2"
+    },
+    {
+      "fact_id": "fact:79ee0ea309235ccc",
+      "kind": "pilot_unit_project",
+      "subject": "云南白药集团股份有限公司",
+      "predicate": "selected_pilot_project",
+      "object": {
+        "original_serial": "23",
+        "project_name": "中医药行业高质量数据集建设与领域应用试点",
+        "investment_10k": "5500",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "杨映辉"
+        ],
+        "phones": [
+          "15368080553"
+        ]
+      },
+      "evidence_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3"
+    },
+    {
+      "fact_id": "fact:cf4c9123927ad268",
+      "kind": "pilot_unit_project",
+      "subject": "普洱思茅农场集团有限公司",
+      "predicate": "selected_pilot_project",
+      "object": {
+        "original_serial": "24",
+        "project_name": "咖啡行业高质量数据集",
+        "investment_10k": "5407.4",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "张斌"
+        ],
+        "phones": [
+          "18387902182"
+        ]
+      },
+      "evidence_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4"
+    },
+    {
+      "fact_id": "fact:3c17b0f466514e50",
+      "kind": "pilot_unit_project",
+      "subject": "中国科学院昆明动物研究所",
+      "predicate": "selected_pilot_project",
+      "object": {
+        "original_serial": "39",
+        "project_name": "面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+        "investment_10k": "2000",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "吕雪梅"
+        ],
+        "phones": [
+          "15825268630"
+        ]
+      },
+      "evidence_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5"
+    }
+  ]
+}

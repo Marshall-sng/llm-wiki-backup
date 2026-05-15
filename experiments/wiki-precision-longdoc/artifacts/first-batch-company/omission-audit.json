@@ -1,0 +1,629 @@
+{
+  "audit_version": "0.1.0",
+  "raw_first_batch_rows": 18,
+  "raw_pilot_rows": 4,
+  "entity_candidates": 18,
+  "fact_candidates": 147,
+  "current_wiki_path": "D:\\大数据公司工作\\数据流通\\数据流通\\wiki\\sources\\第一批企业名单.md",
+  "converted_path": "D:\\大数据公司工作\\数据流通\\数据流通\\.llm-wiki\\converted\\第一批企业名单.xlsx.md",
+  "missing_or_changed_items": [
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value": "王志强",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value": "18301229963",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value": "数据要素x2024",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value": "高质量数据集-项目库",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value": "高质量数据集-人工智能",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value": "高质量数据集储备项目",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:F"
+    },
+    {
+      "type": "missing_industry",
+      "severity": "info",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value": "省内重点产业企业",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:G"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南省贵金属新材料控股集团股份有限公司",
+      "value_preview": "稀贵金属产业数字化供应链平台, 基于人工智能大模型的贵金属新",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:C"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南电网有限责任公司",
+      "value": "常荣",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南电网有限责任公司",
+      "value": "15808659105",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value": "数据要素x2024",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value": "高质量数据集-项目库",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value": "高质量数据集-人工智能",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value": "高质量数据集-数据标注",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value": "基础设施储备项目",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value": "算力一体化",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:F"
+    },
+    {
+      "type": "missing_industry",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value": "省内重点产业企业",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:G"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南电网有限责任公司",
+      "value_preview": "“数中有术”激发玉溪市特色优势产业新动能, 云南能源数据要素",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:C"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南白药集团股份有限公司",
+      "value": "孟得力",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:D"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南白药集团股份有限公司",
+      "value": "杨映辉",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南白药集团股份有限公司",
+      "value": "18611001103",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:E"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南白药集团股份有限公司",
+      "value": "15368080553",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南白药集团股份有限公司",
+      "value": "数据要素x2024",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南白药集团股份有限公司",
+      "value": "高质量数据集-项目库",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南白药集团股份有限公司",
+      "value": "高质量数据集-人工智能",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南白药集团股份有限公司",
+      "value": "高质量数据集-数据标注",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南白药集团股份有限公司",
+      "value": "高质量数据集储备项目",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:F"
+    },
+    {
+      "type": "missing_industry",
+      "severity": "info",
+      "entity": "云南白药集团股份有限公司",
+      "value": "中医药行业/第一批高质量数据集试点",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:G"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南白药集团股份有限公司",
+      "value_preview": "中医药行业雷公大模型, 中医药行业高质量数据集, 中医药行业",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:C"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "王易芬",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "13888077241",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "高质量数据集-项目库",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "高质量数据集-人工智能",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "高质量数据集储备项目",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:F"
+    },
+    {
+      "type": "missing_industry",
+      "severity": "info",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "科技/第一批高质量数据集试点",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:G"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "中国科学院昆明动物研究所",
+      "value_preview": "云南省动物资源高质量数据集, 面向生物安全和医药创新的云南动",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:C"
+    },
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "普洱思茅农场集团有限公司",
+      "raw_serial": "6",
+      "wiki_serial": "5",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "普洱思茅农场集团有限公司",
+      "value": "张斌",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "普洱思茅农场集团有限公司",
+      "value": "18387902182",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "普洱思茅农场集团有限公司",
+      "value": "项目储备表-高质量数据集储备项目表",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:F"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "普洱思茅农场集团有限公司",
+      "value_preview": "咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:C"
+    },
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "云南省广播电视台",
+      "raw_serial": "7",
+      "wiki_serial": "6",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南省广播电视台",
+      "value": "金晶",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南省广播电视台",
+      "value": "13888108125",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南省广播电视台",
+      "value": "项目储备表-高质量数据集储备项目表",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:F"
+    },
+    {
+      "type": "missing_industry",
+      "severity": "info",
+      "entity": "云南省广播电视台",
+      "value": "广电传媒/第一批高质量数据集试点",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:G"
+    },
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "raw_serial": "8",
+      "wiki_serial": "7",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "value": "仇晶辉",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "value": "15925160153",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "value": "高质量数据集-项目库",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "value": "高质量数据集-人工智能",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "value": "高质量数据集储备项目",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:F"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "value_preview": "全国高质量花卉数据集, 花卉行业供应链高质量数据集项目",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:C"
+    },
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "raw_serial": "5",
+      "wiki_serial": "8",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "value": "赵卫鹏",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "value": "13888055711",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "value": "数据要素x2024",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "value": "高质量数据集-项目库",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "value": "高质量数据集储备项目",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:F"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "value_preview": "数链协同——多式联运数字化新平台, 云南省智慧物流数据共享体",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:C"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "科大讯飞",
+      "value": "吴荣玉",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "科大讯飞",
+      "value": "18180465060",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:E"
+    },
+    {
+      "type": "missing_industry",
+      "severity": "info",
+      "entity": "科大讯飞",
+      "value": "教育",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:G"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "科大讯飞",
+      "value_preview": "建设1个数据资源底座，包括数据加工治理平台、数据资源调度平台",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:C"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南省交通投资建设集团有限公司",
+      "value": "向鹏程",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南省交通投资建设集团有限公司",
+      "value": "18988289769",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:E"
+    },
+    {
+      "type": "missing_industry",
+      "severity": "info",
+      "entity": "云南省交通投资建设集团有限公司",
+      "value": "省属国有企业",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:G"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南省交通投资建设集团有限公司",
+      "value_preview": "针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:C"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南省融资信用征信服务有限公司",
+      "value": "杨枫",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南省融资信用征信服务有限公司",
+      "value": "15887087069",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:E"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南省融资信用征信服务有限公司",
+      "value": "数据要素x2024",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:F"
+    },
+    {
+      "type": "missing_source_worksheet",
+      "severity": "info",
+      "entity": "云南省融资信用征信服务有限公司",
+      "value": "数据要素x2025",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:F"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南省融资信用征信服务有限公司",
+      "value_preview": "云南省融资信用服务平台（地方征信平台）, 信用信息共享赋能“",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:C"
+    },
+    {
+      "type": "missing_contact",
+      "severity": "warning",
+      "entity": "云南省农业科学院、新华网股份有限公司",
+      "value": "尹兴祥、甘苇",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:D"
+    },
+    {
+      "type": "missing_phone",
+      "severity": "warning",
+      "entity": "云南省农业科学院、新华网股份有限公司",
+      "value": "13508718301、15288320209",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:E"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南省农业科学院、新华网股份有限公司",
+      "value_preview": "项目建设内容主要包括：1个大数据集（包含10个子数据集）、1",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:C"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "云南山海遊旅游集团有限公司",
+      "value_preview": "云南普者黑5A级旅游景区票务数据、云南普者黑5A级旅游景区营",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:C"
+    },
+    {
+      "type": "project_detail_truncated_or_summarized",
+      "severity": "info",
+      "entity": "昆明斗南农产品拍卖有限公司",
+      "value_preview": "DFETC鲜切花拍卖品种数据",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:C"
+    },
+    {
+      "type": "missing_pilot_contact",
+      "severity": "warning",
+      "entity": "云南省广播电视台",
+      "value": "金晶",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:M"
+    },
+    {
+      "type": "missing_pilot_phone",
+      "severity": "warning",
+      "entity": "云南省广播电视台",
+      "value": "13888108125",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:N"
+    },
+    {
+      "type": "missing_pilot_contact",
+      "severity": "warning",
+      "entity": "云南白药集团股份有限公司",
+      "value": "杨映辉",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:M"
+    },
+    {
+      "type": "missing_pilot_phone",
+      "severity": "warning",
+      "entity": "云南白药集团股份有限公司",
+      "value": "15368080553",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:N"
+    },
+    {
+      "type": "missing_pilot_contact",
+      "severity": "warning",
+      "entity": "普洱思茅农场集团有限公司",
+      "value": "张斌",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:M"
+    },
+    {
+      "type": "missing_pilot_phone",
+      "severity": "warning",
+      "entity": "普洱思茅农场集团有限公司",
+      "value": "18387902182",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:N"
+    },
+    {
+      "type": "missing_pilot_contact",
+      "severity": "warning",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "吕雪梅",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:M"
+    },
+    {
+      "type": "missing_pilot_phone",
+      "severity": "warning",
+      "entity": "中国科学院昆明动物研究所",
+      "value": "15825268630",
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:N"
+    }
+  ],
+  "summary_by_type": {
+    "missing_contact": 13,
+    "missing_phone": 13,
+    "missing_source_worksheet": 28,
+    "missing_industry": 7,
+    "project_detail_truncated_or_summarized": 13,
+    "serial_rewritten": 4,
+    "missing_pilot_contact": 4,
+    "missing_pilot_phone": 4
+  },
+  "converted_contains_missing_contacts_or_phones_count": 26,
+  "conclusion": "current wiki source page preserves many entity names but drops row/cell-level facts such as contacts, phones, source worksheets, original serial ordering, and detailed project text"
+}

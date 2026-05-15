@@ -77,3 +77,16 @@ Detailed record:
 - inference：统一 EvidenceAnchor 接口 + 分格式 selector 是当前最优设计；下一步可基于此做“第一批企业名单.xlsx”真实 Wiki 闭环。
 - unknown：生产接入前仍需 full sidecar 持久化、PDF reading order、CoverageAudit 门禁策略。
 
+## 2026-05-15：执行第一批企业名单真实 Wiki 缺漏闭环
+
+- evidence：定位原始 XLSX：`D:\大数据公司工作\数据流通\数据流通\raw\sources\第一批企业名单.xlsx`。
+- evidence：定位 converted：`D:\大数据公司工作\数据流通\数据流通\.llm-wiki\converted\第一批企业名单.xlsx.md`。
+- evidence：定位当前 wiki source：`D:\大数据公司工作\数据流通\数据流通\wiki\sources\第一批企业名单.md`。
+- evidence：执行 `experiments/wiki-precision-longdoc/run_first_batch_company_closure.py`。
+- evidence：生成 full SourceSidecar：row anchors=22，cell anchors=204；第一批名单 18 行，试点单位 4 行。
+- evidence：entity candidates=18，fact candidates=147。
+- evidence：当前 wiki 企业名 18/18 存在，但第一批名单联系人 0/13、电话 0/13；converted/cache 中联系人 13/13、电话 13/13。
+- evidence：omission audit items=86；包含 missing_contact=13、missing_phone=13、missing_source_worksheet=28、serial_rewritten=4。
+- inference：当前问题主要不是 converted 缺字段，而是 Wiki generation 把结构化表格压缩成摘要型 source page。
+- inference：下一步生产化应让 WikiCandidate 基于 row/cell sidecar 投影，再由 LLM 组织表达，并以 CoverageAudit 作为门禁。
+

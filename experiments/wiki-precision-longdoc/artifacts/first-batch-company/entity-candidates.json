@@ -1,0 +1,269 @@
+{
+  "entity_count": 18,
+  "entities": [
+    {
+      "entity_id": "entity:a213bb75c992b633",
+      "name": "中国科学院昆明动物研究所",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:6",
+        "first-batch:xlsx:高质量数据集试点单位:r:5"
+      ],
+      "source_sheets": [
+        "第一批名单",
+        "高质量数据集试点单位"
+      ],
+      "original_serials": [
+        "4",
+        "39"
+      ]
+    },
+    {
+      "entity_id": "entity:fce97335330d59bc",
+      "name": "云南山海遊旅游集团有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:19"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "16"
+      ]
+    },
+    {
+      "entity_id": "entity:e1855ce6479e7990",
+      "name": "云南瑞和锦程实业股份有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:10"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "5"
+      ]
+    },
+    {
+      "entity_id": "entity:c24bcea48c31b292",
+      "name": "云南电网有限责任公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:4"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "2"
+      ]
+    },
+    {
+      "entity_id": "entity:fb1f18e9fd782b44",
+      "name": "云南白药集团股份有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:5",
+        "first-batch:xlsx:高质量数据集试点单位:r:3"
+      ],
+      "source_sheets": [
+        "第一批名单",
+        "高质量数据集试点单位"
+      ],
+      "original_serials": [
+        "3",
+        "23"
+      ]
+    },
+    {
+      "entity_id": "entity:f79de52f5ebbfd4c",
+      "name": "云南省交通投资建设集团有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:12"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "10"
+      ]
+    },
+    {
+      "entity_id": "entity:b4f7c2cbc4e159ce",
+      "name": "云南省低空经济产投资有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:14"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "12"
+      ]
+    },
+    {
+      "entity_id": "entity:8a781514c676b185",
+      "name": "云南省农业科学院、新华网股份有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:17"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "18"
+      ]
+    },
+    {
+      "entity_id": "entity:7f053682c1adb5d1",
+      "name": "云南省广播电视台",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:8",
+        "first-batch:xlsx:高质量数据集试点单位:r:2"
+      ],
+      "source_sheets": [
+        "第一批名单",
+        "高质量数据集试点单位"
+      ],
+      "original_serials": [
+        "7",
+        "12"
+      ]
+    },
+    {
+      "entity_id": "entity:ea5d0f4157c84883",
+      "name": "云南省科学技术研究院",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:16"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "14"
+      ]
+    },
+    {
+      "entity_id": "entity:63bd80531e398cdf",
+      "name": "云南省腾云信息产业有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:15"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "13"
+      ]
+    },
+    {
+      "entity_id": "entity:0dab005e9ef6beb6",
+      "name": "云南省融资信用征信服务有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:13"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "11"
+      ]
+    },
+    {
+      "entity_id": "entity:ce305e69f7cca49e",
+      "name": "云南省贵金属新材料控股集团股份有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:3"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "1"
+      ]
+    },
+    {
+      "entity_id": "entity:494c20b7f17463b1",
+      "name": "昆明国际花卉拍卖交易中心有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:9"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "8"
+      ]
+    },
+    {
+      "entity_id": "entity:3bf461481c3cd4aa",
+      "name": "昆明斗南农产品拍卖有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:20"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "17"
+      ]
+    },
+    {
+      "entity_id": "entity:1750f4960e3ea291",
+      "name": "普洱思茅农场集团有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:7",
+        "first-batch:xlsx:高质量数据集试点单位:r:4"
+      ],
+      "source_sheets": [
+        "第一批名单",
+        "高质量数据集试点单位"
+      ],
+      "original_serials": [
+        "6",
+        "24"
+      ]
+    },
+    {
+      "entity_id": "entity:7ca2b7da6e0f8654",
+      "name": "科大讯飞",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:11"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "9"
+      ]
+    },
+    {
+      "entity_id": "entity:7e00d43f92845319",
+      "name": "筑龙招投标有限公司",
+      "type": "organization",
+      "evidence_anchor_ids": [
+        "first-batch:xlsx:第一批名单:r:18"
+      ],
+      "source_sheets": [
+        "第一批名单"
+      ],
+      "original_serials": [
+        "15"
+      ]
+    }
+  ]
+}

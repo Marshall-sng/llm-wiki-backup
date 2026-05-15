@@ -1,0 +1,43 @@
+{
+  "wiki_company_table_rows": 18,
+  "raw_first_batch_rows": 18,
+  "entities_present_exact_in_wiki": 18,
+  "contacts_present_in_wiki": 0,
+  "phones_present_in_wiki": 0,
+  "contacts_present_in_converted": 13,
+  "phones_present_in_converted": 13,
+  "serial_mismatches": [
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "普洱思茅农场集团有限公司",
+      "raw_serial": "6",
+      "wiki_serial": "5",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7"
+    },
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "云南省广播电视台",
+      "raw_serial": "7",
+      "wiki_serial": "6",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8"
+    },
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "昆明国际花卉拍卖交易中心有限公司",
+      "raw_serial": "8",
+      "wiki_serial": "7",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9"
+    },
+    {
+      "type": "serial_rewritten",
+      "severity": "warning",
+      "entity": "云南瑞和锦程实业股份有限公司",
+      "raw_serial": "5",
+      "wiki_serial": "8",
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10"
+    }
+  ]
+}

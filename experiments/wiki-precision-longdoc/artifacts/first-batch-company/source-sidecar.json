@@ -1,0 +1,5849 @@
+{
+  "schema_version": "0.1.0",
+  "source": {
+    "source_id": "first-batch-company-list",
+    "format": "xlsx",
+    "uri": "D:\\大数据公司工作\\数据流通\\数据流通\\raw\\sources\\第一批企业名单.xlsx",
+    "title": "第一批企业名单.xlsx",
+    "origin": "real-problem-closure"
+  },
+  "anchors": [
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "A",
+        "cell": "A3"
+      },
+      "text": {
+        "preview": "1",
+        "text_len": 1,
+        "text_hash": "6b86b273ff34fce1"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "B",
+        "cell": "B3"
+      },
+      "text": {
+        "preview": "云南省贵金属新材料控股集团股份有限公司",
+        "text_len": 19,
+        "text_hash": "ce305e69f7cca49e"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "C",
+        "cell": "C3"
+      },
+      "text": {
+        "preview": "稀贵金属产业数字化供应链平台, 基于人工智能大模型的贵金属新材料高质量数据集的研究与开发, 云南省行业级大数据中心（贵金属新材料行业），稀贵金属行业高质量数据集建设和应用项目, 稀贵金属行业高质量数据集建设和应用项目",
+        "text_len": 108,
+        "text_hash": "c1b20f11f34b09a2"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "D",
+        "cell": "D3"
+      },
+      "text": {
+        "preview": "王志强",
+        "text_len": 3,
+        "text_hash": "e3e98c0cf7ca5160"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "E",
+        "cell": "E3"
+      },
+      "text": {
+        "preview": "18301229963",
+        "text_len": 11,
+        "text_hash": "bbf3dfa93061115c"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "F",
+        "cell": "F3"
+      },
+      "text": {
+        "preview": "数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目",
+        "text_len": 46,
+        "text_hash": "c2a0eb2836562013"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "G",
+        "cell": "G3"
+      },
+      "text": {
+        "preview": "省内重点产业企业",
+        "text_len": 8,
+        "text_hash": "e81f6dfeef98e332"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3,
+        "column": "H",
+        "cell": "H3"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:3",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 3
+      },
+      "text": {
+        "preview": "序号=1 | 企业名称=云南省贵金属新材料控股集团股份有限公司 | 项目名称=稀贵金属产业数字化供应链平台, 基于人工智能大模型的贵金属新材料高质量数据集的研究与开发, 云南省行业级大数据中心（贵金属新材料行业），稀贵金属行业高质量数据集建设和应用项目, 稀贵金属行业高质量数据集建设和应用项目 | 联系人=王志强 | 电话=18301229963 | 来源工作表=数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目 | 所属行业=省内重点产业企业",
+        "text_len": 245,
+        "text_hash": "b2de9603a4108a60"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:3:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:3:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:3:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:3:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:3:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:3:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:3:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:3:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "A",
+        "cell": "A4"
+      },
+      "text": {
+        "preview": "2",
+        "text_len": 1,
+        "text_hash": "d4735e3a265e16ee"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "B",
+        "cell": "B4"
+      },
+      "text": {
+        "preview": "云南电网有限责任公司",
+        "text_len": 10,
+        "text_hash": "c24bcea48c31b292"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "C",
+        "cell": "C4"
+      },
+      "text": {
+        "preview": "“数中有术”激发玉溪市特色优势产业新动能, 云南能源数据要素流通利用算力网助力数字经济发展, 云南省能源数据要素流通利用基础设施建设, 云南省能源数据要素流通利用算力网建设, 云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省能源数据要素流通利用算力网建设，云南省行业级大数据中心（电力能源行业），云南省能源",
+        "text_len": 456,
+        "text_hash": "e32c8b3f0423493f"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "D",
+        "cell": "D4"
+      },
+      "text": {
+        "preview": "常荣",
+        "text_len": 2,
+        "text_hash": "accfa039390e4c73"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "E",
+        "cell": "E4"
+      },
+      "text": {
+        "preview": "15808659105",
+        "text_len": 11,
+        "text_hash": "f225c2ce011e8edb"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "F",
+        "cell": "F4"
+      },
+      "text": {
+        "preview": "数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集-数据标注, 基础设施储备项目, 算力一体化",
+        "text_len": 64,
+        "text_hash": "0dec984f41cac590"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "G",
+        "cell": "G4"
+      },
+      "text": {
+        "preview": "省内重点产业企业",
+        "text_len": 8,
+        "text_hash": "e81f6dfeef98e332"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4,
+        "column": "H",
+        "cell": "H4"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:4",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 4
+      },
+      "text": {
+        "preview": "序号=2 | 企业名称=云南电网有限责任公司 | 项目名称=“数中有术”激发玉溪市特色优势产业新动能, 云南能源数据要素流通利用算力网助力数字经济发展, 云南省能源数据要素流通利用基础设施建设, 云南省能源数据要素流通利用算力网建设, 云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省能源数据要素流通利用算力网建设，云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省电力行业标注中心建设 | 联系人=常荣 | 电话=15808659105 | 来源工作表=数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集-数据标注, 基础设施储备项目, 算力一体化 | 所属行业=省内重点产业企业",
+        "text_len": 601,
+        "text_hash": "709edb4c336712b3"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:4:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:4:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:4:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:4:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:4:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:4:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:4:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:4:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "A",
+        "cell": "A5"
+      },
+      "text": {
+        "preview": "3",
+        "text_len": 1,
+        "text_hash": "4e07408562bedb8b"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "B",
+        "cell": "B5"
+      },
+      "text": {
+        "preview": "云南白药集团股份有限公司",
+        "text_len": 12,
+        "text_hash": "fb1f18e9fd782b44"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "C",
+        "cell": "C5"
+      },
+      "text": {
+        "preview": "中医药行业雷公大模型, 中医药行业高质量数据集, 中医药行业雷公大模型数据标注范式、三七卫星遥感产量预测与采购价格预测高质量数据集、中医药行业高质量数据集建设与领域应用试点, 中医药行业雷公大模型数据标注范式, 中医药行业高质量数据集建设与领域应用试点",
+        "text_len": 126,
+        "text_hash": "2a7c6c2508bca1bd"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "D",
+        "cell": "D5"
+      },
+      "text": {
+        "preview": "孟得力\n杨映辉",
+        "text_len": 7,
+        "text_hash": "c893b21bfb614487"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "E",
+        "cell": "E5"
+      },
+      "text": {
+        "preview": "18611001103\n15368080553",
+        "text_len": 23,
+        "text_hash": "198f1c7df08a1a7b"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "F",
+        "cell": "F5"
+      },
+      "text": {
+        "preview": "数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集-数据标注, 高质量数据集储备项目",
+        "text_len": 59,
+        "text_hash": "c476ca1d9cc6a737"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "G",
+        "cell": "G5"
+      },
+      "text": {
+        "preview": "中医药行业/第一批高质量数据集试点",
+        "text_len": 17,
+        "text_hash": "9e8e305909f9ec4e"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5,
+        "column": "H",
+        "cell": "H5"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:5",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 5
+      },
+      "text": {
+        "preview": "序号=3 | 企业名称=云南白药集团股份有限公司 | 项目名称=中医药行业雷公大模型, 中医药行业高质量数据集, 中医药行业雷公大模型数据标注范式、三七卫星遥感产量预测与采购价格预测高质量数据集、中医药行业高质量数据集建设与领域应用试点, 中医药行业雷公大模型数据标注范式, 中医药行业高质量数据集建设与领域应用试点 | 联系人=孟得力\n杨映辉 | 电话=18611001103\n15368080553 | 来源工作表=数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集-数据标注, 高质量数据集储备项目 | 所属行业=中医药行业/第一批高质量数据集试点",
+        "text_len": 294,
+        "text_hash": "aafa1fc3eb661388"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:5:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:5:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:5:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:5:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:5:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:5:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:5:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:5:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "A",
+        "cell": "A6"
+      },
+      "text": {
+        "preview": "4",
+        "text_len": 1,
+        "text_hash": "4b227777d4dd1fc6"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "B",
+        "cell": "B6"
+      },
+      "text": {
+        "preview": "中国科学院昆明动物研究所",
+        "text_len": 12,
+        "text_hash": "a213bb75c992b633"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "C",
+        "cell": "C6"
+      },
+      "text": {
+        "preview": "云南省动物资源高质量数据集, 面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+        "text_len": 44,
+        "text_hash": "129e35e4832a5736"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "D",
+        "cell": "D6"
+      },
+      "text": {
+        "preview": "王易芬",
+        "text_len": 3,
+        "text_hash": "44f5e0dfc4c1497f"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "E",
+        "cell": "E6"
+      },
+      "text": {
+        "preview": "13888077241",
+        "text_len": 11,
+        "text_hash": "ad3c5536b3e97545"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "F",
+        "cell": "F6"
+      },
+      "text": {
+        "preview": "高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目",
+        "text_len": 35,
+        "text_hash": "b52db19cd929fb2f"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "G",
+        "cell": "G6"
+      },
+      "text": {
+        "preview": "科技/第一批高质量数据集试点",
+        "text_len": 14,
+        "text_hash": "8e12cb5e9087b12d"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6,
+        "column": "H",
+        "cell": "H6"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:6",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 6
+      },
+      "text": {
+        "preview": "序号=4 | 企业名称=中国科学院昆明动物研究所 | 项目名称=云南省动物资源高质量数据集, 面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建 | 联系人=王易芬 | 电话=13888077241 | 来源工作表=高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目 | 所属行业=科技/第一批高质量数据集试点",
+        "text_len": 169,
+        "text_hash": "58a7a95d86998fdc"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:6:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:6:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:6:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:6:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:6:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:6:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:6:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:6:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "A",
+        "cell": "A7"
+      },
+      "text": {
+        "preview": "6",
+        "text_len": 1,
+        "text_hash": "e7f6c011776e8db7"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "B",
+        "cell": "B7"
+      },
+      "text": {
+        "preview": "普洱思茅农场集团有限公司",
+        "text_len": 12,
+        "text_hash": "1750f4960e3ea291"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "C",
+        "cell": "C7"
+      },
+      "text": {
+        "preview": "咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。",
+        "text_len": 199,
+        "text_hash": "41a0b1909667c080"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "D",
+        "cell": "D7"
+      },
+      "text": {
+        "preview": "张斌",
+        "text_len": 2,
+        "text_hash": "bc70bb27e66e7d4c"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "E",
+        "cell": "E7"
+      },
+      "text": {
+        "preview": "18387902182",
+        "text_len": 11,
+        "text_hash": "e7eeef039d0744f5"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "F",
+        "cell": "F7"
+      },
+      "text": {
+        "preview": "项目储备表-高质量数据集储备项目表",
+        "text_len": 17,
+        "text_hash": "15aa26d597606067"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "G",
+        "cell": "G7"
+      },
+      "text": {
+        "preview": "咖啡",
+        "text_len": 2,
+        "text_hash": "720ec669f15b87b1"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7,
+        "column": "H",
+        "cell": "H7"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:7",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 7
+      },
+      "text": {
+        "preview": "序号=6 | 企业名称=普洱思茅农场集团有限公司 | 项目名称=咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。 | 联系人=张斌 | 电话=18387902182 | 来源工作表=项目储备表-高质量数据集储备项目表 | 所属行业=咖啡",
+        "text_len": 293,
+        "text_hash": "4d744753db6792fd"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:7:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:7:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:7:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:7:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:7:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:7:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:7:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:7:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "A",
+        "cell": "A8"
+      },
+      "text": {
+        "preview": "7",
+        "text_len": 1,
+        "text_hash": "7902699be42c8a8e"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "B",
+        "cell": "B8"
+      },
+      "text": {
+        "preview": "云南省广播电视台",
+        "text_len": 8,
+        "text_hash": "7f053682c1adb5d1"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "C",
+        "cell": "C8"
+      },
+      "text": {
+        "preview": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行：本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。",
+        "text_len": 216,
+        "text_hash": "87271df2df0ad4c5"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "D",
+        "cell": "D8"
+      },
+      "text": {
+        "preview": "金晶",
+        "text_len": 2,
+        "text_hash": "808148f64b712f8f"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "E",
+        "cell": "E8"
+      },
+      "text": {
+        "preview": "13888108125",
+        "text_len": 11,
+        "text_hash": "dc2fedd354e1a756"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "F",
+        "cell": "F8"
+      },
+      "text": {
+        "preview": "项目储备表-高质量数据集储备项目表",
+        "text_len": 17,
+        "text_hash": "15aa26d597606067"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "G",
+        "cell": "G8"
+      },
+      "text": {
+        "preview": "广电传媒/第一批高质量数据集试点",
+        "text_len": 16,
+        "text_hash": "f8d7512b5b16d09e"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8,
+        "column": "H",
+        "cell": "H8"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:8",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 8
+      },
+      "text": {
+        "preview": "序号=7 | 企业名称=云南省广播电视台 | 项目名称=基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行：本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。 | 联系人=金晶 | 电话=13888108125 | 来源工作表=项目储备表-高质量数据集储备项目表 | 所属行业=广电传媒/第一批高质量数据集试点",
+        "text_len": 320,
+        "text_hash": "c7bf5d877e628ccf"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:8:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:8:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:8:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:8:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:8:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:8:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:8:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:8:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "A",
+        "cell": "A9"
+      },
+      "text": {
+        "preview": "8",
+        "text_len": 1,
+        "text_hash": "2c624232cdd22177"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "B",
+        "cell": "B9"
+      },
+      "text": {
+        "preview": "昆明国际花卉拍卖交易中心有限公司",
+        "text_len": 16,
+        "text_hash": "494c20b7f17463b1"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "C",
+        "cell": "C9"
+      },
+      "text": {
+        "preview": "全国高质量花卉数据集, 花卉行业供应链高质量数据集项目",
+        "text_len": 27,
+        "text_hash": "1d5acfebb626c1ec"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "D",
+        "cell": "D9"
+      },
+      "text": {
+        "preview": "仇晶辉",
+        "text_len": 3,
+        "text_hash": "9487bae681146c6d"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "E",
+        "cell": "E9"
+      },
+      "text": {
+        "preview": "15925160153",
+        "text_len": 11,
+        "text_hash": "9e62bd909689ecaf"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "F",
+        "cell": "F9"
+      },
+      "text": {
+        "preview": "高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目",
+        "text_len": 35,
+        "text_hash": "b52db19cd929fb2f"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "G",
+        "cell": "G9"
+      },
+      "text": {
+        "preview": "花卉",
+        "text_len": 2,
+        "text_hash": "0aae905ecea08f6b"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9,
+        "column": "H",
+        "cell": "H9"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:9",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 9
+      },
+      "text": {
+        "preview": "序号=8 | 企业名称=昆明国际花卉拍卖交易中心有限公司 | 项目名称=全国高质量花卉数据集, 花卉行业供应链高质量数据集项目 | 联系人=仇晶辉 | 电话=15925160153 | 来源工作表=高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目 | 所属行业=花卉",
+        "text_len": 144,
+        "text_hash": "e50d969a13511172"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:9:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:9:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:9:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:9:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:9:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:9:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:9:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:9:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "A",
+        "cell": "A10"
+      },
+      "text": {
+        "preview": "5",
+        "text_len": 1,
+        "text_hash": "ef2d127de37b942b"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "B",
+        "cell": "B10"
+      },
+      "text": {
+        "preview": "云南瑞和锦程实业股份有限公司",
+        "text_len": 14,
+        "text_hash": "e1855ce6479e7990"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "C",
+        "cell": "C10"
+      },
+      "text": {
+        "preview": "数链协同——多式联运数字化新平台, 云南省智慧物流数据共享体系建设",
+        "text_len": 33,
+        "text_hash": "a9867a99c97897d1"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "D",
+        "cell": "D10"
+      },
+      "text": {
+        "preview": "赵卫鹏",
+        "text_len": 3,
+        "text_hash": "6e9dc93175bad304"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "E",
+        "cell": "E10"
+      },
+      "text": {
+        "preview": "13888055711",
+        "text_len": 11,
+        "text_hash": "74a454611ce2bd46"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "F",
+        "cell": "F10"
+      },
+      "text": {
+        "preview": "数据要素x2024, 高质量数据集-项目库, 高质量数据集储备项目",
+        "text_len": 33,
+        "text_hash": "8fb067038ab23ad2"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "G",
+        "cell": "G10"
+      },
+      "text": {
+        "preview": "物流",
+        "text_len": 2,
+        "text_hash": "40416ed591371aa0"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10,
+        "column": "H",
+        "cell": "H10"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:10",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 10
+      },
+      "text": {
+        "preview": "序号=5 | 企业名称=云南瑞和锦程实业股份有限公司 | 项目名称=数链协同——多式联运数字化新平台, 云南省智慧物流数据共享体系建设 | 联系人=赵卫鹏 | 电话=13888055711 | 来源工作表=数据要素x2024, 高质量数据集-项目库, 高质量数据集储备项目 | 所属行业=物流",
+        "text_len": 146,
+        "text_hash": "6b57e76ec6c59a11"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:10:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:10:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:10:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:10:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:10:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:10:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:10:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:10:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "A",
+        "cell": "A11"
+      },
+      "text": {
+        "preview": "9",
+        "text_len": 1,
+        "text_hash": "19581e27de7ced00"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "B",
+        "cell": "B11"
+      },
+      "text": {
+        "preview": "科大讯飞",
+        "text_len": 4,
+        "text_hash": "7ca2b7da6e0f8654"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "C",
+        "cell": "C11"
+      },
+      "text": {
+        "preview": "建设1个数据资源底座，包括数据加工治理平台、数据资源调度平台。建设1套数据资源管理体系，包括标准规范、机制设计、技术体系、安全保障等。建设N类多模态高质量训练数据集，包括通用语料训练数据集以及教育、医疗、人力资源等各行业高质量数据集。",
+        "text_len": 117,
+        "text_hash": "7276b7f9d0ad7bec"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "D",
+        "cell": "D11"
+      },
+      "text": {
+        "preview": "吴荣玉",
+        "text_len": 3,
+        "text_hash": "1b96e0d07d925574"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "E",
+        "cell": "E11"
+      },
+      "text": {
+        "preview": "18180465060",
+        "text_len": 11,
+        "text_hash": "de58cb7012918345"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "F",
+        "cell": "F11"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "G",
+        "cell": "G11"
+      },
+      "text": {
+        "preview": "教育",
+        "text_len": 2,
+        "text_hash": "c883995ff5ab5961"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11,
+        "column": "H",
+        "cell": "H11"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:11",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 11
+      },
+      "text": {
+        "preview": "序号=9 | 企业名称=科大讯飞 | 项目名称=建设1个数据资源底座，包括数据加工治理平台、数据资源调度平台。建设1套数据资源管理体系，包括标准规范、机制设计、技术体系、安全保障等。建设N类多模态高质量训练数据集，包括通用语料训练数据集以及教育、医疗、人力资源等各行业高质量数据集。 | 联系人=吴荣玉 | 电话=18180465060 | 所属行业=教育",
+        "text_len": 178,
+        "text_hash": "525ceada6d2b0ee4"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:11:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:11:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:11:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:11:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:11:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:11:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:11:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:11:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "A",
+        "cell": "A12"
+      },
+      "text": {
+        "preview": "10",
+        "text_len": 2,
+        "text_hash": "4a44dc15364204a8"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "B",
+        "cell": "B12"
+      },
+      "text": {
+        "preview": "云南省交通投资建设集团有限公司",
+        "text_len": 15,
+        "text_hash": "f79de52f5ebbfd4c"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "C",
+        "cell": "C12"
+      },
+      "text": {
+        "preview": "针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中、数据标注不规范、数据质量不可靠、数据更新不及时等问题，依托集团在“建管养运服安”全周期场景积累的内外部数据资源，按照“数据服务算法、算法服务应用、应用服务场景”建设理念，形成面向公路交通行业全场景的人工智能应用赋能高质量数据集，并建设与之匹配的可供外部接入、安全可信、高速传输、全域发现、在线流转的行业数据集研发、管理与服务平台。",
+        "text_len": 196,
+        "text_hash": "15a455f07e8b13b1"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "D",
+        "cell": "D12"
+      },
+      "text": {
+        "preview": "向鹏程",
+        "text_len": 3,
+        "text_hash": "856b78d64cfbb36a"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "E",
+        "cell": "E12"
+      },
+      "text": {
+        "preview": "18988289769",
+        "text_len": 11,
+        "text_hash": "8ebe25b15259165d"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "F",
+        "cell": "F12"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "G",
+        "cell": "G12"
+      },
+      "text": {
+        "preview": "省属国有企业",
+        "text_len": 6,
+        "text_hash": "1b778e83e1ebbfaa"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12,
+        "column": "H",
+        "cell": "H12"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:12",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 12
+      },
+      "text": {
+        "preview": "序号=10 | 企业名称=云南省交通投资建设集团有限公司 | 项目名称=针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中、数据标注不规范、数据质量不可靠、数据更新不及时等问题，依托集团在“建管养运服安”全周期场景积累的内外部数据资源，按照“数据服务算法、算法服务应用、应用服务场景”建设理念，形成面向公路交通行业全场景的人工智能应用赋能高质量数据集，并建设与之匹配的可供外部接入、安全可信、高速传输、全域发现、在线流转的行业数据集研发、管理与服务平台。 | 联系人=向鹏程 | 电话=18988289769 | 所属行业=省属国有企业",
+        "text_len": 273,
+        "text_hash": "4546d6dc95e6d74a"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:12:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:12:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:12:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:12:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:12:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:12:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:12:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:12:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "A",
+        "cell": "A13"
+      },
+      "text": {
+        "preview": "11",
+        "text_len": 2,
+        "text_hash": "4fc82b26aecb47d2"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "B",
+        "cell": "B13"
+      },
+      "text": {
+        "preview": "云南省融资信用征信服务有限公司",
+        "text_len": 15,
+        "text_hash": "0dab005e9ef6beb6"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "C",
+        "cell": "C13"
+      },
+      "text": {
+        "preview": "云南省融资信用服务平台（地方征信平台）, 信用信息共享赋能“预授信”模式创新金融服务小微新生态",
+        "text_len": 47,
+        "text_hash": "ddbc7b5c77ec3c58"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "D",
+        "cell": "D13"
+      },
+      "text": {
+        "preview": "杨枫",
+        "text_len": 2,
+        "text_hash": "7c78adfc32b3f1d5"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "E",
+        "cell": "E13"
+      },
+      "text": {
+        "preview": "15887087069",
+        "text_len": 11,
+        "text_hash": "e090e67d0e1cab0c"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "F",
+        "cell": "F13"
+      },
+      "text": {
+        "preview": "数据要素x2024, 数据要素x2025",
+        "text_len": 20,
+        "text_hash": "cfb7187be0286910"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "G",
+        "cell": "G13"
+      },
+      "text": {
+        "preview": "金融",
+        "text_len": 2,
+        "text_hash": "a42315e416fa2550"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13,
+        "column": "H",
+        "cell": "H13"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:13",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 13
+      },
+      "text": {
+        "preview": "序号=11 | 企业名称=云南省融资信用征信服务有限公司 | 项目名称=云南省融资信用服务平台（地方征信平台）, 信用信息共享赋能“预授信”模式创新金融服务小微新生态 | 联系人=杨枫 | 电话=15887087069 | 来源工作表=数据要素x2024, 数据要素x2025 | 所属行业=金融",
+        "text_len": 148,
+        "text_hash": "60c81b98b3e4acb2"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:13:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:13:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:13:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:13:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:13:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:13:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:13:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:13:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "A",
+        "cell": "A14"
+      },
+      "text": {
+        "preview": "12",
+        "text_len": 2,
+        "text_hash": "6b51d431df5d7f14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "B",
+        "cell": "B14"
+      },
+      "text": {
+        "preview": "云南省低空经济产投资有限公司",
+        "text_len": 14,
+        "text_hash": "b4f7c2cbc4e159ce"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "C",
+        "cell": "C14"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "D",
+        "cell": "D14"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "E",
+        "cell": "E14"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "F",
+        "cell": "F14"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "G",
+        "cell": "G14"
+      },
+      "text": {
+        "preview": "低空经济",
+        "text_len": 4,
+        "text_hash": "efe36558d4cba54f"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14,
+        "column": "H",
+        "cell": "H14"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:14",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 14
+      },
+      "text": {
+        "preview": "序号=12 | 企业名称=云南省低空经济产投资有限公司 | 所属行业=低空经济",
+        "text_len": 39,
+        "text_hash": "a761da6b5d6adc21"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:14:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:14:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:14:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:14:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:14:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:14:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:14:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:14:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "A",
+        "cell": "A15"
+      },
+      "text": {
+        "preview": "13",
+        "text_len": 2,
+        "text_hash": "3fdba35f04dc8c46"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "B",
+        "cell": "B15"
+      },
+      "text": {
+        "preview": "云南省腾云信息产业有限公司",
+        "text_len": 13,
+        "text_hash": "63bd80531e398cdf"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "C",
+        "cell": "C15"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "D",
+        "cell": "D15"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "E",
+        "cell": "E15"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "F",
+        "cell": "F15"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "G",
+        "cell": "G15"
+      },
+      "text": {
+        "preview": "旅游",
+        "text_len": 2,
+        "text_hash": "c8bf3f878e389b57"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15,
+        "column": "H",
+        "cell": "H15"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:15",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 15
+      },
+      "text": {
+        "preview": "序号=13 | 企业名称=云南省腾云信息产业有限公司 | 所属行业=旅游",
+        "text_len": 36,
+        "text_hash": "9afe9ced00899dff"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:15:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:15:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:15:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:15:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:15:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:15:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:15:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:15:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "A",
+        "cell": "A16"
+      },
+      "text": {
+        "preview": "14",
+        "text_len": 2,
+        "text_hash": "8527a891e2241369"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "B",
+        "cell": "B16"
+      },
+      "text": {
+        "preview": "云南省科学技术研究院",
+        "text_len": 10,
+        "text_hash": "ea5d0f4157c84883"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "C",
+        "cell": "C16"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "D",
+        "cell": "D16"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "E",
+        "cell": "E16"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "F",
+        "cell": "F16"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "G",
+        "cell": "G16"
+      },
+      "text": {
+        "preview": "科技",
+        "text_len": 2,
+        "text_hash": "6edb77679bbe71f5"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16,
+        "column": "H",
+        "cell": "H16"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:16",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 16
+      },
+      "text": {
+        "preview": "序号=14 | 企业名称=云南省科学技术研究院 | 所属行业=科技",
+        "text_len": 33,
+        "text_hash": "55e54648d55a5ee8"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:16:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:16:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:16:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:16:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:16:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:16:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:16:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:16:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "A",
+        "cell": "A17"
+      },
+      "text": {
+        "preview": "18",
+        "text_len": 2,
+        "text_hash": "4ec9599fc203d176"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "B",
+        "cell": "B17"
+      },
+      "text": {
+        "preview": "云南省农业科学院、新华网股份有限公司",
+        "text_len": 18,
+        "text_hash": "8a781514c676b185"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "C",
+        "cell": "C17"
+      },
+      "text": {
+        "preview": "项目建设内容主要包括：1个大数据集（包含10个子数据集）、1个数据集市、1个中心、1个AI助手、5个平台。\n具体为：1个农业科技成果数据集：包含10个子数据集，即粮食数据子数据集、花卉子数据集、蔬菜数据子数据集、水果数据子数据集、咖啡数据子数据集、中药材数据子数据集、甘蔗数据子数据集、蚕桑数据子数据集、茶叶数据子数据集、油料数据子数据集。\n1个农业科技成果数据集市。\n1个农业科技成果服务大数据及展示中心。\n1个AI数字农人助手。\n5个平台：区块链平台、数据（安全）中台、物联网中台、AI中台、GIS支撑平台。",
+        "text_len": 256,
+        "text_hash": "309ef13f4bb91067"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "D",
+        "cell": "D17"
+      },
+      "text": {
+        "preview": "尹兴祥、甘苇",
+        "text_len": 6,
+        "text_hash": "1346cf34cb5be472"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "E",
+        "cell": "E17"
+      },
+      "text": {
+        "preview": "13508718301、15288320209",
+        "text_len": 23,
+        "text_hash": "2a09726906ee8717"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "F",
+        "cell": "F17"
+      },
+      "text": {
+        "preview": "行业高质量数据集",
+        "text_len": 8,
+        "text_hash": "db95c83330fd2911"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "G",
+        "cell": "G17"
+      },
+      "text": {
+        "preview": "农业",
+        "text_len": 2,
+        "text_hash": "b2acdef8f2efe1fb"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17,
+        "column": "H",
+        "cell": "H17"
+      },
+      "text": {
+        "preview": "云南省农业科学院是云南省农业科技创新的主力军和排头兵，承担着云南全局性、关键性、战略性重大农业科技问题的研究和创新任务，以及服务“三农”科技进步这一根本任务。\n新华网是中国最具影响力的网络媒体和具有全球影响力的中文网站，是互联网新闻传播的国家队、主力军。新华网深度布局社交网络、移动互联网、大数据研发、新媒体技术研发、在线教育和科普信息化等互联网技术业务服务，是全国第一家也是唯一一家获得高新技术企业、ISO9001质量管理体系认证、AAA级信用企业等三项高级别资质的网络媒体。",
+        "text_len": 239,
+        "text_hash": "180cb8df83f1213b"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:17",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 17
+      },
+      "text": {
+        "preview": "序号=18 | 企业名称=云南省农业科学院、新华网股份有限公司 | 项目名称=项目建设内容主要包括：1个大数据集（包含10个子数据集）、1个数据集市、1个中心、1个AI助手、5个平台。\n具体为：1个农业科技成果数据集：包含10个子数据集，即粮食数据子数据集、花卉子数据集、蔬菜数据子数据集、水果数据子数据集、咖啡数据子数据集、中药材数据子数据集、甘蔗数据子数据集、蚕桑数据子数据集、茶叶数据子数据集、油料数据子数据集。\n1个农业科技成果数据集市。\n1个农业科技成果服务大数据及展示中心。\n1个AI数字农人助手。\n5个平台：区块链平台、数据（安全）中台、物联网中台、AI中台、GIS支撑平台。 | 联系人=尹兴祥、甘苇 | 电话=13508718301、15288320209 | 来源工作表=行业高质量数据集 | 所属行业=农业 | 空列8=云南省农业科学院是云南省农业科技创新的主力军和排头兵，承担着云南全局性、关键性、战略性重大农业科技问题的研究和创新任务，以及服务“三农”科技进步这一根本任务。\n新华网是中国最具影响力的网络媒体和具有全球影响力的中文网站，是互联网新闻传播的国家队、主力军。新华网深度布局社交网络、移动互联网、大数据研发、新媒体技术研发、在线教育和科普信息化等互联网技术业务服务，是全国第一家也是唯一一家获得高新技术企业、ISO9001质量管理体系认证、AAA级信用企业等三项高级别资质的网络媒体。",
+        "text_len": 610,
+        "text_hash": "e8a691533a7b7e64"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:17:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:17:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:17:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:17:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:17:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:17:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:17:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:17:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "A",
+        "cell": "A18"
+      },
+      "text": {
+        "preview": "15",
+        "text_len": 2,
+        "text_hash": "e629fa6598d73276"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "B",
+        "cell": "B18"
+      },
+      "text": {
+        "preview": "筑龙招投标有限公司",
+        "text_len": 9,
+        "text_hash": "7e00d43f92845319"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "C",
+        "cell": "C18"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "D",
+        "cell": "D18"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "E",
+        "cell": "E18"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "F",
+        "cell": "F18"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "G",
+        "cell": "G18"
+      },
+      "text": {
+        "preview": "招投标",
+        "text_len": 3,
+        "text_hash": "b33188006e309daa"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18,
+        "column": "H",
+        "cell": "H18"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:18",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 18
+      },
+      "text": {
+        "preview": "序号=15 | 企业名称=筑龙招投标有限公司 | 所属行业=招投标",
+        "text_len": 33,
+        "text_hash": "c541153d3d272146"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:18:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:18:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:18:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:18:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:18:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:18:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:18:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:18:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "A",
+        "cell": "A19"
+      },
+      "text": {
+        "preview": "16",
+        "text_len": 2,
+        "text_hash": "b17ef6d19c7a5b1e"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "B",
+        "cell": "B19"
+      },
+      "text": {
+        "preview": "云南山海遊旅游集团有限公司",
+        "text_len": 13,
+        "text_hash": "fce97335330d59bc"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "C",
+        "cell": "C19"
+      },
+      "text": {
+        "preview": "云南普者黑5A级旅游景区票务数据、云南普者黑5A级旅游景区营销汇总数据、云南普者黑5A级旅游景区游客画像",
+        "text_len": 52,
+        "text_hash": "8cdaad6785b5beac"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "D",
+        "cell": "D19"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "E",
+        "cell": "E19"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "F",
+        "cell": "F19"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "G",
+        "cell": "G19"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19,
+        "column": "H",
+        "cell": "H19"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:19",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 19
+      },
+      "text": {
+        "preview": "序号=16 | 企业名称=云南山海遊旅游集团有限公司 | 项目名称=云南普者黑5A级旅游景区票务数据、云南普者黑5A级旅游景区营销汇总数据、云南普者黑5A级旅游景区游客画像",
+        "text_len": 86,
+        "text_hash": "e809a530356d5c72"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:19:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:19:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:19:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:19:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:19:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:19:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:19:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:19:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "A",
+        "cell": "A20"
+      },
+      "text": {
+        "preview": "17",
+        "text_len": 2,
+        "text_hash": "4523540f1504cd17"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "B",
+        "cell": "B20"
+      },
+      "text": {
+        "preview": "昆明斗南农产品拍卖有限公司",
+        "text_len": 13,
+        "text_hash": "3bf461481c3cd4aa"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "企业名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "C",
+        "cell": "C20"
+      },
+      "text": {
+        "preview": "DFETC鲜切花拍卖品种数据",
+        "text_len": 14,
+        "text_hash": "3360602904f1c3b6"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "D",
+        "cell": "D20"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "E",
+        "cell": "E20"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "F",
+        "cell": "F20"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "来源工作表"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "G",
+        "cell": "G20"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "所属行业"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20,
+        "column": "H",
+        "cell": "H20"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "header": "空列8"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:第一批名单:r:20",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "第一批名单",
+        "row": 20
+      },
+      "text": {
+        "preview": "序号=17 | 企业名称=昆明斗南农产品拍卖有限公司 | 项目名称=DFETC鲜切花拍卖品种数据",
+        "text_len": 48,
+        "text_hash": "93a43f680cb677b5"
+      },
+      "confidence": 0.98,
+      "metadata": {
+        "cell_anchors": {
+          "序号": "first-batch:xlsx:第一批名单:r:20:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:20:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:20:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:20:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:20:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:20:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:20:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:20:c:H"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "A",
+        "cell": "A2"
+      },
+      "text": {
+        "preview": "12",
+        "text_len": 2,
+        "text_hash": "6b51d431df5d7f14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "原始序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "B",
+        "cell": "B2"
+      },
+      "text": {
+        "preview": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行",
+        "text_len": 31,
+        "text_hash": "89d0a7b9ec4d1595"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "C",
+        "cell": "C2"
+      },
+      "text": {
+        "preview": "云南省广播电视台",
+        "text_len": 8,
+        "text_hash": "7f053682c1adb5d1"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "单位名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "D",
+        "cell": "D2"
+      },
+      "text": {
+        "preview": "行业高质量数据集",
+        "text_len": 8,
+        "text_hash": "db95c83330fd2911"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目类型"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "E",
+        "cell": "E2"
+      },
+      "text": {
+        "preview": "昆明",
+        "text_len": 2,
+        "text_hash": "fa637322597c0c74"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "地区"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "F",
+        "cell": "F2"
+      },
+      "text": {
+        "preview": "时间未定",
+        "text_len": 4,
+        "text_hash": "5f11300492d0e369"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "开始时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "G",
+        "cell": "G2"
+      },
+      "text": {
+        "preview": "时间未定",
+        "text_len": 4,
+        "text_hash": "5f11300492d0e369"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "结束时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "H",
+        "cell": "H2"
+      },
+      "text": {
+        "preview": "本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。",
+        "text_len": 184,
+        "text_hash": "3aa0367c95a8d3af"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目描述"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:I",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "I",
+        "cell": "I2"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "资金来源"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:J",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "J",
+        "cell": "J2"
+      },
+      "text": {
+        "preview": "10000",
+        "text_len": 5,
+        "text_hash": "39e5b4830d4d9c14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "投资规模_万元"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:K",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "K",
+        "cell": "K2"
+      },
+      "text": {
+        "preview": "建设中",
+        "text_len": 3,
+        "text_hash": "fa082510a7731409"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "建设进展"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:L",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "L",
+        "cell": "L2"
+      },
+      "text": {
+        "preview": "已入选先行先试",
+        "text_len": 7,
+        "text_hash": "d502c428eb268260"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "入选状态"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:M",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "M",
+        "cell": "M2"
+      },
+      "text": {
+        "preview": "金晶",
+        "text_len": 2,
+        "text_hash": "808148f64b712f8f"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:N",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "N",
+        "cell": "N2"
+      },
+      "text": {
+        "preview": "13888108125",
+        "text_len": 11,
+        "text_hash": "dc2fedd354e1a756"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2:c:O",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2,
+        "column": "O",
+        "cell": "O2"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "备注"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 2
+      },
+      "text": {
+        "preview": "原始序号=12 | 项目名称=基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行 | 单位名称=云南省广播电视台 | 项目类型=行业高质量数据集 | 地区=昆明 | 开始时间=时间未定 | 结束时间=时间未定 | 项目描述=本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。 | 投资规模_万元=10000 | 建设进展=建设中 | 入选状态=已入选先行先试 | 联系人=金晶 | 电话=13888108125",
+        "text_len": 370,
+        "text_hash": "94af26e3f3ba7aa8"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "cell_anchors": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:2:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:2:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:2:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:2:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:2:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:2:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:2:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:2:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:2:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:2:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:2:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:2:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:2:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:2:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:2:c:O"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "A",
+        "cell": "A3"
+      },
+      "text": {
+        "preview": "23",
+        "text_len": 2,
+        "text_hash": "535fa30d7e25dd8a"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "原始序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "B",
+        "cell": "B3"
+      },
+      "text": {
+        "preview": "中医药行业高质量数据集建设与领域应用试点",
+        "text_len": 20,
+        "text_hash": "fe0aba9a05bab725"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "C",
+        "cell": "C3"
+      },
+      "text": {
+        "preview": "云南白药集团股份有限公司",
+        "text_len": 12,
+        "text_hash": "fb1f18e9fd782b44"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "单位名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "D",
+        "cell": "D3"
+      },
+      "text": {
+        "preview": "行业高质量数据集",
+        "text_len": 8,
+        "text_hash": "db95c83330fd2911"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目类型"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "E",
+        "cell": "E3"
+      },
+      "text": {
+        "preview": "昆明",
+        "text_len": 2,
+        "text_hash": "fa637322597c0c74"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "地区"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "F",
+        "cell": "F3"
+      },
+      "text": {
+        "preview": "45658",
+        "text_len": 5,
+        "text_hash": "b2795d7e9a55ebd5"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "开始时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "G",
+        "cell": "G3"
+      },
+      "text": {
+        "preview": "46357",
+        "text_len": 5,
+        "text_hash": "74daca7003b2602f"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "结束时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "H",
+        "cell": "H3"
+      },
+      "text": {
+        "preview": "云南省“十大云药”是经官方遴选的最具代表性道地药材，聚焦云南特有且主产、种植规模产量占比高、品质优势突出、市场认可的中药材，构建高质量数据集。首先，建设一套中药材数据管理服务平台，具备数据采集、存储、标准化、标注和对外服务等能力。其次，围绕特色中药材基于文本数据、图像数据等多模态行业数据，建设4个高质量数据集，支撑行业大模型训练与中医药产业服务平台应用，形成高质量数据集应用服务示范。",
+        "text_len": 193,
+        "text_hash": "aecda3460b57cff0"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目描述"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:I",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "I",
+        "cell": "I3"
+      },
+      "text": {
+        "preview": "企业自筹",
+        "text_len": 4,
+        "text_hash": "3a3bdd4b8a474bd0"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "资金来源"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:J",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "J",
+        "cell": "J3"
+      },
+      "text": {
+        "preview": "5500",
+        "text_len": 4,
+        "text_hash": "8f496feec94eb1ce"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "投资规模_万元"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:K",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "K",
+        "cell": "K3"
+      },
+      "text": {
+        "preview": "整体进度50%\n1、完成三七、茯苓中药材质检高质量数据集建设；\n2、完成三七卫星遥感产量普查高质量数据集。",
+        "text_len": 53,
+        "text_hash": "2daab0474d530712"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "建设进展"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:L",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "L",
+        "cell": "L3"
+      },
+      "text": {
+        "preview": "已入选先行先试",
+        "text_len": 7,
+        "text_hash": "d502c428eb268260"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "入选状态"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:M",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "M",
+        "cell": "M3"
+      },
+      "text": {
+        "preview": "杨映辉",
+        "text_len": 3,
+        "text_hash": "d879b7fdfc29325d"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:N",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "N",
+        "cell": "N3"
+      },
+      "text": {
+        "preview": "15368080553",
+        "text_len": 11,
+        "text_hash": "e27ec7fd3cf72887"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3:c:O",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3,
+        "column": "O",
+        "cell": "O3"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "备注"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 3
+      },
+      "text": {
+        "preview": "原始序号=23 | 项目名称=中医药行业高质量数据集建设与领域应用试点 | 单位名称=云南白药集团股份有限公司 | 项目类型=行业高质量数据集 | 地区=昆明 | 开始时间=45658 | 结束时间=46357 | 项目描述=云南省“十大云药”是经官方遴选的最具代表性道地药材，聚焦云南特有且主产、种植规模产量占比高、品质优势突出、市场认可的中药材，构建高质量数据集。首先，建设一套中药材数据管理服务平台，具备数据采集、存储、标准化、标注和对外服务等能力。其次，围绕特色中药材基于文本数据、图像数据等多模态行业数据，建设4个高质量数据集，支撑行业大模型训练与中医药产业服务平台应用，形成高质量数据集应用服务示范。 | 资金来源=企业自筹 | 投资规模_万元=5500 | 建设进展=整体进度50%\n1、完成三七、茯苓中药材质检高质量数据集建设；\n2、完成三七卫星遥感产量普查高质量数据集。 | 入选状态=已入选先行先试 | 联系人=杨映辉 | 电话=15368080553",
+        "text_len": 436,
+        "text_hash": "c646c894ab200c8f"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "cell_anchors": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:3:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:3:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:3:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:3:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:3:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:3:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:3:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:3:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:3:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:3:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:3:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:3:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:3:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:3:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:3:c:O"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "A",
+        "cell": "A4"
+      },
+      "text": {
+        "preview": "24",
+        "text_len": 2,
+        "text_hash": "c2356069e9d1e79c"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "原始序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "B",
+        "cell": "B4"
+      },
+      "text": {
+        "preview": "咖啡行业高质量数据集",
+        "text_len": 10,
+        "text_hash": "bddb089853213e4f"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "C",
+        "cell": "C4"
+      },
+      "text": {
+        "preview": "普洱思茅农场集团有限公司",
+        "text_len": 12,
+        "text_hash": "1750f4960e3ea291"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "单位名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "D",
+        "cell": "D4"
+      },
+      "text": {
+        "preview": "行业高质量数据集",
+        "text_len": 8,
+        "text_hash": "db95c83330fd2911"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目类型"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "E",
+        "cell": "E4"
+      },
+      "text": {
+        "preview": "普洱",
+        "text_len": 2,
+        "text_hash": "e9bc243fc80caeb6"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "地区"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "F",
+        "cell": "F4"
+      },
+      "text": {
+        "preview": "时间未定",
+        "text_len": 4,
+        "text_hash": "5f11300492d0e369"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "开始时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "G",
+        "cell": "G4"
+      },
+      "text": {
+        "preview": "时间未定",
+        "text_len": 4,
+        "text_hash": "5f11300492d0e369"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "结束时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "H",
+        "cell": "H4"
+      },
+      "text": {
+        "preview": "通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。",
+        "text_len": 188,
+        "text_hash": "575277d16fe1b6df"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目描述"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:I",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "I",
+        "cell": "I4"
+      },
+      "text": {
+        "preview": "企业自筹",
+        "text_len": 4,
+        "text_hash": "3a3bdd4b8a474bd0"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "资金来源"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:J",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "J",
+        "cell": "J4"
+      },
+      "text": {
+        "preview": "5407.4",
+        "text_len": 6,
+        "text_hash": "bf0a041f397808ba"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "投资规模_万元"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:K",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "K",
+        "cell": "K4"
+      },
+      "text": {
+        "preview": "建设中",
+        "text_len": 3,
+        "text_hash": "fa082510a7731409"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "建设进展"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:L",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "L",
+        "cell": "L4"
+      },
+      "text": {
+        "preview": "已入选先行先试",
+        "text_len": 7,
+        "text_hash": "d502c428eb268260"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "入选状态"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:M",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "M",
+        "cell": "M4"
+      },
+      "text": {
+        "preview": "张斌",
+        "text_len": 2,
+        "text_hash": "bc70bb27e66e7d4c"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:N",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "N",
+        "cell": "N4"
+      },
+      "text": {
+        "preview": "18387902182",
+        "text_len": 11,
+        "text_hash": "e7eeef039d0744f5"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4:c:O",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4,
+        "column": "O",
+        "cell": "O4"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "备注"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 4
+      },
+      "text": {
+        "preview": "原始序号=24 | 项目名称=咖啡行业高质量数据集 | 单位名称=普洱思茅农场集团有限公司 | 项目类型=行业高质量数据集 | 地区=普洱 | 开始时间=时间未定 | 结束时间=时间未定 | 项目描述=通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。 | 资金来源=企业自筹 | 投资规模_万元=5407.4 | 建设进展=建设中 | 入选状态=已入选先行先试 | 联系人=张斌 | 电话=18387902182",
+        "text_len": 370,
+        "text_hash": "a78df05dd1f02460"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "cell_anchors": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:4:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:4:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:4:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:4:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:4:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:4:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:4:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:4:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:4:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:4:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:4:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:4:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:4:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:4:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:4:c:O"
+        }
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:A",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "A",
+        "cell": "A5"
+      },
+      "text": {
+        "preview": "39",
+        "text_len": 2,
+        "text_hash": "0b918943df0962bc"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "原始序号"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:B",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "B",
+        "cell": "B5"
+      },
+      "text": {
+        "preview": "面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+        "text_len": 29,
+        "text_hash": "cd210d416dc13805"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:C",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "C",
+        "cell": "C5"
+      },
+      "text": {
+        "preview": "中国科学院昆明动物研究所",
+        "text_len": 12,
+        "text_hash": "a213bb75c992b633"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "单位名称"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:D",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "D",
+        "cell": "D5"
+      },
+      "text": {
+        "preview": "行业高质量数据集",
+        "text_len": 8,
+        "text_hash": "db95c83330fd2911"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目类型"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:E",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "E",
+        "cell": "E5"
+      },
+      "text": {
+        "preview": "昆明",
+        "text_len": 2,
+        "text_hash": "fa637322597c0c74"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "地区"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:F",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "F",
+        "cell": "F5"
+      },
+      "text": {
+        "preview": "时间未定",
+        "text_len": 4,
+        "text_hash": "5f11300492d0e369"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "开始时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:G",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "G",
+        "cell": "G5"
+      },
+      "text": {
+        "preview": "时间未定",
+        "text_len": 4,
+        "text_hash": "5f11300492d0e369"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "结束时间"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:H",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "H",
+        "cell": "H5"
+      },
+      "text": {
+        "preview": "本项目旨在构建国家级生物安全与医药创新数据基座，通过整合多模态生物资源，建立“采集-治理-应用”三位一体的高质量数据集体系。项目继承动物多样性数据整合基础，依托跨模态对齐引擎将 968TB 原始数据转化为结构化知识单元，升级现有795万三元组知识图谱至 1500 万实体/5000 万关系的全域生物知识库。核心应用聚焦生物安全与医药研发:前者新增人畜共患病预测模块，实现猴痘/汉坦病毒分钟级鉴定升级新冠病毒时空传播预测模型(R²≥0.91);后者开发多肽药物智能筛选平台，扩增毒液多肽库至8万条，推动抗脑卒中新药 SK-001 进入临床。通过科研-产业-政策协同机制，项目将建成1PB 生物多样性数据",
+        "text_len": 348,
+        "text_hash": "c8eba2d112579e94"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "项目描述"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:I",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "I",
+        "cell": "I5"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "资金来源"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:J",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "J",
+        "cell": "J5"
+      },
+      "text": {
+        "preview": "2000",
+        "text_len": 4,
+        "text_hash": "81a83544cf93c245"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "投资规模_万元"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:K",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "K",
+        "cell": "K5"
+      },
+      "text": {
+        "preview": "建设中",
+        "text_len": 3,
+        "text_hash": "fa082510a7731409"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "建设进展"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:L",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "L",
+        "cell": "L5"
+      },
+      "text": {
+        "preview": "已入选先行先试",
+        "text_len": 7,
+        "text_hash": "d502c428eb268260"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "入选状态"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:M",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "M",
+        "cell": "M5"
+      },
+      "text": {
+        "preview": "吕雪梅",
+        "text_len": 3,
+        "text_hash": "2e42b257b5035b28"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "联系人"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:N",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "N",
+        "cell": "N5"
+      },
+      "text": {
+        "preview": "15825268630",
+        "text_len": 11,
+        "text_hash": "67e1597a8206d906"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "电话"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5:c:O",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.cell",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5,
+        "column": "O",
+        "cell": "O5"
+      },
+      "text": {
+        "preview": "",
+        "text_len": 0,
+        "text_hash": "e3b0c44298fc1c14"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "header": "备注"
+      }
+    },
+    {
+      "anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5",
+      "source_id": "first-batch-company-list",
+      "format": "xlsx",
+      "kind": "xlsx.row",
+      "selector": {
+        "sheet": "高质量数据集试点单位",
+        "row": 5
+      },
+      "text": {
+        "preview": "原始序号=39 | 项目名称=面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建 | 单位名称=中国科学院昆明动物研究所 | 项目类型=行业高质量数据集 | 地区=昆明 | 开始时间=时间未定 | 结束时间=时间未定 | 项目描述=本项目旨在构建国家级生物安全与医药创新数据基座，通过整合多模态生物资源，建立“采集-治理-应用”三位一体的高质量数据集体系。项目继承动物多样性数据整合基础，依托跨模态对齐引擎将 968TB 原始数据转化为结构化知识单元，升级现有795万三元组知识图谱至 1500 万实体/5000 万关系的全域生物知识库。核心应用聚焦生物安全与医药研发:前者新增人畜共患病预测模块，实现猴痘/汉坦病毒分钟级鉴定升级新冠病毒时空传播预测模型(R²≥0.91);后者开发多肽药物智能筛选平台，扩增毒液多肽库至8万条，推动抗脑卒中新药 SK-001 进入临床。通过科研-产业-政策协同机制，项目将建成1PB 生物多样性数据集,制定生物数据治理标准，支撑新药研发与疫情预警等场景,确立云南国家生物资源数字化战略支点地位。 | 投资规模_万元=2000 | 建设进展=建设中 | 入选状态=已入选先行先试 | 联系人=吕雪梅 | 电话=15825268630",
+        "text_len": 536,
+        "text_hash": "1c8fc316eb59e573"
+      },
+      "confidence": 0.96,
+      "metadata": {
+        "cell_anchors": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:5:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:5:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:5:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:5:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:5:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:5:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:5:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:5:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:5:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:5:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:5:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:5:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:5:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:5:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:5:c:O"
+        }
+      }
+    }
+  ],
+  "coverage": {
+    "status": "passed",
+    "anchor_count": 226,
+    "text_units": 155,
+    "native": {
+      "sheets": 2,
+      "first_sheet_rows": 18,
+      "pilot_sheet_rows": 4,
+      "cell_anchors": 204,
+      "row_anchors": 22
+    }
+  },
+  "quality": {
+    "status": "good",
+    "quality_score": 0.98,
+    "issues": []
+  },
+  "review_items": [],
+  "domain_rows": {
+    "first_batch": [
+      {
+        "sheet": "第一批名单",
+        "excel_row": 3,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:3",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:3:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:3:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:3:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:3:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:3:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:3:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:3:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:3:c:H"
+        },
+        "original_serial": "1",
+        "enterprise_name": "云南省贵金属新材料控股集团股份有限公司",
+        "project_name": "稀贵金属产业数字化供应链平台, 基于人工智能大模型的贵金属新材料高质量数据集的研究与开发, 云南省行业级大数据中心（贵金属新材料行业），稀贵金属行业高质量数据集建设和应用项目, 稀贵金属行业高质量数据集建设和应用项目",
+        "contacts": [
+          "王志强"
+        ],
+        "phones": [
+          "18301229963"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集储备项目"
+        ],
+        "industry": "省内重点产业企业",
+        "raw": {
+          "序号": "1",
+          "企业名称": "云南省贵金属新材料控股集团股份有限公司",
+          "项目名称": "稀贵金属产业数字化供应链平台, 基于人工智能大模型的贵金属新材料高质量数据集的研究与开发, 云南省行业级大数据中心（贵金属新材料行业），稀贵金属行业高质量数据集建设和应用项目, 稀贵金属行业高质量数据集建设和应用项目",
+          "联系人": "王志强",
+          "电话": "18301229963",
+          "来源工作表": "数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目",
+          "所属行业": "省内重点产业企业",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 4,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:4",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:4:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:4:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:4:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:4:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:4:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:4:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:4:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:4:c:H"
+        },
+        "original_serial": "2",
+        "enterprise_name": "云南电网有限责任公司",
+        "project_name": "“数中有术”激发玉溪市特色优势产业新动能, 云南能源数据要素流通利用算力网助力数字经济发展, 云南省能源数据要素流通利用基础设施建设, 云南省能源数据要素流通利用算力网建设, 云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省能源数据要素流通利用算力网建设，云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省电力行业标注中心建设",
+        "contacts": [
+          "常荣"
+        ],
+        "phones": [
+          "15808659105"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集-数据标注",
+          "基础设施储备项目",
+          "算力一体化"
+        ],
+        "industry": "省内重点产业企业",
+        "raw": {
+          "序号": "2",
+          "企业名称": "云南电网有限责任公司",
+          "项目名称": "“数中有术”激发玉溪市特色优势产业新动能, 云南能源数据要素流通利用算力网助力数字经济发展, 云南省能源数据要素流通利用基础设施建设, 云南省能源数据要素流通利用算力网建设, 云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省能源数据要素流通利用算力网建设，云南省行业级大数据中心（电力能源行业），云南省能源数据要素流通利用基础设施建设，基于数据物联的“感存算一体智能感知终端”助力“能源互联”智慧城市建设，信创生态下数字电网边缘算力基础设施建设，智能算法驱动的变电站数据标注实践：高效降本，提升变电运维效益， 云南省电力行业标注中心建设，基层自主首创高质量数据集治理产品包和智能服务新模式, 云南省电力行业标注中心建设",
+          "联系人": "常荣",
+          "电话": "15808659105",
+          "来源工作表": "数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集-数据标注, 基础设施储备项目, 算力一体化",
+          "所属行业": "省内重点产业企业",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 5,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:5",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:5:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:5:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:5:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:5:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:5:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:5:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:5:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:5:c:H"
+        },
+        "original_serial": "3",
+        "enterprise_name": "云南白药集团股份有限公司",
+        "project_name": "中医药行业雷公大模型, 中医药行业高质量数据集, 中医药行业雷公大模型数据标注范式、三七卫星遥感产量预测与采购价格预测高质量数据集、中医药行业高质量数据集建设与领域应用试点, 中医药行业雷公大模型数据标注范式, 中医药行业高质量数据集建设与领域应用试点",
+        "contacts": [
+          "孟得力",
+          "杨映辉"
+        ],
+        "phones": [
+          "18611001103",
+          "15368080553"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集-数据标注",
+          "高质量数据集储备项目"
+        ],
+        "industry": "中医药行业/第一批高质量数据集试点",
+        "raw": {
+          "序号": "3",
+          "企业名称": "云南白药集团股份有限公司",
+          "项目名称": "中医药行业雷公大模型, 中医药行业高质量数据集, 中医药行业雷公大模型数据标注范式、三七卫星遥感产量预测与采购价格预测高质量数据集、中医药行业高质量数据集建设与领域应用试点, 中医药行业雷公大模型数据标注范式, 中医药行业高质量数据集建设与领域应用试点",
+          "联系人": "孟得力\n杨映辉",
+          "电话": "18611001103\n15368080553",
+          "来源工作表": "数据要素x2024, 高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集-数据标注, 高质量数据集储备项目",
+          "所属行业": "中医药行业/第一批高质量数据集试点",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 6,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:6",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:6:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:6:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:6:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:6:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:6:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:6:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:6:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:6:c:H"
+        },
+        "original_serial": "4",
+        "enterprise_name": "中国科学院昆明动物研究所",
+        "project_name": "云南省动物资源高质量数据集, 面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+        "contacts": [
+          "王易芬"
+        ],
+        "phones": [
+          "13888077241"
+        ],
+        "source_worksheets": [
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集储备项目"
+        ],
+        "industry": "科技/第一批高质量数据集试点",
+        "raw": {
+          "序号": "4",
+          "企业名称": "中国科学院昆明动物研究所",
+          "项目名称": "云南省动物资源高质量数据集, 面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+          "联系人": "王易芬",
+          "电话": "13888077241",
+          "来源工作表": "高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目",
+          "所属行业": "科技/第一批高质量数据集试点",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 7,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:7",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:7:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:7:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:7:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:7:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:7:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:7:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:7:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:7:c:H"
+        },
+        "original_serial": "6",
+        "enterprise_name": "普洱思茅农场集团有限公司",
+        "project_name": "咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。",
+        "contacts": [
+          "张斌"
+        ],
+        "phones": [
+          "18387902182"
+        ],
+        "source_worksheets": [
+          "项目储备表-高质量数据集储备项目表"
+        ],
+        "industry": "咖啡",
+        "raw": {
+          "序号": "6",
+          "企业名称": "普洱思茅农场集团有限公司",
+          "项目名称": "咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。",
+          "联系人": "张斌",
+          "电话": "18387902182",
+          "来源工作表": "项目储备表-高质量数据集储备项目表",
+          "所属行业": "咖啡",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 8,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:8",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:8:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:8:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:8:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:8:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:8:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:8:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:8:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:8:c:H"
+        },
+        "original_serial": "7",
+        "enterprise_name": "云南省广播电视台",
+        "project_name": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行：本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。",
+        "contacts": [
+          "金晶"
+        ],
+        "phones": [
+          "13888108125"
+        ],
+        "source_worksheets": [
+          "项目储备表-高质量数据集储备项目表"
+        ],
+        "industry": "广电传媒/第一批高质量数据集试点",
+        "raw": {
+          "序号": "7",
+          "企业名称": "云南省广播电视台",
+          "项目名称": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行：本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。",
+          "联系人": "金晶",
+          "电话": "13888108125",
+          "来源工作表": "项目储备表-高质量数据集储备项目表",
+          "所属行业": "广电传媒/第一批高质量数据集试点",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 9,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:9",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:9:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:9:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:9:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:9:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:9:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:9:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:9:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:9:c:H"
+        },
+        "original_serial": "8",
+        "enterprise_name": "昆明国际花卉拍卖交易中心有限公司",
+        "project_name": "全国高质量花卉数据集, 花卉行业供应链高质量数据集项目",
+        "contacts": [
+          "仇晶辉"
+        ],
+        "phones": [
+          "15925160153"
+        ],
+        "source_worksheets": [
+          "高质量数据集-项目库",
+          "高质量数据集-人工智能",
+          "高质量数据集储备项目"
+        ],
+        "industry": "花卉",
+        "raw": {
+          "序号": "8",
+          "企业名称": "昆明国际花卉拍卖交易中心有限公司",
+          "项目名称": "全国高质量花卉数据集, 花卉行业供应链高质量数据集项目",
+          "联系人": "仇晶辉",
+          "电话": "15925160153",
+          "来源工作表": "高质量数据集-项目库, 高质量数据集-人工智能, 高质量数据集储备项目",
+          "所属行业": "花卉",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 10,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:10",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:10:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:10:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:10:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:10:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:10:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:10:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:10:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:10:c:H"
+        },
+        "original_serial": "5",
+        "enterprise_name": "云南瑞和锦程实业股份有限公司",
+        "project_name": "数链协同——多式联运数字化新平台, 云南省智慧物流数据共享体系建设",
+        "contacts": [
+          "赵卫鹏"
+        ],
+        "phones": [
+          "13888055711"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "高质量数据集-项目库",
+          "高质量数据集储备项目"
+        ],
+        "industry": "物流",
+        "raw": {
+          "序号": "5",
+          "企业名称": "云南瑞和锦程实业股份有限公司",
+          "项目名称": "数链协同——多式联运数字化新平台, 云南省智慧物流数据共享体系建设",
+          "联系人": "赵卫鹏",
+          "电话": "13888055711",
+          "来源工作表": "数据要素x2024, 高质量数据集-项目库, 高质量数据集储备项目",
+          "所属行业": "物流",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 11,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:11",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:11:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:11:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:11:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:11:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:11:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:11:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:11:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:11:c:H"
+        },
+        "original_serial": "9",
+        "enterprise_name": "科大讯飞",
+        "project_name": "建设1个数据资源底座，包括数据加工治理平台、数据资源调度平台。建设1套数据资源管理体系，包括标准规范、机制设计、技术体系、安全保障等。建设N类多模态高质量训练数据集，包括通用语料训练数据集以及教育、医疗、人力资源等各行业高质量数据集。",
+        "contacts": [
+          "吴荣玉"
+        ],
+        "phones": [
+          "18180465060"
+        ],
+        "source_worksheets": [],
+        "industry": "教育",
+        "raw": {
+          "序号": "9",
+          "企业名称": "科大讯飞",
+          "项目名称": "建设1个数据资源底座，包括数据加工治理平台、数据资源调度平台。建设1套数据资源管理体系，包括标准规范、机制设计、技术体系、安全保障等。建设N类多模态高质量训练数据集，包括通用语料训练数据集以及教育、医疗、人力资源等各行业高质量数据集。",
+          "联系人": "吴荣玉",
+          "电话": "18180465060",
+          "来源工作表": "",
+          "所属行业": "教育",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 12,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:12",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:12:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:12:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:12:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:12:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:12:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:12:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:12:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:12:c:H"
+        },
+        "original_serial": "10",
+        "enterprise_name": "云南省交通投资建设集团有限公司",
+        "project_name": "针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中、数据标注不规范、数据质量不可靠、数据更新不及时等问题，依托集团在“建管养运服安”全周期场景积累的内外部数据资源，按照“数据服务算法、算法服务应用、应用服务场景”建设理念，形成面向公路交通行业全场景的人工智能应用赋能高质量数据集，并建设与之匹配的可供外部接入、安全可信、高速传输、全域发现、在线流转的行业数据集研发、管理与服务平台。",
+        "contacts": [
+          "向鹏程"
+        ],
+        "phones": [
+          "18988289769"
+        ],
+        "source_worksheets": [],
+        "industry": "省属国有企业",
+        "raw": {
+          "序号": "10",
+          "企业名称": "云南省交通投资建设集团有限公司",
+          "项目名称": "针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中、数据标注不规范、数据质量不可靠、数据更新不及时等问题，依托集团在“建管养运服安”全周期场景积累的内外部数据资源，按照“数据服务算法、算法服务应用、应用服务场景”建设理念，形成面向公路交通行业全场景的人工智能应用赋能高质量数据集，并建设与之匹配的可供外部接入、安全可信、高速传输、全域发现、在线流转的行业数据集研发、管理与服务平台。",
+          "联系人": "向鹏程",
+          "电话": "18988289769",
+          "来源工作表": "",
+          "所属行业": "省属国有企业",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 13,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:13",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:13:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:13:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:13:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:13:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:13:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:13:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:13:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:13:c:H"
+        },
+        "original_serial": "11",
+        "enterprise_name": "云南省融资信用征信服务有限公司",
+        "project_name": "云南省融资信用服务平台（地方征信平台）, 信用信息共享赋能“预授信”模式创新金融服务小微新生态",
+        "contacts": [
+          "杨枫"
+        ],
+        "phones": [
+          "15887087069"
+        ],
+        "source_worksheets": [
+          "数据要素x2024",
+          "数据要素x2025"
+        ],
+        "industry": "金融",
+        "raw": {
+          "序号": "11",
+          "企业名称": "云南省融资信用征信服务有限公司",
+          "项目名称": "云南省融资信用服务平台（地方征信平台）, 信用信息共享赋能“预授信”模式创新金融服务小微新生态",
+          "联系人": "杨枫",
+          "电话": "15887087069",
+          "来源工作表": "数据要素x2024, 数据要素x2025",
+          "所属行业": "金融",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 14,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:14",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:14:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:14:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:14:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:14:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:14:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:14:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:14:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:14:c:H"
+        },
+        "original_serial": "12",
+        "enterprise_name": "云南省低空经济产投资有限公司",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "低空经济",
+        "raw": {
+          "序号": "12",
+          "企业名称": "云南省低空经济产投资有限公司",
+          "项目名称": "",
+          "联系人": "",
+          "电话": "",
+          "来源工作表": "",
+          "所属行业": "低空经济",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 15,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:15",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:15:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:15:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:15:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:15:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:15:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:15:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:15:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:15:c:H"
+        },
+        "original_serial": "13",
+        "enterprise_name": "云南省腾云信息产业有限公司",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "旅游",
+        "raw": {
+          "序号": "13",
+          "企业名称": "云南省腾云信息产业有限公司",
+          "项目名称": "",
+          "联系人": "",
+          "电话": "",
+          "来源工作表": "",
+          "所属行业": "旅游",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 16,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:16",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:16:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:16:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:16:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:16:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:16:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:16:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:16:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:16:c:H"
+        },
+        "original_serial": "14",
+        "enterprise_name": "云南省科学技术研究院",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "科技",
+        "raw": {
+          "序号": "14",
+          "企业名称": "云南省科学技术研究院",
+          "项目名称": "",
+          "联系人": "",
+          "电话": "",
+          "来源工作表": "",
+          "所属行业": "科技",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 17,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:17",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:17:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:17:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:17:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:17:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:17:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:17:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:17:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:17:c:H"
+        },
+        "original_serial": "18",
+        "enterprise_name": "云南省农业科学院、新华网股份有限公司",
+        "project_name": "项目建设内容主要包括：1个大数据集（包含10个子数据集）、1个数据集市、1个中心、1个AI助手、5个平台。\n具体为：1个农业科技成果数据集：包含10个子数据集，即粮食数据子数据集、花卉子数据集、蔬菜数据子数据集、水果数据子数据集、咖啡数据子数据集、中药材数据子数据集、甘蔗数据子数据集、蚕桑数据子数据集、茶叶数据子数据集、油料数据子数据集。\n1个农业科技成果数据集市。\n1个农业科技成果服务大数据及展示中心。\n1个AI数字农人助手。\n5个平台：区块链平台、数据（安全）中台、物联网中台、AI中台、GIS支撑平台。",
+        "contacts": [
+          "尹兴祥、甘苇"
+        ],
+        "phones": [
+          "13508718301、15288320209"
+        ],
+        "source_worksheets": [
+          "行业高质量数据集"
+        ],
+        "industry": "农业",
+        "raw": {
+          "序号": "18",
+          "企业名称": "云南省农业科学院、新华网股份有限公司",
+          "项目名称": "项目建设内容主要包括：1个大数据集（包含10个子数据集）、1个数据集市、1个中心、1个AI助手、5个平台。\n具体为：1个农业科技成果数据集：包含10个子数据集，即粮食数据子数据集、花卉子数据集、蔬菜数据子数据集、水果数据子数据集、咖啡数据子数据集、中药材数据子数据集、甘蔗数据子数据集、蚕桑数据子数据集、茶叶数据子数据集、油料数据子数据集。\n1个农业科技成果数据集市。\n1个农业科技成果服务大数据及展示中心。\n1个AI数字农人助手。\n5个平台：区块链平台、数据（安全）中台、物联网中台、AI中台、GIS支撑平台。",
+          "联系人": "尹兴祥、甘苇",
+          "电话": "13508718301、15288320209",
+          "来源工作表": "行业高质量数据集",
+          "所属行业": "农业",
+          "空列8": "云南省农业科学院是云南省农业科技创新的主力军和排头兵，承担着云南全局性、关键性、战略性重大农业科技问题的研究和创新任务，以及服务“三农”科技进步这一根本任务。\n新华网是中国最具影响力的网络媒体和具有全球影响力的中文网站，是互联网新闻传播的国家队、主力军。新华网深度布局社交网络、移动互联网、大数据研发、新媒体技术研发、在线教育和科普信息化等互联网技术业务服务，是全国第一家也是唯一一家获得高新技术企业、ISO9001质量管理体系认证、AAA级信用企业等三项高级别资质的网络媒体。"
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 18,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:18",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:18:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:18:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:18:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:18:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:18:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:18:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:18:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:18:c:H"
+        },
+        "original_serial": "15",
+        "enterprise_name": "筑龙招投标有限公司",
+        "project_name": "",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "招投标",
+        "raw": {
+          "序号": "15",
+          "企业名称": "筑龙招投标有限公司",
+          "项目名称": "",
+          "联系人": "",
+          "电话": "",
+          "来源工作表": "",
+          "所属行业": "招投标",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 19,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:19",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:19:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:19:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:19:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:19:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:19:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:19:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:19:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:19:c:H"
+        },
+        "original_serial": "16",
+        "enterprise_name": "云南山海遊旅游集团有限公司",
+        "project_name": "云南普者黑5A级旅游景区票务数据、云南普者黑5A级旅游景区营销汇总数据、云南普者黑5A级旅游景区游客画像",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "",
+        "raw": {
+          "序号": "16",
+          "企业名称": "云南山海遊旅游集团有限公司",
+          "项目名称": "云南普者黑5A级旅游景区票务数据、云南普者黑5A级旅游景区营销汇总数据、云南普者黑5A级旅游景区游客画像",
+          "联系人": "",
+          "电话": "",
+          "来源工作表": "",
+          "所属行业": "",
+          "空列8": ""
+        }
+      },
+      {
+        "sheet": "第一批名单",
+        "excel_row": 20,
+        "row_anchor_id": "first-batch:xlsx:第一批名单:r:20",
+        "cell_anchor_ids": {
+          "序号": "first-batch:xlsx:第一批名单:r:20:c:A",
+          "企业名称": "first-batch:xlsx:第一批名单:r:20:c:B",
+          "项目名称": "first-batch:xlsx:第一批名单:r:20:c:C",
+          "联系人": "first-batch:xlsx:第一批名单:r:20:c:D",
+          "电话": "first-batch:xlsx:第一批名单:r:20:c:E",
+          "来源工作表": "first-batch:xlsx:第一批名单:r:20:c:F",
+          "所属行业": "first-batch:xlsx:第一批名单:r:20:c:G",
+          "空列8": "first-batch:xlsx:第一批名单:r:20:c:H"
+        },
+        "original_serial": "17",
+        "enterprise_name": "昆明斗南农产品拍卖有限公司",
+        "project_name": "DFETC鲜切花拍卖品种数据",
+        "contacts": [],
+        "phones": [],
+        "source_worksheets": [],
+        "industry": "",
+        "raw": {
+          "序号": "17",
+          "企业名称": "昆明斗南农产品拍卖有限公司",
+          "项目名称": "DFETC鲜切花拍卖品种数据",
+          "联系人": "",
+          "电话": "",
+          "来源工作表": "",
+          "所属行业": "",
+          "空列8": ""
+        }
+      }
+    ],
+    "pilot_units": [
+      {
+        "sheet": "高质量数据集试点单位",
+        "excel_row": 2,
+        "row_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:2",
+        "cell_anchor_ids": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:2:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:2:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:2:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:2:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:2:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:2:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:2:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:2:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:2:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:2:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:2:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:2:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:2:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:2:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:2:c:O"
+        },
+        "original_serial": "12",
+        "project_name": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行",
+        "unit_name": "云南省广播电视台",
+        "project_type": "行业高质量数据集",
+        "region": "昆明",
+        "description": "本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。",
+        "funding_source": "",
+        "investment_10k": "10000",
+        "progress": "建设中",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "金晶"
+        ],
+        "phones": [
+          "13888108125"
+        ],
+        "raw": {
+          "原始序号": "12",
+          "项目名称": "基于多模态建设云南南亚东南亚文化旅游视听高质量数据集的先试先行",
+          "单位名称": "云南省广播电视台",
+          "项目类型": "行业高质量数据集",
+          "地区": "昆明",
+          "开始时间": "时间未定",
+          "结束时间": "时间未定",
+          "项目描述": "本先行先试方案旨在打造产业亟需、规模庞大、模态丰富、质量过硬,具有云南特色、面向南亚东南亚,助力文化数字化转型与国际传播且应用场景丰富的高质量数据集。 其已建四大数据集,处理流程完善,技术有创新。 本方案完全响应任务要求,技术方案上,采集多模态数据,提升处理效率;场景应用上,覆盖多领域并保障安全;标准验证上,制定符合特色的格式等标准;机制建设上,探索收益分配等机制。",
+          "资金来源": "",
+          "投资规模_万元": "10000",
+          "建设进展": "建设中",
+          "入选状态": "已入选先行先试",
+          "联系人": "金晶",
+          "电话": "13888108125",
+          "备注": ""
+        }
+      },
+      {
+        "sheet": "高质量数据集试点单位",
+        "excel_row": 3,
+        "row_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:3",
+        "cell_anchor_ids": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:3:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:3:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:3:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:3:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:3:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:3:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:3:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:3:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:3:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:3:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:3:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:3:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:3:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:3:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:3:c:O"
+        },
+        "original_serial": "23",
+        "project_name": "中医药行业高质量数据集建设与领域应用试点",
+        "unit_name": "云南白药集团股份有限公司",
+        "project_type": "行业高质量数据集",
+        "region": "昆明",
+        "description": "云南省“十大云药”是经官方遴选的最具代表性道地药材，聚焦云南特有且主产、种植规模产量占比高、品质优势突出、市场认可的中药材，构建高质量数据集。首先，建设一套中药材数据管理服务平台，具备数据采集、存储、标准化、标注和对外服务等能力。其次，围绕特色中药材基于文本数据、图像数据等多模态行业数据，建设4个高质量数据集，支撑行业大模型训练与中医药产业服务平台应用，形成高质量数据集应用服务示范。",
+        "funding_source": "企业自筹",
+        "investment_10k": "5500",
+        "progress": "整体进度50%\n1、完成三七、茯苓中药材质检高质量数据集建设；\n2、完成三七卫星遥感产量普查高质量数据集。",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "杨映辉"
+        ],
+        "phones": [
+          "15368080553"
+        ],
+        "raw": {
+          "原始序号": "23",
+          "项目名称": "中医药行业高质量数据集建设与领域应用试点",
+          "单位名称": "云南白药集团股份有限公司",
+          "项目类型": "行业高质量数据集",
+          "地区": "昆明",
+          "开始时间": "45658",
+          "结束时间": "46357",
+          "项目描述": "云南省“十大云药”是经官方遴选的最具代表性道地药材，聚焦云南特有且主产、种植规模产量占比高、品质优势突出、市场认可的中药材，构建高质量数据集。首先，建设一套中药材数据管理服务平台，具备数据采集、存储、标准化、标注和对外服务等能力。其次，围绕特色中药材基于文本数据、图像数据等多模态行业数据，建设4个高质量数据集，支撑行业大模型训练与中医药产业服务平台应用，形成高质量数据集应用服务示范。",
+          "资金来源": "企业自筹",
+          "投资规模_万元": "5500",
+          "建设进展": "整体进度50%\n1、完成三七、茯苓中药材质检高质量数据集建设；\n2、完成三七卫星遥感产量普查高质量数据集。",
+          "入选状态": "已入选先行先试",
+          "联系人": "杨映辉",
+          "电话": "15368080553",
+          "备注": ""
+        }
+      },
+      {
+        "sheet": "高质量数据集试点单位",
+        "excel_row": 4,
+        "row_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:4",
+        "cell_anchor_ids": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:4:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:4:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:4:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:4:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:4:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:4:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:4:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:4:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:4:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:4:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:4:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:4:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:4:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:4:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:4:c:O"
+        },
+        "original_serial": "24",
+        "project_name": "咖啡行业高质量数据集",
+        "unit_name": "普洱思茅农场集团有限公司",
+        "project_type": "行业高质量数据集",
+        "region": "普洱",
+        "description": "通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。",
+        "funding_source": "企业自筹",
+        "investment_10k": "5407.4",
+        "progress": "建设中",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "张斌"
+        ],
+        "phones": [
+          "18387902182"
+        ],
+        "raw": {
+          "原始序号": "24",
+          "项目名称": "咖啡行业高质量数据集",
+          "单位名称": "普洱思茅农场集团有限公司",
+          "项目类型": "行业高质量数据集",
+          "地区": "普洱",
+          "开始时间": "时间未定",
+          "结束时间": "时间未定",
+          "项目描述": "通过建设数据标注平台和数据集开发运营平台，支持数据管理、数据标注、数据协作、数据获取/展示、数据采集、数据清洗、数据治理等能力，归集覆盖种植、加工、销售及产业链配套等咖啡产业全链条数据资源，构建多个数据产品，以及12个高质量数据集，赋能人工智能发展和场景应用建设，建立数据集测评基准体系标准，探索收益分配机制，完善组织架构，形成“需求驱动、数据支撑、价值释放”的场景应用闭环。",
+          "资金来源": "企业自筹",
+          "投资规模_万元": "5407.4",
+          "建设进展": "建设中",
+          "入选状态": "已入选先行先试",
+          "联系人": "张斌",
+          "电话": "18387902182",
+          "备注": ""
+        }
+      },
+      {
+        "sheet": "高质量数据集试点单位",
+        "excel_row": 5,
+        "row_anchor_id": "first-batch:xlsx:高质量数据集试点单位:r:5",
+        "cell_anchor_ids": {
+          "原始序号": "first-batch:xlsx:高质量数据集试点单位:r:5:c:A",
+          "项目名称": "first-batch:xlsx:高质量数据集试点单位:r:5:c:B",
+          "单位名称": "first-batch:xlsx:高质量数据集试点单位:r:5:c:C",
+          "项目类型": "first-batch:xlsx:高质量数据集试点单位:r:5:c:D",
+          "地区": "first-batch:xlsx:高质量数据集试点单位:r:5:c:E",
+          "开始时间": "first-batch:xlsx:高质量数据集试点单位:r:5:c:F",
+          "结束时间": "first-batch:xlsx:高质量数据集试点单位:r:5:c:G",
+          "项目描述": "first-batch:xlsx:高质量数据集试点单位:r:5:c:H",
+          "资金来源": "first-batch:xlsx:高质量数据集试点单位:r:5:c:I",
+          "投资规模_万元": "first-batch:xlsx:高质量数据集试点单位:r:5:c:J",
+          "建设进展": "first-batch:xlsx:高质量数据集试点单位:r:5:c:K",
+          "入选状态": "first-batch:xlsx:高质量数据集试点单位:r:5:c:L",
+          "联系人": "first-batch:xlsx:高质量数据集试点单位:r:5:c:M",
+          "电话": "first-batch:xlsx:高质量数据集试点单位:r:5:c:N",
+          "备注": "first-batch:xlsx:高质量数据集试点单位:r:5:c:O"
+        },
+        "original_serial": "39",
+        "project_name": "面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+        "unit_name": "中国科学院昆明动物研究所",
+        "project_type": "行业高质量数据集",
+        "region": "昆明",
+        "description": "本项目旨在构建国家级生物安全与医药创新数据基座，通过整合多模态生物资源，建立“采集-治理-应用”三位一体的高质量数据集体系。项目继承动物多样性数据整合基础，依托跨模态对齐引擎将 968TB 原始数据转化为结构化知识单元，升级现有795万三元组知识图谱至 1500 万实体/5000 万关系的全域生物知识库。核心应用聚焦生物安全与医药研发:前者新增人畜共患病预测模块，实现猴痘/汉坦病毒分钟级鉴定升级新冠病毒时空传播预测模型(R²≥0.91);后者开发多肽药物智能筛选平台，扩增毒液多肽库至8万条，推动抗脑卒中新药 SK-001 进入临床。通过科研-产业-政策协同机制，项目将建成1PB 生物多样性数据集,制定生物数据治理标准，支撑新药研发与疫情预警等场景,确立云南国家生物资源数字化战略支点地位。",
+        "funding_source": "",
+        "investment_10k": "2000",
+        "progress": "建设中",
+        "selected_status": "已入选先行先试",
+        "contacts": [
+          "吕雪梅"
+        ],
+        "phones": [
+          "15825268630"
+        ],
+        "raw": {
+          "原始序号": "39",
+          "项目名称": "面向生物安全和医药创新的云南动物战略资源多模态知识图谱构建",
+          "单位名称": "中国科学院昆明动物研究所",
+          "项目类型": "行业高质量数据集",
+          "地区": "昆明",
+          "开始时间": "时间未定",
+          "结束时间": "时间未定",
+          "项目描述": "本项目旨在构建国家级生物安全与医药创新数据基座，通过整合多模态生物资源，建立“采集-治理-应用”三位一体的高质量数据集体系。项目继承动物多样性数据整合基础，依托跨模态对齐引擎将 968TB 原始数据转化为结构化知识单元，升级现有795万三元组知识图谱至 1500 万实体/5000 万关系的全域生物知识库。核心应用聚焦生物安全与医药研发:前者新增人畜共患病预测模块，实现猴痘/汉坦病毒分钟级鉴定升级新冠病毒时空传播预测模型(R²≥0.91);后者开发多肽药物智能筛选平台，扩增毒液多肽库至8万条，推动抗脑卒中新药 SK-001 进入临床。通过科研-产业-政策协同机制，项目将建成1PB 生物多样性数据集,制定生物数据治理标准，支撑新药研发与疫情预警等场景,确立云南国家生物资源数字化战略支点地位。",
+          "资金来源": "",
+          "投资规模_万元": "2000",
+          "建设进展": "建设中",
+          "入选状态": "已入选先行先试",
+          "联系人": "吕雪梅",
+          "电话": "15825268630",
+          "备注": ""
+        }
+      }
+    ]
+  }
+}

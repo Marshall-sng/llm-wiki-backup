@@ -115,3 +115,15 @@ EvidenceAnchor-first
 
 结果记录：`unified-sidecar-closure-results.md`。
 
+## Phase 1E：第一批企业名单真实 Wiki 缺漏闭环
+
+| 项目 | 状态 | 证据 | 结论 |
+|---|---|---|---|
+| full row/cell SourceSidecar | passed | row anchors=22；cell anchors=204 | 原始 XLSX 可完整保留 sheet/row/cell 证据 |
+| entity/fact candidates | passed | entity candidates=18；fact candidates=147 | 可由结构化行事实生成 Wiki 候选输入 |
+| 当前 Wiki 对比 | issues_found | 企业名 18/18 存在；联系人 0/13；电话 0/13；serial_rewritten=4 | 当前 wiki 是摘要页，不是完整事实层 |
+| converted 复核 | passed | converted/cache 中联系人 13/13、电话 13/13 存在 | 主要丢失发生在 Wiki generation 压缩阶段 |
+| omission audit | passed | audit items=86 | CoverageAudit 可自动发现字段遗漏，不必靠人工浏览实体发现 |
+
+结果记录：`first-batch-company-closure-results.md`。
+
