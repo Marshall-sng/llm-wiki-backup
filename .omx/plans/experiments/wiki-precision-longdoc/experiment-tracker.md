@@ -27,6 +27,7 @@
 | 最终汇报 | `.omx/plans/requirements/wiki-precision-longdoc-final-report.md` | 已完成 |
 | 实验脚本 | `experiments/wiki-precision-longdoc/run_experiments.py` | 已完成 |
 | 实验执行记录 | `experiments/wiki-precision-longdoc/experiment-results.md` | 已完成 |
+| 后续改进暂存 | `.omx/plans/experiments/wiki-precision-longdoc/deferred-improvements.md` | 持续维护 |
 
 ## 实验状态
 
