@@ -66,6 +66,34 @@ export interface FormatProfileProbe {
 export async function probeFormatProfile(path: string): Promise<FormatProfileProbe> {
   return invoke<FormatProfileProbe>("probe_format_profile", { path })
 }
+
+export interface XlsxSidecarCellPayload {
+  sheet: string
+  row: number
+  column: number
+  address: string
+  value: string
+}
+
+export interface XlsxSidecarSheetPayload {
+  name: string
+  rowCount: number
+  columnCount: number
+  cells: XlsxSidecarCellPayload[]
+}
+
+export interface XlsxSidecarPayload {
+  path: string
+  fileName: string
+  sizeBytes: number
+  modifiedMs?: number | null
+  sha256: string
+  sheets: XlsxSidecarSheetPayload[]
+}
+
+export async function extractXlsxSidecarPayload(path: string): Promise<XlsxSidecarPayload> {
+  return invoke<XlsxSidecarPayload>("extract_xlsx_sidecar_payload", { path })
+}
 export async function convertWithMarkitdown(
   path: string,
 ): Promise<MarkitdownConversion> {

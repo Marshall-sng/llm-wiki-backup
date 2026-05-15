@@ -6,6 +6,7 @@ use std::thread;
 use std::time::{Duration, Instant, UNIX_EPOCH};
 
 use calamine::{Reader, open_workbook_auto, Data};
+use sha2::{Digest, Sha256};
 
 use crate::commands::file_sync;
 use crate::panic_guard::run_guarded;
@@ -1025,6 +1026,121 @@ fn extract_spreadsheet(path: &str) -> Result<String, String> {
     }
 }
 
+fn spreadsheet_cell_to_string(cell: &Data) -> String {
+    match cell {
+        Data::Empty => String::new(),
+        Data::String(s) => s.clone(),
+        Data::Float(f) => {
+            if *f == (*f as i64) as f64 {
+                format!("{}", *f as i64)
+            } else {
+                format!("{:.2}", f)
+            }
+        }
+        Data::Int(i) => i.to_string(),
+        Data::Bool(b) => b.to_string(),
+        Data::DateTime(dt) => format!("{}", dt),
+        Data::DateTimeIso(s) => s.clone(),
+        Data::DurationIso(s) => s.clone(),
+        Data::Error(e) => format!("ERR:{:?}", e),
+    }
+}
+
+fn xlsx_column_label(mut column: usize) -> String {
+    let mut label = String::new();
+    while column > 0 {
+        column -= 1;
+        let c = (b'A' + (column % 26) as u8) as char;
+        label.insert(0, c);
+        column /= 26;
+    }
+    label
+}
+
+fn file_modified_ms_for_path(path: &Path) -> Option<u64> {
+    fs::metadata(path)
+        .ok()
+        .and_then(|metadata| metadata.modified().ok())
+        .and_then(|modified| modified.duration_since(UNIX_EPOCH).ok())
+        .map(|duration| duration.as_millis() as u64)
+}
+
+fn extract_xlsx_sidecar_payload_impl(path: &str) -> Result<XlsxSidecarPayload, String> {
+    let p = Path::new(path);
+    if !p.is_file() {
+        return Err(format!("XLSX sidecar input is not a file: {}", path));
+    }
+
+    let bytes = fs::read(p)
+        .map_err(|e| format!("Failed to read XLSX bytes '{}': {}", path, e))?;
+    let sha256 = format!("{:x}", Sha256::digest(&bytes));
+    let metadata = fs::metadata(p)
+        .map_err(|e| format!("Failed to stat XLSX '{}': {}", path, e))?;
+    let file_name = p
+        .file_name()
+        .map(|name| name.to_string_lossy().to_string())
+        .unwrap_or_else(|| path.to_string());
+
+    let mut workbook = open_workbook_auto(path)
+        .map_err(|e| format!("Failed to open spreadsheet '{}': {}", path, e))?;
+    let mut sheets = Vec::new();
+
+    for sheet_name in workbook.sheet_names().to_vec() {
+        if let Ok(range) = workbook.worksheet_range(&sheet_name) {
+            let mut cells = Vec::new();
+            let mut row_count = 0usize;
+            let mut column_count = 0usize;
+
+            for (row_index, row) in range.rows().enumerate() {
+                row_count = row_count.max(row_index + 1);
+                column_count = column_count.max(row.len());
+                for (column_index, cell) in row.iter().enumerate() {
+                    let value = spreadsheet_cell_to_string(cell);
+                    if value.trim().is_empty() {
+                        continue;
+                    }
+                    let row_number = row_index + 1;
+                    let column_number = column_index + 1;
+                    cells.push(XlsxSidecarCellPayload {
+                        sheet: sheet_name.clone(),
+                        row: row_number,
+                        column: column_number,
+                        address: format!("{}{}", xlsx_column_label(column_number), row_number),
+                        value,
+                    });
+                }
+            }
+
+            sheets.push(XlsxSidecarSheetPayload {
+                name: sheet_name,
+                row_count,
+                column_count,
+                cells,
+            });
+        }
+    }
+
+    Ok(XlsxSidecarPayload {
+        path: path.to_string(),
+        file_name,
+        size_bytes: metadata.len(),
+        modified_ms: file_modified_ms_for_path(p),
+        sha256,
+        sheets,
+    })
+}
+
+#[tauri::command]
+pub async fn extract_xlsx_sidecar_payload(path: String) -> Result<XlsxSidecarPayload, String> {
+    tauri::async_runtime::spawn_blocking(move || {
+        run_guarded("extract_xlsx_sidecar_payload", || {
+            extract_xlsx_sidecar_payload_impl(&path)
+        })
+    })
+    .await
+    .map_err(|e| format!("extract_xlsx_sidecar_payload blocking task join error: {e}"))?
+}
+
 /// Extract OpenDocument format text (basic).
 fn extract_odf_text(archive: &mut zip::ZipArchive<fs::File>) -> Result<String, String> {
     let xml = read_zip_file(archive, "content.xml")
@@ -1073,6 +1189,36 @@ pub async fn write_file(path: String, contents: String) -> Result<(), String> {
     })
     .await
     .map_err(|e| format!("write_file blocking task join error: {e}"))?
+}
+
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct XlsxSidecarCellPayload {
+    pub sheet: String,
+    pub row: usize,
+    pub column: usize,
+    pub address: String,
+    pub value: String,
+}
+
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct XlsxSidecarSheetPayload {
+    pub name: String,
+    pub row_count: usize,
+    pub column_count: usize,
+    pub cells: Vec<XlsxSidecarCellPayload>,
+}
+
+#[derive(serde::Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct XlsxSidecarPayload {
+    pub path: String,
+    pub file_name: String,
+    pub size_bytes: u64,
+    pub modified_ms: Option<u64>,
+    pub sha256: String,
+    pub sheets: Vec<XlsxSidecarSheetPayload>,
 }
 
 fn write_binary_file_base64_impl(path: &str, contents_base64: &str) -> Result<(), String> {

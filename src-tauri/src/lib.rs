@@ -91,6 +91,7 @@ pub fn run() {
             commands::fs::file_exists,
             commands::fs::file_modified_ms,
             commands::fs::read_file_as_base64,
+            commands::fs::extract_xlsx_sidecar_payload,
             commands::format_probe::probe_format_profile,
             commands::project::create_project,
             commands::project::open_project,
