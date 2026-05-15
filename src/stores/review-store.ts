@@ -18,6 +18,7 @@ export interface ReviewItem {
   resolved: boolean
   resolvedAction?: string
   createdAt: number
+  metadata?: Record<string, unknown>
 }
 
 interface ReviewState {
@@ -31,6 +32,38 @@ interface ReviewState {
 }
 
 let counter = 0
+
+function mergeStringArrayValues(left: unknown, right: unknown): unknown {
+  if (Array.isArray(left) || Array.isArray(right)) {
+    return Array.from(new Set([
+      ...(Array.isArray(left) ? left : []),
+      ...(Array.isArray(right) ? right : []),
+    ]))
+  }
+  return right ?? left
+}
+
+function mergeReviewMetadata(
+  existing: Record<string, unknown> | undefined,
+  incoming: Record<string, unknown> | undefined,
+): Record<string, unknown> | undefined {
+  if (existing === undefined && incoming === undefined) return undefined
+
+  const merged: Record<string, unknown> = { ...(existing ?? {}) }
+  for (const [key, value] of Object.entries(incoming ?? {})) {
+    const oldValue = merged[key]
+    if (Array.isArray(oldValue) || Array.isArray(value)) {
+      merged[key] = mergeStringArrayValues(oldValue, value)
+    } else if (typeof oldValue === "number" && typeof value === "number") {
+      merged[key] = Math.max(oldValue, value)
+    } else {
+      merged[key] = value ?? oldValue
+    }
+  }
+
+  return Object.keys(merged).length > 0 ? merged : undefined
+}
+
 
 export const useReviewStore = create<ReviewState>((set) => ({
   items: [],
@@ -80,6 +113,7 @@ export const useReviewStore = create<ReviewState>((set) => ({
             sourcePath: incoming.sourcePath ?? old.sourcePath,
             affectedPages: mergedPages.length > 0 ? mergedPages : undefined,
             searchQueries: mergedQueries.length > 0 ? mergedQueries : undefined,
+            metadata: mergeReviewMetadata(old.metadata, incoming.metadata),
           }
         } else {
           const newItem = {

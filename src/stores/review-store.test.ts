@@ -138,6 +138,45 @@ describe("review-store addItems dedupe", () => {
     expect(useReviewStore.getState().items[0].searchQueries).toEqual(["q1", "q2"])
   })
 
+  it("merges coverage audit metadata without losing source and field context", () => {
+    useReviewStore.getState().addItems([
+      makeInput({
+        title: "Coverage audit: first batch",
+        metadata: {
+          sourceId: "raw/sources/第一批企业名单.xlsx",
+          auditPath: "audit-a.json",
+          missingCount: 2,
+          blockingCount: 1,
+          fields: ["contact"],
+          anchorIds: ["row:1"],
+        },
+      }),
+    ])
+    useReviewStore.getState().addItems([
+      makeInput({
+        title: "Coverage audit: first batch",
+        metadata: {
+          sourceId: "raw/sources/第一批企业名单.xlsx",
+          auditPath: "audit-b.json",
+          missingCount: 5,
+          blockingCount: 0,
+          fields: ["contact", "phone"],
+          anchorIds: ["row:1", "row:2"],
+        },
+      }),
+    ])
+
+    expect(useReviewStore.getState().items).toHaveLength(1)
+    expect(useReviewStore.getState().items[0].metadata).toEqual({
+      sourceId: "raw/sources/第一批企业名单.xlsx",
+      auditPath: "audit-b.json",
+      missingCount: 5,
+      blockingCount: 1,
+      fields: ["contact", "phone"],
+      anchorIds: ["row:1", "row:2"],
+    })
+  })
+
   it("sets affectedPages to undefined when the merged result is empty", () => {
     useReviewStore.getState().addItems([
       makeInput({ title: "A" }),
