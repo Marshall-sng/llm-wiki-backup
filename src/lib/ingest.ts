@@ -17,7 +17,8 @@ import {
 } from "@/lib/extract-source-images"
 import { captionMarkdownImages, loadCaptionCache } from "@/lib/image-caption-pipeline"
 import type { MultimodalConfig } from "@/stores/wiki-store"
-import { ensureXlsxSourceSidecarFresh, readXlsxSourceSidecarFeatureFlag } from "@/lib/source-sidecar-ingest"
+import { ensureXlsxSourceSidecarFresh, resolveXlsxPrecisionRolloutMode, shouldBlockXlsxPrecisionResult, xlsxPrecisionReviewItem, type EnsureXlsxSidecarResult } from "@/lib/source-sidecar-ingest"
+import { renderXlsxPrecisionPage, xlsxPrecisionPagePath } from "@/lib/xlsx-precision-page"
 
 /**
  * Resolve the LLM config that the caption pipeline should use.
@@ -274,6 +275,90 @@ export function languageRule(sourceContent: string = ""): string {
   return buildLanguageDirective(sourceContent)
 }
 
+function sourceBaseNameFor(fileName: string): string {
+  return fileName.replace(/\.[^.]+$/, "")
+}
+
+function isXlsxPrecisionBlocklistPath(relativePath: string): boolean {
+  return relativePath.startsWith("wiki/entities/")
+    || relativePath.startsWith("wiki/concepts/")
+    || relativePath === "wiki/index.md"
+    || relativePath === "wiki/overview.md"
+    || relativePath === "wiki/log.md"
+    || relativePath.endsWith("/log.md")
+    || /-precision\.md$/i.test(relativePath)
+}
+
+function filteredXlsxPrecisionCachePaths(paths: string[]): string[] {
+  return paths.filter((path) => !isXlsxPrecisionBlocklistPath(path))
+}
+
+function makeXlsxPrecisionReview(result: EnsureXlsxSidecarResult): Omit<ReviewItem, "id" | "resolved" | "createdAt"> | null {
+  const review = xlsxPrecisionReviewItem(result)
+  if (review === undefined) return null
+  return {
+    type: "confirm",
+    title: review.title,
+    description: review.description,
+    options: [
+      { label: "Review source", action: "review-source" },
+      { label: "Ignore for now", action: "ignore" },
+    ],
+    metadata: review.metadata,
+  }
+}
+
+async function writeXlsxPrecisionSourceSummary(
+  projectPath: string,
+  fileName: string,
+  detail: string,
+): Promise<string> {
+  const baseName = sourceBaseNameFor(fileName)
+  const relativePath = `wiki/sources/${baseName}.md`
+  const date = new Date().toISOString().slice(0, 10)
+  const content = [
+    "---",
+    "type: source",
+    `title: "Source: ${fileName}"`,
+    `created: ${date}`,
+    `updated: ${date}`,
+    `sources: ["${fileName}"]`,
+    "tags: []",
+    "related: []",
+    "---",
+    "",
+    `# Source: ${fileName}`,
+    "",
+    detail,
+    "",
+  ].join("\n")
+  await writeFile(`${projectPath}/${relativePath}`, content)
+  return relativePath
+}
+
+async function writeXlsxPrecisionPage(
+  projectPath: string,
+  fileName: string,
+  result: EnsureXlsxSidecarResult,
+): Promise<string | null> {
+  if (!("candidate" in result) || result.candidate === undefined || result.auditReport === undefined || !("path" in result)) {
+    return null
+  }
+  const baseName = sourceBaseNameFor(fileName)
+  const relativePath = xlsxPrecisionPagePath(baseName)
+  const content = renderXlsxPrecisionPage({
+    sourceFileName: fileName,
+    sourceBaseName: baseName,
+    sourceId: result.sidecar.source.source_id,
+    sidecarPath: result.path,
+    auditPath: result.auditReport.auditPath ?? `${result.path}.audit.json`,
+    candidate: result.candidate,
+    auditReport: result.auditReport,
+  })
+  await writeFile(`${projectPath}/${relativePath}`, content)
+  return relativePath
+}
+
 /**
  * Auto-ingest: reads source → LLM analyzes → LLM writes wiki pages, all in one go.
  * Used when importing new files.
@@ -335,14 +420,23 @@ async function autoIngestImpl(
     console.warn(`[ingest:convert] MarkItDown unavailable for "${fileName}", using native extraction: ${loadedSource.error}`)
   }
 
+  const xlsxMode = resolveXlsxPrecisionRolloutMode()
   const xlsxSidecarResult = await ensureXlsxSourceSidecarFresh({
     projectPath: pp,
     sourcePath: sp,
-    enabled: readXlsxSourceSidecarFeatureFlag(),
+    mode: xlsxMode,
   })
-  if (xlsxSidecarResult.status === "written") {
-    console.log(`[ingest:sidecar] wrote XLSX sidecar for "${fileName}" → ${xlsxSidecarResult.path}`)
+  const xlsxReview = makeXlsxPrecisionReview(xlsxSidecarResult)
+  if (xlsxReview !== null) {
+    useReviewStore.getState().addItems([xlsxReview])
   }
+  if ("path" in xlsxSidecarResult && ["written", "fresh", "stale-rewritten"].includes(xlsxSidecarResult.status)) {
+    console.log(`[ingest:sidecar] ${xlsxSidecarResult.status} XLSX sidecar for "${fileName}" → ${xlsxSidecarResult.path}`)
+  }
+  if (xlsxSidecarResult.mode === "observe" && "wouldBlockPaths" in xlsxSidecarResult && xlsxSidecarResult.wouldBlockPaths.length > 0) {
+    console.log(`[ingest:sidecar] observe mode would block for "${fileName}": ${xlsxSidecarResult.wouldBlockPaths.join(", ")}`)
+  }
+  const xlsxPrecisionBlocked = shouldBlockXlsxPrecisionResult(xlsxSidecarResult)
 
   // ── Cache check: skip re-ingest if source content hasn't changed ──
   //
@@ -357,6 +451,15 @@ async function autoIngestImpl(
   const cachedFiles = await checkIngestCache(pp, fileName, sourceContent)
   console.log(`[ingest:diag] cache check for "${fileName}":`, cachedFiles === null ? "MISS (full pipeline)" : `HIT (${cachedFiles.length} cached files)`)
   if (cachedFiles !== null) {
+    if (xlsxPrecisionBlocked) {
+      const filteredCachedFiles = filteredXlsxPrecisionCachePaths(cachedFiles)
+      activity.updateItem(activityId, {
+        status: "done",
+        detail: `XLSX precision audit blocked cached target pages; returning ${filteredCachedFiles.length} safe cached file(s).`,
+        filesWritten: filteredCachedFiles,
+      })
+      return filteredCachedFiles
+    }
     try {
       console.log(`[ingest:diag] cache-hit branch: starting image extraction for ${sp}`)
       const savedImages = await extractAndSaveSourceImages(pp, sp)
@@ -429,6 +532,46 @@ async function autoIngestImpl(
       filesWritten: cachedFiles,
     })
     return cachedFiles
+  }
+
+  if (xlsxPrecisionBlocked) {
+    const summaryPath = await writeXlsxPrecisionSourceSummary(
+      pp,
+      fileName,
+      "XLSX precision audit did not pass. Target/entity/precision pages were not written in block mode; see Review items for missing evidence details.",
+    )
+    activity.updateItem(activityId, {
+      status: "done",
+      detail: "XLSX precision audit blocked target Wiki writes; source summary was preserved.",
+      filesWritten: [summaryPath],
+    })
+    return [summaryPath]
+  }
+
+  if (xlsxSidecarResult.mode === "block" && "auditReport" in xlsxSidecarResult && xlsxSidecarResult.auditReport?.status === "passed") {
+    const summaryPath = await writeXlsxPrecisionSourceSummary(
+      pp,
+      fileName,
+      "XLSX precision audit passed. A deterministic precision source page was generated from row/cell evidence.",
+    )
+    const precisionPath = await writeXlsxPrecisionPage(pp, fileName, xlsxSidecarResult)
+    const writtenPaths = [summaryPath, ...(precisionPath ? [precisionPath] : [])]
+    if (writtenPaths.length > 0) {
+      await saveIngestCache(pp, fileName, sourceContent, writtenPaths)
+      try {
+        const tree = await listDirectory(pp)
+        useWikiStore.getState().setFileTree(tree)
+        useWikiStore.getState().bumpDataVersion()
+      } catch {
+        // non-critical
+      }
+    }
+    activity.updateItem(activityId, {
+      status: "done",
+      detail: `XLSX precision audit passed; wrote ${writtenPaths.length} deterministic file(s).`,
+      filesWritten: writtenPaths,
+    })
+    return writtenPaths
   }
 
   // ── Step 0.5: Extract embedded images ─────────────────────────
@@ -1526,6 +1669,47 @@ export async function executeIngestWrites(
 ): Promise<string[]> {
   const pp = normalizePath(projectPath)
   const store = getStore()
+  const ingestSource = store.ingestSource
+
+  if (ingestSource) {
+    const xlsxMode = resolveXlsxPrecisionRolloutMode()
+    const xlsxSidecarResult = await ensureXlsxSourceSidecarFresh({
+      projectPath: pp,
+      sourcePath: normalizePath(ingestSource),
+      mode: xlsxMode,
+    })
+    const xlsxReview = makeXlsxPrecisionReview(xlsxSidecarResult)
+    if (xlsxReview !== null) {
+      useReviewStore.getState().addItems([xlsxReview])
+    }
+    const fileName = getFileName(ingestSource)
+    const xlsxPrecisionBlocked = shouldBlockXlsxPrecisionResult(xlsxSidecarResult)
+    if (xlsxPrecisionBlocked) {
+      const summaryPath = await writeXlsxPrecisionSourceSummary(
+        pp,
+        fileName,
+        "XLSX precision audit blocked manual FILE-block generation for this source. Review the sidecar audit before writing entity, concept, index, overview, or log pages.",
+      )
+      const fullPath = `${pp}/${summaryPath}`
+      store.addMessage("system", `XLSX precision audit blocked wiki writes; source summary written to ${fullPath}`)
+      return [fullPath]
+    }
+    if (xlsxMode === "block" && "auditReport" in xlsxSidecarResult && xlsxSidecarResult.auditReport?.status === "passed") {
+      const writtenRelativePaths = [
+        await writeXlsxPrecisionSourceSummary(
+          pp,
+          fileName,
+          "XLSX precision audit passed; deterministic precision page generated without invoking the LLM FILE-block writer.",
+        ),
+      ]
+      const precisionPath = await writeXlsxPrecisionPage(pp, fileName, xlsxSidecarResult)
+      if (precisionPath !== null) writtenRelativePaths.push(precisionPath)
+      const fullPaths = writtenRelativePaths.map((relativePath) => `${pp}/${relativePath}`)
+      store.addMessage("system", `XLSX precision audit passed; files written to wiki:
+${fullPaths.map((path) => `- ${path}`).join("\n")}`)
+      return fullPaths
+    }
+  }
 
   const [schema, index] = await Promise.all([
     tryReadFile(`${pp}/wiki/schema.md`),
@@ -1649,7 +1833,6 @@ export async function executeIngestWrites(
   // parameter (the chat-panel "Save to Wiki" button only passes
   // projectPath). Skipped silently when there's no ingestSource
   // (e.g. user manually entered chat mode and called this).
-  const ingestSource = getStore().ingestSource
   // Master toggle gate — see autoIngestImpl Step 0.6 / 3.5 for
   // the full rationale. When captioning is disabled, we skip the
   // safety-net inject here too so the executeIngestWrites path

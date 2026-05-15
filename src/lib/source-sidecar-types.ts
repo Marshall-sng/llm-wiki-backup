@@ -82,6 +82,7 @@ export interface SourceSidecar {
   coverage: CoverageSummary
   quality: ExtractionQuality
   review_items?: unknown[]
+  metadata?: Record<string, unknown>
   domain_rows?: {
     first_batch?: FirstBatchCompanyRow[]
     pilot_units?: FirstBatchPilotRow[]
@@ -120,7 +121,7 @@ export interface WikiCandidate {
   metadata?: Record<string, unknown>
 }
 
-export type CoverageCheckStatus = "covered" | "missing" | "ignored_with_reason"
+export type CoverageCheckStatus = "covered" | "consumed_with_row_anchor" | "missing" | "ignored_with_reason"
 export type CoverageCheckSeverity = "blocking" | "review"
 
 export interface CoverageAuditCheck {
@@ -147,6 +148,7 @@ export interface CoverageAuditReport {
   checks: CoverageAuditCheck[]
   missingChecks: CoverageAuditCheck[]
   ignoredChecks: CoverageAuditCheck[]
+  rowAnchorOnlyChecks?: CoverageAuditCheck[]
 }
 
 export function makeEvidenceRef(anchor: EvidenceAnchor): EvidenceRef {

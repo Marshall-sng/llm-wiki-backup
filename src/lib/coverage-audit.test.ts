@@ -1,9 +1,8 @@
 ﻿import { describe, expect, it } from "vitest"
 import { auditFirstBatchCompanyCoverage, toCoverageAuditReviewMetadata } from "./coverage-audit"
+import { projectFirstBatchCompanyWikiCandidate } from "./wiki-candidate-projection"
 import {
   makeFirstBatchCompanyFixtureSidecar,
-  makeFullFirstBatchWikiText,
-  makeSummaryStyleFirstBatchWikiText,
 } from "@/test-helpers/first-batch-company-fixture"
 import { makeEvidenceRef } from "./source-sidecar-types"
 
@@ -14,7 +13,8 @@ describe("coverage audit for first batch company wiki", () => {
     const report = auditFirstBatchCompanyCoverage({
       sourceId: sidecar.source.source_id,
       rows,
-      candidateText: makeFullFirstBatchWikiText(rows),
+      candidate: projectFirstBatchCompanyWikiCandidate(sidecar),
+      anchors: sidecar.anchors,
     })
     expect(report.coverage_ratio).toBe(1)
     expect(report.consumed_required_field_checks).toBe(report.total_required_field_checks)
@@ -28,7 +28,11 @@ describe("coverage audit for first batch company wiki", () => {
     const report = auditFirstBatchCompanyCoverage({
       sourceId: sidecar.source.source_id,
       rows,
-      candidateText: makeSummaryStyleFirstBatchWikiText(rows),
+      candidate: {
+        ...projectFirstBatchCompanyWikiCandidate(sidecar),
+        factCandidates: [],
+      },
+      anchors: sidecar.anchors,
     })
     expect(report.coverage_ratio).toBeLessThan(0.75)
     expect(report.status).toBe("failed")
@@ -45,9 +49,14 @@ describe("coverage audit for first batch company wiki", () => {
     const report = auditFirstBatchCompanyCoverage({
       sourceId: sidecar.source.source_id,
       rows: row ? [row] : [],
-      candidateText: [row?.enterprise_name, row?.project_name, row?.industry, row?.original_serial, row?.contacts[0], ...row?.source_worksheets ?? []]
-        .filter((item): item is string => item !== undefined)
-        .join("\n"),
+      candidate: row ? (() => {
+        const candidate = projectFirstBatchCompanyWikiCandidate({ ...sidecar, domain_rows: { first_batch: [row] } })
+        return {
+          ...candidate,
+          factCandidates: candidate.factCandidates.filter((fact) => fact.predicate !== "phone"),
+        }
+      })() : undefined,
+      anchors: sidecar.anchors,
       ignored: anchor && row ? [{
         row_anchor_id: row.row_anchor_id,
         field: "phone",
@@ -66,13 +75,45 @@ describe("coverage audit for first batch company wiki", () => {
     const report = auditFirstBatchCompanyCoverage({
       sourceId: sidecar.source.source_id,
       rows: row ? [row] : [],
-      candidateText: [row?.enterprise_name, row?.project_name, row?.industry, row?.original_serial, row?.contacts[0], ...row?.source_worksheets ?? []]
-        .filter((item): item is string => item !== undefined)
-        .join("\n"),
+      candidate: row ? (() => {
+        const candidate = projectFirstBatchCompanyWikiCandidate({ ...sidecar, domain_rows: { first_batch: [row] } })
+        return {
+          ...candidate,
+          factCandidates: candidate.factCandidates.filter((fact) => fact.predicate !== "phone"),
+        }
+      })() : undefined,
+      anchors: sidecar.anchors,
       ignored: row ? [{ row_anchor_id: row.row_anchor_id, field: "phone", expected: row.phones[0] }] : [],
     })
     expect(report.ignoredChecks).toHaveLength(0)
     expect(report.missingChecks.some((check) => check.field === "phone")).toBe(true)
+  })
+
+
+  it("does not pass field coverage when a field only has row-level evidence", () => {
+    const sidecar = makeFirstBatchCompanyFixtureSidecar()
+    const row = sidecar.domain_rows?.first_batch?.[0]
+    expect(row).toBeDefined()
+    const rowAnchor = sidecar.anchors.find((item) => item.anchor_id === row?.row_anchor_id)
+    expect(rowAnchor).toBeDefined()
+    const candidate = row && rowAnchor ? projectFirstBatchCompanyWikiCandidate({ ...sidecar, domain_rows: { first_batch: [row] } }) : undefined
+    if (candidate && rowAnchor) {
+      candidate.factCandidates = candidate.factCandidates.map((fact) => fact.predicate === "phone"
+        ? { ...fact, evidenceRefs: [makeEvidenceRef(rowAnchor)] }
+        : fact)
+    }
+
+    const report = auditFirstBatchCompanyCoverage({
+      sourceId: sidecar.source.source_id,
+      rows: row ? [row] : [],
+      candidate,
+      anchors: sidecar.anchors,
+    })
+
+    expect(report.status).toBe("needs_review")
+    expect(report.rowAnchorOnlyChecks?.some((check) => check.field === "phone")).toBe(true)
+    const metadata = toCoverageAuditReviewMetadata(report)
+    expect(metadata.rowAnchorOnlyFields).toEqual(expect.arrayContaining(["phone"]))
   })
 
   it("produces review metadata suitable for ReviewItem.metadata", () => {
@@ -82,7 +123,11 @@ describe("coverage audit for first batch company wiki", () => {
       sourceId: sidecar.source.source_id,
       auditPath: ".omx/plans/experiments/wiki-precision-longdoc/audits/first-batch.json",
       rows,
-      candidateText: makeSummaryStyleFirstBatchWikiText(rows),
+      candidate: {
+        ...projectFirstBatchCompanyWikiCandidate(sidecar),
+        factCandidates: [],
+      },
+      anchors: sidecar.anchors,
     })
     const metadata = toCoverageAuditReviewMetadata(report)
     expect(metadata.sourceId).toBe(sidecar.source.source_id)
