@@ -1,0 +1,225 @@
+{
+  "experiment": "PDF extraction diagnostics and page-anchor skeletons",
+  "samples": [
+    {
+      "sample_id": "S003",
+      "relative_path": "2026-05-05-000659-170243-政务数据共享条例_电子政务_中国政府网.pdf",
+      "status": "passed-diagnostic",
+      "extraction_status": "diagnostic-pass: text-like-pdf-but-no-page-text-extractor",
+      "coverage": {
+        "estimated_pages": 14,
+        "stream_count": 25,
+        "text_operator_hits": 15417,
+        "image_xobjects": 4,
+        "encrypted": false,
+        "page_anchor_skeleton_count": 14
+      },
+      "anchor_samples": [
+        {
+          "anchor_id": "S003:pdf:page:0001",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 1
+          }
+        },
+        {
+          "anchor_id": "S003:pdf:page:0002",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 2
+          }
+        },
+        {
+          "anchor_id": "S003:pdf:page:0003",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 3
+          }
+        },
+        {
+          "anchor_id": "S003:pdf:page:0004",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 4
+          }
+        },
+        {
+          "anchor_id": "S003:pdf:page:0005",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 5
+          }
+        }
+      ],
+      "unknown": [
+        "未接入真实 PDF 文本抽取器，因此未生成 text-span anchor。",
+        "OCR 已按当前要求暂不处理。"
+      ]
+    },
+    {
+      "sample_id": "S004",
+      "relative_path": "2026-05-05-000700-619047-政务数据目录治理工作Q&A20241213.pdf",
+      "status": "passed-diagnostic",
+      "extraction_status": "diagnostic-pass: text-like-pdf-but-no-page-text-extractor",
+      "coverage": {
+        "estimated_pages": 20,
+        "stream_count": 36,
+        "text_operator_hits": 15632,
+        "image_xobjects": 0,
+        "encrypted": false,
+        "page_anchor_skeleton_count": 20
+      },
+      "anchor_samples": [
+        {
+          "anchor_id": "S004:pdf:page:0001",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 1
+          }
+        },
+        {
+          "anchor_id": "S004:pdf:page:0002",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 2
+          }
+        },
+        {
+          "anchor_id": "S004:pdf:page:0003",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 3
+          }
+        },
+        {
+          "anchor_id": "S004:pdf:page:0004",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 4
+          }
+        },
+        {
+          "anchor_id": "S004:pdf:page:0005",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 5
+          }
+        }
+      ],
+      "unknown": [
+        "未接入真实 PDF 文本抽取器，因此未生成 text-span anchor。",
+        "OCR 已按当前要求暂不处理。"
+      ]
+    },
+    {
+      "sample_id": "S036",
+      "relative_path": "local/pdf/pdf_local_03_data_flow_whitepaper_《数据要素流通标准化白皮书（2024版）》.pdf",
+      "status": "needs-review",
+      "extraction_status": "insufficient-extraction: encrypted-or-permission-limited",
+      "coverage": {
+        "estimated_pages": 54,
+        "stream_count": 67,
+        "text_operator_hits": 153,
+        "image_xobjects": 6,
+        "encrypted": true,
+        "page_anchor_skeleton_count": 54
+      },
+      "anchor_samples": [
+        {
+          "anchor_id": "S036:pdf:page:0001",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 1
+          }
+        },
+        {
+          "anchor_id": "S036:pdf:page:0002",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 2
+          }
+        },
+        {
+          "anchor_id": "S036:pdf:page:0003",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 3
+          }
+        },
+        {
+          "anchor_id": "S036:pdf:page:0004",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 4
+          }
+        },
+        {
+          "anchor_id": "S036:pdf:page:0005",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 5
+          }
+        }
+      ],
+      "unknown": [
+        "未接入真实 PDF 文本抽取器，因此未生成 text-span anchor。",
+        "OCR 已按当前要求暂不处理。"
+      ]
+    },
+    {
+      "sample_id": "S001",
+      "relative_path": "2026-05-05-000635-871634-易经杂说.pdf",
+      "status": "needs-review",
+      "extraction_status": "insufficient-extraction: encrypted-or-permission-limited",
+      "coverage": {
+        "estimated_pages": 113,
+        "stream_count": 1,
+        "text_operator_hits": 73,
+        "image_xobjects": 25,
+        "encrypted": true,
+        "page_anchor_skeleton_count": 113
+      },
+      "anchor_samples": [
+        {
+          "anchor_id": "S001:pdf:page:0001",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 1
+          }
+        },
+        {
+          "anchor_id": "S001:pdf:page:0002",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 2
+          }
+        },
+        {
+          "anchor_id": "S001:pdf:page:0003",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 3
+          }
+        },
+        {
+          "anchor_id": "S001:pdf:page:0004",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 4
+          }
+        },
+        {
+          "anchor_id": "S001:pdf:page:0005",
+          "kind": "pdf.page",
+          "selector": {
+            "page": 5
+          }
+        }
+      ],
+      "unknown": [
+        "未接入真实 PDF 文本抽取器，因此未生成 text-span anchor。",
+        "OCR 已按当前要求暂不处理。"
+      ]
+    }
+  ]
+}

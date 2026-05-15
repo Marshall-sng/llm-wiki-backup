@@ -1,0 +1,789 @@
+{
+  "experiment": "DOCX paragraph/table/cell anchors",
+  "samples": [
+    {
+      "sample_id": "S007",
+      "relative_path": "downloaded/docx/docx_web_02_table_rich.docx",
+      "status": "passed",
+      "coverage": {
+        "paragraph": 18,
+        "table": 5,
+        "row": 43,
+        "cell": 229,
+        "nonempty_cell": 226
+      },
+      "anchor_count": 289,
+      "anchor_samples": [
+        {
+          "anchor_id": "S007:docx:p:00001",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1,
+            "block_index": 1,
+            "style": "Title"
+          },
+          "text_len": 26,
+          "text_hash": "77485ff2fc1e081c",
+          "preview": "Sample Table-Rich Document"
+        },
+        {
+          "anchor_id": "S007:docx:p:00002",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 2,
+            "block_index": 2,
+            "style": null
+          },
+          "text_len": 139,
+          "text_hash": "33d06738a1d51879",
+          "preview": "This document contains multiple tables of varying complexity for testing table parsing, data extraction, and document processing workflows."
+        },
+        {
+          "anchor_id": "S007:docx:p:00004",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 4,
+            "block_index": 4,
+            "style": "Heading1"
+          },
+          "text_len": 20,
+          "text_hash": "8027ccdbf024e977",
+          "preview": "1. Simple Data Table"
+        },
+        {
+          "anchor_id": "S007:docx:p:00005",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 5,
+            "block_index": 5,
+            "style": null
+          },
+          "text_len": 49,
+          "text_hash": "984ed688ed4ae3bd",
+          "preview": "A basic table with headers and uniform data rows."
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001",
+          "kind": "docx.table",
+          "selector": {
+            "table_index": 1,
+            "block_index": 6,
+            "row_count": 8
+          }
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 1,
+            "block_index": 6
+          },
+          "text_len": 7,
+          "text_hash": "fb9ef894175c3274",
+          "preview": "Product"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0002",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 2,
+            "block_index": 6
+          },
+          "text_len": 8,
+          "text_hash": "292c06f0045a45d0",
+          "preview": "Category"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0003",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 3,
+            "block_index": 6
+          },
+          "text_len": 9,
+          "text_hash": "944d1ec400cfc159",
+          "preview": "Price ($)"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0004",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 4,
+            "block_index": 6
+          },
+          "text_len": 5,
+          "text_hash": "d5cade7ef3191690",
+          "preview": "Stock"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0005",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 5,
+            "block_index": 6
+          },
+          "text_len": 6,
+          "text_hash": "9f29530464f730bd",
+          "preview": "Rating"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_count": 5
+          },
+          "text_len": 47,
+          "text_hash": "8be687851b8f46c8",
+          "preview": "Product | Category | Price ($) | Stock | Rating"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0002:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 2,
+            "cell_index": 1,
+            "block_index": 6
+          },
+          "text_len": 8,
+          "text_hash": "92a8bae235ced318",
+          "preview": "Widget A"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0008:c:0005",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 5,
+            "row_index": 8,
+            "cell_index": 5,
+            "block_index": 23
+          },
+          "text_len": 6,
+          "text_hash": "e09d025a0599451d",
+          "preview": "99.99%"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0008",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 5,
+            "row_index": 8,
+            "cell_count": 5
+          },
+          "text_len": 38,
+          "text_hash": "8822a24727c35b77",
+          "preview": "SLA Guarantee | — | — | 99.9% | 99.99%"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0009:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 5,
+            "row_index": 9,
+            "cell_index": 1,
+            "block_index": 23
+          },
+          "text_len": 17,
+          "text_hash": "08fb8c431b06420b",
+          "preview": "Dedicated Manager"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0009:c:0002",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 5,
+            "row_index": 9,
+            "cell_index": 2,
+            "block_index": 23
+          },
+          "text_len": 1,
+          "text_hash": "bda050585a00f0f6",
+          "preview": "—"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0009:c:0003",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 5,
+            "row_index": 9,
+            "cell_index": 3,
+            "block_index": 23
+          },
+          "text_len": 1,
+          "text_hash": "bda050585a00f0f6",
+          "preview": "—"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0009:c:0004",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 5,
+            "row_index": 9,
+            "cell_index": 4,
+            "block_index": 23
+          },
+          "text_len": 1,
+          "text_hash": "bda050585a00f0f6",
+          "preview": "—"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0009:c:0005",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 5,
+            "row_index": 9,
+            "cell_index": 5,
+            "block_index": 23
+          },
+          "text_len": 1,
+          "text_hash": "1dabba21cdad4454",
+          "preview": "✓"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0005:r:0009",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 5,
+            "row_index": 9,
+            "cell_count": 5
+          },
+          "text_len": 33,
+          "text_hash": "e58b3292e0b869e7",
+          "preview": "Dedicated Manager | — | — | — | ✓"
+        }
+      ]
+    },
+    {
+      "sample_id": "S011",
+      "relative_path": "downloaded/docx/docx_web_06_large_multisection.docx",
+      "status": "passed",
+      "coverage": {
+        "paragraph": 486,
+        "table": 29,
+        "row": 323,
+        "cell": 1438,
+        "nonempty_cell": 1435
+      },
+      "anchor_count": 2221,
+      "anchor_samples": [
+        {
+          "anchor_id": "S011:docx:p:00001",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1,
+            "block_index": 1,
+            "style": "Title"
+          },
+          "text_len": 35,
+          "text_hash": "eeb70d06d06f320e",
+          "preview": "Sample Large Multi-Section Document"
+        },
+        {
+          "anchor_id": "S011:docx:p:00002",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 2,
+            "block_index": 2,
+            "style": null
+          },
+          "text_len": 49,
+          "text_hash": "2cd797d897af9b5a",
+          "preview": "A 50-Page Sample File for Testing and Development"
+        },
+        {
+          "anchor_id": "S011:docx:p:00004",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 4,
+            "block_index": 4,
+            "style": null
+          },
+          "text_len": 28,
+          "text_hash": "a342247e1423033e",
+          "preview": "Provided by Sample-Files.com"
+        },
+        {
+          "anchor_id": "S011:docx:p:00005",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 5,
+            "block_index": 5,
+            "style": null
+          },
+          "text_len": 162,
+          "text_hash": "97b44b5ce98aecbe",
+          "preview": "This document is designed for testing document processors, DOCX parsers, conversion tools, and content management systems with large multi-section Word documents."
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001",
+          "kind": "docx.table",
+          "selector": {
+            "table_index": 1,
+            "block_index": 7,
+            "row_count": 6
+          }
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0001:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 1,
+            "block_index": 7
+          },
+          "text_len": 8,
+          "text_hash": "40040cb181f7f0ee",
+          "preview": "Property"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0001:c:0002",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 2,
+            "block_index": 7
+          },
+          "text_len": 5,
+          "text_hash": "8e37953d23daca5f",
+          "preview": "Value"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0001",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_count": 2
+          },
+          "text_len": 16,
+          "text_hash": "96e159cebd14f749",
+          "preview": "Property | Value"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0002:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 2,
+            "cell_index": 1,
+            "block_index": 7
+          },
+          "text_len": 11,
+          "text_hash": "35f1a0a363d89e55",
+          "preview": "Total Pages"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0002:c:0002",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 2,
+            "cell_index": 2,
+            "block_index": 7
+          },
+          "text_len": 3,
+          "text_hash": "a5187c4ed625b9ad",
+          "preview": "~50"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0002",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 1,
+            "row_index": 2,
+            "cell_count": 2
+          },
+          "text_len": 17,
+          "text_hash": "171d66a082f3b7d3",
+          "preview": "Total Pages | ~50"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0003:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 3,
+            "cell_index": 1,
+            "block_index": 7
+          },
+          "text_len": 13,
+          "text_hash": "aa21cfda3bbfa1f7",
+          "preview": "Content Types"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0029:r:0014:c:0004",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 29,
+            "row_index": 14,
+            "cell_index": 4,
+            "block_index": 512
+          },
+          "text_len": 6,
+          "text_hash": "a511909161e1b84f",
+          "preview": "Layout"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0029:r:0014",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 29,
+            "row_index": 14,
+            "cell_count": 4
+          },
+          "text_len": 38,
+          "text_hash": "b1379c03f54b7870",
+          "preview": "Split Editor | Ctrl+\\ | Cmd+\\ | Layout"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0029:r:0015:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 29,
+            "row_index": 15,
+            "cell_index": 1,
+            "block_index": 512
+          },
+          "text_len": 14,
+          "text_hash": "1d4c17db52f714ab",
+          "preview": "Toggle Sidebar"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0029:r:0015:c:0002",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 29,
+            "row_index": 15,
+            "cell_index": 2,
+            "block_index": 512
+          },
+          "text_len": 6,
+          "text_hash": "ac7c671dc16a60f4",
+          "preview": "Ctrl+B"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0029:r:0015:c:0003",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 29,
+            "row_index": 15,
+            "cell_index": 3,
+            "block_index": 512
+          },
+          "text_len": 5,
+          "text_hash": "5abc4b122e369f51",
+          "preview": "Cmd+B"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0029:r:0015:c:0004",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 29,
+            "row_index": 15,
+            "cell_index": 4,
+            "block_index": 512
+          },
+          "text_len": 6,
+          "text_hash": "a511909161e1b84f",
+          "preview": "Layout"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0029:r:0015",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 29,
+            "row_index": 15,
+            "cell_count": 4
+          },
+          "text_len": 40,
+          "text_hash": "0ab83dac86a3de68",
+          "preview": "Toggle Sidebar | Ctrl+B | Cmd+B | Layout"
+        },
+        {
+          "anchor_id": "S011:docx:p:00486",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 486,
+            "block_index": 515,
+            "style": null
+          },
+          "text_len": 261,
+          "text_hash": "1d5616221bf9df42",
+          "preview": "This concludes the appendix material. The tables and reference data in these appendices are designed to test document processing tools with diverse content types including numerical data, special characters, Unicode symbols, and multi-colum"
+        }
+      ]
+    },
+    {
+      "sample_id": "S033",
+      "relative_path": "local/docx/docx_local_08_tech_plan_公共数据治理运营项目实施技术方案[196页Word].docx",
+      "status": "passed",
+      "coverage": {
+        "paragraph": 1820,
+        "table": 62,
+        "row": 949,
+        "cell": 4164,
+        "nonempty_cell": 3437
+      },
+      "anchor_count": 6866,
+      "anchor_samples": [
+        {
+          "anchor_id": "S033:docx:p:00001",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1,
+            "block_index": 1,
+            "style": null
+          },
+          "text_len": 5,
+          "text_hash": "0e4440bd80807568",
+          "preview": "项目编号："
+        },
+        {
+          "anchor_id": "S033:docx:p:00004",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 4,
+            "block_index": 4,
+            "style": null
+          },
+          "text_len": 23,
+          "text_hash": "de1cea2c2ce7b4fa",
+          "preview": "公共数据治理运营支撑与数据应用模型设计项目实施"
+        },
+        {
+          "anchor_id": "S033:docx:p:00006",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 6,
+            "block_index": 6,
+            "style": null
+          },
+          "text_len": 1,
+          "text_hash": "2c4b6a3c62adb1cf",
+          "preview": "技"
+        },
+        {
+          "anchor_id": "S033:docx:p:00007",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 7,
+            "block_index": 7,
+            "style": null
+          },
+          "text_len": 1,
+          "text_hash": "63362cf6953c06f5",
+          "preview": "术"
+        },
+        {
+          "anchor_id": "S033:docx:p:00008",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 8,
+            "block_index": 8,
+            "style": null
+          },
+          "text_len": 1,
+          "text_hash": "4a5ff677e1dbd37c",
+          "preview": "方"
+        },
+        {
+          "anchor_id": "S033:docx:p:00009",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 9,
+            "block_index": 9,
+            "style": null
+          },
+          "text_len": 1,
+          "text_hash": "30fb17365e0b8158",
+          "preview": "案"
+        },
+        {
+          "anchor_id": "S033:docx:p:00014",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 14,
+            "block_index": 14,
+            "style": "1"
+          },
+          "text_len": 6,
+          "text_hash": "75f601e6f54fb4b0",
+          "preview": "项目总体概况"
+        },
+        {
+          "anchor_id": "S033:docx:p:00015",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 15,
+            "block_index": 15,
+            "style": "2"
+          },
+          "text_len": 4,
+          "text_hash": "b6123dab47fd12de",
+          "preview": "项目背景"
+        },
+        {
+          "anchor_id": "S033:docx:p:00016",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 16,
+            "block_index": 16,
+            "style": null
+          },
+          "text_len": 172,
+          "text_hash": "a959d3326b3c87b2",
+          "preview": "近年来，H市立足于建设卓越全球城市，率先实现政府治理能力现代化的目标，在公共数据管理和互联网政务服务方面采取了一系列改革举措，积累了一定的实践经验，同时也面临一些困难和问题。 根据《公共数据和一网通办管理办法》要求，需要进一步促进公共数据资源整合和利用，推进政务服务“一网通办”等电子政务发展，加快智慧政府建设，提升政府治理能力和公共服务水平。"
+        },
+        {
+          "anchor_id": "S033:docx:p:00017",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 17,
+            "block_index": 17,
+            "style": null
+          },
+          "text_len": 227,
+          "text_hash": "1b1de7c1412de640",
+          "preview": "为深入贯彻党的十九大关于建设人民满意的服务型政府的要求,坚持以人民为中心的发展思想,适应政府管理和服务现代化发展需要,深化改革,进一步优化营商环境,提升群众和企业获得感，H市通过大数据资源平台的建设，将“四大库”、“市级统建系统”、“各市级委办”、“各行政区”的数据汇聚成了市级数据湖，并以市级数据湖为基础，通过数据的集成与治理，构建了市级数据库，推动跨地区、跨层级、跨部门数据共享交换和应用，为后续公共数据的进一步整合、共享、开放提供了一定的工作基础。"
+        },
+        {
+          "anchor_id": "S033:docx:p:00018",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 18,
+            "block_index": 18,
+            "style": null
+          },
+          "text_len": 153,
+          "text_hash": "bfc7ea06fa02109e",
+          "preview": "建立统一的公共数据平台，全面实现H市政务“一网通办”，是贯彻党中央、国务院决策部署，深入推进“放管服”改革，持续优化营商环境，切实提升群众和企业获得感的重要举措。市委市政府已经明确，2018年建成H市政务“一网通办”总门户；到2020年，H市要形成整体协同、高效运行、精准服务、科学管理的智慧政府基本框架。"
+        },
+        {
+          "anchor_id": "S033:docx:p:00019",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 19,
+            "block_index": 19,
+            "style": "2"
+          },
+          "text_len": 4,
+          "text_hash": "1a0e0760b9b17a67",
+          "preview": "建设内容"
+        },
+        {
+          "anchor_id": "S033:docx:tbl:0062:r:0009:c:0003",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 62,
+            "row_index": 9,
+            "cell_index": 3,
+            "block_index": 1878
+          },
+          "text_len": 1,
+          "text_hash": "b1c27820fec23edb",
+          "preview": "高"
+        },
+        {
+          "anchor_id": "S033:docx:tbl:0062:r:0009:c:0004",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 62,
+            "row_index": 9,
+            "cell_index": 4,
+            "block_index": 1878
+          },
+          "text_len": 1,
+          "text_hash": "b1c27820fec23edb",
+          "preview": "高"
+        },
+        {
+          "anchor_id": "S033:docx:tbl:0062:r:0009:c:0005",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 62,
+            "row_index": 9,
+            "cell_index": 5,
+            "block_index": 1878
+          },
+          "text_len": 1,
+          "text_hash": "b1c27820fec23edb",
+          "preview": "高"
+        },
+        {
+          "anchor_id": "S033:docx:tbl:0062:r:0009",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 62,
+            "row_index": 9,
+            "cell_count": 5
+          },
+          "text_len": 22,
+          "text_hash": "3033c36cb8fc354d",
+          "preview": "套餐及固定费 | 中 | 高 | 高 | 高"
+        },
+        {
+          "anchor_id": "S033:docx:p:01817",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1817,
+            "block_index": 1879,
+            "style": "a5"
+          },
+          "text_len": 4,
+          "text_hash": "8ae2139b631e3303",
+          "preview": "策略匹配"
+        },
+        {
+          "anchor_id": "S033:docx:p:01818",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1818,
+            "block_index": 1880,
+            "style": null
+          },
+          "text_len": 122,
+          "text_hash": "ea9d7934e53b3536",
+          "preview": "根据用户聚类模型的用户画像分类结果，将已经清洗过的高订购意愿用户作为策略匹配输入，采用决策树算法构建模型进行分析，挖掘出高订购意愿用户在各个维度中的特性，用以作为相同的用户中低订购意愿用户营销措施匹配的参考依据。从而做到有针对性的订购意愿提升。"
+        },
+        {
+          "anchor_id": "S033:docx:p:01819",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1819,
+            "block_index": 1881,
+            "style": "3"
+          },
+          "text_len": 4,
+          "text_hash": "6f392e2e5611632d",
+          "preview": "项目成果"
+        },
+        {
+          "anchor_id": "S033:docx:p:01820",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1820,
+            "block_index": 1882,
+            "style": null
+          },
+          "text_len": 68,
+          "text_hash": "d09c8f6cf30519ea",
+          "preview": "项目组最终完成了2019年5G市场发展策略研究报告的调研报告，输出了5G潜在目标客户预测模型，为H市移动5G产品的营销提供了很好的建议。"
+        }
+      ]
+    }
+  ]
+}

@@ -81,3 +81,14 @@ EvidenceAnchor-first
 
 关联计划：`multiformat-evidence-anchor-experiment-plan.md`。
 
+## Phase 1B：多格式 Evidence Anchor 实验执行
+
+| 实验 | 状态 | 证据 | 结论 |
+|---|---|---|---|
+| DOCX paragraph/table/cell anchor | passed | S007 anchors=289；S011 anchors=2221；S033 anchors=6866 | DOCX 应保留 paragraph/table/row/cell sidecar，不应只依赖 Markdown |
+| TXT line/char/chunk coverage | passed | S002 chunks=234；tail_covered=True | 超长 TXT 可用 line/char/chunk 证明首中尾覆盖 |
+| PDF page-anchor diagnostic | partial | S003/S004 text-like；S036/S001 insufficient-extraction | OCR 暂不管；PDF 仍需要真实 text-span/block 抽取器 |
+| XLSX row/cell anchor | passed | S040 cells=65；S020 cells=48982 | XLSX 必须采用 sheet/row/cell anchor |
+
+结果记录：`multiformat-experiment-results.md`。
+

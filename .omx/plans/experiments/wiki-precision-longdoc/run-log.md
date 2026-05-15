@@ -43,3 +43,13 @@ Detailed record:
 - unknown：未确认存在真正扫描版 PDF；PDF 文本抽取能力还需要正式抽取器验证。
 - next：按 `multiformat-evidence-anchor-experiment-plan.md` 执行 DOCX/TXT/PDF/XLSX sidecar 原型实验。
 
+## 2026-05-15：执行 Phase 1B 多格式 Evidence Anchor 原型实验
+
+- evidence：执行 `experiments/wiki-precision-longdoc/run_multiformat_anchor_experiments.py`。
+- evidence：DOCX 生成 paragraph/table/row/cell anchor 样例：S007=289、S011=2221、S033=6866。
+- evidence：TXT 生成 line/char/chunk anchor：S002 chunks=234，tail_covered=True。
+- evidence：PDF 生成 page-anchor skeleton 与抽取诊断：S003/S004 为 text-like 但缺 text-span 抽取器；S036/S001 进入 insufficient-extraction。
+- evidence：XLSX 生成 row/cell anchor：S040 nonempty_cells=65，S020 nonempty_cells=48982。
+- inference：DOCX/TXT/XLSX 已足以支持 EvidenceAnchor-first sidecar 路线；PDF 需要 text-span/block 抽取器才能达到同级精准定位。
+- unknown：PDF text-span 的稳定 anchor 模型尚未验证；OCR 按当前要求暂不处理。
+

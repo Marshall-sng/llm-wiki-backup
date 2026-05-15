@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "name": "DOCX paragraph/table/cell anchor",
+      "status": "passed",
+      "evidence": "S007 anchors=289; S011 anchors=2221; S033 anchors=6866"
+    },
+    {
+      "name": "TXT line/char/chunk coverage",
+      "status": "passed",
+      "evidence": "S002 chunks=234 tail=True"
+    },
+    {
+      "name": "PDF page-anchor diagnostic",
+      "status": "partial",
+      "evidence": "S003 diagnostic-pass: text-like-pdf-but-no-page-text-extractor; S004 diagnostic-pass: text-like-pdf-but-no-page-text-extractor; S036 insufficient-extraction: encrypted-or-permission-limited; S001 insufficient-extraction: encrypted-or-permission-limited"
+    },
+    {
+      "name": "XLSX row/cell anchor",
+      "status": "passed",
+      "evidence": "S040 cells=65; S020 cells=48982"
+    }
+  ]
+}
