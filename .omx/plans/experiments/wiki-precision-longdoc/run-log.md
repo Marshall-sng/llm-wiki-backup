@@ -66,3 +66,14 @@ Detailed record:
 - inference：Phase 1B 的 PDF 启发式诊断需要被真实抽取器结果替代；S036/S001 可抽取。
 - unknown：复杂表格、跨栏阅读顺序、页眉页脚过滤仍需下一轮质量实验；OCR 继续排除。
 
+## 2026-05-15：执行 Phase 1D 统一 SourceSidecar / EvidenceAnchor 最小闭环
+
+- evidence：新增统一模型文档 `evidence-sidecar-unified-model.md`。
+- evidence：新增 schema `experiments/wiki-precision-longdoc/schemas/source-sidecar.schema.json`。
+- evidence：执行 `experiments/wiki-precision-longdoc/run_unified_sidecar_closure.py`。
+- evidence：聚合 10 个 source：DOCX=3、PDF=4、TXT=1、XLSX=2。
+- evidence：declared anchors=18743；artifact anchors=227；差异来自前置实验 artifact 只保存代表性 anchors。
+- evidence：检索烟测 passed=True；DOCX/PDF/TXT-tail/XLSX 均返回 anchor_id + selector；负例返回 insufficient_evidence。
+- inference：统一 EvidenceAnchor 接口 + 分格式 selector 是当前最优设计；下一步可基于此做“第一批企业名单.xlsx”真实 Wiki 闭环。
+- unknown：生产接入前仍需 full sidecar 持久化、PDF reading order、CoverageAudit 门禁策略。
+

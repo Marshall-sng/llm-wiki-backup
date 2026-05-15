@@ -1,0 +1,424 @@
+{
+  "retrieval_mode": "keyword-smoke-test",
+  "note": "This is not final RAG; it only verifies query can return source_id + anchor_id + selector.",
+  "results": [
+    {
+      "query_id": "Q-docx-table",
+      "query": "document processing table parsing workflows",
+      "status": "hit",
+      "top_hits": [
+        {
+          "score": 35,
+          "anchor_id": "S007:docx:p:00002",
+          "source_id": "S007",
+          "format": "docx",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 2,
+            "block_index": 2,
+            "style": null
+          },
+          "preview": "This document contains multiple tables of varying complexity for testing table parsing, data extraction, and document processing workflows.",
+          "tokens": [
+            "and",
+            "complexity",
+            "contains",
+            "data",
+            "document",
+            "extraction",
+            "for",
+            "multiple",
+            "of",
+            "parsing",
+            "processing",
+            "table",
+            "tables",
+            "testing",
+            "this",
+            "varying",
+            "workflows"
+          ]
+        },
+        {
+          "score": 16,
+          "anchor_id": "S007:docx:p:00001",
+          "source_id": "S007",
+          "format": "docx",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1,
+            "block_index": 1,
+            "style": "Title"
+          },
+          "preview": "Sample Table-Rich Document",
+          "tokens": [
+            "document",
+            "rich",
+            "sample",
+            "table"
+          ]
+        },
+        {
+          "score": 13,
+          "anchor_id": "S007:docx:p:00004",
+          "source_id": "S007",
+          "format": "docx",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 4,
+            "block_index": 4,
+            "style": "Heading1"
+          },
+          "preview": "1. Simple Data Table",
+          "tokens": [
+            "1",
+            "data",
+            "simple",
+            "table"
+          ]
+        },
+        {
+          "score": 13,
+          "anchor_id": "S007:docx:p:00005",
+          "source_id": "S007",
+          "format": "docx",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 5,
+            "block_index": 5,
+            "style": null
+          },
+          "preview": "A basic table with headers and uniform data rows.",
+          "tokens": [
+            "a",
+            "and",
+            "basic",
+            "data",
+            "headers",
+            "rows",
+            "table",
+            "uniform",
+            "with"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q-pdf-regulation",
+      "query": "政务数据共享条例 国务院令",
+      "status": "hit",
+      "top_hits": [
+        {
+          "score": 13,
+          "anchor_id": "S003:pdf:line:p0001:l0001",
+          "source_id": "S003",
+          "format": "pdf",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 1,
+            "item_indices": [
+              1,
+              2
+            ],
+            "bbox_approx": {
+              "x_min": 183.60156975805947,
+              "y_avg": 681.9199784266671,
+              "x_max": 411.9858930127908,
+              "height_max": 20.400000281999915
+            }
+          },
+          "preview": "中华人民共和国国务院令中华人民共和国国务院令",
+          "tokens": [
+            "中华人民共和国国务院令中华人民共和国国务院令"
+          ]
+        },
+        {
+          "score": 13,
+          "anchor_id": "S003:pdf:line:p0001:l0003",
+          "source_id": "S003",
+          "format": "pdf",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 3,
+            "item_indices": [
+              4
+            ],
+            "bbox_approx": {
+              "x_min": 115.29687713971326,
+              "y_avg": 596.4199751491673,
+              "x_max": 509.49516700064544,
+              "height_max": 14.400000051999934
+            }
+          },
+          "preview": "《政务数据共享条例》已经2025年5月9日国务院第59次常务会",
+          "tokens": [
+            "2025",
+            "5",
+            "59",
+            "9",
+            "已经",
+            "政务数据共享条例",
+            "日国务院第",
+            "次常务会"
+          ]
+        },
+        {
+          "score": 13,
+          "anchor_id": "S003:pdf:line:p0001:l0007",
+          "source_id": "S003",
+          "format": "pdf",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 7,
+            "item_indices": [
+              9,
+              10
+            ],
+            "bbox_approx": {
+              "x_min": 214.80469595417915,
+              "y_avg": 418.9199683450012,
+              "x_max": 380.7937223170911,
+              "height_max": 20.400000281999915
+            }
+          },
+          "preview": "政务数据共享条例政务数据共享条例",
+          "tokens": [
+            "政务数据共享条例政务数据共享条例"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q-txt-tail",
+      "query": "唐人的餐桌 尾部 厌胜之术 肥三 包子",
+      "status": "hit",
+      "top_hits": [
+        {
+          "score": 39,
+          "anchor_id": "S002:txt:chunk:00234",
+          "source_id": "S002",
+          "format": "txt",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 234,
+            "char_start": 4427000,
+            "char_end": 4442676,
+            "line_start": 172162,
+            "line_end": 172820
+          },
+          "preview": "他们没少被你用厌胜之术断绝气运，你看他们受影响了吗？ 当初你说用宫中传下来的厌胜之术，就能让肥三在大食堂的包子卖不动，结果如何呢？肥三这些年都卖出去几十万只包子了，且越卖越红火。 你还说管家成了家臣之后趾高气昂的不像话，要用钉头书让刘管家的气运败坏，你当时说这东西七七四十九天就见效，结果呢？” 李弘尴尬的笑道：“他家在四十九天之内生下来了两个男丁。” 云初见李治已经坐在了不远处的宫城上，就加快脚步对李弘道：“已经被证明无用的东西，为啥又起了敬畏之心？” 李弘压低声音道：“蛊王 ... ：“兄长说的是。” 李弘早早就想去天牢探望师父，可惜，守卫天牢的将军，不允许他进去，还说这是皇帝的意思。 坐在步辇上的许敬宗就建议太子立刻离开，莫要停留。 李弘瞅着许敬宗道：“师长遇难，弟子有能力而不帮，非人也。” 许敬宗道：“天地君亲师的次序不可错。” 李弘点点头，然后一掌砍在天牢守将的脖颈处，等守将软软的倒地，李弘挥挥手，就带着一群人进了天牢。 许敬宗笑道：“太子发现了？” 李弘道：“那个看守天牢的蠢货快要把脖子伸到我手跟前了，我如果再不知道其中原因，岂不是会让您与师父十",
+          "tokens": [
+            "不允许他进去",
+            "且越卖越红火",
+            "为啥又起了敬畏之心",
+            "云初见李治已经坐在了不远处的宫城上",
+            "他们没少被你用厌胜之术断绝气运",
+            "他家在四十九天之内生下来了两个男丁",
+            "你当时说这东西七七四十九天就见效",
+            "你看他们受影响了吗",
+            "你还说管家成了家臣之后趾高气昂的不像话",
+            "兄长说的是",
+            "可惜",
+            "坐在步辇上的许敬宗就建议太子立刻离开",
+            "天地君亲师的次序不可错",
+            "太子发现了",
+            "守卫天牢的将军",
+            "就加快脚步对李弘道",
+            "就带着一群人进了天牢",
+            "就能让肥三在大食堂的包子卖不动",
+            "岂不是会让您与师父十",
+            "已经被证明无用的东西",
+            "师长遇难",
+            "弟子有能力而不帮",
+            "当初你说用宫中传下来的厌胜之术",
+            "我如果再不知道其中原因",
+            "李弘压低声音道",
+            "李弘尴尬的笑道",
+            "李弘挥挥手",
+            "李弘早早就想去天牢探望师父",
+            "李弘点点头",
+            "李弘瞅着许敬宗道",
+            "李弘道",
+            "然后一掌砍在天牢守将的脖颈处",
+            "等守将软软的倒地",
+            "结果呢",
+            "结果如何呢",
+            "肥三这些年都卖出去几十万只包子了",
+            "莫要停留",
+            "蛊王",
+            "要用钉头书让刘管家的气运败坏",
+            "许敬宗笑道",
+            "许敬宗道",
+            "还说这是皇帝的意思",
+            "那个看守天牢的蠢货快要把脖子伸到我手跟前了",
+            "非人也"
+          ]
+        },
+        {
+          "score": 3,
+          "anchor_id": "S002:txt:chunk:00001",
+          "source_id": "S002",
+          "format": "txt",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 1,
+            "char_start": 0,
+            "char_end": 20000,
+            "line_start": 1,
+            "line_end": 758
+          },
+          "preview": "《唐人的餐桌》来自: http://www.xshumilou.net/85513/ ===第一章 无所不能的回纥人=== 天山上的雪很白，白了很多很多年。 前年看是这样，去年看也是这样，今天看，还是这样，就像时光停滞在了这一刻，从未有过变化。 只是当夕照落在白雪上的时候，变化就渐渐地发生了，有了一个从银白向金黄转化的过程。 这个过程说快不快，说慢不慢，变化的过程却坚定无比，直到被黑暗吞没。 有时候，骄傲的天鹅会从天山上飞过，最后变成一个小小的黑点乃至消失，就像是直接去了神的 ... 因为这条晋升之路是留给大唐白丁们的！官员子嗣还有另外一套晋升方略——荐举！ 云初现在连大唐白丁都不算，他是铁勒回纥人，还是铁勒回纥人中，完全不以勇猛著称于世的塞人！ 用脱落的脚皮来思考也会得出一个正确的答案——骄傲的唐人不要他！ 自己带着塞来玛跟娜哈从龟兹回归长安？ 这种假设云初都懒得想，这一路上的强盗，马贼以及平时是牧人，遇见云初这种零散旅客就变成强盗的族群要是少于三千股，云初就当这个天下已经完全太平了。 即便是龟兹城里的那些美丽的歌姬们想要去长安，也是困难重重。 全世界的",
+          "tokens": [
+            "85513",
+            "http",
+            "net",
+            "www",
+            "xshumilou",
+            "也是困难重重",
+            "云初就当这个天下已经完全太平了",
+            "云初现在连大唐白丁都不算",
+            "今天看",
+            "从未有过变化",
+            "他是铁勒回纥人",
+            "全世界的",
+            "前年看是这样",
+            "即便是龟兹城里的那些美丽的歌姬们想要去长安",
+            "去年看也是这样",
+            "变化就渐渐地发生了",
+            "变化的过程却坚定无比",
+            "只是当夕照落在白雪上的时候",
+            "唐人的餐桌",
+            "因为这条晋升之路是留给大唐白丁们的",
+            "天山上的雪很白",
+            "完全不以勇猛著称于世的塞人",
+            "官员子嗣还有另外一套晋升方略",
+            "就像时光停滞在了这一刻",
+            "就像是直接去了神的",
+            "无所不能的回纥人",
+            "最后变成一个小小的黑点乃至消失",
+            "有了一个从银白向金黄转化的过程",
+            "有时候",
+            "来自",
+            "用脱落的脚皮来思考也会得出一个正确的答案",
+            "白了很多很多年",
+            "直到被黑暗吞没",
+            "第一章",
+            "自己带着塞来玛跟娜哈从龟兹回归长安",
+            "荐举",
+            "说慢不慢",
+            "还是这样",
+            "还是铁勒回纥人中",
+            "这一路上的强盗",
+            "这个过程说快不快",
+            "这种假设云初都懒得想",
+            "遇见云初这种零散旅客就变成强盗的族群要是少于三千股",
+            "马贼以及平时是牧人",
+            "骄傲的唐人不要他",
+            "骄傲的天鹅会从天山上飞过"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q-xlsx-data-element",
+      "query": "数据元 类别 名称",
+      "status": "hit",
+      "top_hits": [
+        {
+          "score": 26,
+          "anchor_id": "S040:xlsx:Sheet1:r:2",
+          "source_id": "S040",
+          "format": "xlsx",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 2
+          },
+          "preview": "标识类 | 中文名称 | 赋予数据元的单个或多个中文字词的指称",
+          "tokens": [
+            "中文名称",
+            "标识类",
+            "赋予数据元的单个或多个中文字词的指称"
+          ]
+        },
+        {
+          "score": 26,
+          "anchor_id": "S040:xlsx:Sheet1:r:3",
+          "source_id": "S040",
+          "format": "xlsx",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 3
+          },
+          "preview": "英文名称 | 赋予数据元的单个或多个英文字词的指称",
+          "tokens": [
+            "英文名称",
+            "赋予数据元的单个或多个英文字词的指称"
+          ]
+        },
+        {
+          "score": 26,
+          "anchor_id": "S040:xlsx:Sheet1:r:4",
+          "source_id": "S040",
+          "format": "xlsx",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 4
+          },
+          "preview": "中文全拼 | 数据元中文名称的汉语拼音",
+          "tokens": [
+            "中文全拼",
+            "数据元中文名称的汉语拼音"
+          ]
+        },
+        {
+          "score": 13,
+          "anchor_id": "S040:xlsx:Sheet1:r:1",
+          "source_id": "S040",
+          "format": "xlsx",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 1
+          },
+          "preview": "类别 | 内容 | 描述",
+          "tokens": [
+            "内容",
+            "描述",
+            "类别"
+          ]
+        },
+        {
+          "score": 13,
+          "anchor_id": "S040:xlsx:Sheet1:r:5",
+          "source_id": "S040",
+          "format": "xlsx",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 5
+          },
+          "preview": "内部标识符 | 在一个注册机构内，由注册机构分配的、与语言无关的数据元唯一标识符功能组织",
+          "tokens": [
+            "与语言无关的数据元唯一标识符功能组织",
+            "内部标识符",
+            "在一个注册机构内",
+            "由注册机构分配的"
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "Q-insufficient",
+      "query": "不存在的测试实体XYZ-INSUFFICIENT",
+      "status": "insufficient_evidence",
+      "top_hits": []
+    }
+  ],
+  "passed": true
+}

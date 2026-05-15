@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-wiki.local/schemas/source-sidecar.schema.json",
+  "title": "SourceSidecar",
+  "type": "object",
+  "required": ["schema_version", "source", "anchors", "coverage", "quality"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "source": {
+      "$ref": "#/$defs/sourceIdentity"
+    },
+    "anchors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidenceAnchor"
+      }
+    },
+    "coverage": {
+      "$ref": "#/$defs/coverageSummary"
+    },
+    "quality": {
+      "$ref": "#/$defs/extractionQuality"
+    },
+    "review_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reviewItem"
+      },
+      "default": []
+    }
+  },
+  "$defs": {
+    "sourceIdentity": {
+      "type": "object",
+      "required": ["source_id", "format", "uri"],
+      "properties": {
+        "source_id": { "type": "string" },
+        "format": {
+          "type": "string",
+          "enum": ["docx", "pdf", "txt", "xlsx", "unknown"]
+        },
+        "uri": { "type": "string" },
+        "title": { "type": "string" },
+        "origin": { "type": "string" },
+        "content_hash": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "evidenceAnchor": {
+      "type": "object",
+      "required": ["anchor_id", "source_id", "format", "kind", "selector", "text"],
+      "properties": {
+        "anchor_id": { "type": "string" },
+        "source_id": { "type": "string" },
+        "format": { "type": "string" },
+        "kind": {
+          "type": "string",
+          "pattern": "^(docx|pdf|txt|xlsx)\\."
+        },
+        "selector": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "text": {
+          "type": "object",
+          "required": ["preview", "text_len"],
+          "properties": {
+            "preview": { "type": "string" },
+            "text_len": { "type": "integer", "minimum": 0 },
+            "text_hash": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "coverageSummary": {
+      "type": "object",
+      "required": ["status", "anchor_count", "native"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["passed", "partial", "failed"]
+        },
+        "anchor_count": { "type": "integer", "minimum": 0 },
+        "text_units": { "type": "integer", "minimum": 0 },
+        "native": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "extractionQuality": {
+      "type": "object",
+      "required": ["status", "quality_score", "issues"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["good", "partial", "low_confidence", "failed"]
+        },
+        "quality_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "issues": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "reviewItem": {
+      "type": "object",
+      "required": ["review_id", "source_id", "severity", "reason"],
+      "properties": {
+        "review_id": { "type": "string" },
+        "source_id": { "type": "string" },
+        "anchor_id": { "type": "string" },
+        "severity": {
+          "type": "string",
+          "enum": ["info", "warning", "error"]
+        },
+        "reason": { "type": "string" },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,1352 @@
+{
+  "note": "Skeleton only; final Wiki generation should use full sidecars plus LLM candidate generation and coverage audit.",
+  "candidates": [
+    {
+      "candidate_id": "wiki-candidate:S007",
+      "source_id": "S007",
+      "title": "docx_web_02_table_rich",
+      "format": "docx",
+      "evidence_anchor_count_available_in_artifact": 20,
+      "coverage_anchor_count_declared": 289,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.78,
+        "issues": [
+          "artifact contains anchor samples only; full DOCX anchor extraction must be persisted in production"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S007:docx:p:00001",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1,
+            "block_index": 1,
+            "style": "Title"
+          },
+          "preview": "Sample Table-Rich Document"
+        },
+        {
+          "anchor_id": "S007:docx:p:00002",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 2,
+            "block_index": 2,
+            "style": null
+          },
+          "preview": "This document contains multiple tables of varying complexity for testing table parsing, data extraction, and document processing workflows."
+        },
+        {
+          "anchor_id": "S007:docx:p:00004",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 4,
+            "block_index": 4,
+            "style": "Heading1"
+          },
+          "preview": "1. Simple Data Table"
+        },
+        {
+          "anchor_id": "S007:docx:p:00005",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 5,
+            "block_index": 5,
+            "style": null
+          },
+          "preview": "A basic table with headers and uniform data rows."
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001",
+          "kind": "docx.table",
+          "selector": {
+            "table_index": 1,
+            "block_index": 6,
+            "row_count": 8
+          },
+          "preview": ""
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 1,
+            "block_index": 6
+          },
+          "preview": "Product"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0002",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 2,
+            "block_index": 6
+          },
+          "preview": "Category"
+        },
+        {
+          "anchor_id": "S007:docx:tbl:0001:r:0001:c:0003",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 3,
+            "block_index": 6
+          },
+          "preview": "Price ($)"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S007:artifact-contains-anchor-samples-only-fu",
+          "source_id": "S007",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains anchor samples only; full DOCX anchor extraction must be persisted in production"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S011",
+      "source_id": "S011",
+      "title": "docx_web_06_large_multisection",
+      "format": "docx",
+      "evidence_anchor_count_available_in_artifact": 20,
+      "coverage_anchor_count_declared": 2221,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.78,
+        "issues": [
+          "artifact contains anchor samples only; full DOCX anchor extraction must be persisted in production"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S011:docx:p:00001",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1,
+            "block_index": 1,
+            "style": "Title"
+          },
+          "preview": "Sample Large Multi-Section Document"
+        },
+        {
+          "anchor_id": "S011:docx:p:00002",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 2,
+            "block_index": 2,
+            "style": null
+          },
+          "preview": "A 50-Page Sample File for Testing and Development"
+        },
+        {
+          "anchor_id": "S011:docx:p:00004",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 4,
+            "block_index": 4,
+            "style": null
+          },
+          "preview": "Provided by Sample-Files.com"
+        },
+        {
+          "anchor_id": "S011:docx:p:00005",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 5,
+            "block_index": 5,
+            "style": null
+          },
+          "preview": "This document is designed for testing document processors, DOCX parsers, conversion tools, and content management systems with large multi-section Word documents."
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001",
+          "kind": "docx.table",
+          "selector": {
+            "table_index": 1,
+            "block_index": 7,
+            "row_count": 6
+          },
+          "preview": ""
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0001:c:0001",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 1,
+            "block_index": 7
+          },
+          "preview": "Property"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0001:c:0002",
+          "kind": "docx.table_cell",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_index": 2,
+            "block_index": 7
+          },
+          "preview": "Value"
+        },
+        {
+          "anchor_id": "S011:docx:tbl:0001:r:0001",
+          "kind": "docx.table_row",
+          "selector": {
+            "table_index": 1,
+            "row_index": 1,
+            "cell_count": 2
+          },
+          "preview": "Property | Value"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S011:artifact-contains-anchor-samples-only-fu",
+          "source_id": "S011",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains anchor samples only; full DOCX anchor extraction must be persisted in production"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S033",
+      "source_id": "S033",
+      "title": "docx_local_08_tech_plan_公共数据治理运营项目实施技术方案[196页Word]",
+      "format": "docx",
+      "evidence_anchor_count_available_in_artifact": 20,
+      "coverage_anchor_count_declared": 6866,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.78,
+        "issues": [
+          "artifact contains anchor samples only; full DOCX anchor extraction must be persisted in production"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S033:docx:p:00001",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 1,
+            "block_index": 1,
+            "style": null
+          },
+          "preview": "项目编号："
+        },
+        {
+          "anchor_id": "S033:docx:p:00004",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 4,
+            "block_index": 4,
+            "style": null
+          },
+          "preview": "公共数据治理运营支撑与数据应用模型设计项目实施"
+        },
+        {
+          "anchor_id": "S033:docx:p:00006",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 6,
+            "block_index": 6,
+            "style": null
+          },
+          "preview": "技"
+        },
+        {
+          "anchor_id": "S033:docx:p:00007",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 7,
+            "block_index": 7,
+            "style": null
+          },
+          "preview": "术"
+        },
+        {
+          "anchor_id": "S033:docx:p:00008",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 8,
+            "block_index": 8,
+            "style": null
+          },
+          "preview": "方"
+        },
+        {
+          "anchor_id": "S033:docx:p:00009",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 9,
+            "block_index": 9,
+            "style": null
+          },
+          "preview": "案"
+        },
+        {
+          "anchor_id": "S033:docx:p:00014",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 14,
+            "block_index": 14,
+            "style": "1"
+          },
+          "preview": "项目总体概况"
+        },
+        {
+          "anchor_id": "S033:docx:p:00015",
+          "kind": "docx.paragraph",
+          "selector": {
+            "paragraph_index": 15,
+            "block_index": 15,
+            "style": "2"
+          },
+          "preview": "项目背景"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S033:artifact-contains-anchor-samples-only-fu",
+          "source_id": "S033",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains anchor samples only; full DOCX anchor extraction must be persisted in production"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S002",
+      "source_id": "S002",
+      "title": "2026-05-05-000658-516931-《唐人的餐桌》",
+      "format": "txt",
+      "evidence_anchor_count_available_in_artifact": 8,
+      "coverage_anchor_count_declared": 234,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.8,
+        "issues": [
+          "artifact contains representative TXT chunk anchors only; full chunk index should be persisted"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S002:txt:chunk:00001",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 1,
+            "char_start": 0,
+            "char_end": 20000,
+            "line_start": 1,
+            "line_end": 758
+          },
+          "preview": "《唐人的餐桌》来自: http://www.xshumilou.net/85513/ ===第一章 无所不能的回纥人=== 天山上的雪很白，白了很多很多年。 前年看是这样，去年看也是这样，今天看，还是这样，就像时光停滞在了这一刻，从未有过变化。 只是当夕照落在白雪上的时候，变化就渐渐地发生了，有了一个从银白向金黄转化的过程。 这个过程说快不快，说慢不慢，变化的过程却坚定无比，直到被黑暗吞没。 有时候，骄傲的天鹅会从天山上飞过，最后变成一个小小的黑点乃至消失，就像是直接去了神的 ... 因为这条晋升之路是留给大唐白丁们的！官员子嗣还有另外一套晋升方略——荐举！ 云初现在连大唐白丁都不算，他是铁勒回纥人，还是铁勒回纥人中，完全不以勇猛著称于世的塞人！ 用脱落的脚皮来思考也会得出一个正确的答案——骄傲的唐人不要他！ 自己带着塞来玛跟娜哈从龟兹回归长安？ 这种假设云初都懒得想，这一路上的强盗，马贼以及平时是牧人，遇见云初这种零散旅客就变成强盗的族群要是少于三千股，云初就当这个天下已经完全太平了。 即便是龟兹城里的那些美丽的歌姬们想要去长安，也是困难重重。 全世界的"
+        },
+        {
+          "anchor_id": "S002:txt:chunk:00002",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 2,
+            "char_start": 19000,
+            "char_end": 39000,
+            "line_start": 720,
+            "line_end": 1494
+          },
+          "preview": "子长到八岁，就能服侍男人了。 幸好，羯斯噶一直把哪哈当女儿看，其实，云初还知道，羯斯噶就是哪哈的亲爸！ 塞来玛不止一次的面带桃红，气喘吁吁地从荒草堆里跑出来模样被云初见过，再等一会，羯斯噶就会一边系腰带一边从同一片荒草堆里出来。 他不是没有想过带着这母女两跟着他万里跋涉回归大唐……很可惜，这是一件根本就不可能做到的事情。 ===第六章 植物学是一门有用的学问=== 云初想要回归大唐，首先就要完成身份转换，从一个回纥人变成一个真正的唐人，仅仅是这一关，就难如登天，太宗皇帝自己不 ... 谢christie卓掌门，沈文功堂主，黎粼舵主 蒸汽仙人球舵主 凯与旋舵主 名字越长人越帅执事 小丶舟执事 大海里的兔子执事 金陵干饭人执事 冥王麾下龙骑侯执事 pioneer佣兵执事，鄙人黄半仙弟子，林瑶辰嘉弟子，林栖谷隐扬风扢雅弟子，温暖的我弟子，不再寂寥弟子，心雨1314521弟子，sdjkabni弟子，xn399211弟子，三会居士学徒，呜喵王二傻学徒，黄辉冯学徒，书友20220611120517427学徒，倌倌狙韭学徒，元素氢学徒，悠哉闲王学徒，A藏锋剑学徒，陇辰学"
+        },
+        {
+          "anchor_id": "S002:txt:chunk:00003",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 3,
+            "char_start": 38000,
+            "char_end": 58000,
+            "line_start": 1458,
+            "line_end": 2216
+          },
+          "preview": "新书发布已经一个星期了，仔细看了兄弟们的所有评论，有时候想笑，有时候想哭，更多的时候有一种想要恋爱的冲动。 别怀疑，我为了走新路想的快要发疯了，现在脑子不合适，这种事大概率能干的出来，如果你们不想跟一个秃头胖子谈恋爱，就早点把月票啦，推荐票之类的东西统统早点给我，了了我的思念之情。 如果兄弟姐妹们继续把月票，推荐票这些危险的东西放在手上，只会引起我无限的思念，我可能会在梦里梦见你，在那个世界里，我是幻想之王……想想你们的下场吧……而且，我很会编皮鞭，用魔法编搓弄出来的皮鞭，稍 ... 于是，所有人都在关注云初，却没有人主动搭理他。 ===第十六章 一个真诚的骗子=== 事实上，云初也没有心思搭理这些人，他如今归心似箭，只想着如何早点到长安寻找归属感，他连老羊皮循序渐进的法子都不肯接受，自然也不会接受这些地位低下的商贾们的帮助。 因为目的不同的原因，帮助虽然表面上不接受，却从内心里感激这些人，但凡有人像你释放善意，就一定要赶紧兜住，这种机会非常的珍贵，这一点云初心里如同明镜一般，更何况，这种珍贵的情愫从来都不分阶级。 大唐商贾，说起来真是一群可怜人，拥有财产"
+        },
+        {
+          "anchor_id": "S002:txt:chunk:00118",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 118,
+            "char_start": 2223000,
+            "char_end": 2243000,
+            "line_start": 86564,
+            "line_end": 87580
+          },
+          "preview": "道「这是你的奴兵吗？」 云初笑道「是啊，他今天准备杀掉五十个武士来彰显他的无敌」 胖子笑道「我是柘枝城的城主哈桑，把你的奴兵送给我，你就能获得我的友谊」 云初慢慢的靠近这位尊贵的哈桑城主，一边走，一边道「他杀死的武士越多，就越是能证明他的价值，如果你能不停地派武士进去被他杀，等他杀够了五十个武士之后，我把他送给你，这样，我们的友谊会更加的牢固」 两个甲士挡住了云初前进的步伐，云初就没有继续前进，而是恼怒的道「我敢保证石国上下没有哪一个武士能够战胜我的奴兵」 连续杀死了三个武士 ... 。” 娜哈撇撇嘴道：“还给他，就还给他，不过啊，我走的时候这家伙快哭出来了，还给他之后，会不会伤他的心，那个小屁孩骄傲的紧。” 温柔诡异的瞅着娜哈看了一会道：“可惜了。” 娜哈道：“可惜什么了？不可惜，牌子回长安就还给他，就说这东西帮了我老大的忙，他可以少还我一些钱。” 温柔没心思知晓娜哈跟太子之间奇奇怪怪的事情，就站直了身子道：“我去找法华大师，商量一下解除两万奴隶身份的事情，此事宜早不宜迟。” 娜哈皱眉道：“那就告诉西域所有的寺庙，但凡是我法相唯识宗门下，不许蓄奴，不属于"
+        },
+        {
+          "anchor_id": "S002:txt:chunk:00119",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 119,
+            "char_start": 2242000,
+            "char_end": 2262000,
+            "line_start": 87542,
+            "line_end": 88374
+          },
+          "preview": "篆字，太子教。 温柔知晓这枚金牌的来历，是李弘立太子当日，皇帝赏赐给太子的信物，这东西是将作监奉皇帝旨意铸造的一枚专属于太子的令牌。 将作监在铸造好这枚金牌之后，就把备选金牌，以及泥范毁掉，所以，这样的金牌，普天之下仅此一只。 是太子李弘个人身份的象征。 如今，这枚金牌被哪哈随随便便从袖子里拿出来了…… 就在温柔在心中喟叹太子李弘胡闹的时候，娜哈伸出一根手指在金龙的凸出来的长嘴上按了一下，只听喀嚓一声，金牌竟然从中间裂开，娜哈将金牌折起来，淘气的将金牌底在卓玛唯一没有图画的掌 ... 打发阿凡提去塞人部落里寻找。 所谓的大寻找，就是阿凡提带着肖玉华去塞人部落里抢夺。 这种做法并不是塞来玛自己创造的，在塞人部落遇到灾荒的时候，他们的族长就是这么干的。 云初率领的唐人吃的是最好的，在大暴雪肆虐的日子里，他们煮羊肉，烤羊肉，涮羊肉，有时候还有大块的骆驼肉跟牛肉吃，至于饼子，干菜一类的东西更是不缺。 云初将腊羊肉切成薄片，配上辣椒酱夹在刚刚烤出来的胡饼里，在没有人的时候塞给了娜哈。 娜哈嘴角的口水拉出来老长的丝线，手已经快速的伸出来了，就在即将触碰到热饼子的时候，"
+        },
+        {
+          "anchor_id": "S002:txt:chunk:00232",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 232,
+            "char_start": 4389000,
+            "char_end": 4409000,
+            "line_start": 170688,
+            "line_end": 171478
+          },
+          "preview": "些惶惶如丧家之犬的感觉，根本就不像是一支凯旋之师。 李治从一棵荔枝树上摘下一颗荔枝，剥皮放嘴里一气呵成。 过了一会就吐出一颗挺大的荔枝核，对武媚道：“云初此次将入蜀的民夫尽数遣回，就为了带六百棵荔枝树回来？” 武媚也跟着吐出一颗荔枝核道：“云初轻兵进入苍山洱海，盛逻皮授首，所有参与残害我大唐甲士，民夫的部族酋长一并授首，他自然有闲心给他夫人弄一些吃食回来。” 李治又摘了一颗荔枝剥皮放嘴里道：“他出征，朕前所未有的放心啊。” 武媚道：“陛下觉得张东海仅凭一张圣旨，能从云初手中拿 ... 蕊一定要让他把脸伸过来好让她捏着玩。 “李寒……”云鸾的耳朵再一次被李花蕊抓住，导致他手中的毛笔在纸面上勾勒出一道又黑又长的墨迹，云鸾终于发怒了。 李寒也不是傻子，见自己闯祸了，就急急忙忙的跑了，别人不敢打她，她知道，云鸾敢！ 云倌倌将一次性写废了的五张纸拿掉，给他建议道：“要不然用炭笔写，毛笔不好控制。” 云鸾叹息一声道：“在毛笔字没有练好之前，阿耶不许用炭笔。” 云倌倌道：“褚老头说阿耶写字还不如抓一只蛤蟆蘸上墨汁之后爬出来的痕迹，你的字其实写的很不错了，我觉得比阿耶写得"
+        },
+        {
+          "anchor_id": "S002:txt:chunk:00233",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 233,
+            "char_start": 4408000,
+            "char_end": 4428000,
+            "line_start": 171432,
+            "line_end": 172204
+          },
+          "preview": "，趾高气扬的封赏家臣，仆人，多少觉得自家嫂嫂有些穷人乍富的感觉。 看一眼扑在云鸾背上不肯下来的闺女西域郡主李花蕊，就对端着茶碗喝茶的嫂嫂道：“哥哥啥时候回来？” 虞修容道：“还有三天，不过，将士们会在长安解散，你兄长回不了家，还要去洛阳面圣，真正解除军职，才能回来。” 娜哈叹口气道：“我刚刚从洛阳回来，不好跟着再去洛阳。” 虞修容道：“也好，裴氏好歹也是太子妃，给人家留几分颜面也是对的。” 娜哈道：“关我屁事，是李弘自己整天在我这里不回东宫的，撵都撵不走。” 虞修容冲着娜哈翻 ... 后行礼，就忍不住道：“大将军得胜还朝，跋扈一些比较好。” 云初叹口气道：“跋扈不起来啊。” ===第九十六章 云初是一块石头=== 李治拿着一架伸缩式样的望远镜坐在宫城上看云初。 他只剩下一只好眼睛，所以，这架由温柔代替长安敬献的东西很适合他。 现如今，看近处的文字，李治有放大镜，看远处的景象有望远镜，因此上，如今的李治认为自己视力上的缺憾已经被长安城里的臣子们给解决了。 眼看着云初十步一礼的走向宫城，李治得意的对武媚道：“原本以为他会跋扈一些，没想到这个二百五终于知道恭谨了"
+        },
+        {
+          "anchor_id": "S002:txt:chunk:00234",
+          "kind": "txt.chunk",
+          "selector": {
+            "chunk_index": 234,
+            "char_start": 4427000,
+            "char_end": 4442676,
+            "line_start": 172162,
+            "line_end": 172820
+          },
+          "preview": "他们没少被你用厌胜之术断绝气运，你看他们受影响了吗？ 当初你说用宫中传下来的厌胜之术，就能让肥三在大食堂的包子卖不动，结果如何呢？肥三这些年都卖出去几十万只包子了，且越卖越红火。 你还说管家成了家臣之后趾高气昂的不像话，要用钉头书让刘管家的气运败坏，你当时说这东西七七四十九天就见效，结果呢？” 李弘尴尬的笑道：“他家在四十九天之内生下来了两个男丁。” 云初见李治已经坐在了不远处的宫城上，就加快脚步对李弘道：“已经被证明无用的东西，为啥又起了敬畏之心？” 李弘压低声音道：“蛊王 ... ：“兄长说的是。” 李弘早早就想去天牢探望师父，可惜，守卫天牢的将军，不允许他进去，还说这是皇帝的意思。 坐在步辇上的许敬宗就建议太子立刻离开，莫要停留。 李弘瞅着许敬宗道：“师长遇难，弟子有能力而不帮，非人也。” 许敬宗道：“天地君亲师的次序不可错。” 李弘点点头，然后一掌砍在天牢守将的脖颈处，等守将软软的倒地，李弘挥挥手，就带着一群人进了天牢。 许敬宗笑道：“太子发现了？” 李弘道：“那个看守天牢的蠢货快要把脖子伸到我手跟前了，我如果再不知道其中原因，岂不是会让您与师父十"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S002:artifact-contains-representative-TXT-chu",
+          "source_id": "S002",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains representative TXT chunk anchors only; full chunk index should be persisted"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S040",
+      "source_id": "S040",
+      "title": "xlsx_local_01_data_element_数据元定义标准",
+      "format": "xlsx",
+      "evidence_anchor_count_available_in_artifact": 10,
+      "coverage_anchor_count_declared": 29,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.82,
+        "issues": [
+          "artifact contains representative XLSX row anchors only; full row/cell sidecar should be persisted"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:1",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 1
+          },
+          "preview": "类别 | 内容 | 描述"
+        },
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:2",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 2
+          },
+          "preview": "标识类 | 中文名称 | 赋予数据元的单个或多个中文字词的指称"
+        },
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:3",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 3
+          },
+          "preview": "英文名称 | 赋予数据元的单个或多个英文字词的指称"
+        },
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:4",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 4
+          },
+          "preview": "中文全拼 | 数据元中文名称的汉语拼音"
+        },
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:5",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 5
+          },
+          "preview": "内部标识符 | 在一个注册机构内，由注册机构分配的、与语言无关的数据元唯一标识符功能组织"
+        },
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:25",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 25
+          },
+          "preview": "提交人 | 实际添加此数据元到系统的人"
+        },
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:26",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 26
+          },
+          "preview": "提交日期 | 添加数据元的日期"
+        },
+        {
+          "anchor_id": "S040:xlsx:Sheet1:r:27",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Sheet1",
+            "row": 27
+          },
+          "preview": "审核人 | 数据元生命周期流转的最新审核人"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S040:artifact-contains-representative-XLSX-ro",
+          "source_id": "S040",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains representative XLSX row anchors only; full row/cell sidecar should be persisted"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S020",
+      "source_id": "S020",
+      "title": "xlsx_web_08_Sales_Performance_Dashboard",
+      "format": "xlsx",
+      "evidence_anchor_count_available_in_artifact": 50,
+      "coverage_anchor_count_declared": 2191,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.82,
+        "issues": [
+          "artifact contains representative XLSX row anchors only; full row/cell sidecar should be persisted"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S020:xlsx:Data:r:1",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 1
+          },
+          "preview": "orderid | Customer | shipmentmode | state | Sales | salesinRS | quantatiy | discount | Profit | Column2 | Column3 | profit2 | segment | region | subcategory | category | orderdate | order destination | order year | shipement day | shipment month | shipment year | shipmentDate | month type | preparation time | Salesperson | Product Category | Product-Subcategory | Units Sold | Units Price | Average Unit Price | Sum of Unit Solds | Date | Total Sales Calculation | Customer Satisfaction Rating | re"
+        },
+        {
+          "anchor_id": "S020:xlsx:Data:r:2",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 2
+          },
+          "preview": "1 | Ayesha | standard | GB | =VALUE(SUBSTITUTE(F2, \"Rs\", \" \")) | Rs169.00 | 3 | 45% | =VALUE(SUBSTITUTE(L2,\"RS\",\"\")) | =IF(ISERROR(I2), $K$2, I2) | =_xlfn.AGGREGATE(1,6, I2:I1001) | Rs89.00 | home office | West | Health | Technology | 2020-06-15 00:00:00 | Domestic | 2020 | 28 | 7 | 2020 | 12/28/2020 | Jul-24 | 2 | Ayesha | Technology | Health | 3 | =E2/AC2 | =AVERAGE(AE2:AE1001) | =SUM(AC2:AC1001) | 2020-06-15 00:00:00 | =AC2*AE2 | West | 169 | =LARGE(AL:AL, 5) | =LARGE(Z:Z, 5) | =LARGE(AA:AA,5"
+        },
+        {
+          "anchor_id": "S020:xlsx:Data:r:3",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 3
+          },
+          "preview": "2 | Usman | standard | Sindh | =VALUE(SUBSTITUTE(F3, \"Rs\", \" \")) | Rs321.00 | 7 | 36% | =VALUE(SUBSTITUTE(L3,\"RS\",\"\")) | =IF(ISERROR(I3), $K$2, I3) | =_xlfn.AGGREGATE(1,6, I3:I1002) | -178 | consumer | East | Jwelry | Stationary | 2020-06-16 00:00:00 | Domestic | 2021 | 16 | 5 | 2022 | 02/19/2020 | Jan-09 | 2 | Usman | Stationary | Jwelry | 7 | =E3/AC3 | =AVERAGE(AE3:AE1002) | =SUM(AC3:AC1002) | 2020-06-16 00:00:00 | =AC3*AE3 | East | 321 | =LARGE(AL:AL, 4)"
+        },
+        {
+          "anchor_id": "S020:xlsx:Data:r:4",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 4
+          },
+          "preview": "3 | Ahmed | sameday | kpk | =VALUE(SUBSTITUTE(F4, \"Rs\", \" \")) | Rs179.00 | 9 | 28% | =VALUE(SUBSTITUTE(L4,\"RS\",\"\")) | =IF(ISERROR(I4), $K$2, I4) | =_xlfn.AGGREGATE(1,6, I4:I1003) | -74 | consumer | North | Jwelry | Technology | 2020-06-17 00:00:00 | Domestic | 2021 | 24 | 10 | 2022 | 01/28/2020 | Nov-20 | 2 | Ahmed | Technology | Jwelry | 9 | =E4/AC4 | =AVERAGE(AE4:AE1003) | =SUM(AC4:AC1003) | 2020-06-17 00:00:00 | =AC4*AE4 | North | 179 | =LARGE(AL:AL, 3)"
+        },
+        {
+          "anchor_id": "S020:xlsx:Data:r:5",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 5
+          },
+          "preview": "4 | Khan | third class | kashmir | =VALUE(SUBSTITUTE(F5, \"Rs\", \" \")) | Rs189.00 | 4 | 34% | =VALUE(SUBSTITUTE(L5,\"RS\",\"\")) | =IF(ISERROR(I5), $K$2, I5) | =_xlfn.AGGREGATE(1,6, I5:I1004) | -134 | home office | South | Spareparts | Stationary | 2020-06-18 00:00:00 | Domestic | 2020 | 12 | 3 | 2022 | 12/10/2022 | Oct-18 | 5 | Khan | Stationary | Spareparts | 4 | =E5/AC5 | =AVERAGE(AE5:AE1004) | =SUM(AC5:AC1004) | 2020-06-18 00:00:00 | =AC5*AE5 | South | 189 | =LARGE(AL:AL, 2)"
+        },
+        {
+          "anchor_id": "S020:xlsx:Data:r:998",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 998
+          },
+          "preview": "997 | Ahmed | basic | kashmir | =VALUE(SUBSTITUTE(F998, \"Rs\", \" \")) | Rs948.00 | 5 | 13% | =VALUE(SUBSTITUTE(L998,\"RS\",\"\")) | =IF(ISERROR(I998), $K$2, I998) | =_xlfn.AGGREGATE(1,6, I998:I1997) | Rs177.00 | consumer | West | Health | Stationary | 2023-03-08 00:00:00 | International | 2020 | 21 | 6 | 2020 | 01/29/2022 | Oct-21 | 6 | Ahmed | Stationary | Health | 5 | =E998/AC998 | =AVERAGE(AE998:AE1997) | =SUM(AC998:AC1997) | 2023-03-08 00:00:00 | =AC998*AE998 | West | 948"
+        },
+        {
+          "anchor_id": "S020:xlsx:Data:r:999",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 999
+          },
+          "preview": "998 | Fatima | firstclass | GB | =VALUE(SUBSTITUTE(F999, \"Rs\", \" \")) | Rs527.00 | 7 | 41% | =VALUE(SUBSTITUTE(L999,\"RS\",\"\")) | =IF(ISERROR(I999), $K$2, I999) | =_xlfn.AGGREGATE(1,6, I999:I1998) | Rs124.00 | consumer | North | Spareparts | Technology | 2023-03-09 00:00:00 | Domestic | 2022 | 6 | 9 | 2022 | 07/23/2021 | Sep-24 | 2 | Fatima | Technology | Spareparts | 7 | =E999/AC999 | =AVERAGE(AE999:AE1998) | =SUM(AC999:AC1998) | 2023-03-09 00:00:00 | =AC999*AE999 | North | 527"
+        },
+        {
+          "anchor_id": "S020:xlsx:Data:r:1000",
+          "kind": "xlsx.row",
+          "selector": {
+            "sheet": "Data",
+            "row": 1000
+          },
+          "preview": "999 | Ayesha | standard | kashmir | =VALUE(SUBSTITUTE(F1000, \"Rs\", \" \")) | Rs960.00 | 5 | 42% | =VALUE(SUBSTITUTE(L1000,\"RS\",\"\")) | =IF(ISERROR(I1000), $K$2, I1000) | =_xlfn.AGGREGATE(1,6, I1000:I1999) | Rs104.00 | home office | South | Books | Stationary | 2023-03-10 00:00:00 | Domestic | 2022 | 19 | 3 | 2020 | 03/13/2022 | Jun-21 | 5 | Ayesha | Stationary | Books | 5 | =E1000/AC1000 | =AVERAGE(AE1000:AE1999) | =SUM(AC1000:AC1999) | 2023-03-10 00:00:00 | =AC1000*AE1000 | South | 960"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S020:artifact-contains-representative-XLSX-ro",
+          "source_id": "S020",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains representative XLSX row anchors only; full row/cell sidecar should be persisted"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S003",
+      "source_id": "S003",
+      "title": "2026-05-05-000659-170243-政务数据共享条例_电子政务_中国政府网",
+      "format": "pdf",
+      "evidence_anchor_count_available_in_artifact": 24,
+      "coverage_anchor_count_declared": 292,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.84,
+        "issues": [
+          "artifact contains representative PDF line anchors only; full line index should be persisted"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0001",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 1,
+            "item_indices": [
+              1,
+              2
+            ],
+            "bbox_approx": {
+              "x_min": 183.60156975805947,
+              "y_avg": 681.9199784266671,
+              "x_max": 411.9858930127908,
+              "height_max": 20.400000281999915
+            }
+          },
+          "preview": "中华人民共和国国务院令中华人民共和国国务院令"
+        },
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0002",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 2,
+            "item_indices": [
+              3
+            ],
+            "bbox_approx": {
+              "x_min": 272.79688317721275,
+              "y_avg": 654.4199773725004,
+              "x_max": 323.19686945921205,
+              "height_max": 14.400000051999934
+            }
+          },
+          "preview": "第809号"
+        },
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0003",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 3,
+            "item_indices": [
+              4
+            ],
+            "bbox_approx": {
+              "x_min": 115.29687713971326,
+              "y_avg": 596.4199751491673,
+              "x_max": 509.49516700064544,
+              "height_max": 14.400000051999934
+            }
+          },
+          "preview": "《政务数据共享条例》已经2025年5月9日国务院第59次常务会"
+        },
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0004",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 4,
+            "item_indices": [
+              5
+            ],
+            "bbox_approx": {
+              "x_min": 86.50000103583314,
+              "y_avg": 567.4199740375008,
+              "x_max": 374.4998972758277,
+              "height_max": 14.400000051999934
+            }
+          },
+          "preview": "议通过，现予公布，自2025年8月1日起施行。"
+        },
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0005",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 5,
+            "item_indices": [
+              6,
+              7
+            ],
+            "bbox_approx": {
+              "x_min": 423.0937639385925,
+              "y_avg": 536.9199728683342,
+              "x_max": 509.493736750591,
+              "height_max": 14.400000051999934
+            }
+          },
+          "preview": "总理李强"
+        },
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0006",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 6,
+            "item_indices": [
+              8
+            ],
+            "bbox_approx": {
+              "x_min": 415.89063866247267,
+              "y_avg": 506.4199716991676,
+              "x_max": 509.4906084004711,
+              "height_max": 14.400000051999934
+            }
+          },
+          "preview": "2025年5月28日"
+        },
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0007",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 7,
+            "item_indices": [
+              9,
+              10
+            ],
+            "bbox_approx": {
+              "x_min": 214.80469595417915,
+              "y_avg": 418.9199683450012,
+              "x_max": 380.7937223170911,
+              "height_max": 20.400000281999915
+            }
+          },
+          "preview": "政务数据共享条例政务数据共享条例"
+        },
+        {
+          "anchor_id": "S003:pdf:line:p0001:l0008",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 8,
+            "item_indices": [
+              11,
+              14,
+              12,
+              15,
+              13,
+              16
+            ],
+            "bbox_approx": {
+              "x_min": 239.6953219083197,
+              "y_avg": 363.91996623666813,
+              "x_max": 356.02028386744263,
+              "height_max": 14.400000051999934
+            }
+          },
+          "preview": "第一章第一章总总则则"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S003:artifact-contains-representative-PDF-lin",
+          "source_id": "S003",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains representative PDF line anchors only; full line index should be persisted"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S004",
+      "source_id": "S004",
+      "title": "2026-05-05-000700-619047-政务数据目录治理工作Q&A20241213",
+      "format": "pdf",
+      "evidence_anchor_count_available_in_artifact": 24,
+      "coverage_anchor_count_declared": 442,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.84,
+        "issues": [
+          "artifact contains representative PDF line anchors only; full line index should be persisted"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0001",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 1,
+            "item_indices": [
+              1,
+              2
+            ],
+            "bbox_approx": {
+              "x_min": 187.68,
+              "y_avg": 745.9100000000001,
+              "x_max": 407.67525000000006,
+              "height_max": 18
+            }
+          },
+          "preview": "政务数据目录治理工作Q&A"
+        },
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0002",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 2,
+            "item_indices": [
+              3
+            ],
+            "bbox_approx": {
+              "x_min": 257.64,
+              "y_avg": 705.17,
+              "x_max": 337.5479000000001,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "（第一批）"
+        },
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0003",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 3,
+            "item_indices": [
+              4
+            ],
+            "bbox_approx": {
+              "x_min": 122.04,
+              "y_avg": 656.21,
+              "x_max": 362.02310000000006,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "一、政务数据目录编制和治理规范"
+        },
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0004",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 4,
+            "item_indices": [
+              5
+            ],
+            "bbox_approx": {
+              "x_min": 122.04,
+              "y_avg": 626.21,
+              "x_max": 329.9840000000001,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "（一）政务数据目录治理范围"
+        },
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0005",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 5,
+            "item_indices": [
+              6,
+              7
+            ],
+            "bbox_approx": {
+              "x_min": 122.04,
+              "y_avg": 596.21,
+              "x_max": 505.4282000000003,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "Q1：政务数据目录治理要求“全量规范”，其中全量如"
+        },
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0006",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 6,
+            "item_indices": [
+              8
+            ],
+            "bbox_approx": {
+              "x_min": 90,
+              "y_avg": 566.21,
+              "x_max": 441.93950000000024,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "何理解，政务数据目录编制及治理的范围是什么？"
+        },
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0007",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 7,
+            "item_indices": [
+              9,
+              10
+            ],
+            "bbox_approx": {
+              "x_min": 122.04,
+              "y_avg": 536.21,
+              "x_max": 505.18790000000007,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "A：按照《政务数据共享条例》（送审稿）中关于政务"
+        },
+        {
+          "anchor_id": "S004:pdf:line:p0001:l0008",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 8,
+            "item_indices": [
+              11
+            ],
+            "bbox_approx": {
+              "x_min": 90,
+              "y_avg": 506.21,
+              "x_max": 505.1849000000002,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "数据的定义，即政府部门及法律、法规授权具有管理公共事"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S004:artifact-contains-representative-PDF-lin",
+          "source_id": "S004",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains representative PDF line anchors only; full line index should be persisted"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S036",
+      "source_id": "S036",
+      "title": "pdf_local_03_data_flow_whitepaper_《数据要素流通标准化白皮书（2024版）》",
+      "format": "pdf",
+      "evidence_anchor_count_available_in_artifact": 27,
+      "coverage_anchor_count_declared": 1959,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.84,
+        "issues": [
+          "artifact contains representative PDF line anchors only; full line index should be persisted"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S036:pdf:line:p0001:l0001",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 1,
+            "item_indices": [
+              1
+            ],
+            "bbox_approx": {
+              "x_min": 126,
+              "y_avg": 604.501,
+              "x_max": 468.7228999999999,
+              "height_max": 27.950000000000003
+            }
+          },
+          "preview": "数据要素流通标准化白皮书"
+        },
+        {
+          "anchor_id": "S036:pdf:line:p0001:l0002",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 2,
+            "item_indices": [
+              2,
+              3,
+              4
+            ],
+            "bbox_approx": {
+              "x_min": 222.6,
+              "y_avg": 554.6206666666667,
+              "x_max": 371.87389999999994,
+              "height_max": 27.950000000000003
+            }
+          },
+          "preview": "（2024版）"
+        },
+        {
+          "anchor_id": "S036:pdf:line:p0001:l0003",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 3,
+            "item_indices": [
+              5
+            ],
+            "bbox_approx": {
+              "x_min": 239.64,
+              "y_avg": 150.42,
+              "x_max": 354.9266000000001,
+              "height_max": 15.950000000000001
+            }
+          },
+          "preview": "二〇二四年五月"
+        },
+        {
+          "anchor_id": "S036:pdf:line:p0002:l0001",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 2,
+            "line_index": 1,
+            "item_indices": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "bbox_approx": {
+              "x_min": 685.28,
+              "y_avg": 707.94,
+              "x_max": 1111.27,
+              "height_max": 21.950000000000003
+            }
+          },
+          "preview": "《数据要素流通标准化白皮书》（2024版）"
+        },
+        {
+          "anchor_id": "S036:pdf:line:p0002:l0002",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 2,
+            "line_index": 2,
+            "item_indices": [
+              11,
+              12,
+              13
+            ],
+            "bbox_approx": {
+              "x_min": 685.28,
+              "y_avg": 623.46,
+              "x_max": 925.28,
+              "height_max": 18
+            }
+          },
+          "preview": "编写单位（排名不分先后）："
+        },
+        {
+          "anchor_id": "S036:pdf:line:p0002:l0003",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 2,
+            "line_index": 3,
+            "item_indices": [
+              1,
+              14,
+              15
+            ],
+            "bbox_approx": {
+              "x_min": 126,
+              "y_avg": 603.4603333333333,
+              "x_max": 1021.1402500000003,
+              "height_max": 27.950000000000003
+            }
+          },
+          "preview": "数据要素流通标准化白皮书中国电子技术标准化研究院上海数据交易所有限公司"
+        },
+        {
+          "anchor_id": "S036:pdf:line:p0002:l0004",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 2,
+            "line_index": 4,
+            "item_indices": [
+              16,
+              17
+            ],
+            "bbox_approx": {
+              "x_min": 685.28,
+              "y_avg": 587.22,
+              "x_max": 1052.5738500000002,
+              "height_max": 10.450000000000001
+            }
+          },
+          "preview": "中国石油化工集团有限公司中国联合网络通信集团有限公司"
+        },
+        {
+          "anchor_id": "S036:pdf:line:p0002:l0005",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 2,
+            "line_index": 5,
+            "item_indices": [
+              18,
+              19
+            ],
+            "bbox_approx": {
+              "x_min": 685.28,
+              "y_avg": 571.14,
+              "x_max": 1052.5738500000002,
+              "height_max": 10.450000000000001
+            }
+          },
+          "preview": "国家信息中心四川发展数字金沙科技有限公司"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S036:artifact-contains-representative-PDF-lin",
+          "source_id": "S036",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains representative PDF line anchors only; full line index should be persisted"
+        }
+      ]
+    },
+    {
+      "candidate_id": "wiki-candidate:S001",
+      "source_id": "S001",
+      "title": "2026-05-05-000635-871634-易经杂说",
+      "format": "pdf",
+      "evidence_anchor_count_available_in_artifact": 24,
+      "coverage_anchor_count_declared": 4220,
+      "quality": {
+        "status": "partial",
+        "quality_score": 0.84,
+        "issues": [
+          "artifact contains representative PDF line anchors only; full line index should be persisted"
+        ]
+      },
+      "seed_facts": [
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0001",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 1,
+            "item_indices": [
+              1
+            ],
+            "bbox_approx": {
+              "x_min": 247.20000000000005,
+              "y_avg": 737.28,
+              "x_max": 350.88000000000005,
+              "height_max": 25.92
+            }
+          },
+          "preview": "易经杂说"
+        },
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0002",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 2,
+            "item_indices": [
+              2
+            ],
+            "bbox_approx": {
+              "x_min": 271.44000000000005,
+              "y_avg": 701.28,
+              "x_max": 325.44000000000005,
+              "height_max": 18
+            }
+          },
+          "preview": "南怀瑾"
+        },
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0003",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 3,
+            "item_indices": [
+              3
+            ],
+            "bbox_approx": {
+              "x_min": 283.9200000000001,
+              "y_avg": 680.4,
+              "x_max": 315.6000000000001,
+              "height_max": 10.56
+            }
+          },
+          "preview": "敲门砖"
+        },
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0004",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 4,
+            "item_indices": [
+              4
+            ],
+            "bbox_approx": {
+              "x_min": 110.88000000000008,
+              "y_avg": 649.1999999999999,
+              "x_max": 505.68000000000006,
+              "height_max": 10.56
+            }
+          },
+          "preview": "中国人一般的观念，讲到《易经》就想到八卦，想到八卦就和唱京剧拿鹅毛扇穿八卦道"
+        },
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0005",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 5,
+            "item_indices": [
+              5
+            ],
+            "bbox_approx": {
+              "x_min": 89.76000000000008,
+              "y_avg": 633.5999999999999,
+              "x_max": 510.72,
+              "height_max": 10.56
+            }
+          },
+          "preview": "袍的连了起来。好像学了《易经》以后，便可天上知一半、地下全知。能不能达到这个程度，"
+        },
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0006",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 6,
+            "item_indices": [
+              6,
+              7
+            ],
+            "bbox_approx": {
+              "x_min": 89.76000000000008,
+              "y_avg": 617.9999999999999,
+              "x_max": 505.44000000000005,
+              "height_max": 10.56
+            }
+          },
+          "preview": "可是一个很大的问题。《易经》是不是包括了那么多东西，能不能知道过去、未来，这是一"
+        },
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0007",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 7,
+            "item_indices": [
+              8
+            ],
+            "bbox_approx": {
+              "x_min": 89.76000000000008,
+              "y_avg": 602.3999999999999,
+              "x_max": 258.00000000000006,
+              "height_max": 10.56
+            }
+          },
+          "preview": "个很有趣的问题，也是很大的问题。"
+        },
+        {
+          "anchor_id": "S001:pdf:line:p0001:l0008",
+          "kind": "pdf.line",
+          "selector": {
+            "page": 1,
+            "line_index": 8,
+            "item_indices": [
+              9,
+              10
+            ],
+            "bbox_approx": {
+              "x_min": 110.88000000000011,
+              "y_avg": 586.7999999999998,
+              "x_max": 505.44000000000017,
+              "height_max": 10.56
+            }
+          },
+          "preview": "刚才提到唱京剧，我们对《易经》，从京剧《三国演义》中就可以了解到，中国京剧非"
+        }
+      ],
+      "review_items": [
+        {
+          "review_id": "review:S001:artifact-contains-representative-PDF-lin",
+          "source_id": "S001",
+          "anchor_id": null,
+          "severity": "info",
+          "reason": "artifact contains representative PDF line anchors only; full line index should be persisted"
+        }
+      ]
+    }
+  ]
+}

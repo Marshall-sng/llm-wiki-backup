@@ -102,3 +102,15 @@ EvidenceAnchor-first
 
 结果记录：`pdf-text-anchor-solution-results.md`。
 
+## Phase 1D：统一 SourceSidecar / EvidenceAnchor 最小闭环
+
+| 项目 | 状态 | 证据 | 结论 |
+|---|---|---|---|
+| 统一模型文档 | done | `evidence-sidecar-unified-model.md` | 采用统一接口 + 分格式 selector |
+| JSON Schema | done | `source-sidecar.schema.json` | SourceSidecar 可承载 source、anchors、coverage、quality、review_items |
+| Sidecar 聚合 | passed | 10 个 source，覆盖 DOCX/PDF/TXT/XLSX | 已能把前两轮实验产物收敛到统一结构 |
+| EvidenceAnchorIndex | passed | artifact anchors=227，declared anchors=18743 | 生产需持久化完整 sidecar，当前 artifact 为代表性 anchor |
+| 检索定位烟测 | passed | DOCX/PDF/TXT-tail/XLSX 均命中，负例返回 insufficient_evidence | query → anchor → selector 闭环成立 |
+
+结果记录：`unified-sidecar-closure-results.md`。
+

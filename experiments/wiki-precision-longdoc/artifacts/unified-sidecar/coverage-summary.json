@@ -1,0 +1,47 @@
+{
+  "summary_version": "0.1.0",
+  "source_count": 10,
+  "by_format": {
+    "docx": {
+      "sources": 3,
+      "declared_anchor_count": 9376,
+      "artifact_anchor_count": 60,
+      "text_units": 8155,
+      "quality_statuses": {
+        "partial": 3
+      }
+    },
+    "txt": {
+      "sources": 1,
+      "declared_anchor_count": 234,
+      "artifact_anchor_count": 8,
+      "text_units": 4442676,
+      "quality_statuses": {
+        "partial": 1
+      }
+    },
+    "xlsx": {
+      "sources": 2,
+      "declared_anchor_count": 2220,
+      "artifact_anchor_count": 60,
+      "text_units": 49047,
+      "quality_statuses": {
+        "partial": 2
+      }
+    },
+    "pdf": {
+      "sources": 4,
+      "declared_anchor_count": 6913,
+      "artifact_anchor_count": 99,
+      "text_units": 204390,
+      "quality_statuses": {
+        "partial": 4
+      }
+    }
+  },
+  "known_limitations": [
+    "Some Phase 1B/1C artifacts store representative anchors only; production must persist full sidecars.",
+    "PDF line anchors are layout-derived and not yet semantic paragraphs.",
+    "OCR remains out of scope."
+  ]
+}
