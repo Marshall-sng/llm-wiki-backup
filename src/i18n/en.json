@@ -356,6 +356,16 @@
       "info": "Info",
       "warning": "Warning",
       "error": "Error"
+    },
+    "docxExportTitle": "DOCX export",
+    "docxExportAction": "Export DOCX",
+    "docxExportRunning": "Exporting...",
+    "docxExportHint": "Choose a .docx path in the system save dialog. This does not overwrite the draft and does not promise high-fidelity visual reproduction.",
+    "docxExportStatus": {
+      "cancelled": "Export cancelled",
+      "success": "DOCX exported",
+      "warning": "DOCX exported with warnings",
+      "failed": "DOCX export failed"
     }
   },
   "formatProfiles": {

@@ -443,3 +443,284 @@ Verification:
 
 Boundary:
 - This is prompt-contract/product behavior, not a guarantee of DOCX export fidelity or visual restoration.
+
+## Decision 029 — Close FormatSpec stage and switch active planning to DOCX-first export (2026-05-14)
+
+Status: accepted
+
+Decision: Treat FormatProfile / StyleFacts / SemanticOverlay / FormatSpec / Editable Format Constraints / Draft Output Contract as a completed productization stage for now, archive its supporting plans, and make DOCX-first Formal Export the next active planning anchor.
+
+Rationale:
+- The FormatSpec prompt stage now has evidence-bound facts, LLM rule synthesis, editable constraints, and a generic draft output contract.
+- Continuing to tune local prompt behavior in this stage has diminishing returns compared with validating an end-to-end formal export loop.
+- Original formal-material use cases are primarily DOCX reports, notices, rules, plans, and briefing drafts.
+- DOCX is the narrowest format for validating export contract, intermediate document, match review, adapter, export record, and audit before generalizing to PPTX / XLSX / PDF.
+
+Records organization:
+- `requirements/` now keeps only three core tracking files: `pkm-migration-original.md`, `migration-decision-log.md`, and `migration-traceability-matrix.md`.
+- Supporting requirement notes and reference findings moved to `archive/2026-05-requirements-supporting-records/`.
+- Completed FormatProfile / FormatSpec PRD, test spec, ralplan, and experiment plans moved or merged under `archive/2026-05-*` phase directories.
+- Current active anchor is `active/docx-first-formal-export-next-stage.md`.
+
+Rejected: keep all phase PRDs and test specs in the plans root | it obscures the current active direction and duplicates what the decision log / traceability matrix already summarize.
+
+Rejected: start multi-format export immediately | adapter differences would split effort before the DOCX contract, match review, and audit loop are proven.
+
+Confidence: high
+
+Scope-risk: moderate
+
+Directive: Next planning should start from DOCX-first Formal Export and should not reopen manual-template or FormatSpec prompt-chasing as the main line unless new evidence shows the export contract cannot use current FormatSpec outputs.
+
+Tested: inspected `.omx/plans`; verified `requirements/` contains only the three core files; verified archived merged files retain original file markers; previous code verification for the closed stage remains `npx vitest run src/lib/draft-processing.test.ts src/lib/format-spec.test.ts --reporter=verbose`, `npm run typecheck`, and `npm run build`.
+
+Not-tested: no new product code was changed by the plans cleanup; DOCX-first export design and implementation remain next-stage work.
+
+## Decision 030 — DOCX-first Formal Export MVP architecture (2026-05-14)
+
+Status: accepted as planning baseline
+
+Decision: Start the next stage with a DOCX-first Formal Export MVP built around `DocxExportContract`, `DocxIntermediateDocument`, `DOCXExportAdapter`, `DocxMatchReview`, and `DocxExportRecord / Audit`.
+
+Rationale:
+- The user’s goal is not a prettier FormatSpec prompt but a saveable, reviewable, formally deliverable DOCX output.
+- DOCX is the dominant formal-material target in the original migration needs: reports, notices, rules, plans, and briefing drafts.
+- A deterministic export adapter plus review/audit loop is safer than letting an LLM directly generate or certify the final DOCX.
+- An intermediate document layer keeps Markdown parsing, DOCX generation, and match review testable and reusable.
+- ExportContract records what the export promises, what it only attempts, and what it does not support, preventing hidden state or false high-fidelity claims.
+
+MVP scope:
+- Export an existing `DraftRecord` to an openable DOCX.
+- Preserve document title, section headings, paragraphs, ordered/unordered lists, simple Markdown tables, and references.
+- Apply basic formal formatting such as font/size/page margin where supported.
+- Read FormatSpec and apply only MVP-expressible rules.
+- Record unsupported/skipped rules in diagnostics.
+- Produce MatchReview and ExportRecord/Audit.
+
+Non-goals:
+- No high-fidelity replica or pixel-perfect promise.
+- No external template-file application in v1.
+- No PPTX / XLSX / PDF export in this stage.
+- No LLM-authored final DOCX or LLM-only success judgment.
+- No complex table merge, TOC, footnotes/endnotes, comments, tracked changes, images, header/footer in the first slice.
+
+Rejected: direct Markdown-to-DOCX button without ExportContract / MatchReview / Audit | it would recreate the earlier “fake export button” risk and provide no trustworthy completion evidence.
+
+Rejected: use external template files as the first implementation path | it risks reintroducing the abandoned manual-template route before the export contract is proven.
+
+Rejected: start with multi-format export | it would split adapter complexity before the DOCX contract and audit loop are stable.
+
+Confidence: medium-high
+
+Scope-risk: moderate
+
+Directive: Design PRD and Test Spec next. Implementation should begin only after schema boundaries for ExportContract, IntermediateDocument, MatchReview, ExportRecord, and FormatSpec rule mapping are explicit.
+
+Tested: planning record only; no product code changed for this decision.
+
+Not-tested: DOCX adapter feasibility, generated DOCX round-trip checks, and UI export flow remain next-stage validation work.
+
+## Decision 031 — DOCX-first export contract boundary is productizable (2026-05-14)
+
+Status: accepted after spike
+
+Decision: Proceed to DOCX-first Formal Export productization design using `DocxExportContract + DocxIntermediateDocument + DocxMatchReview` as the product boundary. Adapter choice remains a next-stage comparison between TS adapter and OpenXML sidecar.
+
+Rationale:
+- The spike converted a DraftRecord fixture and FormatSpec fixture into an export contract and intermediate document without adding dependencies or using LLM-authored DOCX.
+- MatchReview produced actionable pass/warn/fail diagnostics and caught missing required sections, source leakage, format coverage gaps, and DOCX validation errors.
+- Existing OpenXML preflight DOCX evidence could be reused as adapter capability evidence without forcing the product to choose OpenXML sidecar yet.
+
+Tested: `node experiments/docx-first-export-contract/scripts/run-docx-first-export-contract.mjs` PASS; checks passed for contract fields, no source leakage, intermediate block coverage, FormatSpec ruleRefs, DOCX preflight readability, positive nonblocking review, missing-section fail, format-coverage visibility, source-leakage fail, and validation-error fail.
+
+Rejected: start UI/store implementation immediately | the product PRD/Test Spec and adapter comparison are still needed.
+
+Rejected: treat existing OpenXML preflight as final adapter decision | it proves feasibility but not packaging/runtime/product ownership.
+
+Confidence: medium-high
+
+Scope-risk: moderate
+
+Directive: Next artifact should be DOCX-first Formal Export PRD/Test Spec, not more prompt tuning and not direct UI implementation.
+
+Not-tested: actual product adapter generation from DraftRecord, Tauri save flow, persistence of ExportRecord, and desktop manual export.
+
+## Decision 032 — Productize DOCX export in contract-first slices (2026-05-14)
+
+Status: accepted as implementation sequence
+
+Decision: Productize DOCX-first Formal Export in slices: first contract/intermediate/review/record library, then adapter comparison, then MVP adapter integration, and only then UI.
+
+Rationale:
+- The spike proved the product boundary but not the final adapter or desktop save flow.
+- Contract and MatchReview are safety gates; UI-first implementation would recreate the fake-export-button risk.
+- Adapter selection still needs evidence on TS dependency cost versus OpenXML sidecar packaging/runtime complexity.
+
+Implementation order:
+1. Slice A: `DocxExportContract`, `DocxIntermediateDocument`, `DocxMatchReview`, `DocxExportRecord` product libraries and tests.
+2. Slice B: adapter comparison gate with shared fixture and capability report.
+3. Slice C: MVP adapter integration.
+4. Slice D: UI entry and manual smoke.
+
+Rejected: implement a visible export button before contract/review/record tests | it can create apparent success without auditability.
+
+Rejected: choose OpenXML sidecar solely because the preflight worked | preflight proves feasibility, not distribution or product ownership.
+
+Rejected: choose TS adapter without a comparison gate | current package has no `docx`/`mammoth`, and dependency/license/bundle costs must be explicit.
+
+Confidence: high for sequencing, medium for final adapter choice
+
+Scope-risk: moderate
+
+Directive: Next code work should implement Slice A only unless a later plan explicitly opens adapter comparison.
+
+Tested: planning artifacts created; no product code changed in this step.
+
+Not-tested: product library tests, adapter output, UI save flow.
+
+## Decision 033 — Approve Slice A implementation plan before DOCX adapter work (2026-05-14)
+
+Status: accepted
+
+Decision: Execute Slice A according to `active/ralplan-docx-export-sliceA-contract-library.md` before any adapter or UI work.
+
+Rationale:
+- Product design is complete, but adapter comparison has not been run and no adapter has been selected.
+- Slice A establishes reusable product contracts and tests that both TS adapter and OpenXML sidecar must satisfy later.
+- This prevents fake export completion and keeps UI work blocked until review/record boundaries exist.
+
+Scope: add only docx export contract/intermediate/review/record libraries and tests under `src/lib`.
+
+Rejected: start adapter comparison before Slice A | comparison should consume stable product contracts instead of experiment-only JSON shapes.
+
+Rejected: start UI/export button now | no selected adapter and no product MatchReview/ExportRecord yet.
+
+Tested: planning-only update; implementation tests are defined in the Slice A ralplan.
+
+Directive: After Slice A passes, stop and ask/record before moving to Slice B adapter comparison.
+
+
+## Decision 034 — Accept Slice A DOCX export product boundary implementation (2026-05-14)
+
+Status: accepted after implementation and architect verification
+
+Decision: Keep the DOCX-first export product boundary as four library modules: `DocxExportContract`, `DocxIntermediateDocument`, `DocxMatchReview`, and `DocxExportRecord`. Proceed no further than this boundary until Slice B adapter comparison is explicitly planned.
+
+Rationale:
+- The contract records draft/profile hashes, FormatSpec lineage, export boundaries, and validation policy without storing raw source body text or raw evidence dumps.
+- The intermediate document turns draft markdown into auditable structural roles before any adapter sees content.
+- The match review detects missing required sections, uncovered must/should format rules, forbidden source leakage, validation errors, and known warnings.
+- The export record captures audit metadata and status without pretending that DOCX writing exists yet.
+
+Rejected: broad substring matching for FormatSpec rule coverage | architect review found it could falsely mark wrong structural roles as covered; replaced with exact category-style matching and regression tests.
+
+Rejected: begin adapter or UI work in the same slice | adapter choice and desktop save flow remain unproven and require Slice B/C planning.
+
+Confidence: high
+
+Scope-risk: narrow
+
+Directive: Slice B must reuse this product contract/review boundary and compare adapter outputs against it; do not bypass MatchReview or ExportRecord.
+
+Tested: targeted Vitest 4 files / 12 tests PASS; `npm run typecheck` PASS; `npm run build` PASS; architect verification APPROVED.
+
+Not-tested: real DOCX adapter output, desktop save flow, persisted export history, and manual UI smoke remain future slices.
+
+
+## Decision 035 — Approve Slice B DOCX adapter comparison plan (2026-05-14)
+
+Status: accepted after ralplan consensus
+
+Decision: Run Slice B as an experiment-only adapter comparison under `experiments/docx-adapter-comparison/**`, comparing a TS/JS `docx` candidate with an OpenXML SDK sidecar candidate. Do not choose the final adapter in Slice B.
+
+Rationale:
+- Slice A product boundary is complete and verified, but no adapter has been selected.
+- A fair comparison must feed both candidates the same `DocxExportContract` and `DocxIntermediateDocument` and reduce results through `DocxMatchReview` and `DocxExportRecord`.
+- Experiment containment prevents premature root dependency, UI, store, Tauri, or product `src/**` changes.
+- Architect review identified that comparison reports must not become raw XML/source/evidence dumps; the plan now separates internal artifacts from redacted reports.
+
+Rejected: choose TS/JS `docx` immediately | faster MVP fit is plausible but needs structural/package evidence and dependency risk assessment.
+
+Rejected: choose OpenXML SDK sidecar immediately | stronger low-level control is plausible but packaging/runtime cost must be measured.
+
+Rejected: put raw XML or source-derived text in comparison reports | it violates the evidence boundary and can leak content through allowed keys.
+
+Confidence: high for comparison design, medium for eventual adapter choice
+
+Scope-risk: moderate
+
+Directive: Slice B execution must stay under `experiments/docx-adapter-comparison/**` and produce non-binding, redacted reports. Slice C may choose an adapter only after consuming those reports.
+
+Tested: RALPLAN consensus review; Architect requested revisions; Critic approved revised plan. Referenced docs: `docx` API/Packer docs and Microsoft Open XML SDK WordprocessingDocument docs.
+
+Not-tested: adapter generation, package XML probes, sidecar runtime, desktop save flow, UI integration.
+
+
+## Decision 036 — Complete Slice B adapter comparison without final adapter selection (2026-05-15)
+
+Status: accepted after experiment and architect verification
+
+Decision: Treat Slice B as complete. The comparison produced comparable, redacted evidence for both `ts-docx` and `openxml-sidecar`, but deliberately does not choose a final adapter. Slice C must make a separate adapter-selection and MVP writing decision.
+
+Rationale:
+- Both candidates consumed the same Slice A `DocxExportContract` and `DocxIntermediateDocument` boundary.
+- Both candidates generated DOCX artifacts that passed package and structural probes with zero validation errors.
+- Both candidates reduced results through `DocxMatchReview` and `DocxExportRecord`.
+- Both candidates produced only redacted comparison reports with assertion IDs, counts, hashes, issue codes, verdicts, and status summaries.
+- The comparison shows a real tradeoff: TS/JS `docx` is lower runtime cost and closer to the TS product, while OpenXML sidecar has stronger low-level control but high packaging/runtime cost.
+
+Rejected: select `ts-docx` directly inside Slice B | the approved Slice B plan required non-binding comparison only.
+
+Rejected: select OpenXML sidecar directly inside Slice B | sidecar packaging/runtime cost needs a Slice C product decision.
+
+Rejected: expose raw XML/source text in reports | redacted report boundary passed and remains required.
+
+Confidence: high for comparison evidence, medium for final adapter choice.
+
+Scope-risk: moderate.
+
+Directive: Slice C should consume `experiments/docx-adapter-comparison/reports/summary.*` and candidate reports, then explicitly decide adapter and MVP DOCX writing integration. Do not bypass MatchReview/ExportRecord.
+
+Tested: `npm --prefix experiments/docx-adapter-comparison run compare` PASS; Slice A targeted Vitest 4 files / 12 tests PASS; `npm run typecheck` PASS; `npm run build` PASS; architect verification APPROVED; deslop scan/post-regression PASS.
+
+Not-tested: manual Word/LibreOffice openability, desktop save flow, product dependency integration, UI entry, persistent export history.
+
+## Decision 037 - Select docx npm adapter for MVP DOCX writer (2026-05-15)
+
+Decision: choose `docx` npm as the product MVP DOCX adapter with stable adapter id `docx-npm.v1`, and add a product `jszip` structural probe before review/record creation.
+
+Why: Slice B showed `ts-docx` and `openxml-sidecar` both reached warning status with zero validation errors, while `docx` npm has lower runtime and packaging cost. Slice C needed a library-only writer, not sidecar distribution or UI save integration.
+
+Rejected: OpenXML sidecar for MVP | higher runtime/packaging cost and no better Slice B validation outcome.
+Rejected: manual template route | explicitly abandoned and violates current export boundary.
+Rejected: high-fidelity/Word-openability promise | not proven by product tests; represented only as warnings.
+
+Verification: targeted Vitest 7 files / 18 tests PASS; `npm run typecheck` PASS; `npm run build` PASS with pre-existing Vite warnings only; architect review APPROVED.
+
+## Decision 038 - Add explicit DOCX export save flow for drafts (2026-05-15)
+
+Decision: expose DOCX export from the Drafts view using an OS save dialog, binary-safe Tauri base64 write command, and the Slice C `writeDocxExport` writer.
+
+Why: Slice C proved the library writer path; Slice D needed a user-testable desktop flow without auto-overwriting user files or implying high-fidelity output.
+
+Rejected: using text `write_file` for DOCX bytes | would corrupt ZIP/binary content.
+Rejected: silently appending `.docx` after dialog returns | could bypass OS overwrite confirmation for the actual written path.
+Rejected: saving without file-sync app-write marking | could confuse app-created exports with watched source ingest events.
+
+Constraint: no manual template route, no high-fidelity/Word-openability guarantee, no auto-overwrite.
+
+Verification: 9 Vitest files / 30 tests PASS; Rust binary write tests 3 PASS; `cargo check` PASS with existing warnings; `npm run build` PASS with existing Vite warnings; architect review APPROVED.
+
+## Decision 039 - Treat remaining DOCX export warnings as intentional MVP boundary notes (2026-05-15)
+
+Decision: accept the desktop DOCX export result when the file is written and only the two boundary reminders remain: `manual-word-openability-not-tested` and `high-fidelity-style-replica-not-supported`.
+
+Why: The user-reported desktop result confirms the export path writes a DOCX and the warning list is no longer duplicated. These two messages are not functional errors; they preserve honesty about untested manual Word/WPS openability and the current non-high-fidelity MVP scope.
+
+Rejected: hide the remaining warnings as success | this would blur the current product boundary and imply guarantees we have not tested.
+Rejected: treat the remaining warnings as blockers | this would incorrectly fail the MVP despite the export succeeding under the accepted scope.
+Rejected: continue format-polishing in Slice D | the agreed stop condition was implementation, testing, architecture review, record update, and then waiting for human desktop testing before moving stages.
+
+Constraint: no high-fidelity replica promise, no manual Word-openability promise, no automatic overwrite, no manual template route.
+
+Verification: user desktop smoke result shows DOCX exported to `C:\Users\Dante\Desktop\云南省数据流通利用基础设施平台介绍.docx` with only the two accepted boundary reminders; targeted Vitest 2 files / 11 tests PASS; `npm run typecheck` PASS; `npm run build` PASS with pre-existing Vite warnings only.

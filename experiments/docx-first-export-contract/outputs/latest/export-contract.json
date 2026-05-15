@@ -1,0 +1,68 @@
+{
+  "contractVersion": "docx-export-contract.v0",
+  "draftId": "draft-docx-001",
+  "draftTitle": "云南省数据流通利用基础设施平台介绍",
+  "draftContentHash": "draft-content-sha256-demo-001",
+  "referenceCount": 2,
+  "formatSpecHash": "format-spec-sha256-demo-001",
+  "sourceProfileHash": "profile-sha256-demo-001",
+  "documentIntent": "formal-docx-export",
+  "requiredSections": [
+    "一、背景",
+    "二、导出合同",
+    "三、审查边界"
+  ],
+  "allowedBlocks": [
+    "documentTitle",
+    "heading",
+    "paragraph",
+    "list",
+    "table"
+  ],
+  "formatRules": [
+    {
+      "id": "doc-title",
+      "target": "document-title",
+      "priority": "must",
+      "requirement": "全文主标题作为 document-title，不得降级为章节标题。"
+    },
+    {
+      "id": "section-heading",
+      "target": "section-title",
+      "priority": "must",
+      "requirement": "一级标题使用一、二、三编号体系。"
+    },
+    {
+      "id": "subsection-heading",
+      "target": "subsection-title",
+      "priority": "should",
+      "requirement": "二级标题使用（一）（二）（三）编号体系。"
+    },
+    {
+      "id": "ordered-list",
+      "target": "ordered-list",
+      "priority": "should",
+      "requirement": "步骤性项目使用数字列表。"
+    },
+    {
+      "id": "table-basic",
+      "target": "table",
+      "priority": "should",
+      "requirement": "简单表格保留表头和行列关系。"
+    }
+  ],
+  "contentLeakagePolicy": {
+    "includeSourceBodyText": false,
+    "includeRawEvidenceDump": false
+  },
+  "exportBoundaries": [
+    "no-high-fidelity-replica",
+    "no-template-file",
+    "docx-only"
+  ],
+  "validationPolicy": {
+    "validationError": "fail",
+    "knownWarning": "warn"
+  },
+  "exportContractHash": "aff63ec4208a31bb66feb94460354ecc6013e0c4162625b72d52681e9bc27a81"
+}

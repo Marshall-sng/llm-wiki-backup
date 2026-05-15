@@ -966,6 +966,11 @@ fn is_app_write_ignored(path: &Path) -> bool {
 }
 
 #[cfg(test)]
+pub(crate) fn is_app_write_ignored_for_test(path: &Path) -> bool {
+    is_app_write_ignored(path)
+}
+
+#[cfg(test)]
 mod tests {
     use super::*;
 

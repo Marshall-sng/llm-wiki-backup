@@ -1075,6 +1075,35 @@ pub async fn write_file(path: String, contents: String) -> Result<(), String> {
     .map_err(|e| format!("write_file blocking task join error: {e}"))?
 }
 
+fn write_binary_file_base64_impl(path: &str, contents_base64: &str) -> Result<(), String> {
+    use base64::{engine::general_purpose::STANDARD as B64, Engine as _};
+
+    let bytes = B64
+        .decode(contents_base64)
+        .map_err(|e| format!("Invalid base64 contents for '{}': {}", path, e))?;
+    let p = Path::new(path);
+    if let Some(parent) = p.parent() {
+        fs::create_dir_all(parent)
+            .map_err(|e| format!("Failed to create parent dirs for '{}': {}", path, e))?;
+    }
+    file_sync::mark_app_write_path(p);
+    fs::write(p, bytes)
+        .map_err(|e| format!("Failed to write binary file '{}': {}", path, e))?;
+    file_sync::mark_app_write_path(p);
+    Ok(())
+}
+
+#[tauri::command]
+pub async fn write_binary_file_base64(path: String, contents_base64: String) -> Result<(), String> {
+    tauri::async_runtime::spawn_blocking(move || {
+        run_guarded("write_binary_file_base64", || {
+            write_binary_file_base64_impl(&path, &contents_base64)
+        })
+    })
+    .await
+    .map_err(|e| format!("write_binary_file_base64 blocking task join error: {e}"))?
+}
+
 #[tauri::command]
 pub async fn list_directory(path: String) -> Result<Vec<FileNode>, String> {
     tauri::async_runtime::spawn_blocking(move || {
@@ -2033,5 +2062,43 @@ mod tests {
 
         let _ = std::fs::remove_dir_all(&src);
         let _ = std::fs::remove_dir_all(&dest);
+    }
+
+    #[test]
+    fn write_binary_file_base64_writes_exact_bytes_and_marks_app_write() {
+        use base64::{engine::general_purpose::STANDARD as B64, Engine as _};
+
+        let root = make_temp_dir("docx-binary-write");
+        let path = root.join("raw/sources/export.docx");
+        let bytes = vec![0, 1, 2, 80, 75, 3, 4, 128, 255];
+        write_binary_file_base64_impl(&path.to_string_lossy(), &B64.encode(&bytes)).unwrap();
+
+        assert_eq!(std::fs::read(&path).unwrap(), bytes);
+        assert!(file_sync::is_app_write_ignored_for_test(&path));
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn write_binary_file_base64_invalid_base64_does_not_create_file() {
+        let root = make_temp_dir("docx-invalid-missing");
+        let path = root.join("raw/sources/export.docx");
+
+        assert!(write_binary_file_base64_impl(&path.to_string_lossy(), "not-base64%%%").is_err());
+        assert!(!path.exists());
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn write_binary_file_base64_invalid_base64_does_not_modify_existing_file() {
+        let root = make_temp_dir("docx-invalid-existing");
+        let path = root.join("export.docx");
+        std::fs::write(&path, b"original").unwrap();
+
+        assert!(write_binary_file_base64_impl(&path.to_string_lossy(), "not-base64%%%").is_err());
+        assert_eq!(std::fs::read(&path).unwrap(), b"original");
+
+        let _ = std::fs::remove_dir_all(&root);
     }
 }

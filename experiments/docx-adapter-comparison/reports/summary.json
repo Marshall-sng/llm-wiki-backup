@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "docx-adapter-comparison-report.v0",
+  "generatedAt": "2026-05-14T16:51:10.243Z",
+  "status": "non-binding-comparison-complete",
+  "adapters": [
+    {
+      "adapterId": "ts-docx",
+      "verdict": "warn",
+      "recordStatus": "warning",
+      "validationErrorCount": 0,
+      "knownWarningCount": 1,
+      "packagingRisk": "medium",
+      "runtimeCost": "low",
+      "licenseRisk": "low",
+      "confidence": "medium"
+    },
+    {
+      "adapterId": "openxml-sidecar",
+      "verdict": "warn",
+      "recordStatus": "warning",
+      "validationErrorCount": 0,
+      "knownWarningCount": 1,
+      "packagingRisk": "high",
+      "runtimeCost": "high",
+      "licenseRisk": "low",
+      "confidence": "medium"
+    }
+  ],
+  "nextStep": "Slice C may use this redacted report to choose an adapter in a separate plan; this report does not choose one."
+}

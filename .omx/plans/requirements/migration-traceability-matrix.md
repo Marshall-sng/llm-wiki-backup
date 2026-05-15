@@ -498,3 +498,118 @@ raw probe
 - Scope: applies to all draft-processing conversations, with or without a selected FormatSpec.
 - Verification: targeted tests 2 files / 20 tests PASS; `npm run typecheck` PASS; `npm run build` PASS.
 - Boundary: does not hard-code one phrase or ban one Markdown marker globally; it separates chat answers from saveable draft bodies and requires structure-role mapping.
+
+### Trace Update: Plans cleanup and DOCX-first next-stage anchor (2026-05-14)
+
+- Current state: FormatProfile / StyleFacts / SemanticOverlay / FormatSpec / Editable Format Constraints / Draft Output Contract are considered closed for the current stage.
+- Active next stage: `active/docx-first-formal-export-next-stage.md`.
+- Requirements folder policy: `requirements/` keeps only three core tracking documents: original baseline, decision log, and traceability matrix.
+- Archived supporting records: former supporting requirement notes moved to `archive/2026-05-requirements-supporting-records/`.
+- Archived phase plans: completed FormatProfile / FormatSpec / FormatRule / Editable Format Constraints PRD + test-spec + ralplan records moved or merged into dated `archive/2026-05-*` directories.
+- Next product trace target: DOCX-first Formal Export with `DocxExportContract → DocxIntermediateDocument → DocxMatchReview → DOCXExportAdapter → DocxExportRecord / Audit`.
+- Boundary: this is a planning/records reorganization and stage handoff; it does not add new runtime behavior and does not change the evidence-only / no high-fidelity export promise boundary.
+
+### Trace Update: DOCX-first Formal Export planning started (2026-05-14)
+
+- Active detailed plan: `active/docx-first-formal-export-plan.md`.
+- Active reference research: `active/formal-export-reference-findings.md`.
+- Stage goal: move from Markdown/draft rewrite quality to a formal DOCX export loop that is openable, structurally correct, basically formatted, reviewable, and auditable.
+- Proposed chain: `DraftRecord → DocxExportContract → DocxIntermediateDocument → DocxMatchReview → DOCXExportAdapter → DocxExportRecord / Audit`.
+- MVP supports: document title, section headings, paragraphs, ordered/unordered lists, simple Markdown tables, references, basic font/size/page margin, MatchReview, and ExportRecord.
+- MVP excludes: high-fidelity replica, external template files, multi-format export, LLM-authored DOCX, LLM-only success judgment, TOC, headers/footers, footnotes, comments, tracked changes, images, and complex table merge.
+- FormatSpec role: read and apply MVP-expressible rules; unsupported/skipped rules must be visible in diagnostics instead of silently pretending success.
+- Next required artifacts: DOCX-first Formal Export PRD and Test Spec before implementation.
+
+### Trace Update: DOCX-first Export Contract Spike passed (2026-05-14)
+
+- Experiment: `experiments/docx-first-export-contract/`.
+- Command: `node experiments/docx-first-export-contract/scripts/run-docx-first-export-contract.mjs`.
+- Result: PASS.
+- Outputs: `export-contract.json`, `docx-intermediate.json`, `match-review.json`, `summary.json`, `summary.md`.
+- Evidence: 10/10 checks passed, including contract required fields, no source leakage, intermediate blocks, FormatSpec ruleRefs, DOCX preflight readability, positive nonblocking review, missing-section fail, format-coverage visibility, source-leakage fail, and validation-error fail.
+- DOCX preflight evidence: existing `docx-first-structured.docx` exists, 3494 bytes, 7 zip entries, 13 paragraphs, heading style refs include TOCHeading / Heading1 / Heading2.
+- Product implication: proceed to DOCX-first Formal Export PRD/Test Spec with contract/intermediate/review as the boundary.
+- Boundary: experiment does not choose final adapter, add npm dependencies, implement UI/store, or promise high-fidelity export.
+
+### Trace Update: DOCX-first Formal Export productization design created (2026-05-14)
+
+- PRD: `active/prd-docx-first-formal-export-productization.md`.
+- Test Spec: `active/test-spec-docx-first-formal-export-productization.md`.
+- Implementation sequence: Slice A contract/intermediate/review/record library → Slice B adapter comparison → Slice C MVP adapter integration → Slice D UI entry.
+- Immediate next code target: Slice A only.
+- Gate: no UI/export button before MatchReview and ExportRecord tests exist.
+- Adapter status: undecided; TS adapter and OpenXML sidecar require shared-fixture comparison before product integration.
+
+### Trace Update: Slice A RALPLAN approved (2026-05-14)
+
+- Plan: `active/ralplan-docx-export-sliceA-contract-library.md`.
+- Next implementation target: `src/lib/docx-export-contract.ts`, `src/lib/docx-intermediate.ts`, `src/lib/docx-match-review.ts`, `src/lib/docx-export-record.ts` and tests.
+- Explicit exclusions: adapter, UI, store, Tauri, package dependency, real DOCX writing.
+- Stop condition: Slice A tests and typecheck pass; do not automatically enter adapter comparison.
+
+
+### Trace Update: Slice A DOCX export product library implemented (2026-05-14)
+
+- Scope implemented: `DocxExportContract`, `DocxIntermediateDocument`, `DocxMatchReview`, `DocxExportRecord` under `src/lib`, plus focused tests and reusable fixtures.
+- Contract coverage: draft id/title/content hash, reference count, FormatProfile/FormatSpec hashes, user instruction, required sections, allowed blocks, format rules, content leakage policy, export boundaries, validation policy, and contract hash.
+- Intermediate coverage: document title, Chinese section headings, Chinese subsection headings, paragraphs, ordered lists, unordered lists, Markdown tables, diagnostics, source line ranges, ruleRefs, and stable intermediate hash.
+- Review coverage: missing required sections fail; uncovered must rules fail; uncovered should rules warn; forbidden source leakage fails; validation errors fail; known warnings warn; audit refs are emitted.
+- Record coverage: export id, draft lineage, format profile/spec hashes, contract/intermediate hashes, adapter metadata placeholder, verdict/status, diagnostics, and JSON serializability.
+- Architect finding fixed: broad rule matching could cross-cover title/section/subsection/list rules; exact category mapping and negative regression tests now prevent cross-role coverage.
+- Verification: targeted tests 4 files / 12 tests PASS; `npm run typecheck` PASS; `npm run build` PASS; architect verification APPROVED.
+- Boundary: no adapter selection, no DOCX writing, no UI/store/Tauri/package changes, no high-fidelity export claim.
+- Next trace target: Slice B adapter comparison using the product boundary, not experiment-only shapes.
+
+
+### Trace Update: Slice B DOCX adapter comparison RALPLAN approved (2026-05-14)
+
+- Plan: `active/ralplan-docx-export-sliceB-adapter-comparison.md`.
+- Purpose: compare TS/JS `docx` adapter and OpenXML SDK sidecar using the same Slice A product boundary.
+- Boundary chain: `DocxExportContract → DocxIntermediateDocument → adapter candidate → DocxMatchReview → DocxExportRecord → redacted comparison report`.
+- Allowed execution scope: `experiments/docx-adapter-comparison/**` only.
+- Forbidden product changes: root package/lock files, UI, store, Tauri, and product `src/**` implementation files.
+- Validation gates: boundary gate, DOCX package gate, structural XML gate, review/record gate, redacted risk/report gate.
+- Architect revision: separate internal generated DOCX/XML artifacts from shareable reports; reports must use assertion IDs, booleans, counts, hashes, issue codes, verdicts, and status summaries.
+- Critic verdict: APPROVE.
+- Next trace target: Slice B experiment implementation and comparison report generation.
+
+
+### Trace Update: Slice B DOCX adapter comparison executed (2026-05-15)
+
+- Experiment: `experiments/docx-adapter-comparison/`.
+- Candidates: `ts-docx` and `openxml-sidecar`.
+- Shared boundary: both candidates consume Slice A `DocxExportContract` and `DocxIntermediateDocument`, then pass through `DocxMatchReview` and `DocxExportRecord`.
+- Commands: `npm --prefix experiments/docx-adapter-comparison run compare:ts-docx`, `compare:openxml`, and `compare`.
+- Result: both candidates completed with `warn` verdict, `warning` record status, 0 validation errors, and 1 known warning.
+- Reports: `reports/ts-docx.*`, `reports/openxml-sidecar.*`, `reports/summary.*`.
+- Redaction: reports contain assertion IDs/counts/hashes/codes/statuses, not raw XML/source/evidence dumps.
+- Product boundary: no final adapter selected; no UI/store/Tauri/product `src/**` changes; root `package.json` unchanged; dependencies are experiment-local.
+- Verification: compare PASS; Slice A targeted tests 4 files / 12 tests PASS; `npm run typecheck` PASS; `npm run build` PASS; architect verification APPROVED.
+- Next trace target: Slice C adapter selection and MVP DOCX writing plan.
+
+## Trace Update - Slice C MVP DOCX writer (2026-05-15)
+
+| Requirement / Constraint | Slice C Evidence | Status |
+| --- | --- | --- |
+| Do not restore manual template route | `DocxExportContract` keeps `no-template-file`; writer has no template input | Met |
+| Do not promise high-fidelity replica | adapter/probe warnings include `high-fidelity-style-replica-not-supported` | Met |
+| Browser-safe DOCX generation | `src/lib/docx-ts-adapter.ts` uses `Packer.toArrayBuffer` and returns `Uint8Array` | Met |
+| Runtime structural validation | `src/lib/docx-package-probe.ts` checks DOCX package parts and structural assertions | Met |
+| Validation errors must block | `src/lib/docx-writer.ts` merges probe errors before `reviewDocxExport`; tests cover review/record path | Met |
+| Keep Slice C library-only | no UI/store/Tauri/save-flow files changed for Slice C | Met |
+| Product dependency decision is explicit | `package.json`/`package-lock.json` add `docx` and `jszip`; Decision 037 records rationale | Met |
+
+## Trace Update - Slice D DOCX export save flow (2026-05-15)
+
+| Requirement / Constraint | Slice D Evidence | Status |
+| --- | --- | --- |
+| User must choose output path | `DraftsView` uses Tauri `save()` before write | Met |
+| Cancel writes nothing | `runDocxExportSaveFlow` returns `cancelled`; tests verify writer/write not called | Met |
+| Do not auto-overwrite or mutate path | non-`.docx` returned path fails; no silent extension append | Met |
+| Binary-safe DOCX write | `writeBinaryFileBase64` Tauri command writes decoded bytes | Met |
+| Invalid base64 no side effect | Rust tests cover missing and existing path no modification | Met |
+| Avoid file-sync ingest confusion | binary write calls `mark_app_write_path` before/after writing; Rust test verifies marker | Met |
+| Failed review blocks write | save-flow tests verify fail does not call binary write | Met |
+| Warnings remain visible | warning outcome writes file and reports diagnostics | Met |
+| No high-fidelity promise | UI hint says no high-fidelity visual reproduction promise | Met |
+| No manual template route | no template input/path in export flow | Met |

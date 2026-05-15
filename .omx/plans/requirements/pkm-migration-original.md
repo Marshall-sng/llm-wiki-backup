@@ -12,6 +12,9 @@
 
 ---
 
+> **当前状态说明（2026-05-14）**  
+> 本文件保留为最初需求基线，不作为最新进度表改写。最新执行状态以 `migration-decision-log.md` 与 `migration-traceability-matrix.md` 为准。当前阶段已经从手动模板路线转向 evidence-bound FormatProfile / StyleFacts / FormatSpec / Editable Format Constraints，并在该阶段收口后切换到 DOCX-first Formal Export 下一阶段。
+
 ## 1. 背景与当前决策
 
 `pkm-tool` 最初目标不是单纯做 Chat，也不是单纯做模板导出，而是构建一个面向非程序员个人使用的“材料智能工作台 / LLM Wiki”：

@@ -32,6 +32,9 @@ tests/
 # Local runtime artifacts and user-supplied files
 runtime/
 experiments/format-profile/outputs/
+experiments/docx-adapter-comparison/artifacts/
+experiments/docx-adapter-comparison/adapters/openxml-sidecar/bin/
+experiments/docx-adapter-comparison/adapters/openxml-sidecar/obj/
 
 # Editor directories and files
 .vscode/*

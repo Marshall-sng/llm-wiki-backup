@@ -1,0 +1,412 @@
+{
+  "positive": {
+    "reviewVersion": "docx-match-review.v0",
+    "scenario": "positive",
+    "verdict": "warn",
+    "blockingIssues": [],
+    "warnings": [
+      {
+        "code": "docx-validation-warning",
+        "message": "orphaned relationship is defined but never referenced"
+      }
+    ],
+    "sectionReview": {
+      "required": [
+        "一、背景",
+        "二、导出合同",
+        "三、审查边界"
+      ],
+      "found": [
+        "一、背景",
+        "二、导出合同",
+        "（一）合同边界",
+        "三、审查边界"
+      ],
+      "missing": []
+    },
+    "formatCoverage": {
+      "requiredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "coveredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "uncoveredMust": [],
+      "uncoveredShould": []
+    },
+    "contentBoundaryReview": {
+      "includeSourceBodyText": false,
+      "includeRawEvidenceDump": false,
+      "leakageDetected": false
+    },
+    "docxValidation": {
+      "docxPath": "D:\\llm_wiki\\experiments\\docx-export\\docx-first-structured.docx",
+      "exists": true,
+      "sizeBytes": 3494,
+      "zipEntries": 7,
+      "hasDocumentXml": true,
+      "paragraphCount": 13,
+      "headingStyleRefs": [
+        "TOCHeading",
+        "Heading1",
+        "Heading1",
+        "Heading2",
+        "Heading1"
+      ],
+      "knownWarnings": [
+        "orphaned relationship is defined but never referenced"
+      ],
+      "validationErrors": []
+    },
+    "auditRefs": {
+      "exportContractHash": "aff63ec4208a31bb66feb94460354ecc6013e0c4162625b72d52681e9bc27a81",
+      "intermediateHash": "f586657706169ca4da821f604d69f7bca362f38052dcfd6d0c8db217fedf627d",
+      "formatSpecHash": "format-spec-sha256-demo-001",
+      "sourceProfileHash": "profile-sha256-demo-001"
+    }
+  },
+  "missing-section": {
+    "reviewVersion": "docx-match-review.v0",
+    "scenario": "missing-section",
+    "verdict": "fail",
+    "blockingIssues": [
+      {
+        "code": "missing-required-section",
+        "section": "二、导出合同"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "docx-validation-warning",
+        "message": "orphaned relationship is defined but never referenced"
+      }
+    ],
+    "sectionReview": {
+      "required": [
+        "一、背景",
+        "二、导出合同",
+        "三、审查边界"
+      ],
+      "found": [
+        "一、背景",
+        "（一）合同边界",
+        "三、审查边界"
+      ],
+      "missing": [
+        "二、导出合同"
+      ]
+    },
+    "formatCoverage": {
+      "requiredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "coveredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "uncoveredMust": [],
+      "uncoveredShould": []
+    },
+    "contentBoundaryReview": {
+      "includeSourceBodyText": false,
+      "includeRawEvidenceDump": false,
+      "leakageDetected": false
+    },
+    "docxValidation": {
+      "docxPath": "D:\\llm_wiki\\experiments\\docx-export\\docx-first-structured.docx",
+      "exists": true,
+      "sizeBytes": 3494,
+      "zipEntries": 7,
+      "hasDocumentXml": true,
+      "paragraphCount": 13,
+      "headingStyleRefs": [
+        "TOCHeading",
+        "Heading1",
+        "Heading1",
+        "Heading2",
+        "Heading1"
+      ],
+      "knownWarnings": [
+        "orphaned relationship is defined but never referenced"
+      ],
+      "validationErrors": []
+    },
+    "auditRefs": {
+      "exportContractHash": "aff63ec4208a31bb66feb94460354ecc6013e0c4162625b72d52681e9bc27a81",
+      "intermediateHash": "f586657706169ca4da821f604d69f7bca362f38052dcfd6d0c8db217fedf627d",
+      "formatSpecHash": "format-spec-sha256-demo-001",
+      "sourceProfileHash": "profile-sha256-demo-001"
+    }
+  },
+  "missing-format-coverage": {
+    "reviewVersion": "docx-match-review.v0",
+    "scenario": "missing-format-coverage",
+    "verdict": "fail",
+    "blockingIssues": [
+      {
+        "code": "must-rule-uncovered",
+        "ruleId": "doc-title"
+      },
+      {
+        "code": "must-rule-uncovered",
+        "ruleId": "section-heading"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "should-rule-uncovered",
+        "ruleId": "subsection-heading"
+      },
+      {
+        "code": "should-rule-uncovered",
+        "ruleId": "ordered-list"
+      },
+      {
+        "code": "should-rule-uncovered",
+        "ruleId": "table-basic"
+      },
+      {
+        "code": "docx-validation-warning",
+        "message": "orphaned relationship is defined but never referenced"
+      }
+    ],
+    "sectionReview": {
+      "required": [
+        "一、背景",
+        "二、导出合同",
+        "三、审查边界"
+      ],
+      "found": [
+        "一、背景",
+        "二、导出合同",
+        "（一）合同边界",
+        "三、审查边界"
+      ],
+      "missing": []
+    },
+    "formatCoverage": {
+      "requiredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "coveredRules": [],
+      "uncoveredMust": [
+        "doc-title",
+        "section-heading"
+      ],
+      "uncoveredShould": [
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ]
+    },
+    "contentBoundaryReview": {
+      "includeSourceBodyText": false,
+      "includeRawEvidenceDump": false,
+      "leakageDetected": false
+    },
+    "docxValidation": {
+      "docxPath": "D:\\llm_wiki\\experiments\\docx-export\\docx-first-structured.docx",
+      "exists": true,
+      "sizeBytes": 3494,
+      "zipEntries": 7,
+      "hasDocumentXml": true,
+      "paragraphCount": 13,
+      "headingStyleRefs": [
+        "TOCHeading",
+        "Heading1",
+        "Heading1",
+        "Heading2",
+        "Heading1"
+      ],
+      "knownWarnings": [
+        "orphaned relationship is defined but never referenced"
+      ],
+      "validationErrors": []
+    },
+    "auditRefs": {
+      "exportContractHash": "aff63ec4208a31bb66feb94460354ecc6013e0c4162625b72d52681e9bc27a81",
+      "intermediateHash": "f586657706169ca4da821f604d69f7bca362f38052dcfd6d0c8db217fedf627d",
+      "formatSpecHash": "format-spec-sha256-demo-001",
+      "sourceProfileHash": "profile-sha256-demo-001"
+    }
+  },
+  "source-leakage": {
+    "reviewVersion": "docx-match-review.v0",
+    "scenario": "source-leakage",
+    "verdict": "fail",
+    "blockingIssues": [
+      {
+        "code": "source-leakage",
+        "message": "contract contains forbidden raw source body/evidence field"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "docx-validation-warning",
+        "message": "orphaned relationship is defined but never referenced"
+      }
+    ],
+    "sectionReview": {
+      "required": [
+        "一、背景",
+        "二、导出合同",
+        "三、审查边界"
+      ],
+      "found": [
+        "一、背景",
+        "二、导出合同",
+        "（一）合同边界",
+        "三、审查边界"
+      ],
+      "missing": []
+    },
+    "formatCoverage": {
+      "requiredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "coveredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "uncoveredMust": [],
+      "uncoveredShould": []
+    },
+    "contentBoundaryReview": {
+      "includeSourceBodyText": false,
+      "includeRawEvidenceDump": false,
+      "leakageDetected": true
+    },
+    "docxValidation": {
+      "docxPath": "D:\\llm_wiki\\experiments\\docx-export\\docx-first-structured.docx",
+      "exists": true,
+      "sizeBytes": 3494,
+      "zipEntries": 7,
+      "hasDocumentXml": true,
+      "paragraphCount": 13,
+      "headingStyleRefs": [
+        "TOCHeading",
+        "Heading1",
+        "Heading1",
+        "Heading2",
+        "Heading1"
+      ],
+      "knownWarnings": [
+        "orphaned relationship is defined but never referenced"
+      ],
+      "validationErrors": []
+    },
+    "auditRefs": {
+      "exportContractHash": "aff63ec4208a31bb66feb94460354ecc6013e0c4162625b72d52681e9bc27a81",
+      "intermediateHash": "f586657706169ca4da821f604d69f7bca362f38052dcfd6d0c8db217fedf627d",
+      "formatSpecHash": "format-spec-sha256-demo-001",
+      "sourceProfileHash": "profile-sha256-demo-001"
+    }
+  },
+  "validation-error": {
+    "reviewVersion": "docx-match-review.v0",
+    "scenario": "validation-error",
+    "verdict": "fail",
+    "blockingIssues": [
+      {
+        "code": "docx-validation-error",
+        "message": "simulated invalid OpenXML element order"
+      }
+    ],
+    "warnings": [
+      {
+        "code": "docx-validation-warning",
+        "message": "orphaned relationship is defined but never referenced"
+      }
+    ],
+    "sectionReview": {
+      "required": [
+        "一、背景",
+        "二、导出合同",
+        "三、审查边界"
+      ],
+      "found": [
+        "一、背景",
+        "二、导出合同",
+        "（一）合同边界",
+        "三、审查边界"
+      ],
+      "missing": []
+    },
+    "formatCoverage": {
+      "requiredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "coveredRules": [
+        "doc-title",
+        "section-heading",
+        "subsection-heading",
+        "ordered-list",
+        "table-basic"
+      ],
+      "uncoveredMust": [],
+      "uncoveredShould": []
+    },
+    "contentBoundaryReview": {
+      "includeSourceBodyText": false,
+      "includeRawEvidenceDump": false,
+      "leakageDetected": false
+    },
+    "docxValidation": {
+      "docxPath": "D:\\llm_wiki\\experiments\\docx-export\\docx-first-structured.docx",
+      "exists": true,
+      "sizeBytes": 3494,
+      "zipEntries": 7,
+      "hasDocumentXml": true,
+      "paragraphCount": 13,
+      "headingStyleRefs": [
+        "TOCHeading",
+        "Heading1",
+        "Heading1",
+        "Heading2",
+        "Heading1"
+      ],
+      "knownWarnings": [
+        "orphaned relationship is defined but never referenced"
+      ],
+      "validationErrors": [
+        "simulated invalid OpenXML element order"
+      ]
+    },
+    "auditRefs": {
+      "exportContractHash": "aff63ec4208a31bb66feb94460354ecc6013e0c4162625b72d52681e9bc27a81",
+      "intermediateHash": "f586657706169ca4da821f604d69f7bca362f38052dcfd6d0c8db217fedf627d",
+      "formatSpecHash": "format-spec-sha256-demo-001",
+      "sourceProfileHash": "profile-sha256-demo-001"
+    }
+  }
+}

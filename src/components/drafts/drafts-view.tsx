@@ -1,15 +1,18 @@
 import { useEffect, useMemo, useState } from "react"
-import { FileText, Trash2, MessageSquare, Hash, Sparkles, History, RotateCcw } from "lucide-react"
+import { FileDown, FileText, Trash2, MessageSquare, Hash, Sparkles, History, RotateCcw } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { save } from "@tauri-apps/plugin-dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { writeBinaryFileBase64 } from "@/commands/fs"
 import { useDraftStore } from "@/stores/draft-store"
 import { useChatStore, type DraftProcessingContext } from "@/stores/chat-store"
 import { useWikiStore } from "@/stores/wiki-store"
 import { useFormatProfileStore } from "@/stores/format-profile-store"
 import { buildDraftProcessingPrompt, buildDraftFormatProfileSnapshot } from "@/lib/draft-processing"
+import type { DocxExportSaveOutcome } from "@/lib/docx-export-save"
 import { compareDraftText } from "@/lib/draft-versioning"
 import type { FormatDiagnosticSeverity } from "@/lib/format-profile"
 
@@ -33,6 +36,8 @@ export function DraftsView() {
   const { t } = useTranslation()
   const [processingInstruction, setProcessingInstruction] = useState("")
   const [selectedVersionId, setSelectedVersionId] = useState<string | null>(null)
+  const [docxExporting, setDocxExporting] = useState(false)
+  const [docxExportOutcome, setDocxExportOutcome] = useState<DocxExportSaveOutcome | null>(null)
   const drafts = useDraftStore((s) => s.drafts)
   const selectedDraftId = useDraftStore((s) => s.selectedDraftId)
   const selectDraft = useDraftStore((s) => s.selectDraft)
@@ -110,6 +115,37 @@ export function DraftsView() {
   const handleRestoreVersion = () => {
     if (!selectedDraft || !selectedVersion) return
     restoreVersionAsDraft(selectedDraft.id, selectedVersion.id)
+  }
+
+  const handleExportDocx = async () => {
+    if (!selectedDraft || docxExporting) return
+    setDocxExporting(true)
+    setDocxExportOutcome(null)
+    try {
+      const { runDocxExportSaveFlow } = await import("@/lib/docx-export-save")
+      const formatProfileSnapshot = activeProfile ? buildDraftFormatProfileSnapshot(activeProfile) : undefined
+      const outcome = await runDocxExportSaveFlow({
+        draft: selectedDraft,
+        formatProfileSnapshot,
+      }, {
+        choosePath: async (defaultPath) => {
+          const selected = await save({
+            defaultPath,
+            filters: [{ name: "Word Document", extensions: ["docx"] }],
+          })
+          return typeof selected === "string" ? selected : null
+        },
+        writeBinaryFileBase64,
+      })
+      setDocxExportOutcome(outcome)
+    } catch (error) {
+      setDocxExportOutcome({
+        kind: "failed",
+        diagnostics: [`${error instanceof Error ? error.message : String(error)}`],
+      })
+    } finally {
+      setDocxExporting(false)
+    }
   }
 
   if (drafts.length === 0) {
@@ -201,6 +237,49 @@ export function DraftsView() {
               </div>
 
               <aside className="overflow-y-auto border-l bg-muted/10 p-4">
+                <section className="mb-5 rounded-lg border bg-background/70 p-3">
+                  <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <FileDown className="h-3.5 w-3.5" />
+                    {t("drafts.docxExportTitle")}
+                  </h2>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    className="w-full gap-1"
+                    disabled={docxExporting}
+                    onClick={handleExportDocx}
+                  >
+                    <FileDown className="h-3.5 w-3.5" />
+                    {docxExporting ? t("drafts.docxExportRunning") : t("drafts.docxExportAction")}
+                  </Button>
+                  <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
+                    {t("drafts.docxExportHint")}
+                  </p>
+                  {docxExportOutcome && (
+                    <div className={`mt-2 rounded-md border p-2 text-[11px] leading-relaxed ${
+                      docxExportOutcome.kind === "failed"
+                        ? "border-destructive/30 bg-destructive/10 text-destructive"
+                        : docxExportOutcome.kind === "warning"
+                          ? "border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300"
+                          : "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
+                    }`}
+                    >
+                      <div className="font-medium">
+                        {t(`drafts.docxExportStatus.${docxExportOutcome.kind}`)}
+                      </div>
+                      {docxExportOutcome.path && <div className="mt-0.5 break-all">{docxExportOutcome.path}</div>}
+                      {docxExportOutcome.diagnostics.length > 0 && (
+                        <ul className="mt-1 list-disc space-y-0.5 pl-4">
+                          {docxExportOutcome.diagnostics.slice(0, 4).map((diagnostic) => (
+                            <li key={diagnostic}>{diagnostic}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+                </section>
+
                 <section className="mb-5 rounded-lg border bg-background/70 p-3">
                   <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     <Sparkles className="h-3.5 w-3.5" />

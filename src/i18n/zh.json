@@ -356,6 +356,16 @@
       "info": "信息",
       "warning": "提醒",
       "error": "错误"
+    },
+    "docxExportTitle": "DOCX 导出",
+    "docxExportAction": "导出 DOCX",
+    "docxExportRunning": "导出中...",
+    "docxExportHint": "通过系统保存对话框选择 .docx 路径；不会覆盖当前底稿，也不承诺高保真视觉复刻。",
+    "docxExportStatus": {
+      "cancelled": "已取消导出",
+      "success": "DOCX 已导出",
+      "warning": "DOCX 已导出，但存在提醒",
+      "failed": "DOCX 导出失败"
     }
   },
   "formatProfiles": {

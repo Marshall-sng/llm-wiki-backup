@@ -1,0 +1,77 @@
+{
+  "experiment": "docx-first-export-contract-spike",
+  "pass": true,
+  "decision": "contract-intermediate-review-boundary-is-productizable",
+  "recommendedNext": "Design DOCX-first Formal Export PRD/Test Spec; compare TS adapter vs OpenXML sidecar next.",
+  "checks": [
+    {
+      "id": "contract-required-fields",
+      "pass": true,
+      "detail": "contract has required fields"
+    },
+    {
+      "id": "contract-no-source-leakage",
+      "pass": true,
+      "detail": "contract excludes raw source body fields"
+    },
+    {
+      "id": "intermediate-blocks",
+      "pass": true,
+      "detail": "intermediate supports target block types"
+    },
+    {
+      "id": "intermediate-rule-refs",
+      "pass": true,
+      "detail": "blocks carry FormatSpec ruleRefs"
+    },
+    {
+      "id": "docx-preflight",
+      "pass": true,
+      "detail": "existing DOCX preflight is readable"
+    },
+    {
+      "id": "positive-review-nonblocking",
+      "pass": true,
+      "detail": "positive review has no blocking issues"
+    },
+    {
+      "id": "missing-section-fails",
+      "pass": true,
+      "detail": "missing required section fails"
+    },
+    {
+      "id": "format-coverage-warns-or-fails",
+      "pass": true,
+      "detail": "missing rule coverage is visible"
+    },
+    {
+      "id": "source-leakage-fails",
+      "pass": true,
+      "detail": "source leakage fails"
+    },
+    {
+      "id": "validation-error-fails",
+      "pass": true,
+      "detail": "validation error fails"
+    }
+  ],
+  "positiveVerdict": "warn",
+  "positiveWarnings": 1,
+  "docxPreflight": {
+    "exists": true,
+    "sizeBytes": 3494,
+    "zipEntries": 7,
+    "paragraphCount": 13,
+    "headingStyleRefs": [
+      "TOCHeading",
+      "Heading1",
+      "Heading1",
+      "Heading2",
+      "Heading1"
+    ],
+    "validationErrors": [],
+    "knownWarnings": [
+      "orphaned relationship is defined but never referenced"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "caseId": "docx-contract-policy-draft",
+  "draft": {
+    "id": "draft-docx-001",
+    "title": "云南省数据流通利用基础设施平台介绍",
+    "contentHash": "draft-content-sha256-demo-001",
+    "content": "# 云南省数据流通利用基础设施平台介绍\n\n一、背景\n\n随着国家层面大力推进数据要素市场化配置改革，数据作为新型生产要素的战略地位日益凸显[7][18]。\n\n二、导出合同\n\n（一）合同边界\n\n导出应绑定底稿版本、格式画像和审查记录。\n\n1. 保留标题层级；\n2. 保留引用编号；\n3. 记录未支持的格式规则。\n\n- 不承诺高保真复刻；\n- 不直接套用外部模板。\n\n| 项目 | 要求 |\n| :--- | :--- |\n| 标题 | 保持层级 |\n| 引用 | 不得丢失 |\n\n三、审查边界\n\n导出完成后应进行结构完整性、格式覆盖度和内容边界审查。",
+    "references": [
+      {
+        "title": "国家数据基础设施建设指引",
+        "path": "wiki/sources/national-data-infra.md"
+      },
+      {
+        "title": "云南省数据流通利用基础设施平台",
+        "path": "wiki/entities/platform.md"
+      }
+    ]
+  },
+  "formatSpec": {
+    "formatSpecHash": "format-spec-sha256-demo-001",
+    "sourceProfileHash": "profile-sha256-demo-001",
+    "rules": [
+      {
+        "id": "doc-title",
+        "target": "document-title",
+        "requirement": "全文主标题作为 document-title，不得降级为章节标题。",
+        "priority": "must"
+      },
+      {
+        "id": "section-heading",
+        "target": "section-title",
+        "requirement": "一级标题使用一、二、三编号体系。",
+        "priority": "must"
+      },
+      {
+        "id": "subsection-heading",
+        "target": "subsection-title",
+        "requirement": "二级标题使用（一）（二）（三）编号体系。",
+        "priority": "should"
+      },
+      {
+        "id": "ordered-list",
+        "target": "ordered-list",
+        "requirement": "步骤性项目使用数字列表。",
+        "priority": "should"
+      },
+      {
+        "id": "table-basic",
+        "target": "table",
+        "requirement": "简单表格保留表头和行列关系。",
+        "priority": "should"
+      }
+    ],
+    "contentLeakagePolicy": {
+      "includeSourceBodyText": false,
+      "includeRawEvidenceDump": false
+    },
+    "exportBoundaries": [
+      "no-high-fidelity-replica",
+      "no-template-file",
+      "docx-only"
+    ],
+    "validationPolicy": {
+      "validationError": "fail",
+      "knownWarning": "warn"
+    }
+  },
+  "requiredSections": [
+    "一、背景",
+    "二、导出合同",
+    "三、审查边界"
+  ]
+}

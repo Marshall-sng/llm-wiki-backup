@@ -16,6 +16,10 @@ export async function writeFile(path: string, contents: string): Promise<void> {
   return invoke<void>("write_file", { path, contents })
 }
 
+export async function writeBinaryFileBase64(path: string, contentsBase64: string): Promise<void> {
+  return invoke<void>("write_binary_file_base64", { path, contentsBase64 })
+}
+
 export async function listDirectory(path: string): Promise<FileNode[]> {
   return invoke<FileNode[]>("list_directory", { path })
 }

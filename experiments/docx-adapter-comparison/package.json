@@ -1,0 +1,15 @@
+{
+  "name": "docx-adapter-comparison",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compare:ts-docx": "tsx scripts/run-comparison.ts --adapter ts-docx",
+    "compare:openxml": "tsx scripts/run-comparison.ts --adapter openxml",
+    "compare": "tsx scripts/run-comparison.ts --adapter all"
+  },
+  "dependencies": {
+    "docx": "^9.6.1",
+    "jszip": "^3.10.1",
+    "tsx": "^4.22.0"
+  }
+}

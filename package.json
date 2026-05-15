@@ -30,11 +30,13 @@
     "@types/js-yaml": "^4.0.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "docx": "^9.6.1",
     "graphology": "^0.26.0",
     "graphology-communities-louvain": "^2.0.2",
     "graphology-layout-forceatlas2": "^0.10.1",
     "i18next": "^26.0.3",
     "js-yaml": "^4.1.1",
+    "jszip": "^3.10.1",
     "katex": "^0.16.45",
     "lucide-react": "^1.7.0",
     "mermaid": "^11.14.0",
@@ -63,5 +65,21 @@
     "typescript": "^5.7.3",
     "vite": "^8.0.0",
     "vitest": "^4.1.4"
-  }
+  },
+  "description": "<p align=\"center\">\r   <img src=\"logo.jpg\" width=\"128\" height=\"128\" style=\"border-radius: 22%;\" alt=\"LLM Wiki Logo\">\r </p>",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marshall-sng/llm_wiki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marshall-sng/llm_wiki/issues"
+  },
+  "homepage": "https://github.com/Marshall-sng/llm_wiki#readme"
 }

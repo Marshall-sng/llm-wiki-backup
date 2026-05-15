@@ -1,0 +1,185 @@
+{
+  "adapterResult": {
+    "adapterId": "ts-docx",
+    "outputPath": "artifacts/ts-docx/output.docx",
+    "sizeBytes": 9486,
+    "validationErrors": [],
+    "knownWarnings": [
+      "cjk-style-fidelity-not-manually-opened"
+    ]
+  },
+  "capabilities": [
+    "document-title",
+    "heading",
+    "paragraph",
+    "ordered-list",
+    "unordered-list",
+    "simple-table",
+    "basic-styles"
+  ],
+  "unsupportedCapabilities": [
+    "manual-word-openability",
+    "high-fidelity-replica"
+  ],
+  "validationResult": {
+    "packageParts": [
+      "[Content_Types].xml",
+      "_rels/.rels",
+      "docProps/app.xml",
+      "docProps/core.xml",
+      "docProps/custom.xml",
+      "word/_rels/comments.xml.rels",
+      "word/_rels/document.xml.rels",
+      "word/_rels/endnotes.xml.rels",
+      "word/_rels/fontTable.xml.rels",
+      "word/_rels/footnotes.xml.rels",
+      "word/comments.xml",
+      "word/document.xml",
+      "word/endnotes.xml",
+      "word/fontTable.xml",
+      "word/footnotes.xml",
+      "word/numbering.xml",
+      "word/settings.xml",
+      "word/styles.xml"
+    ],
+    "structuralAssertions": [
+      {
+        "id": "document-title-present",
+        "passed": true,
+        "count": 1,
+        "hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "id": "level1-headings-present",
+        "passed": true,
+        "count": 3,
+        "hash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+      },
+      {
+        "id": "level2-heading-present",
+        "passed": true,
+        "count": 1,
+        "hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "id": "paragraph-content-present",
+        "passed": true,
+        "count": 3,
+        "hash": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+      },
+      {
+        "id": "ordered-list-distinguishable",
+        "passed": true,
+        "count": 4,
+        "hash": "77b31110920426390850d0f67956e799e71ebaea520f01edaf99a7c78a6b8ed5"
+      },
+      {
+        "id": "unordered-list-distinguishable",
+        "passed": true,
+        "count": 4,
+        "hash": "77b31110920426390850d0f67956e799e71ebaea520f01edaf99a7c78a6b8ed5"
+      },
+      {
+        "id": "simple-table-shape",
+        "passed": true,
+        "count": 4,
+        "hash": "e2dff40e1c70979570e2638996aa221c6dda6cf0ec0fdb95b79064a7ec60ee8d"
+      },
+      {
+        "id": "style-or-font-evidence",
+        "passed": true,
+        "count": 89,
+        "hash": "cd70bea023f752a0564abb6ed08d42c1440f2e33e29914e55e0be1595e24f45a"
+      }
+    ],
+    "validationErrorCodes": [],
+    "knownWarningCodes": [
+      "cjk-style-fidelity-not-manually-opened"
+    ]
+  },
+  "reviewSummary": {
+    "verdict": "warn",
+    "blockingIssueCodes": [],
+    "warningCodes": [
+      "docx-validation-warning"
+    ]
+  },
+  "recordSummary": {
+    "status": "warning",
+    "exportContractHash": "72e4712fa5889172e2f2af624a7b7d22d96720759da26b69efb15550b62f0280",
+    "intermediateHash": "fceae1725def3370b6c26f9b0052eaab48b330f3c83fcc48be3cd5ade9e3feb7",
+    "adapterId": "ts-docx"
+  },
+  "packagingRisk": "medium",
+  "licenseRisk": "low",
+  "maintenanceRisk": "medium",
+  "runtimeCost": "low",
+  "scopeRisk": "narrow",
+  "confidence": "medium",
+  "evidenceSummary": [
+    {
+      "assertionId": "document-title-present",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    },
+    {
+      "assertionId": "level1-headings-present",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    },
+    {
+      "assertionId": "level2-heading-present",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    },
+    {
+      "assertionId": "paragraph-content-present",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    },
+    {
+      "assertionId": "ordered-list-distinguishable",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    },
+    {
+      "assertionId": "unordered-list-distinguishable",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    },
+    {
+      "assertionId": "simple-table-shape",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    },
+    {
+      "assertionId": "style-or-font-evidence",
+      "result": "pass",
+      "summary": "redacted structural assertion passed"
+    }
+  ],
+  "rejectedAlternatives": [
+    "external-template-route",
+    "direct-ui-export-button"
+  ],
+  "tested": [
+    "shared-contract-built",
+    "shared-intermediate-built",
+    "docx-package-probed",
+    "structural-assertions-probed",
+    "match-review-built",
+    "export-record-built",
+    "redacted-report-leakage-scan"
+  ],
+  "notTested": [
+    "manual-word-openability",
+    "desktop-save-flow",
+    "product-dependency-integration",
+    "high-fidelity-style-replica"
+  ],
+  "recommendation": {
+    "status": "non-binding",
+    "nextStepOnly": true,
+    "summary": "Use this evidence only for the next Slice C adapter-selection plan; do not treat it as final adapter choice."
+  }
+}

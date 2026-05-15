@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "docx-intermediate-document.v0",
+  "sourceDraftId": "draft-docx-001",
+  "sourceDraftContentHash": "draft-content-sha256-demo-001",
+  "blocks": [
+    {
+      "type": "documentTitle",
+      "level": 1,
+      "text": "云南省数据流通利用基础设施平台介绍",
+      "ruleRefs": [
+        "doc-title"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "一、背景",
+      "ruleRefs": [
+        "section-heading"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "随着国家层面大力推进数据要素市场化配置改革，数据作为新型生产要素的战略地位日益凸显[7][18]。",
+      "ruleRefs": []
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "二、导出合同",
+      "ruleRefs": [
+        "section-heading"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "（一）合同边界",
+      "ruleRefs": [
+        "subsection-heading"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "导出应绑定底稿版本、格式画像和审查记录。",
+      "ruleRefs": []
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "保留标题层级；",
+        "保留引用编号；",
+        "记录未支持的格式规则。"
+      ],
+      "ruleRefs": [
+        "ordered-list"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "不承诺高保真复刻；",
+        "不直接套用外部模板。"
+      ],
+      "ruleRefs": []
+    },
+    {
+      "type": "table",
+      "columns": [
+        "项目",
+        "要求"
+      ],
+      "rows": [
+        [
+          "标题",
+          "保持层级"
+        ],
+        [
+          "引用",
+          "不得丢失"
+        ]
+      ],
+      "ruleRefs": [
+        "table-basic"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "三、审查边界",
+      "ruleRefs": [
+        "section-heading"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "导出完成后应进行结构完整性、格式覆盖度和内容边界审查。",
+      "ruleRefs": []
+    }
+  ],
+  "intermediateHash": "f586657706169ca4da821f604d69f7bca362f38052dcfd6d0c8db217fedf627d"
+}

@@ -4,22 +4,40 @@
 
 ## 目录
 
-- `active/`：当前执行计划。
-- `requirements/`：原始需求基线、追踪矩阵、决策账本。
-- `archive/`：已完成、暂停或不再作为当前主线的历史计划。
+- `active/`：当前执行计划；现在只保留下一阶段活动锚点。
+- `requirements/`：只保留三份核心追踪文件：原始需求基线、追踪矩阵、决策账本。
+- `archive/`：已完成、暂停或不再作为当前主线的历史计划；同一阶段的 PRD / test spec / ralplan 已尽量合并归档，索引见 `archive/README.md`。
 
 ## 当前主线
 
 当前主线为：
 
 ```text
-active/format-profile-experiment-plan.md
+active/docx-first-formal-export-next-stage.md
 ```
 
 核心目标：
 
 ```text
-成品文件 → FormatProfile → FormatBinding → 两种底稿生成路径
+Draft version
+→ Evidence / references
+→ FormatProfile / StyleFacts / FormatSpec
+→ DocxExportContract
+→ DocxIntermediateDocument
+→ DocxMatchReview
+→ DOCXExportAdapter
+→ DocxExportRecord / Audit
+```
+
+## 已收口主线
+
+FormatProfile / StyleFacts / SemanticOverlay / FormatSpec / Editable Format Constraints / Draft Output Contract 已完成阶段性产品化并归档到：
+
+```text
+archive/2026-05-format-profile-*/
+archive/2026-05-format-spec-*/
+archive/2026-05-format-rule-synthesis/
+archive/2026-05-editable-format-constraints/
 ```
 
 ## 原始需求基线
@@ -36,4 +54,17 @@ requirements/migration-decision-log.md
 ```
 
 为准。
-- `active/format-profile-stylefacts-productization-design-intake.md` — 2026-05-14 StyleFacts 产品化设计输入与遗漏修正。
+
+## 正式导出参考
+
+下一阶段活动参考已移至：
+
+```text
+active/formal-export-reference-findings.md
+```
+
+其他阶段性支撑记录位于：
+
+```text
+archive/2026-05-requirements-supporting-records/
+```

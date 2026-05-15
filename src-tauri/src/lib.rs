@@ -79,6 +79,7 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             commands::fs::read_file,
             commands::fs::write_file,
+            commands::fs::write_binary_file_base64,
             commands::fs::list_directory,
             commands::fs::copy_file,
             commands::fs::copy_directory,

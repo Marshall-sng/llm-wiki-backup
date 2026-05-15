@@ -1,0 +1,263 @@
+{
+  "contract": {
+    "contractVersion": "docx-export-contract.v0",
+    "exportId": "slice-b-shared-fixture",
+    "draftId": "draft-docx-export-1",
+    "draftTitle": "云南省数据流通利用基础设施平台介绍",
+    "draftContentHash": "draft-content-hash-1",
+    "referenceCount": 1,
+    "formatProfileId": "format-profile-1",
+    "formatProfileTitle": "正式文稿格式画像",
+    "formatSpecHash": "format-spec-hash-1",
+    "sourceProfileHash": "source-profile-hash-1",
+    "documentIntent": "formal-docx-export",
+    "requiredSections": [
+      "一、背景",
+      "二、平台架构",
+      "三、目的与意义"
+    ],
+    "allowedBlocks": [
+      "documentTitle",
+      "heading",
+      "paragraph",
+      "list",
+      "table"
+    ],
+    "formatRules": [
+      {
+        "id": "document-title-rule",
+        "target": "document-title",
+        "rule": "全文主标题独立成行",
+        "detail": "主标题不得被降级为章节标题。",
+        "priority": "must",
+        "source": "inferred",
+        "confidence": "high",
+        "evidenceRefs": [
+          "style.docx.title.0001"
+        ]
+      },
+      {
+        "id": "section-title-rule",
+        "target": "section-title",
+        "rule": "一级标题使用中文序号",
+        "detail": "一级标题使用“一、二、三”层级。",
+        "priority": "must",
+        "source": "inferred",
+        "confidence": "high",
+        "evidenceRefs": [
+          "style.docx.heading.0001"
+        ]
+      },
+      {
+        "id": "subsection-title-rule",
+        "target": "subsection-title",
+        "rule": "二级标题使用括号中文序号",
+        "detail": "二级标题使用“（一）（二）（三）”层级。",
+        "priority": "must",
+        "source": "inferred",
+        "confidence": "medium",
+        "evidenceRefs": [
+          "style.docx.heading.0002"
+        ]
+      },
+      {
+        "id": "ordered-list-rule",
+        "target": "ordered-list",
+        "rule": "列表使用数字编号",
+        "detail": "有顺序的要点使用数字编号。",
+        "priority": "should",
+        "source": "inferred",
+        "confidence": "medium",
+        "evidenceRefs": [
+          "style.docx.list.0001"
+        ]
+      },
+      {
+        "id": "unordered-list-rule",
+        "target": "unordered-list",
+        "rule": "无序列表使用项目符号",
+        "detail": "无顺序的要点使用项目符号。",
+        "priority": "should",
+        "source": "inferred",
+        "confidence": "medium",
+        "evidenceRefs": [
+          "style.docx.list.0002"
+        ]
+      },
+      {
+        "id": "table-rule",
+        "target": "table",
+        "rule": "表格保留行列结构",
+        "detail": "表格导出时保留表头和数据行。",
+        "priority": "should",
+        "source": "detected",
+        "confidence": "medium",
+        "evidenceRefs": [
+          "style.docx.table.0001"
+        ]
+      }
+    ],
+    "contentLeakagePolicy": {
+      "includeSourceBodyText": false,
+      "includeRawEvidenceDump": false
+    },
+    "exportBoundaries": [
+      "docx-only",
+      "no-high-fidelity-replica",
+      "no-template-file",
+      "来源事实优先",
+      "不承诺高保真复刻"
+    ],
+    "validationPolicy": {
+      "validationError": "fail",
+      "knownWarning": "warn"
+    },
+    "createdAt": 1715734400000,
+    "contractHash": "72e4712fa5889172e2f2af624a7b7d22d96720759da26b69efb15550b62f0280"
+  },
+  "intermediate": {
+    "schemaVersion": "docx-intermediate-document.v0",
+    "sourceDraftId": "draft-docx-export-1",
+    "sourceDraftContentHash": "draft-content-hash-1",
+    "blocks": [
+      {
+        "type": "documentTitle",
+        "text": "云南省数据流通利用基础设施平台介绍",
+        "ruleRefs": [
+          "document-title-rule"
+        ],
+        "sourceLineRange": {
+          "start": 1,
+          "end": 1
+        }
+      },
+      {
+        "type": "heading",
+        "level": 1,
+        "text": "一、背景",
+        "ruleRefs": [
+          "section-title-rule"
+        ],
+        "sourceLineRange": {
+          "start": 3,
+          "end": 3
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "随着国家层面大力推进数据要素市场化配置改革，平台建设具有重要意义[1]。",
+        "ruleRefs": [],
+        "sourceLineRange": {
+          "start": 5,
+          "end": 5
+        }
+      },
+      {
+        "type": "heading",
+        "level": 1,
+        "text": "二、平台架构",
+        "ruleRefs": [
+          "section-title-rule"
+        ],
+        "sourceLineRange": {
+          "start": 7,
+          "end": 7
+        }
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "（一）国家全域节点",
+        "ruleRefs": [
+          "subsection-title-rule"
+        ],
+        "sourceLineRange": {
+          "start": 9,
+          "end": 9
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "国家全域节点负责提供统一规范。",
+        "ruleRefs": [],
+        "sourceLineRange": {
+          "start": 11,
+          "end": 11
+        }
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "审核数据资源登记；",
+          "上报至国家全域节点；"
+        ],
+        "ruleRefs": [
+          "ordered-list-rule"
+        ],
+        "sourceLineRange": {
+          "start": 13,
+          "end": 14
+        }
+      },
+      {
+        "type": "list",
+        "ordered": false,
+        "items": [
+          "保留来源事实边界；",
+          "不承诺视觉复刻；"
+        ],
+        "ruleRefs": [
+          "unordered-list-rule"
+        ],
+        "sourceLineRange": {
+          "start": 16,
+          "end": 17
+        }
+      },
+      {
+        "type": "table",
+        "columns": [
+          "项目",
+          "要求"
+        ],
+        "rows": [
+          [
+            "标题",
+            "保持层级"
+          ]
+        ],
+        "ruleRefs": [
+          "table-rule"
+        ],
+        "sourceLineRange": {
+          "start": 19,
+          "end": 21
+        }
+      },
+      {
+        "type": "heading",
+        "level": 1,
+        "text": "三、目的与意义",
+        "ruleRefs": [
+          "section-title-rule"
+        ],
+        "sourceLineRange": {
+          "start": 23,
+          "end": 23
+        }
+      },
+      {
+        "type": "paragraph",
+        "text": "平台将为数据流通利用提供公共服务。",
+        "ruleRefs": [],
+        "sourceLineRange": {
+          "start": 25,
+          "end": 25
+        }
+      }
+    ],
+    "diagnostics": [],
+    "intermediateHash": "fceae1725def3370b6c26f9b0052eaab48b330f3c83fcc48be3cd5ade9e3feb7"
+  }
+}
