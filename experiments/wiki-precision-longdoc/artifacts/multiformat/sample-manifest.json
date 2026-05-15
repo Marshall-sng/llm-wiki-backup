@@ -1,0 +1,1161 @@
+{
+  "root": "D:\\llm_wiki\\runtime\\format-profile\\samples",
+  "summary": {
+    "total_files": 40,
+    "by_extension": {
+      "pdf": 10,
+      "txt": 1,
+      "docx": 15,
+      "xlsx": 9,
+      "pptx": 5
+    },
+    "by_group": {
+      "top-level": 5,
+      "downloaded/docx": 7,
+      "downloaded/xlsx": 8,
+      "github/pptx": 5,
+      "local/docx": 8,
+      "local/pdf": 6,
+      "local/xlsx": 1
+    },
+    "selected_candidate_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S017",
+      "S019",
+      "S020",
+      "S027",
+      "S029",
+      "S030",
+      "S031",
+      "S032",
+      "S033",
+      "S034",
+      "S035",
+      "S036",
+      "S037",
+      "S038",
+      "S039",
+      "S040"
+    ],
+    "coverage_judgement": {
+      "docx": true,
+      "pdf": true,
+      "txt": true,
+      "xlsx": true,
+      "pptx_inventory_only": true,
+      "has_long_txt": true,
+      "has_long_docx": true,
+      "has_long_pdf_heuristic": true,
+      "has_row_cell_xlsx": true,
+      "has_scanned_pdf_confirmed": false
+    }
+  },
+  "samples": [
+    {
+      "id": "S001",
+      "relative_path": "2026-05-05-000635-871634-易经杂说.pdf",
+      "name": "2026-05-05-000635-871634-易经杂说.pdf",
+      "extension": "pdf",
+      "size_bytes": 1086988,
+      "group": "top-level",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "long-pdf",
+        "pdf-images",
+        "pdf-extractability-unknown"
+      ],
+      "metrics": {
+        "estimated_pages": 113,
+        "stream_count": 1,
+        "image_xobjects": 25,
+        "text_operator_hits": 73,
+        "compressed_stream_bytes_sampled": 200000,
+        "non_ascii_runs_in_streams": 135378,
+        "encrypted": true
+      },
+      "notes": [
+        "未安装 PDF 文本抽取库，当前只做页面/流/文本操作符启发式检查；需在实验中用真实抽取器复核。"
+      ]
+    },
+    {
+      "id": "S002",
+      "relative_path": "2026-05-05-000658-516931-《唐人的餐桌》.txt",
+      "name": "2026-05-05-000658-516931-《唐人的餐桌》.txt",
+      "extension": "txt",
+      "size_bytes": 11929196,
+      "group": "top-level",
+      "status": "candidate",
+      "role": [
+        "txt-anchor",
+        "long-txt"
+      ],
+      "metrics": {
+        "text_chars": 4442676,
+        "lines": 172820,
+        "estimated_headings": 0,
+        "replacement_chars": 0,
+        "tail_chars_available": 5000
+      },
+      "notes": []
+    },
+    {
+      "id": "S003",
+      "relative_path": "2026-05-05-000659-170243-政务数据共享条例_电子政务_中国政府网.pdf",
+      "name": "2026-05-05-000659-170243-政务数据共享条例_电子政务_中国政府网.pdf",
+      "extension": "pdf",
+      "size_bytes": 211987,
+      "group": "top-level",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-images",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 14,
+        "stream_count": 25,
+        "image_xobjects": 4,
+        "text_operator_hits": 15417,
+        "compressed_stream_bytes_sampled": 1067515,
+        "non_ascii_runs_in_streams": 27044,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S004",
+      "relative_path": "2026-05-05-000700-619047-政务数据目录治理工作Q&A20241213.pdf",
+      "name": "2026-05-05-000700-619047-政务数据目录治理工作Q&A20241213.pdf",
+      "extension": "pdf",
+      "size_bytes": 402108,
+      "group": "top-level",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 20,
+        "stream_count": 36,
+        "image_xobjects": 0,
+        "text_operator_hits": 15632,
+        "compressed_stream_bytes_sampled": 1790805,
+        "non_ascii_runs_in_streams": 57694,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S005",
+      "relative_path": "2026-05-05-000702-449629-（试行）政务数据目录治理流程工作规范20241213.pdf",
+      "name": "2026-05-05-000702-449629-（试行）政务数据目录治理流程工作规范20241213.pdf",
+      "extension": "pdf",
+      "size_bytes": 4020607,
+      "group": "top-level",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-images",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 26,
+        "stream_count": 70,
+        "image_xobjects": 32,
+        "text_operator_hits": 2891,
+        "compressed_stream_bytes_sampled": 59031681,
+        "non_ascii_runs_in_streams": 170953,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S006",
+      "relative_path": "downloaded/docx/docx_web_01_formatted_report.docx",
+      "name": "docx_web_01_formatted_report.docx",
+      "extension": "docx",
+      "size_bytes": 22134,
+      "group": "downloaded/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 2295,
+        "paragraphs": 91,
+        "tables": 1,
+        "table_rows": 4,
+        "table_cells": 16,
+        "heading_paragraphs": 16,
+        "numbered_paragraphs": 30,
+        "media_files": 0
+      },
+      "notes": []
+    },
+    {
+      "id": "S007",
+      "relative_path": "downloaded/docx/docx_web_02_table_rich.docx",
+      "name": "docx_web_02_table_rich.docx",
+      "extension": "docx",
+      "size_bytes": 39301,
+      "group": "downloaded/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 2139,
+        "paragraphs": 247,
+        "tables": 5,
+        "table_rows": 43,
+        "table_cells": 229,
+        "heading_paragraphs": 5,
+        "numbered_paragraphs": 0,
+        "media_files": 0
+      },
+      "notes": []
+    },
+    {
+      "id": "S008",
+      "relative_path": "downloaded/docx/docx_web_03_template_form_fields.docx",
+      "name": "docx_web_03_template_form_fields.docx",
+      "extension": "docx",
+      "size_bytes": 38293,
+      "group": "downloaded/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 1433,
+        "paragraphs": 76,
+        "tables": 4,
+        "table_rows": 16,
+        "table_cells": 64,
+        "heading_paragraphs": 4,
+        "numbered_paragraphs": 0,
+        "media_files": 0
+      },
+      "notes": []
+    },
+    {
+      "id": "S009",
+      "relative_path": "downloaded/docx/docx_web_04_bullets_lists.docx",
+      "name": "docx_web_04_bullets_lists.docx",
+      "extension": "docx",
+      "size_bytes": 39759,
+      "group": "downloaded/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 4951,
+        "paragraphs": 87,
+        "tables": 0,
+        "table_rows": 0,
+        "table_cells": 0,
+        "heading_paragraphs": 6,
+        "numbered_paragraphs": 0,
+        "media_files": 0
+      },
+      "notes": []
+    },
+    {
+      "id": "S010",
+      "relative_path": "downloaded/docx/docx_web_05_multi_column.docx",
+      "name": "docx_web_05_multi_column.docx",
+      "extension": "docx",
+      "size_bytes": 39955,
+      "group": "downloaded/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 4723,
+        "paragraphs": 68,
+        "tables": 1,
+        "table_rows": 8,
+        "table_cells": 32,
+        "heading_paragraphs": 8,
+        "numbered_paragraphs": 0,
+        "media_files": 0
+      },
+      "notes": []
+    },
+    {
+      "id": "S011",
+      "relative_path": "downloaded/docx/docx_web_06_large_multisection.docx",
+      "name": "docx_web_06_large_multisection.docx",
+      "extension": "docx",
+      "size_bytes": 67970,
+      "group": "downloaded/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "long-docx",
+        "docx-table",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 60820,
+        "paragraphs": 1924,
+        "tables": 29,
+        "table_rows": 323,
+        "table_cells": 1438,
+        "heading_paragraphs": 108,
+        "numbered_paragraphs": 0,
+        "media_files": 0
+      },
+      "notes": []
+    },
+    {
+      "id": "S012",
+      "relative_path": "downloaded/docx/docx_web_07_image_document.docx",
+      "name": "docx_web_07_image_document.docx",
+      "extension": "docx",
+      "size_bytes": 11317142,
+      "group": "downloaded/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-media",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 6265,
+        "paragraphs": 99,
+        "tables": 1,
+        "table_rows": 7,
+        "table_cells": 28,
+        "heading_paragraphs": 7,
+        "numbered_paragraphs": 0,
+        "media_files": 6
+      },
+      "notes": []
+    },
+    {
+      "id": "S013",
+      "relative_path": "downloaded/xlsx/xlsx_web_01_formula_recalc_sample.xlsx",
+      "name": "xlsx_web_01_formula_recalc_sample.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 2824,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor",
+        "formula"
+      ],
+      "metrics": {
+        "sheets": 1,
+        "max_rows": 4,
+        "max_columns": 4,
+        "nonempty_cells": 16,
+        "formula_cells": 3,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "Metrics",
+            "max_row": 4,
+            "max_column": 4,
+            "nonempty_cells": 16,
+            "formula_cells": 3,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S014",
+      "relative_path": "downloaded/xlsx/xlsx_web_02_inventory_two_sheet_sample.xlsx",
+      "name": "xlsx_web_02_inventory_two_sheet_sample.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 3208,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor",
+        "multi-sheet"
+      ],
+      "metrics": {
+        "sheets": 2,
+        "max_rows": 4,
+        "max_columns": 3,
+        "nonempty_cells": 21,
+        "formula_cells": 0,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "Inventory",
+            "max_row": 4,
+            "max_column": 3,
+            "nonempty_cells": 12,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          },
+          {
+            "sheet": "Vendors",
+            "max_row": 3,
+            "max_column": 3,
+            "nonempty_cells": 9,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S015",
+      "relative_path": "downloaded/xlsx/xlsx_web_03_monthly_budget_sample.xlsx",
+      "name": "xlsx_web_03_monthly_budget_sample.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 2829,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor",
+        "formula"
+      ],
+      "metrics": {
+        "sheets": 1,
+        "max_rows": 5,
+        "max_columns": 3,
+        "nonempty_cells": 15,
+        "formula_cells": 2,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "Budget",
+            "max_row": 5,
+            "max_column": 3,
+            "nonempty_cells": 15,
+            "formula_cells": 2,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S016",
+      "relative_path": "downloaded/xlsx/xlsx_web_04_wide_table_sample.xlsx",
+      "name": "xlsx_web_04_wide_table_sample.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 3027,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor"
+      ],
+      "metrics": {
+        "sheets": 1,
+        "max_rows": 6,
+        "max_columns": 14,
+        "nonempty_cells": 84,
+        "formula_cells": 0,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "WideTable",
+            "max_row": 6,
+            "max_column": 14,
+            "nonempty_cells": 84,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S017",
+      "relative_path": "downloaded/xlsx/xlsx_web_05_HR_Sample_Dash.xlsx",
+      "name": "xlsx_web_05_HR_Sample_Dash.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 78591,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor",
+        "wide-table",
+        "large-table",
+        "formula",
+        "multi-sheet"
+      ],
+      "metrics": {
+        "sheets": 2,
+        "max_rows": 170,
+        "max_columns": 53,
+        "nonempty_cells": 116,
+        "formula_cells": 7,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "Quarterly HR Report",
+            "max_row": 1,
+            "max_column": 53,
+            "nonempty_cells": 0,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          },
+          {
+            "sheet": "Data",
+            "max_row": 170,
+            "max_column": 27,
+            "nonempty_cells": 116,
+            "formula_cells": 7,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S018",
+      "relative_path": "downloaded/xlsx/xlsx_web_06_Table_Style_Guide.xlsx",
+      "name": "xlsx_web_06_Table_Style_Guide.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 209714,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor"
+      ],
+      "metrics": {
+        "sheets": 1,
+        "max_rows": 47,
+        "max_columns": 14,
+        "nonempty_cells": 81,
+        "formula_cells": 0,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "Table Design",
+            "max_row": 47,
+            "max_column": 14,
+            "nonempty_cells": 81,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S019",
+      "relative_path": "downloaded/xlsx/xlsx_web_07_Page_Layout_Guide.xlsx",
+      "name": "xlsx_web_07_Page_Layout_Guide.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 236293,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor",
+        "wide-table"
+      ],
+      "metrics": {
+        "sheets": 1,
+        "max_rows": 51,
+        "max_columns": 36,
+        "nonempty_cells": 25,
+        "formula_cells": 0,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "Sheet1",
+            "max_row": 51,
+            "max_column": 36,
+            "nonempty_cells": 25,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S020",
+      "relative_path": "downloaded/xlsx/xlsx_web_08_Sales_Performance_Dashboard.xlsx",
+      "name": "xlsx_web_08_Sales_Performance_Dashboard.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 585325,
+      "group": "downloaded/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor",
+        "wide-table",
+        "large-table",
+        "formula",
+        "multi-sheet"
+      ],
+      "metrics": {
+        "sheets": 6,
+        "max_rows": 1002,
+        "max_columns": 41,
+        "nonempty_cells": 48982,
+        "formula_cells": 9008,
+        "merged_ranges": 0,
+        "sheet_summaries": [
+          {
+            "sheet": "Data",
+            "max_row": 1002,
+            "max_column": 41,
+            "nonempty_cells": 36048,
+            "formula_cells": 8008,
+            "merged_ranges": 0
+          },
+          {
+            "sheet": "Sheet1",
+            "max_row": 1001,
+            "max_column": 24,
+            "nonempty_cells": 11036,
+            "formula_cells": 1000,
+            "merged_ranges": 0
+          },
+          {
+            "sheet": "Sheet4",
+            "max_row": 51,
+            "max_column": 11,
+            "nonempty_cells": 561,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          },
+          {
+            "sheet": "Dashboard",
+            "max_row": 1,
+            "max_column": 1,
+            "nonempty_cells": 0,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          },
+          {
+            "sheet": "Raw Data",
+            "max_row": 32,
+            "max_column": 12,
+            "nonempty_cells": 352,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          },
+          {
+            "sheet": "Pivot Tables",
+            "max_row": 619,
+            "max_column": 37,
+            "nonempty_cells": 985,
+            "formula_cells": 0,
+            "merged_ranges": 0
+          }
+        ]
+      },
+      "notes": []
+    },
+    {
+      "id": "S021",
+      "relative_path": "github/pptx/pptx_github_01_手绘风通用模板.pptx",
+      "name": "pptx_github_01_手绘风通用模板.pptx",
+      "extension": "pptx",
+      "size_bytes": 4263472,
+      "group": "github/pptx",
+      "status": "excluded-current-round",
+      "role": [
+        "pptx-inventory-only"
+      ],
+      "metrics": {
+        "slides": 0,
+        "text_chars": 0,
+        "media_files": 13
+      },
+      "notes": [
+        "PPTX 当前按用户要求暂不纳入本轮实验，只登记库存。"
+      ]
+    },
+    {
+      "id": "S022",
+      "relative_path": "github/pptx/pptx_github_02_南京信息工程大学-李想-答辩通用PPT模板.pptx",
+      "name": "pptx_github_02_南京信息工程大学-李想-答辩通用PPT模板.pptx",
+      "extension": "pptx",
+      "size_bytes": 6413593,
+      "group": "github/pptx",
+      "status": "excluded-current-round",
+      "role": [
+        "pptx-inventory-only"
+      ],
+      "metrics": {
+        "slides": 0,
+        "text_chars": 0,
+        "media_files": 28
+      },
+      "notes": [
+        "PPTX 当前按用户要求暂不纳入本轮实验，只登记库存。"
+      ]
+    },
+    {
+      "id": "S023",
+      "relative_path": "github/pptx/pptx_github_03_武汉船舶职业技术学院-袁治民-答辩通用PPT模板.pptx",
+      "name": "pptx_github_03_武汉船舶职业技术学院-袁治民-答辩通用PPT模板.pptx",
+      "extension": "pptx",
+      "size_bytes": 6940384,
+      "group": "github/pptx",
+      "status": "excluded-current-round",
+      "role": [
+        "pptx-inventory-only"
+      ],
+      "metrics": {
+        "slides": 0,
+        "text_chars": 0,
+        "media_files": 14
+      },
+      "notes": [
+        "PPTX 当前按用户要求暂不纳入本轮实验，只登记库存。"
+      ]
+    },
+    {
+      "id": "S024",
+      "relative_path": "github/pptx/pptx_github_04_品牌宣传商务风通用模板.pptx",
+      "name": "pptx_github_04_品牌宣传商务风通用模板.pptx",
+      "extension": "pptx",
+      "size_bytes": 7021391,
+      "group": "github/pptx",
+      "status": "excluded-current-round",
+      "role": [
+        "pptx-inventory-only"
+      ],
+      "metrics": {
+        "slides": 0,
+        "text_chars": 0,
+        "media_files": 28
+      },
+      "notes": [
+        "PPTX 当前按用户要求暂不纳入本轮实验，只登记库存。"
+      ]
+    },
+    {
+      "id": "S025",
+      "relative_path": "github/pptx/pptx_github_05_公司介绍高端实用商务通用模板.pptx",
+      "name": "pptx_github_05_公司介绍高端实用商务通用模板.pptx",
+      "extension": "pptx",
+      "size_bytes": 7164536,
+      "group": "github/pptx",
+      "status": "excluded-current-round",
+      "role": [
+        "pptx-inventory-only"
+      ],
+      "metrics": {
+        "slides": 0,
+        "text_chars": 0,
+        "media_files": 19
+      },
+      "notes": [
+        "PPTX 当前按用户要求暂不纳入本轮实验，只登记库存。"
+      ]
+    },
+    {
+      "id": "S026",
+      "relative_path": "local/docx/docx_local_01_talktrack_云南省数据流通基础设施平台沟通话术.docx",
+      "name": "docx_local_01_talktrack_云南省数据流通基础设施平台沟通话术.docx",
+      "extension": "docx",
+      "size_bytes": 264420,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 4870,
+        "paragraphs": 69,
+        "tables": 0,
+        "table_rows": 0,
+        "table_cells": 0,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 1,
+        "media_files": 0
+      },
+      "notes": []
+    },
+    {
+      "id": "S027",
+      "relative_path": "local/docx/docx_local_02_org_notice_云数人 〔2023〕 4 号关于印发《云南省大数据有限公司组织架构及岗位编制设置方案》的通知.docx",
+      "name": "docx_local_02_org_notice_云数人 〔2023〕 4 号关于印发《云南省大数据有限公司组织架构及岗位编制设置方案》的通知.docx",
+      "extension": "docx",
+      "size_bytes": 190176,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-media"
+      ],
+      "metrics": {
+        "text_chars": 4773,
+        "paragraphs": 374,
+        "tables": 1,
+        "table_rows": 14,
+        "table_cells": 117,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 0,
+        "media_files": 5
+      },
+      "notes": []
+    },
+    {
+      "id": "S028",
+      "relative_path": "local/docx/docx_local_03_strategy_云数发〔2024〕1号关于印发《云南省大数据有限公司战略规划管理制度》的通知.docx",
+      "name": "docx_local_03_strategy_云数发〔2024〕1号关于印发《云南省大数据有限公司战略规划管理制度》的通知.docx",
+      "extension": "docx",
+      "size_bytes": 121110,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-media"
+      ],
+      "metrics": {
+        "text_chars": 4902,
+        "paragraphs": 247,
+        "tables": 0,
+        "table_rows": 0,
+        "table_cells": 0,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 0,
+        "media_files": 3
+      },
+      "notes": []
+    },
+    {
+      "id": "S029",
+      "relative_path": "local/docx/docx_local_04_project_mgmt_云数综办〔2024〕4号关于印发《云南省大数据有限公司项目管理办法（暂行）》的通知.docx",
+      "name": "docx_local_04_project_mgmt_云数综办〔2024〕4号关于印发《云南省大数据有限公司项目管理办法（暂行）》的通知.docx",
+      "extension": "docx",
+      "size_bytes": 135500,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-media"
+      ],
+      "metrics": {
+        "text_chars": 6608,
+        "paragraphs": 680,
+        "tables": 12,
+        "table_rows": 78,
+        "table_cells": 258,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 0,
+        "media_files": 3
+      },
+      "notes": []
+    },
+    {
+      "id": "S030",
+      "relative_path": "local/docx/docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+      "name": "docx_local_05_procurement_云数综办 〔2023〕 13 号关于印发《云南省大数据有限公司采购管理制度（暂行）》的通知.docx",
+      "extension": "docx",
+      "size_bytes": 295529,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "long-docx",
+        "docx-table",
+        "docx-media"
+      ],
+      "metrics": {
+        "text_chars": 12968,
+        "paragraphs": 927,
+        "tables": 15,
+        "table_rows": 113,
+        "table_cells": 404,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 0,
+        "media_files": 3
+      },
+      "notes": []
+    },
+    {
+      "id": "S031",
+      "relative_path": "local/docx/docx_local_06_finance_云数综办〔2023〕6号关于印发《云南省大数据有限公司财务管理制度（暂行）》等四个制度的通知.docx",
+      "name": "docx_local_06_finance_云数综办〔2023〕6号关于印发《云南省大数据有限公司财务管理制度（暂行）》等四个制度的通知.docx",
+      "extension": "docx",
+      "size_bytes": 196722,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "long-docx",
+        "docx-table",
+        "docx-media"
+      ],
+      "metrics": {
+        "text_chars": 23715,
+        "paragraphs": 892,
+        "tables": 3,
+        "table_rows": 26,
+        "table_cells": 115,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 0,
+        "media_files": 3
+      },
+      "notes": []
+    },
+    {
+      "id": "S032",
+      "relative_path": "local/docx/docx_local_07_assessment_云数发〔2024〕47号关于印发《云南省大数据有限公司经营业绩考核实施办法（试行）》的通知 (1).docx",
+      "name": "docx_local_07_assessment_云数发〔2024〕47号关于印发《云南省大数据有限公司经营业绩考核实施办法（试行）》的通知 (1).docx",
+      "extension": "docx",
+      "size_bytes": 114313,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "docx-table",
+        "docx-media"
+      ],
+      "metrics": {
+        "text_chars": 3912,
+        "paragraphs": 287,
+        "tables": 1,
+        "table_rows": 5,
+        "table_cells": 40,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 0,
+        "media_files": 3
+      },
+      "notes": []
+    },
+    {
+      "id": "S033",
+      "relative_path": "local/docx/docx_local_08_tech_plan_公共数据治理运营项目实施技术方案[196页Word].docx",
+      "name": "docx_local_08_tech_plan_公共数据治理运营项目实施技术方案[196页Word].docx",
+      "extension": "docx",
+      "size_bytes": 9121992,
+      "group": "local/docx",
+      "status": "candidate",
+      "role": [
+        "docx-anchor",
+        "long-docx",
+        "docx-table",
+        "docx-media",
+        "docx-structure"
+      ],
+      "metrics": {
+        "text_chars": 92273,
+        "paragraphs": 6287,
+        "tables": 62,
+        "table_rows": 949,
+        "table_cells": 4164,
+        "heading_paragraphs": 0,
+        "numbered_paragraphs": 449,
+        "media_files": 78
+      },
+      "notes": []
+    },
+    {
+      "id": "S034",
+      "relative_path": "local/pdf/pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "name": "pdf_local_01_platform_intro_云南省数据流通利用基础设施平台介绍-0312.pdf",
+      "extension": "pdf",
+      "size_bytes": 5209651,
+      "group": "local/pdf",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-images",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 15,
+        "stream_count": 141,
+        "image_xobjects": 108,
+        "text_operator_hits": 99,
+        "compressed_stream_bytes_sampled": 40833397,
+        "non_ascii_runs_in_streams": 137342,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S035",
+      "relative_path": "local/pdf/pdf_local_02_national_report_《全国数据资源调查报告（2023年）》.pdf",
+      "name": "pdf_local_02_national_report_《全国数据资源调查报告（2023年）》.pdf",
+      "extension": "pdf",
+      "size_bytes": 1487803,
+      "group": "local/pdf",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-images",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 32,
+        "stream_count": 0,
+        "image_xobjects": 2,
+        "text_operator_hits": 34,
+        "compressed_stream_bytes_sampled": 0,
+        "non_ascii_runs_in_streams": 63482,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S036",
+      "relative_path": "local/pdf/pdf_local_03_data_flow_whitepaper_《数据要素流通标准化白皮书（2024版）》.pdf",
+      "name": "pdf_local_03_data_flow_whitepaper_《数据要素流通标准化白皮书（2024版）》.pdf",
+      "extension": "pdf",
+      "size_bytes": 2116433,
+      "group": "local/pdf",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-images",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 54,
+        "stream_count": 67,
+        "image_xobjects": 6,
+        "text_operator_hits": 153,
+        "compressed_stream_bytes_sampled": 1489884,
+        "non_ascii_runs_in_streams": 308696,
+        "encrypted": true
+      },
+      "notes": []
+    },
+    {
+      "id": "S037",
+      "relative_path": "local/pdf/pdf_local_04_regulation_政务数据共享条例_电子政务_中国政府网.pdf",
+      "name": "pdf_local_04_regulation_政务数据共享条例_电子政务_中国政府网.pdf",
+      "extension": "pdf",
+      "size_bytes": 211987,
+      "group": "local/pdf",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-images",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 14,
+        "stream_count": 25,
+        "image_xobjects": 4,
+        "text_operator_hits": 15417,
+        "compressed_stream_bytes_sampled": 1067515,
+        "non_ascii_runs_in_streams": 27044,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S038",
+      "relative_path": "local/pdf/pdf_local_05_standard_GB T 18391.1 信息技术 数据元的规范和标准化.pdf",
+      "name": "pdf_local_05_standard_GB T 18391.1 信息技术 数据元的规范和标准化.pdf",
+      "extension": "pdf",
+      "size_bytes": 1098658,
+      "group": "local/pdf",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-images",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 11,
+        "stream_count": 53,
+        "image_xobjects": 11,
+        "text_operator_hits": 75,
+        "compressed_stream_bytes_sampled": 12377401,
+        "non_ascii_runs_in_streams": 190902,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S039",
+      "relative_path": "local/pdf/pdf_local_06_qa_政务数据目录治理工作Q&A20241213.pdf",
+      "name": "pdf_local_06_qa_政务数据目录治理工作Q&A20241213.pdf",
+      "extension": "pdf",
+      "size_bytes": 402108,
+      "group": "local/pdf",
+      "status": "candidate",
+      "role": [
+        "pdf-anchor",
+        "pdf-text-like"
+      ],
+      "metrics": {
+        "estimated_pages": 20,
+        "stream_count": 36,
+        "image_xobjects": 0,
+        "text_operator_hits": 15632,
+        "compressed_stream_bytes_sampled": 1790805,
+        "non_ascii_runs_in_streams": 57694,
+        "encrypted": false
+      },
+      "notes": []
+    },
+    {
+      "id": "S040",
+      "relative_path": "local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+      "name": "xlsx_local_01_data_element_数据元定义标准.xlsx",
+      "extension": "xlsx",
+      "size_bytes": 11209,
+      "group": "local/xlsx",
+      "status": "candidate",
+      "role": [
+        "xlsx-anchor",
+        "row-cell-anchor"
+      ],
+      "metrics": {
+        "sheets": 1,
+        "max_rows": 29,
+        "max_columns": 3,
+        "nonempty_cells": 65,
+        "formula_cells": 0,
+        "merged_ranges": 5,
+        "sheet_summaries": [
+          {
+            "sheet": "Sheet1",
+            "max_row": 29,
+            "max_column": 3,
+            "nonempty_cells": 65,
+            "formula_cells": 0,
+            "merged_ranges": 5
+          }
+        ]
+      },
+      "notes": []
+    }
+  ]
+}

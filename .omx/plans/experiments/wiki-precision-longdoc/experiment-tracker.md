@@ -67,3 +67,17 @@ EvidenceAnchor-first
 - 产物路径。
 
 执行后再更新状态和 `run-log.md`。
+
+## Phase 1B：多格式样本整理与实验准备
+
+| 项目 | 状态 | 证据 | 下一步 |
+|---|---|---|---|
+| 样本目录全量浏览 | done | `sample-inventory.md`、`sample-manifest.json` 覆盖 40 个文件 | 使用样本 ID 进入实验记录 |
+| DOCX 样本充分性 | done | 15 个 DOCX，含长文、表格、图片、本地制度文档 | 执行 DOCX paragraph/table/cell anchor 原型 |
+| PDF 样本充分性 | partial | 10 个 PDF，含政策/Q&A/白皮书/平台介绍；文本可抽取性为启发式 | 执行真实 PDF 抽取诊断；后续补扫描 PDF |
+| TXT 样本充分性 | done | 1 个约 444 万字符超长 TXT | 执行 line/char/chunk anchor 与尾部覆盖实验 |
+| XLSX 样本充分性 | done | 9 个 XLSX，含本地领域表、宽表、多 sheet、公式 | 执行 row/cell anchor 复核实验 |
+| PPTX | excluded | 5 个 PPTX 已登记库存 | 本轮按路线暂不考虑 |
+
+关联计划：`multiformat-evidence-anchor-experiment-plan.md`。
+
