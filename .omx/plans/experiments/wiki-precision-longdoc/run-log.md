@@ -53,3 +53,16 @@ Detailed record:
 - inference：DOCX/TXT/XLSX 已足以支持 EvidenceAnchor-first sidecar 路线；PDF 需要 text-span/block 抽取器才能达到同级精准定位。
 - unknown：PDF text-span 的稳定 anchor 模型尚未验证；OCR 按当前要求暂不处理。
 
+## 2026-05-15：执行 Phase 1C PDF.js text anchor 方案实验
+
+- evidence：在 `.tools/pdfjs-eval/` 隔离安装 `pdfjs-dist`，未修改根目录依赖。
+- evidence：执行 `experiments/wiki-precision-longdoc/run_pdfjs_text_anchor_probe.mjs`。
+- evidence：pdfjs-dist 版本 5.7.284。
+- evidence：S003 passed：14 页、552 text items、7122 字符、292 line anchors。
+- evidence：S004 passed：20 页、691 text items、9770 字符、442 line anchors。
+- evidence：S036 passed：54 页、10359 text items、40665 字符、1959 line anchors。
+- evidence：S001 passed：113 页、10800 text items、146833 字符、4220 line anchors。
+- inference：PDF.js 适合作为当前 TypeScript/Tauri 主链路的 PDF text anchor 方案候选。
+- inference：Phase 1B 的 PDF 启发式诊断需要被真实抽取器结果替代；S036/S001 可抽取。
+- unknown：复杂表格、跨栏阅读顺序、页眉页脚过滤仍需下一轮质量实验；OCR 继续排除。
+

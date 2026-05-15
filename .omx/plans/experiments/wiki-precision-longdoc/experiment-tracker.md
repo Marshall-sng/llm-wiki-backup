@@ -92,3 +92,13 @@ EvidenceAnchor-first
 
 结果记录：`multiformat-experiment-results.md`。
 
+## Phase 1C：PDF text anchor 方案实验
+
+| 实验 | 状态 | 证据 | 结论 |
+|---|---|---|---|
+| PDF.js text item / line anchor | passed | S003/S004/S036/S001 均可抽取；合计 22402 text items、204390 字符、6913 line anchors | 推荐 PDF.js 作为当前 TS/Tauri 主路线候选 |
+| Phase 1B PDF 启发式复核 | corrected | S036/S001 曾被启发式标记 insufficient，但 PDF.js 实际可抽取 | PDF 质量门禁必须基于真实抽取器结果 |
+| OCR | excluded | 用户明确暂不管 OCR | OCR 后置，不影响当前 PDF text anchor 决策 |
+
+结果记录：`pdf-text-anchor-solution-results.md`。
+
