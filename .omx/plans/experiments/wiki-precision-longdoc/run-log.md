@@ -90,3 +90,13 @@ Detailed record:
 - inference：当前问题主要不是 converted 缺字段，而是 Wiki generation 把结构化表格压缩成摘要型 source page。
 - inference：下一步生产化应让 WikiCandidate 基于 row/cell sidecar 投影，再由 LLM 组织表达，并以 CoverageAudit 作为门禁。
 
+## 2026-05-15：执行产品化设计前补充实验
+
+- evidence：先写 `production-readiness-supplemental-experiment-plan.md`，再执行脚本。
+- evidence：执行 `experiments/wiki-precision-longdoc/run_production_readiness_supplemental_experiments.py`。
+- evidence：XLSX merged cell：9 个样本中 1 个存在合并单元格，S040 有 5 个 merged ranges。
+- evidence：PDF quality gate：4 个 PDF 均为 good；平均 chars/page=762.42，平均 line anchors/page=29.15。
+- evidence：CoverageAudit：实验 WikiCandidate coverage=1.0；当前 wiki source page coverage=0.47，missing field checks=53。
+- inference：CoverageAudit 是 P0；XLSX merged context 与 PDF quality gate 应进入产品化设计边界。
+- inference：OCR、PDF 表格恢复、DOCX 图片语义仍可继续 deferred。
+

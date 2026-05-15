@@ -127,3 +127,13 @@ EvidenceAnchor-first
 
 结果记录：`first-batch-company-closure-results.md`。
 
+## Phase 1F：产品化设计前补充实验
+
+| 实验 | 状态 | 证据 | 结论 |
+|---|---|---|---|
+| XLSX merged cell semantics | passed | 9 个 XLSX 样本中 1 个存在合并单元格；S040 merged ranges=5 | SourceSidecar schema 需要 merged_ranges / merged_context / header_context |
+| PDF extraction quality gate | passed | 4 个 PDF 样本 status=good；chars/page avg=762.42；line anchors/page avg=29.15 | PDF sidecar 需要 page-level quality metrics 与 review gate |
+| CoverageAudit rules | passed | full candidate coverage=1.0；current wiki coverage=0.47，missing field checks=53 | CoverageAudit 应作为 P0 门禁进入产品化设计 |
+
+结果记录：`production-readiness-supplemental-results.md`。
+

@@ -1,0 +1,347 @@
+{
+  "experiment": "xlsx merged cell semantics",
+  "sample_count": 9,
+  "samples_with_merged_ranges": 1,
+  "total_merged_ranges": 5,
+  "results": [
+    {
+      "sample_id": "S013",
+      "relative_path": "downloaded/xlsx/xlsx_web_01_formula_recalc_sample.xlsx",
+      "sheets": [
+        {
+          "sheet": "Metrics",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S014",
+      "relative_path": "downloaded/xlsx/xlsx_web_02_inventory_two_sheet_sample.xlsx",
+      "sheets": [
+        {
+          "sheet": "Inventory",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        },
+        {
+          "sheet": "Vendors",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S015",
+      "relative_path": "downloaded/xlsx/xlsx_web_03_monthly_budget_sample.xlsx",
+      "sheets": [
+        {
+          "sheet": "Budget",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S016",
+      "relative_path": "downloaded/xlsx/xlsx_web_04_wide_table_sample.xlsx",
+      "sheets": [
+        {
+          "sheet": "WideTable",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S017",
+      "relative_path": "downloaded/xlsx/xlsx_web_05_HR_Sample_Dash.xlsx",
+      "sheets": [
+        {
+          "sheet": "Quarterly HR Report",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        },
+        {
+          "sheet": "Data",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S018",
+      "relative_path": "downloaded/xlsx/xlsx_web_06_Table_Style_Guide.xlsx",
+      "sheets": [
+        {
+          "sheet": "Table Design",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S019",
+      "relative_path": "downloaded/xlsx/xlsx_web_07_Page_Layout_Guide.xlsx",
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S020",
+      "relative_path": "downloaded/xlsx/xlsx_web_08_Sales_Performance_Dashboard.xlsx",
+      "sheets": [
+        {
+          "sheet": "Data",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        },
+        {
+          "sheet": "Sheet1",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        },
+        {
+          "sheet": "Sheet4",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        },
+        {
+          "sheet": "Dashboard",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        },
+        {
+          "sheet": "Raw Data",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        },
+        {
+          "sheet": "Pivot Tables",
+          "merged_ranges": [],
+          "affected_cells": 0,
+          "header_context_examples": []
+        }
+      ],
+      "total_merged_ranges": 0,
+      "status": "no_merged_ranges"
+    },
+    {
+      "sample_id": "S040",
+      "relative_path": "local/xlsx/xlsx_local_01_data_element_数据元定义标准.xlsx",
+      "sheets": [
+        {
+          "sheet": "Sheet1",
+          "merged_ranges": [
+            {
+              "range": "A18:A22",
+              "top_left_cell": "A18",
+              "top_left_value": "表示类",
+              "rows": [
+                18,
+                22
+              ],
+              "columns": [
+                "A",
+                "A"
+              ],
+              "affected_cells": [
+                "A18",
+                "A19",
+                "A20",
+                "A21",
+                "A22"
+              ]
+            },
+            {
+              "range": "A2:A9",
+              "top_left_cell": "A2",
+              "top_left_value": "标识类",
+              "rows": [
+                2,
+                9
+              ],
+              "columns": [
+                "A",
+                "A"
+              ],
+              "affected_cells": [
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "A6",
+                "A7",
+                "A8",
+                "A9"
+              ]
+            },
+            {
+              "range": "A14:A17",
+              "top_left_cell": "A14",
+              "top_left_value": "关系类",
+              "rows": [
+                14,
+                17
+              ],
+              "columns": [
+                "A",
+                "A"
+              ],
+              "affected_cells": [
+                "A14",
+                "A15",
+                "A16",
+                "A17"
+              ]
+            },
+            {
+              "range": "A10:A13",
+              "top_left_cell": "A10",
+              "top_left_value": "定义类",
+              "rows": [
+                10,
+                13
+              ],
+              "columns": [
+                "A",
+                "A"
+              ],
+              "affected_cells": [
+                "A10",
+                "A11",
+                "A12",
+                "A13"
+              ]
+            },
+            {
+              "range": "A23:A28",
+              "top_left_cell": "A23",
+              "top_left_value": "管理类",
+              "rows": [
+                23,
+                28
+              ],
+              "columns": [
+                "A",
+                "A"
+              ],
+              "affected_cells": [
+                "A23",
+                "A24",
+                "A25",
+                "A26",
+                "A27",
+                "A28"
+              ]
+            }
+          ],
+          "affected_cells": 27,
+          "header_context_examples": [
+            {
+              "merged_range": "A18:A22",
+              "propagated_value": "表示类",
+              "applies_to_cells": [
+                "A18",
+                "A19",
+                "A20",
+                "A21",
+                "A22"
+              ]
+            },
+            {
+              "merged_range": "A2:A9",
+              "propagated_value": "标识类",
+              "applies_to_cells": [
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "A6",
+                "A7",
+                "A8",
+                "A9"
+              ]
+            },
+            {
+              "merged_range": "A14:A17",
+              "propagated_value": "关系类",
+              "applies_to_cells": [
+                "A14",
+                "A15",
+                "A16",
+                "A17"
+              ]
+            },
+            {
+              "merged_range": "A10:A13",
+              "propagated_value": "定义类",
+              "applies_to_cells": [
+                "A10",
+                "A11",
+                "A12",
+                "A13"
+              ]
+            },
+            {
+              "merged_range": "A23:A28",
+              "propagated_value": "管理类",
+              "applies_to_cells": [
+                "A23",
+                "A24",
+                "A25",
+                "A26",
+                "A27",
+                "A28"
+              ]
+            }
+          ]
+        }
+      ],
+      "total_merged_ranges": 5,
+      "status": "merged_ranges_found"
+    }
+  ],
+  "recommendation": {
+    "schema_required": true,
+    "fields": [
+      "merged_ranges",
+      "merged_context",
+      "header_context",
+      "context_source_cell"
+    ],
+    "reason": "merged cells are present in real samples and affect row/cell interpretation; row facts need propagated context."
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "experiment": "pdf extraction quality gate",
+  "pdfjs_dist_version": "5.7.284",
+  "sample_count": 4,
+  "status_counts": {
+    "good": 4
+  },
+  "recommended_gate": {
+    "fail_if_pages_processed_ratio_lt": 1.0,
+    "review_if_pages_with_text_ratio_lt": 0.95,
+    "review_if_chars_per_page_lt": 80,
+    "review_if_low_text_pages_gt_10_percent": true,
+    "note": "Thresholds are initial product-design baselines from current samples, not final universal constants."
+  },
+  "baseline_distribution": {
+    "chars_per_page_avg": 762.42,
+    "line_anchors_per_page_avg": 29.15,
+    "good_samples": 4
+  },
+  "results": [
+    {
+      "sample_id": "S003",
+      "relative_path": "2026-05-05-000659-170243-政务数据共享条例_电子政务_中国政府网.pdf",
+      "quality_status": "good",
+      "issues": [],
+      "metrics": {
+        "pages": 14,
+        "pages_processed_ratio": 1.0,
+        "pages_with_text_ratio": 1.0,
+        "chars_per_page": 508.71,
+        "text_items_per_page": 39.43,
+        "line_anchors_per_page": 20.86,
+        "failed_pages": 0,
+        "low_text_page_count": 0
+      },
+      "low_text_pages": [],
+      "review_items": []
+    },
+    {
+      "sample_id": "S004",
+      "relative_path": "2026-05-05-000700-619047-政务数据目录治理工作Q&A20241213.pdf",
+      "quality_status": "good",
+      "issues": [],
+      "metrics": {
+        "pages": 20,
+        "pages_processed_ratio": 1.0,
+        "pages_with_text_ratio": 1.0,
+        "chars_per_page": 488.5,
+        "text_items_per_page": 34.55,
+        "line_anchors_per_page": 22.1,
+        "failed_pages": 0,
+        "low_text_page_count": 0
+      },
+      "low_text_pages": [],
+      "review_items": []
+    },
+    {
+      "sample_id": "S036",
+      "relative_path": "local/pdf/pdf_local_03_data_flow_whitepaper_《数据要素流通标准化白皮书（2024版）》.pdf",
+      "quality_status": "good",
+      "issues": [],
+      "metrics": {
+        "pages": 54,
+        "pages_processed_ratio": 1.0,
+        "pages_with_text_ratio": 1.0,
+        "chars_per_page": 753.06,
+        "text_items_per_page": 191.83,
+        "line_anchors_per_page": 36.28,
+        "failed_pages": 0,
+        "low_text_page_count": 2
+      },
+      "low_text_pages": [
+        {
+          "page": 1,
+          "status": "low_confidence",
+          "reasons": [
+            "very_low_chars"
+          ],
+          "chars": 27,
+          "line_anchors": 3
+        },
+        {
+          "page": 43,
+          "status": "low_confidence",
+          "reasons": [
+            "very_low_chars"
+          ],
+          "chars": 19,
+          "line_anchors": 4
+        }
+      ],
+      "review_items": []
+    },
+    {
+      "sample_id": "S001",
+      "relative_path": "2026-05-05-000635-871634-易经杂说.pdf",
+      "quality_status": "good",
+      "issues": [],
+      "metrics": {
+        "pages": 113,
+        "pages_processed_ratio": 1.0,
+        "pages_with_text_ratio": 1.0,
+        "chars_per_page": 1299.41,
+        "text_items_per_page": 95.58,
+        "line_anchors_per_page": 37.35,
+        "failed_pages": 0,
+        "low_text_page_count": 0
+      },
+      "low_text_pages": [],
+      "review_items": []
+    }
+  ]
+}

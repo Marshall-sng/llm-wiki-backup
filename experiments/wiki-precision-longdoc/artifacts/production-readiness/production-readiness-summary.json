@@ -1,0 +1,51 @@
+{
+  "experiment": "production readiness supplemental experiments",
+  "xlsx_merged_cell": {
+    "samples_with_merged_ranges": 1,
+    "total_merged_ranges": 5,
+    "schema_required": true
+  },
+  "pdf_quality_gate": {
+    "status_counts": {
+      "good": 4
+    },
+    "recommended_gate": {
+      "fail_if_pages_processed_ratio_lt": 1.0,
+      "review_if_pages_with_text_ratio_lt": 0.95,
+      "review_if_chars_per_page_lt": 80,
+      "review_if_low_text_pages_gt_10_percent": true,
+      "note": "Thresholds are initial product-design baselines from current samples, not final universal constants."
+    }
+  },
+  "coverage_audit_rules": {
+    "candidate_results": [
+      {
+        "candidate_name": "full_experiment_wiki_candidate",
+        "status": "passed",
+        "coverage_ratio": 1.0,
+        "missing_field_checks": 0
+      },
+      {
+        "candidate_name": "current_wiki_source_page",
+        "status": "failed",
+        "coverage_ratio": 0.47,
+        "missing_field_checks": 53
+      }
+    ],
+    "recommended_rules": {
+      "block_if_missing": [
+        "enterprise_name",
+        "project_name"
+      ],
+      "review_if_missing": [
+        "contacts",
+        "phones",
+        "source_worksheets",
+        "industry"
+      ],
+      "review_if_serial_rewritten": true,
+      "allow_ignore_with_reason": true,
+      "store_consumed_anchor_ids": true
+    }
+  }
+}

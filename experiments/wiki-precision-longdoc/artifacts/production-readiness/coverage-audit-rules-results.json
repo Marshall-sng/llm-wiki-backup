@@ -1,0 +1,548 @@
+{
+  "experiment": "coverage audit rules",
+  "required_fields": [
+    "enterprise_name",
+    "original_serial",
+    "project_name",
+    "contacts",
+    "phones",
+    "source_worksheets",
+    "industry"
+  ],
+  "candidate_results": [
+    {
+      "candidate_name": "full_experiment_wiki_candidate",
+      "status": "passed",
+      "coverage_ratio": 1.0,
+      "total_required_field_checks": 100,
+      "missing_field_checks": 0,
+      "blockers": [],
+      "missing_rows": []
+    },
+    {
+      "candidate_name": "current_wiki_source_page",
+      "status": "failed",
+      "coverage_ratio": 0.47,
+      "total_required_field_checks": 100,
+      "missing_field_checks": 53,
+      "blockers": [
+        "missing_contact_or_phone",
+        "missing_core_identity_or_project"
+      ],
+      "missing_rows": [
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:3",
+          "enterprise_name": "云南省贵金属新材料控股集团股份有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "稀贵金属产业数字化供应链平台, 基于人工智能大模型的贵金属新"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "王志强"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "18301229963"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "数据要素x2024",
+                "高质量数据集-项目库",
+                "高质量数据集-人工智能",
+                "高质量数据集储备项目"
+              ]
+            },
+            {
+              "field": "industry",
+              "expected_values": [
+                "省内重点产业企业"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:4",
+          "enterprise_name": "云南电网有限责任公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "“数中有术”激发玉溪市特色优势产业新动能, 云南能源数据要素"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "常荣"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "15808659105"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "数据要素x2024",
+                "高质量数据集-项目库",
+                "高质量数据集-人工智能",
+                "高质量数据集-数据标注",
+                "基础设施储备项目",
+                "算力一体化"
+              ]
+            },
+            {
+              "field": "industry",
+              "expected_values": [
+                "省内重点产业企业"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:5",
+          "enterprise_name": "云南白药集团股份有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "中医药行业雷公大模型, 中医药行业高质量数据集, 中医药行业"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "孟得力",
+                "杨映辉"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "18611001103",
+                "15368080553"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "数据要素x2024",
+                "高质量数据集-项目库",
+                "高质量数据集-人工智能",
+                "高质量数据集-数据标注",
+                "高质量数据集储备项目"
+              ]
+            },
+            {
+              "field": "industry",
+              "expected_values": [
+                "中医药行业/第一批高质量数据集试点"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:6",
+          "enterprise_name": "中国科学院昆明动物研究所",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "云南省动物资源高质量数据集, 面向生物安全和医药创新的云南动"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "王易芬"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "13888077241"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "高质量数据集-项目库",
+                "高质量数据集-人工智能",
+                "高质量数据集储备项目"
+              ]
+            },
+            {
+              "field": "industry",
+              "expected_values": [
+                "科技/第一批高质量数据集试点"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:7",
+          "enterprise_name": "普洱思茅农场集团有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "咖啡行业高质量数据集：通过建设数据标注平台和数据集开发运营平"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "张斌"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "18387902182"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "项目储备表-高质量数据集储备项目表"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial",
+            "industry"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:8",
+          "enterprise_name": "云南省广播电视台",
+          "missing_fields": [
+            {
+              "field": "contacts",
+              "expected_values": [
+                "金晶"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "13888108125"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "项目储备表-高质量数据集储备项目表"
+              ]
+            },
+            {
+              "field": "industry",
+              "expected_values": [
+                "广电传媒/第一批高质量数据集试点"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial",
+            "project_name"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:9",
+          "enterprise_name": "昆明国际花卉拍卖交易中心有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "全国高质量花卉数据集, 花卉行业供应链高质量数据集项目"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "仇晶辉"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "15925160153"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "高质量数据集-项目库",
+                "高质量数据集-人工智能",
+                "高质量数据集储备项目"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial",
+            "industry"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:10",
+          "enterprise_name": "云南瑞和锦程实业股份有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "数链协同——多式联运数字化新平台, 云南省智慧物流数据共享体"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "赵卫鹏"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "13888055711"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "数据要素x2024",
+                "高质量数据集-项目库",
+                "高质量数据集储备项目"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial",
+            "industry"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:11",
+          "enterprise_name": "科大讯飞",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "建设1个数据资源底座，包括数据加工治理平台、数据资源调度平台"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "吴荣玉"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "18180465060"
+              ]
+            },
+            {
+              "field": "industry",
+              "expected_values": [
+                "教育"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:12",
+          "enterprise_name": "云南省交通投资建设集团有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "针对当前公路交通行业人工智能赋能场景应用过程中数据资源不集中"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "向鹏程"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "18988289769"
+              ]
+            },
+            {
+              "field": "industry",
+              "expected_values": [
+                "省属国有企业"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:13",
+          "enterprise_name": "云南省融资信用征信服务有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "云南省融资信用服务平台（地方征信平台）, 信用信息共享赋能“"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "杨枫"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "15887087069"
+              ]
+            },
+            {
+              "field": "source_worksheets",
+              "expected_values": [
+                "数据要素x2024",
+                "数据要素x2025"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial",
+            "industry"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:17",
+          "enterprise_name": "云南省农业科学院、新华网股份有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "项目建设内容主要包括：1个大数据集（包含10个子数据集）、1"
+              ]
+            },
+            {
+              "field": "contacts",
+              "expected_values": [
+                "尹兴祥、甘苇"
+              ]
+            },
+            {
+              "field": "phones",
+              "expected_values": [
+                "13508718301、15288320209"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial",
+            "source_worksheets",
+            "industry"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:19",
+          "enterprise_name": "云南山海遊旅游集团有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "云南普者黑5A级旅游景区票务数据、云南普者黑5A级旅游景区营"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        },
+        {
+          "row_anchor_id": "first-batch:xlsx:第一批名单:r:20",
+          "enterprise_name": "昆明斗南农产品拍卖有限公司",
+          "missing_fields": [
+            {
+              "field": "project_name",
+              "expected_values": [
+                "DFETC鲜切花拍卖品种数据"
+              ]
+            }
+          ],
+          "consumed_fields": [
+            "enterprise_name",
+            "original_serial"
+          ]
+        }
+      ]
+    }
+  ],
+  "omission_audit_summary_by_type": {
+    "missing_contact": 13,
+    "missing_phone": 13,
+    "missing_source_worksheet": 28,
+    "missing_industry": 7,
+    "project_detail_truncated_or_summarized": 13,
+    "serial_rewritten": 4,
+    "missing_pilot_contact": 4,
+    "missing_pilot_phone": 4
+  },
+  "recommended_rules": {
+    "block_if_missing": [
+      "enterprise_name",
+      "project_name"
+    ],
+    "review_if_missing": [
+      "contacts",
+      "phones",
+      "source_worksheets",
+      "industry"
+    ],
+    "review_if_serial_rewritten": true,
+    "allow_ignore_with_reason": true,
+    "store_consumed_anchor_ids": true
+  },
+  "conclusion": "CoverageAudit can distinguish a full row/cell wiki candidate from the current summary-style wiki page and should be a productization P0 gate."
+}
