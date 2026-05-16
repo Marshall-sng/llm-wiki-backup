@@ -54,6 +54,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Runtime artifacts
+.cache/
+
 # Brainstorm assets (not tracked in source control)
 .superpowers/
 .claude/
