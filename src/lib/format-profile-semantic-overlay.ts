@@ -262,6 +262,36 @@ function asArray(value: unknown): unknown[] {
   return Array.isArray(value) ? value : []
 }
 
+function uniqueJsonCandidates(candidates: string[]): string[] {
+  const seen = new Set<string>()
+  return candidates.filter((candidate) => {
+    const normalized = candidate.replace(/^\uFEFF/, "").trim()
+    if (!normalized || seen.has(normalized)) return false
+    seen.add(normalized)
+    return true
+  }).map((candidate) => candidate.replace(/^\uFEFF/, "").trim())
+}
+
+function extractFenceDecoratedJson(text: string): string | null {
+  const fenced = text.match(/^```(?:json)?[^\S\r\n]*\r?\n?([\s\S]*?)\r?\n?```\s*$/i)
+  if (fenced?.[1]) return fenced[1]
+
+  const firstBrace = text.indexOf("{")
+  const lastBrace = text.lastIndexOf("}")
+  if (firstBrace < 0 || lastBrace <= firstBrace) return null
+  const prefix = text.slice(0, firstBrace).trim()
+  const suffix = text.slice(lastBrace + 1).trim()
+  const prefixIsFence = /^```(?:json)?$/i.test(prefix)
+  const suffixIsFence = suffix === "" || suffix === "```"
+  return prefixIsFence && suffixIsFence ? text.slice(firstBrace, lastBrace + 1) : null
+}
+
+function providerJsonCandidates(rawText: string): string[] {
+  const trimmed = rawText.replace(/^\uFEFF/, "").trim()
+  const decorated = extractFenceDecoratedJson(trimmed)
+  return uniqueJsonCandidates([trimmed, ...(decorated ? [decorated] : [])])
+}
+
 function profileSnapshotHash(profile: Pick<FormatProfileRecord, "id" | "updatedAt" | "styleFacts">): string {
   return `${profile.id}:${profile.updatedAt}:${profile.styleFacts?.metadata.styleFactsSha256 ?? "legacy"}`
 }
@@ -329,7 +359,7 @@ export function buildEvidenceOnlyOverlayInput(profile: FormatProfileRecord, prov
     },
     summaries: {
       structure: bounded([
-        ...profile.structureProfile.sections.slice(0, 8).map((section, index) => `${index + 1}. ${section.title} (${section.evidence})`),
+        ...profile.structureProfile.sections.slice(0, 8).map((section, index) => `${index + 1}. role-candidate evidence=${section.evidence}${section.level ? ` level=${section.level}` : ""}`),
         ...profile.structureProfile.evidenceSummary,
       ], 12),
       styleFacts: bounded(styleFactsSummary, 8),
@@ -360,6 +390,7 @@ export function buildSemanticOverlayPrompt(input: EvidenceOnlyOverlayInput): Cha
         "禁止创建、覆盖、删除或修正字体、字号、页边距、颜色、版式等事实。",
         "禁止输出 generationInstruction/finalInstruction/rawText/textSample/snippets/fulltext/sourceContext/export 等字段。",
         "必须只输出 JSON，且必须符合 schemaVersion format-profile-llm-overlay.v1。",
+        "不要使用 Markdown 代码围栏包裹 JSON，例如 ```json。",
         "每个 claim 必须引用 evidenceCatalog 中存在的 evidenceRefs。",
         "可以输出 formatRuleSynthesis：把证据归纳为类似 GB/T 9704-2012 的细粒度格式规则，规则必须包含 target、normType、rule、detail、confidence、evidenceRefs 和 attributes；source 可省略。",
         "formatRuleSynthesis.source 如需输出，只能使用 llm-inferred、detected 或 standard-default；省略或无法识别时系统会按 llm-inferred 审计。",
@@ -556,9 +587,16 @@ export function parseAndEvaluateSemanticOverlay(rawText: string, evidenceIds: Se
   const violations: OverlayEvaluatorReport["violations"] = []
   const warnings: string[] = []
   let parsed: unknown
-  try {
-    parsed = JSON.parse(rawText)
-  } catch {
+  for (const candidate of providerJsonCandidates(rawText)) {
+    try {
+      parsed = JSON.parse(candidate)
+      break
+    } catch {
+      // Try the next conservative compatibility candidate. We only strip
+      // Markdown code-fence decoration, not arbitrary chat prose.
+    }
+  }
+  if (parsed === undefined) {
     return {
       output: null,
       report: rejectedReport([violation("invalid-json", "provider output is not valid JSON")], "invalid-json"),

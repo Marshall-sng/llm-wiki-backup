@@ -42,6 +42,7 @@ function writerResult(verdict: "pass" | "warn" | "fail"): WriteDocxExportResult 
     },
     contract: {} as WriteDocxExportResult["contract"],
     intermediate: {} as WriteDocxExportResult["intermediate"],
+    fidelityDiagnostics: {} as WriteDocxExportResult["fidelityDiagnostics"],
     record: {} as WriteDocxExportResult["record"],
   }
 }
@@ -146,8 +147,8 @@ describe("docx export save helpers", () => {
     ]
     warningResult.adapterResult.knownWarnings = [
       "manual-word-openability-not-tested",
-      "high-fidelity-style-replica-not-supported",
-      "high-fidelity-style-replica-not-supported",
+      "pixel-perfect-rendering-not-claimed",
+      "pixel-perfect-rendering-not-claimed",
     ]
     const outcome = await runDocxExportSaveFlow(
       { draft: createDocxExportDraft() },
@@ -160,7 +161,7 @@ describe("docx export save helpers", () => {
 
     expect(outcome.diagnostics).toEqual([
       "manual-word-openability-not-tested",
-      "high-fidelity-style-replica-not-supported",
+      "pixel-perfect-rendering-not-claimed",
     ])
   })
 })

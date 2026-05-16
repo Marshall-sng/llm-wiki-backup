@@ -4,8 +4,9 @@ import { CheckCircle2, FileUp, Layers3, Trash2, X, AlertTriangle } from "lucide-
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { readFile, preprocessFile, probeFormatProfile } from "@/commands/fs"
-import { buildFormatProfileFromExtractedText, buildFormatProfileSnapshot, summarizeFormatDiagnostics } from "@/lib/format-profile"
+import { readFile, probeFormatProfile } from "@/commands/fs"
+import { buildFormatProfileSnapshot, summarizeFormatDiagnostics } from "@/lib/format-profile"
+import { importFormatProfileFromPath } from "@/lib/format-profile-import"
 import { buildFormatSpecAuditView } from "@/lib/format-spec"
 import { useFormatProfileStore } from "@/stores/format-profile-store"
 import { useWikiStore } from "@/stores/wiki-store"
@@ -84,6 +85,7 @@ export function FormatProfilesView() {
 
   const handleImport = async () => {
     setError(null)
+    setDeleteConfirmId(null)
     const selected = await open({
       multiple: false,
       directory: false,
@@ -93,14 +95,7 @@ export function FormatProfilesView() {
 
     setImporting(true)
     try {
-      await preprocessFile(selected).catch(() => "")
-      let probeError: string | null = null
-      const probe = await probeFormatProfile(selected).catch((err) => {
-        probeError = err instanceof Error ? err.message : String(err)
-        return null
-      })
-      const extractedText = await readFile(selected)
-      const profile = buildFormatProfileFromExtractedText({ sourcePath: selected, extractedText, probe, probeError })
+      const profile = await importFormatProfileFromPath(selected, { readFile, probeFormatProfile })
       addProfile(profile)
       selectProfile(profile.id)
     } catch (err) {
@@ -174,6 +169,11 @@ export function FormatProfilesView() {
                 <Layers3 className="mx-auto mb-2 h-7 w-7 opacity-60" />
                 <div className="font-medium text-foreground">{t("formatProfiles.emptyTitle")}</div>
                 <p className="mt-1 leading-relaxed">{t("formatProfiles.emptyHint")}</p>
+                {error && (
+                  <div className="mt-3 rounded-md border border-destructive/30 bg-destructive/10 p-2 text-left text-[11px] text-destructive">
+                    {error}
+                  </div>
+                )}
                 <Button type="button" className="mt-3" size="sm" onClick={handleImport} disabled={importing}>
                   <FileUp className="h-3.5 w-3.5" />
                   {importing ? t("formatProfiles.importing") : t("formatProfiles.import")}

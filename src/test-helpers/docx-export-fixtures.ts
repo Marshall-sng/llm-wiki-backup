@@ -127,7 +127,7 @@ export function createDocxFormatProfileSnapshot(): DraftProcessingFormatProfileS
         includeRawEvidenceDump: false,
         promptMayIncludeEvidenceIds: false,
       },
-      boundaries: ["来源事实优先", "不承诺高保真复刻"],
+      boundaries: ["来源事实优先", "不承诺像素级渲染等价"],
       rules: createDocxFormatRules(),
       promptBlock: "按正式文稿格式约束生成。",
       summaryLines: ["主标题独立成行", "一级标题使用中文序号"],

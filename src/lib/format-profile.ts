@@ -1,6 +1,6 @@
 import type { FormatProfileProbe } from "@/commands/fs"
 import { buildStyleFactsFromProbe, deriveStyleProfileFromStyleFacts, styleFactsBoundaryDiagnostic, styleFactsDiagnostics, styleSummaryForHumans, type StyleFactsEnvelope } from "@/lib/style-facts"
-import { deriveSemanticOverlayStatus, getAcceptedSemanticOverlay, semanticOverlaySummaryLines } from "@/lib/format-profile-semantic-overlay"
+import { deriveSemanticOverlayStatus, semanticOverlaySummaryLines } from "@/lib/format-profile-semantic-overlay"
 import { buildFormatSpecSnapshot } from "@/lib/format-spec"
 import type { DraftProcessingFormatProfileSnapshot, FormatDiagnosticSeverity, FormatProfileConfidence, FormatProfileDiagnostic, FormatProfileFileType, FormatProfileRecord, FormatProfileSection } from "@/lib/format-profile-types"
 
@@ -321,17 +321,17 @@ function buildFormatSpecificProfile(fileType: FormatProfileFileType, probe?: For
 function constraintsFor(fileType: FormatProfileFileType, sections: FormatProfileSection[], styleEvidence: string[]): string[] {
   const base = [
     "保留来源事实边界，不根据格式画像虚构内容。",
-    "格式画像只约束结构、表达和诊断，不代表正式导出样式。",
+    "格式画像只约束结构角色、表达和可观测 DOCX 样式属性，不复制来源正文。",
   ]
   if (sections.length > 0) {
-    base.push(`优先参考这些结构线索：${sections.slice(0, 8).map((section) => section.title).join("、")}。`)
+    base.push(`已检测到 ${sections.length} 条结构线索；仅用于归纳标题层级和编号模式，不得复制来源标题或正文。`)
   }
   if (styleEvidence.length > 0) {
     base.push(`参考这些样式/版式线索：${styleEvidence.slice(0, 5).join("；")}。`)
   }
   switch (fileType) {
     case "docx":
-      base.push("按正式文稿/方案/报告的层级结构组织底稿；可参考字体、字号、编号和页边距线索，但不承诺导出复刻。")
+      base.push("按正式文稿/方案/报告的层级结构组织底稿；DOCX 导出以可观测字体、字号、编号、缩进、行距和页边距属性作为高保真收敛目标。")
       break
     case "xlsx":
       base.push("将表格线索转译为指标、口径、观察和结论，不直接伪造电子表格。")
@@ -347,44 +347,7 @@ function constraintsFor(fileType: FormatProfileFileType, sections: FormatProfile
 }
 
 export function buildGenerationInstruction(profile: Pick<FormatProfileRecord, "id" | "updatedAt" | "title" | "fileType" | "confidence" | "documentKind" | "structureProfile" | "styleProfile" | "styleFacts" | "semanticOverlay" | "writingProfile" | "diagnostics">): string {
-  const sections = profile.structureProfile.sections.slice(0, 10).map((section, index) => `${index + 1}. ${section.title}`).join("\n") || "未识别稳定章节。"
-  const styleSummary = profile.styleFacts
-    ? styleSummaryForHumans(profile.styleFacts, profile.fileType, 8)
-    : profile.styleProfile.evidenceSummary?.slice(0, 8) ?? []
-  const semanticStatus = profile.styleFacts ? deriveSemanticOverlayStatus(profile as FormatProfileRecord, false) : "not-configured"
-  const semanticOverlay = getAcceptedSemanticOverlay(profile as FormatProfileRecord)
-  const semanticSummary = semanticOverlaySummaryLines(profile as FormatProfileRecord, 8)
-  const styleEvidence = styleSummary.map((item) => `- ${item}`).join("\n") || "- 未提取稳定样式证据。"
-  const styleFactsMarker = profile.styleFacts
-    ? `StyleFacts：${profile.styleFacts.schemaVersion} / ${profile.styleFacts.metadata.styleFactsSha256.slice(0, 12)} / evidence-only / ${semanticStatus}`
-    : "StyleFacts：legacy-profile / unavailable"
-  const semanticBlock = semanticOverlay && semanticSummary.length > 0
-    ? ["", "### 智能解释（证据绑定）", ...semanticSummary.map((item) => `- ${item}`)]
-    : []
-  const diagnostics = profile.diagnostics.map((item) => `- [${item.severity}] ${item.message}`).join("\n") || "- 暂无诊断提醒。"
-  const constraints = profile.writingProfile.constraints.map((item) => `- ${item}`).join("\n")
-  return [
-    "## 格式画像约束",
-    `画像：${profile.title}`,
-    `文件类型：${profile.fileType.toUpperCase()}`,
-    `文档定位：${profile.documentKind}`,
-    `置信度：${profile.confidence}`,
-    styleFactsMarker,
-    "",
-    "### 结构线索",
-    sections,
-    "",
-    "### 样式/版式线索",
-    styleEvidence,
-    "- 边界：以上为确定性样式事实摘要，仅用于底稿约束，不代表导出复刻或视觉还原。",
-    ...semanticBlock,
-    "",
-    "### 写作约束",
-    constraints,
-    "",
-    "### 诊断边界",
-    diagnostics,
-  ].join("\n")
+  return buildFormatSpecSnapshot(profile as FormatProfileRecord).formatSpec.promptBlock
 }
 
 
@@ -453,8 +416,8 @@ export function buildFormatProfileSnapshot(profile: FormatProfileRecord): DraftP
     formatSpecHash: formatSpecSnapshot.formatSpecHash,
     formatSpec: formatSpecSnapshot.formatSpec,
     profileSnapshotHash: legacyProfileSnapshotHash,
-    generationInstruction: profile.writingProfile.generationInstruction,
-    legacyGenerationInstruction: profile.writingProfile.generationInstruction,
+    generationInstruction: formatSpecSnapshot.formatSpec.promptBlock,
+    legacyGenerationInstruction: formatSpecSnapshot.formatSpec.promptBlock,
     diagnostics: profile.diagnostics.map((item) => ({ ...item })),
     capturedAt: Date.now(),
     ...(styleFactsSha256 ? { styleFactsSha256 } : {}),

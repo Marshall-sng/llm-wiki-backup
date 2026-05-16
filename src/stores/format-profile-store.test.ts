@@ -83,6 +83,25 @@ describe("format-profile-store", () => {
     expect(useFormatProfileStore.getState().lastChange.persist).toBe("immediate")
   })
 
+  it("can import a fresh profile after deleting the last one", () => {
+    const first = makeProfile("first")
+    const second = makeProfile("second")
+    useFormatProfileStore.getState().addProfile(first)
+
+    useFormatProfileStore.getState().deleteProfile(first.id)
+    expect(useFormatProfileStore.getState()).toMatchObject({
+      profiles: [],
+      selectedProfileId: null,
+      activeProfileId: null,
+    })
+
+    useFormatProfileStore.getState().addProfile(second)
+
+    expect(useFormatProfileStore.getState().profiles.map((profile) => profile.id)).toEqual(["second"])
+    expect(useFormatProfileStore.getState().selectedProfileId).toBe(second.id)
+    expect(useFormatProfileStore.getState().activeProfileId).toBe(second.id)
+  })
+
   it("expires persisted running semantic overlays during hydration", () => {
     const profile = makeProfile("profile-1")
     const running = createRunningSemanticOverlay(profile, llmConfig, 1000, 123)

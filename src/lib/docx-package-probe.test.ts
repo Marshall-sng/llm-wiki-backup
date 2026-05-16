@@ -21,7 +21,7 @@ describe("docx package probe", () => {
     })
 
     expect(probe.validationErrors).toEqual([])
-    expect(probe.knownWarnings).toEqual(expect.arrayContaining(["manual-word-openability-not-tested", "high-fidelity-style-replica-not-supported"]))
+    expect(probe.knownWarnings).toEqual(expect.arrayContaining(["manual-word-openability-not-tested", "pixel-perfect-rendering-not-claimed"]))
     expect(probe.structuralAssertions.map((item) => item.id)).toEqual(expect.arrayContaining([
       "document-title-present",
       "level1-headings-present",
@@ -36,5 +36,21 @@ describe("docx package probe", () => {
     await expect(probeDocxPackage(new Uint8Array())).resolves.toMatchObject({ validationErrors: ["empty-docx-bytes"] })
     const invalid = await probeDocxPackage(new Uint8Array([1, 2, 3, 4]))
     expect(invalid.validationErrors).toContain("docx-package-probe-exception")
+  })
+
+  it("validates visible paragraph text across DOCX run boundaries instead of raw XML substrings", async () => {
+    const draft = createDocxExportDraft([
+      "# 云南省大数据有限公司简介",
+      "",
+      "**云南省大数据有限公司**是经云南省委、省政府批准成立的省属国有功能性企业。",
+    ].join("\n"))
+    const intermediate = buildDocxIntermediateDocument({ draft, formatProfileSnapshot: createDocxFormatProfileSnapshot() })
+    const rendered = await renderDocxWithTsAdapter(intermediate, draft.title)
+    const probe = await probeDocxPackage(rendered.bytes, {
+      documentTitle: "云南省大数据有限公司简介",
+      paragraphSnippets: ["云南省大数据有限公司是经云南省委、省政府批准"],
+    })
+
+    expect(probe.validationErrors).toEqual([])
   })
 })

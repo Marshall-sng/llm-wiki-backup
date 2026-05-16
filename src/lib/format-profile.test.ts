@@ -20,7 +20,7 @@ describe("format-profile", () => {
     expect(profile.fileType).toBe("docx")
     expect(profile.confidence).toBe("high")
     expect(profile.structureProfile.sections.map((section) => section.title)).toEqual(expect.arrayContaining(["项目背景", "风险提醒", "实施计划"]))
-    expect(profile.writingProfile.generationInstruction).toContain("格式画像约束")
+    expect(profile.writingProfile.generationInstruction).toContain("格式约束（FormatSpec）")
     expect(profile.writingProfile.generationInstruction).toContain("DOCX")
   })
 
@@ -60,8 +60,8 @@ describe("format-profile", () => {
       expect.stringContaining("页面线索"),
     ]))
     expect(profile.styleProfile.evidenceSummary).toEqual(styleSummaryForHumans(profile.styleFacts, profile.fileType))
-    expect(profile.writingProfile.generationInstruction).toContain("StyleFacts：format-profile-style-facts.v0")
-    expect(profile.writingProfile.generationInstruction).toContain("样式/版式线索")
+    expect(profile.writingProfile.generationInstruction).toContain("格式约束（FormatSpec）")
+    expect(profile.writingProfile.generationInstruction).toContain("paragraph.body")
     expect(profile.writingProfile.generationInstruction).toContain("FangSong")
     expect(profile.writingProfile.generationInstruction).not.toContain("paragraphSamples")
   })
@@ -112,7 +112,7 @@ describe("format-profile", () => {
     expect(profile.structureProfile.sectionPattern).toBe("workbook-sheets")
     expect(profile.structureProfile.sections.map((section) => section.title)).toEqual(expect.arrayContaining(["收入", "成本"]))
     expect(profile.styleProfile.evidenceSummary?.join("\n")).toContain("单元格样式")
-    expect(profile.writingProfile.generationInstruction).toContain("指标、口径、观察和结论")
+    expect(profile.writingProfile.generationInstruction).toContain("指标口径")
     expect(profile.diagnostics).toEqual(expect.arrayContaining([expect.objectContaining({ id: "xlsx-positioning" })]))
   })
 
@@ -149,7 +149,7 @@ describe("format-profile", () => {
     expect(profile.structureProfile.sectionPattern).toBe("slide-deck")
     expect(profile.structureProfile.sections[0]).toMatchObject({ title: "第 1 页：战略目标", evidence: "slide" })
     expect(profile.styleProfile.evidenceSummary?.join("\n")).toContain("主题")
-    expect(profile.writingProfile.generationInstruction).toContain("汇报大纲、每页主题和讲述要点")
+    expect(profile.writingProfile.generationInstruction).toContain("汇报页序")
     expect(profile.diagnostics).toEqual(expect.arrayContaining([expect.objectContaining({ id: "pptx-positioning" })]))
   })
 
@@ -183,7 +183,7 @@ describe("format-profile", () => {
       expect.objectContaining({ id: "pdf-low-fidelity-boundary" }),
       expect.objectContaining({ id: "pdf-scan-likely", severity: "warning" }),
     ]))
-    expect(profile.writingProfile.generationInstruction).toContain("低保真成品参考")
+    expect(profile.writingProfile.generationInstruction).toContain("低/中置信成品参考")
   })
 
 
@@ -245,7 +245,7 @@ describe("format-profile", () => {
     const instruction = buildGenerationInstruction(profile)
     expect(instruction).toContain("XLSX")
     expect(instruction).toContain("指标口径")
-    expect(instruction).toContain("不直接伪造电子表格")
+    expect(instruction).toContain("而不是伪造电子表格")
   })
 })
 

@@ -41,6 +41,21 @@ function includesAll(value: string, expected: string[]): number {
   return expected.reduce((count, item) => count + (value.includes(item) ? 1 : 0), 0)
 }
 
+function decodeXmlText(value: string): string {
+  return value
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, "\"")
+    .replace(/&apos;/g, "'")
+}
+
+function extractVisibleWordText(documentXml: string): string {
+  return [...documentXml.matchAll(/<w:t\b[^>]*>([\s\S]*?)<\/w:t>/g)]
+    .map((match) => decodeXmlText(match[1] ?? ""))
+    .join("")
+}
+
 function assertion(id: string, passed: boolean, count?: number, issueCode?: string): DocxProbeAssertion {
   return { id, passed, ...(typeof count === "number" ? { count } : {}), ...(issueCode ? { issueCode } : {}) }
 }
@@ -58,7 +73,7 @@ function pushContentAssertion(
 }
 
 export async function probeDocxPackage(input: DocxProbeInput, expectations: DocxPackageProbeExpectations = {}): Promise<DocxPackageProbeResult> {
-  const knownWarnings = ["manual-word-openability-not-tested", "high-fidelity-style-replica-not-supported"]
+  const knownWarnings = ["manual-word-openability-not-tested", "pixel-perfect-rendering-not-claimed"]
   const validationErrors: string[] = []
   const structuralAssertions: DocxProbeAssertion[] = []
   let packageParts: string[] = []
@@ -78,11 +93,12 @@ export async function probeDocxPackage(input: DocxProbeInput, expectations: Docx
     const documentXml = await zip.file("word/document.xml")?.async("string") ?? ""
     const numberingXml = await zip.file("word/numbering.xml")?.async("string") ?? ""
     const stylesXml = await zip.file("word/styles.xml")?.async("string") ?? ""
+    const documentSearchText = `${documentXml}\n${extractVisibleWordText(documentXml)}`
 
-    pushContentAssertion(structuralAssertions, documentXml, "document-title-present", expectations.documentTitle ? [expectations.documentTitle] : undefined, "missing-document-title")
-    pushContentAssertion(structuralAssertions, documentXml, "level1-headings-present", expectations.level1Headings, "missing-level1-heading")
-    pushContentAssertion(structuralAssertions, documentXml, "level2-heading-present", expectations.level2Headings, "missing-level2-heading")
-    pushContentAssertion(structuralAssertions, documentXml, "paragraph-content-present", expectations.paragraphSnippets, "missing-paragraph-content")
+    pushContentAssertion(structuralAssertions, documentSearchText, "document-title-present", expectations.documentTitle ? [expectations.documentTitle] : undefined, "missing-document-title")
+    pushContentAssertion(structuralAssertions, documentSearchText, "level1-headings-present", expectations.level1Headings, "missing-level1-heading")
+    pushContentAssertion(structuralAssertions, documentSearchText, "level2-heading-present", expectations.level2Headings, "missing-level2-heading")
+    pushContentAssertion(structuralAssertions, documentSearchText, "paragraph-content-present", expectations.paragraphSnippets, "missing-paragraph-content")
 
     const listCount = countRegex(documentXml, /<w:numPr>/g)
     const hasDecimal = /w:val="decimal"/.test(numberingXml)

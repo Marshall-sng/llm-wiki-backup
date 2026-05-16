@@ -126,6 +126,17 @@ describe("format-profile semantic overlay", () => {
     expect(overwrite.report.violations.some((item) => item.code === "unknown-field" || item.code === "fact-creation-attempt")).toBe(true)
   })
 
+  it("accepts provider JSON wrapped in a Markdown json code fence", () => {
+    const profile = makeProfile()
+    const evidenceRef = profile.styleFacts!.evidence[0].id
+    const fenced = `\`\`\`json\n${validOverlay(evidenceRef)}\n\`\`\``
+
+    const accepted = parseAndEvaluateSemanticOverlay(fenced, new Set([evidenceRef]))
+
+    expect(accepted.report.status).toBe("accepted")
+    expect(accepted.output?.schemaVersion).toBe("format-profile-llm-overlay.v1")
+  })
+
   it("accepts evidence-cited format rule synthesis and rejects unknown rule evidence", () => {
     const profile = makeProfile()
     const evidenceRef = profile.styleFacts!.evidence[0].id

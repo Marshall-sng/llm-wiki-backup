@@ -3,6 +3,7 @@ import type { DisplayMessage } from "@/stores/chat-store"
 import type { MessageReference } from "@/lib/format-profile-types"
 import type { DraftDerivationMeta, DraftRecord, DraftRestorationMeta } from "@/lib/draft-types"
 import { buildDraftVersion, cloneReferences, type DraftVersion, type DraftVersionReason } from "@/lib/draft-versioning"
+import { normalizeDraftStorageWhitespace } from "@/lib/text-normalization"
 export type { DraftDerivationMeta, DraftRecord, DraftRestorationMeta, DraftSourceMeta } from "@/lib/draft-types"
 
 export type DraftPersistMode = "none" | "debounced" | "immediate"
@@ -49,7 +50,7 @@ function nextDraftId(): string {
 }
 
 export function cleanDraftContent(content: string): string {
-  return content
+  return normalizeDraftStorageWhitespace(content)
     .replace(/<!--\s*sources:[\s\S]*?-->/gi, "")
     .replace(/<!--.*?-->/gs, "")
     .replace(/<think(?:ing)?>\s*[\s\S]*?<\/think(?:ing)?>\s*/gi, "")

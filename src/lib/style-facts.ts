@@ -63,7 +63,7 @@ interface BuildStyleFactsInput {
 type UnknownRecord = Record<string, unknown>
 
 const schemaVersion = "format-profile-style-facts.v0" as const
-const highFidelityScope = "fixture-backed deterministic parser fidelity for covered style fields; not visual/export reproduction"
+const highFidelityScope = "fixture-backed deterministic parser fidelity for covered style fields; DOCX may use covered fields as limited writer attributes; not template replay, visual parity, or broad export reproduction"
 
 function asRecord(value: unknown): UnknownRecord | undefined {
   return value && typeof value === "object" && !Array.isArray(value) ? value as UnknownRecord : undefined

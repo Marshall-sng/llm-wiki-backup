@@ -37,6 +37,13 @@ export interface FormatSpecRule {
   id: string
   target: string
   normType?: string
+  /**
+   * Canonical coverage dimension used by FormatSpec audit/merge logic.
+   *
+   * This is a structured contract, not user-facing prose. Older snapshots may
+   * omit it; consumers must keep compatibility fallbacks for legacy rules.
+   */
+  dimension?: string
   rule: string
   detail: string
   source: FormatSpecRuleSource

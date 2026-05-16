@@ -285,4 +285,9 @@ describe("cleanDraftContent", () => {
   it("removes hidden source comments and thinking blocks", () => {
     expect(cleanDraftContent("<!-- sources: [] -->\n<think>hidden</think>\nVisible")).toBe("Visible")
   })
+
+  it("normalizes LLM-generated whitespace HTML entities when saving a draft", () => {
+    expect(cleanDraftContent("# 标题\n\n&emsp;&emsp;云南省大数据有限公司")).toBe("# 标题\n\n云南省大数据有限公司")
+    expect(cleanDraftContent("&lt;保留普通 HTML 示例&gt;")).toBe("&lt;保留普通 HTML 示例&gt;")
+  })
 })

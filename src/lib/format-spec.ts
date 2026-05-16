@@ -1,4 +1,6 @@
 import { getAcceptedSemanticOverlay, type OverlayFormatRule } from "@/lib/format-profile-semantic-overlay"
+import { ensureDocxFormatSpecBaseline } from "@/lib/docx-formatspec-baseline"
+import { buildDocxExecutableStyleFactsInput, buildDocxExecutableStyleRules } from "@/lib/docx-stylefacts-format-attributes"
 import { sha256Stable } from "@/lib/style-facts"
 import type {
   DraftProcessingFormatProfileSnapshot,
@@ -103,10 +105,12 @@ function summaryEvidence(profile: FormatProfileRecord, limit = 3): string {
 
 function boundaries(): string[] {
   return [
+    "进入底稿生成/修订场景后，只输出可保存为底稿的文档正文，不输出聊天式前后缀、解释或修改说明。",
     "来源事实优先于格式约束。",
     "不根据格式画像虚构事实、金额、条款、结论或引用。",
-    "不承诺导出 DOCX/XLSX/PPTX/PDF 成品。",
-    "不承诺视觉还原、高保真复刻或像素级匹配。",
+    "格式画像不得把来源格式文件的正文、条款或候选标题写入目标底稿。",
+    "DOCX-first 阶段以可观测 DOCX 属性作为高保真收敛目标；无法确认的属性必须降级为默认规则或诊断。",
+    "不承诺像素级匹配、Word/WPS 渲染完全等价、印章水印或精确分页。",
     "默认数据范围为 evidence-only，不注入来源正文、raw evidence、snippets 或 fulltext。",
   ]
 }
@@ -120,8 +124,8 @@ function buildDocxRules(profile: FormatProfileRecord): FormatSpecRule[] {
   const sizes = listText(typography.fontSizeUsagePt)
   const paraStyles = listText(asRecord(profile.styleProfile.formatSpecific).paragraphStyleUsage)
   const pageDetail = page.widthCm && page.heightCm
-    ? `检测页尺寸约 ${page.widthCm}cm × ${page.heightCm}cm；方向和边距只作线索。`
-    : "页面尺寸、方向和边距只作为约束线索；证据不足时不承诺复刻。"
+    ? `检测页尺寸约 ${page.widthCm}cm × ${page.heightCm}cm；可观测页面属性进入 DOCX writer 规则。`
+    : "页面尺寸、方向和边距证据不足时使用正式文稿基线并产生诊断。"
   const fontDetail = fonts.length || sizes.length
     ? `检测样式摘要：${[fonts.length ? `字体 ${fonts.join("、")}` : "", sizes.length ? `字号 ${sizes.join("、")}` : ""].filter(Boolean).join("；")}。`
     : summaryEvidence(profile)
@@ -135,7 +139,7 @@ function buildDocxRules(profile: FormatProfileRecord): FormatSpecRule[] {
     rule("docx-heading-3", "heading", "低层级标题用于具体事项。", "同一层级的符号、缩进和句式保持一致；长句应回落为正文条款。", "standard-default", "medium"),
     rule("docx-numbering", "numbering", "条款编号连续且层级清晰。", "长句、金额、范围和权限保留在正文条款内，不提升为格式标题。", "inferred", "high"),
     rule("docx-typography-font", "typography", "参考检测到的字体事实。", hasStyleFacts ? fontDetail : "样式事实不足时只保留正式文稿语气和层级规则。", hasStyleFacts ? "detected" : "inferred", profile.confidence),
-    rule("docx-typography-boundary", "typography", "字体字号只约束正式程度和可读性。", "不得承诺导出复刻；不得根据字体推断不存在的业务结论。", "standard-default", "high"),
+    rule("docx-typography-boundary", "typography", "字体字号只约束正式程度和可读性。", "优先转为角色化 DOCX 属性；不得根据字体推断不存在的业务结论。", "standard-default", "high"),
     rule("docx-paragraph", "paragraph", "正文段落保持正式文稿段落规则。", "建议首行缩进、稳定行距、左对齐或两端对齐；不把正文压成来源清单。", "standard-default", "medium"),
     rule("docx-paragraph-style", "paragraph", "同类段落同形。", paraStyles.length ? `可参考段落样式使用线索：${paraStyles.join("、")}；但不复刻样式定义。` : "缺少段落样式使用证据时，保持标题、正文、表格说明三类段落清晰分离。", paraStyles.length ? "detected" : "standard-default", profile.confidence),
     rule("docx-table", "table", "表格承载清单、阈值、对照或审批矩阵。", "表格事实必须来自当前底稿或引用资料，不由格式画像补造。", "standard-default", "high"),
@@ -221,6 +225,14 @@ function summaryLinesFor(profile: FormatProfileRecord): string[] {
 export function buildFormatSpec(profile: FormatProfileRecord): FormatSpec {
   const acceptedOverlay = getAcceptedSemanticOverlay(profile)
   const synthesizedRules = acceptedOverlay?.output?.formatRuleSynthesis?.map(overlayRuleToFormatSpec) ?? []
+  const docxStyleFactRules = profile.fileType === "docx"
+    ? buildDocxExecutableStyleRules(buildDocxExecutableStyleFactsInput(profile.styleFacts, profile.confidence))
+    : []
+  const deterministicRules = rulesFor(profile)
+  const docxBaselineResult = profile.fileType === "docx"
+    ? ensureDocxFormatSpecBaseline([...docxStyleFactRules, ...deterministicRules, ...synthesizedRules], { confidence: profile.confidence })
+    : null
+  const effectiveRules = docxBaselineResult?.rules ?? (synthesizedRules.length ? synthesizedRules : deterministicRules)
   return {
     schemaVersion: FORMAT_SPEC_SCHEMA_VERSION,
     rendererVersion: FORMAT_SPEC_RENDERER_VERSION,
@@ -235,14 +247,23 @@ export function buildFormatSpec(profile: FormatProfileRecord): FormatSpec {
     },
     summaryLines: [
       ...summaryLinesFor(profile),
+      ...(docxStyleFactRules.length
+        ? [`DOCX StyleFacts 已生成 ${docxStyleFactRules.length} 条受限可执行样式/页面属性（page/title/heading/body），用于 writer 规则。`]
+        : []),
+      ...(docxBaselineResult
+        ? [`DOCX FormatSpec 已应用正式文稿最低基线覆盖：${docxBaselineResult.audit.coveredDimensions.length}/${docxBaselineResult.audit.coveredDimensions.length + docxBaselineResult.audit.missingDimensions.length} 个维度。`]
+        : []),
       synthesizedRules.length
         ? `LLM 已归纳 ${synthesizedRules.length} 条细粒度 FormatRuleSpec 规则；事实层仍以确定性 StyleFacts 为准。`
         : acceptedOverlay ? "智能解释已被接受，但仅作为规则解释层，不写入事实层。" : "未使用已接受的智能解释时，仍使用确定性画像生成格式规则。",
     ],
-    boundaries: boundaries(),
-    rules: synthesizedRules.length ? synthesizedRules : rulesFor(profile),
+    boundaries: profile.fileType === "docx"
+      ? [...boundaries(), "DOCX 可将确定性 StyleFacts 的受限字段转为 page/title/heading/body writer 规则；这不是模板回放、全文复制或像素级视觉等价承诺。"]
+      : boundaries(),
+    rules: effectiveRules,
   }
 }
+
 
 export function renderFormatSpecPromptBlock(spec: FormatSpec): string {
   return [
@@ -260,7 +281,8 @@ export function renderFormatSpecPromptBlock(spec: FormatSpec): string {
     "",
     "### 格式规则",
     ...spec.rules.flatMap((item) => {
-      const head = `- 【${item.target}${item.normType ? `/${item.normType}` : ""}】${item.rule} ${item.detail}`
+      const role = item.dimension ?? item.normType ?? item.target
+      const head = `- 【${item.target}/${role}】${item.rule} ${item.detail}`
       const attributes = (item.attributes ?? []).slice(0, 8).map((attribute) => `  - ${attribute.name}: ${attribute.value}${attribute.unit ? ` ${attribute.unit}` : ""}`)
       return [head, ...attributes]
     }),

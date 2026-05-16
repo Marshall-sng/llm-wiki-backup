@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs"
 import { describe, expect, it } from "vitest"
 import { buildFormatProfileFromExtractedText } from "@/lib/format-profile"
 import { buildFormatSpec, buildFormatSpecAuditView, buildFormatSpecSnapshot, renderFormatSpecPromptBlock } from "@/lib/format-spec"
+import { auditDocxFormatSpecBaseline, DOCX_BASELINE_DIMENSIONS } from "@/lib/docx-formatspec-baseline"
 import { completeSemanticOverlay, createRunningSemanticOverlay } from "@/lib/format-profile-semantic-overlay"
 import type { FormatProfileRecord } from "@/lib/format-profile-types"
 import type { LlmConfig } from "@/stores/wiki-store"
@@ -87,13 +88,24 @@ describe("format-spec", () => {
     expect(spec.rules.map((item) => item.target)).toContain(expectedTarget)
     expect(promptBlock).toContain("格式约束（FormatSpec）")
     expect(promptBlock).toContain("必守边界")
-    expect(promptBlock).toContain("不承诺视觉还原")
+    expect(promptBlock).toContain("高保真收敛目标")
     expect(promptBlock).not.toContain("StyleFacts：")
     expect(promptBlock).not.toContain("画像生成约束")
     expect(promptBlock).not.toContain("不应泄露")
     expect(promptBlock).not.toContain("秘密工作表")
     expect(promptBlock).not.toContain("秘密页标题")
     expect(promptBlock).not.toContain("秘密PDF正文")
+  })
+
+  it("keeps legacy generationInstruction on the FormatSpec contract without source title leakage", () => {
+    const profile = profileFor("docx")
+    const instruction = profile.writingProfile.generationInstruction
+
+    expect(instruction).toContain("格式约束（FormatSpec）")
+    expect(instruction).toContain("paragraph.body")
+    expect(instruction).not.toContain("格式画像约束")
+    expect(instruction).not.toContain("不应泄露")
+    expect(instruction).not.toContain("第一章 不应泄露的来源章节")
   })
 
   it("separates source profile hash from renderer hash", () => {
@@ -110,6 +122,22 @@ describe("format-spec", () => {
     expect(snapshot.formatSpec.boundaries.length).toBeGreaterThan(0)
     expect(snapshot.formatSpec.rules.length).toBeGreaterThan(0)
     expect(snapshot.formatSpec.promptBlock).toContain("格式约束（FormatSpec）")
+  })
+
+  it("includes DOCX formal baseline dimensions and attributes in generated FormatSpec", () => {
+    const profile = profileFor("docx")
+    const snapshot = buildFormatSpecSnapshot(profile)
+    const audit = auditDocxFormatSpecBaseline(snapshot.formatSpec.rules)
+
+    expect(audit.verdict).toBe("pass")
+    expect(audit.coveredDimensions).toEqual([...DOCX_BASELINE_DIMENSIONS])
+    expect(snapshot.formatSpec.rules.map((rule) => rule.dimension)).toEqual(expect.arrayContaining(["title.main", "paragraph.body", "page.margin"]))
+    expect(snapshot.formatSpec.promptBlock).toContain("fontFamily: 方正小标宋简体")
+    expect(snapshot.formatSpec.promptBlock).toContain("fontSizePt: 22 pt")
+    expect(snapshot.formatSpec.promptBlock).toContain("lineSpacingPt: 30 pt")
+    expect(snapshot.formatSpec.promptBlock).toContain("firstLineIndentChars: 2")
+    expect(snapshot.formatSpec.promptBlock).toContain("marginTopCm.detectedLayout: 2.54 cm")
+    expect(snapshot.formatSpec.promptBlock).toContain("marginTopCm.instructionalText: 3.9 cm")
   })
 
   it("builds a structured audit view without parsing prompt text", () => {
@@ -173,7 +201,7 @@ describe("format-spec", () => {
     expect(staleSnapshot.formatSpecHash).toBe(autoSnapshot.formatSpecHash)
   })
 
-  it("uses accepted LLM synthesized format rules before deterministic fallback rules", () => {
+  it("merges accepted LLM synthesized format rules without dropping DOCX baseline dimensions", () => {
     const profile = profileFor("docx")
     const evidenceRef = profile.styleFacts!.evidence[0].id
     const running = createRunningSemanticOverlay(profile, config, 1000, 20)
@@ -212,9 +240,12 @@ describe("format-spec", () => {
     const promptBlock = renderFormatSpecPromptBlock(spec)
 
     expect(completed.status).toBe("accepted")
-    expect(spec.rules).toHaveLength(1)
-    expect(spec.rules[0]).toMatchObject({ id: "llm-rule-body", target: "paragraph", normType: "spacing", source: "inferred" })
-    expect(spec.rules[0].attributes?.map((item) => item.name)).toEqual(["indent", "alignment", "lineSpacing"])
+    expect(spec.rules.some((rule) => rule.id === "llm-rule-body")).toBe(true)
+    expect(spec.rules.length).toBeGreaterThan(1)
+    expect(auditDocxFormatSpecBaseline(spec.rules).verdict).toBe("pass")
+    const llmRule = spec.rules.find((rule) => rule.id === "llm-rule-body")
+    expect(llmRule).toMatchObject({ id: "llm-rule-body", target: "paragraph", normType: "spacing", source: "inferred" })
+    expect(llmRule?.attributes?.map((item) => item.name)).toEqual(["indent", "alignment", "lineSpacing"])
     expect(promptBlock).toContain("LLM 归纳正文段落规则")
     expect(promptBlock).toContain("indent: first-line")
   })

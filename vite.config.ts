@@ -39,8 +39,20 @@ export default defineConfig(async () => ({
         }
       : undefined,
     watch: {
-      // 3. tell vite to ignore watching `src-tauri`
-      ignored: ["**/src-tauri/**"],
+      // 3. tell vite to ignore Tauri/Rust and app-managed project data.
+      // In desktop dev, the active wiki project is often the repo root.
+      // Persisting app data such as `.llm-wiki/format-profiles.json` or
+      // Office extraction caches must not trigger a Vite full reload, or an
+      // import can navigate back to the startup Knowledge view before the
+      // user sees the newly imported format profile.
+      ignored: [
+        "**/src-tauri/**",
+        "**/.llm-wiki/**",
+        "**/.cache/**",
+        "**/raw/**",
+        "**/wiki/**",
+        "**/.omx/**",
+      ],
     },
   },
 

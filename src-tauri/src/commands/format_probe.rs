@@ -29,6 +29,7 @@ struct StyleRecord {
     outline_level: Option<String>,
     fonts: Vec<String>,
     font_sizes_half_points: Vec<String>,
+    spacing: Option<Value>,
     has_bold: bool,
     has_italic: bool,
 }
@@ -279,6 +280,12 @@ fn parse_docx_styles(styles_xml: &str) -> Vec<StyleRecord> {
                     24,
                 ),
                 font_sizes_half_points: collect_tag_attr_values(&style_xml, "w:sz", "w:val", 24),
+                spacing: extract_tag_snippets(&style_xml, "w:spacing").into_iter().next().map(|spacing| json!({
+                    "lineTwips": get_attr(&spacing, "w:line"),
+                    "lineRule": get_attr(&spacing, "w:lineRule"),
+                    "before": get_attr(&spacing, "w:before"),
+                    "after": get_attr(&spacing, "w:after"),
+                })),
                 has_bold: style_xml.contains("<w:b") || style_xml.contains("<w:bCs"),
                 has_italic: style_xml.contains("<w:i") || style_xml.contains("<w:iCs"),
             })
@@ -421,6 +428,7 @@ fn style_to_json(style: &StyleRecord) -> Value {
         "outlineLevel": style.outline_level,
         "fonts": style.fonts,
         "fontSizesHalfPoints": style.font_sizes_half_points,
+        "spacing": style.spacing,
         "hasBold": style.has_bold,
         "hasItalic": style.has_italic,
     })
@@ -501,6 +509,8 @@ fn probe_docx<R: std::io::Read + std::io::Seek>(
                     "right": get_attr(&page_margins, "w:right"),
                     "bottom": get_attr(&page_margins, "w:bottom"),
                     "left": get_attr(&page_margins, "w:left"),
+                    "header": get_attr(&page_margins, "w:header"),
+                    "footer": get_attr(&page_margins, "w:footer"),
                 }) },
             },
             "numberingDefinitions": count_tag(&numbering_xml, "w:num"),
