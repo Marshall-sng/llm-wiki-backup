@@ -724,3 +724,320 @@ Rejected: continue format-polishing in Slice D | the agreed stop condition was i
 Constraint: no high-fidelity replica promise, no manual Word-openability promise, no automatic overwrite, no manual template route.
 
 Verification: user desktop smoke result shows DOCX exported to `C:\Users\Dante\Desktop\云南省数据流通利用基础设施平台介绍.docx` with only the two accepted boundary reminders; targeted Vitest 2 files / 11 tests PASS; `npm run typecheck` PASS; `npm run build` PASS with pre-existing Vite warnings only.
+
+## Decision 040 - Reframe DOCX-first around high-fidelity as the core objective (2026-05-15)
+
+Decision: DOCX-first must treat high-fidelity format restoration as the core product objective, not as an out-of-scope/non-goal. Prior reminders such as `high-fidelity-style-replica-not-supported` are only temporary honesty boundaries for what has not yet been verified; they must not be interpreted as abandoning high-fidelity.
+
+Why: For DOCX-like formal documents, format fidelity is not decoration. It is the central user value: title hierarchy, fonts, font sizes, paragraph spacing, indentation, numbering, tables, page setup, and Word/WPS rendering behavior determine whether the exported document is actually useful. A merely exportable DOCX is only an MVP transport layer, not the end state.
+
+Reframing:
+- Previous Slice C/D boundary: do not falsely claim high-fidelity before it is measured.
+- New DOCX-first direction: build measurable high-fidelity restoration as the next core loop.
+- Product copy should move from negative boundary codes toward fidelity diagnostics: restored, partially restored, not restored, and not yet verifiable.
+
+Rejected: continue treating high-fidelity as unsupported/out-of-scope | this contradicts the core value of DOCX export.
+Rejected: claim 100% high-fidelity immediately | current implementation has not yet measured Word/WPS rendering parity or full style-rule coverage.
+Rejected: expand horizontally to XLSX/PPTX before closing DOCX fidelity | this risks producing several half-complete exporters instead of one strong DOCX-first workflow.
+
+Constraint: high-fidelity is the objective, but claims must remain evidence-backed; no manual template route, no automatic overwrite, no unsupported Word/WPS guarantee.
+
+Directive: The next DOCX stage should be a fidelity loop: source DOCX style facts -> editable FormatSpec/rules -> writer mapping -> exported DOCX reverse probe -> fidelity coverage report -> user-readable diagnostics. Replace/soften `high-fidelity-style-replica-not-supported` in product UX once fidelity coverage reporting exists.
+
+Confidence: high.
+
+Scope-risk: moderate.
+
+Tested: decision-only record based on user correction after Slice D desktop smoke test.
+
+Not-tested: fidelity coverage engine, reverse style probe, Word/WPS visual parity, enhanced writer style mapping.
+
+## Decision 041 - Split DOCX high-fidelity work into staged E1/E2/E3 slices (2026-05-15)
+
+Decision: Do not attempt source style enhancement, writer fidelity enhancement, and UI fidelity productization in one large step. Split the DOCX-first high-fidelity loop into staged slices and start with E1: baseline diagnostics and measurement.
+
+Why: High-fidelity DOCX export has three separable risks: whether source style facts are known, whether the writer can apply them, and whether exported output can be verified and explained. Doing all three at once would make failures hard to attribute and rollback hard. E1 should build the measurement baseline before writer changes, so later fidelity improvements are evidence-guided instead of blind tuning.
+
+Staged plan:
+- E1: DOCX high-fidelity baseline diagnostics. Measure source style facts, exported DOCX facts, rule coverage, and gaps. Minimize writer changes.
+- E2: DOCX writer style mapping enhancements. Use E1 coverage to target the highest-value gaps such as title, headings, body paragraphs, numbering, margins, and tables.
+- E3: DOCX fidelity UX/productization. Replace raw boundary codes with user-readable fidelity coverage diagnostics and export records.
+
+Rejected: solve all fidelity problems in one slice | too large, high regression risk, unclear attribution.
+Rejected: start with writer changes before measurement | risks blind changes without a way to prove improvement.
+Rejected: expand to XLSX/PPTX before DOCX fidelity baseline | contradicts DOCX-first.
+
+Constraint: E1 must preserve current DOCX export behavior, avoid restoring manual templates, and avoid unsupported claims of 100% fidelity.
+
+Directive: Begin with RALPLAN for Slice E1 only. Acceptance must include a concrete verification shape for fidelity baseline diagnostics and a stop condition before E2.
+
+Confidence: high.
+
+Scope-risk: moderate.
+
+Tested: decision-only planning record.
+
+Not-tested: E1 implementation, reverse probe coverage, UI diagnostic changes.
+
+## Decision 042 - Add non-blocking DOCX fidelity diagnostics as the E1 baseline (2026-05-15)
+
+Decision: implement Slice E1 as a standalone DOCX fidelity diagnostics module and expose its report from `writeDocxExport` without changing adapter validation, review verdicts, save failures, or writer style mapping.
+
+Why: DOCX-first high-fidelity work needs measurement before tuning. The report establishes source expectations, exported observations, coverage buckets, and E2 priority gaps while preserving the already-working DOCX export path.
+
+Rejected: treat exported structure as restored when no source rule exists | this creates false fidelity confidence; absent source expectations must be `unverified`.
+Rejected: merge fidelity gaps into validation/review/save blockers | E1 is diagnostic only and must not regress export success.
+Rejected: store raw DOCX XML or source text in reports | violates leakage boundaries and makes records unsafe.
+
+Constraint: high-fidelity is the product objective, but E1 still cannot claim Word/WPS parity or 100% fidelity. No manual template route, no auto-overwrite, no XLSX/PPTX expansion.
+
+Verification: targeted Vitest 5 files / 21 tests PASS; `npm run typecheck` PASS; `npm run build` PASS with pre-existing Vite warnings; architect review APPROVE after fixing no-source and missing-bucket issues.
+
+Next: Slice E2 should consume the E1 report and improve selected writer style mappings with measurable coverage gains.
+
+## Decision 043 - Treat `行文格式（通用）20210625(1).docx` as the minimum DOCX FormatSpec baseline (2026-05-15)
+
+Decision: The file `D:\llm_wiki\行文格式（通用）20210625(1).docx` is the minimum standard and boundary for future DOCX format-constraint generation. Generated DOCX FormatSpec/format constraints may be richer than this baseline, but must not be less detailed than it for covered formal-document dimensions.
+
+Why: DOCX-first fidelity depends on explicit, executable formatting constraints. The generic writing-format sample defines the required floor for title, subtitle, heading hierarchy, body text, indentation, line spacing, page setup, and related formal-document rules. It should act like a local project standard comparable to a GB/T-style rule floor, not merely a reference example.
+
+Baseline implication:
+- Future DOCX FormatSpec output must include explicit rules for document title, subtitle when present, level-1/level-2/level-3 headings, body paragraph typography, indentation, line spacing, and page setup when the document type is formal text.
+- Additional source-specific facts from `基准素材.docx` or other finished files can override/add details, but cannot reduce the baseline coverage.
+- Missing source evidence should be marked `unverified`; missing baseline rule dimensions in generated constraints are a generation-quality problem.
+
+Rejected: use the generic writing-format file as only a loose style hint | this would allow future constraints to remain too vague.
+Rejected: use it as a rigid full visual template for every document | source-specific finished material can add or specialize constraints.
+Rejected: proceed to writer tuning without encoding this baseline in the FormatSpec generation target | writer improvements would lack a stable rule floor.
+
+Constraint: This baseline does not restore the abandoned manual-template route and does not itself prove Word/WPS parity. It defines the minimum rule coverage expected from DOCX FormatSpec generation.
+
+Directive: Slice E2/E2-prep should ensure DOCX FormatSpec generation and fidelity diagnostics can evaluate whether generated constraints meet this minimum baseline before measuring writer fidelity gains.
+
+Confidence: high.
+
+Scope-risk: moderate.
+
+Tested: baseline DOCX parsed successfully; extracted page, title, subtitle, heading, body, indentation, and line-spacing facts.
+
+Not-tested: product enforcement of the baseline in FormatSpec generation; writer application of all baseline rules.
+
+
+
+## Decision 044 - Enforce DOCX FormatSpec baseline through canonical dimensions (2026-05-15)
+
+Decision: Implement Slice E2-prep by adding a DOCX formal-writing baseline catalog, a coverage audit, and a backward-compatible `FormatSpecRule.dimension` contract. DOCX FormatSpec generation must merge deterministic rules with accepted LLM overlay rules and then fill missing baseline dimensions instead of letting overlay rules replace the deterministic baseline.
+
+Why: The approved DOCX-first high-fidelity path needs a stable, executable rule floor before writer tuning. Without canonical dimensions, coverage audit would remain dependent on prose/id heuristics; without merge-and-fill, accepted LLM overlay can collapse the constraint set and produce weaker-than-baseline prompts.
+
+Rejected: directly tune the DOCX writer first | faster visible output but lacks a stable rule/audit basis and makes source-vs-baseline conflicts hard to explain.
+Rejected: only expand `buildDocxRules()` prose | does not prevent overlay replacement and keeps audit tied to text wording.
+Rejected: treat `行文格式（通用）20210625(1).docx` as a rigid template | it is a minimum rule floor; current source facts may specialize values.
+
+Constraint: `page.margin` has two baseline sources: actual DOCX XML `sectPr` values and instructional body-text values. The implementation preserves both source semantics as attributes and warnings instead of silently choosing one. No manual template route, no XLSX/PPTX expansion, no `DocxExportRule.attributes` propagation, and no Word/WPS parity claim in this slice.
+
+Verification: targeted Vitest 3 files / 23 tests PASS; DOCX/draft regression Vitest 5 files / 25 tests PASS; `npm run typecheck` PASS; `npm run build` PASS with pre-existing Vite warnings.
+
+Next: Slice E2 writer tuning may consume stable FormatSpec dimensions/attributes to improve title, heading, body, page, and table style mapping with measurable fidelity gains.
+
+Confidence: high.
+
+Scope-risk: moderate.
+
+Tested: baseline catalog/audit, conservative normalization including ambiguous negatives, overlay merge preserving baseline, editable promptBlock rules preservation, diagnostics dimension intake, DOCX export/draft regressions, typecheck, build.
+
+Not-tested: writer consumption of attributes, Word/WPS visual parity, UI baseline audit display.
+
+## 2026-05-15 Slice E2 implementation — DOCX structure roles + writer style mapping
+
+Status: implemented / verified / architect-approved
+
+Scope completed:
+- Added DOCX FormatSpec style resolver (`src/lib/docx-format-style.ts`) that maps canonical dimensions such as `title.main`, `heading.level1`, `heading.level2`, `paragraph.body`, and `list.numbering` into writer style policy.
+- Extended DOCX intermediate blocks with `formatDimensions` and `stylePolicy`, and normalized visual full-width/ideographic indentation at DOCX export boundary only. Stored drafts are not mutated.
+- Added conservative bare-list recovery only after colon introductions, with `bare-list-recovered` diagnostics and negative tests for narrative paragraphs.
+- Updated DOCX writer to consume style policy for title, heading, paragraph, and list output. XML tests verify spacing, indentation, fonts, numbering, and that different FormatSpec attributes change generated styles XML.
+- Extended fidelity diagnostics to evaluate canonical dimensions directly, including title/heading/body/list/table coverage.
+
+Verification evidence:
+- `npx vitest run src/lib/docx-intermediate.test.ts src/lib/docx-format-style.test.ts src/lib/docx-ts-adapter.test.ts src/lib/docx-writer.test.ts src/lib/docx-export-save.test.ts src/lib/docx-fidelity-diagnostics.test.ts src/lib/format-spec.test.ts src/lib/draft-processing.test.ts --reporter=verbose` => 8 files / 55 tests PASS.
+- `npm run typecheck` => PASS.
+- `npm run build` => PASS; only pre-existing Vite chunk/dynamic-import warnings observed.
+- Architect review after implementation => APPROVE; no blocking issues.
+
+Boundaries preserved:
+- DOCX-first only; no XLSX/PPTX expansion.
+- No manual template route restored.
+- No UI/store/Tauri changes in this slice.
+- No auto-overwrite behavior added.
+- No Word/WPS parity claim; diagnostics still report limitations.
+
+Remaining follow-ups:
+- Manual desktop Word/WPS visual inspection remains required for user-facing high-fidelity judgment.
+- Later slice should address page margin/source-priority conflict and richer visual fidelity diagnostics.
+
+### Decision 2026-05-15 — Normalize Markdown/wiki inline markers at DOCX export boundary
+
+Decision: DOCX export must treat common draft-storage inline markers as document semantics, not literal Word text.
+
+Rationale:
+- User-provided exported DOCX showed high-level style improvements, but raw markers such as `**...**` and `[[...]]` leaked into the saved Word document.
+- These markers are acceptable in draft storage and chat/workspace contexts, but they are not acceptable in final formal DOCX output.
+- The fix belongs in the deterministic DOCX adapter boundary so stored drafts remain unchanged and the behavior is testable.
+
+Implemented behavior:
+- `**文本**` -> bold DOCX run.
+- `[[实体]]` -> plain text `实体`.
+- `[[target|label]]` -> plain text `label`.
+
+Rejected:
+- Mutating the stored draft before export | would mix storage syntax normalization with output rendering.
+- Adding a user-facing manual cleanup step | would not be a reliable DOCX-first export loop.
+- Restoring manual template routing | remains outside the product direction.
+
+Verification:
+- Targeted adapter/save tests passed: 3 files / 16 tests.
+- DOCX-first regression suite passed: 8 files / 56 tests.
+- `npm run typecheck` and `npm run build` passed.
+
+Remaining boundary:
+- This improves DOCX cleanliness and inline semantics, but does not by itself prove Word/WPS visual parity.
+
+### Decision 2026-05-15 — Align DOCX structural probe with exported visible inline text
+
+Decision: after DOCX inline marker normalization, package-probe expectations must be derived from the same exported visible text semantics as the writer, not from raw draft-storage Markdown/wiki syntax.
+
+Why: user desktop export failed with `missing-paragraph-content` even though the paragraph existed. The root cause was a validation mismatch: the writer removed/rendered `**...**` and `[[...]]`, while the structural probe still searched for raw paragraph snippets containing those markers. This created a false blocking validation error.
+
+Implemented behavior:
+- Shared inline normalization helpers are exported from the DOCX adapter.
+- Writer probe expectations normalize title/headings/paragraph snippets before validation.
+- Paragraph probe snippets use the first visible exported run so bold-run boundaries do not break XML substring checks.
+
+Verification:
+- Targeted adapter/writer/save tests passed: 3 files / 17 tests.
+- DOCX-first regression suite passed: 8 files / 57 tests.
+- `npm run typecheck` and `npm run build` passed.
+
+Remaining boundary:
+- This removes a false `missing-paragraph-content` blocker; it does not claim full Word/WPS visual fidelity.
+
+
+### Decision 2026-05-15 — Allow limited DOCX executable StyleFacts attributes
+
+Decision: deterministic DOCX StyleFacts may generate limited executable FormatSpec attributes for `title.main`, `heading.level1`, and `paragraph.body`.
+
+Rationale:
+- Previous profiles with different StyleFacts still exported almost identical DOCX styles because the writer only consumed generic baseline/default rules.
+- DOCX-first high fidelity requires using already-parsed style evidence, not only adding more passive summaries.
+- The safe middle ground is a narrow bridge: source facts become writer hints for covered dimensions, while the DOCX formal baseline still covers missing dimensions.
+
+Implemented behavior:
+- New bridge builds sanitized DOCX-only input and emits StyleFacts-backed rules before baseline merge.
+- Source font strings are preserved in FormatSpec; writer-family normalization happens only in the DOCX style resolver.
+- Fact-level evidenceRefs are filtered against registered sanitized evidence IDs before entering rules, prompt blocks, snapshots, or export contracts.
+
+Rejected:
+- Full template replay | conflicts with abandoned manual-template route and auto-overwrite boundaries.
+- Broad StyleFacts-to-export conversion | too risky before dimensions are explicitly covered and tested.
+- Treating StyleFacts as a visual parity promise | would overstate current evidence and Word/WPS guarantees.
+
+Verification:
+- Targeted E3a tests passed: 4 files / 26 tests.
+- `npm run typecheck`, `npm run test:mocks`, and `npm run build` passed.
+- Architect review approved after evidenceRefs hardening.
+
+Remaining boundary:
+- This improves executable DOCX style differentiation; it does not prove full Word/WPS visual parity.
+
+### Fix 2026-05-15 — DOCX probe validates visible Word text across run boundaries
+
+Decision: DOCX package probe must validate exported visible text reconstructed from `<w:t>` runs, not only raw `word/document.xml` substrings.
+
+Why: manual export failed with `missing-paragraph-content` even though content can be present. DOCX writers may split one visible paragraph across multiple runs because of bold/wiki normalization or style boundaries; raw XML substring search can miss text spanning tags or XML entities.
+
+Implemented behavior:
+- `probeDocxPackage` now extracts visible Word text from `<w:t>` nodes and decodes XML entities.
+- Content assertions search both raw XML and reconstructed visible text.
+- Added regression where `**云南省大数据有限公司**是...` is split into DOCX runs but expected visible paragraph text still validates.
+
+Verification:
+- `npx vitest run src/lib/docx-package-probe.test.ts src/lib/docx-ts-adapter.test.ts src/lib/docx-writer.test.ts src/lib/docx-export-save.test.ts` => PASS, 4 files / 21 tests.
+- `npm run typecheck` => PASS.
+- `npm run test:mocks` => PASS, 104 files / 1245 tests.
+- `npm run build` => PASS with pre-existing Vite warnings only.
+
+## 2026-05-15 DOCX-first 高保真约束分层修复
+
+- 决策：将旧的“格式画像约束”降级为兼容字段，实际底稿加工与可见约束统一使用 FormatSpec promptBlock。
+- 根因：旧画像文本混合了证据摘要、来源正文片段、写作提示和导出目标，导致源格式文件正文污染 prompt，且 writer 无法稳定消费细粒度格式属性。
+- 实施：StyleFacts 继续作为证据层；FormatSpec 作为角色化可执行规则层；LLM 写作层只接收最小底稿输出契约；DOCX writer 消费 page/title/heading/body 属性。
+- 高保真方向：DOCX-first 阶段以可观测 DOCX 属性为高保真收敛目标；不再使用“高保真不支持”作为常规降级话术，仅保留“不承诺像素级/Word 渲染完全等价”的真实边界。
+- 本轮覆盖：中文正文主字体优先于 Times New Roman/zh-CN 等拉丁或语言标记；StyleFacts 页边距/页面尺寸进入 writer；Markdown ## 一、... 按正式中文一级标题识别；旧 generationInstruction 不再输出来源结构原文。
+- 验证：targeted vitest 9 files / 69 tests passed；npm run typecheck passed；npm run test:mocks 105 files / 1253 tests passed；npm run build passed（仅保留既有 Vite chunk/dynamic-import warnings）。
+
+### Fix 2026-05-15 — Accept Markdown-fenced JSON from semantic overlay providers
+
+Decision: semantic overlay parsing now accepts provider output when the only extra wrapper is a Markdown JSON code fence, while keeping the same evidence/schema evaluator.
+
+Why: some model endpoints return valid JSON inside ```json fences despite being instructed to output JSON only. Treating that wrapper as `invalid-json` caused unnecessary fallback to deterministic profiles.
+
+Implemented behavior:
+- Added a conservative parser candidate step that strips only full Markdown code-fence decoration or a code-fence prefix around one JSON object.
+- Did not parse arbitrary chat prose or relax evidenceRefs/schema/quality checks.
+- Strengthened the prompt to explicitly avoid Markdown code fences.
+
+Verification:
+- `npx vitest run src/lib/format-profile-semantic-overlay.test.ts` => PASS, 10 tests.
+- `npm run typecheck` => PASS.
+- `npm run build` => PASS with pre-existing Vite warnings only.
+
+## 2026-05-15 Slice E3b RALPLAN approved — DOCX fidelity first convergence
+
+Status: plan approved / not implemented.
+
+Context:
+- Compared `c:\Users\Dante\Desktop\云南省大数据有限公司3.docx` with `d:\llm_wiki\基准素材_复制.docx` using OpenXML inspection.
+- Confirmed partial alignment: A4 page size, core page margins, body font/size direction.
+- Confirmed gaps: main-title vs Chinese level-1 heading style confusion, over-conversion to Word numbering, 600 vs 570 line spacing, missing header/footer distance consumption.
+
+Approved plan:
+- `.omx/plans/ralplan-slice-e3b-docx-first-fidelity.md`
+
+Decision:
+- Use the DOCX-first high-fidelity loop: StyleFacts -> FormatSpec -> intermediate roles/intents -> writer mapping -> OpenXML diagnostics.
+- Do not use a minimal writer-only patch as the primary approach.
+- Do not add template replay, automatic overwrite, XLSX/PPTX expansion, or pixel-perfect Word/WPS claims.
+
+Consensus evidence:
+- Planner draft created and revised twice.
+- Architect review returned ITERATE; required StyleFacts title/heading deconfliction and conservative numbering intent were added.
+- Critic review returned ITERATE; required numbering decision table, StyleFacts field paths, hard boundary gates, and diagnostics schema were added.
+- Critic re-review returned APPROVE; no blocker.
+
+Execution stop condition for next phase:
+- Implement Slice E3b only after starting an execution lane.
+- Must pass targeted E3b tests, `npm run typecheck`, required `npm run test:mocks`, and build if feasible.
+- If full mocks are blocked, run the documented minimum boundary test set and report the gap.
+
+## Decision 045 - First DOCX fidelity convergence consumes executable StyleFacts instead of adding dead rules (2026-05-15)
+
+Decision: Slice E3b implements the DOCX-first fidelity loop by carrying parsed style facts into executable writer attributes and diagnostics: title/heading role separation, conservative numbering intent, exact line spacing, header/footer distances, and source-vs-export bucket inputs.
+
+Why: The previous output was closer but still missed high-value baseline traits: main title confused with Chinese section heading style, visible numbering was over-converted, line spacing stayed at writer defaults, and header/footer distances were not consumed. Adding more prose constraints would have diminishing returns unless the writer and diagnostics could consume the already-parsed evidence.
+
+Rejected: add more dead FormatSpec prose only | does not change exported DOCX and repeats the earlier mechanical constraint problem.
+Rejected: convert every numeric line into Word auto-numbering | corrupts formal numbered prose when the source profile only has baseline/default numbering rules.
+Rejected: template replay or manual-template restoration | conflicts with the abandoned manual template route and auto-overwrite safety boundary.
+
+Constraint: high fidelity is the DOCX-first target, but this slice still does not claim pixel-perfect Word/WPS parity; it only improves covered, observable OpenXML attributes.
+
+Verification: targeted DOCX Vitest 5 files / 39 tests PASS; style-facts Vitest 1 file / 6 tests PASS; `npm run typecheck` PASS; `npm run test:mocks` PASS (106 files / 1262 tests); `cargo check` PASS with pre-existing warnings; `npm run build` PASS; architect review APPROVED.
+
+Directive: Next DOCX fidelity work should begin from manual baseline comparison evidence and the new diagnostics bucketInputs. Do not regress to generic prose-rule accumulation or horizontal XLSX/PPTX work before the DOCX loop is judged acceptable.
+
+Confidence: high.
+
+Scope-risk: moderate.
+
+Not-tested: manual Word/WPS visual parity and user desktop comparison after E3b.
