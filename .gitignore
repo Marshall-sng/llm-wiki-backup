@@ -61,8 +61,5 @@ pnpm-debug.log*
 .superpowers/
 .claude/
 
-# OMX runtime state (keep durable plans, ignore session-local cache/log/state)
-.omx/*
-!.omx/plans/
-!.omx/plans/*.md
-!.omx/plans/**
+# OMX / oh-my-codex runtime state (plans migrated to openspec/)
+.omx/
