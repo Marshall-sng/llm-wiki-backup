@@ -1,6 +1,8 @@
 # Archive Index
 
-本目录保存已完成、暂停或不再作为当前主线的历史计划。2026-05-14 已将 FormatProfile / FormatSpec 相关根目录 PRD、test spec、ralplan 合并到对应阶段目录，并将 requirements 中的非核心支撑记录移入归档。正式导出参考研究 `formal-export-reference-findings.md` 已重新提升到 `active/`。
+本目录保存已完成、暂停或不再作为当前主线的历史计划（11 项）。
+
+> **2026-05-17 清理：** FormatProfile / FormatSpec / Editable Format Constraints 等实验文档已合并到 `openspec/experiments/<实验名>/archive/` 下的对应实验代码目录中，以便实验文档与可执行代码统一管理。本目录仅保留无对应实验代码的独立提案。
 
 - `2026-05-draft-feature-ui-integration/`
   - `draft-feature-ui-integration-plan.md`
@@ -24,26 +26,6 @@
   - `draft-v15-template-aware-draft-processing-ralplan.md`
 - `2026-05-draft-v16-basic-template-match-report/`
   - `draft-v16-basic-template-match-report-ralplan.md`
-- `2026-05-editable-format-constraints/`
-  - `experiment-and-productization-prd-test.md`
-- `2026-05-format-profile-backend-experiment/`
-  - `format-profile-experiment-plan.md`
-- `2026-05-format-profile-four-format-productization/`
-  - `format-profile-four-format-productization-plan.md`
-- `2026-05-format-profile-semantic-refinement-phaseB/`
-  - `phaseB-prd-test-ralplan-datascope.md`
-- `2026-05-format-profile-style-extraction-phase3/`
-  - `prd-test.md`
-- `2026-05-format-profile-stylefacts-phaseA/`
-  - `stylefacts-design-prd-test.md`
-- `2026-05-format-rule-synthesis/`
-  - `experiment-and-productization-prd-test.md`
-- `2026-05-format-spec-four-format-experiment/`
-  - `prd-test.md`
-- `2026-05-format-spec-productization-phaseC/`
-  - `prd-test.md`
-- `2026-05-format-spec-visibility-audit-phaseD/`
-  - `ralplan.md`
 - `2026-05-requirements-supporting-records/`
   - `docx-first-export-strategy-shift.md`
   - `format-profile-experiment-outcome.md`

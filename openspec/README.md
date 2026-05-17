@@ -31,14 +31,15 @@ Draft version
 
 ## 已收口主线
 
-FormatProfile / StyleFacts / SemanticOverlay / FormatSpec / Editable Format Constraints / Draft Output Contract 已完成阶段性产品化并归档到：
+FormatProfile / StyleFacts / SemanticOverlay / FormatSpec / Editable Format Constraints / Draft Output Contract 已完成阶段性产品化，实验文档已合并到对应的实验代码目录中：
 
 ```text
-archive/2026-05-format-profile-*/
-archive/2026-05-format-spec-*/
-archive/2026-05-format-rule-synthesis/
-archive/2026-05-editable-format-constraints/
+experiments/format-profile/archive/   ← 含 6 个历史阶段
+experiments/format-spec/archive/      ← 含 3 个历史阶段
+experiments/editable-format-constraints/archive/
 ```
+
+各实验的可执行代码、脚本、产物也在 `openspec/experiments/<实验名>/` 下。
 
 ## 原始需求基线
 
